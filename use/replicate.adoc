@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: use/replicate.html 
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
-summary: 使用NetApp災難復原，您可以使用SnapMirror複製將來源站點上的 VMware 應用程式複製到雲端中的災難復原遠端站點。 
+summary: 使用NetApp Disaster Recovery，您可以使用SnapMirror複製將來源站點上的 VMware 應用程式複製到雲端中的災難復原遠端站點。 
 ---
-= 使用NetApp災難復原將應用程式複製到另一個站點
+= 使用NetApp Disaster Recovery將應用程式複製到另一個站點
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,22 +12,22 @@ summary: 使用NetApp災難復原，您可以使用SnapMirror複製將來源站�
 
 
 [role="lead"]
-使用NetApp災難復原，您可以使用SnapMirror複製將來源站點上的 VMware 應用程式複製到雲端中的災難復原遠端站點。
+使用NetApp Disaster Recovery，您可以使用SnapMirror複製將來源站點上的 VMware 應用程式複製到雲端中的災難復原遠端站點。
 
 
-TIP: 在建立災難復原計畫、在精靈中確定重複並啟動到災難復原站點的複製後， NetApp Disaster Recovery 每 30 分鐘驗證一次複製是否確實按照計畫進行。您可以在作業監視器頁面中監視進度。
+TIP: 在建立NetApp Disaster Recovery Disaster Recovery每 30 分鐘驗證一次複製是否確實按照計畫進行。您可以在作業監視器頁面中監視進度。
 
-*所需的NetApp控制台角色* 組織管理員、資料夾或專案管理員、災難復原管理員或災難復原故障轉移管理員角色。
+*所需的NetApp Console角色* 組織管理員、資料夾或專案管理員、災難復原管理員或災難復原故障轉移管理員角色。
 
-link:../reference/dr-reference-roles.html["了解NetApp災難復原中的使用者角色和權限"] 。https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["了解所有服務的NetApp控制台存取角色"^] 。
+link:../reference/dr-reference-roles.html["了解NetApp Disaster Recovery中的使用者角色和權限"] 。https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["了解所有服務的NetApp Console存取角色"^] 。
 
 .開始之前
 在啟動複製之前，您應該建立複製計劃並選擇複製應用程式。然後，「操作」功能表中會出現「*複製*」選項。
 
 .步驟
-. 登入 https://console.netapp.com/["NetApp控制台"^]。
-. 從NetApp控制台左側導覽中，選擇 *保護* > *災難復原*。
+. 登入 https://console.netapp.com/["NetApp Console"^]。
+. 從NetApp Console左側導覽中，選擇 *保護* > *災難復原*。
 . 從選單中選擇*複製計劃*。
 . 選擇複製計劃。
-. 在右側，選擇“操作”選項image:../use/icon-horizontal-dots.png["NetApp災難復原服務​​中的操作選單圖標"]並選擇*複製*。
+. 在右側，選擇“操作”選項image:../use/icon-horizontal-dots.png["NetApp Disaster Recovery服務​​中的操作選單圖標"]並選擇*複製*。
 

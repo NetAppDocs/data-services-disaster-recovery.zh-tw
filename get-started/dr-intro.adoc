@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: get-started/dr-intro.html 
 keywords: how netapp disaster recovery works, what is disaster recovery, bluexp, vmware, vcenter, draas, replicate, failover, failback, fail over, fail back, vmware cloud, netapp intelligent services 
-summary: 雲端災難復原是一種具有彈性且經濟高效的方式，可保護工作負載免受網站中斷和資料損壞事件的影響。透過NetApp Disaster Recovery for VMware，您可以將執行ONTAP儲存的本機 VMware 工作負載複製到使用NetApp雲端儲存的公有雲中的 VMware 軟體定義資料中心，或複製到另一個以ONTAP儲存為災難復原站點的本機 VMware 環境。 
+summary: 雲端災難復原是一種具有彈性且經濟高效的方式，可保護工作負載免受網站中斷和資料損壞事件的影響。透過NetApp Disaster Recovery for VMware，您可以將執行ONTAP儲存的本機 VMware 工作負載複製到使用NetApp雲端儲存的公有雲中的 VMware 軟體定義資料中心，或複製到另一個以ONTAP儲存為災難NetApp Disaster Recovery的本機 VMware 環境。 
 ---
-= 了解NetApp針對 VMware 的災難復原
+= 了解NetApp Disaster Recovery
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,37 +12,37 @@ summary: 雲端災難復原是一種具有彈性且經濟高效的方式，可�
 
 
 [role="lead"]
-雲端災難復原是一種具有彈性且經濟高效的方式，可保護工作負載免受網站中斷和資料損壞事件的影響。透過NetApp Disaster Recovery for VMware，您可以將執行ONTAP儲存的本機 VMware VM 或資料儲存庫工作負載複製到使用NetApp雲端儲存的公有雲中的 VMware 軟體定義資料中心，或複製到另一個以ONTAP儲存為災難復原站點的本機 VMware 環境。您也可以使用災難復原將虛擬機器工作負載從一個站點遷移到另一個站點。
+雲端災難復原是一種具有彈性且經濟高效的方式，可保護工作負載免受網站中斷和資料損壞事件的影響。透過NetApp Disaster Recovery Disaster Recovery for VMware，您可以將執行ONTAP儲存的本機 VMware VM 或資料儲存庫工作負載複製到使用NetApp雲端儲存的公有雲中的 VMware 軟體定義資料中心，或複製到另一個以ONTAP儲存為災難復原站點的本機 VMware 環境。您也可以使用災難復原將虛擬機器工作負載從一個站點遷移到另一個站點。
 
-NetApp災難復原是一種基於雲端的災難復原服務​​，可自動執行災難復原工作流程。透過NetApp災難復原，您可以將內部基於 NFS 的工作負載和 VMware vSphere 虛擬機器檔案系統 (VMFS) 資料儲存（用於執行NetApp儲存的 iSCSI 和 FC）保護到下列其中一項：
+NetApp Disaster Recovery是一種基於雲端的災難復原服務​​，可自動執行災難復原工作流程。透過NetApp Disaster Recovery，您可以將內部基於 NFS 的工作負載和 VMware vSphere 虛擬機器檔案系統 (VMFS) 資料儲存（用於執行NetApp儲存的 iSCSI 和 FC）保護到下列其中一項：
 
 * AWS 上的 VMware Cloud (VMC) 以及適用Amazon FSx for NetApp ONTAP
-* Amazon Elastic VMware Service (EVS) 和Amazon FSx for NetApp ONTAP有關詳細信息，請參閱link:../reference/evs-deploy-guide-introduction.html["使用 Amazon Elastic VMware Service 和Amazon FSx for NetApp ONTAP實現NetApp災難復原"]。
+* Amazon Elastic VMware Service (EVS) 和Amazon FSx for NetApp ONTAP有關詳細信息，請參閱link:../reference/evs-deploy-guide-introduction.html["使用 Amazon Elastic VMware Service 和Amazon FSx for NetApp ONTAP實作NetApp Disaster Recovery"]。
 * 具有NetApp Cloud Volumes ONTAP (iSCSI) 的 Azure VMware 解決方案 (AVS)（私人預覽版）
 * 另一個具有ONTAP儲存的本機 NFS 和/或基於 VMFS (iSCSI/FC) 的 VMware 環境
 
 
-NetApp災難復原使用ONTAP SnapMirror技術與整合的本機 VMware 業務流程來保護 VMware VM 及其相關的磁碟作業系統映像，同時保留ONTAP的所有儲存效率優勢。災難復原使用這些技術作為到災難復原站點的複製傳輸。這使得主站點和輔助站點能夠實現業界最佳的儲存效率（壓縮和重複資料刪除）。
+NetApp Disaster Recovery使用ONTAP SnapMirror技術與整合的本機 VMware 業務流程來保護 VMware VM 及其相關的磁碟作業系統映像，同時保留ONTAP的所有儲存效率優勢。災難復原使用這些技術作為到災難復原站點的複製傳輸。這使得主站點和輔助站點能夠實現業界最佳的儲存效率（壓縮和重複資料刪除）。
 
 image:../use/evs-bluexp-architecture.png["圖表顯示了NetApp Disaster Recovery for VMware 的元件"]
 
 
 
-== NetApp控制台
+== NetApp Console
 
-可透過NetApp控制台存取NetApp災難復原。
+可透過NetApp Console存取NetApp Disaster Recovery。
 
-NetApp控制台提供企業級跨本機和雲端環境的NetApp儲存和資料服務的集中管理。需要控制台才能存取和使用NetApp資料服務。作為管理介面，它使您能夠從一個介面管理許多儲存資源。控制台管理員可以控制企業內所有系統的儲存和服務的存取。
+NetApp Console提供企業級跨本機和雲端環境的NetApp儲存和資料服務的集中管理。需要控制台才能存取和使用NetApp資料服務。作為管理介面，它使您能夠從一個介面管理許多儲存資源。控制台管理員可以控制企業內所有系統的儲存和服務的存取。
 
-您不需要許可證或訂閱即可開始使用NetApp控制台，並且只有當您需要在雲端部署控制台代理程式以確保與儲存系統或NetApp資料服務的連接時才需要付費。但是，一些可從控制台存取的NetApp資料服務是需要授權或基於訂閱的。
+您不需要許可證或訂閱即可開始使用NetApp Console，並且只有當您需要在雲端部署控制台代理程式以確保與儲存系統或NetApp資料服務的連線時才需要付費。但是，一些可從控制台存取的NetApp資料服務是需要授權或基於訂閱的。
 
-詳細了解 https://docs.netapp.com/us-en/bluexp-setup-admin/concept-overview.html["NetApp控制台"]。
+詳細了解 https://docs.netapp.com/us-en/bluexp-setup-admin/concept-overview.html["NetApp Console"]。
 
 
 
-== 使用NetApp災難復原 for VMware 的優勢
+== 使用NetApp Disaster Recoveryfor VMware 的優勢
 
-NetApp災難復原有以下優勢：
+NetApp Disaster Recovery有以下優勢：
 
 * 透過多個時間點復原操作簡化 vCenter 發現和應用程式復原的使用者體驗。 
 * 透過降低營運成本來降低整體擁有成本，並能夠以最少的資源創建和調整災難復原計劃。
@@ -54,9 +54,9 @@ NetApp災難復原有以下優勢：
 
 
 
-== NetApp災難復原 for VMware 的功能
+== NetApp Disaster Recoveryfor VMware 的功能
 
-NetApp災難復原讓您充分利用多種NetApp技術來達成以下目標：
+NetApp Disaster Recovery讓您充分利用多種NetApp技術來實現以下目標：
 
 * 使用SnapMirror複製將本地生產站點上的 VMware 應用程式複製到雲端或本地端的災難復原遠端站點。
 * 將 VMware 工作負載從原始站點遷移到另一個站點。
@@ -69,18 +69,18 @@ NetApp災難復原讓您充分利用多種NetApp技術來達成以下目標：
 image:../use/evs-use-cases.png["展示NetApp Disaster Recovery for VMware 用例的圖表"]
 
 
-NOTE: vSphere 伺服器的配置是在 vSphere Server 中的NetApp Disaster Recovery 之外完成的。
+NOTE: vSphere 伺服器的配置是在 vSphere Server 中的NetApp Disaster Recovery之外完成的。
 
 
 
 == 成本
 
-NetApp不會向您收取使用NetApp Disaster Recovery 試用版的費用。
+NetApp不會向您收取使用NetApp Disaster Recovery試用版的費用。
 
-NetApp災難復原可以透過NetApp授權或透過 Amazon Web Services 的年度訂閱計畫使用。
+NetApp Disaster Recovery可以透過NetApp授權或透過 Amazon Web Services 的年度訂閱計畫使用。
 
 
-IMPORTANT: 一些版本包括技術預覽。 NetApp不會向您收取任何預覽的工作負載容量的費用。看link:../release-notes/dr-whats-new.html["NetApp災難復原的新功能"]了解有關最新技術預覽的資訊。
+IMPORTANT: 一些版本包括技術預覽。 NetApp不會向您收取任何預覽的工作負載容量的費用。看link:../release-notes/dr-whats-new.html["NetApp Disaster Recovery的新功能"]了解有關最新技術預覽的資訊。
 
 
 
@@ -88,27 +88,27 @@ IMPORTANT: 一些版本包括技術預覽。 NetApp不會向您收取任何預�
 
 您可以使用以下許可證類型：
 
-* 註冊即可獲得 30 天免費試用。
+* 註冊 30 天免費試用。
 * 透過 Amazon Web Services (AWS) Marketplace 或 Microsoft Azure Marketplace 購買即用即付 (PAYGO) 訂閱。此許可證使您能夠購買固定保護容量許可證，而無需任何長期承諾。
-* 自帶授權 (BYOL)，即您從NetApp銷售代表取得的NetApp授權文件 (NLF)。您可以使用許可證序號在NetApp控制台中啟動 BYOL。
+* 自帶授權 (BYOL)，即您從NetApp銷售代表取得的NetApp授權文件 (NLF)。您可以使用許可證序號在NetApp Console中啟動 BYOL。
 
 
-所有NetApp資料服務的授權均透過NetApp控制台中的訂閱進行管理。設定 BYOL 後，您可以在控制台中看到該服務的有效授權。
+所有NetApp資料服務的授權均透過NetApp Console中的訂閱進行管理。設定 BYOL 後，您可以在控制台中看到該服務的有效授權。
 
 本服務根據受保護的ONTAP磁碟區上託管的資料量進行許可。該服務透過將受保護的虛擬機器對應到其 vCenter 資料儲存區來確定應考慮哪些磁碟區用於許可目的。每個資料儲存庫都託管在ONTAP磁碟區或 LUN 上。  ONTAP報告的該磁碟區或 LUN 的已使用容量用於確定許可。
 
-受保護的磁碟區可以託管許多虛擬機器。有些可能不屬於NetApp災難復原資源組。無論如何，該磁碟區或 LUN 上所有虛擬機器消耗的儲存都將用於滿足許可證最大容量要求。
+受保護的磁碟區可以託管許多虛擬機器。有些可能不屬於NetApp Disaster Recovery資源群組。無論如何，該磁碟區或 LUN 上所有虛擬機器消耗的儲存都將用於滿足許可證最大容量要求。
 
 
-NOTE: 當至少有一個虛擬機器具有複製計畫時， NetApp災難復原費用是基於來源站點上資料儲存區的已使用容量。故障轉移資料儲存區的容量不包含在容量限額內。對於 BYOL，如果資料超出允許的容量，服務中的操作將受到限制，直到您獲得額外的容量許可證或在NetApp控制台中升級許可證。
+NOTE: 當至少有一個虛擬機器具有複製計畫時， NetApp Disaster Recovery費用是基於來源站點上資料儲存區的已使用容量。故障轉移資料儲存區的容量不包含在容量限額內。對於 BYOL，如果資料超出允許的容量，服務中的操作將受到限制，直到您獲得額外的容量授權或在NetApp Console中升級授權。
 
-有關設定NetApp災難復原許可的詳細信息，請參閱link:../get-started/dr-licensing.html["設定NetApp災難復原許可"]。
+有關設定NetApp Disaster Recovery許可的詳細信息，請參閱link:../get-started/dr-licensing.html["設定NetApp Disaster Recovery許可"]。
 
 
 
 == 30天免費試用
 
-您可以透過 30 天免費試用版來試用NetApp Disaster Recovery。
+您可以透過 30 天免費試用版來試用NetApp Disaster Recovery 。
 
 要在 30 天試用期結束後繼續使用，您需要從雲端供應商取得即用即付 (PAYGO) 訂閱或從NetApp購買 BYOL 授權。
 
@@ -116,11 +116,11 @@ NOTE: 當至少有一個虛擬機器具有複製計畫時， NetApp災難復原�
 
 
 
-== NetApp災難復原的工作原理
+== NetApp Disaster Recovery的工作原理
 
-NetApp災難復原是託管在NetApp控制台軟體即服務 (SaaS) 環境中的服務。災難復原可以將從本機站點複製到Amazon FSx for ONTAP或其他本機站點的工作負載復原。此服務可自動執行從SnapMirror層級的恢復，包括將虛擬機器註冊到 VMware Cloud on AWS，以及直接在 VMware 網路虛擬化和安全平台 NSX-T 上進行網路對應。所有虛擬機器雲端環境均包含此功能。
+NetApp Disaster Recovery是託管在NetApp Console軟體即服務 (SaaS) 環境中的服務。災難復原可以將從本機站點複製到Amazon FSx for ONTAP或其他本機站點的工作負載復原。此服務可自動執行從SnapMirror層級的恢復，包括將虛擬機器註冊到 VMware Cloud on AWS，以及直接在 VMware 網路虛擬化和安全平台 NSX-T 上進行網路對應。所有虛擬機器雲端環境均包含此功能。
 
-NetApp災難復原使用ONTAP SnapMirror技術，該技術可提供高效的複製並保留ONTAP永久增量快照的效率。  SnapMirror複製可確保應用程式一致的快照副本始終保持同步，且資料在故障轉移後可立即使用。
+NetApp Disaster Recovery使用ONTAP SnapMirror技術，該技術可提供高效的複製並保留ONTAP永久增量快照的效率。  SnapMirror複製可確保應用程式一致的快照副本始終保持同步，且資料在故障轉移後可立即使用。
 
 image:dr-architecture-diagram-70-2.png["圖表展示了NetApp Disaster Recovery for VMware 服務基礎架構的架構"]
 
@@ -135,8 +135,8 @@ image:dr-architecture-diagram-70-2.png["圖表展示了NetApp Disaster Recovery 
 
 災難復原使用以下元件為 VMware 工作負載提供災難復原：
 
-* * NetApp Console*：用於管理災難復原計畫的使用者介面。您可以使用NetApp控制台在本機和雲端環境中建立和管理複製計畫、資源群組和故障轉移作業。
-* *控制台代理*：在您的雲端託管網路或本機 VMware 環境中執行的輕量級軟體元件。它與NetApp控制台通訊並管理本地環境和災難復原站點之間的資料複製。控制台代理程式安裝在 VMware 環境中的虛擬機器上。
+* * NetApp Console*：用於管理災難復原計畫的使用者介面。您可以使用NetApp Console在本機和雲端環境中建立和管理複製計畫、資源群組和故障轉移作業。
+* *控制台代理*：在您的雲端託管網路或本機 VMware 環境中執行的輕量級軟體元件。它與NetApp Console通訊並管理本地環境和災難復原站點之間的資料複製。控制台代理程式安裝在 VMware 環境中的虛擬機器上。
 * * ONTAP儲存叢集*： ONTAP儲存叢集是託管 VMware 工作負載的主要儲存系統。 ONTAP儲存叢集為您的災難復原計畫提供底層儲存基礎架構。災難復原使用ONTAP儲存 API 來管理ONTAP儲存叢集（例如本機陣列）和基於雲端的解決方案（例如Amazon FSx for NetApp ONTAP）。
 * *vCenter 伺服器*：VMware vCenter 是您的 VMware 環境的管理伺服器。它管理 ESXi 主機及其相關的資料儲存。控制台代理程式與 VMware vCenter 通信，以管理本機環境和災難復原站點之間的資料複製。這包括將ONTAP LUN 和磁碟區註冊為資料儲存、重新配置虛擬機器以及啟動和停止虛擬機器。
 
@@ -169,7 +169,7 @@ image:dr-architecture-diagram-70-2.png["圖表展示了NetApp Disaster Recovery 
 
 == 支援的保護目標和資料儲存類型
 
-*支援的資料儲存類型* NetApp災難復原支援以下資料儲存類型：
+*支援的資料儲存類型* NetApp Disaster Recovery支援以下資料儲存類型：
 
 * 託管在ONTAP叢集上的ONTAP FlexVol磁碟區上的 NFS 資料儲存庫。
 * 使用 iSCSI 或 FC 協定的 VMware vSphere 虛擬機器檔案系統 (VMFS) 資料存儲
@@ -185,7 +185,7 @@ image:dr-architecture-diagram-70-2.png["圖表展示了NetApp Disaster Recovery 
 
 
 
-== 可能對您有幫助的NetApp災難復原術語
+== 可能對您有幫助的NetApp Disaster Recovery術語
 
 了解一些與災難復原相關的術語可能會對您有所幫助。
 

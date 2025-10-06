@@ -2,23 +2,23 @@
 sidebar: sidebar 
 permalink: reference/evs-deploy-guide-config-prereqs.html 
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
-summary: 在繼續使用NetApp災難復原配置 Amazon EVS 之前，您應該確保滿足幾個先決條件。 
+summary: 在繼續使用NetApp Disaster Recovery配置 Amazon EVS 之前，您應該確保滿足幾個先決條件。 
 ---
-= Amazon EVS 與NetApp災難復原的先決條件
+= Amazon EVS 與NetApp Disaster Recovery的先決條件
 :allow-uri-read: 
 
 
 [role="lead"]
-在繼續使用NetApp災難復原配置 Amazon EVS 之前，您應該確保滿足幾個先決條件。
+在繼續使用NetApp Disaster Recovery配置 Amazon EVS 之前，您應該確保滿足幾個先決條件。
 
 具體來說，請執行以下操作：
 
-* 建立 vCenter 使用者帳戶，該帳戶具有NetApp災難復原所需的特定 VMware 權限，以執行必要的操作。
+* 建立 vCenter 使用者帳戶，該帳戶具有NetApp Disaster Recovery所需的特定 VMware 權限，以執行必要的操作。
 +
 
-NOTE: 我們不建議使用預設的“\administrator@vsphere.com”管理員帳戶。相反，您應該在將參與 DR 過程的所有 vCenter 叢集上建立一個NetApp災難復原特定的使用者帳戶。有關所需特定權限的列表，請參閱link:vcenter-privileges.html["NetApp災難復原所需的 vCenter 權限"]。
+NOTE: 我們不建議使用預設的“\administrator@vsphere.com”管理員帳戶。相反，您應該在將參與 DR 流程的所有 vCenter 叢集上建立一個NetApp Disaster Recovery特定的使用者帳戶。有關所需特定權限的列表，請參閱link:vcenter-privileges.html["NetApp Disaster Recovery所需的 vCenter 權限"]。
 
-* 確保將託管受NetApp災難復原保護的虛擬機器的所有 vCenter 資料儲存區都位於NetApp ONTAP儲存資源上。
+* 確保將託管受NetApp Disaster Recovery保護的虛擬機器的所有 vCenter 資料儲存區都位於NetApp ONTAP儲存資源上。
 +
 在NetApp ONTAP上使用Amazon FSx時，此服務支援 iSCSI（而非 FC）上的 NFS 和 VMFS。雖然該服務支援 FC，Amazon FSx for NetApp ONTAP不支援。
 

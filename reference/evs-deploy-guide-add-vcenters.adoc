@@ -2,14 +2,14 @@
 sidebar: sidebar 
 permalink: reference/evs-deploy-guide-add-vcenters.html 
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter,amazon elastic vmware service 
-summary: 使用 Amazon EVS 和 Amazon FSxN 介紹NetApp災難復原。建立網站後，現在可以將 vCenter 叢集新增至NetApp災難復原中的每個網站。當我們建立每個網站時，我們都會指出每個網站的類型。這會告訴NetApp Disaster Recovery 每種網站類型中託管的 vCenter 需要什麼類型的存取。 Amazon EVS 的優勢之一是 Amazon EVS vCenter 和本機 vCenter 之間沒有真正的區別。兩者都需要相同的連線和身份驗證資訊。 
+summary: 使用 Amazon EVS 和 Amazon FSxN 介紹NetApp Disaster Recovery。建立網站後，現在可以將 vCenter 叢集新增至NetApp Disaster Recovery中的每個網站。當我們建立每個網站時，我們都會指出每個網站的類型。這會告訴NetApp Disaster Recovery每種網站類型中託管的 vCenter 需要什麼類型的存取。 Amazon EVS 的優勢之一是 Amazon EVS vCenter 和本機 vCenter 之間沒有真正的區別。兩者都需要相同的連線和身份驗證資訊。 
 ---
-= 在NetApp災難復原中新增本機和 Amazon EVS vCenter 叢集
+= 在NetApp Disaster Recovery中新增本機和 Amazon EVS vCenter 叢集
 :allow-uri-read: 
 
 
 [role="lead"]
-建立網站後，現在可以將 vCenter 叢集新增至NetApp災難復原中的每個網站。當我們建立每個網站時，我們都會指出每種網站的類型。這會告訴NetApp Disaster Recovery 每種網站類型中託管的 vCenter 需要什麼類型的存取。 Amazon EVS 的優勢之一是 Amazon EVS vCenter 和本機 vCenter 之間沒有真正的區別。兩者都需要相同的連線和身份驗證資訊。
+建立網站後，現在可以將 vCenter 叢集新增至NetApp Disaster Recovery中的每個網站。當我們建立每個網站時，我們都會指出每種網站的類型。這會告訴NetApp Disaster Recovery每種網站類型中託管的 vCenter 需要什麼類型的存取。 Amazon EVS 的優勢之一是 Amazon EVS vCenter 和本機 vCenter 之間沒有真正的區別。兩者都需要相同的連線和身份驗證資訊。
 
 .在每個站點新增 vCenter 的步驟
 . 從「*網站*」選項中，選擇所需網站的「*新增 vCenter*」。
@@ -18,10 +18,10 @@ image:evs-add-vcenter-1.png["新增 vCenter 選項"]
 
 . 在新增 vCenter 伺服器對話方塊中，選擇或提供以下資訊：
 +
-.. 託管在您的 AWS VPC 內的NetApp控制台代理程式。
+.. 託管在您的 AWS VPC 內的NetApp Console代理程式。
 .. 要新增的 vCenter 的 IP 位址或 FQDN。
 .. 如果不同，請將連接埠值變更為 vCenter 叢集管理器使用的 TCP 連接埠。
-.. 先前建立的帳戶的 vCenter 使用者名， NetApp Disaster Recovery 將使用該使用者名稱來管理 vCenter。
+.. 先前建立的帳戶的 vCenter 使用者名， NetApp Disaster Recovery將使用該使用者名稱來管理 vCenter。
 .. 所提供使用者名稱的 vCenter 密碼。
 .. 如果您的公司使用外部憑證授權單位 (CA) 或 vCenter Endpoint 憑證儲存空間來存取您的 vCenter，請取消選取 *使用自簽名憑證* 複選框。否則，請保留此方塊的選取狀態。
 

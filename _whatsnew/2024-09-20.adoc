@@ -11,6 +11,6 @@
 以下是有關 iSCSI 和 FC 協定的一些其他注意事項：
 
 * FC 支援針對客戶端前端協議，而不是針對複製。
-* NetApp災難復原僅支援每個ONTAP磁碟區一個 LUN。該卷不應具有多個 LUN。
+* NetApp Disaster Recovery僅支援每個ONTAP磁碟區一個 LUN。該卷不應具有多個 LUN。
 * 對於任何複製計劃，目標ONTAP磁碟區都應使用與託管受保護虛擬機器的來源ONTAP磁碟區相同的協定。例如，如果來源使用 FC 協議，則目標也應該使用 FC。
 

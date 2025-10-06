@@ -4,7 +4,7 @@ permalink: get-started/dr-faq.html
 keywords: disaster recovery faq, disaster recovery frequently asked questions 
 summary: 如果您只是想快速找到問題的答案，此常見問題解答可以為您提供協助。 
 ---
-= NetApp災難復原常見問題解答
+= NetApp Disaster Recovery常見問題解答
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -14,10 +14,10 @@ summary: 如果您只是想快速找到問題的答案，此常見問題解答�
 [role="lead"]
 如果您只是想快速找到問題的答案，此常見問題解答可以為您提供協助。
 
-* NetApp災難復原 URL 是什麼？ *對於 URL，在瀏覽器中輸入： https://console.netapp.com/["https://console.netapp.com/"^]存取NetApp控制台。
+* NetApp Disaster RecoveryURL 是什麼？ *對於 URL，在瀏覽器中輸入： https://console.netapp.com/["https://console.netapp.com/"^]存取NetApp控制台。
 
-*使用NetApp災難復原是否需要授權？ *需要NetApp災難復原許可證才能獲得完全存取權限。但是，您可以透過免費試用版進行嘗試。
+*您需要許可證才能使用NetApp Disaster Recovery嗎？ *需要NetApp Disaster Recovery許可證才能獲得完全存取權限。但是，您可以透過免費試用版進行嘗試。
 
-有關設定NetApp災難復原許可的詳細信息，請參閱link:../get-started/dr-licensing.html["設定NetApp災難復原許可"]。
+有關設定NetApp Disaster Recovery許可的詳細信息，請參閱link:../get-started/dr-licensing.html["設定NetApp Disaster Recovery許可"]。
 
-*如何存取NetApp災難復原？ * NetApp災難復原不需要任何啟用。災難復原選項會自動出現在NetApp控制台左側導覽列中。
+*如何存取NetApp Disaster Recovery？ * NetApp Disaster Recovery不需要任何啟用。災難復原選項會自動出現在NetApp Console左側導覽列中。

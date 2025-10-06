@@ -2,31 +2,31 @@
 sidebar: sidebar 
 permalink: reference/evs-deploy-guide-solution-overview.html 
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, bluexp, evs, console, amazon elastic vmware service 
-summary: 使用 Amazon EVS 和 Amazon FSxN 的NetApp災難復原解決方案概述。 
+summary: 使用 Amazon EVS 和 Amazon FSxN 的NetApp Disaster Recovery解決方案概述。 
 ---
-= 使用 Amazon EVS 和 Amazon FS for NetApp ONTAP 的NetApp災難復原解決方案概述
+= 使用 Amazon EVS 和 Amazon FS for NetApp ONTAP 的NetApp Disaster Recovery解決方案概述
 :allow-uri-read: 
 
 
 [role="lead"]
-NetApp災難復原是託管在NetApp Console 軟體即服務環境中的加值服務，它依賴核心NetApp Console 架構。控制台內用於 VMware 保護的 DR 服務由幾個主要元件組成。
+NetApp Disaster Recovery是託管在NetApp Console軟體即服務環境中的加值服務，它依賴核心NetApp Console架構。控制台內用於 VMware 保護的 DR 服務由幾個主要元件組成。
 
-有關NetApp災難復原解決方案的完整概述，請參閱link:../get-started/dr-intro.html["了解NetApp針對 VMware 的災難復原"]。
+有關NetApp Disaster Recovery解決方案的完整概述，請參閱link:../get-started/dr-intro.html["了解NetApp Disaster Recovery"]。
 
 如果您想要將本機 VMware 託管的虛擬機器保護到 Amazon AWS，請使用該服務透過Amazon FSx for NetApp ONTAP儲存託管資料儲存備份至 Amazon EVS。
 
 下圖顯示了該服務如何使用 Amazon EVS 保護您的虛擬機器。
 
-使用 Amazon EVS 和 FSx for ONTAP進行NetApp災難復原概述image:evs-soloverview-evs.png["使用 Amazon EVS 和 FSx for ONTAP進行NetApp災難復原概述"]
+使用 Amazon EVS 和 FSx for ONTAP進行NetApp Disaster Recovery概述image:evs-soloverview-evs.png["使用 Amazon EVS 和 FSx for ONTAP進行NetApp Disaster Recovery概述"]
 
 . Amazon EVS 部署在您的帳戶中的單一可用區 (AZ) 配置中以及您的虛擬私有雲 (VPC) 內。
 . FSx for ONTAP檔案系統與 Amazon EVS 部署在相同 AZ 中。檔案系統透過彈性網路介面 (ENI)、VPC 對等連接或 AmazonTransit 閘道直接連接到 Amazon EVS。
-. NetApp控制台代理程式已安裝在您的 VPC 中。  NetApp控制台代理程式託管多個資料管理服務（稱為代理），包括管理本機實體資料中心和 Amazon AWS 託管資源上的 VMware 基礎架構的 DR 的NetApp災難復原代理程式。
-. NetApp災難復原代理程式與NetApp控制台雲端託管服務安全性通訊以接收任務並將這些任務分發到適當的內部部署和 AWS 託管的 vCenter 和ONTAP儲存實例。
-. 您可以使用NetApp Console 雲端託管 UI 控制台建立複製計劃，指示應保護的虛擬機器、應保護這些虛擬機器的頻率，以及在從內部網站發生故障轉移時重新啟動這些虛擬機器所需執行的程序。
-. 複製計畫決定哪些 vCenter 資料儲存庫託管受保護的虛擬機器以及託管這些資料儲存庫的ONTAP磁碟區。如果 FSx for ONTAP叢集上尚不存在磁碟區， NetApp Disaster Recovery 會自動建立它們。
+. NetApp Console代理程式已安裝在您的 VPC 中。  NetApp Console代理程式託管多個資料管理服務（稱為代理），包括管理本機實體資料中心和 Amazon AWS 託管資源上的 VMware 基礎架構的 DR 的NetApp Disaster Recovery代理程式。
+. NetApp Disaster Recovery代理程式與NetApp Console雲端託管服務安全性通訊以接收任務並將這些任務分發到適當的內部部署和 AWS 託管的 vCenter 和ONTAP儲存實例。
+. 您可以使用NetApp Console雲端託管 UI 控制台建立複製計劃，指示應保護的虛擬機器、應保護這些虛擬機器的頻率，以及在從內部網站發生故障轉移時重新啟動這些虛擬機器所需執行的程序。
+. 複製計畫決定哪些 vCenter 資料儲存庫託管受保護的虛擬機器以及託管這些資料儲存庫的ONTAP磁碟區。如果 FSx for ONTAP叢集上尚不存在磁碟區， NetApp Disaster Recovery會自動建立它們。
 . 為每個已識別的來源ONTAP磁碟區與每個目標 FSx for ONTAP託管ONTAP磁碟區建立SnapMirror關係，並根據複製計畫中使用者提供的 RPO 建立複製計畫。
-. 如果主站點發生故障，管理員會在NetApp控制台內啟動手動故障轉移程序，並選擇備份作為還原點。
-. NetApp災難復原代理程式啟動 FSx for ONTAP託管的資料保護磁碟區。
+. 如果主站點發生故障，管理員會在NetApp Console內啟動手動故障轉移程序，並選擇備份作為還原點。
+. NetApp Disaster Recovery代理程式啟動 FSx for ONTAP所託管的資料保護磁碟區。
 . 該代理程式向 Amazon EVS vCenter 註冊每個已啟動的 FS​​x for ONTAP卷，向 Amazon EVS vCenter 註冊每個受保護的虛擬機，並根據複製計劃中包含的預定義規則啟動每個虛擬機。
 

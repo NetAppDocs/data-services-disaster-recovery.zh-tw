@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: use/use-overview.html 
 keywords: disaster recovery remediate, disaster recovery, failover, failback, replication 
-summary: NetApp災難復原是一種基於雲端的災難復原服務​​，可自動執行災難復原工作流程。 
+summary: NetApp Disaster Recovery是一種基於雲端的災難復原服務​​，可自動執行災難復原工作流程。 
 ---
-= 使用NetApp災難復原概述
+= 使用NetApp Disaster Recovery概述
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,7 +12,7 @@ summary: NetApp災難復原是一種基於雲端的災難復原服務​​，�
 
 
 [role="lead"]
-使用NetApp災難恢復，您可以實現以下目標：
+使用NetApp Disaster Recovery，您可以實現以下目標：
 
 * link:../use/dashboard-view.html["查看災難復原計畫的健康狀況"] 。
 * link:../use/sites-add.html["新增 vCenter 站點"] 。

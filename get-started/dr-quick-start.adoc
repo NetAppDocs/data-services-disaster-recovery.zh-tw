@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: get-started/dr-quick-start.html 
 keywords: how to get started with bluexp disaster recovery, disaster recovery quick start, failover, failback 
-summary: 只需幾個步驟即可開始使用NetApp災難復原服務​​。 
+summary: 只需幾個步驟即可開始使用NetApp Disaster Recovery服務​​。 
 ---
-= NetApp災難復原快速入門
+= NetApp Disaster Recovery快速入門
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,15 +12,15 @@ summary: 只需幾個步驟即可開始使用NetApp災難復原服務​​。
 
 
 [role="lead"]
-以下是開始使用NetApp災難復原所需步驟的概述。每個步驟中的連結都會將您帶到提供更多詳細資訊的頁面。
+以下是開始使用NetApp Disaster Recovery所需步驟的概述。每個步驟中的連結都會將您帶到提供更多詳細資訊的頁面。
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["一"]審查先決條件
 [role="quick-margin-para"]
 link:../get-started/dr-prerequisites.html["確保您的系統符合這些要求"] 。
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["二"]設定NetApp災難復原
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["二"]設定NetApp Disaster Recovery
 [role="quick-margin-list"]
-* link:../get-started/dr-setup.html["設定服務的基礎架構"] 。
+* link:../get-started/dr-setup.html["設定服務的基礎結構"] 。
 * link:../get-started/dr-licensing.html["設定許可"] 。
 
 
@@ -29,7 +29,7 @@ link:../get-started/dr-prerequisites.html["確保您的系統符合這些要求"
 設定服務後，您可以執行以下操作。
 
 [role="quick-margin-list"]
-* link:../use/sites-add.html["將您的 vCenter 網站新增至NetApp災難復原"] 。
+* link:../use/sites-add.html["將您的 vCenter 網站新增至NetApp Disaster Recovery"] 。
 * link:../use/manage.html#manage-resource-groups["建立第一個資源組"] 。
 * link:../use/drplan-create.html["建立您的第一個複製計劃"] 。
 * link:../use/replicate.html["將應用程式複製到另一個站點"] 。

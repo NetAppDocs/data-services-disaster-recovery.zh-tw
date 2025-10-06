@@ -2,15 +2,15 @@
 section: get-started
 title: 開始
 entries:
-- title: 了解NetApp災難復原
+- title: 了解NetApp Disaster Recovery
   url: "/get-started/dr-intro.html"
 - title: 先決條件
   url: "/get-started/dr-prerequisites.html"
 - title: 快速啟動
   url: "/get-started/dr-quick-start.html"
-- title: 為NetApp災難復原設定基礎架構
+- title: 為NetApp Disaster Recovery設定基礎架構
   url: "/get-started/dr-setup.html"
-- title: 存取NetApp災難復原
+- title: 存取NetApp Disaster Recovery
   url: "/get-started/dr-login.html"
 - title: 設定許可
   url: "/get-started/dr-licensing.html"

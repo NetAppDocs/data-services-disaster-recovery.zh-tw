@@ -2,29 +2,29 @@
 section: reference
 title: 參考
 entries:
-- title: NetApp災難復原所需的 vCenter 權限
+- title: NetApp Disaster Recovery所需的 vCenter 權限
   url: "/reference/vcenter-privileges.html"
-- title: NetApp災難復原角色和權限
+- title: NetApp Disaster Recovery角色和權限
   url: "/reference/dr-reference-roles.html"
-- title: 將NetApp災難復原與 Amazon EVS 結合使用
+- title: 將NetApp Disaster Recovery與 Amazon EVS 結合使用
   entries:
-  - title: NetApp災難復原與 Amazon EVS 概述
+  - title: NetApp Disaster Recovery與 Amazon EVS 概述
     url: "/reference/evs-deploy-guide-introduction.html"
   - title: 解決方案概述
     url: "/reference/evs-deploy-guide-solution-overview.html"
-  - title: 安裝NetApp控制台代理
+  - title: 安裝NetApp Console代理
     url: "/reference/evs-deploy-guide-install-connector.html"
-  - title: 為 Amazon EVS 配置NetApp災難復原
+  - title: 為 Amazon EVS 配置NetApp Disaster Recovery
     entries:
-    - title: 為 Amazon EVS 配置NetApp災難復原概述
+    - title: 為 Amazon EVS 配置NetApp Disaster Recovery概述
       url: "/reference/evs-deploy-guide-config-draas.html"
     - title: Amazon EVS 的先決條件
       url: "/reference/evs-deploy-guide-config-prereqs.html"
     - title: 為 Amazon EVS 新增ONTAP儲存陣列
       url: "/reference/evs-deploy-guide-config-add-arrays.html"
-    - title: 為 Amazon EVS 新增NetApp災難復原
+    - title: 為 Amazon EVS 新增NetApp Disaster Recovery
       url: "/reference/evs-deploy-guide-enable-draas.html"
-    - title: 在NetApp災難復原中為 Amazon EVS 新增站點
+    - title: 在NetApp Disaster Recovery中為 Amazon EVS 新增站點
       url: "/reference/evs-deploy-guide-add-sites.html"
     - title: 為 Amazon EVS 新增 vCenter 集群
       url: "/reference/evs-deploy-guide-add-vcenters.html"

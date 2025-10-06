@@ -2,14 +2,14 @@
 sidebar: sidebar 
 permalink: reference/evs-deploy-guide-create-rp-wiz-04.html 
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, netapp, ontap,amazon elastic vmware service 
-summary: 使用 Amazon EVS 和Amazon FSx for NetApp ONTAP介紹NetApp災難復原。在NetApp Disaster Recovery 中新增所有複製計畫資訊後，請驗證您輸入的資訊是否正確。 
+summary: 使用 Amazon EVS 和Amazon FSx for NetApp ONTAP介紹NetApp Disaster Recovery。在NetApp Disaster Recovery中新增所有複製計畫資訊後，請驗證您輸入的資訊是否正確。 
 ---
-= 建立複製計畫：步驟 4 - 驗證NetApp災難復原中的設置
+= 建立複製計畫：步驟 4 - 驗證NetApp Disaster Recovery中的設置
 :allow-uri-read: 
 
 
 [role="lead"]
-在NetApp Disaster Recovery 中新增複製計畫資訊後，請驗證您輸入的資訊是否正確。
+在NetApp Disaster Recovery中加入複製計畫資訊後，請驗證您輸入的資訊是否正確。
 
 .步驟
 . 在啟動複製計劃之前，選擇“*儲存*”來檢查您的設定。

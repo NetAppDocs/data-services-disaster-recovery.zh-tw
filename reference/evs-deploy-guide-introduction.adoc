@@ -2,18 +2,18 @@
 sidebar: sidebar 
 permalink: reference/evs-deploy-guide-introduction.html 
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, netapp, ontap 
-summary: 使用 Amazon EVS 和Amazon FSx for NetApp ONTAP介紹NetApp災難復原。 
+summary: 使用 Amazon EVS 和Amazon FSx for NetApp ONTAP介紹NetApp Disaster Recovery。 
 ---
-= 使用 Amazon Elastic VMware Service 和Amazon FSx for NetApp ONTAP實現NetApp災難復原
+= 使用 Amazon Elastic VMware Service 和Amazon FSx for NetApp ONTAP實作NetApp Disaster Recovery
 :allow-uri-read: 
 
 
 [role="lead"]
-客戶越來越依賴虛擬化基礎架構來處理生產運算工作負載，例如基於 VMware vSphere 的工作負載。由於這些虛擬機器 (VM) 對業務變得越來越重要，客戶需要保護這些 VM 免受與實體運算資源相同類型的災難的影響。目前提供的災難復原 (DR) 解決方案複雜、昂貴且資源密集。 NetApp是用於虛擬化基礎架構的最大儲存供應商，它有既得利益確保其客戶的虛擬機器受到保護，就像我們保護任何類型的ONTAP儲存託管資料一樣。為了實現這一目標， NetApp創建了NetApp災難復原服務​​。
+客戶越來越依賴虛擬化基礎架構來處理生產運算工作負載，例如基於 VMware vSphere 的工作負載。由於這些虛擬機器 (VM) 對業務變得越來越重要，客戶需要保護這些 VM 免受與實體運算資源相同類型的災難的影響。目前提供的災難復原 (DR) 解決方案複雜、昂貴且資源密集。 NetApp是用於虛擬化基礎架構的最大儲存供應商，它有既得利益確保其客戶的虛擬機器受到保護，就像我們保護任何類型的ONTAP儲存託管資料一樣。為了實現這一目標， NetApp創建了NetApp Disaster Recovery服務​​。
 
 任何 DR 解決方案面臨的主要挑戰之一是管理購買、配置和維護額外運算、網路和儲存資源的增量成本，以提供 DR 複製和復原基礎架構。保護關鍵內部虛擬資源的一個熱門選擇是使用雲端託管虛擬資源作為 DR 複製和復原基礎架構。亞馬遜就是此類解決方案的一個例子，它可以提供與NetApp ONTAP託管 VM 基礎架構相容的經濟高效的資源。
 
-亞馬遜推出了 Amazon Elastic VMware Service（Amazon EVS），可在您的虛擬私有雲（VPC）內支援 VMware Cloud Foundation。  Amazon EVS 提供 AWS 的彈性和效能以及熟悉的 VMware 軟體和工具，使 Amazon EVS vCenters 能夠作為本地虛擬化基礎架構的擴展進行整合。
+亞馬遜推出了 Amazon Elastic VMware Service（Amazon EVS），可在您的虛擬私有雲（VPC）中支援 VMware Cloud Foundation。  Amazon EVS 提供 AWS 的彈性和效能以及熟悉的 VMware 軟體和工具，使 Amazon EVS vCenters 能夠作為本地虛擬化基礎架構的擴展進行整合。
 
 雖然 Amazon EVS 附帶了儲存資源，但對於儲存工作負載繁重的組織來說，使用本機儲存可能會降低其效率。在這些情況下，將 Amazon EVS 與Amazon FSx for NetApp ONTAP儲存 (Amazon FSxN) 結合使用可以提供更靈活的儲存解決方案。此外，當您在本機上使用NetApp ONTAP儲存解決方案來託管您的 VMware 基礎架構時，使用具有 FSx for ONTAP 的Amazon EVS 意味著您可以在本機和雲端託管基礎架構之間獲得一流的資料互通性和保護功能。
 

@@ -4,7 +4,7 @@ permalink: release-notes/dr-limitations.html
 keywords: disaster recovery, bluexp 
 summary: 已知限制標識了此版本服務不支援或無法與其正確互通的平台、裝置或功能。 
 ---
-= NetApp災難復原的局限性
+= NetApp Disaster Recovery的局限性
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -22,24 +22,24 @@ summary: 已知限制標識了此版本服務不支援或無法與其正確互�
 
 
 
-== NetApp控制台可能無法發現Amazon FSx for NetApp ONTAP
+== NetApp Console可能無法發現Amazon FSx for NetApp ONTAP
 
-有時， NetApp控制台無法發現Amazon FSx for NetApp ONTAP叢集。這可能是因為 FSx 憑證不正確。
+有時， NetApp Console無法發現Amazon FSx for NetApp ONTAP叢集。這可能是因為 FSx 憑證不正確。
 
-*解決方法*：在NetApp控制台中新增Amazon FSx for NetApp ONTAP集群，並定期刷新集群以顯示任何變更。
+*解決方法*：在NetApp Console中新增Amazon FSx for NetApp ONTAP集群，並定期刷新集群以顯示任何變更。
 
-如果需要從NetApp災難復原中刪除ONTAP FSx 集群，請完成以下步驟：
+如果需要從NetApp Disaster Recovery中刪除ONTAP FSx 集群，請完成以下步驟：
 
-. 在NetApp控制台代理程式中，使用雲端提供者的連線選項，連接到控制台代理程式運行的 Linux VM，使用 `docker restart occm`命令。
+. 在NetApp Console代理程式中，使用雲端提供者的連線選項，連接到控制台代理程式運行的 Linux VM，使用 `docker restart occm`命令。
 
 
 參考 https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html#connect-to-the-linux-vm["管理現有的控制台代理"^]。
 
-. 在NetApp控制台系統頁面中，再次新增Amazon FSx for ONTAP系統並提供 FSx 憑證。
+. 在NetApp Console系統頁面中，再次新增Amazon FSx for ONTAP系統並提供 FSx 憑證。
 +
 參考 https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/getting-started-step1.html["建立Amazon FSx for NetApp ONTAP檔案系統"^]。
 
-. 從NetApp災難復原中，選擇“*網站*”，在 vCenter 行上選擇“*操作*”選項image:../use/icon-vertical-dots.png["NetApp災難復原中的操作選單圖標"]，然後從「操作」選單中選擇「*刷新*」以刷新NetApp災難復原中的 FSx 發現。
+. 從NetApp Disaster Recovery中，選擇“*網站*”，在 vCenter 行上選擇“*操作*”選項image:../use/icon-vertical-dots.png["NetApp Disaster Recovery中的操作選單圖標"]，然後從「操作」選單中選擇「*刷新*」以刷新NetApp Disaster Recovery中的 FSx 發現。
 +
 這將重新發現資料儲存、其虛擬機器及其目標關係。
 

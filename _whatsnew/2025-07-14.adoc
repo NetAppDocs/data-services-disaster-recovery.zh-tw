@@ -1,30 +1,30 @@
-= NetApp災難復原中的使用者角色
+= NetApp Disaster Recovery中的使用者角色
 :allow-uri-read: 
 
 
 
 
-=== NetApp災難復原中的使用者角色
+=== NetApp Disaster Recovery中的使用者角色
 
-NetApp災難復原現在採用角色來管理每個使用者對特定功能和操作的存取權限。
+NetApp Disaster Recovery現在採用角色來管理每個使用者對特定功能和操作的存取權限。
 
-本服務使用特定於NetApp災難復原的以下角色。
+該服務使用特定於NetApp Disaster Recovery的以下角色。
 
-* *災難復原管理員*：在NetApp災難復原中執行任何操作。
-* *災難復原故障轉移管理員*：在NetApp災難復原中執行故障轉移和遷移操作。
+* *災難復原管理員*：在NetApp Disaster Recovery中執行任何操作。
+* *災難復原故障轉移管理員*：在NetApp Disaster Recovery中執行故障轉移和遷移操作。
 * *災難復原應用程式管理員*：建立和修改複製計畫並啟動測試故障轉移。
-* *災難復原檢視器*：查看NetApp災難復原中的信息，但不能執行任何操作。
+* *災難復原檢視器*：查看NetApp Disaster Recovery中的信息，但不能執行任何操作。
 
 
-如果您按一下NetApp災難復原服務​​並首次進行配置，則必須具有 *SnapCenterAdmin* 權限或具有 *Organization Admin* 角色。
+如果您按一下NetApp Disaster Recovery服務​​並首次進行配置，則必須具有 *SnapCenterAdmin* 權限或具有 *Organization Admin* 角色。
 
-有關詳細信息，請參閱 https://docs.netapp.com/us-en/bluexp-disaster-recovery/reference/dr-reference-roles.html["NetApp災難復原中的使用者角色和權限"] 。
+有關詳細信息，請參閱 https://docs.netapp.com/us-en/bluexp-disaster-recovery/reference/dr-reference-roles.html["NetApp Disaster Recovery中的使用者角色和權限"] 。
 
 https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["了解所有服務的訪問角色"^] 。
 
 
 
-=== NetApp災難復原中的其他更新
+=== NetApp Disaster Recovery中的其他更新
 
 * 增強網路發現
 * 可擴展性改進：
@@ -37,14 +37,14 @@ https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.
 
 * 下次計劃或手動發現時的陳舊資料管理：
 +
-** 當在 vCenter 中刪除虛擬機器時， NetApp Disaster Recovery 現在會自動將其從複製計劃中刪除。
-** 當 vCenter 中刪除資料儲存區或網路時， NetApp Disaster Recovery 現在會將其從複製計劃和資源組中刪除。
-** 當在 vCenter 中刪除叢集、主機或資料中心時， NetApp Disaster Recovery 現在會將其從複製計劃和資源群組中刪除。
+** 當在 vCenter 中刪除虛擬機器時， NetApp Disaster Recovery現在會自動將其從複製計劃中刪除。
+** 當 vCenter 中刪除資料儲存區或網路時， NetApp Disaster Recovery現在會將其從複製計劃和資源組中刪除。
+** 當在 vCenter 中刪除叢集、主機或資料中心時， NetApp Disaster Recovery現在會將其從複製計劃和資源群組中刪除。
 
 
-* 現在您可以在瀏覽器的隱身模式下存取 Swagger 文件。您可以從NetApp災難復原中的「設定」選項 >「API 文件」中存取它，也可以在瀏覽器的隱身模式下直接透過下列 URL 存取它： https://snapcenter.cloudmanager.cloud.netapp.com/api/api-doc/draas["Swagger 文件"^] 。
+* 現在您可以在瀏覽器的隱身模式下存取 Swagger 文件。您可以從NetApp Disaster Recovery中的「設定」選項 >「API 文件」中存取它，也可以在瀏覽器的隱身模式下直接透過下列 URL 存取它： https://snapcenter.cloudmanager.cloud.netapp.com/api/api-doc/draas["Swagger 文件"^] 。
 * 在某些情況下，故障回復操作完成後，iGroup 會被遺留下來。如果 iGroup 已過時，則此更新會將其刪除。
-* 如果在複製計畫中使用了 NFS FQDN， NetApp Disaster Recovery 現在會將其解析為 IP 位址。如果災難復原站台中無法解析 FQDN，則此更新很有用。
+* 如果在複製計畫中使用了 NFS FQDN， NetApp Disaster Recovery現在會將其解析為 IP 位址。如果災難復原站台中無法解析 FQDN，則此更新很有用。
 * UI 對齊改進
 * 成功發現後，記錄擷取 vCenter 大小詳細資訊的日誌改進
 

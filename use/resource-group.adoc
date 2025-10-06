@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: use/resource-group.html 
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, replication plan, protection, disaster, recovery, virtual machines, vm 
-summary: NetApp災難復原是一種基於雲端的災難復原服務​​，可自動執行災難復原工作流程。新增 vCenter 網站後，您就可以建立災難復原或複製計畫了。 
+summary: NetApp Disaster Recovery是一種基於雲端的災難復原服務​​，可自動執行災難復原工作流程。新增 vCenter 網站後，您就可以建立災難復原或複製計畫了。 
 ---
-= 在NetApp災難復原中建立資源組以組織虛擬機
+= 在NetApp Disaster Recovery中建立資源群組以組織虛擬機
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,11 +12,11 @@ summary: NetApp災難復原是一種基於雲端的災難復原服務​​，�
 
 
 [role="lead"]
-新增 vCenter 網站後，您可以建立資源群組，以虛擬機器或資料儲存作為單一單元來保護虛擬機器。資源組使您能夠將一組依賴的虛擬機器組織成符合您要求的邏輯群組。例如，您可以將與一個應用程式關聯的虛擬機器分組，也可以將具有相似層的應用程式分組。再舉一個例子，群組可以包含可以在恢復時運行的延遲啟動命令。
+新增 vCenter 網站後，您可以建立資源群組，以虛擬機器或資料儲存區作為單一單元來保護虛擬機器。資源組使您能夠將一組依賴的虛擬機器組織成符合您要求的邏輯群組。例如，您可以將與一個應用程式關聯的虛擬機器分組，也可以將具有相似層的應用程式分組。再舉一個例子，群組可以包含可以在恢復時運行的延遲啟動命令。
 
-*所需的NetApp控制台角色* 組織管理員、資料夾或專案管理員、災難復原管理員或災難復原應用程式管理員角色。
+*所需的NetApp Console角色* 組織管理員、資料夾或專案管理員、災難復原管理員或災難復原應用程式管理員角色。
 
-link:../reference/dr-reference-roles.html["了解NetApp災難復原中的使用者角色和權限"] 。https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["了解所有服務的NetApp控制台存取角色"^] 。
+link:../reference/dr-reference-roles.html["了解NetApp Disaster Recovery中的使用者角色和權限"] 。https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["了解所有服務的NetApp Console存取角色"^] 。
 
 *關於此任務*
 
@@ -37,9 +37,9 @@ TIP: 每個資源組可以包含一個或多個虛擬機器或資料儲存區。
 例如，銷售點應用程式可能會使用多個虛擬機器來儲存資料庫、業務邏輯和店面。您可以使用一個資源群組來管理所有這些虛擬機器。設定資源群組以套用虛擬機器啟動順序、網路連線和應用程式所需的所有虛擬機器的復原的複製計畫規則。
 
 .它是如何運作的？
-NetApp災難復原透過複製資源群組中託管虛擬機器的底層ONTAP磁碟區和 LUN 來保護虛擬機器。為此，系統會向 vCenter 查詢資源組中託管虛擬機器的每個資料儲存的名稱。然後， NetApp Disaster Recovery 會辨識託管該資料儲存的來源ONTAP磁碟區或 LUN。所有保護均使用SnapMirror複製在ONTAP磁碟區層級執行。
+NetApp Disaster Recovery透過複製資源群組中託管虛擬機器的底層ONTAP磁碟區和 LUN 來保護虛擬機器。為此，系統會向 vCenter 查詢資源組中託管虛擬機器的每個資料儲存的名稱。然後， NetApp Disaster Recovery會辨識託管該資料儲存的來源ONTAP磁碟區或 LUN。所有保護均使用SnapMirror複製在ONTAP磁碟區層級執行。
 
-如果資源組中的虛擬機器託管在不同的資料儲存體上， NetApp災難復原將使用下列方法之一來建立ONTAP磁碟區或 LUN 的資料一致快照。
+如果資源組中的虛擬機器託管在不同的資料儲存體上， NetApp Disaster Recovery將使用下列方法之一來建立ONTAP磁碟區或 LUN 的資料一致快照。
 
 [cols="30,65a"]
 |===
@@ -62,24 +62,24 @@ NetApp災難復原透過複製資源群組中託管虛擬機器的底層ONTAP磁
 |===
 建立資源組時，請考慮以下問題：
 
-* 在將資料儲存區新增至資源群組之前，請先啟動虛擬機器的手動發現或計畫發現。這可確保虛擬機器被發現並列在資源組中。如果您不啟動手動發現，虛擬機器可能不會列在資源組中。
+* 在將資料儲存區新增至資源組之前，請先啟動虛擬機器的手動發現或計畫發現。這可確保虛擬機器被發現並列在資源組中。如果您不啟動手動發現，虛擬機器可能不會列在資源組中。
 * 確保資料儲存區中至少有一個虛擬機器。如果資料儲存區中沒有虛擬機，災難復原將無法發現該資料儲存區。
 * 單一資料儲存區不應託管受多個複製計畫保護的虛擬機器。
 * 請勿在同一資料儲存體上託管受保護和不受保護的虛擬機器。如果受保護的虛擬機器和不受保護的虛擬機器託管在同一資料儲存上，則可能會出現以下問題：
 +
-** 由於NetApp災難復原使用SnapMirror並且系統複製整個ONTAP卷，因此該磁碟區的已使用容量用於許可考慮。在這種情況下，受保護和不受保護的虛擬機器所消耗的磁碟區空間都將包含在此計算中。
-** 如果資源組及其關聯的資料儲存庫需要故障轉移到災難復原站點，則任何未受保護的虛擬機器（不屬於資源組但託管在ONTAP磁碟區上的虛擬機器）將在故障轉移過程中不再存在於來源站點上，從而導致來源站點上未受保護的虛擬機器發生故障。此外， NetApp災難復原不會在故障轉移 vCenter 站點啟動那些未受保護的虛擬機器。
+** 由於NetApp Disaster Recovery使用SnapMirror並且系統複製整個ONTAP卷，因此該磁碟區的已使用容量用於許可考慮。在這種情況下，受保護和不受保護的虛擬機器所消耗的磁碟區空間都將包含在此計算中。
+** 如果資源組及其關聯的資料儲存庫需要故障轉移到災難復原站點，則任何未受保護的虛擬機器（不屬於資源組但託管在ONTAP磁碟區上的虛擬機器）將在故障轉移過程中不再存在於來源站點上，從而導致來源站點上未受保護的虛擬機器發生故障。此外， NetApp Disaster Recovery不會在故障轉移 vCenter 站點啟動那些未受保護的虛擬機器。
 
 
 * 若要保護虛擬機，必須將其包含在資源組中。
 
 
-*最佳實務*：在部署NetApp災難復原之前組織您的虛擬機，以最大限度地減少「資料儲存蔓延」。將需要保護的虛擬機器放置在資料儲存的子集上，將不需要保護的虛擬機器放置在不同的資料儲存子集上。確保任何給定資料儲存上的虛擬機器不受不同的複製計劃的保護。
+*最佳實務*：在部署NetApp Disaster Recovery之前組織您的虛擬機，以最大限度地減少「資料儲存蔓延」。將需要保護的虛擬機器放置在資料儲存的子集上，將不需要保護的虛擬機器放置在不同的資料儲存子集上。確保任何給定資料儲存上的虛擬機器不受不同的複製計劃的保護。
 
 .步驟
-. 登入 https://console.netapp.com/["NetApp控制台"^]。
-. 從NetApp控制台左側導覽中，選擇 *保護* > *災難復原*。
-. 從NetApp災難復原選單中，選擇 *資源群組*。
+. 登入 https://console.netapp.com/["NetApp Console"^]。
+. 從NetApp Console左側導覽中，選擇 *保護* > *災難復原*。
+. 從NetApp Disaster Recovery選單中，選擇 *資源群組*。
 . 選擇“*新增*”。
 . 輸入資源組的名稱。
 . 選擇虛擬機器所在的來源 vCenter 叢集。

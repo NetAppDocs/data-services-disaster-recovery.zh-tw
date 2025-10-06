@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: use/dashboard-view.html 
 keywords: disaster recovery remediate, disaster recovery, failover, failback, replication, bluexp, netapp 
-summary: NetApp災難復原是一種基於雲端的災難復原服務​​，可自動執行災難復原工作流程。 
+summary: NetApp Disaster Recovery是一種基於雲端的災難復原服務​​，可自動執行災難復原工作流程。 
 ---
-= 在儀表板上查看NetApp災難復原計畫的運作狀況
+= 在儀表板上查看NetApp Disaster Recovery計畫的運作狀況
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,18 +12,18 @@ summary: NetApp災難復原是一種基於雲端的災難復原服務​​，�
 
 
 [role="lead"]
-使用NetApp災難復原儀表板，您可以確定災難復原網站和複製計畫的健康狀況。您可以快速確定哪些站點和計劃是健康的、斷開的或降級的。
+使用NetApp Disaster Recovery儀表板，您可以確定災難復原網站和複製計畫的健康狀況。您可以快速確定哪些站點和計劃是健康的、斷開的或降級的。
 
-*所需的NetApp控制台角色* 組織管理員、資料夾或專案管理員、災難復原管理員、災難復原應用程式管理員或災難復原檢視器角色。
+*所需的NetApp Console角色* 組織管理員、資料夾或專案管理員、災難復原管理員、災難復原應用程式管理員或災難復原檢視器角色。
 
-link:../reference/dr-reference-roles.html["了解NetApp災難復原中的使用者角色和權限"] 。https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["了解所有服務的NetApp控制台存取角色"^] 。
+link:../reference/dr-reference-roles.html["了解NetApp Disaster Recovery中的使用者角色和權限"] 。https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["了解所有服務的NetApp Console存取角色"^] 。
 
 .步驟
-. 登入 https://console.netapp.com/["NetApp控制台"^]。
-. 從NetApp控制台左側導覽中，選擇 *保護* > *災難復原*。
-. 從NetApp災難復原選單中，選擇 *儀表板*。
+. 登入 https://console.netapp.com/["NetApp Console"^]。
+. 從NetApp Console左側導覽中，選擇 *保護* > *災難復原*。
+. 從NetApp Disaster Recovery選單中，選擇 *儀表板*。
 +
-image:dr-dashboard.png["NetApp災難復原儀表板"]
+image:dr-dashboard.png["NetApp Disaster Recovery儀表板"]
 
 . 查看儀表板上的以下資訊：
 +

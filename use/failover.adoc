@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: use/failover.html 
 keywords: disaster recovery, bluexp disaster recovery, failover, replicate, fail over, vmware, vcenter 
-summary: NetApp災難復原是一種基於雲端的災難復原服務​​，可自動執行災難復原工作流程。 
+summary: NetApp Disaster Recovery是一種基於雲端的災難復原服務​​，可自動執行災難復原工作流程。 
 ---
-= 使用NetApp災難復原將應用程式故障轉移到遠端站點
+= 使用NetApp Disaster Recovery將應用程式故障轉移到遠端站點
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -14,9 +14,9 @@ summary: NetApp災難復原是一種基於雲端的災難復原服務​​，�
 [role="lead"]
 如果發生災難，請將您的主要本機 VMware 網站故障轉移到另一個本機 VMware 網站或 AWS 上的 VMware Cloud。您可以測試故障轉移過程以確保在需要時能夠成功。
 
-*所需的NetApp控制台角色* 組織管理員、資料夾或專案管理員、災難復原管理員或災難復原故障轉移管理員角色。
+*所需的NetApp Console角色* 組織管理員、資料夾或專案管理員、災難復原管理員或災難復原故障轉移管理員角色。
 
-link:../reference/dr-reference-roles.html["了解NetApp災難復原中的使用者角色和權限"] 。https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["了解所有服務的NetApp控制台存取角色"^] 。
+link:../reference/dr-reference-roles.html["了解NetApp Disaster Recovery中的使用者角色和權限"] 。https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["了解所有服務的NetApp Console存取角色"^] 。
 
 *關於此任務*
 
@@ -26,7 +26,7 @@ link:../reference/dr-reference-roles.html["了解NetApp災難復原中的使用�
 
 此過程會有所不同，具體取決於生產站點是否健康以及您是否由於關鍵基礎設施故障以外的原因執行到災難復原站點的故障轉移：
 
-* 發生嚴重生產站點故障，導致無法存取來源 vCenter 或ONTAP叢集： NetApp災難復原可讓您選擇任何可用的快照進行復原。
+* 發生嚴重生產站點故障，導致無法存取來源 vCenter 或ONTAP叢集： NetApp Disaster Recovery可讓您選擇任何可用的快照進行復原。
 * 生產環境健康：您可以「立即拍攝快照」或選擇先前建立的快照。
 
 
@@ -58,11 +58,11 @@ link:../reference/dr-reference-roles.html["了解NetApp災難復原中的使用�
 
 
 .步驟
-. 登入 https://console.netapp.com/["NetApp控制台"^]。
-. 從NetApp控制台左側導覽中，選擇 *保護* > *災難復原*。
-. 從NetApp災難復原選單中，選擇 *複製計畫*。
+. 登入 https://console.netapp.com/["NetApp Console"^]。
+. 從NetApp Console左側導覽中，選擇 *保護* > *災難復原*。
+. 從NetApp Disaster Recovery選單中，選擇 *複製計畫*。
 . 選擇複製計劃。
-. 在右側，選擇“操作”選項image:../use/icon-horizontal-dots.png["NetApp災難復原服務​​中的操作選單圖標"]並選擇*測試故障轉移*。
+. 在右側，選擇“操作”選項image:../use/icon-horizontal-dots.png["NetApp Disaster Recovery服務​​中的操作選單圖標"]並選擇*測試故障轉移*。
 . 在測試故障轉移頁面中，輸入「測試故障轉移」並選擇*測試故障轉移*。
 . 測試完成後，清理測試環境。
 
@@ -74,9 +74,9 @@ link:../reference/dr-reference-roles.html["了解NetApp災難復原中的使用�
 故障轉移測試完成後，您應該清理測試環境。此程序將從測試位置、FlexClone 和暫存資料儲存區中刪除暫存虛擬機器。
 
 .步驟
-. 從NetApp災難復原選單中，選擇 *複製計畫*。
+. 從NetApp Disaster Recovery選單中，選擇 *複製計畫*。
 . 選擇複製計劃。
-. 在右側，選擇“操作”選項image:../use/icon-horizontal-dots.png["NetApp災難復原服務​​中的操作選單圖標"]並選擇*清理故障轉移測試*。
+. 在右側，選擇“操作”選項image:../use/icon-horizontal-dots.png["NetApp Disaster Recovery服務​​中的操作選單圖標"]並選擇*清理故障轉移測試*。
 . 在測試故障轉移頁面中，輸入“清理故障轉移”，並選擇*清理故障轉移測試*。
 
 
@@ -105,9 +105,9 @@ link:../reference/dr-reference-roles.html["了解NetApp災難復原中的使用�
 TIP: 故障轉移啟動後，您可以在災難復原站點的 vCenter 中看到復原的虛擬機器（虛擬機器、網路和資料儲存）。預設情況下，虛擬機會恢復到 Workload 資料夾。
 
 .步驟
-. 從NetApp災難復原選單中，選擇 *複製計畫*。
+. 從NetApp Disaster Recovery選單中，選擇 *複製計畫*。
 . 選擇複製計劃。
-. 在右側，選擇“操作”選項image:../use/icon-horizontal-dots.png["NetApp災難復原服務​​中的操作選單圖標"]並選擇*故障轉移*。
+. 在右側，選擇“操作”選項image:../use/icon-horizontal-dots.png["NetApp Disaster Recovery服務​​中的操作選單圖標"]並選擇*故障轉移*。
 +
 image:dr-plan-failover3.png["故障轉移頁面"]
 
@@ -116,7 +116,7 @@ image:dr-plan-failover3.png["故障轉移頁面"]
 在發生故障轉移之前，將拍攝目前來源的快照並將其複製到目前目標。
 
 . 或者，如果您希望在偵測到通常會阻止故障轉移發生的錯誤時仍進行故障轉移，請選擇「*強制故障轉移*」。
-. 或者，如果您希望服務在複製計劃故障轉移後不自動建立反向SnapMirror保護關係，請選擇「*跳過保護*」。如果您想在NetApp災難復原中將復原的網站還原上線之前對其執行其他操作，這將非常有用。
+. 或者，如果您希望服務在複製計劃故障轉移後不自動建立反向SnapMirror保護關係，請選擇「*跳過保護*」。如果您希望在NetApp Disaster Recovery中將復原的網站還原上線之前對其執行其他操作，這將非常有用。
 +
 
 TIP: 您可以從複製計劃操作選單中選擇*保護資源*來建立反向保護。這會嘗試為計劃中的每個磁碟區建立反向複製關係。您可以重複執行此作業，直到恢復保護。當保護恢復後，您可以按照通常的方式啟動故障恢復。

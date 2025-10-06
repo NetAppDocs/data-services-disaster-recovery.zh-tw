@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: get-started/dr-prerequisites.html 
 keywords: what are disaster recovery requirements, disaster recovery prerequisites, bluexp, disaster recovery 
-summary: 在使用NetApp災難復原之前，您應該確保您的環境符合ONTAP儲存、VMware vCenter 叢集和NetApp控制台要求。 
+summary: 在使用NetApp Disaster Recovery之前，您應該確保您的環境符合ONTAP儲存、VMware vCenter 叢集和NetApp Console要求。 
 ---
-= NetApp災難復原前提條件
+= NetApp Disaster Recovery前提條件
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,7 +12,7 @@ summary: 在使用NetApp災難復原之前，您應該確保您的環境符合ON
 
 
 [role="lead"]
-在使用NetApp災難復原之前，您應該確保您的環境符合ONTAP儲存、VMware vCenter 叢集和NetApp控制台要求。
+在使用NetApp Disaster Recovery之前，您應該確保您的環境符合ONTAP儲存、VMware vCenter 叢集和NetApp Console要求。
 
 
 
@@ -64,9 +64,9 @@ ONTAP 9.10.0 或更高版本
 
 這些先決條件適用於本機 vCenter 叢集和 VMware Cloud for AWS 軟體定義資料中心 (SDDC)。
 
-* 審查link:../reference/vcenter-privileges.html["vCenter 權限"]NetApp災難復原所必需的。
-* 您希望NetApp Disaster Recovery 管理的所有 VMware 叢集都使用ONTAP磁碟區來託管您想要保護的任何虛擬機器。
-* NetApp災難復原要管理的所有 VMware 資料儲存庫都必須使用下列協定之一：
+* 審查link:../reference/vcenter-privileges.html["vCenter 權限"]NetApp Disaster Recovery所需的。
+* 您希望NetApp Disaster Recovery管理的所有 VMware 叢集都使用ONTAP磁碟區來託管您想要保護的任何虛擬機器。
+* NetApp Disaster Recovery要管理的所有 VMware 資料儲存庫都必須使用下列協定之一：
 +
 ** NFS
 ** 使用 iSCSI 或 FC 協定的 VMFS
@@ -83,34 +83,34 @@ ONTAP 9.10.0 或更高版本
 
 
 
-== NetApp控制台前提條件
+== NetApp Console前提條件
 
 
 
-=== 開始使用NetApp控制台
+=== 開始使用NetApp Console
 
-如果你還沒有這樣做， https://docs.netapp.com/us-en/bluexp-setup-admin/task-sign-up-saas.html["註冊NetApp控制台並建立組織"^] 。
+如果你還沒有這樣做， https://docs.netapp.com/us-en/bluexp-setup-admin/task-sign-up-saas.html["註冊NetApp Console並建立組織"^] 。
 
 
 
 === 收集ONTAP和 VMware 的憑證
 
-* 必須將Amazon FSx for ONTAP和 AWS 憑證新增至NetApp控制台專案中的系統，用於管理NetApp災難復原。
-* NetApp災難復原需要 vCenter 憑證。在NetApp災難復原中新增網站時，您需要輸入 vCenter 憑證。
+* 必須將Amazon FSx for ONTAP和 AWS 憑證新增至NetApp Console專案中的系統，用於管理NetApp Disaster Recovery。
+* NetApp Disaster Recovery需要 vCenter 憑證。在NetApp Disaster Recovery中新增網站時，您需要輸入 vCenter 憑證。
 +
-有關所需 vCenter 權限的列表，請參閱link:../reference/vcenter-privileges.html["NetApp災難復原所需的 vCenter 權限"]。有關如何新增網站的說明，請參閱link:../use/sites-add.html["新增站點"]。
+有關所需 vCenter 權限的列表，請參閱link:../reference/vcenter-privileges.html["NetApp Disaster Recovery所需的 vCenter 權限"]。有關如何新增網站的說明，請參閱link:../use/sites-add.html["新增站點"]。
 
 
 
 
 
-=== 建立NetApp控制台代理
+=== 建立NetApp Console代理
 
 控制台代理程式是一個軟體元件，它使控制台能夠與您的ONTAP儲存和 VMware vCenter 叢集進行通訊。它是災難恢復正常運作所必需的。該代理程式駐留在您的私有網路中（位於本機資料中心或雲端 VPC 中），並與您的ONTAP儲存實例以及任何其他伺服器和應用程式元件進行通訊。對於災難復原，這是對您管理的 vCenter 叢集的存取。
 
-必須在NetApp控制台中設定控制台代理程式。當您使用該代理程式時，它將包含適合災難復原服務​​的功能。
+必須在NetApp Console中設定控制台代理程式。當您使用該代理程式時，它將包含適合災難復原服務​​的功能。
 
-* NetApp災難復原僅適用於標準模式代理部署。看 https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-standard-mode.html["在標準模式下開始使用NetApp控制台"^]。
+* NetApp Disaster Recovery僅適用於標準模式代理部署。看 https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-standard-mode.html["在標準模式下開始使用NetApp Console"^]。
 * 確保來源 vCenter 和目標 vCenter 使用相同的控制台代理。
 * 所需的控制台代理類型：
 +
@@ -120,14 +120,14 @@ ONTAP 9.10.0 或更高版本
 
 TIP: 對於本機到本機，請使用本機控制台代理程式。對於本機到 AWS，使用 AWS 控制台代理，它可以存取來源本機 vCenter 和目標本機 vCenter。
 
-** 已安裝的控制台代理必須能夠存取NetApp Disaster Recovery 將管理的任何 VMware 叢集。
+** 已安裝的控制台代理必須能夠存取NetApp Disaster Recovery將管理的任何 VMware 叢集。
 
 
-* 所有由NetApp災難復原管理的ONTAP陣列都必須加入到NetApp控制台專案內用於管理NetApp災難復原的任何系統。
+* 所有由NetApp Disaster Recovery管理的ONTAP陣列都必須加入到NetApp Console專案內用於管理NetApp Disaster Recovery的任何系統中。
 +
 看 https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["發現本地ONTAP集群"^]。
 
-* 有關為NetApp災難復原設定智慧代理的信息，請參閱link:../get-started/dr-setup.html["為NetApp災難復原設定基礎架構"]。
+* 有關為NetApp Disaster Recovery設定智慧代理程式的信息，請參閱link:../get-started/dr-setup.html["為NetApp Disaster Recovery設定基礎架構"]。
 
 
 
