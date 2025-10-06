@@ -1,0 +1,59 @@
+---
+sidebar: sidebar 
+permalink: use/dashboard-view.html 
+keywords: disaster recovery remediate, disaster recovery, failover, failback, replication, bluexp, netapp 
+summary: NetApp災難復原是一種基於雲端的災難復原服務​​，可自動執行災難復原工作流程。 
+---
+= 在儀表板上查看NetApp災難復原計畫的運作狀況
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+使用NetApp災難復原儀表板，您可以確定災難復原網站和複製計畫的健康狀況。您可以快速確定哪些站點和計劃是健康的、斷開的或降級的。
+
+*所需的NetApp控制台角色* 組織管理員、資料夾或專案管理員、災難復原管理員、災難復原應用程式管理員或災難復原檢視器角色。
+
+link:../reference/dr-reference-roles.html["了解NetApp災難復原中的使用者角色和權限"] 。https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["了解所有服務的NetApp控制台存取角色"^] 。
+
+.步驟
+. 登入 https://console.netapp.com/["NetApp控制台"^]。
+. 從NetApp控制台左側導覽中，選擇 *保護* > *災難復原*。
+. 從NetApp災難復原選單中，選擇 *儀表板*。
++
+image:dr-dashboard.png["NetApp災難復原儀表板"]
+
+. 查看儀表板上的以下資訊：
++
+** *站點*：查看站點的健康狀況。站點可以具有以下狀態之一：
++
+*** *正在運行*：vCenter 已連接、健康且正在運行。
+*** *關閉*：vCenter 無法存取或有連線問題。
+*** *問題*：vCenter 無法存取或有連線問題。
++
+若要查看網站詳細信息，請選擇「查看全部」檢視狀態或選擇「檢視網站」以查看全部。
+
+
+
+** *複製計劃*：查看計劃的健康狀況。計劃可以具有以下狀態之一：
++
+*** *準備好*
+*** *失敗的*
++
+若要查看複製計劃的詳細信息，請選擇“查看全部”查看狀態或選擇“查看複製計劃”以查看全部。
+
+
+
+** *資源群組*：查看資源群組的健康狀況。資源組可以具有以下狀態之一：
+** *受保護的虛擬機器*：虛擬機器是資源組的一部分。
+** *未受保護的虛擬機器*：虛擬機器不屬於資源組的一部分。
++
+要查看詳細信息，請選擇每個下方的“查看”連結。
+
+** 故障轉移、測試故障轉移和遷移的次數。例如，如果您建立了兩個計劃並遷移到目標，則遷移計數顯示為「2」。
+
+
+. 查看活動窗格中的所有操作。若要查看作業監視器上的所有操作，請選擇「查看所有作業」。
+

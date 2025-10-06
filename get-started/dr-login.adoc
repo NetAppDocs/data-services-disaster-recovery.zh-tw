@@ -1,0 +1,46 @@
+---
+sidebar: sidebar 
+permalink: get-started/dr-login.html 
+keywords: bluexp login, disaster recovery log in 
+summary: 透過存取NetApp控制台中的服務開始使用NetApp災難復原。 
+---
+= 存取NetApp災難復原
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+[role="lead"]
+您可以使用NetApp控制台登入NetApp災難復原服務​​。
+
+若要登入，您可以使用您的NetApp支援網站憑證，也可以使用您的電子郵件和密碼註冊NetApp雲端登入。 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-logging-in.html["了解有關登入的更多信息"^] 。
+
+特定任務需要特定的使用者角色。link:../reference/dr-reference-roles.html["了解NetApp災難復原中的使用者角色和權限"] 。https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["了解所有服務的NetApp控制台存取角色"^] 。
+
+.步驟
+. 開啟 Web 瀏覽器並前往 https://console.netapp.com/["NetApp控制台"^]。
++
+出現NetApp控制台登入頁面。
+
+. 登入NetApp控制台。
+. 從NetApp控制台左側導覽中，選擇 *保護* > *災難復原*。
++
+如果這是您第一次登入此服務，則會出現登入頁面，您可以註冊免費試用。
+
++
+image:draas-landing6-free-trial.png["NetApp災難復原的登入頁面螢幕截圖"]
+
++
+否則，將出現NetApp災難復原儀表板。
+
++
+** 如果您尚未新增NetApp控制台代理，則需要新增一個。若要新增代理，請參閱 https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["了解控制台代理"^]。
+** 如果您是具有現有代理的NetApp控制台用戶，當您選擇「災難復原」時，會出現一條有關註冊的訊息。
+** 如果您已經在使用該服務，當您選擇「災難復原」時，就會出現儀表板。
+
+
++
+image:dr-dashboard.png["NetApp災難復原儀表板"]
+
+

@@ -1,0 +1,38 @@
+---
+sidebar: sidebar 
+permalink: reference/evs-deploy-guide-create-rp-wiz-02.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, netapp, ontap,amazon elastic vmware service 
+summary: 使用 Amazon EVS 和Amazon FSx for NetApp ONTAP介紹NetApp災難復原。選擇要使用NetApp災難復原保護的虛擬機器。 
+---
+= 建立複製計畫：步驟 2 - 在NetApp災難復原中選擇虛擬機器資源
+:allow-uri-read: 
+
+
+[role="lead"]
+選擇要使用NetApp災難復原保護的虛擬機器。
+
+有多種方法可以選擇要保護的虛擬機器：
+
+* *選擇單一虛擬機器*：按一下「*虛擬機器*」按鈕，您可以選擇要保護的單一虛擬機器。當您選擇每個虛擬機器時，服務會將其新增至位於螢幕右側的預設資源群組。
+* *選擇先前建立的資源組*：您可以使用NetApp災難復原選單中的資源組選項預先建立自訂資源組。這不是必需的，因為您可以使用其他兩種方法來建立資源組作為複製計劃過程的一部分。有關詳細信息，請參閱link:../use/drplan-create.html["建立複製計劃"] 。
+* *選擇整個 vCenter 資料儲存*：如果您有大量虛擬機器需要使用此複製計畫保護，則選擇單一虛擬機器可能效率不高。由於NetApp災難復原使用基於磁碟區的SnapMirror複製來保護虛擬機，因此駐留在資料儲存區上的所有虛擬機都將作為磁碟區的一部分進行複製。大多數情況下，您應該使用NetApp Disaster Recovery 保護並重新啟動資料儲存區上的所有虛擬機器。使用此選項可以告訴服務將選定資料儲存體上託管的任何虛擬機器新增至受保護虛擬機器清單。
+
+
+對於本指導說明，我們選擇整個 vCenter 資料儲存。
+
+.造訪此頁面的步驟
+. 從「*複製計畫*」頁面繼續到「*應用程式*」部分。
+. 查看開啟的「*應用程式*」頁面中的資訊。
++
+image:evs-create-rp-wiz-b-1-4.png["複製計劃，應用程式頁面"]
+
+
+
+.選擇資料儲存區的步驟：
+. 選擇*資料儲存*。
+. 選取您想要保護的每個資料儲存旁邊的複選框。
+. （可選）透過選擇資源組名稱旁邊的鉛筆圖標，將資源組重新命名為適當的名稱。
+. 選擇“下一步”。
+
+
+繼續link:evs-deploy-guide-create-rp-wiz-03.html["建立複製計劃精靈步驟3"]。

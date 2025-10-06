@@ -1,0 +1,42 @@
+---
+sidebar: sidebar 
+permalink: use/failback.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
+summary: NetApp災難復原是一種基於雲端的災難復原服務​​，可自動執行災難復原工作流程。 
+---
+= 使用NetApp災難復原將應用程式故障還原到原始來源
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+災難解決後，從災難復原站點故障回復到來源站點以恢復正常運作。您可以選擇要復原的快照。
+
+*所需的NetApp控制台角色* 組織管理員、資料夾或專案管理員、災難復原管理員或災難復原故障轉移管理員角色。
+
+link:../reference/dr-reference-roles.html["了解NetApp災難復原中的使用者角色和權限"] 。https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["了解所有服務的NetApp控制台存取角色"^] 。
+
+*關於此任務*
+
+在此工作流程中， NetApp Disaster Recovery 會將所有變更複製（重新同步）回原始來源虛擬機，然後再反轉複製方向。此程序從已完成故障轉移到目標的關係開始，並涉及以下步驟：
+
+* 對復原的站點執行合規性檢查。
+* 刷新已確定位於復原站點中的每個 vCenter 叢集的 vCenter 資訊。
+* 在目標網站上，關閉並取消註冊虛擬機，然後卸載磁碟區。
+* 打破原始來源上的SnapMirror關係以使其可讀/寫入。
+* 重新同步SnapMirror關係以逆轉複製。
+* 啟動並註冊來源虛擬機，並在來源上掛載磁碟區。
+
+
+.步驟
+. 登入 https://console.netapp.com/["NetApp控制台"^]。
+. 從NetApp控制台左側導覽中，選擇 *保護* > *災難復原*。
+. 從NetApp災難復原選單中，選擇 *複製計畫*。
+. 選擇複製計劃。
+. 在右側，選擇“操作”選項image:../use/icon-horizontal-dots.png["NetApp災難復原服務​​中的操作選單圖標"]並選擇*故障恢復*。
+. 輸入複製計劃名稱確認並開始故障回覆。
+. 選擇要從中復原的資料儲存體的快照。預設是最新的。
+. 若要檢查進度，請在選單中選擇*作業監控*。
+

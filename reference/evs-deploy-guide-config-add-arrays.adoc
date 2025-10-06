@@ -1,0 +1,77 @@
+---
+sidebar: sidebar 
+permalink: reference/evs-deploy-guide-config-add-arrays.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter,amazon elastic vmware service 
+summary: 在使用NetApp災難復原之前，您必須將內部部署和雲端託管儲存執行個體新增至NetApp控制台系統。 
+---
+= 使用NetApp災難復原功能將本機陣列新增至適用於 Amazon EVS 的NetApp控制台系統
+:allow-uri-read: 
+
+
+[role="lead"]
+在使用NetApp災難復原之前，您必須將內部部署和雲端託管儲存執行個體新增至NetApp控制台系統。
+
+您需要執行以下操作：
+
+* 將內部部署陣列新增至您的NetApp控制台系統。
+* 將Amazon FSx for NetApp ONTAP （FSx for ONTAP）實例新增至您的NetApp控制台系統。
+
+
+
+
+== 將本機儲存陣列新增至NetApp控制台系統
+
+將本機ONTAP儲存資源新增至您的NetApp控制台系統。
+
+. 在NetApp控制台系統頁面中，選擇「新增系統」。
++
+image:evs-canvas-add-working-env-1.png["新增系統"]
+
+. 在新增系統頁面中，選擇*On-Premises*卡。
++
+image:evs-canvas-add-working-env-2.png["新增系統映像"]
+
+. 在 On-Premises ONTAP卡上選擇 *發現*。
++
+image:evs-canvas-add-working-env-3.png["新增系統映像"]
+
+. 在發現集群頁面上，輸入以下資訊：
++
+.. ONTAP陣列叢集管理埠的 IP 位址
+.. 管理員使用者名稱
+.. 管理者密碼
+
+
+. 選擇頁面底部的“發現”。
++
+image:evs-canvas-add-working-env-4-5.png["新增系統映像"]
+
+. 對將託管 vCenter 資料儲存區的每個ONTAP陣列重複步驟 1-5。
+
+
+
+
+== 將Amazon FSx for NetApp ONTAP儲存實例新增至NetApp控制台系統
+
+接下來，將Amazon FSx for NetApp ONTAP儲存資源新增至您的NetApp控制台系統。
+
+. 在NetApp控制台系統頁面中，選擇「新增系統」。
++
+image:evs-canvas-add-working-env-1.png["新增系統映像"]
+
+. 從新增系統頁面中，選擇*Amazon Web Services*卡。
++
+image:evs-canvas-add-working-evs-2.png["新增系統映像"]
+
+. 選擇Amazon FSx for ONTAP卡上的 *Discover Existing* 連結。
++
+image:evs-canvas-add-working-evs-3.png["新增系統映像"]
+
+. 選擇託管 FSx for ONTAP實例的憑證和 AWS 區域。
+. 選擇一個或多個要新增的 FSx for ONTAP檔案系統。
+. 選擇頁面底部的“發現”。
++
+image:evs-needs-updates-canvas-add-working-evs-4-5.png["新增系統映像"]
+
+. 對於將託管 vCenter 資料儲存區的每個 FSx for ONTAP執行個體重複步驟 1-6。
+

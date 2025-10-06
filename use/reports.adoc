@@ -1,0 +1,33 @@
+---
+sidebar: sidebar 
+permalink: use/reports.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, monitor, bluexp, protection, reports 
+summary: 查看災難復原報告可以幫助您分析災難復原準備。預先設計的報告包括故障轉移和故障回應的摘要、所有站點的複製詳細資訊以及過去一年的作業詳細資訊。 
+---
+= 建立NetApp災難復原報告
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+查看NetApp災難復原報告可以協助您分析災難復原準備狀況。預先設計的報告包括過去七天帳戶內所有站點的測試故障轉移摘要、複製計劃詳細資訊和作業詳細資訊。
+
+您可以下載 PDF、HTML 或 JSON 格式的報表。
+
+下載連結有效期限為六小時。
+
+.步驟
+. 登入 https://console.netapp.com/["NetApp控制台"^]。
+. 從NetApp控制台左側導覽中，選擇 *保護* > *災難復原*。
+. 從NetApp控制台左側導覽列中，選擇 *複製計畫*。
+. 選擇*建立報告*。
+. 選擇文件格式類型和過去 7 天內的時間段。
+. 選擇“*創建*”。
++
+
+NOTE: 該報告可能需要幾分鐘才能顯示。
+
+. 若要下載報告，請選擇*下載報告*並在管理員的下載資料夾中選擇它。
+

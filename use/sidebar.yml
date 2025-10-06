@@ -1,0 +1,28 @@
+---
+section: use
+title: 使用NetApp災難復原
+entries:
+- title: 使用NetApp災難復原概述
+  url: "/use/use-overview.html"
+- title: 在儀表板上查看災難復原計畫的運作狀況
+  url: "/use/dashboard-view.html"
+- title: 將 vCenter 新增至站點
+  url: "/use/sites-add.html"
+- title: 建立資源組
+  url: "/use/resource-group.html"
+- title: 建立複製計劃
+  url: "/use/drplan-create.html"
+- title: 複製到另一個站點
+  url: "/use/replicate.html"
+- title: 遷移至其他站點
+  url: "/use/migrate.html"
+- title: 故障轉移到遠端站點
+  url: "/use/failover.html"
+- title: 將應用程式故障還原到原始來源站點
+  url: "/use/failback.html"
+- title: 管理站點、計劃、資料儲存和虛擬機器信息
+  url: "/use/manage.html"
+- title: 監控災難復原作業
+  url: "/use/monitor-jobs.html"
+- title: 建立災難復原報告
+  url: "/use/reports.html"

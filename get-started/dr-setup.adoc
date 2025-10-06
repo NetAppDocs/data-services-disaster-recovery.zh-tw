@@ -1,0 +1,152 @@
+---
+sidebar: sidebar 
+permalink: get-started/dr-setup.html 
+keywords: bluexp, disaster recovery, aws, amazon web services, amazon fsx for netapp ontap 
+summary: 若要使用NetApp災難恢復，請執行幾個步驟進行設定。 
+---
+= 為NetApp災難復原設定基礎架構
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+[role="lead"]
+若要使用NetApp災難恢復，請執行幾個步驟在 Amazon Web Services (AWS) 和NetApp控制台中進行設定。
+
+
+TIP: 審查link:../get-started/dr-prerequisites.html["先決條件"]以確保您的系統已準備就緒。
+
+您可以在以下基礎架構中使用NetApp災難復原：
+
+* 混合雲 DR 將本機 VMware 和ONTAP資料中心複製到基於 VMware Cloud on AWS 和Amazon FSx for NetApp ONTAP 的AWS DR 基礎架構。
+* 私有雲 DR 將本機 VMware 和ONTAP vCenter 複製到另一個本機 VMware 和ONTAP vCenter。
+
+
+
+
+== 採用 VMware Cloud 和Amazon FSx for NetApp ONTAP 的混合雲
+
+此方法包括使用 NFS 協定託管在ONTAP FlexVol磁碟區上的資料儲存區的本機生產 vCenter 基礎架構。  DR 站點由一個或多個 VMware Cloud SDDC 執行個體組成，這些執行個體使用由一個或多個 FSx for ONTAP執行個體透過 NFS 協定提供的FlexVol磁碟區上託管的資料儲存。
+
+生產站點和 DR 站點透過與 AWS 相容的安全連接進行連接。常見的連線類型是安全 VPN（私有或 AWS 提供）、AWS Direct Connect 或其他核准的互連方法。
+
+對於涉及 AWS 雲端基礎架構的災難復原，您必須使用 AWS 的控制台代理。此代理程式應安裝在與 FSx for ONTAP實例相同的 VPC 中。如果在其他 VPC 中部署了額外的 FSx for ONTAP實例，則託管代理程式的 VPC 必須能夠存取其他 VPC。
+
+
+
+=== AWS 可用區
+
+AWS 支援在給定區域內的一個或多個可用區 (AZ) 中部署解決方案。災難復原使用兩種 AWS 託管服務：VMware Cloud for AWS 和 AWS FSx for NetApp ONTAP。
+
+* *VMware Cloud for AWS*：支援在單一可用區或雙可用區延伸叢集 SDDC 環境中部署。災難復原僅支援針對 Amazon VMware Cloud for AWS 的單一可用區 SDDC 部署。
+* *AWS FSx for NetApp ONTAP*：當以雙可用區配置部署時，每個磁碟區都由單一 FSx 系統擁有。每個磁碟區由單一 FSx 系統擁有。該磁碟區的資料被鏡像到第二個 FSx 系統。 FSx for ONTAP系統可以部署在單一可用區或雙可用區部署。災難復原支援單可用區和多可用區 FSx for ONTAP部署。
+
+
+*最佳實務*：對於 AWS DR 站點配置， NetApp建議對 VMware Cloud 和 AWS FSx for ONTAP執行個體使用單一可用區部署。由於 AWS 用於 DR，因此引入多個 AZ 沒有任何優勢。多可用區可能會增加成本和複雜性。
+
+
+
+=== 本地到 AWS
+
+AWS 提供了以下方法將私有資料中心連接到 AWS 雲端。每種解決方案都有其優點和成本考量。
+
+* *AWS Direct Connect*：這是位於與您的私人資料中心相同的地理區域並由 AWS 合作夥伴提供的 AWS 雲端互連。此解決方案可在您的本地資料中心和 AWS 雲端之間提供安全的私有連接，而無需公共互聯網連接。這是AWS提供的最直接、最有效的連接方式。
+* *AWS 網際網路閘道*：這提供了 AWS 雲端資源和外部運算資源之間的公用連線。這種類型的連線通常用於向外部客戶提供服務，例如不需要安全性的 HTTP/HTTPS 服務。沒有服務品質控制、安全性或連接性保證。因此，不建議使用此連接方法將生產資料中心連接到雲端。
+* *AWS Site-Site VPN*：此虛擬私人網路連線可用於與公共網路服務供應商一起提供安全的存取連線。  VPN 會對往返於 AWS 雲端的所有資料進行加密和解密。 VPN 可以基於軟體，也可以基於硬體。對於企業應用程序，公共互聯網服務提供者 (ISP) 應提供服務品質保證，以確保為 DR 複製提供足夠的頻寬和延遲。
+
+
+*最佳實務*：對於 AWS DR 網站配置， NetApp建議使用 AWS Direct Connect。該解決方案為企業應用程式提供最高的效能和安全性。如果不可用，則應使用高效能公共 ISP 連線以及 VPN。確保 ISP 提供商業 QoS 服務等級以確保足夠的網路效能。
+
+
+
+=== VPC 到 VPC 互連
+
+AWS 提供以下類型的 VPC 到 VPC 互連。每種解決方案都有其優點和成本考量。
+
+* *VPC Peering*：這是兩個 VPC 之間的私有連結。這是AWS提供的最直接、最有效的連接方式。  VPC 對等連接可用於連接相同或不同 AWS 區域中的 VPC。
+* *AWS 網際網路閘道*：這通常用於提供 AWS VPC 資源與非 AWS 資源和端點之間的連線。所有流量都遵循「髮夾」路徑，其中發送到另一個 VPC 的 VPC 流量透過網際網路閘道退出 AWS 基礎設施，並透過相同或不同的閘道返回 AWS 基礎設施。這不是適合企業 VMware 解決方案的 VPC 連線類型。
+* *AWS Transit Gateway*：這是一種基於集中式路由器的連接類型，使每個 VPC 能夠連接到單個中央網關，該網關充當所有 VPC 到 VPC 流量的中央樞紐。這也可以連接到您的 VPN 解決方案，以使本機資料中心資源能夠存取 AWS VPC 託管的資源。這種類型的連接通常需要額外的成本來實現。
+
+
+*最佳實務*：對於涉及 VMware Cloud 和單一 FSx for ONTAP VPC 的 DR 解決方案， NetApp建議您使用 VPC 對等連線。如果部署了多個 FSx for ONTAP VPC，我們建議使用 AWS Transit Gateway 來減少多個 VPC 對等連線的管理開銷。
+
+
+
+=== 使用 AWS 為本地到雲端的保護做好準備
+
+若要使用 AWS 設定NetApp Disaster Recovery 以實現本地到雲端的保護，您需要設定以下內容：
+
+* 為NetApp ONTAP設定 AWS FSx
+* 設定 VMware Cloud on AWS SDDC
+
+
+
+
+==== 為NetApp ONTAP設定 AWS FSx
+
+* 建立Amazon FSx for NetApp ONTAP檔案系統。
++
+** 為ONTAP配置 FSx。  Amazon FSx for NetApp ONTAP是一項完全託管的服務，它基於NetApp ONTAP檔案系統構建，提供高度可靠、可擴展、高效且功能豐富的文件儲存。
+** 請依照以下步驟操作 https://docs.netapp.com/us-en/netapp-solutions/ehc/aws/aws-native-overview.html["技術報告 4938：使用 VMware Cloud on AWS 將Amazon FSx ONTAP掛載為 NFS 資料存儲"^]和 https://docs.netapp.com/us-en/bluexp-fsx-ontap/start/task-getting-started-fsx.html["Amazon FSx for NetApp ONTAP快速入門"]配置和配置 FSx for ONTAP。
+
+
+* 將Amazon FSx for ONTAP新增至系統，並為 FSx for ONTAP新增 AWS 憑證。
+* 在 AWS FSx for ONTAP實例中建立或驗證您的目標ONTAP SVM。
+* 在NetApp控制台中設定來源本機ONTAP叢集和 FSx for ONTAP實例之間的複製。
+
+
+參考 https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/use/task-creating-fsx-working-environment.html["如何設定 FSx for ONTAP系統"^]了解詳細步驟。
+
+
+
+==== 設定 VMware Cloud on AWS SDDC
+
+https://www.vmware.com/products/vmc-on-aws.html["AWS 上的 VMware Cloud"^]為 AWS 生態系統中基於 VMware 的工作負載提供雲端原生體驗。每個 VMware 軟體定義資料中心 (SDDC) 都在 Amazon 虛擬私有雲 (VPC) 中運行，並提供完整的 VMware 堆疊（包括 vCenter Server）、NSX-T 軟體定義網路、vSAN 軟體定義儲存以及一個或多個為工作負載提供運算和儲存資源的 ESXi 主機。
+
+若要在 AWS 上設定 VMware Cloud 環境，請依照 https://docs.netapp.com/us-en/netapp-solutions/ehc/aws/aws-setup.html["在 AWS 上部署和配置虛擬化環境"^]. 指示燈群集還可用於災難復原目的。
+
+
+
+== 私有雲
+
+您可以使用NetApp災難復原來保護託管在一個或多個 vCenter 叢集上的 VMware VM，方法是將 VM 資料儲存複製到同一私有資料中心或遠端私有或共置資料中心的另一個 vCenter 叢集。
+
+對於本機到本機的情況，請在其中一個實體網站安裝控制台代理程式。
+
+災難復原支援使用乙太網路和 TCP/IP 進行站點到站點的複製。確保有足夠的頻寬來支援生產站點虛擬機器上的資料變化率，以便所有變更都可以在復原點目標 (RPO) 時間範圍內複製到 DR 站點。
+
+
+
+=== 為本地到本地保護做好準備
+
+在設定NetApp災難復原以進行本地到本地保護之前，請確保滿足以下要求：
+
+* ONTAP儲存
++
+** 確保您擁有ONTAP憑證。
+** 建立或驗證您的災難復原網站。
+** 建立或驗證您的目標ONTAP SVM。
+** 確保您的來源 ONTAP SVM 和目標ONTAP SVM 對等。
+
+
+* vCenter 集群
++
+** 確保要保護的虛擬機器託管在 NFS 資料儲存區（使用ONTAP NFS 磁碟區）或 VMFS 資料儲存區（使用NetApp iSCSI LUN）上。
+** 審查link:../reference/vcenter-privileges.html["vCenter 權限"]NetApp災難復原所必需的。
+** 建立災難復原使用者帳戶（不是預設的 vCenter 管理員帳戶）並將 vCenter 權限指派給該帳戶。
+
+
+
+
+
+
+=== 智慧代理支援
+
+NetApp控制台代理程式支援智慧代理程式。智慧型代理是一種將您的內部環境連接到NetApp控制台的輕量級、安全且高效的方法。它在您的系統和控制台服務之間提供安全連接，而無需 VPN 或直接互聯網訪問。這種最佳化的代理實作可卸載本地網路內的 API 流量。
+
+配置代理程式後， NetApp Disaster Recovery 會嘗試直接與 VMware 或ONTAP通信，如果直接通信失敗，則使用配置的代理。
+
+NetApp災難復原代理實作需要使用 HTTPS 協定在控制台代理與任何 vCenter Server 與ONTAP陣列之間進行連接埠 443 通訊。控制台代理程式內的NetApp災難復原代理程式在執行任何操作時直接與 VMware vSphere、VC 或ONTAP通訊。
+
+有關NetApp控制台中常規代理設定的更多信息，請參閱 https://docs.netapp.com/us-en/bluexp-setup-admin/task-configuring-proxy.html["配置控制台代理以使用代理伺服器"^]。

@@ -1,0 +1,20 @@
+---
+sidebar: sidebar 
+permalink: reference/evs-deploy-guide-install-connector.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
+summary: 使用 Amazon EVS 和Amazon FSx for NetApp ONTAP介紹NetApp災難復原。雖然連接器可以安裝在任何網路位置，但對於NetApp災難恢復，我們建議您在 DR 站點安裝連接器。這可確保在主站點發生故障時， NetApp控制台 UI 能夠繼續與控制台代理保持聯繫，並可協調該 DR 站點內的復原程序。 
+---
+= 安裝用於NetApp災難復原的NetApp控制台代理
+:allow-uri-read: 
+
+
+[role="lead"]
+NetApp控制台代理程式是在您的雲端或本機網路上執行的NetApp軟體。它執行NetApp控制台管理資料基礎架構所需執行的操作。控制台代理程式不斷輪詢NetApp災難復原軟體作為服務層，以了解其需要採取的任何操作。
+
+對於NetApp災難復原，執行的操作使用每個對應服務的本機 API 來協調 VMware vCenter 叢集和ONTAP儲存實例，以便為在本機位置執行的生產虛擬機器提供保護。雖然控制台代理可以安裝在任何網路位置，但對於NetApp災難恢復，我們建議您在 DR 站點安裝控制台代理。這可確保在主站點發生故障時，基於NetApp雲端的控制台 UI 能夠繼續與控制台代理保持聯繫，並可協調該 DR 站點內的復原程序。
+
+若要使用服務，請以標準模式安裝控制台代理程式。要了解有關控制台代理安裝類型的更多信息，請訪問 https://docs.netapp.com/us-en/bluexp-setup-admin/concept-modes.html["了解NetApp控制台部署模式 | NetApp文檔"^]。
+
+雖然控制台代理對於使用該服務至關重要，但安裝控制台代理的安裝步驟取決於您的需求和網路配置。提供具體的安裝說明超出了此資訊的範圍。
+
+使用 Amazon AWS 安裝主控台代理程式最簡單的方法是使用 AWS Marketplace。有關使用 AWS Marketplace 安裝控制台代理的詳細信息，請參閱 https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-aws-marketplace.html["從 AWS Marketplace 建立控制台代理 | NetApp文檔"^]。

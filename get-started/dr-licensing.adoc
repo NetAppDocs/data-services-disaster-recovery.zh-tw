@@ -1,0 +1,140 @@
+---
+sidebar: sidebar 
+permalink: get-started/dr-licensing.html 
+keywords: bluexp license, disaster recovery licensing 
+summary: 使用NetApp災難復原，您可以使用不同的許可計劃，包括免費試用、按需付費訂閱或自帶許可證。 
+---
+= 設定NetApp災難復原許可
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+[role="lead"]
+使用NetApp災難復原，您可以使用不同的許可計劃，包括免費試用、按需付費訂閱或自帶許可證。
+
+*所需的NetApp控制台角色* 組織管理員、資料夾或專案管理員、災難復原管理員或災難復原應用程式管理員角色。
+
+link:../reference/dr-reference-roles.html["了解NetApp災難復原中的使用者角色和權限"] 。https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["了解所有服務的訪問角色"^] 。
+
+*許可選項* 您可以使用以下許可選項：
+
+* 註冊即可獲得 30 天免費試用。
+* 購買 Amazon Web Services (AWS) Marketplace 或 Microsoft Azure Marketplace 的即用即付 (PAYGO) 訂閱。
+* 自帶授權 (BYOL)，即您從NetApp銷售代表取得的NetApp授權文件 (NLF)。您可以使用許可證序號在NetApp控制台中啟動 BYOL。
+
+
+
+NOTE: 當至少有一個虛擬機器具有複製計畫時， NetApp災難復原費用是基於來源站點上資料儲存區的已使用容量。故障轉移資料儲存區的容量不包含在容量限額內。對於 BYOL，如果資料超出允許的容量，服務中的操作將受到限制，直到您獲得額外的容量許可證或在NetApp控制台中升級許可證。
+
+link:https://docs.netapp.com/us-en/bluexp-digital-wallet/concept-digital-wallet.html["了解有關訂閱的更多信息"^] 。
+
+免費試用結束或許可證到期後，您仍然可以在服務中執行以下操作：
+
+* 查看任何資源，例如工作負載或複製計劃。
+* 刪除任何資源，例如工作負載或複製計劃。
+* 執行在試用期間或許可證下建立的所有計劃操作。
+
+
+
+
+== 使用 30 天免費試用版嘗試
+
+您可以透過 30 天免費試用版來試用NetApp Disaster Recovery。
+
+
+NOTE: 試用期間不實施任何容量限制。
+
+試用期結束後，若要繼續，您需要購買 BYOL 授權或 PAYGO AWS 訂閱。您可以隨時獲得許可證，並且在試用期結束之前不會向您收費。
+
+在試用期間，您可以使用全部功能。
+
+.步驟
+. 登入 https://console.netapp.com/["NetApp控制台"^]。
+. 從NetApp控制台左側導覽中，選擇 *保護* > *災難復原*。
++
+如果這是您第一次登入此服務，則會出現登入頁面。
+
++
+image:draas-landing6-free-trial.png["NetApp災難復原的登入頁面螢幕截圖"]
+
+. 如果您尚未為其他服務新增控制台代理，請新增一個。
++
+若要新增控制台代理，請參閱 https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["了解控制台代理"^]。
+
+. 設定代理後，在NetApp災難復原登入頁面中，新增代理程式的按鈕將變更為開始免費試用的按鈕。選擇*開始免費試用*。
+. 首先加入 vCenter。
++
+有關詳細信息，請參閱link:../use/sites-add.html["新增 vCenter 站點"] 。
+
+
+
+
+
+== 試用期結束後，透過其中一個市場訂閱
+
+免費試用結束後，您可以從NetApp購買許可證，也可以透過 AWS Marketplace 或 Microsoft Azure Marketplace 訂閱。此過程提供瞭如何在其中一個市場中直接訂閱的高級概述。
+
+.步驟
+. 在NetApp災難復原中，您會看到一則訊息，提示免費試用即將到期。在訊息中，選擇*訂閱或購買許可證*。
++
+或者，從中選擇*查看付款方式*。
+
++
+image:dr-licensing-payment-methods.png["NetApp災難復原付款方式頁面"]
+
+. 選擇*在 AWS Marketplace 中訂閱*或*在 Azure Marketplace 中訂閱*。
+. 使用 AWS Marketplace 或 Microsoft Azure Marketplace 訂閱 * NetApp Disaster Recovery*。
+. 當您返回NetApp災難復原時，會出現一則訊息表示您已訂閱。
++
+您可以在NetApp控制台訂閱頁面查看訂閱詳細資訊。link:https://docs.netapp.com/us-en/bluexp-digital-wallet/task-homepage.html["詳細了解如何使用NetApp控制台管理訂閱"^] 。
+
+
+
+
+
+== 試用結束後，透過NetApp購買 BYOL 許可證
+
+試用結束後，您可以透過NetApp銷售代表購買授權。
+
+如果您自帶許可證 (BYOL)，設定包括購買許可證、取得NetApp許可證文件 (NLF) 以及將許可證新增至NetApp控制台。
+
+*將許可證新增至NetApp控制台** 從NetApp銷售代表購買NetApp災難復原授權後，您可以在控制台中管理該授權。
+
+https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-data-services-licenses.html["了解如何使用NetApp控制台新增許可證"^] 。
+
+
+
+== 許可證到期時更新
+
+如果您的許可期限即將到期，或者您的許可容量已達到限制，您將在NetApp災難復原 UI 中收到通知。您可以在NetApp災難復原許可證到期之前進行更新，這樣您存取掃描資料的能力就不會中斷。
+
+
+TIP: 此訊息也出現在NetApp控制台和 https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html#monitoring-operations-status-using-the-notification-center["通知"]。
+
+https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-data-services-licenses.html["了解如何使用NetApp控制台更新許可證"^] 。
+
+
+
+== 結束免費試用
+
+您可以隨時停止免費試用，也可以等到試用期結束。
+
+.步驟
+. 在NetApp災難復原中，選擇 *免費試用 - 查看詳細資訊*。
+. 在下拉詳細資料中，選擇*結束免費試用*。
++
+image:draas-trial-end3.png["結束免費試用頁面"]
+
+. 如果您想刪除所有數據，請勾選*結束免費試用後立即刪除數據*。
++
+這將刪除所有計劃、複製計劃、資源組、vCenter 和網站。稽核資料、作業日誌和作業歷史記錄將保留直到產品生命週期結束。
+
++
+
+NOTE: 如果您結束免費試用，未要求刪除數據，且未購買許可證或訂閱，則NetApp Disaster Recovery 會在免費試用結束後 60 天刪除您的所有資料。
+
+. 在文字方塊中輸入「結束試用」。
+. 選擇*結束*。
+

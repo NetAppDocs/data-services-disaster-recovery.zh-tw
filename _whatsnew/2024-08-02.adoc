@@ -1,0 +1,20 @@
+= 支援 FC 的本機到本機 VMware VMFS 資料儲存區
+:allow-uri-read: 
+
+
+
+
+=== 支援 FC 的本機到本機 VMware VMFS 資料儲存區
+
+此版本包括安裝在 VMware vSphere 虛擬機器檔案系統 (VMFS) 資料儲存上的虛擬機器的支援的_技術預覽_，用於對本機儲存進行 FC 保護。先前，該服務提供了支援 iSCSI 的 VMFS 資料儲存的技術預覽。
+
+
+NOTE: NetApp不會向您收取任何預覽的工作負載容量的費用。
+
+
+
+=== 取消作業
+
+在此版本中，您現在可以在作業監視器 UI 中取消作業。
+
+參考 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/monitor-jobs.html["監控作業"]。

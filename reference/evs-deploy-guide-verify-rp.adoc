@@ -1,0 +1,25 @@
+---
+sidebar: sidebar 
+permalink: reference/evs-deploy-guide-verify-rp.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter,amazon elastic vmware service 
+summary: 使用 Amazon EVS 和Amazon FSx for NetApp ONTAP介紹NetApp災難復原。 
+---
+= 驗證NetApp災難復原中一切正常
+:allow-uri-read: 
+
+
+[role="lead"]
+在NetApp災難復原中新增複製計畫後，您將返回「複製計畫」頁面，您可以在其中查看複製計畫及其狀態。您應該驗證複製計劃是否處於*健康*狀態。如果不是，您應該檢查複製計劃的狀態並在繼續之前糾正任何問題。
+
+圖：複製計劃頁面image:evs-replication-plan-post-create.png["複製計劃頁面"]
+
+NetApp災難復原執行一系列測試，以驗證所有元件（ONTAP叢集、vCenter 叢集和虛擬機器）是否可存取且處於正確狀態，以便服務保護虛擬機器。這被稱為合規性檢查，並且會定期進行。
+
+在複製計劃頁面中，您可以看到以下資訊：
+
+* 上次合規性檢查的狀態
+* 複製計劃的複製狀態
+* 受保護（來源）網站的名稱
+* 複製計劃保護的資源組列表
+* 故障轉移（目標）站點的名稱
+

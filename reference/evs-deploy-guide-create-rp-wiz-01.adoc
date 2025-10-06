@@ -1,0 +1,26 @@
+---
+sidebar: sidebar 
+permalink: reference/evs-deploy-guide-create-rp-wiz-01.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter,amazon elastic vmware service 
+summary: 首先，使用NetApp Disaster Recovery 提供複製計畫名稱並選擇複製的來源和目標 vCenter。 
+---
+= 建立複製計畫：步驟 1 - 在NetApp災難復原中選擇 vCenter
+:allow-uri-read: 
+
+
+[role="lead"]
+首先，使用NetApp災難恢復，提供複製計劃名稱並選擇複製的來源和目標 vCenter。
+
+. 為複製計劃輸入一個唯一的名稱。
++
+複製計劃名稱僅允許使用字母數字字元和底線 (_)。
+
+. 選擇來源 vCenter 叢集。
+. 選擇目標 vCenter 叢集。
+. 選擇“下一步”。
++
+image:evs-create-rp-wiz-a-1-4.png["建立複製計劃，選擇 vCenter"]
+
+
+
+繼續link:evs-deploy-guide-create-rp-wiz-02.html["建立複製計劃精靈步驟 2"]。

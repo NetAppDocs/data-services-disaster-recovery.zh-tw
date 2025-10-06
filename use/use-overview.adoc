@@ -1,0 +1,27 @@
+---
+sidebar: sidebar 
+permalink: use/use-overview.html 
+keywords: disaster recovery remediate, disaster recovery, failover, failback, replication 
+summary: NetApp災難復原是一種基於雲端的災難復原服務​​，可自動執行災難復原工作流程。 
+---
+= 使用NetApp災難復原概述
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+使用NetApp災難恢復，您可以實現以下目標：
+
+* link:../use/dashboard-view.html["查看災難復原計畫的健康狀況"] 。
+* link:../use/sites-add.html["新增 vCenter 站點"] 。
+* link:../use/resource-group.html["建立資源組以將虛擬機器組織在一起"]
+* link:../use/drplan-create.html["制定災難復原計劃"] 。
+* link:../use/replicate.html["複製 VMware 應用程式"]使用SnapMirror複製將主站點上的資料遷移到雲端中的災難復原遠端站點。
+* link:../use/migrate.html["遷移 VMware 應用程式"]從您的主站點到另一個站點。
+* link:../use/failover.html["測試故障轉移"]而不會破壞原始虛擬機器。
+* 一旦發生災害，link:../use/failover.html["故障轉移您的主站點"]使用 FSx for NetApp ONTAP遷移到 AWS 上的 VMware Cloud。
+* 災難解除後，link:../use/failback.html["故障恢復"]從災難復原站點到主站點。
+* link:../use/monitor-jobs.html["監控災難復原操作"]在作業監控頁面上。
+

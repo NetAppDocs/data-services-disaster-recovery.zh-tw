@@ -1,0 +1,52 @@
+---
+sidebar: sidebar 
+permalink: use/monitor-jobs.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, monitor, bluexp 
+summary: NetApp災難復原是一種基於雲端的災難復原服務​​，可自動執行災難復原工作流程。您可以監控所有災難復原工作並確定其進度。 
+---
+= 監控NetApp災難復原作業
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+您可以監控所有NetApp災難復原作業並確定其進度。
+
+
+
+== 查看職位
+
+*所需的NetApp控制台角色* 組織管理員、資料夾或專案管理員、災難復原管理員、災難復原應用程式管理員或災難復原檢視器角色。
+
+link:../reference/dr-reference-roles.html["了解NetApp災難復原中的使用者角色和權限"] 。https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["了解所有服務的NetApp控制台存取角色"^] 。
+
+.步驟
+. 登入 https://console.netapp.com/["NetApp控制台"^]。
+. 從NetApp控制台左側導覽中，選擇 *保護* > *災難復原*。
+. 從選單中選擇*作業監控*。
+. 探索與操作相關的所有作業並查看其時間戳記和狀態。
+. 若要查看特定作業的詳細信息，請選擇該行。
+. 若要刷新訊息，請選擇*刷新*。
+
+
+
+
+== 取消作業
+
+如果某項工作正在進行中或處於排隊狀態，而您不想讓它繼續，則可以取消它。如果作業停留在相同狀態，您可能想要取消它，並且想要釋放佇列中的下一個操作。您可能想在作業逾時之前取消它。
+
+*所需的NetApp控制台角色* 組織管理員、資料夾或專案管理員、災難復原管理員、災難復原故障轉移管理員或災難復原應用程式管理員角色。
+
+link:../reference/dr-reference-roles.html["了解NetApp災難復原中的使用者角色和權限"] 。https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["了解所有服務的NetApp控制台存取角色"^] 。
+
+.步驟
+. 從NetApp控制台左側導覽列中，選擇 *保護* > *災難復原*。
+. 從選單中選擇*作業監控*。
+. 在「作業監視器」頁面中，記下要取消的作業的 ID。
++
+該作業必須處於「進行中」或「排隊」狀態。
+
+. 在「操作」列中，選擇「取消作業」。
+

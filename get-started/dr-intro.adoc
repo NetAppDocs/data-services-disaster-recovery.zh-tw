@@ -1,0 +1,198 @@
+---
+sidebar: sidebar 
+permalink: get-started/dr-intro.html 
+keywords: how netapp disaster recovery works, what is disaster recovery, bluexp, vmware, vcenter, draas, replicate, failover, failback, fail over, fail back, vmware cloud, netapp intelligent services 
+summary: 雲端災難復原是一種具有彈性且經濟高效的方式，可保護工作負載免受網站中斷和資料損壞事件的影響。透過NetApp Disaster Recovery for VMware，您可以將執行ONTAP儲存的本機 VMware 工作負載複製到使用NetApp雲端儲存的公有雲中的 VMware 軟體定義資料中心，或複製到另一個以ONTAP儲存為災難復原站點的本機 VMware 環境。 
+---
+= 了解NetApp針對 VMware 的災難復原
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+[role="lead"]
+雲端災難復原是一種具有彈性且經濟高效的方式，可保護工作負載免受網站中斷和資料損壞事件的影響。透過NetApp Disaster Recovery for VMware，您可以將執行ONTAP儲存的本機 VMware VM 或資料儲存庫工作負載複製到使用NetApp雲端儲存的公有雲中的 VMware 軟體定義資料中心，或複製到另一個以ONTAP儲存為災難復原站點的本機 VMware 環境。您也可以使用災難復原將虛擬機器工作負載從一個站點遷移到另一個站點。
+
+NetApp災難復原是一種基於雲端的災難復原服務​​，可自動執行災難復原工作流程。透過NetApp災難復原，您可以將內部基於 NFS 的工作負載和 VMware vSphere 虛擬機器檔案系統 (VMFS) 資料儲存（用於執行NetApp儲存的 iSCSI 和 FC）保護到下列其中一項：
+
+* AWS 上的 VMware Cloud (VMC) 以及適用Amazon FSx for NetApp ONTAP
+* Amazon Elastic VMware Service (EVS) 和Amazon FSx for NetApp ONTAP有關詳細信息，請參閱link:../reference/evs-deploy-guide-introduction.html["使用 Amazon Elastic VMware Service 和Amazon FSx for NetApp ONTAP實現NetApp災難復原"]。
+* 具有NetApp Cloud Volumes ONTAP (iSCSI) 的 Azure VMware 解決方案 (AVS)（私人預覽版）
+* 另一個具有ONTAP儲存的本機 NFS 和/或基於 VMFS (iSCSI/FC) 的 VMware 環境
+
+
+NetApp災難復原使用ONTAP SnapMirror技術與整合的本機 VMware 業務流程來保護 VMware VM 及其相關的磁碟作業系統映像，同時保留ONTAP的所有儲存效率優勢。災難復原使用這些技術作為到災難復原站點的複製傳輸。這使得主站點和輔助站點能夠實現業界最佳的儲存效率（壓縮和重複資料刪除）。
+
+image:../use/evs-bluexp-architecture.png["圖表顯示了NetApp Disaster Recovery for VMware 的元件"]
+
+
+
+== NetApp控制台
+
+可透過NetApp控制台存取NetApp災難復原。
+
+NetApp控制台提供企業級跨本機和雲端環境的NetApp儲存和資料服務的集中管理。需要控制台才能存取和使用NetApp資料服務。作為管理介面，它使您能夠從一個介面管理許多儲存資源。控制台管理員可以控制企業內所有系統的儲存和服務的存取。
+
+您不需要許可證或訂閱即可開始使用NetApp控制台，並且只有當您需要在雲端部署控制台代理程式以確保與儲存系統或NetApp資料服務的連接時才需要付費。但是，一些可從控制台存取的NetApp資料服務是需要授權或基於訂閱的。
+
+詳細了解 https://docs.netapp.com/us-en/bluexp-setup-admin/concept-overview.html["NetApp控制台"]。
+
+
+
+== 使用NetApp災難復原 for VMware 的優勢
+
+NetApp災難復原有以下優勢：
+
+* 透過多個時間點復原操作簡化 vCenter 發現和應用程式復原的使用者體驗。 
+* 透過降低營運成本來降低整體擁有成本，並能夠以最少的資源創建和調整災難復原計劃。
+* 透過虛擬故障轉移測試持續做好災難復原準備，不會中斷營運。您可以定期測試 DR 故障轉移計劃，而不會影響生產工作負載。
+* 透過 IT 環境的動態變化和在災難復原計劃中解決該問題的能力來更快地實現價值。
+* 能夠透過ONTAP和 VMware 的後端編排同時管理儲存層和虛擬層，而無需部署和維護虛擬伺服器設備 (VSA)。
+* VMware 的 DR 解決方案可能會佔用大量資源。許多 DR 解決方案使用 VSA 在 VMware 虛擬層複製虛擬機，這會消耗更多的運算資源並損失ONTAP寶貴的儲存效率。由於災難復原使用ONTAP SnapMirror技術，它可以使用我們的永久增量複製模型將資料從生產資料儲存複製到 DR 站點，並具有ONTAP的所有本機資料壓縮和重複資料刪除效率。
+
+
+
+
+== NetApp災難復原 for VMware 的功能
+
+NetApp災難復原讓您充分利用多種NetApp技術來達成以下目標：
+
+* 使用SnapMirror複製將本地生產站點上的 VMware 應用程式複製到雲端或本地端的災難復原遠端站點。
+* 將 VMware 工作負載從原始站點遷移到另一個站點。
+* 進行故障轉移測試。當您執行此操作時，該服務會建立臨時虛擬機器。災難復原從選定的快照建立一個新的FlexClone磁碟區，並且由FlexClone磁碟區支援的暫存資料儲存區對應到 ESXi 主機。此程序不會消耗本地ONTAP儲存或 AWS 中 FSx for NetApp ONTAP儲存的額外實體容量。原始來源磁碟區不會被修改，即使在災難復原期間，副本作業也可以繼續。
+* 如果發生災難，請根據需要將主站點故障轉移到災難復原站點，該站點可以是具有Amazon FSx for NetApp ONTAP 的AWS 上的 VMware Cloud，也可以是具有ONTAP的本地 VMware 環境。
+* 災難解決後，根據需要從災難復原站點故障回復到主站點。
+* 將虛擬機器或資料儲存分組到邏輯資源組中，以實現高效管理。
+
+
+image:../use/evs-use-cases.png["展示NetApp Disaster Recovery for VMware 用例的圖表"]
+
+
+NOTE: vSphere 伺服器的配置是在 vSphere Server 中的NetApp Disaster Recovery 之外完成的。
+
+
+
+== 成本
+
+NetApp不會向您收取使用NetApp Disaster Recovery 試用版的費用。
+
+NetApp災難復原可以透過NetApp授權或透過 Amazon Web Services 的年度訂閱計畫使用。
+
+
+IMPORTANT: 一些版本包括技術預覽。 NetApp不會向您收取任何預覽的工作負載容量的費用。看link:../release-notes/dr-whats-new.html["NetApp災難復原的新功能"]了解有關最新技術預覽的資訊。
+
+
+
+== 授權
+
+您可以使用以下許可證類型：
+
+* 註冊即可獲得 30 天免費試用。
+* 透過 Amazon Web Services (AWS) Marketplace 或 Microsoft Azure Marketplace 購買即用即付 (PAYGO) 訂閱。此許可證使您能夠購買固定保護容量許可證，而無需任何長期承諾。
+* 自帶授權 (BYOL)，即您從NetApp銷售代表取得的NetApp授權文件 (NLF)。您可以使用許可證序號在NetApp控制台中啟動 BYOL。
+
+
+所有NetApp資料服務的授權均透過NetApp控制台中的訂閱進行管理。設定 BYOL 後，您可以在控制台中看到該服務的有效授權。
+
+本服務根據受保護的ONTAP磁碟區上託管的資料量進行許可。該服務透過將受保護的虛擬機器對應到其 vCenter 資料儲存區來確定應考慮哪些磁碟區用於許可目的。每個資料儲存庫都託管在ONTAP磁碟區或 LUN 上。  ONTAP報告的該磁碟區或 LUN 的已使用容量用於確定許可。
+
+受保護的磁碟區可以託管許多虛擬機器。有些可能不屬於NetApp災難復原資源組。無論如何，該磁碟區或 LUN 上所有虛擬機器消耗的儲存都將用於滿足許可證最大容量要求。
+
+
+NOTE: 當至少有一個虛擬機器具有複製計畫時， NetApp災難復原費用是基於來源站點上資料儲存區的已使用容量。故障轉移資料儲存區的容量不包含在容量限額內。對於 BYOL，如果資料超出允許的容量，服務中的操作將受到限制，直到您獲得額外的容量許可證或在NetApp控制台中升級許可證。
+
+有關設定NetApp災難復原許可的詳細信息，請參閱link:../get-started/dr-licensing.html["設定NetApp災難復原許可"]。
+
+
+
+== 30天免費試用
+
+您可以透過 30 天免費試用版來試用NetApp Disaster Recovery。
+
+要在 30 天試用期結束後繼續使用，您需要從雲端供應商取得即用即付 (PAYGO) 訂閱或從NetApp購買 BYOL 授權。
+
+您可以隨時購買許可證，並且在 30 天試用期結束之前不會向您收費。
+
+
+
+== NetApp災難復原的工作原理
+
+NetApp災難復原是託管在NetApp控制台軟體即服務 (SaaS) 環境中的服務。災難復原可以將從本機站點複製到Amazon FSx for ONTAP或其他本機站點的工作負載復原。此服務可自動執行從SnapMirror層級的恢復，包括將虛擬機器註冊到 VMware Cloud on AWS，以及直接在 VMware 網路虛擬化和安全平台 NSX-T 上進行網路對應。所有虛擬機器雲端環境均包含此功能。
+
+NetApp災難復原使用ONTAP SnapMirror技術，該技術可提供高效的複製並保留ONTAP永久增量快照的效率。  SnapMirror複製可確保應用程式一致的快照副本始終保持同步，且資料在故障轉移後可立即使用。
+
+image:dr-architecture-diagram-70-2.png["圖表展示了NetApp Disaster Recovery for VMware 服務基礎架構的架構"]
+
+當災難發生時，此服務可協助您透過中斷SnapMirror關係並使目標網站處於活動狀態來復原其他本機 VMware 環境或 VMC 中的虛擬機器。
+
+* 該服務還允許您將虛擬機器故障還原到原始來源位置。
+* 您可以在不中斷原始虛擬機器的情況下測試災難復原故障轉移流程。此測試透過建立磁碟區的FlexClone將虛擬機器還原到隔離網路。
+* 對於故障轉移或測試故障轉移過程，您可以選擇最新（預設）或選定的快照來還原虛擬機器。
+
+
+*災難復原的組成部分*
+
+災難復原使用以下元件為 VMware 工作負載提供災難復原：
+
+* * NetApp Console*：用於管理災難復原計畫的使用者介面。您可以使用NetApp控制台在本機和雲端環境中建立和管理複製計畫、資源群組和故障轉移作業。
+* *控制台代理*：在您的雲端託管網路或本機 VMware 環境中執行的輕量級軟體元件。它與NetApp控制台通訊並管理本地環境和災難復原站點之間的資料複製。控制台代理程式安裝在 VMware 環境中的虛擬機器上。
+* * ONTAP儲存叢集*： ONTAP儲存叢集是託管 VMware 工作負載的主要儲存系統。 ONTAP儲存叢集為您的災難復原計畫提供底層儲存基礎架構。災難復原使用ONTAP儲存 API 來管理ONTAP儲存叢集（例如本機陣列）和基於雲端的解決方案（例如Amazon FSx for NetApp ONTAP）。
+* *vCenter 伺服器*：VMware vCenter 是您的 VMware 環境的管理伺服器。它管理 ESXi 主機及其相關的資料儲存。控制台代理程式與 VMware vCenter 通信，以管理本機環境和災難復原站點之間的資料複製。這包括將ONTAP LUN 和磁碟區註冊為資料儲存、重新配置虛擬機器以及啟動和停止虛擬機器。
+
+
+*災難復原保障工作流程*
+
+當複製計劃分配給資源組時，災難復原會對資源組和計劃中的所有元件執行發現檢查，以確保該計劃可以啟動。
+
+如果此檢查成功，災難復原將執行下列初始化步驟：
+
+. 對於目標資源群組中的每個虛擬機，確定託管 VMware 資料儲存。
+. 對於找到的每個 VMware 資料儲存庫，識別託管ONTAP FlexVol volume或 LUN。
+. 對於找到的每個ONTAP磁碟區和 LUN，確定來源磁碟區和目標網站中的目標磁碟區之間是否存在現有的SnapMirror關係。
++
+.. 如果沒有預先存在的SnapMirror關係，請建立任何新的目標卷，並在每個未受保護的來源磁碟區之間建立新的SnapMirror關係。
+.. 如果存在預先存在的SnapMirror關係，請使用該關係執行所有複製操作。
+
+
+
+
+災難復原建立並初始化所有關係後，在每次排程備份時，該服務都會執行下列資料保護步驟：
+
+. 對於每個標記為「應用程式一致」的虛擬機，使用 VMtools 將支援的應用程式置於備份狀態。
+. 為託管受保護的 VMware 資料儲存的所有ONTAP磁碟區建立新快照。
+. 執行SnapMirror更新操作以將這些快照複製到目標ONTAP叢集。
+. 確定保留的快照數量是否超過了複製計劃中定義的最大快照保留量，並從來源磁碟區和目標磁碟區中刪除任何多餘的快照。
+
+
+
+
+== 支援的保護目標和資料儲存類型
+
+*支援的資料儲存類型* NetApp災難復原支援以下資料儲存類型：
+
+* 託管在ONTAP叢集上的ONTAP FlexVol磁碟區上的 NFS 資料儲存庫。
+* 使用 iSCSI 或 FC 協定的 VMware vSphere 虛擬機器檔案系統 (VMFS) 資料存儲
+
+
+*支持的保護目標*
+
+* AWS 上的 VMware Cloud (VMC) 以及適用Amazon FSx for NetApp ONTAP
+* 另一個本地、基於 NFS 的 VMware 環境，具有ONTAP儲存或本地 FC/iSCSI VMSF
+* Amazon Elastic VMware 服務
+* 具有NetApp Cloud Volumes ONTAP (iSCSI) 的 Azure VMware 解決方案 (AVS)（私人預覽版）
+
+
+
+
+== 可能對您有幫助的NetApp災難復原術語
+
+了解一些與災難復原相關的術語可能會對您有所幫助。
+
+* *資料儲存*：VMware vCenter 資料容器，它使用檔案系統來保存 VMDK 檔案。典型的資料儲存類型是 NFS、VMFS、vSAN 或 vVol。災難復原支援 NFS 和 VMFS 資料儲存。每個 VMware 資料儲存庫都託管在單一ONTAP磁碟區或 LUN 上。災難復原支援位於ONTAP叢集上的FlexVol磁碟區上託管的 NFS 和 VMFS 資料儲存庫。
+* *複製計畫*：一組關於備份頻率以及如何處理故障轉移事件的規則。計劃被指派給一個或多個資源組。
+* *復原點目標 (RPO)*：發生災難時可接受的最大資料遺失量。  RPO 在複製計劃的資料複製頻率或複製計劃中定義。
+* *復原時間目標 (RTO)*：從災難中復原可接受的最長時間。  RTO 在複製計畫中定義，是故障轉移到 DR 站點並重新啟動所有虛擬機器所需的時間。
+* *資源群組*：一個邏輯容器，使您能夠將多個虛擬機器作為一個單元進行管理。一個虛擬機器一次只能屬於一個資源群組。您可以為想要保護的每個應用程式或工作負載建立一個資源組。
+* *站點*：通常與託管一個或多個 vCenter 叢集和ONTAP儲存的實體資料中心或雲端位置相關聯的邏輯容器。
+

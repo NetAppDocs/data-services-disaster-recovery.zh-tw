@@ -1,0 +1,89 @@
+= 報告
+:allow-uri-read: 
+
+
+
+
+=== 報告
+
+現在您可以產生和下載報告來幫助您分析您的景觀。預先設計的報告總結了故障轉移和故障回复，顯示了所有站點上的複製詳細信息，並顯示了過去七天的作業詳細信息。
+
+參考 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/reports.html["建立災難復原報告"]。
+
+
+
+=== 30天免費試用
+
+現在您可以註冊NetApp災難復原 30 天免費試用版。此前，免費試用期為 90 天。
+
+參考 https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-licensing.html["設定許可"]。
+
+
+
+=== 停用和啟用複製計劃
+
+先前的版本包括故障轉移測試計劃結構的更新，這是支援每日和每週計劃所必需的。此更新要求您停用並重新啟用所有現有的複製計劃，以便您能夠使用新的每日和每週故障轉移測試計劃。這是一次性要求。
+
+方法如下：
+
+. 從選單中選擇*複製計劃*。
+. 選擇一個計劃並選擇操作圖示以顯示下拉式選單。
+. 選擇*禁用*。
+. 幾分鐘後，選擇*啟用*。
+
+
+
+
+=== 資料夾映射
+
+當您建立複製計劃並對應計算資源時，現在可以對應資料夾，以便在您為資料中心、叢集和主機指定的資料夾中復原虛擬機器。
+
+有關詳細信息，請參閱 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
+
+
+
+=== 可用於故障轉移、故障回復和測試故障轉移的 VM 詳細信息
+
+當發生故障並且您正在啟動故障轉移、執行故障回應或測試故障轉移時，您現在可以查看虛擬機器的詳細資訊並確定哪些虛擬機器未重新啟動。
+
+參考 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/failover.html["將應用程式故障轉移到遠端站點"]。
+
+
+
+=== 具有有序啟動順序的 VM 啟動延遲
+
+建立複製計劃時，您現在可以為計劃中的每個 VM 設定啟動延遲。這使您可以設定虛擬機器的啟動順序，以確保所有優先順序為一的虛擬機器都在後續優先級虛擬機器啟動之前運行。
+
+有關詳細信息，請參閱 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
+
+
+
+=== 虛擬機器作業系統資訊
+
+建立複製計劃時，您現在可以看到計劃中每個虛擬機器的作業系統。這有助於決定如何將虛擬機器分組到資源組。
+
+有關詳細信息，請參閱 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
+
+
+
+=== VM 名稱別名
+
+建立複製計劃時，您現在可以在災難復原網站上為虛擬機器名稱新增前綴和後綴。這使您能夠為計劃中的虛擬機器使用更具描述性的名稱。
+
+有關詳細信息，請參閱 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
+
+
+
+=== 清理舊快照
+
+您可以刪除超出指定保留數量的不再需要的快照。當您降低快照保留計數時，快照可能會隨著時間的推移而累積，現在您可以刪除它們以釋放空間。您可以隨時根據需要或在刪除複製計劃時執行此操作。
+
+有關詳細信息，請參閱 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/manage.html["管理網站、資源群組、複製計畫、資料儲存和虛擬機器信息"]。
+
+
+
+=== 協調快照
+
+現在您可以協調來源和目標之間不同步的快照。如果在NetApp災難復原之外的目標上刪除快照，則可能會發生這種情況。該服務每 24 小時自動刪除來源上的快照。但是，您可以根據需要執行此操作。此功能可讓您確保快照在所有網站上都是一致的。
+
+有關詳細信息，請參閱 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/manage.html["管理複製計劃"]。

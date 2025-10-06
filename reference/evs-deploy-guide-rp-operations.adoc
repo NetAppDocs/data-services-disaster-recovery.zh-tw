@@ -1,0 +1,232 @@
+---
+sidebar: sidebar 
+permalink: reference/evs-deploy-guide-rp-operations.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, netapp, ontap,amazon elastic vmware service 
+summary: 使用 Amazon EVS 和Amazon FSx for NetApp ONTAP介紹NetApp災難復原。使用NetApp Disaster Recovery 與 Amazon EVS 和Amazon FSx for NetApp ONTAP執行故障轉移、測試故障轉移、刷新資源、遷移、立即拍攝快照、停用或啟用複製計劃、清理舊快照、協調快照、刪除複製計劃和編輯計劃。 
+---
+= 使用NetApp災難復原執行複製計劃操作
+:allow-uri-read: 
+
+
+[role="lead"]
+使用NetApp Disaster Recovery 與 Amazon EVS 和Amazon FSx for NetApp ONTAP執行以下操作：故障轉移、測試故障轉移、刷新資源、遷移、立即拍攝快照、停用/啟用複製計畫、清理舊快照、協調快照、刪除複製計畫和編輯計畫。
+
+
+
+== 故障轉移
+
+您可能需要執行的主要操作是您希望永遠不會發生的操作：在生產本地站點發生災難性故障時故障轉移到 DR（目標）資料中心。
+
+故障轉移是一個手動啟動的過程。
+
+.存取故障轉移操作的步驟
+. 從NetApp控制台左側導覽列中，選擇 *保護* > *災難復原*。
+. 從NetApp災難復原選單中，選擇 *複製計畫*。
+
+
+.執行故障轉移的步驟
+. 在複製計劃頁面中，選擇複製計劃的操作選項image:icon-horizontal-dots.png["操作選單的水平點"]。
+. 選擇*故障轉移*。
++
+image:evs-rp-menu-failover.png["故障轉移選單選項"]
+
+. 如果無法存取生產（受保護）站點，請選擇先前建立的快照作為復原映像。為此，請選擇*選擇*。
+. 選擇要用於復原的備份。
+. （可選）選擇是否希望NetApp Disaster Recovery 強制執行故障轉移過程，而不管複製計劃的狀態如何。這只能作為最後的手段。
+. （可選）選擇是否希望NetApp Disaster Recovery 在生產站點恢復後自動建立反向保護關係。
+. 輸入單字“Failover”以確認您是否要繼續。
+. 選擇“*故障轉移*”。
++
+image:evs-rp-failover-dialog.png["故障轉移對話框"]
+
+
+
+
+
+== 測試故障轉移
+
+測試故障轉移與故障轉移類似，但有兩個差異。
+
+* 生產站點仍然處於活動狀態，所有虛擬機器仍在按預期運作。
+* NetApp災難復原對生產虛擬機器的保護仍在持續。
+
+
+這是透過在目標站點使用本機ONTAP FlexClone磁碟區來實現的。要了解有關測試故障轉移的更多信息，請參閱link:../use/failover.html["將應用程式故障轉移到遠端站點 | NetApp文檔"]。
+
+執行測試故障轉移的步驟與執行實際故障轉移的步驟相同，只是您使用複製計劃的上下文功能表上的測試故障轉移操作。
+
+.步驟
+. 選擇複製計劃的操作選項image:icon-horizontal-dots.png["操作選單的水平點"]。
+. 從選單中選擇*測試故障轉移*。
++
+image:evs-rp-menu-test-failover.png["測試故障轉移選單選項"]
+
+. 決定是否要取得生產環境的最新狀態（立即拍攝快照）或使用先前建立的複製計畫備份（選擇）
+. 如果您選擇了先前建立的備份，則選擇要用於復原的備份。
+. 輸入“測試故障轉移”一詞來驗證您是否要繼續。
+. 選擇*測試故障轉移*。
++
+image:evs-test-failover-dialog.png["測試故障轉移對話框"]
+
+
+
+
+
+== 運行合規性檢查
+
+預設情況下，合規性檢查每三小時運行一次。您可能隨時想要手動執行合規性檢查。
+
+.步驟
+. 選擇“操作”選項image:../use/icon-horizontal-dots.png["NetApp災難復原服務​​中的操作選單圖標"]複製計劃旁。
+. 從複製計畫的操作選單中選擇*執行合規性檢查*選項：
++
+image:evs-rp-menu-compliance-check.png["運行合規性檢查選單選項"]
+
+. 若要變更NetApp Disaster Recovery 自動執行合規性檢查的頻率，請從複製計畫的操作選單中選擇「編輯計畫」選項。
+
+
+
+
+== 刷新資源
+
+每次對虛擬基礎架構進行變更（例如新增或刪除虛擬機器、新增或刪除資料儲存區或在資料儲存區之間移動虛擬機器）時，都需要在NetApp災難復原服務​​中對受影響的 vCenter 叢集執行重新整理。該服務預設每 24 小時自動執行一次此操作，但手動刷新可確保最新的虛擬基礎設施資訊可用並考慮到 DR 保護。
+
+有兩種情況需要刷新：
+
+* vCenter 刷新：每當在 vCenter 群集中新增、刪除或移出虛擬機器時，執行 vCenter 刷新：
+* 複製計劃刷新：每當虛擬機器在同一來源 vCenter 叢集中的資料儲存之間移動時，執行複製計劃刷新。
+
+
+image::evs-rp-menu-refresh-resources.png[刷新資源選單選項]
+
+
+
+== 遷移
+
+雖然NetApp災難復原主要用於災難復原用例，但它也可以將一組虛擬機器從來源站點一次移至目標網站。這可能是為了協調遷移到雲端項目，也可能是為了避免災難——例如惡劣天氣、政治衝突或其他潛在的暫時災難性事件。
+
+. 選擇“操作”選項image:../use/icon-horizontal-dots.png["NetApp災難復原服務​​中的操作選單圖標"]複製計劃旁。
+. 若要將複製計畫中的虛擬機器移至目標 Amazon EVS 集群，請從複製計畫的操作選單中選擇「遷移」：
++
+image::evs-rp-menu-migrate.png[遷移選單選項]
+
+. 在「遷移」對話方塊中輸入資訊。
+
+
+
+
+== 立即拍攝快照
+
+您可以隨時立即拍攝複製計劃的快照。此快照包含在複製計劃的快照保留計數設定的NetApp災難復原考慮因素中。
+
+. 選擇“操作”選項image:../use/icon-horizontal-dots.png["NetApp災難復原服務​​中的操作選單圖標"]複製計劃旁。
+. 若要立即拍攝複製計畫資源的快照，請在複製計畫的操作選單上選擇*立即拍攝快照*：
++
+image::evs-rp-menu-take-snapshot-now.png[立即拍攝快照選單選項]
+
+
+
+
+
+== 停用或啟用複製計劃
+
+您可能需要暫時停止複製計劃來執行一些可能影響複製過程的操作或維護。該服務提供了停止和啟動複製的方法。
+
+. 若要暫時停止複製，請在複製計畫的操作選單上選擇*停用*。
+. 若要重新啟動複製，請在複製計畫的操作選單上選擇*啟用*。
++
+當複製計劃處於活動狀態時，「*啟用*」指令將顯示為灰色。當複製計劃被停用時，「*停用*」指令將變灰。
+
++
+image::evs-rp-menu-disable-enable.png[停用/啟用選單選項]
+
+
+
+
+
+== 清理舊快照
+
+您可能想要清理保留在來源網站和目標網站上的舊快照。如果複製計劃的快照保留計數發生改變，就會發生這種情況。
+
+. 選擇“操作”選項image:../use/icon-horizontal-dots.png["NetApp災難復原服務​​中的操作選單圖標"]複製計劃旁。
+. 若要手動刪除這些舊快照，請從複製計畫的操作選單中選擇*清理舊快照*。
++
+image::evs-rp-menu-cleanup-old-snapshots.png[清理舊快照選單選項]
+
+
+
+
+
+== 協調快照
+
+由於本服務協調ONTAP磁碟區快照，因此ONTAP儲存管理員可以在服務不知情的情況下使用ONTAP系統管理員、 ONTAP CLI 或ONTAP REST API 直接刪除快照。該服務每 24 小時自動刪除來源上不在目標叢集上的任何快照。但是，您可以根據需要執行此操作。此功能可讓您確保快照在所有網站上都是一致的。
+
+. 選擇“操作”選項image:../use/icon-horizontal-dots.png["NetApp災難復原服務​​中的操作選單圖標"]複製計劃旁。
+. 若要從來源叢集中刪除目標叢集上不存在的快照，請從複製計畫的操作選單中選擇*協調快照*。
++
+image::evs-rp-menu-reconcile-snapshots.png[協調快照選單選項]
+
+
+
+
+
+== 刪除複製計劃
+
+如果不再需要複製計劃，您可以將其刪除。
+
+. 選擇“操作”選項image:../use/icon-horizontal-dots.png["NetApp災難復原服務​​中的操作選單圖標"]複製計劃旁。
+. 若要刪除複製計劃，請從複製計劃的上下文功能表中選擇“*刪除*”。
++
+image::evs-rp-menu-delete.png[刪除選單選項]
+
+
+
+
+
+== 編輯時間表
+
+兩項操作會定期自動執行：測試故障轉移和合規性檢查。
+
+. 選擇“操作”選項image:../use/icon-horizontal-dots.png["NetApp災難復原服務​​中的操作選單圖標"]複製計劃旁。
+. 若要變更這兩個操作中的任一個的計劃，請選擇複製計劃的*編輯計劃*。
++
+image::evs-rp-menu-edit-schedules.png[編輯時間表選單選項]
+
+
+
+
+
+=== 更改合規性檢查間隔
+
+預設情況下，每三小時執行一次合規性檢查。您可以將其變更為 30 分鐘到 24 小時之間的任意間隔。
+
+若要變更此間隔，請變更「編輯計畫」對話方塊中的「頻率」欄位：
+
+image::evs-rp-edit-compliance-check-schedule.png[合規性檢查時間表]
+
+
+
+=== 安排自動測試故障轉移
+
+預設情況下，測試故障轉移是手動執行的。您可以安排自動測試故障轉移，這有助於確保您的複製計劃按預期執行。要了解有關測試故障轉移過程的更多信息，請參閱link:../use/failover.html["測試故障轉移過程"]。
+
+.安排測試故障轉移的步驟
+. 選擇“操作”選項image:../use/icon-horizontal-dots.png["NetApp災難復原服務​​中的操作選單圖標"]複製計劃旁。
+. 選擇*運行故障轉移*。
+. 選取*依計畫執行測試故障轉移*複選框。
+. （可選）檢查*使用按需快照進行計劃測試故障轉移*。
+. 在重複下拉式選單中選擇間隔類型。
+. 選擇何時執行測試故障轉移
++
+.. 每週：選擇星期幾
+.. 每月：選擇月份中的日期
+
+
+. 選擇執行測試故障轉移的時間
+. 選擇開始日期。
+. 決定是否希望服務自動清理測試環境，以及在清理過程開始之前希望測試環境運行多長時間。
+. 選擇*儲存*。
++
+image::evs-rp-edit-schedule-test-failover.png[編輯計劃測試故障轉移]
+
+

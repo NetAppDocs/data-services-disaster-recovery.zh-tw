@@ -1,0 +1,46 @@
+---
+section: reference
+title: 參考
+entries:
+- title: NetApp災難復原所需的 vCenter 權限
+  url: "/reference/vcenter-privileges.html"
+- title: NetApp災難復原角色和權限
+  url: "/reference/dr-reference-roles.html"
+- title: 將NetApp災難復原與 Amazon EVS 結合使用
+  entries:
+  - title: NetApp災難復原與 Amazon EVS 概述
+    url: "/reference/evs-deploy-guide-introduction.html"
+  - title: 解決方案概述
+    url: "/reference/evs-deploy-guide-solution-overview.html"
+  - title: 安裝NetApp控制台代理
+    url: "/reference/evs-deploy-guide-install-connector.html"
+  - title: 為 Amazon EVS 配置NetApp災難復原
+    entries:
+    - title: 為 Amazon EVS 配置NetApp災難復原概述
+      url: "/reference/evs-deploy-guide-config-draas.html"
+    - title: Amazon EVS 的先決條件
+      url: "/reference/evs-deploy-guide-config-prereqs.html"
+    - title: 為 Amazon EVS 新增ONTAP儲存陣列
+      url: "/reference/evs-deploy-guide-config-add-arrays.html"
+    - title: 為 Amazon EVS 新增NetApp災難復原
+      url: "/reference/evs-deploy-guide-enable-draas.html"
+    - title: 在NetApp災難復原中為 Amazon EVS 新增站點
+      url: "/reference/evs-deploy-guide-add-sites.html"
+    - title: 為 Amazon EVS 新增 vCenter 集群
+      url: "/reference/evs-deploy-guide-add-vcenters.html"
+  - title: 為 Amazon EVS 建立複製計劃
+    entries:
+    - title: 建立 Amazon EVS 複製計劃概覽
+      url: "/reference/evs-deploy-guide-creating-replication-plans.html"
+    - title: 為 Amazon EVS 建立複製計畫第 1 步
+      url: "/reference/evs-deploy-guide-create-rp-wiz-01.html"
+    - title: 為 Amazon EVS 建立複製計畫第 2 步
+      url: "/reference/evs-deploy-guide-create-rp-wiz-02.html"
+    - title: 為 Amazon EVS 建立複製計畫步驟 3
+      url: "/reference/evs-deploy-guide-create-rp-wiz-03.html"
+    - title: 為 Amazon EVS 建立複製計畫第 4 步
+      url: "/reference/evs-deploy-guide-create-rp-wiz-04.html"
+    - title: 驗證 Amazon EVS 的複製計劃
+      url: "/reference/evs-deploy-guide-verify-rp.html"
+  - title: 執行複製計劃操作
+    url: "/reference/evs-deploy-guide-rp-operations.html"

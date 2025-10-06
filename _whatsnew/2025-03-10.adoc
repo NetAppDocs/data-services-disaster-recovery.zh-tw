@@ -1,0 +1,25 @@
+= 智慧代理支援
+:allow-uri-read: 
+
+
+
+
+=== 智慧代理支援
+
+NetApp控制台代理程式支援智慧代理程式。智慧型代理是一種將您的內部系統連接到NetApp災難復原的輕量級、安全且高效的方法。它在您的系統和NetApp災難復原之間提供安全連接，而無需 VPN 或直接網路存取。這種最佳化的代理實作可卸載本地網路內的 API 流量。
+
+配置代理程式後， NetApp Disaster Recovery 會嘗試直接與 VMware 或ONTAP通信，如果直接通信失敗，則使用配置的代理。
+
+NetApp災難復原代理實作需要使用 HTTPS 協定在控制台代理與任何 vCenter Server 與ONTAP陣列之間進行連接埠 443 通訊。控制台代理程式內的NetApp災難復原代理程式在執行任何操作時直接與 VMware vSphere、VC 或ONTAP通訊。
+
+有關NetApp災難復原智慧代理的更多信息，請參閱 https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-setup.html["為NetApp災難復原設定基礎架構"]。
+
+有關NetApp控制台中常規代理設定的更多信息，請參閱 https://docs.netapp.com/us-en/bluexp-setup-admin/task-configuring-proxy.html["配置控制台代理以使用代理伺服器"^]。
+
+
+
+=== 隨時結束免費試用
+
+您可以隨時停止免費試用，也可以等到試用期結束。
+
+看 https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-licensing.html#end-the-free-trial["結束免費試用"]。

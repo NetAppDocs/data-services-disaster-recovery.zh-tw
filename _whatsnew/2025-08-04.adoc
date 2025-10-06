@@ -1,0 +1,20 @@
+= NetApp災難復原更新
+:allow-uri-read: 
+
+
+
+
+=== NetApp災難復原更新
+
+此版本包括以下更新：
+
+* 改進了 VMFS 支持，以處理來自多個儲存虛擬機的相同 LUN。
+* 改進了測試拆卸清理以處理已卸載或刪除的資料儲存。
+* 改進了子網路映射，以便現在可以驗證輸入的網關是否包含在提供的網路中。
+* 解決了虛擬機器名稱包含“.com”時可能導致複製計劃失敗的問題。
+* 在建立複製計劃的過程中，刪除了封鎖目標磁碟區與來源磁碟區相同的限制。
+* 在 Azure 市場中新增了對NetApp智慧服務的即用即付 (PAYGO) 訂閱支持，並在免費試用對話方塊中新增了 Azure 市場的連結。
++
+有關詳細信息，請參閱 https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-intro.html#licensing["NetApp災難復原許可"]和 https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-licensing.html["設定NetApp災難復原許可"]。
+
+

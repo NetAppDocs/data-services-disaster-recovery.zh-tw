@@ -1,0 +1,51 @@
+---
+indexpage:
+  title: NetApp災難復原文檔
+  summary: 透過NetApp Disaster Recovery for VMware，您可以將執行ONTAP儲存的本機 VMware 工作負載複製到公有雲中的
+    VMware 軟體定義資料中心，並使用NetApp雲端儲存作為災難復原站點。
+  keywords: disaster, disaster recovery, bluexp, replicate, replication, cloud storage
+  lead: 災難復原到雲端是一種有彈性且經濟高效的方式，可以保護工作負載免受網站中斷和資料損壞事件（例如勒索軟體）的影響。透過NetApp Disaster Recovery
+    for VMware，您可以將執行ONTAP儲存的本機 VMware 工作負載複製到公有雲中的 VMware 軟體定義資料中心，或複製到另一個本地站點作為災難復原站點。
+  tiles:
+  - title: 開始
+    links:
+    - title: 了解NetApp災難復原
+      url: "/get-started/dr-intro.html"
+    - title: NetApp災難復原的新功能
+      url: "/release-notes/dr-whats-new.html"
+    - title: 快速啟動
+      url: "/get-started/dr-quick-start.html"
+    - title: 先決條件
+      url: "/get-started/dr-prerequisites.html"
+    - title: 存取NetApp災難復原
+      url: "/get-started/dr-login.html"
+    - title: 常問問題
+      url: "/get-started/dr-faq.html"
+  - title: 使用NetApp災難復原
+    links:
+    - title: 將 vCenter 新增至站點
+      url: "/use/sites-add.html"
+    - title: 制定災難復原計劃
+      url: "/use/drplan-create.html"
+    - title: 將應用程式複製到另一個站點
+      url: "/use/replicate.html"
+    - title: 將應用程式遷移到另一個站點
+      url: "/use/migrate.html"
+    - title: 將應用程式故障轉移到遠端站點
+      url: "/use/failover.html"
+    - title: 將應用程式故障回復到原始來源站點
+      url: "/use/failback.html"
+  - title: 部落格和社區
+    links:
+    - title: NetApp控制台
+      url: https://www.netapp.com/console
+    - title: NetApp資料服務
+      url: https://www.netapp.com/data-services/
+    - title: NetApp社群
+      url: https://community.netapp.com
+    - title: NetApp災難復原博客
+      url: https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-disaster-recovery-service-for-BC-with-VMware-Cloud-on-AWS-and-FSx-for/ba-p/447066
+    - title: NetApp災難復原即服務實驗室入門指南
+      url: https://labondemand.netapp.com/lab/draas
+    - title: 影片
+      url: https://www.youtube.com/@netapp/videos
