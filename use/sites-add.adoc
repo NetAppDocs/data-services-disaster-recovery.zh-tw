@@ -48,7 +48,7 @@ TIP: NetApp Disaster Recovery每 24 小時執行一次發現。設定網站後�
 vCenter 叢集只能駐留在一個站點。您需要以下資訊才能將 vCenter 群集新增至網站：
 
 * vCenter 管理 IP 位址或 FQDN
-* 具有執行操作所需權限的 vCenter 帳戶的憑證。看link:vcenter--privileges.html["所需的 vCenter 權限"]了解更多。
+* 具有執行操作所需權限的 vCenter 帳戶的憑證。看link:../reference/vcenter-privileges.html["所需的 vCenter 權限"]了解更多。
 * 對於雲端託管的 VMware 站點，所需的雲端存取金鑰
 * 用於存取 vCenter 的安全性憑證。
 +
@@ -61,7 +61,7 @@ NOTE: 本服務支援自簽章安全性憑證或來自中央憑證授權單位 (
 . 登入 https://console.netapp.com/["NetApp Console"^]。
 . 從NetApp Console左側導覽中，選擇 *保護* > *災難復原*。
 +
-您將進入NetApp Disaster Recovery儀表板頁面。首次啟動服務時，您需要新增 vCenter 資訊。隨後，儀表板會顯示有關您的網站和複製計畫的資料。
+如果您是第一次使用NetApp災難復原，則需要新增 vCenter 資訊。如果您已經新增了 vCenter 訊息，您將看到儀表板。
 
 +
 
@@ -72,14 +72,14 @@ NOTE: 根據您新增的網站類型，會出現不同的欄位。
 . *來源*：選擇*發現 vCenter 伺服器*以輸入有關來源 vCenter 網站的資訊。
 +
 
-TIP: 如果一些 vCenter 網站已經存在並且您想要添加更多，請從頂部選單中選擇 *網站*，然後選擇 *新增*。
+TIP: 若要新增更多 vCenter 站點，請選擇“站點”，然後選擇“新增”。
 
 +
 image:vcenter-add.png["新增 vCenter 伺服器螢幕截圖"]
 
 +
-** 選擇一個站點，選擇NetApp Console代理，並提供 vCenter 憑證。
-** （僅適用於本機網站）若要接受來源 vCenter 的自簽章證書，請勾選該方塊。
+** 選擇站點，然後選擇NetApp Console代理，並提供 vCenter 憑證。
+** **僅限本機網站：** 若要接受來源 vCenter 的自簽章證書，請選取該核取方塊。
 +
 
 NOTE: 自簽名證書不如其他證書安全。如果您的 vCenter *未*設定憑證授權單位 (CA) 證書，則應選取此方塊；否則，與 vCenter 的連線將無法運作。
@@ -88,7 +88,7 @@ NOTE: 自簽名證書不如其他證書安全。如果您的 vCenter *未*設定
 
 . 選擇“*新增*”。
 +
-接下來，您將新增目標 vCenter。
+接下來加入目標 vCenter。
 
 . 為目標 vCenter 重新新增網站。
 . 再次選擇*新增 vCenter*並新增目標 vCenter 資訊。

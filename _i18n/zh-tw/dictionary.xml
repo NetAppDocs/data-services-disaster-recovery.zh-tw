@@ -275,7 +275,6 @@
   <block id="caf89067dc5383afa96e1ac3e7c34bb7" category="paragraph">*許可選項* 您可以使用以下許可選項：</block>
   <block id="7f2210756be2a83d832be1ebb9b06adf" category="list-text">購買 Amazon Web Services (AWS) Marketplace 或 Microsoft Azure Marketplace 的即用即付 (PAYGO) 訂閱。</block>
   <block id="4e33b7dde110d702aea770ac0e58ff70" category="inline-link-macro">了解有關訂閱的更多信息</block>
-  <block id="a9a7b012bab63c64c9eef57c3d5a98c5" category="paragraph"><block ref="538594e0e314e6f72a64aef360b9c966" category="inline-link-macro-rx"></block> 。</block>
   <block id="e23539b066371b4dcfdd50b7d80417d8" category="paragraph">免費試用結束或許可證到期後，您仍然可以在服務中執行以下操作：</block>
   <block id="9a0514da0283645471837a7dd9cdd00a" category="list-text">查看任何資源，例如工作負載或複製計劃。</block>
   <block id="1868701c43ed8ccfa46dc8fe93f4252f" category="list-text">刪除任何資源，例如工作負載或複製計劃。</block>
@@ -347,7 +346,6 @@
   <block id="e2066cd1f4f96874fad4da9c48f8715b" category="list-text">如果您已經在使用該服務，當您選擇「災難復原」時，就會出現儀表板。</block>
   <block id="41fc27202bd95bf86c36faca5aa2292a" category="inline-image-macro">NetApp Disaster Recovery儀表板</block>
   <block id="9b4e9ca1e2c8ff4e1232f26bb61224ee" category="paragraph"><block ref="9b4e9ca1e2c8ff4e1232f26bb61224ee" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="7caf4ca80ac9c8fa8523ec38a393bbae" category="summary">在使用NetApp Disaster Recovery之前，您應該確保您的環境符合ONTAP儲存、VMware vCenter 叢集和NetApp Console要求。</block>
   <block id="4e692aafecf38a7bf746c7d87b8ca190" category="doc">NetApp Disaster Recovery前提條件</block>
   <block id="6d29d2542a6a2e3e81746082b1d99b07" category="section-title">軟體版本</block>
   <block id="2cb05e4bb7830be982f0922fed86b4cd" category="cell">成分</block>
@@ -362,11 +360,8 @@
   <block id="d28c14a0fc5b1bfa37eb72dd0ac54a13" category="section-title">ONTAP儲存前提條件</block>
   <block id="911d68300fa1a1a181b338683eb2e1b9" category="paragraph">這些先決條件適用於ONTAP或 Amazon FSX for NetApp ONTAP實例。</block>
   <block id="07a02bd33ebc759fa2827fd098fe4d5b" category="list-text">源集群和目標集群必須具有對等關係。</block>
-  <block id="4a240de94d3b8b2cf85c70ef705ec1ad" category="list-text">目標叢集上必須存在將託管災難復原磁碟區的 SVM。</block>
   <block id="49a62cf19d5f5549f15f53e7cc0931a4" category="list-text">源 SVM 和目標 SVM 必須具有對等關係。</block>
   <block id="3c6fc169e2cb30ab2f19198ee948214f" category="list-text">如果使用Amazon FSx for NetApp ONTAP進行部署，則適用下列先決條件：</block>
-  <block id="9ff73081ad3af348b09105664054c18f" category="inline-link">如何開始</block>
-  <block id="416e7e2f04e50d9ce77de6997e876b89" category="list-text">您的 VPC 中必須存在用於託管 VMware DR 資料儲存區的Amazon FSx for NetApp ONTAP實例。請參閱Amazon FSx for ONTAP文檔<block ref="db982a545763422931a00c332a8601c2" category="inline-link-rx"></block>。</block>
   <block id="78ac16e6d697b73a4da8c7145ce2ebf3" category="section-title">VMware vCenter 叢集先決條件</block>
   <block id="e43184d3dcdfbef8d9c719533929f538" category="paragraph">這些先決條件適用於本機 vCenter 叢集和 VMware Cloud for AWS 軟體定義資料中心 (SDDC)。</block>
   <block id="4fb2c1490deb1111ddde75358c461f13" category="inline-link-macro">vCenter 權限</block>
@@ -386,13 +381,11 @@
   <block id="924c58a8fd83feffaf2992bcfe6747f1" category="inline-link">註冊NetApp Console並建立組織</block>
   <block id="a365735407987353fb0d409038d3fcd5" category="paragraph">如果你還沒有這樣做，<block ref="d976bcdfe98c8a7f3f75b182d4034c67" category="inline-link-rx"></block> 。</block>
   <block id="2111321b91f7f03ee0c9d795126e728d" category="section-title">收集ONTAP和 VMware 的憑證</block>
-  <block id="83ea42b6775e389ed5d6686bca745cb5" category="list-text">必須將Amazon FSx for ONTAP和 AWS 憑證新增至NetApp Console專案中的系統，用於管理NetApp Disaster Recovery。</block>
   <block id="d70a6a4283fe47d23c6adff45d1620fb" category="list-text">NetApp Disaster Recovery需要 vCenter 憑證。在NetApp Disaster Recovery中新增網站時，您需要輸入 vCenter 憑證。</block>
   <block id="0f0ee2397f9657d6f4e252d0c2f19706" category="inline-link-macro">NetApp Disaster Recovery所需的 vCenter 權限</block>
   <block id="663ac415354a0662169e04ba51a80ee1" category="inline-link-macro">新增站點</block>
   <block id="7fda46228a14f2f55a79cab0163e29e8" category="paragraph">有關所需 vCenter 權限的列表，請參閱<block ref="86bed0402ce0dbd7b91cef3021301e67" category="inline-link-macro-rx"></block>。有關如何新增網站的說明，請參閱<block ref="4e15c40290645aa1bfcc516405624ad3" category="inline-link-macro-rx"></block>。</block>
   <block id="04611b209933eb29e1f8fdaec6553eaa" category="section-title">建立NetApp Console代理</block>
-  <block id="5a47b3f0e8d6c5af989186785df791a5" category="paragraph">控制台代理程式是一個軟體元件，它使控制台能夠與您的ONTAP儲存和 VMware vCenter 叢集進行通訊。它是災難恢復正常運作所必需的。該代理程式駐留在您的私有網路中（位於本機資料中心或雲端 VPC 中），並與您的ONTAP儲存實例以及任何其他伺服器和應用程式元件進行通訊。對於災難復原，這是對您管理的 vCenter 叢集的存取。</block>
   <block id="9703473550a81b3fd3679dafa7c81b5c" category="paragraph">必須在NetApp Console中設定控制台代理程式。當您使用該代理程式時，它將包含適合災難復原服務​​的功能。</block>
   <block id="c8838dcf38d330918fef4cc55c1d8bda" category="inline-link">在標準模式下開始使用NetApp Console</block>
   <block id="51dd3d7e28a72cf0fdec6a253e1d1518" category="list-text">NetApp Disaster Recovery僅適用於標準模式代理部署。看<block ref="5a1f12b31848038fb05bcfabb59a655f" category="inline-link-rx"></block>。</block>
@@ -403,7 +396,6 @@
   <block id="7ff9f8e2467774df163161a38d2d5040" category="inline-link">AWS 中的控制台代理安裝選項</block>
   <block id="14fe150f182f90b42cc29c3f50abaade" category="list-text">*本地到 AWS*：在您的 AWS VPC 中安裝 AWS 的控制台代理程式。參考<block ref="70bdc3086a31c8e9f05388b39311f274" category="inline-link-rx"></block>。</block>
   <block id="24b5be8f6df5fb021eca578769b77774" category="admonition">對於本機到本機，請使用本機控制台代理程式。對於本機到 AWS，使用 AWS 控制台代理，它可以存取來源本機 vCenter 和目標本機 vCenter。</block>
-  <block id="ec934991ff9576c778e97bd0dd49e11e" category="list-text">已安裝的控制台代理必須能夠存取NetApp Disaster Recovery將管理的任何 VMware 叢集。</block>
   <block id="ab3c83e3945cd7f2df0456e2d8f83bb0" category="list-text">所有由NetApp Disaster Recovery管理的ONTAP陣列都必須加入到NetApp Console專案內用於管理NetApp Disaster Recovery的任何系統中。</block>
   <block id="c5fbee6586294d81141f8dd158707985" category="inline-link">發現本地ONTAP集群</block>
   <block id="c99bafeb844cf906e2f562103d12d623" category="paragraph">看<block ref="8cab2f9c49f209aeaa6ba3d7ce4342f6" category="inline-link-rx"></block>。</block>
@@ -411,8 +403,6 @@
   <block id="9d5cd03b2fcfbe5b4558a93d2fd07ca2" category="section-title">工作負載先決條件</block>
   <block id="6a84d76f499de61c5fe29550fe09a932" category="paragraph">為了確保應用程式一致性流程成功，請滿足以下先決條件：</block>
   <block id="7033a5d3e074f0c7401499ee4e48f38a" category="list-text">確保 VMware 工具（或 Open VM 工具）正在要保護的虛擬機器上執行。</block>
-  <block id="53967495fd407c118c305a84866ca152" category="list-text">對於執行 Microsoft SQL Server 或 Oracle Database 或兩者的 Windows VM，資料庫應啟用其 VSS Writer。</block>
-  <block id="af77ac64a97a80925dee7dc916344004" category="list-text">在 Linux 作業系統上執行的 Oracle 資料庫應該為 Oracle 資料庫 SYSDBA 角色啟用作業系統使用者驗證。</block>
   <block id="e769451afb614edbefc73e1f7dcacb52" category="summary">只需幾個步驟即可開始使用NetApp Disaster Recovery服務​​。</block>
   <block id="ab07b3034b07b0c33cf08953e5962ee2" category="doc">NetApp Disaster Recovery快速入門</block>
   <block id="7964f4bbcfaebbe74a50dd88c021268a" category="paragraph">以下是開始使用NetApp Disaster Recovery所需步驟的概述。每個步驟中的連結都會將您帶到提供更多詳細資訊的頁面。</block>
@@ -606,14 +596,8 @@
   <block id="090ccdeb67b025c4f8b7081fde3f9701" category="list-text">如果您的公司使用外部憑證授權單位 (CA) 或 vCenter Endpoint 憑證儲存空間來存取您的 vCenter，請取消選取 *使用自簽名憑證* 複選框。否則，請保留此方塊的選取狀態。</block>
   <block id="b3a5c8845f853fe3c75c53b6ba4b310a" category="inline-image-macro">新增 vCenter 對話框</block>
   <block id="34fdfb7ad906ce66a12a8da2c109d447" category="paragraph"><block ref="34fdfb7ad906ce66a12a8da2c109d447" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="d173e60098a46beb09260bd420a159bc" category="summary">介紹使用 Amazon EVS 和 Amazon FSxN 的NetApp Disaster Recovery。</block>
-  <block id="6f8b794f3246b0c1e1780bb4d4d5dc53" category="doc">結論</block>
-  <block id="4d99324fc48065f11e63fb209ec337aa" category="paragraph">當配置為使用 Amazon EVS 和Amazon FSx for NetApp ONTAP作為 DR 目標時， NetApp Disaster Recovery可為您的內部部署 VMware 基礎架構提供經濟高效的混合雲 DR 解決方案。這為您提供了針對關鍵任務基礎架構的強大 DR 目標。  NetApp Disaster Recovery利用原生ONTAP資料保護功能，這些功能以數十年的資料保護經驗為後盾，經過深入測試，可確保您的資料得到全面保護。</block>
-  <block id="55707b4848b3a26a39057e3af6948b43" category="paragraph">更多資訊：</block>
   <block id="0f5cc47067a5c4b536ab91f1a843de82" category="inline-link">Amazon FSx for NetApp ONTAP入門</block>
-  <block id="6c289628dee43319166eea9002566c44" category="list-text"><block ref="6c289628dee43319166eea9002566c44" category="inline-link-rx"></block></block>
   <block id="ca098fd032be41af7e2c6add5e270ac2" category="inline-link">NetApp Disaster Recovery文檔</block>
-  <block id="483fd2990c168581254c61b55b471e93" category="list-text"><block ref="483fd2990c168581254c61b55b471e93" category="inline-link-rx"></block></block>
   <block id="7f28f59c47464c242d6442ba13026efb" category="summary">在使用NetApp Disaster Recovery之前，您必須將內部部署和雲端託管儲存實例新增至NetApp Console系統。</block>
   <block id="db931cab7409f85dc1d9775949614f0a" category="doc">使用NetApp Disaster Recovery功能將本機陣列新增至適用於 Amazon EVS 的NetApp Console系統</block>
   <block id="110cf9f49141b2330ac27d9a9baedd2f" category="paragraph">您需要執行以下操作：</block>
@@ -1042,7 +1026,6 @@
   <block id="97f038e2f4284e7bd85ce8986351f37a" category="paragraph">這將重新發現資料儲存、其虛擬機器及其目標關係。</block>
   <block id="6b2c385261ff0cb6c8365e9b2627a238" category="summary">NetApp Disaster Recovery是一種基於雲端的災難復原服務​​，可自動執行災難復原工作流程。透過NetApp Disaster Recovery for VMware，您可以將執行ONTAP儲存的本機 VMware 工作負載複製到公有雲中的 VMware 軟體定義資料中心，作為使用NetApp Disaster Recovery站點。</block>
   <block id="c11b69e74ac28288df478284e9a69a9e" category="doc">NetApp Disaster Recovery的新功能</block>
-  <block id="20c2a4ce829c1bfe59988843f4146d8a" category="paragraph">了解NetApp Disaster Recovery的新功能。</block>
   <block id="a41dd7aa7d921f9f0881a705d3679e6c" category="section-title">2025年10月6日</block>
   <block id="3488d38349240c72f75d081c2a79fa3b" category="section-title">2025年8月4日</block>
   <block id="4a32789f771ba902fef02cd0f2a544e6" category="paragraph">版本 4.2.5P2</block>
@@ -1070,11 +1053,7 @@
   <block id="e1229c7ad0ab8ec8028a9d0383ad8106" category="paragraph">此版本包括故障轉移測試計劃結構的更新，這是支援每日和每週計劃所必需的。此更新要求您停用並重新啟用所有現有的複製計劃，以便您能夠使用新的每日和每週故障轉移測試計劃。這是一次性要求。</block>
   <block id="acd962f8090b530f4e4c526ecbf56b61" category="section-title">複製計劃更新</block>
   <block id="7df13e1b4ece3e3deb4fbe809d05ea7c" category="paragraph">此版本包括複製計劃資料的更新，解決了「未找到快照」的問題。這要求您將所有複製計劃中的保留計數變更為 1 並啟動按需快照。此過程會建立一個新的備份並刪除所有舊備份。</block>
-  <block id="3d3e2652059a9417e7a9b8801e83b99d" category="list-text">選擇複製計劃，按一下「*故障轉移對映*」選項卡，然後按一下「*編輯*」鉛筆圖示。</block>
-  <block id="f05351f8a712da4ff1e724d342c4670b" category="list-text">按一下「*資料儲存*」箭頭將其展開。</block>
-  <block id="0d59b78804ed5feec9399254629a60f1" category="list-text">請注意複製計劃中的保留計數的值。完成這些步驟後，您將需要恢復此原始值。</block>
   <block id="e9c686cd7f0fc0f9a24375142cf2639b" category="list-text">將計數減少到 1。</block>
-  <block id="94eec0eecc897e0613b4dca05f1db3b5" category="list-text">啟動按需快照。為此，在複製計劃頁面上，選擇該計劃，按一下操作圖標，然後選擇*立即拍攝快照*。</block>
   <block id="4be920e5d3a5c6a1a13e6a9ed1ea0d96" category="list-text">快照作業成功完成後，將複製計畫中的計數增加回您在第一步驟中記下的原始值。</block>
   <block id="fcf0bc475de9e6576c18ef6dcf5d7506" category="list-text">對所有現有的複製計劃重複這些步驟。</block>
   <block id="60f72027f1d6cd2e0c4f75d06deeb162" category="section-title">2024年7月5日</block>
@@ -1145,7 +1124,6 @@
   <block id="8fb7b8d770a994170f1c007a9255f124" category="admonition">對於此預覽版產品， NetApp保留在正式發布之前修改產品詳細資訊、內容和時間表的權利。</block>
   <block id="0d2ad64b559232943585fd7b1d8a6a97" category="section-title">2023年9月27日</block>
   <block id="de9bf2b4fc18ad740d18dc573f01d00d" category="section-title">儀表板更新</block>
-  <block id="a50d40a404b06d36129623086efe89e7" category="paragraph">現在您可以單擊儀表板上的選項，從而更輕鬆快速地查看資訊。此外，儀表板現在顯示故障轉移和遷移的狀態。</block>
   <block id="be74a2f8b73ed15a46d21c202566b3bb" category="inline-link">在儀表板上查看災難復原計畫的運作狀況</block>
   <block id="d1181cbae4acc0d9feb9f608b3ee586f" category="paragraph">參考<block ref="cdc1638a4873b7c2cfc1c5962a5d03ab" category="inline-link-rx"></block>。</block>
   <block id="056f6fba19f65e991a1c38d676e1c20d" category="list-text">*RPO*：您現在可以在複製計畫的資料儲存部分輸入復原點目標 (RPO) 和保留計數。這表示必須存在且不早於設定時間的資料量。例如，如果將其設定為 5 分鐘，則在發生災難時系統可能會遺失最多 5 分鐘的數據，而不會影響關鍵業務需求。</block>
@@ -1631,7 +1609,6 @@
   <block id="544bb990c26b075198ab3593eb235cab" category="list-text">在方塊中輸入「故障轉移」。</block>
   <block id="d84be8f4bd42528d316284b904e45288" category="summary">您可以快速瀏覽所有NetApp Disaster Recovery資源並管理 vCenter 網站、資源群組和複製計畫。</block>
   <block id="06804fd9ef3d874a22951c7ab07ff304" category="doc">使用NetApp Disaster Recovery管理網站、資源群組、複製計畫、資料儲存庫和虛擬機器訊息</block>
-  <block id="681e043e8c759b6b80b2223a79b56a0e" category="paragraph">您可以快速瀏覽所有NetApp Disaster Recovery資源，也可以詳細查看每個資源：</block>
   <block id="3faa64303d5f5bcd043bb88f6768e603" category="list-text">站點</block>
   <block id="769b718779fbe38c65b122b69e0271a3" category="list-text">資源組</block>
   <block id="a8fc43ecd23ee9eb5e9efa5c60cb20b9" category="list-text">複製計劃</block>
@@ -1643,9 +1620,7 @@
   <block id="b2209ab446f654c29ab1bfca5d8d2693" category="list-text">選擇“操作”選項<block ref="b571b46a13691830124ae7cdd5a7ca96" category="inline-image-macro-rx" type="image"></block>在 vCenter 名稱右側，選擇「*編輯*」。</block>
   <block id="c4b621211240f640df1e2cfcc6cc5bec" category="list-text">編輯 vCenter 網站名稱和位置。</block>
   <block id="ec972bce7640d5d440d3549702031815" category="section-title">管理資源組</block>
-  <block id="df5bd7f92bf7a899cafe7f5f4cede250" category="paragraph">雖然您可以在建立複製計劃時新增資源群組，但您可能會發現單獨新增群組並稍後在計劃中使用這些群組更為方便。您可以按虛擬機器或資料儲存建立資源組。</block>
   <block id="f14421e984d67b669d82e97c5f322ee1" category="paragraph">您可以透過以下方式按資料儲存建立資源組：</block>
-  <block id="c13f805e54076a6b9272f554c6665394" category="paragraph">您可以使用資源群組執行下列任務：</block>
   <block id="7dc3653a56cf32cd6556cb35e316d496" category="list-text">更改資源組名稱。</block>
   <block id="28bc604f06695c0dd7fafde0ac528672" category="list-text">將虛擬機器新增至資源組。</block>
   <block id="105e582ff5868a70b8749c89dc720eea" category="list-text">從資源組中刪除虛擬機器。</block>
@@ -1654,7 +1629,6 @@
   <block id="15f78fe59a1cd46fa3451eee4d4abd68" category="paragraph">有關建立資源組的詳細信息，請參閱<block ref="2b3c741429e386b5764de1b41e09f2a5" category="inline-link-macro-rx"></block>。</block>
   <block id="dcf89107be2e3e74879158c2197da867" category="list-text">從選單中選擇*資源組*。</block>
   <block id="fb64cb9f2eb5e660830a8f202d12f794" category="list-text">若要新增資源組，請選擇「新增組」。</block>
-  <block id="5f322b75b37e06720216711ec831f49c" category="list-text">若要對資源組執行操作，請選擇「*操作*」選項<block ref="771645334c0631c5881bfc9858be7f5b" category="inline-image-macro-rx" type="image"></block>並選擇任意選項，例如“編輯資源組”或“刪除資源組”。</block>
   <block id="88947748ef8b3b00cf2cf0c3999a702e" category="paragraph">您可以停用、啟用和刪除複製計劃。您可以更改時間表。</block>
   <block id="3058d1612836b55d5c4e71a540ba0c44" category="list-text">如果您想暫時暫停複製計劃，您可以停用它，然後啟用它。</block>
   <block id="98a6ed9560bddac4a68acf12bb7ce31c" category="list-text">如果您不再需要該計劃，您可以將其刪除。</block>
@@ -1672,23 +1646,16 @@
   <block id="919f04c7393ca337da4d5ecf62b924fc" category="list-text">檢查*依計畫執行測試故障轉移*。</block>
   <block id="87446024d70eefcd64c28443544975b4" category="list-text">在重複選項中，選擇每日、每週或每月的計劃。</block>
   <block id="ed5712a5338a0cddb9b90afe427576e5" category="section-title">按需協調快照</block>
-  <block id="6c2bc725654231e0111d8b4adcd666d0" category="paragraph">您可以協調來源和目標之間不同步的快照。如果在NetApp Disaster Recovery以外的目標上刪除快照，則可能會發生這種情況。該服務每 24 小時自動刪除來源上的快照。但是，您可以根據需要執行此操作。此功能可讓您確保快照在所有網站上都是一致的。</block>
-  <block id="34ec48d6af2f98f1956cfc75d32b92fe" category="list-text">從複製計劃清單中，選擇“操作”選項<block ref="771645334c0631c5881bfc9858be7f5b" category="inline-image-macro-rx" type="image"></block>在計畫的右側，選擇「協調快照」。</block>
   <block id="08bb8fbd3da836cf3622737c948a4ede" category="list-text">審查對帳資訊。</block>
   <block id="571a21bebeed1a6e73b024d56871482d" category="list-text">選擇*協調*。</block>
   <block id="2dcc77d52e005461a9eab86fef63c3f9" category="section-title">刪除複製計劃</block>
-  <block id="0f6c94cfa5509a16442ca505884acf3e" category="paragraph">如果不再需要複製計劃，您可以刪除它。如果刪除複製計劃，您也可以刪除該計劃建立的主快照和輔助快照。</block>
   <block id="3b107f5143841ab861176b3715f11587" category="list-text">選擇“操作”選項<block ref="771645334c0631c5881bfc9858be7f5b" category="inline-image-macro-rx" type="image"></block>在計劃右側，選擇“*刪除*”。</block>
-  <block id="e28e746e68d02b24d2750571a0776bd0" category="list-text">選擇是否要刪除主快照、輔助快照或僅刪除計畫建立的元資料。</block>
-  <block id="90486e8ee3ac6fe6a17dab32429bf3ee" category="list-text">輸入“delete”確認刪除。</block>
   <block id="0f024621e0673f1f4e657983682d6e72" category="list-text">選擇*刪除*。</block>
   <block id="f51ae48fcef0eb66752ca677561d408c" category="section-title">更改故障轉移計劃的保留計數</block>
-  <block id="b138bbcc2a9cc6e505caed49815b326b" category="paragraph">您可以變更保留的資料儲存區數量。</block>
   <block id="03d6e40e14e15773309e166be782dc5b" category="list-text">選擇複製計劃，選擇*故障轉移映射*選項卡，然後選擇*編輯*鉛筆圖示。</block>
   <block id="72b0b6c8ac453b14a3dc76bb9323c7e5" category="list-text">選擇“*資料儲存*”箭頭將其展開。</block>
   <block id="ee9e0fb0a09a468f33fa6f2dabc4ff49" category="inline-image-macro">編輯故障轉移映射頁面</block>
   <block id="2aef38b97efb9369d3e496e8d062d8fd" category="paragraph"><block ref="2aef38b97efb9369d3e496e8d062d8fd" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="51c600bec26d8fec2fcc4cb42728fd01" category="list-text">變更複製計劃中的保留計數的值。</block>
   <block id="e3a15d734e1eafd89e04f5eb526ec5cc" category="list-text">選擇複製計劃後，選擇“操作”選單，然後選擇“清理舊快照”以刪除目標上的舊快照以符合新的保留計數。</block>
   <block id="a6dcfee4cd10f2ad60c3d81bc2a3b8ad" category="section-title">查看資料儲存資訊</block>
   <block id="432624070ae1b8a0b19fd42c048a224c" category="paragraph">您可以查看有關來源和目標上存在多少資料儲存區的資訊。</block>
@@ -1784,22 +1751,16 @@
   <block id="de18d8f949f454da2ede489b3979469b" category="paragraph">vCenter 叢集只能駐留在一個站點。您需要以下資訊才能將 vCenter 群集新增至網站：</block>
   <block id="eecc1c046815522892ed1b8255f3f967" category="list-text">vCenter 管理 IP 位址或 FQDN</block>
   <block id="a0b1f7f83e512f18531427c30dfda111" category="inline-link-macro">所需的 vCenter 權限</block>
-  <block id="4080221450b759d2b8450afa1ac3e345" category="list-text">具有執行操作所需權限的 vCenter 帳戶的憑證。看<block ref="9e7079c4a4f90ca76a9a02909aa5bf5b" category="inline-link-macro-rx"></block>了解更多。</block>
   <block id="1f490ffa54a278cbe959d7caaf6de272" category="list-text">對於雲端託管的 VMware 站點，所需的雲端存取金鑰</block>
   <block id="03d24609520a8800132bd62fa4280091" category="list-text">用於存取 vCenter 的安全性憑證。</block>
   <block id="06cb80959b7e29d23b7c09355933539d" category="admonition">本服務支援自簽章安全性憑證或來自中央憑證授權單位 (CA) 的憑證。</block>
-  <block id="ecc7b363bd82d14e4f4308e65d23d1e3" category="paragraph">您將進入NetApp Disaster Recovery儀表板頁面。首次啟動服務時，您需要新增 vCenter 資訊。隨後，儀表板會顯示有關您的網站和複製計畫的資料。</block>
   <block id="1a575de6e97bed53905ae3b55c22dd29" category="admonition">根據您新增的網站類型，會出現不同的欄位。</block>
   <block id="db5ad0ead9eeceb394e92d65f79adbfe" category="list-text">如果一些 vCenter 網站已經存在並且您想要添加更多，請從選單中選擇“*網站*”，然後選擇“*新增*”。</block>
   <block id="4a5eb18788b768b36f708c9617ffef9e" category="list-text">在「站點」頁面中，選擇站點，然後選擇「新增 vCenter」。</block>
   <block id="901540dd7e45eaf2226327527c8d78b4" category="list-text">*來源*：選擇*發現 vCenter 伺服器*以輸入有關來源 vCenter 網站的資訊。</block>
-  <block id="6b3b905a38750ec7a08fa2e97d6315bf" category="admonition">如果一些 vCenter 網站已經存在並且您想要添加更多，請從頂部選單中選擇 *網站*，然後選擇 *新增*。</block>
   <block id="5a05572673bc07b0b94f07c482a67d13" category="inline-image-macro">新增 vCenter 伺服器螢幕截圖</block>
   <block id="c65c0c2ea94db5e745008fb8af0f7f2e" category="paragraph"><block ref="c65c0c2ea94db5e745008fb8af0f7f2e" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="a883c3f7a5af569be1488bf115fe2127" category="list-text">選擇一個站點，選擇NetApp Console代理，並提供 vCenter 憑證。</block>
-  <block id="7dbf01d6d33098287eb82c71ea10ea1e" category="list-text">（僅適用於本機網站）若要接受來源 vCenter 的自簽章證書，請勾選該方塊。</block>
   <block id="1909b7ffbea69e2cc7b387ed9d255c18" category="admonition">自簽名證書不如其他證書安全。如果您的 vCenter *未*設定憑證授權單位 (CA) 證書，則應選取此方塊；否則，與 vCenter 的連線將無法運作。</block>
-  <block id="a0fa7543e8627767b57d6c2797fbbda9" category="paragraph">接下來，您將新增目標 vCenter。</block>
   <block id="ecc10bfc44edd7abd754949b1bda0e4b" category="list-text">為目標 vCenter 重新新增網站。</block>
   <block id="0409428076b2c81e1f1d6d6bd331b296" category="list-text">再次選擇*新增 vCenter*並新增目標 vCenter 資訊。</block>
   <block id="bc7f3cb185f48d451eb5ef976e8ad82d" category="list-text">*目標*：</block>
@@ -1921,4 +1882,37 @@
   <block id="a900cb57c651ef75881dfa4543e4701d" category="sidebar">複製到另一個站點</block>
   <block id="ad80d6168dc288f4361413eeca80dc5f" category="sidebar">遷移至其他站點</block>
   <block id="b7cd69eed80f723036ef0a99b8bb375e" category="sidebar">管理站點、計劃、資料儲存和虛擬機器信息</block>
+  <block id="dd64baea4cd51b54ff1827028e4db4f6" category="paragraph"><block ref="b0f53b92ba6c515b65cd9cce152b9651" category="inline-link-macro-rx"></block>。</block>
+  <block id="867215f2d24d8d500f9d6d76b166230b" category="summary">在使用NetApp Disaster Recovery之前，請確保您的環境符合ONTAP儲存、VMware vCenter 叢集和NetApp Console的要求。</block>
+  <block id="43f2bccff85f631b4171a654387bbcc5" category="list-text">承載災難復原磁碟區的 SVM 必須存在於目標叢集上。</block>
+  <block id="ad534f647119b6dc497ed6df26304325" category="inline-link-macro">Amazon FSx for ONTAP文檔</block>
+  <block id="6a9f393c771a2d23fdd73d7dcb38852e" category="list-text">您的 VPC 中必須存在用於託管 VMware DR 資料儲存區的Amazon FSx for NetApp ONTAP實例。首先，請參閱<block ref="6ae09d1010480d9e1a6425b1f33dfdd2" category="inline-link-macro-rx"></block>。</block>
+  <block id="6a5f3f109fcda550019219a08b2f9c00" category="list-text">必須將Amazon FSx for ONTAP和 AWS 憑證新增至管理NetApp Disaster Recovery的NetApp Console專案中的系統。</block>
+  <block id="3e2058a360b0af2c32f423f3aaaeed52" category="paragraph">控制台代理程式是一個軟體元件，它使控制台能夠與您的ONTAP儲存和 VMware vCenter 叢集進行通訊。它是災難恢復正常運作所必需的。代理程式駐留在您的私人網路（本地資料中心或雲端 VPC）中，並與您的ONTAP儲存實例以及任何其他伺服器和應用程式元件進行通訊。對於災難復原，這是對您管理的 vCenter 叢集的存取。</block>
+  <block id="7ef83357fc923bb1138846ec262ec0cd" category="list-text">已安裝的控制台代理程式必須能夠存取災難復原將要管理的任何 VMware vCenter 叢集執行個體和由這些 vCenter 叢集管理的 ESXi 主機。</block>
+  <block id="298b6679b4a5fedf91682cb4609690c5" category="list-text">對於執行 Microsoft SQL Server、Oracle 資料庫或兩者的 Windows 虛擬機，必須啟用資料庫的 VSS 寫入器。</block>
+  <block id="876b8d27a8711ccaad8551b08b7a888a" category="list-text">在 Linux 作業系統上執行的 Oracle 資料庫必須為 Oracle 資料庫 SYSDBA 角色啟用作業系統使用者驗證。</block>
+  <block id="ac9d9cedbd075fff9bfcb2776127474a" category="paragraph">了解NetApp Disaster Recovery的新功能。</block>
+  <block id="c4b657898484a4fc73adb716b67d3ad7" category="list-text">請注意複製計劃中的保留計數的值。完成這些步驟後，您需要恢復此原始值。</block>
+  <block id="3298d659fab0af52765e43822c472d69" category="list-text">啟動按需快照。為此，在複製計劃頁面上，選擇該計劃，選擇操作圖標，然後選擇「立即建立快照」。</block>
+  <block id="f68c6089f559d4079e24537b4018d2a5" category="paragraph">現在您可以在儀表板上選擇選項，從而更輕鬆地快速查看資訊。此外，儀表板現在顯示故障轉移和遷移的狀態。</block>
+  <block id="291fd08745b243b885d5ad0cf9556e2d" category="paragraph">NetApp Disaster Recovery提供所有資源的概覽和更詳細的觀點：</block>
+  <block id="4807e9e42b4283aaf7b590eb1b7a8aa6" category="paragraph">您可以按虛擬機器或資料儲存建立資源組。它們可以在建立複製計劃時添加，也可以在建立複製計劃之後添加。</block>
+  <block id="cf0031dda1508b365e62eb97d90152a0" category="paragraph">您可以使用資源組執行以下操作：</block>
+  <block id="6c1d71ea8876ab07fa54b29a3f65f754" category="list-text">您可以選擇“操作”選項來修改或刪除資源組。<block ref="771645334c0631c5881bfc9858be7f5b" category="inline-image-macro-rx" type="image"></block> 。</block>
+  <block id="281ea97852952087969b1df80742ba38" category="paragraph">災難復原功能每 24 小時自動刪除來源上的快照。如果發現來源和目標之間的快照不同步，則需要解決快照之間的差異，以確保網站之間的一致性。</block>
+  <block id="5a713acc18bc1c1fa687ddbad7c445aa" category="list-text">從複製計劃清單中，選擇“操作”選項<block ref="771645334c0631c5881bfc9858be7f5b" category="inline-image-macro-rx" type="image"></block>然後*協調快照*。</block>
+  <block id="3c843649a94855e3901bd423ac9ca414" category="paragraph">如果刪除複製計劃，您也可以刪除該計劃建立的主快照和輔助快照。</block>
+  <block id="75c34b3422e5baaae429a2d21a62a9d8" category="list-text">選擇要刪除主快照、輔助快照，還是僅刪除計畫建立的元資料。</block>
+  <block id="8e15489db6e2853bdefe4e39cf285c3d" category="list-text">輸入“刪除”以確認刪除。</block>
+  <block id="c1ba23522836b9d395a79f30f4da96b4" category="paragraph">更改保留計數可以增加或減少已儲存的資料儲存數量。</block>
+  <block id="506d82cb3cd3b9175af419eb19bc5740" category="list-text">選擇複製計劃，然後選擇「故障轉移對映」標籤。選擇“編輯”鉛筆圖示。</block>
+  <block id="58777a5460ab56ac04a8fc9d5cb1b259" category="list-text">選擇“資料儲存”行中的向下箭頭將其展開。</block>
+  <block id="2d3c0c55028659ea4dd39b2fd1ee9a30" category="list-text">更改所有資料存儲的**保留計數**值。</block>
+  <block id="7a988fd1e6beb5a163334993a7364fab" category="list-text">具有執行操作所需權限的 vCenter 帳戶的憑證。看<block ref="0a23d475349d8b59d7b1d04d622e5f7f" category="inline-link-macro-rx"></block>了解更多。</block>
+  <block id="09f1f22ef0473a64fe418a7bca316d95" category="paragraph">如果您是第一次使用NetApp災難復原，則需要新增 vCenter 資訊。如果您已經新增了 vCenter 訊息，您將看到儀表板。</block>
+  <block id="a280f67014fa91a16b7bf85e07d4eb9f" category="admonition">若要新增更多 vCenter 站點，請選擇“站點”，然後選擇“新增”。</block>
+  <block id="c17db388b1bce3930a27ba26379fd97f" category="list-text">選擇站點，然後選擇NetApp Console代理，並提供 vCenter 憑證。</block>
+  <block id="51f46f78f8aed3edc5be5baa188edfc3" category="list-text">**僅限本機網站：** 若要接受來源 vCenter 的自簽章證書，請選取該核取方塊。</block>
+  <block id="3197d20854469510f60e5d3f44b0db4d" category="paragraph">接下來加入目標 vCenter。</block>
 </blocks>

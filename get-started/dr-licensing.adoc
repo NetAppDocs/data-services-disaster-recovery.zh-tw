@@ -28,7 +28,7 @@ link:../reference/dr-reference-roles.html["了解NetApp Disaster Recovery中的�
 
 NOTE: 當至少有一個虛擬機器具有複製計畫時， NetApp Disaster Recovery費用是基於來源站點上資料儲存區的已使用容量。故障轉移資料儲存區的容量不包含在容量限額內。對於 BYOL，如果資料超出允許的容量，服務中的操作將受到限制，直到您獲得額外的容量授權或在NetApp Console中升級授權。
 
-link:https://docs.netapp.com/us-en/bluexp-digital-wallet/concept-digital-wallet.html["了解有關訂閱的更多信息"^] 。
+link:https://docs.netapp.com/us-en/console-licenses-subscriptions/concept-licenses-subscriptions.html["了解有關訂閱的更多信息"^]。
 
 免費試用結束或許可證到期後，您仍然可以在服務中執行以下操作：
 
