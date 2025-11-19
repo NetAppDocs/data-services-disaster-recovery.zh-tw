@@ -14,7 +14,7 @@
 
 災難復原功能現在支援在註冊過程中將 VMware 硬體降級到早期版本的 vSphere。當來源 ESX 主機運行的版本比災難復原網站的版本更新時，這非常有用。
 
-有關詳細信息，請參閱 xref:drplan-create.html#map-resources-virtual-machines-section[在NetApp Disaster Recovery中建立複製計劃]。
+有關詳細信息，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html#select-vcenter-servers["在NetApp Disaster Recovery中建立複製計劃"]。
 
 
 
@@ -28,4 +28,4 @@
 
 現在您可以將自訂腳本注入到故障轉移工作流程中，以便在建立備份之前執行。備份前腳本可讓您在複製快照之前控制虛擬機器的狀態，並為虛擬機器的轉換做好準備。例如，您可以注入腳本來卸載 NFS 掛載點，然後在故障轉移後使用另一個腳本重新掛載該掛載點。
 
-有關詳細信息，請參閱 xref:drplan-create.html#map-resources-virtual-machines-section[在NetApp Disaster Recovery中建立複製計劃]。
+有關詳細信息，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html#select-vcenter-servers["在NetApp Disaster Recovery中建立複製計劃"]。

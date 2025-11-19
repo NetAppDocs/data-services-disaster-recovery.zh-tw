@@ -1918,7 +1918,6 @@
   <block id="8115dd8449bd907d08f3347f6d04324a" category="paragraph">現在您可以在ONTAP中設定級聯關係，並使用該複製關係的任何分支進行災難復原。</block>
   <block id="eb2fa9dcb8eaa46c82c070f8bbe8418a" category="section-title">註冊期間降低 VMware 硬體支援級別</block>
   <block id="f83d7a6597b186db7483e2f478aeb8fa" category="paragraph">災難復原功能現在支援在註冊過程中將 VMware 硬體降級到早期版本的 vSphere。當來源 ESX 主機運行的版本比災難復原網站的版本更新時，這非常有用。</block>
-  <block id="a412b7de9758b999e39beb6a86f38803" category="paragraph">有關詳細信息，請參閱 <block ref="3b88d2273f8f2a777f18a77cece1dbb2" category="inline-xref-macro-rx"></block>。</block>
   <block id="bcf697aa5ef7fc37fba63ce6d2bf0e43" category="section-title">優雅關機</block>
   <block id="9437b903cdafc2fdfce3c66af80b97f0" category="paragraph">災難復原現在會優雅地關閉虛擬機，而不是直接斷電。如果某個虛擬關機時間超過十分鐘，災難復原功能會將其關閉。</block>
   <block id="9b9e3165f7ecae3e2e3b2c795e562976" category="section-title">備份前腳本支持</block>
@@ -1926,4 +1925,5 @@
   <block id="77750efa6f5ff153acdc42067058017f" category="section-title">2025年11月10日</block>
   <block id="67d901d806b31ec45748075cf6b4b785" category="list-text">*降級虛擬機器硬體版本並註冊*：如果目標 ESX 主機版本早於來源版本，請選擇此項，以便在註冊期間進行配對。</block>
   <block id="c41917a6c517c418de809b1e4f43f537" category="admonition">建議您建立一個專門的匯出策略，將磁碟區存取權限限制為_僅_將託管受保護虛擬機器的來源 vCenter ESXi 主機和目標 vCenter ESXi 主機。這樣可以確保外部實體無法存取 NFS 匯出內容。</block>
+  <block id="11decf8e913c8fbeb5d947338d43e3b0" category="paragraph">有關詳細信息，請參閱 <block ref="bf6dbdf786c7323ca961bfd2e12103c6" category="inline-link-macro-rx"></block>。</block>
 </blocks>
