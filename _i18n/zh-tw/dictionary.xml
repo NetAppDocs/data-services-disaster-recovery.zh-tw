@@ -1844,7 +1844,6 @@
   <block id="cab2138409405e17442c0b2913348b5c" category="doc">支援使用Google Cloud NetApp Volumes的 Google Cloud VMware Engine。</block>
   <block id="eccf4b156fba5109ca6b1ef2be2fd64e" category="paragraph">NetApp Disaster Recovery現在支援使用Google Cloud NetApp Volumes的 Google Cloud VMware Engine 進行遷移、故障轉移、故障復原和測試作業。這種整合實現了本地環境和 Google Cloud 之間的無縫災難復原工作流程。</block>
   <block id="7984e947265cc8b94c06702adbf28865" category="inline-link-macro">限制</block>
-  <block id="4fae34c4a960e8f2c583a66a68cf6fdc" category="paragraph">請務必仔細閱讀。<block ref="0b97dbd151642cb26d83aa16e8ffd9ce" category="inline-link-macro-rx"></block>和<block ref="86229131b08ad70f4dd9ffc7440523ad" category="inline-link-macro-rx"></block>適用於谷歌雲端。</block>
   <block id="3c56503a9f48478890ac41e17395c762" category="list-text">Google Cloud VMware Engine (GCVE) 與Google Cloud NetApp Volumes</block>
   <block id="1a90436cad6b2c834a6f0bf4b63bb676" category="paragraph">詳細了解<block ref="185be9890bef04443cd0fba90b4aff11" category="inline-link-rx"></block>。</block>
   <block id="9ad4327ee2b15571b0ae33cd44518465" category="list-text">透過多個時間點復原操作簡化 vCenter 發現和應用程式復原的使用者體驗。</block>
@@ -1929,4 +1928,5 @@
   <block id="bae7a0a97273516d5296fb983700a411" category="paragraph"><block ref="31accac3325320cbdf81ca4694a5591c" category="inline-link-macro-rx"></block>。<block ref="e704c98551e5f8acdbf19af28a86dcf3" category="inline-link-rx"></block>。</block>
   <block id="a805fee248bed5144adc2fef83e46569" category="paragraph">新增 vCenter 網站後，就可以建立災難復原或複製計畫了。複製計畫管理 VMware 基礎架構的資料保護。選擇來源和目標 vCenter，挑選資源群組，並對應用程式的復原和啟動方式進行分組。例如，您可以將與一個應用程式關聯的虛擬機器 (VM) 進行分組，也可以將具有相似層的應用程式進行分組。此類計劃有時被稱為_藍圖_。</block>
   <block id="3cd914b858fef92fe1881cac0800b73b" category="paragraph">&gt;[!重要] &gt;使用 Google Cloud，您只能在複製計畫中新增一個磁碟區或資料儲存。</block>
+  <block id="8497094e0d678632f29aeaad49708682" category="paragraph">請務必仔細閱讀。<block ref="0b97dbd151642cb26d83aa16e8ffd9ce" category="inline-link-macro-rx"></block>和<block ref="9bbaf1e88d2981b5294528496eff27bf" category="inline-link-macro-rx"></block>適用於谷歌雲端。</block>
 </blocks>

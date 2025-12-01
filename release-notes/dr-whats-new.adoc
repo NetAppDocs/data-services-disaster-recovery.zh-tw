@@ -24,7 +24,7 @@ summary: NetApp Disaster Recovery是一種基於雲端的災難復原服務​�
 
 NetApp Disaster Recovery現在支援使用Google Cloud NetApp Volumes的 Google Cloud VMware Engine 進行遷移、故障轉移、故障復原和測試作業。這種整合實現了本地環境和 Google Cloud 之間的無縫災難復原工作流程。
 
-請務必仔細閱讀。link:https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-prerequisites.html["先決條件"]和link:https://docs.netapp.com/us-en/data-services-disaster-recovery/release-notes/dr-limitations.adoc["限制"]適用於谷歌雲端。
+請務必仔細閱讀。link:https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-prerequisites.html["先決條件"]和link:https://docs.netapp.com/us-en/data-services-disaster-recovery/release-notes/dr-limitations.html["限制"]適用於谷歌雲端。
 
 
 
