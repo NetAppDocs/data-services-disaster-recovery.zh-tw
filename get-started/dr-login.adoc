@@ -16,7 +16,7 @@ summary: 透過存取NetApp Console中的服務開始使用NetApp Disaster Recov
 
 若要登入，您可以使用您的NetApp支援網站憑證，也可以使用您的電子郵件和密碼註冊NetApp雲端登入。 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-logging-in.html["了解有關登入的更多信息"^] 。
 
-特定任務需要特定的使用者角色。link:../reference/dr-reference-roles.html["了解NetApp Disaster Recovery中的使用者角色和權限"] 。https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["了解所有服務的NetApp Console存取角色"^] 。
+特定任務需要特定的使用者角色。link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["了解NetApp Disaster Recovery中的使用者角色和權限"]。https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服務的NetApp Console存取角色"^]。
 
 .步驟
 . 開啟 Web 瀏覽器並前往 https://console.netapp.com/["NetApp Console"^]。
@@ -35,7 +35,7 @@ image:draas-landing6-free-trial.png["NetApp Disaster Recovery的登入頁面螢�
 否則，將出現NetApp Disaster Recovery儀表板。
 
 +
-** 如果您尚未新增NetApp Console代理，則需要新增一個。若要新增代理，請參閱 https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["了解控制台代理"^]。
+** 如果您尚未新增NetApp Console代理，則需要新增一個。若要新增代理，請參閱 https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html["了解控制台代理"^]。
 ** 如果您是具有現有代理程式的NetApp Console用戶，當您選擇「災難復原」時，會出現一條有關註冊的訊息。
 ** 如果您已經在使用該服務，當您選擇「災難復原」時，就會出現儀表板。
 

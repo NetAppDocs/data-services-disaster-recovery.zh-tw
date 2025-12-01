@@ -15,6 +15,6 @@
 * 在建立複製計劃的過程中，刪除了封鎖目標磁碟區與來源磁碟區相同的限制。
 * 在 Azure 市場中新增了對NetApp智慧服務的即用即付 (PAYGO) 訂閱支持，並在免費試用對話方塊中新增了 Azure 市場的連結。
 +
-有關詳細信息，請參閱 https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-intro.html#licensing["NetApp Disaster Recovery許可"]和 https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-licensing.html["設定NetApp Disaster Recovery許可"]。
+詳情請見 https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-intro.html#licensing["NetApp Disaster Recovery許可"]和 https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-licensing.html["設定NetApp Disaster Recovery許可"]。
 
 

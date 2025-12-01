@@ -16,9 +16,10 @@ summary: 雲端災難復原是一種具有彈性且經濟高效的方式，可�
 
 NetApp Disaster Recovery是一種基於雲端的災難復原服務​​，可自動執行災難復原工作流程。透過NetApp Disaster Recovery，您可以將內部基於 NFS 的工作負載和 VMware vSphere 虛擬機器檔案系統 (VMFS) 資料儲存（用於執行NetApp儲存的 iSCSI 和 FC）保護到下列其中一項：
 
-* AWS 上的 VMware Cloud (VMC) 以及適用Amazon FSx for NetApp ONTAP
 * Amazon Elastic VMware Service (EVS) 和Amazon FSx for NetApp ONTAP有關詳細信息，請參閱link:../reference/evs-deploy-guide-introduction.html["使用 Amazon Elastic VMware Service 和Amazon FSx for NetApp ONTAP實作NetApp Disaster Recovery"]。
+* AWS 上的 VMware Cloud (VMC) 以及適用Amazon FSx for NetApp ONTAP
 * 具有NetApp Cloud Volumes ONTAP (iSCSI) 的 Azure VMware 解決方案 (AVS)（私人預覽版）
+* Google Cloud VMware Engine (GCVE) 與Google Cloud NetApp Volumes
 * 另一個具有ONTAP儲存的本機 NFS 和/或基於 VMFS (iSCSI/FC) 的 VMware 環境
 
 
@@ -36,7 +37,7 @@ NetApp Console提供企業級跨本機和雲端環境的NetApp儲存和資料服
 
 您不需要許可證或訂閱即可開始使用NetApp Console，並且只有當您需要在雲端部署控制台代理程式以確保與儲存系統或NetApp資料服務的連線時才需要付費。但是，一些可從控制台存取的NetApp資料服務是需要授權或基於訂閱的。
 
-詳細了解 https://docs.netapp.com/us-en/bluexp-setup-admin/concept-overview.html["NetApp Console"]。
+詳細了解 https://docs.netapp.com/us-en/console-setup-admin/concept-overview.html["NetApp Console"]。
 
 
 
@@ -44,7 +45,7 @@ NetApp Console提供企業級跨本機和雲端環境的NetApp儲存和資料服
 
 NetApp Disaster Recovery有以下優勢：
 
-* 透過多個時間點復原操作簡化 vCenter 發現和應用程式復原的使用者體驗。 
+* 透過多個時間點復原操作簡化 vCenter 發現和應用程式復原的使用者體驗。
 * 透過降低營運成本來降低整體擁有成本，並能夠以最少的資源創建和調整災難復原計劃。
 * 透過虛擬故障轉移測試持續做好災難復原準備，不會中斷營運。您可以定期測試 DR 故障轉移計劃，而不會影響生產工作負載。
 * 透過 IT 環境的動態變化和在災難復原計劃中解決該問題的能力來更快地實現價值。
@@ -75,7 +76,7 @@ NOTE: vSphere 伺服器的配置是在 vSphere Server 中的NetApp Disaster Reco
 
 == 成本
 
-NetApp不會向您收取使用NetApp Disaster Recovery試用版的費用。
+NetApp不會向您收取NetApp Disaster Recovery試用版的費用。
 
 NetApp Disaster Recovery可以透過NetApp授權或透過 Amazon Web Services 的年度訂閱計畫使用。
 
@@ -181,6 +182,7 @@ image:dr-architecture-diagram-70-2.png["圖表展示了NetApp Disaster Recovery 
 * 另一個本地、基於 NFS 的 VMware 環境，具有ONTAP儲存或本地 FC/iSCSI VMSF
 * Amazon Elastic VMware 服務
 * 具有NetApp Cloud Volumes ONTAP (iSCSI) 的 Azure VMware 解決方案 (AVS)（私人預覽版）
+* Google Cloud VMware Engine (GCVE) 與Google Cloud NetApp Volumes
 
 
 

@@ -33,7 +33,7 @@ summary: 已知限制標識了此版本服務不支援或無法與其正確互�
 . 在NetApp Console代理程式中，使用雲端提供者的連線選項，連接到控制台代理程式運行的 Linux VM，使用 `docker restart occm`命令。
 
 
-參考 https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html#connect-to-the-linux-vm["管理現有的控制台代理"^]。
+參考 https://docs.netapp.com/us-en/console-setup-admin/task-managing-connectors.html#connect-to-the-linux-vm["管理現有的控制台代理"^]。
 
 . 在NetApp Console系統頁面中，再次新增Amazon FSx for ONTAP系統並提供 FSx 憑證。
 +
@@ -43,4 +43,12 @@ summary: 已知限制標識了此版本服務不支援或無法與其正確互�
 +
 這將重新發現資料儲存、其虛擬機器及其目標關係。
 
+
+
+
+
+== Google Cloud NetApp Volumes的局限性
+
+* 執行故障轉移測試後，至少需要等待 52 小時才能刪除複製磁碟區。您必須手動刪除該磁碟區。  52 小時後，您可以再次測試故障轉移。
+* 如果掛載操作的任何部分失敗，故障轉移將不會成功，作業將逾時。  Google 最多需要三天時間來調查該問題，在此期間，vCenter 上所有與資料儲存相關的操作都會被阻止。
 

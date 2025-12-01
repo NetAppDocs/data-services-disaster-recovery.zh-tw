@@ -22,7 +22,7 @@ VM1 有一個連接到 NetworkA 的 vNIC（10.1.1.50）。在複製計劃設定�
 
 總之，主機位址保持不變，而網路位址則被網站子網路對映中所配置的位址取代。這使您能夠更輕鬆地管理故障轉移時的 IP 位址重新分配，特別是當您需要管理數百個網路和數千個虛擬機器時。
 
-有關在站點中包含子網映射的詳細信息，請參閱 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/sites-add.html["新增 vCenter 伺服器站點"]。
+有關如何在站點中包含子網映射的詳細信息，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/sites-add.html["新增 vCenter 伺服器站點"]。
 
 
 
@@ -36,7 +36,7 @@ VM1 有一個連接到 NetworkA 的 vNIC（10.1.1.50）。在複製計劃設定�
 
 原始來源網站恢復上線後，您可以從複製計畫操作選單中選擇*保護資源*來建立反向保護。這會嘗試為計劃中的每個磁碟區建立反向複製關係。您可以重複執行此作業，直到恢復保護。當保護恢復後，您可以按照通常的方式啟動故障恢復。
 
-有關跳過保護的詳細信息，請參閱 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/failover.html["將應用程式故障轉移到遠端站點"]。
+有關跳過保護的詳細信息，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/failover.html["將應用程式故障轉移到遠端站點"]。
 
 
 
@@ -50,4 +50,4 @@ NetApp Disaster Recovery現在支援使用外部快照管理解決方案，例�
 
 配置完成後，服務不會定期拍攝任何快照，而是依賴外部實體來拍攝和更新這些快照。
 
-有關在複製計劃中使用外部快照解決方案的詳細信息，請參閱 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
+有關在複製計劃中使用外部快照解決方案的詳細信息，請參閱： https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"] 。

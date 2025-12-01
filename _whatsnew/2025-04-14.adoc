@@ -10,7 +10,7 @@ NetApp Disaster Recovery每 24 小時執行一次發現。透過此版本，您�
 
 如果您不想安排發現，您可以停用計劃發現選項並隨時手動刷新發現。
 
-有關詳細信息，請參閱 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/sites-add.html["新增 vCenter 伺服器站點"]。
+有關詳細信息，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/sites-add.html["新增 vCenter 伺服器站點"]。
 
 
 
@@ -24,7 +24,7 @@ NetApp Disaster Recovery每 24 小時執行一次發現。透過此版本，您�
 * 當您建立複製計劃並在計劃內建立資源組時，您可以在資料儲存區中看到虛擬機器。
 
 
-有關詳細信息，請參閱 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
+有關詳細信息，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
 
 
 

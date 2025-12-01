@@ -19,7 +19,7 @@ TIP: 在建立NetApp Disaster Recovery Disaster Recovery每 30 分鐘驗證一�
 
 *所需的NetApp Console角色* 組織管理員、資料夾或專案管理員、災難復原管理員或災難復原故障轉移管理員角色。
 
-link:../reference/dr-reference-roles.html["了解NetApp Disaster Recovery中的使用者角色和權限"] 。https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["了解所有服務的NetApp Console存取角色"^] 。
+link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["了解NetApp Disaster Recovery中的使用者角色和權限"]。https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服務的NetApp Console存取角色"^]。
 
 .開始之前
 在啟動複製之前，您應該建立複製計劃並選擇複製應用程式。然後，「操作」功能表中會出現「*複製*」選項。

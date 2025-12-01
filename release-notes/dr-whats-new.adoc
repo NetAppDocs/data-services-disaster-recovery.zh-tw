@@ -16,6 +16,18 @@ summary: NetApp Disaster Recovery是一種基於雲端的災難復原服務​�
 
 
 
+== 2025年12月1日
+
+
+
+=== 支援使用Google Cloud NetApp Volumes的 Google Cloud VMware Engine。
+
+NetApp Disaster Recovery現在支援使用Google Cloud NetApp Volumes的 Google Cloud VMware Engine 進行遷移、故障轉移、故障復原和測試作業。這種整合實現了本地環境和 Google Cloud 之間的無縫災難復原工作流程。
+
+請務必仔細閱讀。link:https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-prerequisites.html["先決條件"]和link:https://docs.netapp.com/us-en/data-services-disaster-recovery/release-notes/dr-limitations.adoc["限制"]適用於谷歌雲端。
+
+
+
 == 2025年11月10日
 
 
@@ -62,7 +74,7 @@ BlueXP disaster recovery已重新命名為NetApp Disaster Recovery。
 
 NetApp Console建立在增強和重組的BlueXP基礎之上，可在企業級內部和雲端環境中集中管理NetApp儲存和NetApp Data Services，提供即時洞察、更快的工作流程和簡化的管理，並且高度安全且合規。
 
-有關更改的詳細信息，請參閱link:https://docs.netapp.com/us-en/bluexp-relnotes/index.html["NetApp Console發行說明"]。
+有關具體變更內容，請參閱… link:https://docs.netapp.com/us-en/console-relnotes/index.html["NetApp Console發行說明"]。
 
 
 
@@ -93,7 +105,7 @@ NetApp Console建立在增強和重組的BlueXP基礎之上，可在企業級內
 * 在建立複製計劃的過程中，刪除了封鎖目標磁碟區與來源磁碟區相同的限制。
 * 在 Azure 市場中新增了對NetApp智慧服務的即用即付 (PAYGO) 訂閱支持，並在免費試用對話方塊中新增了 Azure 市場的連結。
 +
-有關詳細信息，請參閱 https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-intro.html#licensing["NetApp Disaster Recovery許可"]和 https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-licensing.html["設定NetApp Disaster Recovery許可"]。
+詳情請見 https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-intro.html#licensing["NetApp Disaster Recovery許可"]和 https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-licensing.html["設定NetApp Disaster Recovery許可"]。
 
 
 
@@ -119,9 +131,9 @@ NetApp Disaster Recovery現在採用角色來管理每個使用者對特定功�
 
 如果您按一下NetApp Disaster Recovery服務​​並首次進行配置，則必須具有 *SnapCenterAdmin* 權限或具有 *Organization Admin* 角色。
 
-有關詳細信息，請參閱 https://docs.netapp.com/us-en/bluexp-disaster-recovery/reference/dr-reference-roles.html["NetApp Disaster Recovery中的使用者角色和權限"] 。
+有關詳細信息，請參閱link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["NetApp Disaster Recovery中的使用者角色和權限"]。
 
-https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["了解所有服務的訪問角色"^] 。
+https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服務的訪問角色"^]。
 
 
 
@@ -188,7 +200,7 @@ Windows 本機管理員密碼解決方案 (Windows LAPS) 是 Windows 的功能�
 
 現在您可以透過提供網域控制器詳細資訊來選擇子網路對映選項並檢查 LAPS 選項。使用此選項，您不需要為每個虛擬機器提供密碼。
 
-有關詳細信息，請參閱 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
+有關詳細信息，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
 
 
 
@@ -216,7 +228,7 @@ VM1 有一個連接到 NetworkA 的 vNIC（10.1.1.50）。在複製計劃設定�
 
 總之，主機位址保持不變，而網路位址則被網站子網路對映中所配置的位址取代。這使您能夠更輕鬆地管理故障轉移時的 IP 位址重新分配，特別是當您需要管理數百個網路和數千個虛擬機器時。
 
-有關在站點中包含子網映射的詳細信息，請參閱 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/sites-add.html["新增 vCenter 伺服器站點"]。
+有關如何在站點中包含子網映射的詳細信息，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/sites-add.html["新增 vCenter 伺服器站點"]。
 
 
 
@@ -230,7 +242,7 @@ VM1 有一個連接到 NetworkA 的 vNIC（10.1.1.50）。在複製計劃設定�
 
 原始來源網站恢復上線後，您可以從複製計畫操作選單中選擇*保護資源*來建立反向保護。這會嘗試為計劃中的每個磁碟區建立反向複製關係。您可以重複執行此作業，直到恢復保護。當保護恢復後，您可以按照通常的方式啟動故障恢復。
 
-有關跳過保護的詳細信息，請參閱 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/failover.html["將應用程式故障轉移到遠端站點"]。
+有關跳過保護的詳細信息，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/failover.html["將應用程式故障轉移到遠端站點"]。
 
 
 
@@ -244,7 +256,7 @@ NetApp Disaster Recovery現在支援使用外部快照管理解決方案，例�
 
 配置完成後，服務不會定期拍攝任何快照，而是依賴外部實體來拍攝和更新這些快照。
 
-有關在複製計劃中使用外部快照解決方案的詳細信息，請參閱 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
+有關在複製計劃中使用外部快照解決方案的詳細信息，請參閱： https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"] 。
 
 
 
@@ -260,7 +272,7 @@ NetApp Disaster Recovery每 24 小時執行一次發現。透過此版本，您�
 
 如果您不想安排發現，您可以停用計劃發現選項並隨時手動刷新發現。
 
-有關詳細信息，請參閱 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/sites-add.html["新增 vCenter 伺服器站點"]。
+有關詳細信息，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/sites-add.html["新增 vCenter 伺服器站點"]。
 
 
 
@@ -274,7 +286,7 @@ NetApp Disaster Recovery每 24 小時執行一次發現。透過此版本，您�
 * 當您建立複製計劃並在計劃內建立資源組時，您可以在資料儲存區中看到虛擬機器。
 
 
-有關詳細信息，請參閱 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
+有關詳細信息，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
 
 
 
@@ -304,9 +316,9 @@ NetApp Console代理程式支援智慧型代理。智慧代理是一種將您的
 
 NetApp Disaster Recovery代理實作需要使用 HTTPS 協定在控制台代理與任何 vCenter Server 和ONTAP陣列之間進行連接埠 443 通訊。控制台代理程式內的NetApp Disaster Recovery代理程式在執行任何操作時直接與 VMware vSphere、VC 或ONTAP通訊。
 
-有關NetApp Disaster Recovery智慧代理的更多信息，請參閱 https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-setup.html["為NetApp Disaster Recovery設定基礎架構"]。
+有關NetApp Disaster Recovery智慧代理的更多信息，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-setup.html["為NetApp Disaster Recovery設定基礎架構"]。
 
-有關在NetApp Console中設定常規代理的更多信息，請參閱 https://docs.netapp.com/us-en/bluexp-setup-admin/task-configuring-proxy.html["配置控制台代理以使用代理伺服器"^]。
+有關NetApp Console中常規代理設定的更多信息，請參閱 https://docs.netapp.com/us-en/console-setup-admin/task-configuring-proxy.html["配置控制台代理以使用代理伺服器"^]。
 
 
 
@@ -314,7 +326,7 @@ NetApp Disaster Recovery代理實作需要使用 HTTPS 協定在控制台代理�
 
 您可以隨時停止免費試用，也可以等到試用期結束。
 
-看 https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-licensing.html#end-the-free-trial["結束免費試用"]。
+看 https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-licensing.html#end-the-free-trial["結束免費試用"]。
 
 
 
@@ -348,7 +360,7 @@ NetApp Disaster Recovery中對ASA r2 的支援使用ONTAP 9.16.1。
 
 現在您可以產生和下載報告來幫助您分析您的景觀。預先設計的報告總結了故障轉移和故障回复，顯示了所有站點上的複製詳細信息，並顯示了過去七天的作業詳細信息。
 
-參考 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/reports.html["建立災難復原報告"]。
+參考 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/reports.html["建立災難復原報告"]。
 
 
 
@@ -356,7 +368,7 @@ NetApp Disaster Recovery中對ASA r2 的支援使用ONTAP 9.16.1。
 
 現在您可以註冊NetApp Disaster Recovery30 天免費試用版。此前，免費試用期為 90 天。
 
-參考 https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-licensing.html["設定許可"]。
+參考 https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-licensing.html["設定許可"]。
 
 
 
@@ -378,7 +390,7 @@ NetApp Disaster Recovery中對ASA r2 的支援使用ONTAP 9.16.1。
 
 當您建立複製計劃並對應計算資源時，現在可以對應資料夾，以便在您為資料中心、叢集和主機指定的資料夾中復原虛擬機器。
 
-有關詳細信息，請參閱 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
+有關詳細信息，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
 
 
 
@@ -386,7 +398,7 @@ NetApp Disaster Recovery中對ASA r2 的支援使用ONTAP 9.16.1。
 
 當發生故障並且您正在啟動故障轉移、執行故障回應或測試故障轉移時，您現在可以查看虛擬機器的詳細資訊並確定哪些虛擬機器未重新啟動。
 
-參考 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/failover.html["將應用程式故障轉移到遠端站點"]。
+參考 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/failover.html["將應用程式故障轉移到遠端站點"]。
 
 
 
@@ -394,7 +406,7 @@ NetApp Disaster Recovery中對ASA r2 的支援使用ONTAP 9.16.1。
 
 建立複製計劃時，您現在可以為計劃中的每個 VM 設定啟動延遲。這使您可以設定虛擬機器的啟動順序，以確保所有優先順序為一的虛擬機器都在後續優先級虛擬機器啟動之前運行。
 
-有關詳細信息，請參閱 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
+有關詳細信息，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
 
 
 
@@ -402,7 +414,7 @@ NetApp Disaster Recovery中對ASA r2 的支援使用ONTAP 9.16.1。
 
 建立複製計劃時，您現在可以看到計劃中每個虛擬機器的作業系統。這有助於決定如何將虛擬機器分組到資源組。
 
-有關詳細信息，請參閱 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
+有關詳細信息，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
 
 
 
@@ -410,7 +422,7 @@ NetApp Disaster Recovery中對ASA r2 的支援使用ONTAP 9.16.1。
 
 建立複製計劃時，您現在可以在災難復原網站上為虛擬機器名稱新增前綴和後綴。這使您能夠為計劃中的虛擬機器使用更具描述性的名稱。
 
-有關詳細信息，請參閱 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
+有關詳細信息，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
 
 
 
@@ -418,7 +430,7 @@ NetApp Disaster Recovery中對ASA r2 的支援使用ONTAP 9.16.1。
 
 您可以刪除超出指定保留數量的不再需要的快照。當您降低快照保留計數時，快照可能會隨著時間的推移而累積，現在您可以刪除它們以釋放空間。您可以隨時根據需要或在刪除複製計劃時執行此操作。
 
-有關詳細信息，請參閱 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/manage.html["管理網站、資源群組、複製計畫、資料儲存和虛擬機器信息"]。
+有關詳細信息，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/manage.html["管理網站、資源群組、複製計畫、資料儲存和虛擬機器信息"]。
 
 
 
@@ -426,7 +438,7 @@ NetApp Disaster Recovery中對ASA r2 的支援使用ONTAP 9.16.1。
 
 現在您可以協調來源和目標之間不同步的快照。如果在NetApp Disaster Recovery以外的目標上刪除快照，則可能會發生這種情況。該服務每 24 小時自動刪除來源上的快照。但是，您可以根據需要執行此操作。此功能可讓您確保快照在所有網站上都是一致的。
 
-有關詳細信息，請參閱 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/manage.html["管理複製計劃"]。
+有關詳細信息，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/manage.html["管理複製計劃"]。
 
 
 
@@ -464,7 +476,7 @@ NOTE: NetApp不會向您收取任何預覽的工作負載容量的費用。
 
 在此版本中，您現在可以在作業監視器 UI 中取消作業。
 
-參考 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/monitor-jobs.html["監控作業"]。
+參考 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/monitor-jobs.html["監控作業"]。
 
 
 
@@ -527,7 +539,7 @@ NOTE: NetApp不會向您收取任何預覽的工作負載容量的費用。
 
 === 複製計劃更新
 
-您可以透過在「應用程式」頁面上按資料儲存器過濾虛擬機器以及在「資源映射」頁面上選擇更多目標詳細資訊來更輕鬆地新增複製計劃。參考 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
+您可以透過在「應用程式」頁面上按資料儲存器過濾虛擬機器以及在「資源映射」頁面上選擇更多目標詳細資訊來更輕鬆地新增複製計劃。參考 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
 
 
 
@@ -535,7 +547,7 @@ NOTE: NetApp不會向您收取任何預覽的工作負載容量的費用。
 
 在此版本中，故障轉移映射頁面得到了增強，更加清晰。
 
-參考 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/manage.html["管理計劃"]。
+參考 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/manage.html["管理計劃"]。
 
 
 
@@ -543,7 +555,7 @@ NOTE: NetApp不會向您收取任何預覽的工作負載容量的費用。
 
 在這個版本中，計劃中編輯虛擬機器的過程包含一些小的 UI 改進。
 
-參考 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/manage.html["管理虛擬機"]。
+參考 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/manage.html["管理虛擬機"]。
 
 
 
@@ -551,7 +563,7 @@ NOTE: NetApp不會向您收取任何預覽的工作負載容量的費用。
 
 在啟動故障轉移之前，您現在可以確定虛擬機器的狀態以及它們是已開啟還是已關閉。故障轉移過程現在使您能夠立即拍攝快照或選擇快照。
 
-參考 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/failover.html["將應用程式故障轉移到遠端站點"]。
+參考 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/failover.html["將應用程式故障轉移到遠端站點"]。
 
 
 
@@ -559,7 +571,7 @@ NOTE: NetApp不會向您收取任何預覽的工作負載容量的費用。
 
 現在您可以編輯故障轉移測試並為故障轉移測試設定每日、每周和每月的計劃。
 
-參考 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/manage.html["管理計劃"]。
+參考 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/manage.html["管理計劃"]。
 
 
 
@@ -567,7 +579,7 @@ NOTE: NetApp不會向您收取任何預覽的工作負載容量的費用。
 
 NetApp Disaster Recovery前提條件資訊已更新。
 
-參考 https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-prerequisites.html["NetApp Disaster Recovery前提條件"]。
+參考 https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-prerequisites.html["NetApp Disaster Recovery前提條件"]。
 
 
 
@@ -589,7 +601,7 @@ NetApp Disaster Recovery前提條件資訊已更新。
 
 有關設定NetApp Disaster Recovery許可的詳細信息，請參閱link:../get-started/dr-licensing.html["設定許可"]。
 
-https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-intro.html["了解有關NetApp Disaster Recovery的更多信息"] 。
+https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-intro.html["了解有關NetApp Disaster Recovery的更多信息"]。
 
 
 
@@ -603,9 +615,9 @@ https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-intro.html
 
 使用NetApp Disaster Recovery，您可以註冊 90 天免費試用或自帶授權 (BYOL)，也就是您從NetApp銷售代表取得的NetApp授權文件 (NLF)。您可以使用許可證序號在NetApp Console訂閱中啟動 BYOL。  NetApp Disaster Recovery費用是基於資料儲存區的配置容量。
 
-有關設定NetApp Disaster Recovery許可的詳細信息，請參閱 https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-licensing.html["設定許可"]。
+有關設定NetApp Disaster Recovery許可的詳細信息，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-licensing.html["設定許可"]。
 
-有關管理所有NetApp Console資料服務的許可證的詳細信息，請參閱 https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-data-services-licenses.html["管理所有NetApp Console資料服務的許可證"^]。
+有關管理*所有* NetApp Console資料服務的許可證的詳細信息，請參閱： https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-services-licenses.html["管理所有NetApp Console資料服務的許可證"^] 。
 
 
 
@@ -613,7 +625,7 @@ https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-intro.html
 
 在此版本中，您現在可以設定計劃來測試合規性和故障轉移測試，以確保它們在您需要時能夠正常運作。
 
-有關詳細信息，請參閱 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
+有關詳細信息，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
 
 
 
@@ -631,7 +643,7 @@ https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-intro.html
 * 靜態IP：您可以選擇與來源VM相同或不同的資訊。如果您選擇與來源相同，則無需輸入憑證。另一方面，如果您選擇使用來自來源的不同訊息，您可以提供憑證、IP 位址、子網路遮罩、DNS 和網關資訊。
 
 
-有關詳細信息，請參閱 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
+有關詳細信息，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
 
 
 
@@ -639,7 +651,7 @@ https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-intro.html
 
 現在可以將其作為故障轉移後流程納入。使用自訂腳本，您可以讓NetApp Disaster Recovery在故障轉移程序後執行您的腳本。例如，您可以使用自訂腳本在故障轉移完成後還原所有資料庫事務。
 
-有關詳細信息，請參閱 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/failover.html["故障轉移到遠端站點"]。
+有關詳細信息，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/failover.html["故障轉移到遠端站點"]。
 
 
 
@@ -647,7 +659,7 @@ https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-intro.html
 
 現在您可以在製定複製計劃時創建SnapMirror關係。以前，您必須在NetApp Disaster Recovery之外建立關係。
 
-有關詳細信息，請參閱 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
+有關詳細信息，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
 
 
 
@@ -655,7 +667,7 @@ https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-intro.html
 
 建立複製計劃時，您可以包含來自不同磁碟區和不同 SVM 的 VM。  NetApp Disaster Recovery透過包含所有磁碟區來建立一致性群組快照並更新所有輔助位置。
 
-有關詳細信息，請參閱 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
+有關詳細信息，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
 
 
 
@@ -663,7 +675,7 @@ https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-intro.html
 
 建立複製計劃時，您可以將虛擬機器新增至資源組。使用資源組，您可以在每個虛擬機器上設定延遲，以便它們按照延遲的順序啟動。
 
-有關詳細信息，請參閱 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
+有關詳細信息，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
 
 
 
@@ -671,7 +683,7 @@ https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-intro.html
 
 您可以指定建立應用程式一致的 Snapshot 副本。該服務將使應用程式靜止，然後拍攝快照以獲得應用程式的一致狀態。
 
-有關詳細信息，請參閱 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
+有關詳細信息，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
 
 
 
@@ -685,7 +697,7 @@ NetApp Disaster Recovery的預覽版本包括以下更新：
 
 透過此版本，您可以更快地從儀表板存取其他頁面上的信息。
 
-https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-intro.html["了解NetApp Disaster Recovery"] 。
+https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-intro.html["了解NetApp Disaster Recovery"]。
 
 
 
@@ -702,7 +714,7 @@ NetApp Disaster Recovery的預覽版本包括以下更新。
 
 NOTE: 對於此預覽版產品， NetApp保留在正式發布之前修改產品詳細資訊、內容和時間表的權利。
 
-https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-intro.html["了解有關NetApp Disaster Recovery的更多信息"] 。
+https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-intro.html["了解有關NetApp Disaster Recovery的更多信息"]。
 
 
 
@@ -716,7 +728,7 @@ NetApp Disaster Recovery的預覽版本包括以下更新：
 
 現在您可以在儀表板上選擇選項，從而更輕鬆地快速查看資訊。此外，儀表板現在顯示故障轉移和遷移的狀態。
 
-參考 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/dashboard-view.html["在儀表板上查看災難復原計畫的運作狀況"]。
+參考 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/dashboard-view.html["在儀表板上查看災難復原計畫的運作狀況"]。
 
 
 
@@ -724,15 +736,15 @@ NetApp Disaster Recovery的預覽版本包括以下更新：
 
 * *RPO*：您現在可以在複製計畫的資料儲存部分輸入復原點目標 (RPO) 和保留計數。這表示必須存在且不早於設定時間的資料量。例如，如果將其設定為 5 分鐘，則在發生災難時系統可能會遺失最多 5 分鐘的數據，而不會影響關鍵業務需求。
 +
-參考 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
+參考 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
 
 * *網路增強功能*：當您在複製計畫的虛擬機器部分中對應來源位置和目標位置之間的網路時， NetApp Disaster Recovery現在提供兩個選項：DHCP 或靜態 IP。以前，僅支援 DHCP。對於靜態 IP，您可以設定子網路、網關和 DNS 伺服器。此外，您現在可以輸入虛擬機器的憑證。
 +
-參考 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
+參考 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
 
 * *編輯時間表*：您現在可以更新複製計劃時間表。
 +
-參考 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/manage.html["管理資源"]。
+參考 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/manage.html["管理資源"]。
 
 * * SnapMirror自動化*：在此版本中建立複製計畫時，您可以在下列組態之一中定義來源磁碟區和目標磁碟區之間的SnapMirror關係：
 +
@@ -741,7 +753,7 @@ NetApp Disaster Recovery的預覽版本包括以下更新：
 ** 多對一作為一致性組
 ** 多對多
 +
-參考 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
+參考 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
 
 
 
@@ -760,7 +772,7 @@ NetApp Disaster Recovery預覽版是一種基於雲端的災難復原服務​�
 
 NOTE: 對於此預覽版產品， NetApp保留在正式發布之前修改產品詳細資訊、內容和時間表的權利。
 
-https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-intro.html["了解有關NetApp Disaster Recovery的更多信息"] 。
+https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-intro.html["了解有關NetApp Disaster Recovery的更多信息"]。
 
 此版本包括以下更新：
 
@@ -768,25 +780,25 @@ https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-intro.html
 
 === 資源組更新啟動順序
 
-建立災難復原或複製計畫時，您可以將虛擬機器新增至功能資源群組。資源組可讓您將一組依賴的虛擬機器放入符合您要求的邏輯群組中。例如，群組可以包含復原時可以執行的啟動順序。在此版本中，每個資源組可以包含一個或多個虛擬機器。虛擬機器將根據您在計劃中包含的順序啟動。參考 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html#select-applications-to-replicate-and-assign-resource-groups["選擇要複製的應用程式並分配資源組"]。
+建立災難復原或複製計畫時，您可以將虛擬機器新增至功能資源群組。資源組可讓您將一組依賴的虛擬機器放入符合您要求的邏輯群組中。例如，群組可以包含復原時可以執行的啟動順序。在此版本中，每個資源組可以包含一個或多個虛擬機器。虛擬機器將根據您在計劃中包含的順序啟動。參考 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html#select-applications-to-replicate-and-assign-resource-groups["選擇要複製的應用程式並分配資源組"]。
 
 
 
 === 複製驗證
 
-建立災難復原或複製計畫後，在精靈中確定重複，並啟動到NetApp Disaster Recovery Disaster Recovery每 30 分鐘驗證一次複製是否確實按照計畫進行。您可以在作業監視器頁面中監視進度。請參閱 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/replicate.html["將應用程式複製到另一個站點"] 。
+建立災難復原或複製計畫後，在精靈中確定重複，並啟動到NetApp Disaster Recovery Disaster Recovery每 30 分鐘驗證一次複製是否確實按照計畫進行。您可以在作業監視器頁面中監視進度。參考 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/replicate.html["將應用程式複製到另一個站點"]。
 
 
 
 === 複製計劃顯示恢復點目標（RPO）傳輸時間表
 
-建立災難復原或複製計畫時，您需要選擇虛擬機器。在此版本中，您現在可以查看與資料儲存區或虛擬機器關聯的每個磁碟區關聯的SnapMirror 。您也可以查看與SnapMirror計畫相關的 RPO 傳輸計畫。RPO 可協助您確定備份計畫是否足以在災難後復原。參考 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
+建立災難復原或複製計畫時，您需要選擇虛擬機器。在此版本中，您現在可以查看與資料儲存區或虛擬機器關聯的每個磁碟區關聯的SnapMirror 。您也可以查看與SnapMirror計畫相關的 RPO 傳輸計畫。RPO 可協助您確定備份計畫是否足以在災難後復原。參考 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
 
 
 
 === 作業監視器更新
 
-作業監視器頁面現在包含刷新選項，以便您可以獲得最新的操作狀態。請參閱 https://docs.netapp.com/us-en/bluexp-disaster-recovery/use/monitor-jobs.html["監控災難復原作業"] 。
+作業監視器頁面現在包含刷新選項，以便您可以獲得最新的操作狀態。參考 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/monitor-jobs.html["監控災難復原作業"]。
 
 
 
@@ -800,4 +812,4 @@ https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-intro.html
 
 NetApp Disaster Recovery是一種基於雲端的災難復原服務​​，可自動執行災難復原工作流程。最初，透過NetApp Disaster Recovery預覽版，您可以使用Amazon FSx for ONTAP將執行NetApp儲存的本機基於 NFS 的 VMware 工作負載保護到 AWS 上的 VMware Cloud (VMC)。
 
-link:https://docs.netapp.com/us-en/bluexp-disaster-recovery/get-started/dr-intro.html["了解有關NetApp Disaster Recovery的更多信息"] 。
+link:https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-intro.html["了解有關NetApp Disaster Recovery的更多信息"]。

@@ -21,7 +21,7 @@ TIP: 確保來源 vCenter 和目標 vCenter 使用相同的NetApp Console代理�
 
 *所需的NetApp Console角色* 組織管理員、資料夾或專案管理員或災難復原管理員。
 
-link:../reference/dr-reference-roles.html["了解NetApp Disaster Recovery中的使用者角色和權限"] 。https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["了解所有服務的NetApp Console存取角色"^] 。
+link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["了解NetApp Disaster Recovery中的使用者角色和權限"]。https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服務的NetApp Console存取角色"^]。
 
 *關於此任務*
 

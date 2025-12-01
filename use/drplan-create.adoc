@@ -12,11 +12,11 @@ summary: NetApp Disaster Recovery是一種基於雲端的災難復原服務​�
 
 
 [role="lead"]
-新增 vCenter 網站後，您就可以建立災難復原或_複製計畫_。複製計畫管理 VMware 基礎架構的資料保護。選擇來源和目標 vCenter，挑選資源群組，並對應用程式的復原和啟動方式進行分組。例如，您可以將與一個應用程式關聯的虛擬機器 (VM) 進行分組，也可以將具有相似層的應用程式進行分組。此類計劃有時被稱為_藍圖_。
+新增 vCenter 網站後，就可以建立災難復原或複製計畫了。複製計畫管理 VMware 基礎架構的資料保護。選擇來源和目標 vCenter，挑選資源群組，並對應用程式的復原和啟動方式進行分組。例如，您可以將與一個應用程式關聯的虛擬機器 (VM) 進行分組，也可以將具有相似層的應用程式進行分組。此類計劃有時被稱為_藍圖_。
 
 *所需的NetApp Console角色* 組織管理員、資料夾或專案管理員、災難復原管理員、災難復原故障轉移管理員或災難復原應用程式管理員角色。
 
-link:../reference/dr-reference-roles.html["了解NetApp Disaster Recovery中的使用者角色和權限"] 。https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["了解所有服務的NetApp Console存取角色"^] 。
+link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["了解NetApp Disaster Recovery中的使用者角色和權限"]。https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服務的NetApp Console存取角色"^]。
 
 *關於此任務*
 
@@ -55,6 +55,8 @@ link:../reference/dr-reference-roles.html["了解NetApp Disaster Recovery中的�
 在建立SnapMirror關係之前，請在災難復原之外設定叢集和 SVM 對等關係。
 
 *最佳實務*：在部署NetApp Disaster Recovery之前組織您的虛擬機，以最大限度地減少「資料儲存蔓延」。將需要保護的虛擬機器放置在資料儲存的子集上，將不需要保護的虛擬機器放置在不同的資料儲存子集上。使用基於資料儲存的保護來確保任何給定資料儲存上的虛擬機器都受到保護。
+
+>[!重要] >使用 Google Cloud，您只能在複製計畫中新增一個磁碟區或資料儲存。
 
 
 

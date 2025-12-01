@@ -20,7 +20,7 @@ summary: NetApp Disaster Recovery是一種基於雲端的災難復原服務​�
 
 *所需的NetApp Console角色* 組織管理員、資料夾或專案管理員、災難復原管理員、災難復原應用程式管理員或災難復原檢視器角色。
 
-link:../reference/dr-reference-roles.html["了解NetApp Disaster Recovery中的使用者角色和權限"] 。https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["了解所有服務的NetApp Console存取角色"^] 。
+link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["了解NetApp Disaster Recovery中的使用者角色和權限"]。https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服務的NetApp Console存取角色"^]。
 
 .步驟
 . 登入 https://console.netapp.com/["NetApp Console"^]。
@@ -39,7 +39,7 @@ link:../reference/dr-reference-roles.html["了解NetApp Disaster Recovery中的�
 
 *所需的NetApp Console角色* 組織管理員、資料夾或專案管理員、災難復原管理員、災難復原故障轉移管理員或災難復原應用程式管理員角色。
 
-link:../reference/dr-reference-roles.html["了解NetApp Disaster Recovery中的使用者角色和權限"] 。https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["了解所有服務的NetApp Console存取角色"^] 。
+link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["了解NetApp Disaster Recovery中的使用者角色和權限"]。https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服務的NetApp Console存取角色"^]。
 
 .步驟
 . 從NetApp Console左側導覽列中，選擇 *保護* > *災難復原*。

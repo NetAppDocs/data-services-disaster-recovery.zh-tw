@@ -4,8 +4,6 @@ title: 參考
 entries:
 - title: NetApp Disaster Recovery所需的 vCenter 權限
   url: "/reference/vcenter-privileges.html"
-- title: NetApp Disaster Recovery角色和權限
-  url: "/reference/dr-reference-roles.html"
 - title: 將NetApp Disaster Recovery與 Amazon EVS 結合使用
   entries:
   - title: NetApp Disaster Recovery與 Amazon EVS 概述

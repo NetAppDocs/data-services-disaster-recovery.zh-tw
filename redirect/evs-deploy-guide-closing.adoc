@@ -1,6 +1,6 @@
 ---
 permalink: reference/evs-deploy-guide-closing.html 
-redirect: data-services-disaster-recovery/ 
+redirect: data-services-disaster-recovery/reference/evs-deploy-guide-introduction.html 
 ---
 = 
 :allow-uri-read: 
