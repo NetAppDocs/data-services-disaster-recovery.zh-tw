@@ -1927,11 +1927,9 @@
   <block id="b706122b5735a672dec906da7d14b15c" category="doc">資料夾層級結構保留</block>
   <block id="c8d94434feabcd9486a228e1a7a02882" category="paragraph">預設情況下，災難復原會在故障轉移時保留虛擬機器清單層次結構（資料夾結構）。如果復原目標中沒有所需的資料夾，災難復原功能會建立該資料夾。</block>
   <block id="5a54761f5d99470c8137218395b65ca5" category="paragraph">現在您可以透過指定新的父 VM 資料夾或取消選取「保留原始資料夾層次結構」選項來覆寫此設定。</block>
-  <block id="4b4839446c123b0f7cbb37cc05973b41" category="paragraph">有關詳細信息，請參閱 <block ref="8ed6b1ab912526d5ffcc717e1a39851e" category="inline-link-macro-rx"></block>。</block>
   <block id="c1bacabdbdc0d5e57b5ead85a617b4b0" category="section-title">簡化控制台代理更新</block>
   <block id="1220fc49240c9d2c58d7490c6c40ac65" category="paragraph">災難復原現在支援在工作環境中使用多個控制台代理的簡化流程。若要在控制台代理程式之間切換，您必須編輯 vCenter 配置，重新發現憑證，並重新整理複製計畫以使用新的控制台代理程式。</block>
   <block id="d6155caa68c59478855dfa8342f87d18" category="inline-link-macro">切換控制台代理</block>
-  <block id="8c3cfaa540744075b83a947ed57c6f60" category="paragraph">有關詳細信息，請參閱 <block ref="0905281a07a8919c4c92242f0cf75d65" category="inline-link-macro-rx"></block>。</block>
   <block id="5fbf922c777310b5aadba9b1dab4f7b0" category="summary">了解在NetApp Disaster Recovery中使用多個控制台代理程式的要求。</block>
   <block id="ac340102b6e26791143e3212d85bb1dd" category="doc">使用NetApp Disaster Recovery時切換控制台代理</block>
   <block id="5784bc747a9795446f48f40111e7bf58" category="paragraph">NetApp Console支援在單一工作環境中使用多個控制台代理程式。使用多個控制台代理有助於在對另一個控制台代理進行維護或控制台代理發生故障時保持對資源的存取。由於每個控制台代理程式都有一個唯一的標識符，因此不正確地切換控制台代理程式可能會影響工作環境中資源的可用性。</block>
@@ -1965,4 +1963,6 @@
   <block id="ed5adefa93ed81ded190826eed4455dd" category="paragraph">取消選取此方塊可忽略原始資料夾層次結構。</block>
   <block id="06596d9f3a6cac6c36599f4c1598f756" category="sidebar">災難復原需要 vCenter 權限</block>
   <block id="2b1806d17c0606f8caa4232aa6a3c113" category="sidebar">切換控制台代理</block>
+  <block id="98ade846ffa73dc9c6bcd3e3e84c38b7" category="paragraph">有關詳細信息，請參閱 <block ref="1762f821178ef43810c03e86465a946d" category="inline-link-macro-rx"></block>。</block>
+  <block id="1df351797bd2540f3ec41bc24e67bf1f" category="paragraph">有關詳細信息，請參閱 <block ref="2631c62a2ac2ec2e6a0ebc0352319a2c" category="inline-link-macro-rx"></block>。</block>
 </blocks>
