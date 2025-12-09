@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: use/drplan-create.html 
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, replication plan, protection, disaster, recovery, virtual machines, vm 
-summary: NetApp Disaster Recovery是一種基於雲端的災難復原服務​​，可自動執行災難復原工作流程。新增 vCenter 網站後，您就可以建立災難復原或複製計畫了。 
+summary: NetApp Disaster Recovery是一種基於雲端的災難復原服務​​，可自動執行災難復原工作流程。新增 vCenter 網站後，就可以建立災難復原或複製計畫了。 
 ---
 = 在NetApp Disaster Recovery中建立複製計劃
 :hardbreaks:
@@ -52,11 +52,12 @@ link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-re
 
 *開始之前*
 
-在建立SnapMirror關係之前，請在災難復原之外設定叢集和 SVM 對等關係。
+* 在建立SnapMirror關係之前，請在災難復原之外設定叢集和 SVM 對等關係。
+* 使用 Google Cloud，您只能在複製計畫中新增一個磁碟區或資料儲存。
 
-*最佳實務*：在部署NetApp Disaster Recovery之前組織您的虛擬機，以最大限度地減少「資料儲存蔓延」。將需要保護的虛擬機器放置在資料儲存的子集上，將不需要保護的虛擬機器放置在不同的資料儲存子集上。使用基於資料儲存的保護來確保任何給定資料儲存上的虛擬機器都受到保護。
 
->[!重要] >使用 Google Cloud，您只能在複製計畫中新增一個磁碟區或資料儲存。
+
+TIP: 在部署NetApp Disaster Recovery之前整理您的虛擬機，以最大限度地減少「資料儲存蔓延」。將需要保護的虛擬機器放置在資料儲存的子集上，將不需要保護的虛擬機器放置在不同的資料儲存子集上。使用基於資料儲存的保護來確保任何給定資料儲存上的虛擬機器都受到保護。
 
 
 
@@ -121,7 +122,8 @@ TIP: 每個資源組可以包含一個或多個虛擬機器或資料儲存區。
 * 若要保護虛擬機，必須將其包含在資源組中。
 
 
-*最佳實務*：為您的故障轉移測試建立一組單獨的專用映射，以防止 VMS 使用相同的 IP 位址連接到生產網路。
+
+TIP: 為故障轉移測試建立一組單獨的專用映射，以防止 VMS 使用相同的 IP 位址連接到生產網路。
 
 .步驟
 . 選擇“虛擬機器”或“資料儲存”。
@@ -217,7 +219,7 @@ NOTE: 您可以將多個來源虛擬網路指派給同一個目標虛擬網路�
 
 
 
-=== 映射資源 > 虛擬機器部分
+=== 地圖資源 > 虛擬機器部分
 
 您可以透過設定下列任一選項來設定受複製計畫保護的資源群組中的每個虛擬機，以適應目標 vCenter 虛擬環境：
 
@@ -278,6 +280,10 @@ image:dr-plan-vm-subnet-option2.png["螢幕截圖顯示新增複製計劃 > 資�
 
 
 * *降級虛擬機器硬體版本並註冊*：如果目標 ESX 主機版本早於來源版本，請選擇此項，以便在註冊期間進行配對。
+* *保留原始資料夾層次結構*：選取此選項後，災難復原將在故障轉移時保留虛擬機器清單層次結構（資料夾結構）。如果復原目標_不_具有原始資料夾層次結構，則災難復原會建立它。
++
+取消選取此方塊可忽略原始資料夾層次結構。
+
 * *目標 VM 前綴和後綴*：在虛擬機器詳細資料下，您可以選擇為每個故障轉移的 VM 名稱加上前綴和後綴。這有助於區分故障轉移的虛擬機器和在同一 vCenter 叢集上執行的生產虛擬機器。例如，您可以為虛擬機器名稱新增前綴「DR-」和後綴「-failover」。有些人會新增第二個生產 vCenter，以便在發生災難時臨時在不同網站託管虛擬機器。添加前綴或後綴可以幫助您快速識別故障轉移的虛擬機器。您也可以在自訂腳本中使用前綴或後綴。
 +
 您可以使用在計算資源部分設定目標 VM 資料夾的替代方法。

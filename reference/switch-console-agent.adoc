@@ -1,0 +1,49 @@
+---
+sidebar: sidebar 
+permalink: reference/switch-console-agent.html 
+keywords: disaster recovery, console agent, high availability 
+summary: 了解在NetApp Disaster Recovery中使用多個控制台代理程式的要求。 
+---
+= 使用NetApp Disaster Recovery時切換控制台代理
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+NetApp Console支援在單一工作環境中使用多個控制台代理程式。使用多個控制台代理有助於在對另一個控制台代理進行維護或控制台代理發生故障時保持對資源的存取。由於每個控制台代理程式都有一個唯一的標識符，因此不正確地切換控制台代理程式可能會影響工作環境中資源的可用性。
+
+
+
+== 開始之前
+
+* 你必須有xref:../get-started/dr-prerequisites.html#create-the-netapp-console-agent[為您的工作環境添加了至少兩個控制台代理]。
+* 兩個控制台代理必須包含相同的ONTAP叢集。
+
+
+
+
+== 步驟
+
+. 在災難復原中，選擇**站點**。
+. 您必須變更來源 vCenter 和目標 vCenter 的控制台代理程式。確定要修改的 vCenter。選擇 vCenter 的操作選單，然後選擇**編輯**。
++
+image:dr-sites-subnet-menu.png["網站控制面板截圖"]
+
+. 從下拉式選單中選擇要使用的控制台代理，然後重新輸入您的 vCenter 使用者名稱和密碼。選擇**儲存**。
++
+image:edit-vcenter.png["更改控制台代理的螢幕截圖"]
+
+. 對要修改的每個其他 vCenter 重複步驟 2 和 3。
+. 在您修改過的 vCenter 中，重新整理 vCenter 以發現新的控制台代理程式。對每個已修改的 vCenter 重複此步驟。
+. 在災難復原中，導覽至**複製計劃**。
+. 確定要用於復原工作流程的複製計畫。選擇操作選單 `...`然後**刷新資源**。您可以在**作業監控**中​​監控作業狀態。
+
+
+
+
+== 更多資訊
+
+* link:https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-on-prem.html["了解控制台代理"^]
+

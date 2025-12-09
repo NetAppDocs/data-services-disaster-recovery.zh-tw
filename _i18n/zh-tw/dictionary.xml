@@ -1207,7 +1207,6 @@
   <block id="3f1d340403a26ed0ad46982a91385d32" category="paragraph">該服務每 24 小時執行一次快照對稱性檢查。</block>
   <block id="17e2d63e3b45ecbfe13bcc32fec929d0" category="paragraph">*開始之前*</block>
   <block id="1059d7b16ffe2236c36ae0e8c15872ca" category="paragraph">在建立SnapMirror關係之前，請在災難復原之外設定叢集和 SVM 對等關係。</block>
-  <block id="fe7160dc47052a598ef389064fd41684" category="paragraph">*最佳實務*：在部署NetApp Disaster Recovery之前組織您的虛擬機，以最大限度地減少「資料儲存蔓延」。將需要保護的虛擬機器放置在資料儲存的子集上，將不需要保護的虛擬機器放置在不同的資料儲存子集上。使用基於資料儲存的保護來確保任何給定資料儲存上的虛擬機器都受到保護。</block>
   <block id="89dd75b1f79276c7e30e794e1c739f04" category="section-title">創建計劃</block>
   <block id="4f27ef77939e5393adc6b44aec83a6b7" category="paragraph">精靈將引導您完成以下步驟：</block>
   <block id="3baff38a392d31950fc8d4d62ea2adc0" category="list-text">選擇 vCenter 伺服器。</block>
@@ -1237,7 +1236,6 @@
   <block id="84c62302deac0be1dd475a0a0a91a4fa" category="list-text">由於NetApp Disaster Recovery使用SnapMirror並且系統複製整個ONTAP卷，因此該磁碟區的已使用容量用於許可考慮。在這種情況下，受保護和不受保護的虛擬機器所消耗的磁碟區空間都將包含在此計算中。</block>
   <block id="4e7a12dab0e91d1fb0221d782eacf1e5" category="list-text">如果資源組及其關聯的資料儲存庫需要故障轉移到災難復原站點，則任何未受保護的虛擬機器（不屬於資源組但託管在ONTAP磁碟區上的虛擬機器）將在故障轉移過程中不再存在於來源站點上，從而導致來源站點上未受保護的虛擬機器發生故障。此外， NetApp Disaster Recovery不會在故障轉移 vCenter 站點啟動那些未受保護的虛擬機器。</block>
   <block id="8a63c65b056310ba2a8c9f7b25cb1011" category="list-text">若要保護虛擬機，必須將其包含在資源組中。</block>
-  <block id="26526a6314d437ebb8252ace8e7cfae2" category="paragraph">*最佳實務*：為您的故障轉移測試建立一組單獨的專用映射，以防止 VMS 使用相同的 IP 位址連接到生產網路。</block>
   <block id="6f9c40e36ae73e33332b46ebad53611b" category="list-text">選擇“虛擬機器”或“資料儲存”。</block>
   <block id="1e37304672f6f6f473c93804e891eacb" category="list-text">可選擇按名稱搜尋特定的虛擬機器或資料儲存。</block>
   <block id="b3736de6232ff120d2109e988d051825" category="list-text">在「應用程式」頁面的左側，選擇要保護並指派到所選群組的虛擬機器或資料儲存區。</block>
@@ -1278,7 +1276,6 @@
   <block id="d757ba122f1f3d62b9a13da2a3e1b64c" category="admonition">您可以將多個來源虛擬網路指派給同一個目標虛擬網路。但這可能會造成 IP 網路配置衝突。您可以將多個來源網路對應到單一目標網絡，以確保所有來源網路具有相同的配置。</block>
   <block id="21538d8465027f7c4a2d65593552875c" category="paragraph">在故障轉移對映標籤中，選擇「*虛擬網路*」旁邊的向下箭頭。選擇來源虛擬區域網路和目標虛擬區域網路。</block>
   <block id="02453bc953d0b6e10f85235da7a8cca7" category="paragraph">選擇對應到適當虛擬 LAN 的網路。虛擬 LAN 應該已經配置好了，因此請選擇適當的虛擬 LAN 來對應 VM。</block>
-  <block id="d43d5aee258367a26705d2e855068453" category="section-title">映射資源 &gt; 虛擬機器部分</block>
   <block id="3cbcb190466412c589fc07714ba6d7fe" category="paragraph">您可以透過設定下列任一選項來設定受複製計畫保護的資源群組中的每個虛擬機，以適應目標 vCenter 虛擬環境：</block>
   <block id="c3c89c355c8b33e18be16af1cb387f5a" category="list-text">虛擬 CPU 的數量</block>
   <block id="2d875765c22020c9ffe5b3d219578aa0" category="list-text">虛擬 DRAM 的數量</block>
@@ -1705,7 +1702,6 @@
   <block id="554cfab3938e21d9270bd6b75931f96f" category="sidebar">影片</block>
   <block id="07aa9d3d6d093cd998a453815b1b718f" category="sidebar">NetApp Disaster Recovery文檔</block>
   <block id="63d5049791d9d79d86e9a108b0a999ca" category="sidebar">參考</block>
-  <block id="0ac57782b45d2b5a287308d71b382a58" category="sidebar">NetApp Disaster Recovery所需的 vCenter 權限</block>
   <block id="58d06f6d0c071d1a9211629997a6fb0d" category="sidebar">將NetApp Disaster Recovery與 Amazon EVS 結合使用</block>
   <block id="bd599b695632fefb842a7a4afc918840" category="sidebar">NetApp Disaster Recovery與 Amazon EVS 概述</block>
   <block id="c0c4b60d27032c028c91440e9d3be949" category="sidebar">解決方案概述</block>
@@ -1927,6 +1923,46 @@
   <block id="e6a35b0cc097a073b142d2f77dd698c4" category="paragraph"><block ref="5b01ddd771a87fa6b71f782d09b9b7b3" category="inline-link-macro-rx"></block>。</block>
   <block id="bae7a0a97273516d5296fb983700a411" category="paragraph"><block ref="31accac3325320cbdf81ca4694a5591c" category="inline-link-macro-rx"></block>。<block ref="e704c98551e5f8acdbf19af28a86dcf3" category="inline-link-rx"></block>。</block>
   <block id="a805fee248bed5144adc2fef83e46569" category="paragraph">新增 vCenter 網站後，就可以建立災難復原或複製計畫了。複製計畫管理 VMware 基礎架構的資料保護。選擇來源和目標 vCenter，挑選資源群組，並對應用程式的復原和啟動方式進行分組。例如，您可以將與一個應用程式關聯的虛擬機器 (VM) 進行分組，也可以將具有相似層的應用程式進行分組。此類計劃有時被稱為_藍圖_。</block>
-  <block id="3cd914b858fef92fe1881cac0800b73b" category="paragraph">&gt;[!重要] &gt;使用 Google Cloud，您只能在複製計畫中新增一個磁碟區或資料儲存。</block>
   <block id="8497094e0d678632f29aeaad49708682" category="paragraph">請務必仔細閱讀。<block ref="0b97dbd151642cb26d83aa16e8ffd9ce" category="inline-link-macro-rx"></block>和<block ref="9bbaf1e88d2981b5294528496eff27bf" category="inline-link-macro-rx"></block>適用於谷歌雲端。</block>
+  <block id="b706122b5735a672dec906da7d14b15c" category="doc">資料夾層級結構保留</block>
+  <block id="c8d94434feabcd9486a228e1a7a02882" category="paragraph">預設情況下，災難復原會在故障轉移時保留虛擬機器清單層次結構（資料夾結構）。如果復原目標中沒有所需的資料夾，災難復原功能會建立該資料夾。</block>
+  <block id="5a54761f5d99470c8137218395b65ca5" category="paragraph">現在您可以透過指定新的父 VM 資料夾或取消選取「保留原始資料夾層次結構」選項來覆寫此設定。</block>
+  <block id="4b4839446c123b0f7cbb37cc05973b41" category="paragraph">有關詳細信息，請參閱 <block ref="8ed6b1ab912526d5ffcc717e1a39851e" category="inline-link-macro-rx"></block>。</block>
+  <block id="c1bacabdbdc0d5e57b5ead85a617b4b0" category="section-title">簡化控制台代理更新</block>
+  <block id="1220fc49240c9d2c58d7490c6c40ac65" category="paragraph">災難復原現在支援在工作環境中使用多個控制台代理的簡化流程。若要在控制台代理程式之間切換，您必須編輯 vCenter 配置，重新發現憑證，並重新整理複製計畫以使用新的控制台代理程式。</block>
+  <block id="d6155caa68c59478855dfa8342f87d18" category="inline-link-macro">切換控制台代理</block>
+  <block id="8c3cfaa540744075b83a947ed57c6f60" category="paragraph">有關詳細信息，請參閱 <block ref="0905281a07a8919c4c92242f0cf75d65" category="inline-link-macro-rx"></block>。</block>
+  <block id="5fbf922c777310b5aadba9b1dab4f7b0" category="summary">了解在NetApp Disaster Recovery中使用多個控制台代理程式的要求。</block>
+  <block id="ac340102b6e26791143e3212d85bb1dd" category="doc">使用NetApp Disaster Recovery時切換控制台代理</block>
+  <block id="5784bc747a9795446f48f40111e7bf58" category="paragraph">NetApp Console支援在單一工作環境中使用多個控制台代理程式。使用多個控制台代理有助於在對另一個控制台代理進行維護或控制台代理發生故障時保持對資源的存取。由於每個控制台代理程式都有一個唯一的標識符，因此不正確地切換控制台代理程式可能會影響工作環境中資源的可用性。</block>
+  <block id="720fb781851276f1358a93dbc817200d" category="inline-xref-macro">為您的工作環境添加了至少兩個控制台代理</block>
+  <block id="6d613207623cb9199ad352b842c97bcd" category="list-text">你必須有<block ref="bc735134c90837f767229ea1b8bbf2c3" category="inline-xref-macro-rx"></block>。</block>
+  <block id="6ebe2ade347022cced0a6fb1bf51ffb4" category="list-text">兩個控制台代理必須包含相同的ONTAP叢集。</block>
+  <block id="ee5201e4e74c61b1beba380375a392ab" category="list-text">在災難復原中，選擇**站點**。</block>
+  <block id="d243adb79d3252d485c45562065a5417" category="list-text">您必須變更來源 vCenter 和目標 vCenter 的控制台代理程式。確定要修改的 vCenter。選擇 vCenter 的操作選單，然後選擇**編輯**。</block>
+  <block id="557291156806ac78d1840e0a1109c3f3" category="inline-image-macro">網站控制面板截圖</block>
+  <block id="0eb2b03d598ded205002b08ff16d9ea4" category="paragraph"><block ref="0eb2b03d598ded205002b08ff16d9ea4" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7698485e50825aa3ec524842cc227dfe" category="list-text">從下拉式選單中選擇要使用的控制台代理，然後重新輸入您的 vCenter 使用者名稱和密碼。選擇**儲存**。</block>
+  <block id="3bcc41ee94f9d50e4374c5373843e87e" category="inline-image-macro">更改控制台代理的螢幕截圖</block>
+  <block id="a29fa4d94902b37aebbea627c2c55fa5" category="paragraph"><block ref="a29fa4d94902b37aebbea627c2c55fa5" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="34a30f0f719fac45eaea5f31159f891b" category="list-text">對要修改的每個其他 vCenter 重複步驟 2 和 3。</block>
+  <block id="c3312349cbeff9b56ba101dc64315752" category="list-text">在您修改過的 vCenter 中，重新整理 vCenter 以發現新的控制台代理程式。對每個已修改的 vCenter 重複此步驟。</block>
+  <block id="26d11d84caca20471693664a43c829a5" category="list-text">在災難復原中，導覽至**複製計劃**。</block>
+  <block id="b437a657c0ffd8681513d509df38583d" category="list-text">確定要用於復原工作流程的複製計畫。選擇操作選單<block ref="2f43b42fd833d1e77420a8dae7419000" prefix=" " category="inline-code"></block>然後**刷新資源**。您可以在**作業監控**中​​監控作業狀態。</block>
+  <block id="ab066b3292d8ab61ef3b5c77169cdd19" category="section-title">更多資訊</block>
+  <block id="d9ab6978cb4a1c1731a97d34b17a23a0" category="list-text"><block ref="d9ab6978cb4a1c1731a97d34b17a23a0" category="inline-link-macro-rx"></block></block>
+  <block id="b4d49b16355d04fa21a29a82f9f163eb" category="section-title">2025年12月9日</block>
+  <block id="0a88174dbc895a0c67db18fd90d7e3f3" category="paragraph">版本 4.2.8P1</block>
+  <block id="59986822ba53de21bd3edbd9b45712cc" category="paragraph">版本 4.2.8</block>
+  <block id="4706c904f2e5382dbbf1ff2e2aa98487" category="paragraph">版本 4.2.7</block>
+  <block id="3f66961d19507ff05406ca74e41b4060" category="paragraph">版本 4.2.6</block>
+  <block id="c608ea51d7dfe4fc155f5ac91d002818" category="summary">NetApp Disaster Recovery是一種基於雲端的災難復原服務​​，可自動執行災難復原工作流程。新增 vCenter 網站後，就可以建立災難復原或複製計畫了。</block>
+  <block id="c0655d6a3a66f2180cdf2e00c1930e7c" category="list-text">使用 Google Cloud，您只能在複製計畫中新增一個磁碟區或資料儲存。</block>
+  <block id="7bcd913022459926bf1a00069a8fb8f6" category="admonition">在部署NetApp Disaster Recovery之前整理您的虛擬機，以最大限度地減少「資料儲存蔓延」。將需要保護的虛擬機器放置在資料儲存的子集上，將不需要保護的虛擬機器放置在不同的資料儲存子集上。使用基於資料儲存的保護來確保任何給定資料儲存上的虛擬機器都受到保護。</block>
+  <block id="705a20699e1039fa52632f889e10a673" category="admonition">為故障轉移測試建立一組單獨的專用映射，以防止 VMS 使用相同的 IP 位址連接到生產網路。</block>
+  <block id="5f4825a97c910dc2ee0d9eb1107f19d9" category="section-title">地圖資源 &gt; 虛擬機器部分</block>
+  <block id="782a5bda639e031f83212ac3e8bdb777" category="list-text">*保留原始資料夾層次結構*：選取此選項後，災難復原將在故障轉移時保留虛擬機器清單層次結構（資料夾結構）。如果復原目標_不_具有原始資料夾層次結構，則災難復原會建立它。</block>
+  <block id="ed5adefa93ed81ded190826eed4455dd" category="paragraph">取消選取此方塊可忽略原始資料夾層次結構。</block>
+  <block id="06596d9f3a6cac6c36599f4c1598f756" category="sidebar">災難復原需要 vCenter 權限</block>
+  <block id="2b1806d17c0606f8caa4232aa6a3c113" category="sidebar">切換控制台代理</block>
 </blocks>
