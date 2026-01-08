@@ -28,7 +28,7 @@ summary: NetApp Disaster Recovery是一種基於雲端的災難復原服務​�
 
 現在您可以透過指定新的父 VM 資料夾或取消選取「保留原始資料夾層次結構」選項來覆寫此設定。
 
-有關詳細信息，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.adoc["建立複製計劃"]。
+有關詳細信息，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
 
 
 
@@ -36,7 +36,7 @@ summary: NetApp Disaster Recovery是一種基於雲端的災難復原服務​�
 
 災難復原現在支援在工作環境中使用多個控制台代理的簡化流程。若要在控制台代理程式之間切換，您必須編輯 vCenter 配置，重新發現憑證，並重新整理複製計畫以使用新的控制台代理程式。
 
-有關詳細信息，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/reference/switch-console-agents.html["切換控制台代理"]。
+有關詳細信息，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/reference/switch-console-agent.html["切換控制台代理"]。
 
 
 

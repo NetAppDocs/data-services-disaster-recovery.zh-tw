@@ -1959,10 +1959,9 @@
   <block id="7bcd913022459926bf1a00069a8fb8f6" category="admonition">在部署NetApp Disaster Recovery之前整理您的虛擬機，以最大限度地減少「資料儲存蔓延」。將需要保護的虛擬機器放置在資料儲存的子集上，將不需要保護的虛擬機器放置在不同的資料儲存子集上。使用基於資料儲存的保護來確保任何給定資料儲存上的虛擬機器都受到保護。</block>
   <block id="705a20699e1039fa52632f889e10a673" category="admonition">為故障轉移測試建立一組單獨的專用映射，以防止 VMS 使用相同的 IP 位址連接到生產網路。</block>
   <block id="5f4825a97c910dc2ee0d9eb1107f19d9" category="section-title">地圖資源 &gt; 虛擬機器部分</block>
-  <block id="782a5bda639e031f83212ac3e8bdb777" category="list-text">*保留原始資料夾層次結構*：選取此選項後，災難復原將在故障轉移時保留虛擬機器清單層次結構（資料夾結構）。如果復原目標_不_具有原始資料夾層次結構，則災難復原會建立它。</block>
-  <block id="ed5adefa93ed81ded190826eed4455dd" category="paragraph">取消選取此方塊可忽略原始資料夾層次結構。</block>
   <block id="06596d9f3a6cac6c36599f4c1598f756" category="sidebar">災難復原需要 vCenter 權限</block>
   <block id="2b1806d17c0606f8caa4232aa6a3c113" category="sidebar">切換控制台代理</block>
-  <block id="98ade846ffa73dc9c6bcd3e3e84c38b7" category="paragraph">有關詳細信息，請參閱 <block ref="1762f821178ef43810c03e86465a946d" category="inline-link-macro-rx"></block>。</block>
-  <block id="1df351797bd2540f3ec41bc24e67bf1f" category="paragraph">有關詳細信息，請參閱 <block ref="2631c62a2ac2ec2e6a0ebc0352319a2c" category="inline-link-macro-rx"></block>。</block>
+  <block id="ad4891bd95428a3a61372e6cb7c1e8db" category="paragraph">有關詳細信息，請參閱 <block ref="46afb87ea9ab52c50c55f4a3ee88e9ae" category="inline-link-macro-rx"></block>。</block>
+  <block id="8b398f79cbc8bafdd3d60b15c90e7f01" category="paragraph">有關詳細信息，請參閱 <block ref="9816d86fb07a6c2043bc508d566ad539" category="inline-link-macro-rx"></block>。</block>
+  <block id="200e6bbe1011559dc78706a398152267" category="list-text">*保留原始資料夾層次結構*：選取此選項後，災難復原將在故障轉移時保留虛擬機器清單層次結構（資料夾結構）。如果復原目標_不_具有原始資料夾層次結構，則災難復原會建立它。勾選此方塊可保留資料夾層次結構；取消勾選此方塊可忽略原始資料夾層次結構。</block>
 </blocks>
