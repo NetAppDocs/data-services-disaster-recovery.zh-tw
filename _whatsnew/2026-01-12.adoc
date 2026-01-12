@@ -1,0 +1,53 @@
+= 支援本地環境中的多個控制台代理
+:allow-uri-read: 
+
+
+
+
+=== 支援本地環境中的多個控制台代理
+
+如果您在本機使用災難恢復，現在可以為每個 vCenter 執行個體部署控制台代理，從而提高復原能力。
+
+例如，如果您有兩個站點（站點 A 和 B），則站點 A 可以將控制台代理 A 連接到 vCenter 1、 ONTAP部署 1 和ONTAP部署 2。站點 B 可以將控制台代理 B 連接到 vCenter 2 和ONTAP部署 3 和 4。
+
+有關災難復原中的控制台代理的信息，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-prerequisites.html#netapp-console-prerequisites["建立控制台代理"^]。
+
+
+
+=== 使用基於資料儲存的保護機制，在故障轉移後為複製計劃添加虛擬機
+
+當故障轉移被觸發時，任何使用基於資料儲存的保護的複製計劃都會包含已新增至資料儲存的虛擬機，前提是這些虛擬機已被發現。故障轉移完成前，您必須提供新增虛擬機器的對應詳細資訊。
+
+有關詳細信息，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/failover.html["故障轉移應用程式"^]。
+
+
+
+=== 新郵件通知
+
+災難復原功能現在會針對以下事件發送電子郵件通知：
+
+* 接近容量使用極限
+* 報告產生完成
+* 工作失敗
+* 許可證到期或違規
+
+
+
+
+=== Swagger 改進
+
+現在您可以從災難復原中存取 Swagger 文件。在災難復原中，選擇**設定**，然後選擇**API 文件**以連結到 Swagger，或在瀏覽器的隱身/隱私模式下存取此 URL： link:https://snapcenter.cloudmanager.cloud.netapp.com/api/api-doc/draas["https://snapcenter.cloudmanager.cloud.netapp.com/api/api-doc/draas"^]。
+
+
+
+=== 改進的使用者介面
+
+災難復原功能現在提供更完善的警告和錯誤解決方法。此版本修正了導致已取消的作業無法在使用者介面中顯示的錯誤。已取消的職位現在可以查看了。當同一個目標網路映射到多個不同的來源網路時，也會發出新的警告。
+
+
+
+=== 保留複製計劃中預設新增的 VM 資料夾結構
+
+建立複製時，新的預設設定是保留 VM 資料夾結構。如果復原目標沒有原始資料夾層次結構，災難復原程式會建立它。您可以取消選擇此選項以忽略原始資料夾層次結構。
+
+有關詳細信息，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"^]。
