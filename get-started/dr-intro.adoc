@@ -25,7 +25,7 @@ NetApp Disaster Recovery是一種基於雲端的災難復原服務​​，可�
 
 NetApp Disaster Recovery使用ONTAP SnapMirror技術與整合的本機 VMware 業務流程來保護 VMware VM 及其相關的磁碟作業系統映像，同時保留ONTAP的所有儲存效率優勢。災難復原使用這些技術作為到災難復原站點的複製傳輸。這使得主站點和輔助站點能夠實現業界最佳的儲存效率（壓縮和重複資料刪除）。
 
-image:../use/evs-bluexp-architecture.png["圖表顯示了NetApp Disaster Recovery for VMware 的元件"]
+image:../use/evs-console-architecture.png["圖表顯示了NetApp Disaster Recovery for VMware 的元件"]
 
 
 

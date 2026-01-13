@@ -165,7 +165,6 @@
   <block id="052ce74479a9ceb3e214c30deb130ee3" category="list-text">另一個具有ONTAP儲存的本機 NFS 和/或基於 VMFS (iSCSI/FC) 的 VMware 環境</block>
   <block id="da60f0a986637eaee62ae347aab4f0e3" category="paragraph">NetApp Disaster Recovery使用ONTAP SnapMirror技術與整合的本機 VMware 業務流程來保護 VMware VM 及其相關的磁碟作業系統映像，同時保留ONTAP的所有儲存效率優勢。災難復原使用這些技術作為到災難復原站點的複製傳輸。這使得主站點和輔助站點能夠實現業界最佳的儲存效率（壓縮和重複資料刪除）。</block>
   <block id="806bf3894ecdc50c4d2694ee51766d82" category="inline-image-macro">圖表顯示了NetApp Disaster Recovery for VMware 的元件</block>
-  <block id="7d34a83a03d479349a3499a44eda2b73" category="paragraph"><block ref="7d34a83a03d479349a3499a44eda2b73" category="inline-image-macro-rx" type="image"></block></block>
   <block id="3c031b939f6ec312ee601d021e7a6644" category="section-title">NetApp Console</block>
   <block id="616ce84bf378a10ce41492e7361102ce" category="paragraph">可透過NetApp Console存取NetApp Disaster Recovery。</block>
   <block id="0a0979a6d279475a420ea5c279943daa" category="paragraph">NetApp Console提供企業級跨本機和雲端環境的NetApp儲存和資料服務的集中管理。需要控制台才能存取和使用NetApp資料服務。作為管理介面，它使您能夠從一個介面管理許多儲存資源。控制台管理員可以控制企業內所有系統的儲存和服務的存取。</block>
@@ -1129,9 +1128,7 @@
   <block id="e9b1f53d6cabb3394833a4e102eb6a69" category="section-title">NetApp全新產品</block>
   <block id="c20c107d0d4eef6351660f3590324232" category="paragraph">如果您是NetApp新使用者且沒有 NSS 帳戶，請依照下列步驟操作。</block>
   <block id="b50f0a46135bcb7083b1f2f82032fc26" category="inline-image-macro">幫助選單的螢幕截圖，其中支援是第一個選項</block>
-  <block id="e8d4092baef6680c6a35d5228ae31de2" category="paragraph"><block ref="e8d4092baef6680c6a35d5228ae31de2" category="inline-image-macro-rx" type="image"></block></block>
   <block id="2974170a8b1b5b4a2ac69aacd4c1c9c3" category="list-text">從支援註冊頁面找到您的帳戶 ID 序號。</block>
-  <block id="379f9cd57d97013f3f7fdd24f692a0b1" category="paragraph"><block ref="379f9cd57d97013f3f7fdd24f692a0b1" category="inline-image-macro-rx" type="image"></block></block>
   <block id="dd50e314c18933734174c1156dd9237f" category="inline-link">NetApp 的支援註冊網站</block>
   <block id="78f94e749b89d69dcbf3baff21ccb958" category="list-text">導航至<block ref="e1c4be66250fd76d5c52bfe2cb7daee2" category="inline-link-rx"></block>並選擇*我不是註冊的NetApp客戶*。</block>
   <block id="d4f633ef130727b2776fa7f45024ca7d" category="list-text">填寫必填欄位（帶有紅色星號的欄位）。</block>
@@ -1159,8 +1156,6 @@
   <block id="a04a3a5322782e8c18d0d64be7e1ccbc" category="paragraph">如果您已有客戶級 NSS 帳戶並嘗試新增合作夥伴級帳戶，情況也是如此。</block>
   <block id="1afe8a81cfddc9fa9559e272bb6b9496" category="list-text">成功登入後， NetApp將儲存 NSS 使用者名稱。</block>
   <block id="1dcb63fd55c4d22e87cb32275b8cc808" category="inline-image-macro">三個水平點的圖標</block>
-  <block id="0dfcbbbe02d3e96f8ad78782e8772587" category="paragraph">這是系統產生的映射到您的電子郵件的 ID。在*NSS 管理*頁面上，您可以顯示來自<block ref="5151db0ded96d46f40ae09b5e5b167a1" category="inline-image-macro-rx" type="image"></block>菜單。</block>
-  <block id="fc79de85a483938f72fbcb9822ec0ae3" category="list-text">如果您需要刷新登入憑證令牌，還有一個*更新憑證*選項<block ref="5151db0ded96d46f40ae09b5e5b167a1" category="inline-image-macro-rx" type="image"></block>菜單。</block>
   <block id="b14d512a3c64fb5df16f6721b0603c63" category="paragraph">使用此選項會提示您再次登入。請注意，這些帳戶的令牌將在 90 天後過期。我們將發布通知來提醒您此事。</block>
   <block id="c3533d0746cb1de0d34486c00ae36990" category="summary">NetApp Disaster Recovery是一種基於雲端的災難復原服務​​，可自動執行災難復原工作流程。</block>
   <block id="d1a664c22b47275444c9a34501c2aac2" category="doc">在儀表板上查看NetApp Disaster Recovery計畫的運作狀況</block>
@@ -1994,4 +1989,9 @@
   <block id="a6701b6b4f098b920e9ad613536f4135" category="list-text">在“測試故障轉移”頁面中，輸入“清理故障轉移”，然後選擇“清理故障轉移測試”。</block>
   <block id="e27d8a06ee52d6dc3adabdbe1c4e94a7" category="admonition">對於基於資料儲存的複製計劃，如果您已新增並發現了任何虛擬機，但未提供映射詳細信息，則這些虛擬機將包含在故障轉移中。故障轉移失敗後，作業中會發出通知。您必須提供映射詳細資訊才能成功完成故障轉移。</block>
   <block id="3bb0ada53df5172b3b5e85e4ac853ba0" category="list-text">在故障轉移頁面中，您可以立即建立新的快照，或選擇現有的快照作為資料儲存的復原基礎。預設值為最新版本。</block>
+  <block id="72bafc7b3ccd45a74377b78710dc0395" category="paragraph"><block ref="72bafc7b3ccd45a74377b78710dc0395" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="38fc1b337c0ea26463916fc2913205c1" category="paragraph"><block ref="38fc1b337c0ea26463916fc2913205c1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7019a39846e9a2c7f7a80eaba91e4a41" category="paragraph"><block ref="7019a39846e9a2c7f7a80eaba91e4a41" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1d593c3f7480ada9580d93cd753c3f93" category="paragraph">這是系統產生的映射到您的電子郵件的 ID。在*NSS 管理*頁面上，您可以顯示來自<block ref="5444f6f0c3983523c8933a1864b2b390" category="inline-image-macro-rx" type="image"></block>菜單。</block>
+  <block id="872eaae7deb6035c20f9bfe6deefd03d" category="list-text">如果您需要刷新登入憑證令牌，還有一個*更新憑證*選項<block ref="5444f6f0c3983523c8933a1864b2b390" category="inline-image-macro-rx" type="image"></block>菜單。</block>
 </blocks>
