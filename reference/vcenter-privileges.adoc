@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: reference/vcenter-privileges.html 
 keywords: disaster recovery, bluexp, vcenter, 
-summary: 'vCenter 帳戶必須具有一組最低限度的 vCenter 權限，以允許NetApp Disaster Recovery執行其服務，例如註冊和取消註冊資料儲存庫、啟動和停止虛擬機器以及重新配置虛擬機器 (VM)。下表列出了NetApp Disaster Recovery與 vCenter 叢集連線所需的所有權限。' 
+summary: vCenter 帳戶必須擁有一組最少的 vCenter 權限，才能讓 NetApp Disaster Recovery 正常運作。 
 ---
-= NetApp Disaster Recovery所需的 vCenter 權限
+= 用於 NetApp Disaster Recovery 的必要 vCenter 權限
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,142 +12,134 @@ summary: 'vCenter 帳戶必須具有一組最低限度的 vCenter 權限，以�
 
 
 [role="lead"]
-vCenter 帳戶必須具有一組最低限度的 vCenter 權限，以允許NetApp Disaster Recovery執行其服務，例如註冊和取消註冊資料儲存庫、啟動和停止虛擬機器以及重新配置虛擬機器 (VM)。下表列出了NetApp Disaster Recovery與 vCenter 叢集連線所需的所有權限。
+為了讓 NetApp Disaster Recovery 執行其服務，vCenter 帳戶必須擁有一組最少的 vCenter 權限。這些權限包括註冊和取消註冊資料存放區、啟動和停止虛擬機器（VMs），以及重新配置 VMs。
 
-[cols="25,35a,40a"]
+下表列出了 Disaster Recovery 與 vCenter 叢集互動所需的所有權限。
+
+[cols="1,2,2,3"]
 |===
-| 類型 | 權限名稱 | 描述 
+| 類型 | 權限名稱（vSphere 客戶端） | 權限名稱 (API) | 描述 
 
 
-| *資料儲存*  a| 
-資料儲存.配置資料存儲
- a| 
-用於配置資料儲存。
+.3+| 資料存放區 | Datastore.Config | 設定資料存放區 | 允許配置資料存放區。 
 
 
-
-|   a| 
-資料存儲. 刪除資料存儲
- a| 
-用於刪除資料儲存。
+| Datastore.Delete | 移除資料存放區 | 允許移除資料存放區。 
 
 
-
-| 虛擬機  a| 
-虛擬機器. 配置. 更改設定
- a| 
-用於變更常規 VM 設定。
+| Datastore.Rename | 重新命名資料存放區 | 允許重新命名資料存放區。 
 
 
-
-|   a| 
-虛擬機器. 配置. 修改設備設定
- a| 
-用於更改現有設備的屬性。
+.3+| 資料夾 | 建立資料夾 | 建立資料夾 | 允許建立新資料夾。 
 
 
-
-|   a| 
-虛擬機器.配置.從路徑重新載入
- a| 
-用於變更 VM 配置補丁，同時保留 VM 的身份。  VMware vCenter Site Recovery Manager 等解決方案使用此操作在故障轉移和故障復原期間維護 VM 識別碼。
+| 資料夾刪除 | 刪除資料夾 | 允許刪除資料夾。需要對物件及其父項都具有權限。 
 
 
-
-|   a| 
-虛擬機器. 配置. 重新命名
- a| 
-用於重新命名虛擬機器或修改虛擬機器的關聯節點。
+| 資料夾重新命名 | 重新命名資料夾 | 允許修改資料夾名稱。 
 
 
-
-|   a| 
-虛擬機器. 配置. 重置客戶機資訊
- a| 
-用於編輯 VM 的客戶作業系統資訊。
+.2+| 網路 | 網路分配 | 指派網路 | 允許將網路指派給 VM 。 
 
 
-
-|   a| 
-虛擬機器. 配置. 更改記憶體
- a| 
-用於更改分配給 VM 的記憶體量。
+| Network.Config | 設定 | 允許配置網路。 
 
 
-
-|   a| 
-虛擬機器. 配置. 更改 CPU 數量
- a| 
-用於更改虛擬 CPU 的數量。
+.9+| 虛擬機器組態 | VirtualMachine.Config.AdvancedConfig | 進階組態 | 允許在 VM 的組態檔中新增或修改進階參數。 
 
 
-
-| *虛擬機器客戶機*  a| 
-虛擬機器.客戶機操作.客戶機操作修改
- a| 
-啟用涉及對 VM 中的客戶作業系統進行變更的 VM 客戶操作，例如將檔案傳輸到 VM。
+| VirtualMachine.Config.Settings | 更改設定 | 允許變更一般 VM 設定。 
 
 
-
-| *虛擬機器互動*  a| 
-虛擬機器.互動.關閉
- a| 
-用於關閉已啟動的虛擬機器。此操作將關閉客戶作業系統。
+| VirtualMachine.Config.CPUCount | 變更 CPU 計數 | 允許變更虛擬 CPU 的數量。 
 
 
-
-|   a| 
-虛擬機器.交互.開啟
- a| 
-用於啟動已關閉的虛擬機器並復原已掛起的虛擬機器。
+| VirtualMachine.Config.Memory | 變更記憶體 | 允許更改分配給 VM 的記憶體量。 
 
 
-
-|   a| 
-虛擬機器.互動.VMware Tools 安裝
- a| 
-用於將 VMware Tools CD 安裝程式作為客戶作業系統的 CD-ROM 進行掛載和卸載。
+| VirtualMachine.Config.Resource | 更改資源 | 允許更改資源池中 VM 節點的資源配置。 
 
 
-
-| *虛擬機器清單*  a| 
-虛擬機器. 清單. 新建
- a| 
-用於建立虛擬機器並為其執行指派資源。
+| VirtualMachine.Config.Rename | 重新命名 | 允許重新命名 VM 或修改其備註。 
 
 
-
-|   a| 
-虛擬機器.庫存.註冊
- a| 
-用於將現有 VM 新增至 vCenter Server 或主機清單。
+| VirtualMachine.Config.EditDevice | 修改裝置設定 | 允許更改現有裝置的屬性。 
 
 
-
-|   a| 
-虛擬機器. 清單. 取消註冊
- a| 
-用於從 vCenter Server 或主機清單中取消註冊虛擬機器。
+| VirtualMachine.Config.ReloadFromPath | 從路徑重新載入 | 允許在保持身份不變的情況下變更 VM 配置路徑。 
 
 
-
-| *虛擬機器狀態*  a| 
-虛擬機器. 快照管理. 建立快照
- a| 
-用於從 VM 的目前狀態建立快照。
+| VirtualMachine.Config.ResetGuestInfo | 重設訪客資訊 | 允許編輯 VM 的客體作業系統資訊。 
 
 
-
-|   a| 
-虛擬機器. 快照管理. 刪除快照
- a| 
-用於從快照歷史記錄中刪除快照。
+.5+| 虛擬機器客體 | VirtualMachine．GuestOperations．ModifyAliases | 客體作業別名修改 | 允許修改 VM 的別名。 
 
 
+| VirtualMachine．GuestOperations．QueryAliases | 訪客操作別名查詢 | 允許查詢 VM 的別名。 
 
-|   a| 
-虛擬機器. 快照管理. 還原到快照
- a| 
-用於將 VM 設定為給定快照時的狀態。
 
+| VirtualMachine．GuestOperations．修改 | 訪客作業修改 | 允許執行修改操作，包括將檔案傳輸到 VM。 
+
+
+| VirtualMachine．GuestOperations．執行 | 客體作業程式執行 | 允許在虛擬機器內執行應用程式。 
+
+
+| VirtualMachine．GuestOperations．查詢 | 訪客作業查詢 | 允許查詢客體作業系統。操作包括列出檔案。 
+
+
+.9+| 虛擬機器互動 | VirtualMachine.互動。AnswerQuestion | 回答問題 | 允許解決 VM 狀態轉換期間的問題或執行階段錯誤。 
+
+
+| VirtualMachine。互動。PowerOff | 關閉電源 | 允許關閉已開啟的 VM。 
+
+
+| VirtualMachine。互動。PowerOn | 開機 | 允許啟動或恢復 VM。 
+
+
+| VirtualMachine。互動。ToolsInstall | VMware Tools 安裝 | 允許掛載 / 卸載 VMware Tools 安裝程式。 
+
+
+| VirtualMachine.清單.CreateFromExisting | 從現有項目建立 | 允許從範本複製或部署 VM。 
+
+
+| VirtualMachine.Inventory.Create | 建立新的 | 允許建立 VM 並分配資源。 
+
+
+| VirtualMachine.清單.註冊 | 註冊使用 | 允許將現有 VM 新增至清單。 
+
+
+| VirtualMachine.清單.刪除 | 移除 | 允許刪除 VM 及其檔案。需要對物件及其父物件都具有權限。 
+
+
+| VirtualMachine.Inventory.Unregister | 取消註冊 | 允許取消註冊虛擬機器。此權限需要對物件及其父物件都具有權限。 
+
+
+.4+| 虛擬機器資源配置 | VirtualMachine．佈建．複製 | 克隆虛擬機 | 允許克隆虛擬機器並分配資源。 
+
+
+| VirtualMachine．佈建．自訂 | 自訂客體 | 允許自訂 VM 的客體作業系統。 
+
+
+| VirtualMachine 佈建。ModifyCustSpecs | 修改自訂規格 | 允許建立、修改或刪除自訂規格。 
+
+
+| VirtualMachine 佈建。ReadCustSpecs | 閱讀自訂規格 | 允許讀取 VM 的自訂規格。 
+
+
+.2+| 虛擬機器服務組態 | VirtualMachine.Namespace.Query | 查詢服務組態 | 允許擷取 VM 服務清單。 
+
+
+| VirtualMachine。Namespace。ReadContent | 讀取服務配置 | 允許擷取現有的 VM 服務組態。 
+
+
+.4+| 虛擬機器快照 | VirtualMachine 狀態。CreateSnapshot | 建立快照 | 允許從虛擬機器的目前狀態建立快照。 
+
+
+| VirtualMachine 狀態。RemoveSnapshot | 移除快照 | 允許刪除快照。 
+
+
+| VirtualMachine 狀態。RenameSnapshot | 重新命名快照 | 允許重新命名快照或更新其說明。 
+
+
+| VirtualMachine 狀態。RevertToSnapshot | 還原至快照 | 允許將 VM 還原到給定快照的狀態。 
 |===

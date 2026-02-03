@@ -888,54 +888,8 @@
   <block id="dae6a888dd76ab8af615bbd14bb0d970" category="list-text">受保護（來源）網站的名稱</block>
   <block id="faf0d22a90ba1218a90118919579cdab" category="list-text">複製計劃保護的資源組列表</block>
   <block id="693eee995124fe1d32610314f6e68c30" category="list-text">故障轉移（目標）站點的名稱</block>
-  <block id="a194677aec5cc4ac6a7ec4c1e23c12f3" category="summary">vCenter 帳戶必須具有一組最低限度的 vCenter 權限，以允許NetApp Disaster Recovery執行其服務，例如註冊和取消註冊資料儲存庫、啟動和停止虛擬機器以及重新配置虛擬機器 (VM)。下表列出了NetApp Disaster Recovery與 vCenter 叢集連線所需的所有權限。</block>
   <block id="a1fa27779242b4902f7ae3bdd5c6d508" category="cell">類型</block>
-  <block id="f31fadcb7ced5ed0e7fbc3d65d0ab660" category="cell">權限名稱</block>
   <block id="b5a7adde1af5c87d7fd797b6245c2a39" category="cell">描述</block>
-  <block id="2051881d2c94079273dde07614b52317" category="cell">*資料儲存*</block>
-  <block id="39e17557e52f8908bd58f0aa8f90e589" category="paragraph">資料儲存.配置資料存儲</block>
-  <block id="b0156af1fabe28340f5f515de85b8ba2" category="paragraph">用於配置資料儲存。</block>
-  <block id="16ca70be6373a69d7a7a4054b8740d5f" category="paragraph">資料存儲. 刪除資料存儲</block>
-  <block id="5d7a7f943775e5b9f23c14409254d31f" category="paragraph">用於刪除資料儲存。</block>
-  <block id="0d710447bc4b3d240dbec4ffdff78d7f" category="cell">虛擬機</block>
-  <block id="0d027ba13a066afab0e72091146c32c3" category="paragraph">虛擬機器. 配置. 更改設定</block>
-  <block id="ac5fed24b3778885bc91821ce7badce7" category="paragraph">用於變更常規 VM 設定。</block>
-  <block id="877b1c9b324b92cc7eb4c734fa176de9" category="paragraph">虛擬機器. 配置. 修改設備設定</block>
-  <block id="a470a1e5aa63361f7bba6f9b3753f58d" category="paragraph">用於更改現有設備的屬性。</block>
-  <block id="1c48d7d8b2a2dfea7d4778be6f8adce8" category="paragraph">虛擬機器.配置.從路徑重新載入</block>
-  <block id="a21bfc06d31dc57593c8038b2c5c0e18" category="paragraph">用於變更 VM 配置補丁，同時保留 VM 的身份。  VMware vCenter Site Recovery Manager 等解決方案使用此操作在故障轉移和故障復原期間維護 VM 識別碼。</block>
-  <block id="936b25ae8b1305df4de41cc7edd3fb3c" category="paragraph">虛擬機器. 配置. 重新命名</block>
-  <block id="eb6647b772f29fe6d76a2ff596d8da2e" category="paragraph">用於重新命名虛擬機器或修改虛擬機器的關聯節點。</block>
-  <block id="4553fbef402a1d8731c1816f91ce505e" category="paragraph">虛擬機器. 配置. 重置客戶機資訊</block>
-  <block id="c0acbac48fd78801142c21bfcc2d7f80" category="paragraph">用於編輯 VM 的客戶作業系統資訊。</block>
-  <block id="b7f2f93f9ded16ef0cf42386d0a084de" category="paragraph">虛擬機器. 配置. 更改記憶體</block>
-  <block id="7e417510f4c5b448e5e913a6e30e26c2" category="paragraph">用於更改分配給 VM 的記憶體量。</block>
-  <block id="0a90330abb3eb200a7ba0bf8a956104c" category="paragraph">虛擬機器. 配置. 更改 CPU 數量</block>
-  <block id="7099548d8fb2bdd522f5dd68ea188fa2" category="paragraph">用於更改虛擬 CPU 的數量。</block>
-  <block id="9dea3c37393731c874e9363f748cf20b" category="cell">*虛擬機器客戶機*</block>
-  <block id="5254bee77444f0715c2e30f4220be885" category="paragraph">虛擬機器.客戶機操作.客戶機操作修改</block>
-  <block id="864141f9bd9cc6a2551f6a1a984099e3" category="paragraph">啟用涉及對 VM 中的客戶作業系統進行變更的 VM 客戶操作，例如將檔案傳輸到 VM。</block>
-  <block id="21cb03054cbe3a67055ca3df7a2ab77b" category="cell">*虛擬機器互動*</block>
-  <block id="075d18862c516c291ccc18b4ef715fe5" category="paragraph">虛擬機器.互動.關閉</block>
-  <block id="198a48c49bf020db667c8efb024e757e" category="paragraph">用於關閉已啟動的虛擬機器。此操作將關閉客戶作業系統。</block>
-  <block id="10bd34b60a2bda547e4bc8e9973f3e31" category="paragraph">虛擬機器.交互.開啟</block>
-  <block id="3fc8744b9995cd14b4bb7379533c3ba6" category="paragraph">用於啟動已關閉的虛擬機器並復原已掛起的虛擬機器。</block>
-  <block id="5192d6f694edc454343369b22dbfc5c6" category="paragraph">虛擬機器.互動.VMware Tools 安裝</block>
-  <block id="30519066cd3534ef7d314b2c9aacd55d" category="paragraph">用於將 VMware Tools CD 安裝程式作為客戶作業系統的 CD-ROM 進行掛載和卸載。</block>
-  <block id="66fdc82624c87dcd5ceb484e44a95fdd" category="cell">*虛擬機器清單*</block>
-  <block id="bb9a532fb645f8d94cb7c827a61302ea" category="paragraph">虛擬機器. 清單. 新建</block>
-  <block id="00b57b9dfd38ba20e57b6ef930030e86" category="paragraph">用於建立虛擬機器並為其執行指派資源。</block>
-  <block id="c28cfecb65a13c8091d476d8c65457e1" category="paragraph">虛擬機器.庫存.註冊</block>
-  <block id="8e8abc11ed45aba5690c57962484db6d" category="paragraph">用於將現有 VM 新增至 vCenter Server 或主機清單。</block>
-  <block id="db6d9006d2f72f5cf22c40fa1220b43a" category="paragraph">虛擬機器. 清單. 取消註冊</block>
-  <block id="fa8ff1e1f1b39d6eb3b65050b2b1d275" category="paragraph">用於從 vCenter Server 或主機清單中取消註冊虛擬機器。</block>
-  <block id="3d021ff57844dddc6d9f4674f6934243" category="cell">*虛擬機器狀態*</block>
-  <block id="a9b3b608e7046721eb5ab1e0dbaf0c7d" category="paragraph">虛擬機器. 快照管理. 建立快照</block>
-  <block id="0386636d5860b389e6185a8e3d1fc157" category="paragraph">用於從 VM 的目前狀態建立快照。</block>
-  <block id="18f05db9c4723f1a48e0cddc8e00ec23" category="paragraph">虛擬機器. 快照管理. 刪除快照</block>
-  <block id="653c42e482faf281af92e05d3ba79031" category="paragraph">用於從快照歷史記錄中刪除快照。</block>
-  <block id="d3aa03526082ef556ffca1a6a35a1775" category="paragraph">虛擬機器. 快照管理. 還原到快照</block>
-  <block id="3817fbf7d76df44f4565ed3cde76a690" category="paragraph">用於將 VM 設定為給定快照時的狀態。</block>
   <block id="84fa68bdcea2ad5e54b20ac851705b19" category="summary">已知限制標識了此版本服務不支援或無法與其正確互通的平台、裝置或功能。</block>
   <block id="3d3d2883faed9efeee5c50be2552c33e" category="doc">NetApp Disaster Recovery的局限性</block>
   <block id="84c20a0b7ce2eb1001004d644d0ca57e" category="section-title">等待故障回復完成後再運行發現</block>
@@ -1994,4 +1948,142 @@
   <block id="7019a39846e9a2c7f7a80eaba91e4a41" category="paragraph"><block ref="7019a39846e9a2c7f7a80eaba91e4a41" category="inline-image-macro-rx" type="image"></block></block>
   <block id="1d593c3f7480ada9580d93cd753c3f93" category="paragraph">這是系統產生的映射到您的電子郵件的 ID。在*NSS 管理*頁面上，您可以顯示來自<block ref="5444f6f0c3983523c8933a1864b2b390" category="inline-image-macro-rx" type="image"></block>菜單。</block>
   <block id="872eaae7deb6035c20f9bfe6deefd03d" category="list-text">如果您需要刷新登入憑證令牌，還有一個*更新憑證*選項<block ref="5444f6f0c3983523c8933a1864b2b390" category="inline-image-macro-rx" type="image"></block>菜單。</block>
+  <block id="7102eb8b8134f163222e26a148b28643" category="summary">vCenter 帳戶必須擁有一組最少的 vCenter 權限，才能讓 NetApp Disaster Recovery 正常運作。</block>
+  <block id="e239f3cf124fb9fe9b97d14be5debcf2" category="doc">用於 NetApp Disaster Recovery 的必要 vCenter 權限</block>
+  <block id="f9f5a8cb091b3974f4efdfb4cb8ec9fc" category="paragraph">為了讓 NetApp Disaster Recovery 執行其服務，vCenter 帳戶必須擁有一組最少的 vCenter 權限。這些權限包括註冊和取消註冊資料存放區、啟動和停止虛擬機器（VMs），以及重新配置 VMs。</block>
+  <block id="bbca177b8f73de5ad1de8c9771bd1ce1" category="paragraph">下表列出了 Disaster Recovery 與 vCenter 叢集互動所需的所有權限。</block>
+  <block id="484c3cceb97fa36a8403330f3c74a89b" category="cell">權限名稱（vSphere 客戶端）</block>
+  <block id="a08e86514b21b7a12a5bf45fd2a99a3f" category="cell">權限名稱 (API)</block>
+  <block id="8a5227cc82d14862956938caffc1acf2" category="cell">資料存放區</block>
+  <block id="ec17e553dd8ab3e19a179f3561a2a6b4" category="cell">Datastore.Config</block>
+  <block id="5313d84436556f72cc3755dd320a3164" category="cell">設定資料存放區</block>
+  <block id="5be4ff66efffd2e4bb8603aa5c2e8590" category="cell">允許配置資料存放區。</block>
+  <block id="0022868deacb739212d9639f7415cc15" category="cell">Datastore.Delete</block>
+  <block id="3830c0a5f6434510c60784c1f5e4da01" category="cell">移除資料存放區</block>
+  <block id="83a2e57b563c5afe8e6894923466c4f0" category="cell">允許移除資料存放區。</block>
+  <block id="520f3822db7a266164374ec6c5c79d62" category="cell">Datastore.Rename</block>
+  <block id="f752200dca9456e48e2aa00ffb67ef79" category="cell">重新命名資料存放區</block>
+  <block id="eca63b380db21f9c2e05e612529ec2f8" category="cell">允許重新命名資料存放區。</block>
+  <block id="b0f2b97dc5d2b76b26e040408bb1d8af" category="cell">資料夾</block>
+  <block id="820282f5bf5c06ec3dca8e6283239318" category="cell">建立資料夾</block>
+  <block id="5dc1e97c14fbe72d8b566ce29c39f010" category="cell">建立資料夾</block>
+  <block id="846d5d4de81b94a5fad10152ec41e854" category="cell">允許建立新資料夾。</block>
+  <block id="6a0ae07e97026b3661b3317a2c7c3885" category="cell">資料夾刪除</block>
+  <block id="2a2f15300f6f7c81d69860ac1796b517" category="cell">刪除資料夾</block>
+  <block id="8c8b91abb8975c4adc855e59f3483992" category="cell">允許刪除資料夾。需要對物件及其父項都具有權限。</block>
+  <block id="a25ceea83b384e5569d07f3cb19878fa" category="cell">資料夾重新命名</block>
+  <block id="db76034f8218cda07dadb746a5643019" category="cell">重新命名資料夾</block>
+  <block id="55669aa32de0a4caa3cb12cc6e67c726" category="cell">允許修改資料夾名稱。</block>
+  <block id="eec89088ee408b80387155272b113256" category="cell">網路</block>
+  <block id="64f545a7ab05fb022a1e0cf5be623864" category="cell">網路分配</block>
+  <block id="0f2a9e2e169a500cc92684521eaa4a9a" category="cell">指派網路</block>
+  <block id="d72b4c38c00f422618226cbc064a51d7" category="cell">允許將網路指派給 VM 。</block>
+  <block id="87ccd98a9e9e482e3eb864a195207bb1" category="cell">Network.Config</block>
+  <block id="f1206f9fadc5ce41694f69129aecac26" category="cell">設定</block>
+  <block id="299206db7a9b47c95177deb877ede805" category="cell">允許配置網路。</block>
+  <block id="7ad18a6427a79884889db42cd06453bc" category="cell">虛擬機器組態</block>
+  <block id="01fe355d4f8b7c22a11d6df8e81db631" category="cell">VirtualMachine.Config.AdvancedConfig</block>
+  <block id="119dd5a342e981b13bf0024d5c6a6933" category="cell">進階組態</block>
+  <block id="652e0b7efb978c540ee56162e9da8bea" category="cell">允許在 VM 的組態檔中新增或修改進階參數。</block>
+  <block id="e5365ae03ae7bd7ee9198b3ab189e6e6" category="cell">VirtualMachine.Config.Settings</block>
+  <block id="1221ff7164cdee8b469096ebf5e997f6" category="cell">更改設定</block>
+  <block id="75a26f99fe3a6b6d8a61fb4358b59180" category="cell">允許變更一般 VM 設定。</block>
+  <block id="be14adea066190e0dca0b04a1aadfcc0" category="cell">VirtualMachine.Config.CPUCount</block>
+  <block id="61705f157c64f8c4f27e58eff60b09e2" category="cell">變更 CPU 計數</block>
+  <block id="1c794402f18088ed2931b657aa3a7ca6" category="cell">允許變更虛擬 CPU 的數量。</block>
+  <block id="eb73db3f4d3d6a73d08f27e0ff940e4a" category="cell">VirtualMachine.Config.Memory</block>
+  <block id="8a1ec8c2388ce7768b9961b8c94fcada" category="cell">變更記憶體</block>
+  <block id="3a794fb7cfe9ae081db230025092c225" category="cell">允許更改分配給 VM 的記憶體量。</block>
+  <block id="42e670935b59b432f457d1d1bb0cc863" category="cell">VirtualMachine.Config.Resource</block>
+  <block id="b81398b82bb104abd241c7bce6d3450b" category="cell">更改資源</block>
+  <block id="4eea51541c46771e20020d2fba645141" category="cell">允許更改資源池中 VM 節點的資源配置。</block>
+  <block id="9717e525e3ba611a4d50e13ef0157cb1" category="cell">VirtualMachine.Config.Rename</block>
+  <block id="904a8304056d77e4547744781b7ceb50" category="cell">重新命名</block>
+  <block id="500e349cb3e3a859b04226bbf3df0449" category="cell">允許重新命名 VM 或修改其備註。</block>
+  <block id="c29fc1cb0067d1dae865aa836ee19187" category="cell">VirtualMachine.Config.EditDevice</block>
+  <block id="7a4d0d96ff85f2e26f1ac8d0a5c42b74" category="cell">修改裝置設定</block>
+  <block id="c90e2a27fcb1467b73c7d4d6a5d72676" category="cell">允許更改現有裝置的屬性。</block>
+  <block id="ff6abf137f15a4d05161bf897a2ebc4f" category="cell">VirtualMachine.Config.ReloadFromPath</block>
+  <block id="0c0a5841b8cdb1a7f08f5285b81a7d53" category="cell">從路徑重新載入</block>
+  <block id="bb6d507b674e1e76ad96b52342744ab3" category="cell">允許在保持身份不變的情況下變更 VM 配置路徑。</block>
+  <block id="706ae466f4d5943aef40d031cda68ef2" category="cell">VirtualMachine.Config.ResetGuestInfo</block>
+  <block id="6c2cadc5f0b182e333bf2dad08ca8ff1" category="cell">重設訪客資訊</block>
+  <block id="27b1854024c5e4f466b740f48b1e26f7" category="cell">允許編輯 VM 的客體作業系統資訊。</block>
+  <block id="11c63c84421b2667d15eb1d131fea2c9" category="cell">虛擬機器客體</block>
+  <block id="714f42f98e9b8442ac637e0b491d640a" category="cell">VirtualMachine．GuestOperations．ModifyAliases</block>
+  <block id="2b58cb81325f16b777c282fc40fa0f09" category="cell">客體作業別名修改</block>
+  <block id="11e4ab65bc568de92223e564edfa69f1" category="cell">允許修改 VM 的別名。</block>
+  <block id="9c54aba6d2a7064878cba907b80a5c20" category="cell">VirtualMachine．GuestOperations．QueryAliases</block>
+  <block id="90c2673e1fbeeed9f7212c78c1517f8b" category="cell">訪客操作別名查詢</block>
+  <block id="ae9c51fb7e5c7e58cf850be99f13b5da" category="cell">允許查詢 VM 的別名。</block>
+  <block id="128426b465aa6a76465ac21805664043" category="cell">VirtualMachine．GuestOperations．修改</block>
+  <block id="f85a05f8f17b0d5639155ca79f5555bd" category="cell">訪客作業修改</block>
+  <block id="fbbecc3e1eda5ebd1c2be2edf5f64c87" category="cell">允許執行修改操作，包括將檔案傳輸到 VM。</block>
+  <block id="8eb4a874a594ddb8b4f21e1c374b5ed6" category="cell">VirtualMachine．GuestOperations．執行</block>
+  <block id="8c3ed2222a0f7d02283e04d834525d37" category="cell">客體作業程式執行</block>
+  <block id="ef8404fa8fbdf73e9f20afb7b833d5b9" category="cell">允許在虛擬機器內執行應用程式。</block>
+  <block id="cdbdc6d1fae0566bf4e2f4c17574ffcb" category="cell">VirtualMachine．GuestOperations．查詢</block>
+  <block id="f357f7592bf0bdb12c871bc60dc015cd" category="cell">訪客作業查詢</block>
+  <block id="1a15045106304cc451100ce1e30219fd" category="cell">允許查詢客體作業系統。操作包括列出檔案。</block>
+  <block id="18b5ca89bf955d3de9441c83c69df79e" category="cell">虛擬機器互動</block>
+  <block id="9600ac65256b5dbcedcee596a313da71" category="cell">VirtualMachine.互動。AnswerQuestion</block>
+  <block id="aabd44daaf6ae047b22ccde8dcf27033" category="cell">回答問題</block>
+  <block id="4c2e0d6c79a8a31cee9a86187cc122fe" category="cell">允許解決 VM 狀態轉換期間的問題或執行階段錯誤。</block>
+  <block id="2082bd369b3fb2e5f2ee6b84de874022" category="cell">VirtualMachine。互動。PowerOff</block>
+  <block id="1bb202d66fd437a5e7ad355057d3dcb3" category="cell">關閉電源</block>
+  <block id="e8d5ebbea01452913dd7e7b6b2746643" category="cell">允許關閉已開啟的 VM。</block>
+  <block id="50a7f7456e601d5f5868969182a71ab1" category="cell">VirtualMachine。互動。PowerOn</block>
+  <block id="eb503c4e76174415d5b8c63a4393ee0b" category="cell">開機</block>
+  <block id="b91a0a06b8289c36464ea6f963322b5d" category="cell">允許啟動或恢復 VM。</block>
+  <block id="4b6afb10f901dcb368e0da8ca9c161bc" category="cell">VirtualMachine。互動。ToolsInstall</block>
+  <block id="d090e991c71e10ba45c274b9b1bf8525" category="cell">VMware Tools 安裝</block>
+  <block id="050f15e7792301746e90f839175ccdaf" category="cell">允許掛載 / 卸載 VMware Tools 安裝程式。</block>
+  <block id="3ce1321655460fdb3e0113cb9436c881" category="cell">VirtualMachine.清單.CreateFromExisting</block>
+  <block id="eb420426750166280dc02d6c621c14d0" category="cell">從現有項目建立</block>
+  <block id="8b7ea76a046222325068e7d2a20f713a" category="cell">允許從範本複製或部署 VM。</block>
+  <block id="ab72b5f6ca8ff1ff56266e0e27380236" category="cell">VirtualMachine.Inventory.Create</block>
+  <block id="f7f78b9dfe29752b9e04490253838264" category="cell">建立新的</block>
+  <block id="194a8967f82d31bf055f0b8457a9330f" category="cell">允許建立 VM 並分配資源。</block>
+  <block id="6bd1805123099938703da4504aa1b397" category="cell">VirtualMachine.清單.註冊</block>
+  <block id="0ba7583639a274c434bbe6ef797115a4" category="cell">註冊使用</block>
+  <block id="ffd52d8132bf8a257137b83b711e1fe1" category="cell">允許將現有 VM 新增至清單。</block>
+  <block id="113ec0e9dea5dc343fc1b20466b50626" category="cell">VirtualMachine.清單.刪除</block>
+  <block id="1063e38cb53d94d386f21227fcd84717" category="cell">移除</block>
+  <block id="90e62a2b806e2789c4461fa54b9e8a35" category="cell">允許刪除 VM 及其檔案。需要對物件及其父物件都具有權限。</block>
+  <block id="1583481191d9003b6525428c8dee442c" category="cell">VirtualMachine.Inventory.Unregister</block>
+  <block id="9d4a8f2dfe3c62f3ce3011035d28fb66" category="cell">取消註冊</block>
+  <block id="e947f802786fe9992a2b80860afa85d2" category="cell">允許取消註冊虛擬機器。此權限需要對物件及其父物件都具有權限。</block>
+  <block id="566b6449fc93391a14e69021539d8e60" category="cell">虛擬機器資源配置</block>
+  <block id="611cabc13514750b736417c0751fec59" category="cell">VirtualMachine．佈建．複製</block>
+  <block id="7c6ed64f87d8a584aca0913287d1a6fc" category="cell">克隆虛擬機</block>
+  <block id="0070d94d066bcfe88273ecbd56757362" category="cell">允許克隆虛擬機器並分配資源。</block>
+  <block id="a43c309c412138c7cfd54f44d8386bc0" category="cell">VirtualMachine．佈建．自訂</block>
+  <block id="598fbc9a28d6f19e92b27e1a5af7ad0e" category="cell">自訂客體</block>
+  <block id="b2ba191c90041ee971b8ca14a0c92291" category="cell">允許自訂 VM 的客體作業系統。</block>
+  <block id="ba74a949d599565a041441fdd39350c5" category="cell">VirtualMachine 佈建。ModifyCustSpecs</block>
+  <block id="3c42b71d77b9e5f83e0ee3f8ed97d8da" category="cell">修改自訂規格</block>
+  <block id="f81d99e57c5b149a45763b54b000873b" category="cell">允許建立、修改或刪除自訂規格。</block>
+  <block id="e09ffc9b87590a5f49710c0533613460" category="cell">VirtualMachine 佈建。ReadCustSpecs</block>
+  <block id="c2578bfe84d0cf1e9df740a50d2613b1" category="cell">閱讀自訂規格</block>
+  <block id="ace7edb1ff65bdc40e95eb9487f405e2" category="cell">允許讀取 VM 的自訂規格。</block>
+  <block id="fed72266e2f70add575b5566a9cbe4fd" category="cell">虛擬機器服務組態</block>
+  <block id="8cb4055c5f9bac1c728e97bda4d4d1f1" category="cell">VirtualMachine.Namespace.Query</block>
+  <block id="69f274d7dd0d3eae6bf59b6048da9fc5" category="cell">查詢服務組態</block>
+  <block id="2d3affb438272b2e8152acdaca3917d0" category="cell">允許擷取 VM 服務清單。</block>
+  <block id="9f269e8cc872deac8ab3d984855702ee" category="cell">VirtualMachine。Namespace。ReadContent</block>
+  <block id="d18a05281343e8e08785e5f87a0e95ca" category="cell">讀取服務配置</block>
+  <block id="88e3686512c999f4bfaf9eb252166267" category="cell">允許擷取現有的 VM 服務組態。</block>
+  <block id="4f055083178fbed3a992b5a889ee6ec6" category="cell">虛擬機器快照</block>
+  <block id="a9a656934e6bbd1cf922ff6d20a97d38" category="cell">VirtualMachine 狀態。CreateSnapshot</block>
+  <block id="bfb2cee5de3a54c30810194a0077e673" category="cell">建立快照</block>
+  <block id="644696f8a5cf62f2c90b255de195e9e9" category="cell">允許從虛擬機器的目前狀態建立快照。</block>
+  <block id="e07e04b7522dad3f158b9930e4c91944" category="cell">VirtualMachine 狀態。RemoveSnapshot</block>
+  <block id="ada1b8fca015644eb0e5c19ee82795da" category="cell">移除快照</block>
+  <block id="9da2025e7ae5b4b4e540a0a98af3a46d" category="cell">允許刪除快照。</block>
+  <block id="7f7038b0c4bb41aa1afacc8c2806ee73" category="cell">VirtualMachine 狀態。RenameSnapshot</block>
+  <block id="c3b272eb798aaa11b258a91dbf4ef016" category="cell">重新命名快照</block>
+  <block id="842e86f4867d549a938e8038f571fd6b" category="cell">允許重新命名快照或更新其說明。</block>
+  <block id="e09864970107f53b95b27d59844fe8a3" category="cell">VirtualMachine 狀態。RevertToSnapshot</block>
+  <block id="e2a5f777b44916836fdc3739a3964e98" category="cell">還原至快照</block>
+  <block id="f82e780d3c4a5f7f4bf54aabdabdd223" category="cell">允許將 VM 還原到給定快照的狀態。</block>
 </blocks>
