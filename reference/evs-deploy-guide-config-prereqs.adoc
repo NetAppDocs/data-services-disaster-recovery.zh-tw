@@ -9,20 +9,41 @@ summary: 在繼續使用NetApp Disaster Recovery配置 Amazon EVS 之前，您�
 
 
 [role="lead"]
-在繼續使用NetApp Disaster Recovery配置 Amazon EVS 之前，您應該確保滿足幾個先決條件。
+請確保您已審查並滿足配置 Amazon EVS 與 NetApp Disaster Recovery 所需的要求。
 
-具體來說，請執行以下操作：
-
+.先決條件
+* 檢閱 link:../get-started/dr-prerequisites["Disaster Recovery 的一般前提條件"] 。
 * 建立 vCenter 使用者帳戶，該帳戶具有NetApp Disaster Recovery所需的特定 VMware 權限，以執行必要的操作。
 +
 
-NOTE: 我們不建議使用預設的“\administrator@vsphere.com”管理員帳戶。相反，您應該在將參與 DR 流程的所有 vCenter 叢集上建立一個NetApp Disaster Recovery特定的使用者帳戶。有關所需特定權限的列表，請參閱link:vcenter-privileges.html["NetApp Disaster Recovery所需的 vCenter 權限"]。
+NOTE: 建議您**不要**使用預設的「\administrator@vsphere.com」管理員帳戶。相反地，您應該在所有將參與災難復原程序的 vCenter 叢集上建立一個 NetApp Disaster Recovery 專用的使用者帳戶。如需所需特定權限清單，請參閱link:vcenter-privileges.html["NetApp Disaster Recovery所需的 vCenter 權限"]。
 
-* 確保將託管受NetApp Disaster Recovery保護的虛擬機器的所有 vCenter 資料儲存區都位於NetApp ONTAP儲存資源上。
+* 確保所有將託管受 Disaster Recovery 保護的 VM 的 vCenter 資料存放區都位於 NetApp ONTAP 儲存資源上。
 +
-在NetApp ONTAP上使用Amazon FSx時，此服務支援 iSCSI（而非 FC）上的 NFS 和 VMFS。雖然該服務支援 FC，Amazon FSx for NetApp ONTAP不支援。
+Disaster Recovery 在使用 Amazon FSx for NetApp ONTAP 時支援 iSCSI 上的 NFS 和 VMFS（而非 FC）。儘管 Disaster Recovery 支援 FC，但 Amazon FSx for NetApp ONTAP 並不支援。
 
-* 確保您的 Amazon EVS vCenter 已連線至Amazon FSx for NetApp ONTAP儲存叢集。
-* 確保所有受保護的虛擬機器上都安裝了 VMware 工具。
-* 確保您的本地網路使用 Amazon 認可的連線方法連接到您的 AWS VPC 網路。我們建議您使用 AWS Direct Connect、AWS Private Link 或 AWS Site-to-Site VPN。
+* 請確保您的 Amazon EVS vCenter 已連線至 Amazon FSx for NetApp ONTAP 儲存叢集。
+* 確保所有受保護的 VM 都已安裝 VMware Tools 。
+* 請確保您的本地網路使用 Amazon 認可的連線方式連接到您的 AWS VPC 網路。建議您使用 AWS Direct Connect、AWS Private Link 或 AWS Site-to-Site VPN。
+* 審查並確保符合 EVS 與 Disaster Recovery 的連線和連接埠要求：
++
+[cols="4"]
+|===
+| 來源 | 目的地 | 連接埠 | 詳細資料 
+
+
+| Amazon FSxN | 內部部署 ONTAP | TCP 11104、11105、ICMP | SnapMirror 
+
+
+| 內部部署 ONTAP | Amazon FSxN | TCP 11104、11105、ICMP | SnapMirror 
+
+
+| NetApp Console 代理 | 內部部署 ONTAP | 僅限 TCP 443、ICMP | API 呼叫 
+
+
+| NetApp Console 代理 | Amazon FSxN | TCP 441、僅限 ICMP | API 呼叫 
+
+
+| NetApp Console 代理 | vCenter （本地部署、EVS）、ESXi 主機（本地部署、EVS） | 443 | API 呼叫、指令碼執行 
+|===
 

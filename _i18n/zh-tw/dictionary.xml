@@ -357,7 +357,6 @@
   <block id="04611b209933eb29e1f8fdaec6553eaa" category="section-title">建立NetApp Console代理</block>
   <block id="9703473550a81b3fd3679dafa7c81b5c" category="paragraph">必須在NetApp Console中設定控制台代理程式。當您使用該代理程式時，它將包含適合災難復原服務​​的功能。</block>
   <block id="c8838dcf38d330918fef4cc55c1d8bda" category="inline-link">在標準模式下開始使用NetApp Console</block>
-  <block id="60fef96933d93f92aac90515fdde5cdb" category="list-text">確保來源 vCenter 和目標 vCenter 使用相同的控制台代理。</block>
   <block id="15d628067243085634a88cba0c9fd55b" category="list-text">所需的控制台代理類型：</block>
   <block id="6e45b3ccf0fe4c67d798d465f04ffc2b" category="inline-link">在本機安裝並設定控制台代理</block>
   <block id="7ff9f8e2467774df163161a38d2d5040" category="inline-link">AWS 中的控制台代理安裝選項</block>
@@ -576,14 +575,7 @@
   <block id="370a8ca7e6b2cca92199c233522a1698" category="inline-link-macro">將 vCenter 叢集新增至NetApp Disaster Recovery</block>
   <block id="80b788a7dab3609635ead698a8ecf978" category="list-text"><block ref="80b788a7dab3609635ead698a8ecf978" category="inline-link-macro-rx"></block></block>
   <block id="6345fa92d7a42c074c54b52f4c7ab432" category="summary">在繼續使用NetApp Disaster Recovery配置 Amazon EVS 之前，您應該確保滿足幾個先決條件。</block>
-  <block id="3cfd631225e4a5cd11bb7f070aa490d3" category="paragraph">具體來說，請執行以下操作：</block>
   <block id="c054f75f836c29b129413caadf92e76a" category="list-text">建立 vCenter 使用者帳戶，該帳戶具有NetApp Disaster Recovery所需的特定 VMware 權限，以執行必要的操作。</block>
-  <block id="b7d4f3a752a8b38de81fde9de63da3a5" category="admonition">我們不建議使用預設的“\administrator@vsphere.com”管理員帳戶。相反，您應該在將參與 DR 流程的所有 vCenter 叢集上建立一個NetApp Disaster Recovery特定的使用者帳戶。有關所需特定權限的列表，請參閱<block ref="efdd112b209053b66d06020632d7d4cc" category="inline-link-macro-rx"></block>。</block>
-  <block id="c637df77242838dd7768d498b05c71d0" category="list-text">確保將託管受NetApp Disaster Recovery保護的虛擬機器的所有 vCenter 資料儲存區都位於NetApp ONTAP儲存資源上。</block>
-  <block id="8fc09ae0803e50a45a94b04ffd9379bf" category="paragraph">在NetApp ONTAP上使用Amazon FSx時，此服務支援 iSCSI（而非 FC）上的 NFS 和 VMFS。雖然該服務支援 FC，Amazon FSx for NetApp ONTAP不支援。</block>
-  <block id="aaa40fdffdb9b8b6db1fa18723bcd15b" category="list-text">確保您的 Amazon EVS vCenter 已連線至Amazon FSx for NetApp ONTAP儲存叢集。</block>
-  <block id="9709c4e90ccd66fb37391b201a587f74" category="list-text">確保所有受保護的虛擬機器上都安裝了 VMware 工具。</block>
-  <block id="77bc05bf2afea788cd5090d62741ed3d" category="list-text">確保您的本地網路使用 Amazon 認可的連線方法連接到您的 AWS VPC 網路。我們建議您使用 AWS Direct Connect、AWS Private Link 或 AWS Site-to-Site VPN。</block>
   <block id="17c945d2315cf61f16352ef1cfbd5558" category="summary">首先，使用NetApp Disaster Recovery提供複製計畫名稱並選擇複製的來源和目標 vCenter。</block>
   <block id="528a5f3a334edc5d0050d997c54ff6d3" category="doc">建立複製計畫：步驟 1 - 在NetApp Disaster Recovery中選擇 vCenter</block>
   <block id="4b7711bd320359bdedba0eba611c4063" category="paragraph">首先，使用NetApp Disaster Recovery，提供複製計劃名稱並選擇複製的來源和目標 vCenter。</block>
@@ -744,13 +736,7 @@
   <block id="1ff9a32fef93210368127dde7732e38d" category="paragraph">這對您有利，因為在應用所有ONTAP儲存效率之後， NetApp Disaster Recovery會計算授權容量。例如，假設您在 vCenter 中設定了一個 100 TB (TiB) NFS 資料儲存區來託管您想要使用該服務保護的 100 台虛擬機器。此外，假設當資料寫入ONTAP磁碟區時，自動應用的儲存效率技術會導致這些虛擬機器僅消耗 33TiB（3：1 的儲存效率）。 NetApp Disaster Recovery只需要 33TiB 的許可，而不是 100TiB。與其他 DR 解決方案相比，這對於您的 DR 解決方案的整體擁有成本來說是一個非常大的好處。</block>
   <block id="1cac620f7757c79970587895922abdb9" category="list-text">若要確定託管要保護的 VMware 資料儲存庫的每個磁碟區上消耗的資料量，請透過對每個磁碟區執行ONTAP CLI 命令來確定磁碟容量消耗：<block ref="5dcefe180a68e24e1f2547c10ed74406" prefix=" " category="inline-code"></block> 。</block>
   <block id="cdda12340d624273bd9002f62fb54d72" category="list-text">注意每個磁碟區的“總物理使用量”值。這是NetApp Disaster Recovery需要保護的資料量，也是您將用來決定需要許可多少容量的值。</block>
-  <block id="ba836a901514bb33e4b8e439edfc9553" category="summary">使用 Amazon EVS 和Amazon FSx for NetApp ONTAP介紹NetApp Disaster Recovery。雖然連接器可以安裝在任何網路位置，但對於NetApp Disaster Recovery，我們建議您在 DR 站點安裝連接器。這可確保在主站點發生故障時， NetApp控制台 UI 能夠繼續與控制台代理保持聯繫，並可協調該 DR 站點內的復原程序。</block>
   <block id="eafff2953feecf7337f42b0ed8618a50" category="doc">安裝用於NetApp Disaster Recovery的NetApp Console代理</block>
-  <block id="fc4a391c0a58b66db6357158ead085ca" category="paragraph">NetApp Console代理程式是在您的雲端或本機網路上執行的NetApp軟體。它執行NetApp Console管理資料基礎架構所需執行的操作。控制台代理程式不斷輪詢NetApp Disaster Recovery軟體作為服務層，以了解其需要採取的任何操作。</block>
-  <block id="44c1129cf47adfaefa0605f58d53c810" category="paragraph">對於NetApp Disaster Recovery，執行的作業使用每個對應服務的本機 API 來協調 VMware vCenter 叢集和ONTAP儲存實例，以便為在本機位置執行的生產虛擬機器提供保護。雖然控制台代理可以安裝在任何網路位置，但對於NetApp Disaster Recovery，我們建議您在 DR 站點安裝控制台代理。這可確保在主站點發生故障時，基於NetApp雲端的控制台 UI 能夠繼續與控制台代理保持聯繫，並可協調該 DR 站點內的復原程序。</block>
-  <block id="f495e7db7cb2a546534fe711f0127e3d" category="inline-link">了解NetApp Console部署模式 | NetApp文檔</block>
-  <block id="dd0b929797a2918fb91fe0b43cb02f42" category="paragraph">雖然控制台代理對於使用該服務至關重要，但安裝控制台代理的安裝步驟取決於您的需求和網路配置。提供具體的安裝說明超出了此資訊的範圍。</block>
-  <block id="ed8f1435250d71b466ec4682ae30820f" category="inline-link">從 AWS Marketplace 建立控制台代理 | NetApp文檔</block>
   <block id="06034a243ae2009d8ded7acc9689b052" category="summary">使用 Amazon EVS 和Amazon FSx for NetApp ONTAP介紹NetApp Disaster Recovery。</block>
   <block id="562ef4025c5a60ba97f47d8285729a0b" category="paragraph">客戶越來越依賴虛擬化基礎架構來處理生產運算工作負載，例如基於 VMware vSphere 的工作負載。由於這些虛擬機器 (VM) 對業務變得越來越重要，客戶需要保護這些 VM 免受與實體運算資源相同類型的災難的影響。目前提供的災難復原 (DR) 解決方案複雜、昂貴且資源密集。 NetApp是用於虛擬化基礎架構的最大儲存供應商，它有既得利益確保其客戶的虛擬機器受到保護，就像我們保護任何類型的ONTAP儲存託管資料一樣。為了實現這一目標， NetApp創建了NetApp Disaster Recovery服務​​。</block>
   <block id="a3fe2ebdabea83ec0809c3eaabe8b916" category="paragraph">任何 DR 解決方案面臨的主要挑戰之一是管理購買、配置和維護額外運算、網路和儲存資源的增量成本，以提供 DR 複製和復原基礎架構。保護關鍵內部虛擬資源的一個熱門選擇是使用雲端託管虛擬資源作為 DR 複製和復原基礎架構。亞馬遜就是此類解決方案的一個例子，它可以提供與NetApp ONTAP託管 VM 基礎架構相容的經濟高效的資源。</block>
@@ -1798,7 +1784,6 @@
   <block id="8086884cdea0ea24d9f6308a19cdf043" category="list-text">一個複製計劃只能新增一個磁碟區或資料儲存。</block>
   <block id="0cad1bab03dc44ec351d2de019d82607" category="list-text">複習<block ref="8f7fb2d6ad43669f8a59b96f07943aee" category="inline-link-macro-rx"></block>。</block>
   <block id="b6c17338accc8d99b423f332451f50ad" category="paragraph">故障轉移注意事項</block>
-  <block id="f8772b1ca9ad18417bf5318a8f27afba" category="list-text">故障轉移僅支援使用最新快照版本。如有必要，您可以在建立快照期間建立新快照（即必須停用選擇性快照選項）。</block>
   <block id="242733299daaca561039b733176ac1b7" category="list-text">故障轉移後無法建立新的快照。</block>
   <block id="c05df755e6c0a942398c7fcd1eb14679" category="list-text">故障轉移後無法保留和協調快照。</block>
   <block id="a6b1001c218e39c86bcccb2fe9813de3" category="paragraph">**故障恢復考慮因素**</block>
@@ -1825,12 +1810,9 @@
   <block id="94c02ddd984f67eb8b79c11dbd8b654a" category="list-text"><block ref="94c02ddd984f67eb8b79c11dbd8b654a" category="inline-link-macro-rx"></block></block>
   <block id="4dc42c993e8bd7091a49f3fe75b4cc7f" category="paragraph">如果你還沒有這樣做的話，<block ref="94e30243c99a58315474317c40996996" category="inline-link-rx"></block> 。</block>
   <block id="c6d4ec9aebbd9adbd6cd055b1e2ef0b4" category="list-text">NetApp Disaster Recovery僅適用於標準模式代理部署。看<block ref="1dca0eb7ce67e238dc32613ea2fd1e70" category="inline-link-rx"></block>。</block>
-  <block id="d79ddc5d144ac6cb3cc81d1fd8bbf16b" category="list-text">*本地到本地災難復原*：在災難復原站點安裝控制臺本機代理程式。使用此方法，主站點的故障不會阻止服務在 DR 站點重新啟動虛擬資源。參考<block ref="aa1d5488876933382cbfe9d426d413f9" category="inline-link-rx"></block>。</block>
   <block id="229e27e5e98d46ffabb19ff45325734b" category="list-text">*本地到 AWS*：在您的 AWS VPC 中安裝 AWS 的控制台代理程式。參考<block ref="1169d6a654f5038ebfa8fc4462054b47" category="inline-link-rx"></block>。</block>
   <block id="db93e33cfb5094bef5af78afec2a318a" category="paragraph">看<block ref="7710287f166c6260d467d0ffbd4c652b" category="inline-link-rx"></block>。</block>
   <block id="9fb45d8b59f2c406ddf7a9711c1391c2" category="list-text">請依照以下步驟操作<block ref="69ac71aae3c3019102e9a90ab4fd3799" category="inline-link-rx"></block>和<block ref="3f510c006b92994b3ccaf7ccb9cc0351" category="inline-link-rx"></block>為ONTAP配置和部署 FSx。</block>
-  <block id="5280fea1000838e74051510a8adb21e9" category="paragraph">若要使用服務，請以標準模式安裝控制台代理程式。要了解有關控制台代理安裝類型的更多信息，請訪問<block ref="e87d59187940f672670f4b294a02b363" category="inline-link-rx"></block>。</block>
-  <block id="b567b746a04d21aaaa45a342f69073cb" category="paragraph">使用 Amazon AWS 安裝主控台代理程式最簡單的方法是使用 AWS Marketplace。有關使用 AWS Marketplace 安裝控制台代理的詳細信息，請參閱<block ref="7f4733cc86c855f6efc0e6a18921c741" category="inline-link-rx"></block>。</block>
   <block id="52f0067dfdeb72bf780f9e3a808fbb01" category="paragraph">參考<block ref="d83a9ddc5356a460fd8c8bdc5b02cf7f" category="inline-link-rx"></block>。</block>
   <block id="ea22e49b05f0c437898dd362ac3cb582" category="section-title">Google Cloud NetApp Volumes的局限性</block>
   <block id="0b3bf876c8f0155fffe01bfe66919ae7" category="list-text">執行故障轉移測試後，至少需要等待 52 小時才能刪除複製磁碟區。您必須手動刪除該磁碟區。  52 小時後，您可以再次測試故障轉移。</block>
@@ -1893,7 +1875,6 @@
   <block id="705a20699e1039fa52632f889e10a673" category="admonition">為故障轉移測試建立一組單獨的專用映射，以防止 VMS 使用相同的 IP 位址連接到生產網路。</block>
   <block id="5f4825a97c910dc2ee0d9eb1107f19d9" category="section-title">地圖資源 &gt; 虛擬機器部分</block>
   <block id="06596d9f3a6cac6c36599f4c1598f756" category="sidebar">災難復原需要 vCenter 權限</block>
-  <block id="2b1806d17c0606f8caa4232aa6a3c113" category="sidebar">切換控制台代理</block>
   <block id="ad4891bd95428a3a61372e6cb7c1e8db" category="paragraph">有關詳細信息，請參閱 <block ref="46afb87ea9ab52c50c55f4a3ee88e9ae" category="inline-link-macro-rx"></block>。</block>
   <block id="8b398f79cbc8bafdd3d60b15c90e7f01" category="paragraph">有關詳細信息，請參閱 <block ref="9816d86fb07a6c2043bc508d566ad539" category="inline-link-macro-rx"></block>。</block>
   <block id="6da53899225555a506524070f96e33df" category="doc">支援本地環境中的多個控制台代理</block>
@@ -2086,4 +2067,44 @@
   <block id="e09864970107f53b95b27d59844fe8a3" category="cell">VirtualMachine 狀態。RevertToSnapshot</block>
   <block id="e2a5f777b44916836fdc3739a3964e98" category="cell">還原至快照</block>
   <block id="f82e780d3c4a5f7f4bf54aabdabdd223" category="cell">允許將 VM 還原到給定快照的狀態。</block>
+  <block id="d2dcf6ed6e5c29ab53931601f3745b58" category="list-text">故障轉移僅支援使用最新快照。如有必要，您可以在故障轉移期間建立新快照（即必須停用選擇性快照選項）。</block>
+  <block id="95857ccbc14e3129d72a5e3b2a9ea093" category="list-text">確保來源和目的地 vCenter 叢集使用相同的 Console 代理程式。</block>
+  <block id="e7c6b03acd24bdb46e3ebc9db2271af4" category="list-text">*本地到本地災難復原*：在災難復原站點安裝本地 Console 代理程式。使用此方法，主站點發生故障不會阻止服務在 DR 站點重新啟動虛擬資源。請參閱<block ref="aa1d5488876933382cbfe9d426d413f9" category="inline-link-rx"></block>。</block>
+  <block id="0993f38ff744157834a941d4a95a1c9b" category="inline-xref-macro">所需 vCenter 權限</block>
+  <block id="e5687f2773f6f6b8a300b70ff0ed5f08" category="list-text"><block ref="e5687f2773f6f6b8a300b70ff0ed5f08" category="inline-xref-macro-rx"></block></block>
+  <block id="3c596c027e95d93780e84a69b6da660a" category="list-text"><block ref="3c596c027e95d93780e84a69b6da660a" category="inline-xref-macro-rx"></block></block>
+  <block id="c4342fa27fe9324eb1ac1c89b0f10923" category="paragraph">請確保您已審查並滿足配置 Amazon EVS 與 NetApp Disaster Recovery 所需的要求。</block>
+  <block id="c9eefbd632f55f15922ec2a67ceecd81" category="inline-link-macro">Disaster Recovery 的一般前提條件</block>
+  <block id="8bc4be62934b53e69c9b81bff1de1f0d" category="list-text">檢閱 <block ref="99d15c44c2397213a4572e5e72b0ce99" category="inline-link-macro-rx"></block> 。</block>
+  <block id="b232b2686ea4af18cdf799d03f5c0709" category="admonition">建議您**不要**使用預設的「\administrator@vsphere.com」管理員帳戶。相反地，您應該在所有將參與災難復原程序的 vCenter 叢集上建立一個 NetApp Disaster Recovery 專用的使用者帳戶。如需所需特定權限清單，請參閱<block ref="efdd112b209053b66d06020632d7d4cc" category="inline-link-macro-rx"></block>。</block>
+  <block id="76c4a74ea7e2c38908b8f0de658cdf2c" category="list-text">確保所有將託管受 Disaster Recovery 保護的 VM 的 vCenter 資料存放區都位於 NetApp ONTAP 儲存資源上。</block>
+  <block id="fccca3a5829253b726912e9af8eccf51" category="paragraph">Disaster Recovery 在使用 Amazon FSx for NetApp ONTAP 時支援 iSCSI 上的 NFS 和 VMFS（而非 FC）。儘管 Disaster Recovery 支援 FC，但 Amazon FSx for NetApp ONTAP 並不支援。</block>
+  <block id="6683d3fd667353df6eb18d8c37a59d26" category="list-text">請確保您的 Amazon EVS vCenter 已連線至 Amazon FSx for NetApp ONTAP 儲存叢集。</block>
+  <block id="a3f678b7d2f048c131821a342cf0bb33" category="list-text">確保所有受保護的 VM 都已安裝 VMware Tools 。</block>
+  <block id="5cf3ae319de1b41c84ea40a888e16487" category="list-text">請確保您的本地網路使用 Amazon 認可的連線方式連接到您的 AWS VPC 網路。建議您使用 AWS Direct Connect、AWS Private Link 或 AWS Site-to-Site VPN。</block>
+  <block id="10baca09fc866108786c7a0324846bcb" category="list-text">審查並確保符合 EVS 與 Disaster Recovery 的連線和連接埠要求：</block>
+  <block id="f31bbdd1b3e85bccd652680e16935819" category="cell">來源</block>
+  <block id="12007e1d59f4d09c87dbe2c438256244" category="cell">目的地</block>
+  <block id="60aaf44d4b562252c04db7f98497e9aa" category="cell">連接埠</block>
+  <block id="3ec365dd533ddb7ef3d1c111186ce872" category="cell">詳細資料</block>
+  <block id="86b0c8b8054d40bc89481fe7a497df7e" category="cell">Amazon FSxN</block>
+  <block id="10eaa67ba3824a947cec2803e682249a" category="cell">內部部署 ONTAP</block>
+  <block id="c077081eae33eee10e1ba19434e1c515" category="cell">TCP 11104、11105、ICMP</block>
+  <block id="794cb725c5631ad99b5b7c000307f0df" category="cell">SnapMirror</block>
+  <block id="9d7ef2f46b4da993716f9b0b9bdfc399" category="cell">NetApp Console 代理</block>
+  <block id="03510cbdbd6e9e3e6b1f72a763c1337f" category="cell">僅限 TCP 443、ICMP</block>
+  <block id="22043367a89ddcf3eb99eec509a967ba" category="cell">API 呼叫</block>
+  <block id="ef250585f20688efb904641e7a1780df" category="cell">TCP 441、僅限 ICMP</block>
+  <block id="d07940c9cf4f1ef1b3c28d3f960170da" category="cell">vCenter （本地部署、EVS）、ESXi 主機（本地部署、EVS）</block>
+  <block id="13f3cf8c531952d72e5847c4183e6910" category="cell">443</block>
+  <block id="e3685e9b39c4dbfec3a5462455b43f7d" category="cell">API 呼叫、指令碼執行</block>
+  <block id="ca5d68ad717b18cefbfd5ba03db7fc9c" category="summary">NetApp Console 代理負責協調 NetApp Console 與雲端或本地端儲存資源之間的連線與管理。</block>
+  <block id="54c585a071d1c4db16522ba27cc6a191" category="paragraph">NetApp Console 代理程式可讓您將 NetApp Console 部署連接到基礎架構，從而安全地協調跨 AWS、Azure、Google Cloud 或內部部署環境的解決方案。Console 代理程式會執行 NetApp Console 管理資料基礎架構所需的操作。Console 代理程式會持續輪詢 NetApp Disaster Recovery 軟體即服務層，以取得所需的任何操作。</block>
+  <block id="0ed93f213541543ce11a5a41955fdb61" category="paragraph">對於 NetApp Disaster Recovery，執行的操作會利用各自服務的原生 API 來協調 VMware vCenter 叢集和 ONTAP 儲存實例，從而為在內部部署位置執行的正式作業 VM 提供保護。雖然 Console 代理程式可以安裝在任何網路位置，但建議您將 Console 代理程式安裝在 NetApp Disaster Recovery 的災難復原站台。安裝在 DR 站台可確保在主站台發生故障時，NetApp Console UI 仍能保持與 Console 代理程式的連線，並能協調該 DR 站台內的復原程序。</block>
+  <block id="7cd8fb6e31cc946c078d2740c76a9899" category="section-title">安裝</block>
+  <block id="09e422c729719f602773531e14c7fdcb" category="inline-link">瞭解 NetApp Console 部署模式</block>
+  <block id="9787e79ead7b319f8e8361fc7821dd0c" category="list-text">若要使用 Disaster Recovery，請以標準模式安裝 Console 代理程式。若要深入瞭解 Console 代理程式安裝類型，請造訪<block ref="176f6de3ac91258383588e87ceb2df5f" category="inline-link-rx"></block>。</block>
+  <block id="29526e6f5f21e46912fe5e749afaadeb" category="paragraph">Console 代理程式的特定安裝步驟取決於您的部署類型。如需詳細資訊、請參閱 <block ref="60ce1b0a0c322e03a03b2c2641ba72c3" category="inline-link-macro-rx"></block>。</block>
+  <block id="1515391ee07716093ddb994cd9906006" category="inline-link">從 AWS Marketplace 建立 Console 代理程式</block>
+  <block id="7f9f446a286afe8acb3ad25ae1a89a13" category="admonition">使用 Amazon AWS 安裝 Console 代理程式最簡單的方法是使用 AWS Marketplace。有關使用 AWS Marketplace 安裝 Console 代理程式的詳細資訊，請參閱<block ref="f267bc5cc8f7e48efa7f9b5434e2039f" category="inline-link-rx"></block>。</block>
 </blocks>

@@ -67,7 +67,7 @@ ONTAP 9.10.0 或更高版本
 
 故障轉移注意事項
 
-* 故障轉移僅支援使用最新快照版本。如有必要，您可以在建立快照期間建立新快照（即必須停用選擇性快照選項）。
+* 故障轉移僅支援使用最新快照。如有必要，您可以在故障轉移期間建立新快照（即必須停用選擇性快照選項）。
 * 故障轉移後無法建立新的快照。
 * 故障轉移後無法保留和協調快照。
 
@@ -170,10 +170,10 @@ NetApp Console使用者必須具有以下角色：
 必須在NetApp Console中設定控制台代理程式。當您使用該代理程式時，它將包含適合災難復原服務​​的功能。
 
 * NetApp Disaster Recovery僅適用於標準模式代理部署。看 https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-standard-mode.html["在標準模式下開始使用NetApp Console"^]。
-* 確保來源 vCenter 和目標 vCenter 使用相同的控制台代理。
+* 確保來源和目的地 vCenter 叢集使用相同的 Console 代理程式。
 * 所需的控制台代理類型：
 +
-** *本地到本地災難復原*：在災難復原站點安裝控制臺本機代理程式。使用此方法，主站點的故障不會阻止服務在 DR 站點重新啟動虛擬資源。參考 https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-on-prem.html["在本機安裝並設定控制台代理"^]。
+** *本地到本地災難復原*：在災難復原站點安裝本地 Console 代理程式。使用此方法，主站點發生故障不會阻止服務在 DR 站點重新啟動虛擬資源。請參閱 https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-on-prem.html["在本機安裝並設定控制台代理"^]。
 +
 災難復原還支援使用多個本地配置的控制台代理。在這種情況下，控制台代理程式會將操作定向到 vCenter 和ONTAP陣列集群，來源和目標各自擁有自己的控制台代理程式。建議使用多個控制台代理，以減少延遲並縮短控制台代理或站點發生故障時的恢復時間。
 
@@ -201,4 +201,12 @@ TIP: 對於本機到本機，請使用本機控制台代理程式。對於本機
 * 確保 VMware 工具（或 Open VM 工具）正在要保護的虛擬機器上執行。
 * 對於執行 Microsoft SQL Server、Oracle 資料庫或兩者的 Windows 虛擬機，必須啟用資料庫的 VSS 寫入器。
 * 在 Linux 作業系統上執行的 Oracle 資料庫必須為 Oracle 資料庫 SYSDBA 角色啟用作業系統使用者驗證。
+
+
+
+
+== 更多資訊
+
+* xref:../reference/vcenter-privileges.html[所需 vCenter 權限]
+* xref:../reference/evs-deploy-guide-config-prereqs.html[Amazon EVS 與NetApp Disaster Recovery的先決條件]
 
