@@ -2107,4 +2107,12 @@
   <block id="29526e6f5f21e46912fe5e749afaadeb" category="paragraph">Console 代理程式的特定安裝步驟取決於您的部署類型。如需詳細資訊、請參閱 <block ref="60ce1b0a0c322e03a03b2c2641ba72c3" category="inline-link-macro-rx"></block>。</block>
   <block id="1515391ee07716093ddb994cd9906006" category="inline-link">從 AWS Marketplace 建立 Console 代理程式</block>
   <block id="7f9f446a286afe8acb3ad25ae1a89a13" category="admonition">使用 Amazon AWS 安裝 Console 代理程式最簡單的方法是使用 AWS Marketplace。有關使用 AWS Marketplace 安裝 Console 代理程式的詳細資訊，請參閱<block ref="f267bc5cc8f7e48efa7f9b5434e2039f" category="inline-link-rx"></block>。</block>
+  <block id="83babe62c403f56e76ef6809d4508f91" category="doc">改進的使用者介面</block>
+  <block id="438ce765c897095715b03fca4b860a61" category="paragraph">根據意見回饋，Disaster Recovery UI 已更新，以提升效能和使用者體驗。</block>
+  <block id="c99f25325f86d3f0c79c43f7e35c908e" category="section-title">API Swagger 文件</block>
+  <block id="4dc69d78f0442e6b664baa4e0d9bd594" category="inline-image-macro">動作圖示</block>
+  <block id="c75d11eee9117155e14ba1fe4d4e9609" category="inline-link-macro">將 URL 加入書籤</block>
+  <block id="1ed2e3ee9da6a94c882b1fde4a104444" category="paragraph">現在可以直接在普通瀏覽器中存取 Disaster Recovery API 的 Swagger 文檔,無需再使用隱身模式。若要存取 API 文件,請瀏覽至 Disaster Recovery 控制面板,選擇右上角的上下文選單 <block ref="9bb01c837d73cae62964f6b5d76c3c64" category="inline-image-macro-rx" type="image"></block> 然後選擇 **API Documentation** 即可開啟 Swagger 文件。您也可以 <block ref="1a92440ed6b8c60f65d4cdda7009f427" category="inline-link-macro-rx"></block>。</block>
+  <block id="fb042b7b99959e391eeb7c417511098a" category="section-title">2026 年 2 月 16 日</block>
+  <block id="699554d8d02429739cd0995ec1ec3ab8" category="paragraph">版本 4.3.0</block>
 </blocks>

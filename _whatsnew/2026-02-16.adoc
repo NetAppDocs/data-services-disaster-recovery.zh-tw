@@ -1,0 +1,15 @@
+= 改進的使用者介面
+:allow-uri-read: 
+
+
+
+
+=== 改進的使用者介面
+
+根據意見回饋，Disaster Recovery UI 已更新，以提升效能和使用者體驗。
+
+
+
+=== API Swagger 文件
+
+現在可以直接在普通瀏覽器中存取 Disaster Recovery API 的 Swagger 文檔,無需再使用隱身模式。若要存取 API 文件,請瀏覽至 Disaster Recovery 控制面板,選擇右上角的上下文選單 image:../media/use/icon-vertical-dots.png["動作圖示"] 然後選擇 **API Documentation** 即可開啟 Swagger 文件。您也可以 link:https://api.bluexp.netapp.com/v1/services/draas/api/api-doc/draas["將 URL 加入書籤"^]。
