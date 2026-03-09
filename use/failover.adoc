@@ -36,7 +36,7 @@ link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-re
 
 在開始故障轉移之前，您可以測試流程。測試不會使虛擬機器離線。
 
-在故障轉移測試期間，災難復原功能會暫時建立虛擬機器。災難復原將支援FlexClone磁碟區的暫存資料儲存對應到 ESXi 主機。
+在故障轉移測試期間，Disaster Recovery 會暫時建立虛擬機器。Disaster Recovery 會將支援 FlexClone 磁碟區的暫存資料存放區對應到 ESXi 主機。
 
 此程序不會佔用本地ONTAP儲存或 AWS 中NetApp ONTAP儲存的 FSx 的額外實體容量。原始來源磁碟區不會被修改，即使在災難復原期間，副本作業也可以繼續進行。
 

@@ -1,0 +1,33 @@
+= 將資料存放區從複寫計畫中排除
+:allow-uri-read: 
+
+
+
+
+=== 將資料存放區從複寫計畫中排除
+
+在 Disaster 中建立複寫計劃時，現在可以將特定資料存放區排除在複寫範圍之外。對於配置為使用多個資料存放區的 VM，此功能可讓您限制要複寫的資料存放區。
+
+如需詳細資訊，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.adoc["建立複製計劃"^]。
+
+
+
+=== 已移除 vCenter 密碼的密碼驗證
+
+災難復原功能取消了 vCenter 密碼的密碼限制，允許使用包含空格的密碼。
+
+如需詳細資訊，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/reference/evs-deploy-guide-add-vcenters.html["在NetApp Disaster Recovery中新增本機和 Amazon EVS vCenter 叢集"^]。
+
+
+
+=== 新的複寫計畫子選單
+
+災難復原功能現在新增了從複製計畫儀表板觸發 vCenter 刷新的選單選項。您可以從複製計畫儀表板的操作選單存取該子選單：選擇 **計畫健全狀況**，然後選擇 **刷新來源 vCenter / 刷新目標 vCenter**。
+
+如需詳細資訊，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html#modify-a-replication-plan["修改複寫計畫"^]。
+
+
+
+=== 改善的網路探索
+
+災難復原功能現在包含改進的網路探索功能，以支援更廣泛的網路組態。

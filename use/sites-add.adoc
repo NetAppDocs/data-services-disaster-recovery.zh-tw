@@ -61,7 +61,7 @@ NOTE: 本服務支援自簽章安全性憑證或來自中央憑證授權單位 (
 . 登入 https://console.netapp.com/["NetApp Console"^]。
 . 從NetApp Console左側導覽中，選擇 *保護* > *災難復原*。
 +
-如果您是第一次使用NetApp災難復原，則需要新增 vCenter 資訊。如果您已經新增了 vCenter 訊息，您將看到儀表板。
+如果您是第一次使用 NetApp Disaster recovery，則需要新增 vCenter 資訊。如果您已經新增 vCenter 資訊，則會看到儀表板。
 
 +
 

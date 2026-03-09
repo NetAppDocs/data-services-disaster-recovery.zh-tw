@@ -95,7 +95,7 @@ image:../use/dr-plan-list.png["複製計劃列表"]
 
 
 . 透過選擇左側麵包屑中的「複製計畫」來返回計畫清單。
-. 若要使用該計劃執行操作，請從複製計劃清單中選擇“*操作*”選項image:../use/icon-horizontal-dots.png["NetApp Disaster Recovery服務​​中的操作選單圖標"]在計劃右側，選擇任意選項，例如*編輯計劃*、*測試故障轉移*、*故障轉移*、*故障回复*、*遷移*、*立即拍攝快照*、*清理舊快照*、*禁用*、*啟用*或*刪除*。
+. 若要對計劃執行操作，請從複製計劃清單中選擇計劃右側的 *Actions* （操作）選項 image:../use/icon-horizontal-dots.png["NetApp Disaster Recovery服務​​中的操作選單圖標"]，然後選擇一個操作：*Edit schedules* （編輯排程）、*Test failover* （測試容錯移轉）、*Fail over* （容錯移轉）、*Fail back* （容錯回復）、*Migrate* （移轉）、*Take snapshot now* （立即擷取快照）、*Clean up old snapshots* （清理舊快照）、*Disable* （停用）、*Enable* （啟用）或 *Delete* （刪除）。
 . 若要設定或變更測試故障轉移計畫或設定合規性頻率檢查，請選擇「*操作*」選項image:../use/icon-horizontal-dots.png["NetApp Disaster Recovery服務​​中的操作選單圖標"]在計畫右側，選擇「編輯時間表」。
 +
 .. 在「編輯計畫」頁面中，輸入您希望故障轉移合規性檢查發生的頻率（分鐘）。

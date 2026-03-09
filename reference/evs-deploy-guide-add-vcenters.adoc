@@ -22,12 +22,16 @@ image:evs-add-vcenter-1.png["新增 vCenter 選項"]
 .. 要新增的 vCenter 的 IP 位址或 FQDN。
 .. 如果不同，請將連接埠值變更為 vCenter 叢集管理器使用的 TCP 連接埠。
 .. 先前建立的帳戶的 vCenter 使用者名， NetApp Disaster Recovery將使用該使用者名稱來管理 vCenter。
-.. 所提供使用者名稱的 vCenter 密碼。
-.. 如果您的公司使用外部憑證授權單位 (CA) 或 vCenter Endpoint 憑證儲存空間來存取您的 vCenter，請取消選取 *使用自簽名憑證* 複選框。否則，請保留此方塊的選取狀態。
 
 
-. 選擇“*新增*”。
+
+
+. 如果您的公司使用外部憑證授權單位 (CA) 或 vCenter Endpoint 憑證儲存空間來存取您的 vCenter，請取消選取 *使用自簽名憑證* 複選框。否則，請保留此方塊的選取狀態。
++
+.. 選擇“*新增*”。
 +
 image:evs-add-vcenter-2-3.png["新增 vCenter 對話框"]
+
+
 
 
