@@ -108,7 +108,7 @@ TIP: 故障轉移啟動後，您可以在災難復原站點的 vCenter 中看到
 .步驟
 . 從NetApp Disaster Recovery選單中，選擇 *複製計畫*。
 . 選擇複製計劃。
-. 在右側，選擇“操作”選項image:../use/icon-horizontal-dots.png["NetApp Disaster Recovery服務​​中的操作選單圖標"]並選擇*故障轉移*。
+. 在右側、選取 *Actions* 選項 image:../use/icon-horizontal-dots.png["NetApp Disaster Recovery服務​​中的操作選單圖標"]、將游標暫留在 *Recover* 上、然後選取 *Fail over* 。
 +
 image:dr-plan-failover3.png["故障轉移頁面"]
 

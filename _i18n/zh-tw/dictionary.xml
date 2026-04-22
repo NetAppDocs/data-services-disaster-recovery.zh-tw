@@ -396,15 +396,12 @@
   <block id="01a7e7f1580e9ccf4f0275e9f79a32dd" category="inline-link-macro">監控災難復原操作</block>
   <block id="899a3601f4e45edcb69bd9d82c68fbef" category="list-text"><block ref="698cc22cc758157d8f18359f8b528216" category="inline-link-macro-rx"></block> 。</block>
   <block id="f908b1751b236e73d9e2a5a1506e778e" category="summary">若要使用NetApp Disaster Recovery，請執行幾個步驟進行設定。</block>
-  <block id="e54ccdefb5dfc31454b15961127cb512" category="paragraph">若要使用NetApp Disaster Recovery，請執行幾個步驟在 Amazon Web Services (AWS) 和NetApp Console中進行設定。</block>
   <block id="b5b8e67d6a37d24ad73c89e4c7ac8c9e" category="inline-link-macro">先決條件</block>
   <block id="c266abec3014ef58af380dae0b855a81" category="admonition">審查<block ref="92ab8b24e9e19913fbd62d38b5e3558b" category="inline-link-macro-rx"></block>以確保您的系統已準備就緒。</block>
   <block id="414c3e433eb5c1851ae3a86b00f4ceb3" category="paragraph">您可以在以下基礎架構中使用NetApp Disaster Recovery：</block>
-  <block id="52737038ae7b3f37da8d52a547197b97" category="list-text">混合雲 DR 將本機 VMware 和ONTAP資料中心複製到基於 VMware Cloud on AWS 和Amazon FSx for NetApp ONTAP 的AWS DR 基礎架構。</block>
   <block id="d55e1af9ee418296c246b4085e868b14" category="list-text">私有雲 DR 將本機 VMware 和ONTAP vCenter 複製到另一個本機 VMware 和ONTAP vCenter。</block>
   <block id="3a2292ce550693108458d6b2a70159a5" category="section-title">採用 VMware Cloud 和Amazon FSx for NetApp ONTAP 的混合雲</block>
   <block id="f95c7ab842d27a83ace1046a7ef13cba" category="paragraph">此方法包括使用 NFS 協定託管在ONTAP FlexVol磁碟區上的資料儲存區的本機生產 vCenter 基礎架構。  DR 站點由一個或多個 VMware Cloud SDDC 執行個體組成，這些執行個體使用由一個或多個 FSx for ONTAP執行個體透過 NFS 協定提供的FlexVol磁碟區上託管的資料儲存。</block>
-  <block id="83521463ad83fdaf8f794f019da74b65" category="paragraph">生產站點和 DR 站點透過與 AWS 相容的安全連接進行連接。常見的連線類型是安全 VPN（私有或 AWS 提供）、AWS Direct Connect 或其他核准的互連方法。</block>
   <block id="b75bd33081eb3ed22808f61894156d53" category="paragraph">對於涉及 AWS 雲端基礎架構的災難復原，您必須使用 AWS 的控制台代理。此代理程式應安裝在與 FSx for ONTAP實例相同的 VPC 中。如果在其他 VPC 中部署了額外的 FSx for ONTAP實例，則託管代理程式的 VPC 必須能夠存取其他 VPC。</block>
   <block id="b368450b04bead726034d8d89e27a399" category="section-title">AWS 可用區</block>
   <block id="88bb4c73bf361fedf7107f94d15ab629" category="paragraph">AWS 支援在給定區域內的一個或多個可用區 (AZ) 中部署解決方案。災難復原使用兩種 AWS 託管服務：VMware Cloud for AWS 和 AWS FSx for NetApp ONTAP。</block>
@@ -413,9 +410,7 @@
   <block id="4f4bc7b1b73b3a9b248ab79f9fe4ab34" category="paragraph">*最佳實務*：對於 AWS DR 站點配置， NetApp建議對 VMware Cloud 和 AWS FSx for ONTAP執行個體使用單一可用區部署。由於 AWS 用於 DR，因此引入多個 AZ 沒有任何優勢。多可用區可能會增加成本和複雜性。</block>
   <block id="1e8f73e81b609f921369b61db9962ba0" category="section-title">本地到 AWS</block>
   <block id="1b4220c693741db78edd086cf105c0a2" category="paragraph">AWS 提供了以下方法將私有資料中心連接到 AWS 雲端。每種解決方案都有其優點和成本考量。</block>
-  <block id="2edef6867081f5c29915c6fb18c5c01b" category="list-text">*AWS Direct Connect*：這是位於與您的私人資料中心相同的地理區域並由 AWS 合作夥伴提供的 AWS 雲端互連。此解決方案可在您的本地資料中心和 AWS 雲端之間提供安全的私有連接，而無需公共互聯網連接。這是AWS提供的最直接、最有效的連接方式。</block>
   <block id="53e59c58dc937b1664dff508b4e63986" category="list-text">*AWS 網際網路閘道*：這提供了 AWS 雲端資源和外部運算資源之間的公用連線。這種類型的連線通常用於向外部客戶提供服務，例如不需要安全性的 HTTP/HTTPS 服務。沒有服務品質控制、安全性或連接性保證。因此，不建議使用此連接方法將生產資料中心連接到雲端。</block>
-  <block id="781c97b82b6a261b43aab079bc80abb2" category="list-text">*AWS Site-Site VPN*：此虛擬私人網路連線可用於與公共網路服務供應商一起提供安全的存取連線。  VPN 會對往返於 AWS 雲端的所有資料進行加密和解密。 VPN 可以基於軟體，也可以基於硬體。對於企業應用程序，公共互聯網服務提供者 (ISP) 應提供服務品質保證，以確保為 DR 複製提供足夠的頻寬和延遲。</block>
   <block id="9a3de1fc98f937de84c79a7dd80dfcbd" category="paragraph">*最佳實務*：對於 AWS DR 網站配置， NetApp建議使用 AWS Direct Connect。該解決方案為企業應用程式提供最高的效能和安全性。如果不可用，則應使用高效能公共 ISP 連線以及 VPN。確保 ISP 提供商業 QoS 服務等級以確保足夠的網路效能。</block>
   <block id="db765aadec4d1aeb065102f4b7b8b139" category="section-title">VPC 到 VPC 互連</block>
   <block id="5cc4b596e4f36712e12ccd6eb9c96042" category="paragraph">AWS 提供以下類型的 VPC 到 VPC 互連。每種解決方案都有其優點和成本考量。</block>
@@ -1325,7 +1320,6 @@
   <block id="8082ac657e40ca576105ceaf88cbda23" category="list-text">如果來源 vCenter 仍處於活動狀態，請關閉所有正在進行故障轉移的來源端虛擬機器。</block>
   <block id="addf2cf8485a908b734a233a37ce94ab" category="list-text">如果來源 vCenter 和ONTAP叢集仍處於活動狀態，請建立反向SnapMirror關係，以便在故障轉移狀態下將任何變更複製回原始來源網站。  SnapMirror關係從目標虛擬機器到來源虛擬機器是相反的。</block>
   <block id="49f91cfb44052240b763337c959a02fb" category="admonition">故障轉移啟動後，您可以在災難復原站點的 vCenter 中看到復原的虛擬機器（虛擬機器、網路和資料儲存）。預設情況下，虛擬機會恢復到 Workload 資料夾。</block>
-  <block id="2daf88e8e899eb0e79ca31b1325a8026" category="list-text">在右側，選擇“操作”選項<block ref="771645334c0631c5881bfc9858be7f5b" category="inline-image-macro-rx" type="image"></block>並選擇*故障轉移*。</block>
   <block id="711c35de4b0430b043159f5d91f6752f" category="inline-image-macro">故障轉移頁面</block>
   <block id="746c84b1b109b4fcfeb29ff36be21f14" category="paragraph"><block ref="746c84b1b109b4fcfeb29ff36be21f14" category="inline-image-macro-rx" type="image"></block></block>
   <block id="51d5fa513676d68f3e574487650b021d" category="paragraph">在發生故障轉移之前，將拍攝目前來源的快照並將其複製到目前目標。</block>
@@ -2115,4 +2109,23 @@
   <block id="141ae0745aa19a71f0ba80e5ba754682" category="list-text">*備份和保留開始時間*：輸入您希望備份和保留開始執行的日期和時間。</block>
   <block id="92cd787be79720ebbf8f89f517b891c9" category="list-text">*備份和保留頻率*：請輸入以小時和分鐘為單位的時間間隔。例如、如果您輸入 1 小時、則服務將每小時建立一次快照。</block>
   <block id="81b2d5bd2343a78b10f138613228f4b2" category="list-text">*所有資料存放區的保留計數*：輸入要保留的快照數量。</block>
+  <block id="5701a00214d8cf532eb05ab4390dd83c" category="doc">Google Cloud VMware Engine（GCVE）支援現已正式發布（GA）</block>
+  <block id="17eb3abfef8b1a9f92707a05bb82cb53" category="paragraph">NetApp Disaster Recovery 對 GCVE 的支援現已正式發布（GA）。正式發布後，GCVE 的 Disaster Recovery 現在支援：</block>
+  <block id="6f9e9024f518a369b5759d900694f8b3" category="list-text">*平台管理快照：*透過 ONTAP 或 Google Cloud Platform (GCP) 無縫管理備份和保留策略。</block>
+  <block id="045d30a52ce459f46c504234d025f4c3" category="list-text">*每個複寫計畫包含多個資料存放區：* 將多個資料存放區整合至單一複寫策略，以簡化災難恢復計畫。</block>
+  <block id="c4eadd4786334639a92ab9b1508f337f" category="list-text">*強制容錯移轉以應對不可用的來源站台：* 如果來源不可用，則切換到災難復原站台。</block>
+  <block id="a7772ec1948f1cd5c6087ddb93603474" category="list-text">*延遲 SnapMirror 重新同步並按需還原複寫：* 使用「跳過保護」選項延遲 SnapMirror 重新同步，以避免在尖峰作業期間影響正式作業工作負載，稍後使用重新保護選項按需還原複寫</block>
+  <block id="4a8a0c3493007142356e2bab5b977e96" category="inline-link-macro">Disaster Recovery 支援的組態</block>
+  <block id="fd6fb30ddd2582b6a9be2fbd297066cd" category="paragraph">如需 GCVE 支援的詳細資訊，請參閱<block ref="e93ab8cb254bacf15604af8d15ae8da4" category="inline-link-macro-rx"></block>。</block>
+  <block id="9403a68744e5b91ec0e3309a60a08725" category="paragraph">若要使用 NetApp Disaster Recovery ，請在 NetApp Console 和支援的災難恢復環境中執行幾個步驟來進行設定。</block>
+  <block id="cda0283bbd4a4fb561a454be42b95e79" category="section-title">支援的基礎架構</block>
+  <block id="9753fdc07008742b97e2abeb69d97996" category="list-text">混合雲災難復原方案，將內部部署 VMware 加上 ONTAP 資料中心複寫到基於 VMware Cloud on AWS 或 Elastic VMware Service （ EVS ）和 Amazon FSx for NetApp ONTAP 的 AWS 災難復原基礎架構。</block>
+  <block id="1a3b0e646655d3e634f506335377b274" category="list-text">雲端災難復原（Cloud DR）可將基於 VMware Cloud on AWS 或 EVS 的 AWS 災難復原基礎架構複製到另一個基於 AWS 的災難復原基礎架構，使用 FSx for NetApp ONTAP。</block>
+  <block id="9e44011b9e0a2de4c376eea05ca3b108" category="list-text">混合雲災難復原方案，將內部部署 VMware 加上 ONTAP 資料中心複寫到基於 Google Cloud VMware Engine 和 Google Cloud NetApp Volumes 的 Google DR 基礎架構。</block>
+  <block id="1d1e533f25b0978157fd3d6581e3bfce" category="paragraph">正式作業站台和 DR 站台透過與 AWS 相容的安全連線進行連線。常見的連線類型包括安全 VPN （私人 VPN 或 AWS 提供的 VPN）、AWS Direct Connect 或其他經批准的互連方式。</block>
+  <block id="6da123917575e59f72dab08a3d3c444b" category="list-text">*AWS Direct Connect*：這是一種與您的私人資料中心位於同一地理區域、由 AWS 合作夥伴提供的 AWS 雲端互連服務。此解決方案可在您的本地資料中心和 AWS 雲端之間建立安全、私密的連線，無需公共網際網路連線。這是 AWS 提供的最直接、最有效率的連線方式。</block>
+  <block id="befc109880f1df3613fa6b68b938eea8" category="list-text">*AWS Site-Site VPN*：此虛擬私人網路連線可用於透過公共網際網路服務供應商提供安全存取連線。VPN 會對所有進出 AWS 雲端的資料進行加密和解密。VPN 可以是軟體型或硬體型。對於企業應用程式，公共網際網路服務供應商（ISP）應提供服務品質保證，以確保為 DR 複寫提供足夠的頻寬和延遲。</block>
+  <block id="403f4a170e2d1c03d329e0f0dd8d1b84" category="section-title">2026 年 4 月 13 日</block>
+  <block id="7a220dd27e25e08bf2217cc7bebbf755" category="paragraph">版本 4.3.2</block>
+  <block id="4f6d1243da0297d0c471e4b8e1c253f1" category="list-text">在右側、選取 *Actions* 選項 <block ref="771645334c0631c5881bfc9858be7f5b" category="inline-image-macro-rx" type="image"></block>、將游標暫留在 *Recover* 上、然後選取 *Fail over* 。</block>
 </blocks>
