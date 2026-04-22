@@ -1822,7 +1822,6 @@
   <block id="c0655d6a3a66f2180cdf2e00c1930e7c" category="list-text">使用 Google Cloud，您只能在複製計畫中新增一個磁碟區或資料儲存。</block>
   <block id="7bcd913022459926bf1a00069a8fb8f6" category="admonition">在部署NetApp Disaster Recovery之前整理您的虛擬機，以最大限度地減少「資料儲存蔓延」。將需要保護的虛擬機器放置在資料儲存的子集上，將不需要保護的虛擬機器放置在不同的資料儲存子集上。使用基於資料儲存的保護來確保任何給定資料儲存上的虛擬機器都受到保護。</block>
   <block id="705a20699e1039fa52632f889e10a673" category="admonition">為故障轉移測試建立一組單獨的專用映射，以防止 VMS 使用相同的 IP 位址連接到生產網路。</block>
-  <block id="06596d9f3a6cac6c36599f4c1598f756" category="sidebar">災難復原需要 vCenter 權限</block>
   <block id="ad4891bd95428a3a61372e6cb7c1e8db" category="paragraph">有關詳細信息，請參閱 <block ref="46afb87ea9ab52c50c55f4a3ee88e9ae" category="inline-link-macro-rx"></block>。</block>
   <block id="8b398f79cbc8bafdd3d60b15c90e7f01" category="paragraph">有關詳細信息，請參閱 <block ref="9816d86fb07a6c2043bc508d566ad539" category="inline-link-macro-rx"></block>。</block>
   <block id="6da53899225555a506524070f96e33df" category="doc">支援本地環境中的多個控制台代理</block>
@@ -2128,4 +2127,73 @@
   <block id="403f4a170e2d1c03d329e0f0dd8d1b84" category="section-title">2026 年 4 月 13 日</block>
   <block id="7a220dd27e25e08bf2217cc7bebbf755" category="paragraph">版本 4.3.2</block>
   <block id="4f6d1243da0297d0c471e4b8e1c253f1" category="list-text">在右側、選取 *Actions* 選項 <block ref="771645334c0631c5881bfc9858be7f5b" category="inline-image-macro-rx" type="image"></block>、將游標暫留在 *Recover* 上、然後選取 *Fail over* 。</block>
+  <block id="7d40af2723bf06859de76af9f198b76a" category="summary">使用 NetApp Disaster Recovery 時，請確保您已在 ONTAP 中正確設定權限，以確保正常運作。</block>
+  <block id="bee0de6585ac1ea0ad35e287ab014c6f" category="doc">為 NetApp Disaster Recovery 設定 ONTAP 權限</block>
+  <block id="8ad67216cdaef40fdcfdf442f9880d1a" category="section-title">最低 ONTAP 權限</block>
+  <block id="f53cfaf12220d1479bd7bc98f8fc61ae" category="paragraph">以下 ONTAP 權限是 NetApp Disaster Recovery 所必需的：</block>
+  <block id="db974238714ca8de634a7ce1d083a14f" category="cell">API</block>
+  <block id="72eb6abf9272757a5494f0d1f1c91658" category="cell">存取層級</block>
+  <block id="944da21c517df0c48dfbef7af28f3093" category="cell">/api</block>
+  <block id="d8bd6e60adcc01ce20f509ea6800de8f" category="cell">唯讀</block>
+  <block id="b46b834a97038e09aedf6c83d1aa6995" category="cell">/api/application/applications</block>
+  <block id="05cc0e531c89a2617c0047161c8a7ddd" category="cell">讀取/寫入</block>
+  <block id="a32d5f9154a1277fa4a93d06188fad04" category="cell">/api/application/consistency-groups</block>
+  <block id="d48b8c7902dee00442e14d9b1af3af1b" category="cell">/api/cluster</block>
+  <block id="afc03d1a82dbecc47aa9f8732c12aace" category="cell">/api/cluster/jobs</block>
+  <block id="3adec5775bcf3ba9eb5df43ece1d882c" category="cell">/api/cluster/peers</block>
+  <block id="6bef4b7576b4a12f9d1e06561ec5df51" category="cell">讀取 / 建立 / 修改</block>
+  <block id="a2f315c73bdcda41c199bc98f4739ea2" category="cell">/api/cluster/schedules</block>
+  <block id="127472dce57e43d60473237cb646ac4a" category="cell">讀取 / 建立</block>
+  <block id="a00c50b90749f90a36742b8673eb5362" category="cell">/api/network/ip/interfaces</block>
+  <block id="ec5cbac63e885455cb75c29fba62e761" category="cell">/api/network/ipspaces</block>
+  <block id="27443e01eef5ddc50c059b3886b7e2ac" category="cell">/api/protocols/cifs/services</block>
+  <block id="035793b8ec669871e80b3444230fd065" category="cell">/api/protocols/nfs/export-policies</block>
+  <block id="921cb198f30e9e7592d21cf41d35f7e3" category="cell">/api/protocols/nfs/services</block>
+  <block id="5c879dec70d547596e57552c4f4f9eb1" category="cell">/api/protocols/san/igroups</block>
+  <block id="d2456199c653a781d11df900b8d1b311" category="cell">/api/protocols/san/iscsi/sessions</block>
+  <block id="943932cdd7f938ace06757f2ff8852ec" category="cell">/api/protocols/san/lun-maps</block>
+  <block id="b98bcec013a122e0040cd6f6e8f3de6a" category="cell">/api/security/certificates</block>
+  <block id="b7379195c91cc8e0ced572b2fce63ed6" category="cell">/api/snapmirror/policies</block>
+  <block id="0100d992071d5c1121847f70dbfc59b1" category="cell">/api/snapmirror/relationships</block>
+  <block id="9c00c4c82590637bd6e1c6cc201ec33f" category="cell">/api/storage/aggregates</block>
+  <block id="91443afe19221b584756b058dec25daa" category="cell">/api/storage/file/clone</block>
+  <block id="9231c0532ac35991440242417354a12e" category="cell">/api/storage/flexcache/flexcaches</block>
+  <block id="06b7e60de283e2e758b24eb1b37b804f" category="cell">/api/storage/luns</block>
+  <block id="acd96993edb256d739763832d3f9f184" category="cell">/api/storage/qtrees</block>
+  <block id="0bb0f595e81d92bf26bf4c1c0c52b57c" category="cell">讀取 / 修改</block>
+  <block id="d6111871e7cb4622142aa35fc122dcea" category="cell">/api/storage/snapshot-policies</block>
+  <block id="e4bda0100c995f1a022b02958516473a" category="cell">/api/storage/volumes</block>
+  <block id="b4d1abd13d22d7089694589c8b97f79b" category="cell">/api/svm/peers</block>
+  <block id="9c52661d131f07face38ff3baa271d09" category="cell">/api/svm/svms</block>
+  <block id="7376f33a273ec46f0b7a7d1460916640" category="section-title">在 ONTAP 中新增權限</block>
+  <block id="b295025ee0faa762a112e8b1ff4f6106" category="paragraph">在 ONTAP 中新增權限需要建立具有所需權限的角色，並將該角色指派給使用者。您可以使用 System Manager 或 ONTAP CLI 在 ONTAP 中執行此任務。</block>
+  <block id="26ed02718973e705cd69ee6e109400e0" category="open-title">System Manager</block>
+  <block id="27623f36a095b5f5626aa6693f9f0545" category="paragraph">您必須分別對來源叢集和目的地叢集執行此程序。</block>
+  <block id="6598a6676741a382a437fbcee1a07f47" category="list-title">建立角色</block>
+  <block id="ef4ead573c4d085bd2e947a33dd4e06a" category="list-text">使用管理員認證登入 ONTAP 叢集。</block>
+  <block id="770a9cb46cf6dc2aafe7ea25f8db86ee" category="list-text">導覽至 *Cluster* &gt; *Settings* 。</block>
+  <block id="946d661dc3ca8e2867432a121edb5921" category="list-text">在 *Security* 下，選擇 *Users and roles*。</block>
+  <block id="af5a76d3d58f57953dc1468d3a8e774d" category="list-text">選擇 *+ Add* 以建立新角色。</block>
+  <block id="aab9e1de16f38176f86d7a92ba337a8d" category="inline-link-macro">表格</block>
+  <block id="1a258025167e9f9d764abf629ad7fb63" category="list-text">輸入 *Role name* 。根據 <block ref="1844c1d9c45ee6f22e6767b46f1ce4cf" category="inline-link-macro-rx"></block> 指派 *REST API path* 、 *Secondary path* 和 *Access level* 。</block>
+  <block id="b7332e6d2bd81772fa469d097c0681ee" category="list-text">新增完所有必要的權限後，選取 *Add* 。</block>
+  <block id="200899d014b914b6c3610b47f40d1b97" category="list-title">將角色指派給使用者</block>
+  <block id="908af9d2070650ed0d8956762a832a9e" category="list-text">返回區段功能表的 *使用者和角色* 區段。</block>
+  <block id="96a827c2d61a05cb12e7639d27b4344d" category="list-text">在 *Users* 中，選擇 *Add*。</block>
+  <block id="5f57cad2aae18921379c19ce719f1e33" category="list-text">輸入 *User name*，然後選擇您先前建立的 *Role*。</block>
+  <block id="8f07ab48943575279560dae8e5733204" category="list-text">在使用者登入方法下，按一下新增，直到設定完所有必要的登入方法。</block>
+  <block id="f7e38e2f34cbb4ca36919c2e953557c7" category="list-text">為使用者建立 *Password* ，然後確認密碼。</block>
+  <block id="91af5705f16502125e8b2187e64202c0" category="open-title">CLI</block>
+  <block id="dee94e64e69fac9e251323ae149ab1e4" category="paragraph">若要在 ONTAP 中建立角色和使用者，您必須使用管理員認證在 CLI 中驗證適當的 ONTAP 叢集。您必須分別對來源叢集和目的地叢集執行此程序。</block>
+  <block id="96afd9f6d05a568df9d348bbe4d8bd68" category="list-title">建立具有所需權限的角色</block>
+  <block id="a168d89dff4567041d524fa28c622b61" category="list-text">執行命令 <block ref="072c03d88a4d3699e0075c9ea4aed641" prefix=" " category="inline-code"></block> 以建立具有所需權限的角色。您可以複製完整的命令集，以便在建立角色的指令碼中使用 <block ref="cd3c0664b72023a3db5e67c6cf6f89c1" prefix=" " category="inline-code"></block>。</block>
+  <block id="ba4a9cd6fb5b572946d710f33f0fc386" category="list-title">建立使用者</block>
+  <block id="54c29c1be4669b8b588bddf706e7f842" category="list-text">執行下列命令以建立使用者：</block>
+  <block id="e31777054702912eb1924599ba108a0f" category="paragraph"><block ref="d359c3f30b9d4a3d791370e87bf7f419" prefix="" category="inline-code"></block></block>
+  <block id="fe96b5a4676897def1e9f6519bb58b71" category="paragraph">出現提示時，請輸入使用者的密碼。</block>
+  <block id="1237f2e321fe10a47285f61b2b2f8e60" category="list-text">執行以下命令以新增所有必要的驗證方法：</block>
+  <block id="849d5c470183dcdd6d3a0470a6b17559" category="section-title">設定 Disaster Recovery</block>
+  <block id="682cb3d415af7ce02d9da4eb79ded765" category="inline-link-macro">在 Console 中探索 ONTAP 叢集</block>
+  <block id="d7e286f47367b20bf6d60da61a7525c5" category="paragraph">建立 ONTAP 角色後、您需要<block ref="4e087b59ddbefd7d455fbc7b2c0ee722" category="inline-link-macro-rx"></block>。探索叢集時、您需要 ONTAP 叢集的 IP 位址、您建立的使用者名稱、以及此步驟的密碼。對於 Disaster Recovery、您必須在來源叢集和目的地叢集上執行探索。</block>
+  <block id="0cfffe93bea4d4c736df44a3ecd13d15" category="sidebar">所需的 ONTAP 權限</block>
 </blocks>

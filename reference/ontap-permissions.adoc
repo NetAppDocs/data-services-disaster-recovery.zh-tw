@@ -1,0 +1,212 @@
+---
+sidebar: sidebar 
+permalink: reference/ontap-permissions.html 
+keywords: disaster recovery, ontap, requirements, configure permissions, roles, IAM 
+summary: 使用 NetApp Disaster Recovery 時，請確保您已在 ONTAP 中正確設定權限，以確保正常運作。 
+---
+= 為 NetApp Disaster Recovery 設定 ONTAP 權限
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+使用 NetApp Disaster Recovery 時，請確保您已在 ONTAP 中正確設定權限，以確保正常運作。
+
+
+
+== 最低 ONTAP 權限
+
+以下 ONTAP 權限是 NetApp Disaster Recovery 所必需的：
+
+[cols="3,1"]
+|===
+| API | 存取層級 
+
+
+| /api | 唯讀 
+
+
+| /api/application/applications | 讀取/寫入 
+
+
+| /api/application/consistency-groups | 讀取/寫入 
+
+
+| /api/cluster | 唯讀 
+
+
+| /api/cluster/jobs | 唯讀 
+
+
+| /api/cluster/peers | 讀取 / 建立 / 修改 
+
+
+| /api/cluster/schedules | 讀取 / 建立 
+
+
+| /api/network/ip/interfaces | 唯讀 
+
+
+| /api/network/ipspaces | 唯讀 
+
+
+| /api/protocols/cifs/services | 讀取/寫入 
+
+
+| /api/protocols/nfs/export-policies | 讀取/寫入 
+
+
+| /api/protocols/nfs/services | 唯讀 
+
+
+| /api/protocols/san/igroups | 讀取/寫入 
+
+
+| /api/protocols/san/iscsi/sessions | 唯讀 
+
+
+| /api/protocols/san/lun-maps | 讀取/寫入 
+
+
+| /api/security/certificates | 唯讀 
+
+
+| /api/snapmirror/policies | 讀取 / 建立 / 修改 
+
+
+| /api/snapmirror/relationships | 讀取/寫入 
+
+
+| /api/storage/aggregates | 唯讀 
+
+
+| /api/storage/file/clone | 讀取 / 建立 
+
+
+| /api/storage/flexcache/flexcaches | 讀取 / 建立 
+
+
+| /api/storage/luns | 讀取/寫入 
+
+
+| /api/storage/qtrees | 讀取 / 修改 
+
+
+| /api/storage/snapshot-policies | 唯讀 
+
+
+| /api/storage/volumes | 讀取/寫入 
+
+
+| /api/svm/peers | 讀取 / 建立 / 修改 
+
+
+| /api/svm/svms | 唯讀 
+|===
+
+
+== 在 ONTAP 中新增權限
+
+在 ONTAP 中新增權限需要建立具有所需權限的角色，並將該角色指派給使用者。您可以使用 System Manager 或 ONTAP CLI 在 ONTAP 中執行此任務。
+
+[role="tabbed-block"]
+====
+.System Manager
+--
+您必須分別對來源叢集和目的地叢集執行此程序。
+
+.建立角色
+. 使用管理員認證登入 ONTAP 叢集。
+. 導覽至 *Cluster* > *Settings* 。
+. 在 *Security* 下，選擇 *Users and roles*。
+. 選擇 *+ Add* 以建立新角色。
+. 輸入 *Role name* 。根據 link:#minimum-ontap-permissions["表格"] 指派 *REST API path* 、 *Secondary path* 和 *Access level* 。
+. 新增完所有必要的權限後，選取 *Add* 。
+
+
+.將角色指派給使用者
+. 返回區段功能表的 *使用者和角色* 區段。
+. 在 *Users* 中，選擇 *Add*。
+. 輸入 *User name*，然後選擇您先前建立的 *Role*。
+. 在使用者登入方法下，按一下新增，直到設定完所有必要的登入方法。
+. 為使用者建立 *Password* ，然後確認密碼。
+. 選擇*儲存*。
+
+
+--
+.CLI
+--
+若要在 ONTAP 中建立角色和使用者，您必須使用管理員認證在 CLI 中驗證適當的 ONTAP 叢集。您必須分別對來源叢集和目的地叢集執行此程序。
+
+.建立具有所需權限的角色
+. 執行命令  `security login rest-role create -role <rolename> -api <api> -access <access>` 以建立具有所需權限的角色。您可以複製完整的命令集，以便在建立角色的指令碼中使用  `dr_privileges`。
++
+[listing]
+----
+security login rest-role create -role dr_privileges -api /api -access readonly
+security login rest-role create -role dr_privileges -api /api/application/applications -access all
+security login rest-role create -role dr_privileges -api /api/application/consistency-groups -access all
+security login rest-role create -role dr_privileges -api /api/cluster -access readonly
+security login rest-role create -role dr_privileges -api /api/cluster/jobs -access readonly
+security login rest-role create -role dr_privileges -api /api/cluster/peers -access read_create_modify
+security login rest-role create -role dr_privileges -api /api/cluster/schedules -access read_create
+security login rest-role create -role dr_privileges -api /api/network/ip/interfaces -access readonly
+security login rest-role create -role dr_privileges -api /api/network/ipspaces -access readonly
+security login rest-role create -role dr_privileges -api /api/protocols/cifs/services -access all
+security login rest-role create -role dr_privileges -api /api/protocols/nfs/export-policies -access all
+security login rest-role create -role dr_privileges -api /api/protocols/nfs/services -access readonly
+security login rest-role create -role dr_privileges -api /api/protocols/san/igroups -access all
+security login rest-role create -role dr_privileges -api /api/protocols/san/iscsi/sessions -access readonly
+security login rest-role create -role dr_privileges -api /api/protocols/san/lun-maps -access all
+security login rest-role create -role dr_privileges -api /api/security/certificates -access readonly
+security login rest-role create -role dr_privileges -api /api/snapmirror/policies -access read_create_modify
+security login rest-role create -role dr_privileges -api /api/snapmirror/relationships -access all
+security login rest-role create -role dr_privileges -api /api/storage/aggregates -access readonly
+security login rest-role create -role dr_privileges -api /api/storage/file/clone -access read_create
+security login rest-role create -role dr_privileges -api /api/storage/flexcache/flexcaches -access read_create
+security login rest-role create -role dr_privileges -api /api/storage/luns -access all
+security login rest-role create -role dr_privileges -api /api/storage/qtrees -access read_modify
+security login rest-role create -role dr_privileges -api /api/storage/snapshot-policies -access readonly
+security login rest-role create -role dr_privileges -api /api/storage/volumes -access all
+security login rest-role create -role dr_privileges -api /api/svm/peers -access read_create_modify
+security login rest-role create -role dr_privileges -api /api/svm/svms -access readonly
+----
+
+
+.建立使用者
+. 執行下列命令以建立使用者：
++
+`security login create -vserver <SVM> -user-or-group-name <user-name> -application amqp -authentication-method password -role <role-name>`
+
++
+出現提示時，請輸入使用者的密碼。
+
+. 執行以下命令以新增所有必要的驗證方法：
++
+[listing]
+----
+security login create -vserver <SVM> -user-or-group-name <user-name> -application amqp -authentication-method password -role <role-name>
+
+security login create -vserver <SVM> -user-or-group-name <user-name> -application console -authentication-method password -role <role-name>
+
+security login create -vserver <SVM> -user-or-group-name <user-name> -application http -authentication-method password -role <role-name>
+
+security login create -vserver <SVM> -user-or-group-name <user-name> -application ontapi -authentication-method password -role <role-name>
+
+security login create -vserver <SVM> -user-or-group-name <user-name> -application rsh -authentication-method password -role <role-name>
+
+security login create -vserver <SVM> -user-or-group-name <user-name> -application ssh -authentication-method password -role <role-name>
+
+security login create -vserver <SVM> -user-or-group-name <user-name> -application telnet -authentication-method password -role <role-name>
+----
+
+
+--
+====
+
+
+== 設定 Disaster Recovery
+
+建立 ONTAP 角色後、您需要link:https://docs.netapp.com/us-en/storage-management-ontap-onprem/task-discovering-ontap.html#step-3-discover-a-cluster["在 Console 中探索 ONTAP 叢集"^]。探索叢集時、您需要 ONTAP 叢集的 IP 位址、您建立的使用者名稱、以及此步驟的密碼。對於 Disaster Recovery、您必須在來源叢集和目的地叢集上執行探索。
