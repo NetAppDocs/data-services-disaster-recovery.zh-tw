@@ -5,7 +5,13 @@ entries:
 - title: 了解NetApp Disaster Recovery
   url: "/get-started/dr-intro.html"
 - title: 先決條件
-  url: "/get-started/dr-prerequisites.html"
+  entries:
+  - title: 系統先決條件
+    url: "/get-started/dr-prerequisites.html"
+  - title: VMware 先決條件
+    url: "/get-started/reference-vmware-prerequisites.html"
+  - title: Kubernetes 先決條件
+    url: "/get-started/task-kubernetes-requirements.html"
 - title: 快速啟動
   url: "/get-started/dr-quick-start.html"
 - title: 為NetApp Disaster Recovery設定基礎架構

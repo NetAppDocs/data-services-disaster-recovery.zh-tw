@@ -1,0 +1,213 @@
+---
+sidebar: sidebar 
+permalink: get-started/task-kubernetes-requirements.html 
+keywords: kubernetes cluster prerequisites, kubernetes cluster, trident protect 
+summary: 在使用 NetApp Disaster Recovery 之前，請確保您的 Kubernetes 叢集符合要求。 
+---
+= Kubernetes 叢集對 NetApp Disaster Recovery 的需求
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+[role="lead"]
+在為 Kubernetes 叢集設定 NetApp Disaster Recovery 之前，您必須先準備每個 Kubernetes 叢集。通常，保護會套用於來源叢集和獨立的目的地叢集，這表示這些程序需要在每對叢集的每個叢集上執行。
+
+
+
+== 先決條件
+
+在設定 Kubernetes 叢集需求之前、請確保您已設定好 Kubernetes 叢集和 ONTAP 叢集。
+
+災難復原支援 link:https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-requirements.html["Trident Protect 目前支援的任何 Kubernetes 版本"^]。
+
+
+
+=== Kubernetes 叢集
+
+對於每個 Kubernetes 叢集，請確保：
+
+* 您擁有每個 Kubernetes 叢集的管理員 `kubectl`存取權。
+* Helm 3 可在執行安裝指令的地方使用
+
+
+
+
+=== ONTAP 需求
+
+對於每個 ONTAP 叢集，請確保您已設定下列資源：
+
+* **管理 LIF** - Trident 使用此 LIF 進行管理 API 存取
+* **資料 (NFS) LIF** - 用於磁碟區的 NFS 流量
+* **SVM 名稱** - 託管磁碟區的儲存 VM
+* **憑證** - Trident 將使用的帳戶（通常為 `admin`或 SVM 範圍的帳戶）
+* 工作節點必須能夠存取 ONTAP 管理和資料 LIF。
+* 如果使用 `autoExportPolicy` 與 CIDR 限制，請包含您的節點子網路。
+
+
+
+
+== 安裝 NetApp Trident CSI
+
+link:https://docs.netapp.com/us-en/trident/trident-install/kubernetes-deploy-helm.html#deploy-the-trident-operator-and-install-trident-using-helm["在每個叢集上安裝 Trident 操作符。"]
+
+如果您已經安裝了 Trident，請使用指令驗證安裝
+`kubectl get pods -n trident`。如果安裝成功，您會在幾分鐘後看到 Trident 控制器、節點 Pod（DaemonSet），而 operator 的狀態為 `Running`狀態。
+
+
+
+== 配置 ONTAP 後端和 Trident StorageClass
+
+
+
+=== 建立 Kubernetes Secret
+
+在命名空間中建立 Kubernetes Secret：
+
++
+
+[source, bash]
+----
+kubectl create secret generic trident-ontap-secret -n <namespace> \
+  --from-literal=username=<adminOrOtherUsername> \
+  --from-literal=password='<YOUR_ONTAP_PASSWORD>'
+----
+如需詳細資訊，請參閱link:https://docs.netapp.com/us-en/trident/trident-use/backend-kubectl.html#step-1-create-a-kubernetes-secret["在命名空間中建立 Kubernetes Secret"^]。
+
+
+
+=== 建立 TridentBackendConfig
+
+ 您可以
+
+[source, yaml]
+----
+apiVersion: trident.netapp.io/v1
+kind: TridentBackendConfig
+metadata:
+  name: <name>
+  namespace: <trident>
+spec:
+  version: 1
+  backendName: <name>
+  storageDriverName: <driverName>
+  managementLIF: <MANAGEMENT_LIF_IP>
+  dataLIF: <DATA_LIF_IP>
+  svm: <SVM_NAME>
+  autoExportPolicy: true
+  autoExportCIDRs:
+    - 0.0.0.0/0
+  credentials:
+    name: trident-ontap-secret
+----
+您可以使用命令 `kubectl get TridentBackendConfig -n trident`驗證組態。如果組態成功、 `phase`輸出應顯示為 **Bound** 、而 `status`應顯示為 **Success** 。如果狀態為 **Failed** 、請檢閱步驟以link:https://docs.netapp.com/us-en/trident/trident-use/backend-kubectl.html#optional-step-4-get-more-details["取得更多詳細資料"^]解決任何問題、例如不正確的認證資料或網路連線能力。
+
+
+
+=== 設定儲存類別
+
+link:https://docs.netapp.com/us-en/trident/trident-use/create-stor-class.html["建立儲存類別物件"^]。使用配置器 `csi.trident.netapp.io`。例如：
+
+[source, yaml]
+----
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: <name>
+provisioner: csi.trident.netapp.io
+parameters:
+  backendType: "<type>"
+  storagePools: "<pool>:.*"
+reclaimPolicy: Delete
+volumeBindingMode: Immediate
+allowVolumeExpansion: true
+----
+您可以選擇將某個儲存類別標記為叢集預設儲存類別。每個叢集只能指定一個預設儲存類別。
+
+[source, bash]
+----
+kubectl patch storageclass ontap-backend \
+  -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
+----
+Trident Protect 複製的應用程式 PVC 必須使用透過 Trident 提供的儲存空間（此 StorageClass 或您使用正確的 `storagePools` / 選擇器定義的其他儲存）。
+
+要讓 Trident Protect 能夠複製您的應用程式資料，應用程式必須使用來自 Trident 管理的 ONTAP 磁碟區的儲存。您可以使用此儲存類別或其他儲存類別，但必須將其設定為透過 Trident 使用 ONTAP 後端。
+
+
+
+== 配置磁碟區群組快照自訂資源定義（CRD）
+
+link:https://docs.netapp.com/us-en/trident/trident-use/vol-group-snapshots.html#deploy-a-volume-snapshot-controller["安裝 Snapshot CRD 和 Snapshot Controller。"^].這些安裝是 Trident Protect 中建立磁碟區快照所必需的。
+
+使用以下命令驗證自訂資源定義：
+
+[source, bash]
+----
+kubectl get crd volumesnapshots.snapshot.storage.k8s.io
+kubectl get crd volumesnapshotcontents.snapshot.storage.k8s.io
+kubectl get crd volumesnapshotclasses.snapshot.storage.k8s.io
+----
+
+
+=== 設定磁碟區群組快照
+
+link:https://docs.netapp.com/us-en/trident/trident-use/vol-group-snapshots.html#create-volume-group-snapshots["為 Trident 設定 VolumeSnapshotClass。"^]
+
+[source, bash]
+----
+kubectl patch volumesnapshotclasses.snapshot.storage.k8s.io trident-snapshotclass \
+  -p '{"metadata": {"annotations":{"snapshot.storage.kubernetes.io/is-default-class":"true"}}}' \
+  --type=merge
+----
+您可以選擇將磁碟區快照類別指定為預設類別。如果您需要將孤立的 Kubernetes 快照物件保留在 ONTAP 上的快照，請使用 `deletionPolicy: Retain`。
+
+
+
+== 驗證摘要
+
+|===
+| 檢查 | 命令 | 預期輸出 
+
+
+| Trident 正在執行 | `kubectl get pods -n trident` | Trident 運作正常 
+
+
+| 後端運作正常 | `kubectl get TridentBackendConfig -n trident` | 綁定/成功 
+
+
+| 儲存設備已公開 | `kubectl get storageclass` | 輸出包括您的 Trident 類別 
+
+
+| Snapshot API | `kubectl get volumesnapshotclass` | CRD 存在；列出 Trident 驅動程式 
+|===
+驗證所有資源狀態後，使用 Trident StorageClass 部署link:https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-migrate-apps.html#migrate-applications-from-one-storage-class-to-another-storage-class["移轉"^]您的工作負載。當您link:../use/sites-add.adoc["將 Kubernetes 叢集新增至站台"]時，Disaster Recovery 會提供在叢集上安裝 Trident Protect 並將其註冊到 Disaster Recovery 環境的說明。
+
+.請參閱安裝 Trident Protect 的說明。
+[%collapsible]
+====
+. 建立 Trident Protect 命名空間：
++
+`kubectl create namespace trident-protect`
+
+. 使用用戶端 ID 和用戶端密碼建立 Kubernetes 密碼，以建立 OCCM 驗證認證。
++
+`kubectl create secret generic occmauthcreds --namespace=trident-protect --from-literal=client_id=<clidentID> --from-literal=<clientSecret>`
+
+. 新增或更新 helm 儲存庫：
++
+`helm repo add --force-update netapp-trident-protect https://netapp.github.io/trident-protect-helm-chart`
+
+. 安裝或升級 Trident Protect 和 Trident Protect Connector:
+`helm upgrade --install trident-protect netapp-trident-protect/trident-protect-console \
+  --version 100.2605.0-console --namespace trident-protect --set clusterName=<clusterName> --set trident-protect.cbs.accountID=<accountID> --set trident-protect.cbs.agentID=<agentID> --set trident-protect.cbs.proxySecretName=occmauthcreds --set trident-protect.cbs.proxyHostIP=<IPaddress>`
+
+
+====
+
+
+== 更多資訊
+
+* link:https://docs.netapp.com/us-en/trident/trident-protect/learn-about-trident-protect.html["了解 Trident Protect"^]
+* link:../use/sites-add.adoc["在 Disaster Recovery 中新增站台"]
+

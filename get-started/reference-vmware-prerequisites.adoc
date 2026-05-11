@@ -1,0 +1,42 @@
+---
+sidebar: sidebar 
+permalink: get-started/reference-vmware-prerequisites.html 
+keywords: vmware cluster prerequisites, vmware 
+summary: 在使用 NetApp Disaster Recovery 之前，請確保您的環境符合 VMware vCenter 叢集需求。 
+---
+= VMware vCenter 叢集 NetApp Disaster Recovery 的先決條件
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+[role="lead"]
+在使用 NetApp Disaster Recovery 之前，請確保您的環境符合 VMware vCenter 叢集需求。
+
+
+
+== 一般先決條件
+
+這些先決條件適用於本機 vCenter 叢集和 VMware Cloud for AWS 軟體定義資料中心 (SDDC)。
+
+* 審查link:../reference/vcenter-privileges.html["vCenter 權限"]NetApp Disaster Recovery所需的。
+* 您希望NetApp Disaster Recovery管理的所有 VMware 叢集都使用ONTAP磁碟區來託管您想要保護的任何虛擬機器。
+* NetApp Disaster Recovery要管理的所有 VMware 資料儲存庫都必須使用下列協定之一：
++
+** NFS
+** 使用 iSCSI 或 FC 協定的 VMFS
+
+
+* VMware vSphere 版本 7.0 Update 3 (7.0v3) 或更高版本
+
+
+
+
+== VMware Cloud SDDC 先決條件
+
+如果您使用的是 VMware Cloud SDDC，則還需符合以下附加先決條件：
+
+* 在 VMware Cloud Console 中，使用管理員和 NSX Cloud 管理員的服務角色。也可以使用組織所有者作為組織角色。參考 https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/vmware-cloud-ontap.html["將 VMware Cloud Foundations 與 AWS FSx for NetApp ONTAP文件結合使用"^]。
+* 將 VMware Cloud SDDC 與Amazon FSx for NetApp ONTAP實例連結。參考 https://vmc.techzone.vmware.com/fsx-guide#overview["VMware Cloud on AWS 與Amazon FSx for NetApp ONTAP整合部署訊息"^]。
+

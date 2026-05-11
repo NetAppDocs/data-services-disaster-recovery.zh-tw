@@ -6,7 +6,7 @@ entries:
   url: "/use/use-overview.html"
 - title: 在儀表板上查看災難復原計畫的運作狀況
   url: "/use/dashboard-view.html"
-- title: 將 vCenter 新增至站點
+- title: 將資源新增至站台
   url: "/use/sites-add.html"
 - title: 建立資源組
   url: "/use/resource-group.html"

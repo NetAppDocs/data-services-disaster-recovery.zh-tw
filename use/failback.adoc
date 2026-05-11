@@ -42,11 +42,40 @@ link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-re
 
 == 步驟
 
-. 從NetApp Console左側導覽中，選擇 *保護* > *災難復原*。
+[role="tabbed-block"]
+====
+.vCenter
+--
+.步驟
 . 從NetApp Disaster Recovery選單中，選擇 *複製計畫*。
-. 選擇複製計劃。
-. 在右側，選擇“操作”選項image:../use/icon-horizontal-dots.png["NetApp Disaster Recovery服務​​中的操作選單圖標"]並選擇*故障恢復*。
-. 輸入複製計畫名稱以啟動故障復原。
-. 選擇要從中復原的資料儲存體的快照。預設是最新的。
-. 若要監控作業進度，請在災難復原選單中選擇「作業監控」。
+. 在下拉式選單中，將篩選條件設定為 *vCenter* 複寫計畫。
++
+image::site-type-toggle.png[網站類型切換的螢幕擷取畫面]
 
+. 識別您要進行容錯回復的複寫計畫。選取 *Actions* 選項 image:../use/icon-horizontal-dots.png["NetApp Disaster Recovery服務​​中的操作選單圖標"]，將游標暫留在 *Recover* 上，然後選取 *Failback* 。
+. 選擇要從中復原的資料存放區快照。選取 *立即建立快照* 以啟動新的快照，或選取 *選擇* 以從可用快照中選擇。
++
+image:failback.png["故障回復對話方塊的螢幕擷取畫面"]
+
+. 輸入 "Failback" 以確認操作，然後選取 *Failback*。
+
+
+若要監控作業進度，請在災難復原選單中選擇「作業監控」。
+
+--
+.Kubernetes
+--
+. 從NetApp Disaster Recovery選單中，選擇 *複製計畫*。
+. 在下拉式選單中，篩選 *Kubernetes* 複寫計畫。
++
+image::site-type-toggle.png[網站類型切換的螢幕擷取畫面]
+
+. 識別您要進行容錯回復的複寫計畫。選取 *Actions* 選項 image:../use/icon-horizontal-dots.png["NetApp Disaster Recovery服務​​中的操作選單圖標"]，將游標暫留在 *Recover* 上，然後選取 *Failback* 。
+. 選擇要從中復原的資料存放區快照。選取 *Take snapshot now* 以啟動新的快照，或選取 *Use latest snapshot* 以使用最近一次成功的快照。
+. 輸入 "Failback" 以確認操作，然後選取 *Failback*。
+
+
+若要監控作業進度，請在災難復原選單中選擇「作業監控」。
+
+--
+====

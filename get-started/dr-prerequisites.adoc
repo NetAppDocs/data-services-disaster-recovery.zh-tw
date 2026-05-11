@@ -105,37 +105,15 @@ NetApp Console使用者必須具有以下角色：
 
 == ONTAP儲存前提條件
 
-這些先決條件適用於ONTAP或 Amazon FSX for NetApp ONTAP實例。
+這些先決條件適用於 ONTAP 和 Amazon FSX for NetApp ONTAP 執行個體。
 
 * 源集群和目標集群必須具有對等關係。
 * 承載災難復原磁碟區的 SVM 必須存在於目標叢集上。
 * 源 SVM 和目標 SVM 必須具有對等關係。
+* link:task-kubernetes-requirements.html["檢閱 Kubernetes 叢集的其他需求"].
 * 如果使用Amazon FSx for NetApp ONTAP進行部署，則適用下列先決條件：
 +
 ** 您的 VPC 中必須存在用於託管 VMware DR 資料儲存區的Amazon FSx for NetApp ONTAP實例。首先，請參閱link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/getting-started-step1.html["Amazon FSx for ONTAP文檔"^]。
-
-
-
-
-
-
-== VMware vCenter 叢集先決條件
-
-這些先決條件適用於本機 vCenter 叢集和 VMware Cloud for AWS 軟體定義資料中心 (SDDC)。
-
-* 審查link:../reference/vcenter-privileges.html["vCenter 權限"]NetApp Disaster Recovery所需的。
-* 您希望NetApp Disaster Recovery管理的所有 VMware 叢集都使用ONTAP磁碟區來託管您想要保護的任何虛擬機器。
-* NetApp Disaster Recovery要管理的所有 VMware 資料儲存庫都必須使用下列協定之一：
-+
-** NFS
-** 使用 iSCSI 或 FC 協定的 VMFS
-
-
-* VMware vSphere 版本 7.0 Update 3 (7.0v3) 或更高版本
-* 如果您使用的是 VMware Cloud SDDC，則這些先決條件適用。
-+
-** 在 VMware Cloud Console 中，使用管理員和 NSX Cloud 管理員的服務角色。也可以使用組織所有者作為組織角色。參考 https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/vmware-cloud-ontap.html["將 VMware Cloud Foundations 與 AWS FSx for NetApp ONTAP文件結合使用"^]。
-** 將 VMware Cloud SDDC 與Amazon FSx for NetApp ONTAP實例連結。參考 https://vmc.techzone.vmware.com/fsx-guide#overview["VMware Cloud on AWS 與Amazon FSx for NetApp ONTAP整合部署訊息"^]。
 
 
 
@@ -202,6 +180,9 @@ TIP: 對於本機到本機，請使用本機控制台代理程式。對於本機
 * 對於執行 Microsoft SQL Server、Oracle 資料庫或兩者的 Windows 虛擬機，必須啟用資料庫的 VSS 寫入器。
 * 在 Linux 作業系統上執行的 Oracle 資料庫必須為 Oracle 資料庫 SYSDBA 角色啟用作業系統使用者驗證。
 
+
+
+IMPORTANT: 根據您的部署類型、檢視 link:reference-vmware-prerequisites.html["VMware 叢集先決條件"] 和 link:task-kubernetes-requirements.html["Kubernetes 叢集先決條件"]。
 
 
 
