@@ -2106,7 +2106,6 @@
   <block id="3dbc5485bf1aa588640ee699337e0892" category="list-text">**以應用程式為中心的保護**：現在可以在應用程式層級保護 Kubernetes 工作負載，確保在容錯移轉事件期間恢復關鍵服務。</block>
   <block id="6124980497de7eeb616c27d599b53c84" category="list-text">**簡化編排**：災難復原提供直覺的工作流程，可自動備份和複製 Kubernetes 工作負載，運用與 VMware 環境相同的高效 SnapMirror 技術。</block>
   <block id="082f6fbdb4843c5f374a215502f493b9" category="inline-link-macro">NetApp Disaster Recovery 的 Kubernetes 需求</block>
-  <block id="84b0e3d023f875f2669a5f0d72922238" category="paragraph">目前對基於 Kubernetes 的工作負載的支援處於預覽階段。若要開始保護基於 Kubernetes 的工作負載，請參閱 <block ref="343bf0d5acc46def5b744dcb13640f63" category="inline-link-macro-rx"></block>。</block>
   <block id="3723578e9eec661a364d573c9d930dd2" category="paragraph">*如何存取 NetApp Disaster Recovery？*NetApp Disaster Recovery 不需要任何啟用。Disaster Recovery 會自動顯示在 NetApp Console 左側導覽列中。</block>
   <block id="617eb16cadcea920c3756320dc74fccf" category="summary">災難復原至雲端是一種彈性且具成本效益的方式，可保護工作負載免受站台中斷和資料毀損事件的影響。透過 NetApp Disaster Recovery，您可以將執行 ONTAP 儲存設備的內部部署 VMware 工作負載複寫到公有雲中的 VMware 軟體定義資料中心（使用 NetApp 雲端儲存設備），或複寫到另一個使用 ONTAP 儲存設備的內部部署 VMware 環境作為災難復原站台。</block>
   <block id="3348cad21942b5f1082fd6256085c2ba" category="paragraph">雲端災難復原是一種彈性且經濟高效的方式，可保護工作負載免受站點中斷和資料損壞事件的影響。透過 NetApp Disaster Recovery，您可以將執行 ONTAP 儲存的內部部署 VMware VM 或資料存放區工作負載複製到公有雲中的 VMware 軟體定義資料中心（使用 NetApp 雲端儲存），或複製到另一個執行 ONTAP 儲存的內部部署 VMware 環境（作為災難復原站點）。您也可以使用 Disaster Recovery 將 VM 工作負載從一個站點遷移到另一個站點。</block>
@@ -2220,7 +2219,6 @@
   <block id="ec83ded0a983071f5ddfe6288e7832c9" category="list-text"><block ref="ec83ded0a983071f5ddfe6288e7832c9" category="inline-link-macro-rx"></block></block>
   <block id="56b24cdd5dc24570f7e1dd2ee03d39ca" category="paragraph">如需完整瞭解 NetApp Disaster Recovery 解決方案，請參閱<block ref="ccfb532d2846c6e621e9709f67d9a040" category="inline-link-macro-rx"></block>。</block>
   <block id="264f41f7fda3caccf98196e21418201c" category="summary">NetApp Disaster Recovery 是一項基於雲端的災難復原服務，可自動化災難復原工作流程。使用 NetApp Disaster Recovery，您可以將執行於 ONTAP 儲存設備上的本地 VMware 工作負載，複寫到公有雲中的 VMware 軟體定義資料中心，作為災難復原站點，並使用 NetApp 雲端儲存。</block>
-  <block id="e26c1e1448bd5f685a679ff49e20338a" category="section-title">2026 年 5 月 15 日</block>
   <block id="12af18005a606ba97f9e606aa2b596b8" category="paragraph">版本 4.3.3</block>
   <block id="1c42a04ac798111ed2c9388b25e2c237" category="paragraph">新增資源和網站後，即可建立_複寫計畫_。複寫計畫用於管理資料保護。建立複寫計畫包括指定來源網站和目標網站、選擇資源群組，以及選擇應用程式的還原和啟動方式。例如，您可以將與相同應用程式關聯的虛擬機器（VM）分組，也可以將具有相似層級的應用程式分組。</block>
   <block id="e6301bcb4d20444817b4b66020da65f2" category="paragraph">只有當複寫計畫處於以下狀態之一時，才能啟用保護：</block>
@@ -2351,4 +2349,6 @@
   <block id="5069d199ba6ca379f339c144214cb9f0" category="sidebar">系統先決條件</block>
   <block id="a79ae1fa6b9efc331842efa8d96937c5" category="sidebar">VMware 先決條件</block>
   <block id="ffc29f7e69eb606c4fc0ff797755e240" category="sidebar">Kubernetes 先決條件</block>
+  <block id="e5d56575e494e873c5ded63467d12e44" category="paragraph">目前對基於 Kubernetes 的工作負載的支援處於預覽階段。若要開始保護基於 Kubernetes 的工作負載，請參閱 <block ref="d1415fee440f8c1c4acbcf4ee7535778" category="inline-link-macro-rx"></block>。</block>
+  <block id="9b70df306d1f1719fd9d70e02911394c" category="section-title">2026 年 5 月 11 日</block>
 </blocks>

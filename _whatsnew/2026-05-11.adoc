@@ -15,4 +15,4 @@ Kubernetes 型工作負載支援的主要功能：
 * **簡化編排**：災難復原提供直覺的工作流程，可自動備份和複製 Kubernetes 工作負載，運用與 VMware 環境相同的高效 SnapMirror 技術。
 
 
-目前對基於 Kubernetes 的工作負載的支援處於預覽階段。若要開始保護基於 Kubernetes 的工作負載，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/task-kubernetes-requirements.html["NetApp Disaster Recovery 的 Kubernetes 需求"^]。
+目前對基於 Kubernetes 的工作負載的支援處於預覽階段。若要開始保護基於 Kubernetes 的工作負載，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/task-kubernetes-requirements.html["NetApp Disaster Recovery 的 Kubernetes 需求"^]。
