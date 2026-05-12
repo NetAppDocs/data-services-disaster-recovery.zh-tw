@@ -17,6 +17,9 @@ summary: 使用NetApp Disaster Recovery，您可以將來源站點上的 VMware 
 
 TIP: 在建立複製計畫、在精靈中確定重複並啟動遷移後， NetApp Disaster Recovery每 30 分鐘會驗證一次遷移是否確實按照計畫進行。您可以在作業監視器頁面中監視進度。
 
+
+NOTE: 目前不支援 Kubernetes 型工作負載的移轉。
+
 .開始之前
 在啟動遷移之前，您應該建立複製計劃並選擇遷移應用程式。然後，「操作」選單中會出現「遷移」選項。
 
@@ -25,5 +28,7 @@ TIP: 在建立複製計畫、在精靈中確定重複並啟動遷移後， NetAp
 . 從NetApp Console左側導覽中，選擇 *保護* > *災難復原*。
 . 從選單中選擇*複製計劃*。
 . 選擇複製計劃。
-. 在右側，選擇“操作”選項image:../use/icon-horizontal-dots.png["NetApp Disaster Recovery服務​​中的操作選單圖標"]並選擇*遷移*。
+. 在右側、選取 *Actions* 選項 image:../use/icon-horizontal-dots.png["NetApp Disaster Recovery服務​​中的操作選單圖標"]、將滑鼠游標暫留在 *Recover* 上、然後選取 *Migrate* 。
+. 在對話方塊中，選擇 *立即建立快照* 以建立新的遷移快照，或 *選擇* 以選擇現有的遷移快照。
+. 在文字方塊中輸入「Migrate」以確認操作，然後選取 *Migrate*。
 

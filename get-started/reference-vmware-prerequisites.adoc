@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: get-started/reference-vmware-prerequisites.html 
-keywords: vmware cluster prerequisites, vmware 
+keywords: vmware cluster prerequisites, vmware, vcenter, requirements 
 summary: 在使用 NetApp Disaster Recovery 之前，請確保您的環境符合 VMware vCenter 叢集需求。 
 ---
-= VMware vCenter 叢集 NetApp Disaster Recovery 的先決條件
+= VMware vCenter 叢集在 NetApp Disaster Recovery 中的先決條件
 :hardbreaks:
 :allow-uri-read: 
 :icons: font

@@ -145,6 +145,7 @@ image::site-type-toggle.png[網站類型切換的螢幕擷取畫面]
 . 選擇複製計劃。
 . 在右側、選取 *Actions* 選項 image:../use/icon-horizontal-dots.png["NetApp Disaster Recovery服務​​中的操作選單圖標"]、將游標暫留在 *Recover* 上、然後選取 *Fail over* 。
 . 選擇要用於容錯移轉的快照複本。您可以 *立即建立快照* 建立一個全新的快照並將其複製到目的地叢集，或 *使用最新快照* 使用目的地叢集上可用的最新快照。
+. 如果您希望服務在複寫計畫容錯移轉後不自動建立反向 SnapMirror 保護關係，請選取 *Skip protection*。如果您希望在將還原站台於 NetApp Disaster Recovery 重新上線前，先執行其他操作，這個選項會很有用。
 . 輸入「Failover」以確認操作，然後選擇 *Failover*。
 
 

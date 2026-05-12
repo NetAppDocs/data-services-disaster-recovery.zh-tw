@@ -36,7 +36,7 @@
 
 === Swagger 改進
 
-現在您可以從災難復原中存取 Swagger 文件。在災難復原中，選擇**設定**，然後選擇**API 文件**以連結到 Swagger，或在瀏覽器的隱身/隱私模式下存取此 URL： link:https://snapcenter.cloudmanager.cloud.netapp.com/api/api-doc/draas["https://snapcenter.cloudmanager.cloud.netapp.com/api/api-doc/draas"^]。
+您現在可以從 NetApp Disaster Recovery 中存取 Swagger 文件。在 NetApp Disaster Recovery 中，選取 **Settings**，然後選取 **API documentation**。您應該處於私密或無痕模式才能存取 link:https://api.bluexp.netapp.com/v1/services/draas/api/api-doc/draas["連結"^]。
 
 
 

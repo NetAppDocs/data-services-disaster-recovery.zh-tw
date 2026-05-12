@@ -17,8 +17,6 @@ summary: 在建立災難復原計畫之前，您需要在NetApp Disaster Recover
 
 TIP: 請確保來源端和目的端都使用相同的 NetApp Console agent。
 
-新增 vCenter 後， NetApp Disaster Recovery會對 vCenter 環境進行深度發現，包括 vCenter 叢集、ESXi 主機、資料儲存庫、儲存佔用空間、虛擬機器詳細資料、 SnapMirror副本和虛擬機器網路。
-
 *所需的NetApp Console角色* 組織管理員、資料夾或專案管理員或災難復原管理員。
 
 link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["了解NetApp Disaster Recovery中的使用者角色和權限"]。https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服務的NetApp Console存取角色"^]。
@@ -31,7 +29,7 @@ link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-re
 
 .步驟
 . 在 Disaster Recovery 中，選擇側邊欄中的**站點**。
-. 在下拉式選單中，選擇網站類型：**vCenter** 或 **Kubernetes**。
+. 在下拉式功能表中，選取站台類型：**VMware** 或 **Kubernetes**。
 +
 image::site-type-toggle.png[網站類型切換的螢幕擷取畫面]
 
@@ -84,7 +82,7 @@ NOTE: 本服務支援自簽章安全性憑證或來自中央憑證授權單位 (
 
 .步驟
 . 在 Disaster Recovery 中，選擇側邊欄中的**站點**。
-. 在下拉式選單中，將篩選條件設定為 *Kubernetes*。
+. 在下拉式選單中，將篩選條件設定為 *VMware* 。
 +
 image::site-type-toggle.png[網站類型切換的螢幕擷取畫面]
 
@@ -126,6 +124,8 @@ image:sites-list2.png["網站頁面截圖"]
 
 
 
+
+新增 vCenter 後， NetApp Disaster Recovery會對 vCenter 環境進行深度發現，包括 vCenter 叢集、ESXi 主機、資料儲存庫、儲存佔用空間、虛擬機器詳細資料、 SnapMirror副本和虛擬機器網路。
 
 --
 .Kubernetes

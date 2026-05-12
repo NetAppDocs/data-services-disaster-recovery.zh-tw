@@ -181,18 +181,18 @@ kubectl patch volumesnapshotclasses.snapshot.storage.k8s.io trident-snapshotclas
 
 | Snapshot API | `kubectl get volumesnapshotclass` | CRD 存在；列出 Trident 驅動程式 
 |===
-驗證所有資源狀態後，使用 Trident StorageClass 部署link:https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-migrate-apps.html#migrate-applications-from-one-storage-class-to-another-storage-class["移轉"^]您的工作負載。當您link:../use/sites-add.adoc["將 Kubernetes 叢集新增至站台"]時，Disaster Recovery 會提供在叢集上安裝 Trident Protect 並將其註冊到 Disaster Recovery 環境的說明。
+驗證所有資源狀態後，使用 Trident StorageClass 部署link:https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-migrate-apps.html#migrate-applications-from-one-storage-class-to-another-storage-class["移轉"^]您的工作負載。當您link:../use/sites-add.html["將 Kubernetes 叢集新增至站台"]時，Disaster Recovery 會提供在叢集上安裝 Trident Protect 並將其註冊到 Disaster Recovery 環境的說明。
 
 .請參閱安裝 Trident Protect 的說明。
 [%collapsible]
 ====
-. 建立 Trident Protect 命名空間：
+. 建立 Trident 保護命名空間：
 +
 `kubectl create namespace trident-protect`
 
 . 使用用戶端 ID 和用戶端密碼建立 Kubernetes 密碼，以建立 OCCM 驗證認證。
 +
-`kubectl create secret generic occmauthcreds --namespace=trident-protect --from-literal=client_id=<clidentID> --from-literal=<clientSecret>`
+`kubectl create secret generic occmauthcreds --namespace=trident-protect --from-literal=client_id=<clientID> --from-literal=<clientSecret>`
 
 . 新增或更新 helm 儲存庫：
 +
@@ -209,5 +209,5 @@ kubectl patch volumesnapshotclasses.snapshot.storage.k8s.io trident-snapshotclas
 == 更多資訊
 
 * link:https://docs.netapp.com/us-en/trident/trident-protect/learn-about-trident-protect.html["了解 Trident Protect"^]
-* link:../use/sites-add.adoc["在 Disaster Recovery 中新增站台"]
+* link:../use/sites-add.html["在 Disaster Recovery 中新增站台"]
 
