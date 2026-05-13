@@ -2358,4 +2358,6 @@
   <block id="839097294e2dbfd7824e255a28981f0a" category="paragraph"><block ref="839097294e2dbfd7824e255a28981f0a" category="inline-image-macro-rx" type="image"></block></block>
   <block id="fe0436b2b4ffe08414ea0169e1f3e16f" category="list-text">在下拉式功能表中，選取站台類型：**VMware** 或 **Kubernetes**。</block>
   <block id="c5e2dee9838723e4e75bbdc5c8ddc473" category="list-text"><block ref="1eb384da451aa1014bf5aa632cfa3987" category="inline-link-macro-rx"></block> 在不中斷資源的情況下</block>
+  <block id="4904de7cc7c0f1a816fec7d3ebe0ebbe" category="inline-link-macro">其他先決條件和組態指南</block>
+  <block id="01f7a8c5d879230e93f04122b4ac55bb" category="admonition">若要將災難復原與 Amazon Elastic VMware Service（EVS）結合使用，請參閱 <block ref="343db214761569ec52fb96e38ea0c2fa" category="inline-link-macro-rx"></block>。</block>
 </blocks>

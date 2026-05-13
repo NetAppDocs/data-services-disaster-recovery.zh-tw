@@ -140,6 +140,9 @@ NetApp Console使用者必須具有以下角色：
 
 
 
+TIP: 若要將災難復原與 Amazon Elastic VMware Service（EVS）結合使用，請參閱 link:../reference/evs-deploy-guide-config-prereqs.html["其他先決條件和組態指南"^]。
+
+
 
 === 建立NetApp Console代理
 
