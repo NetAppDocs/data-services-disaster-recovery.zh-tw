@@ -17,9 +17,7 @@ summary: 在建立災難復原計畫之前，您需要在NetApp Disaster Recover
 
 TIP: 請確保來源端和目的端都使用相同的 NetApp Console agent。
 
-*所需的NetApp Console角色* 組織管理員、資料夾或專案管理員或災難復原管理員。
-
-link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["了解NetApp Disaster Recovery中的使用者角色和權限"]。https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服務的NetApp Console存取角色"^]。
+*所需 NetApp Console 角色* 需要 Super admin 或 Disaster recovery admin 才能執行此任務。link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["了解NetApp Disaster Recovery中的使用者角色和權限"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服務的NetApp Console存取角色"^].
 
 
 

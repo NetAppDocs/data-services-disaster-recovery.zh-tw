@@ -226,7 +226,6 @@
   <block id="2a4cd6e54b1479bcaa1bee44984f0db4" category="list-text">*資源群組*：一個邏輯容器，使您能夠將多個虛擬機器作為一個單元進行管理。一個虛擬機器一次只能屬於一個資源群組。您可以為想要保護的每個應用程式或工作負載建立一個資源組。</block>
   <block id="36067d59ff2c721b2e3b4e0eaf420551" category="list-text">*站點*：通常與託管一個或多個 vCenter 叢集和ONTAP儲存的實體資料中心或雲端位置相關聯的邏輯容器。</block>
   <block id="be2e75d3289741b6da261571f9377091" category="summary">使用NetApp Disaster Recovery，您可以使用不同的授權計劃，包括免費試用、按需付費訂閱或自帶授權。</block>
-  <block id="aceeb447f410f96a1ea84c7aa3d50b31" category="paragraph">*所需的NetApp Console角色* 組織管理員、資料夾或專案管理員、災難復原管理員或災難復原應用程式管理員角色。</block>
   <block id="6fb21aa5ad614d3da3c4d910339be1a1" category="inline-link-macro">了解NetApp Disaster Recovery中的使用者角色和權限</block>
   <block id="caf89067dc5383afa96e1ac3e7c34bb7" category="paragraph">*許可選項* 您可以使用以下許可選項：</block>
   <block id="7f2210756be2a83d832be1ebb9b06adf" category="list-text">購買 Amazon Web Services (AWS) Marketplace 或 Microsoft Azure Marketplace 的即用即付 (PAYGO) 訂閱。</block>
@@ -1064,7 +1063,6 @@
   <block id="c3533d0746cb1de0d34486c00ae36990" category="summary">NetApp Disaster Recovery是一種基於雲端的災難復原服務​​，可自動執行災難復原工作流程。</block>
   <block id="d1a664c22b47275444c9a34501c2aac2" category="doc">在儀表板上查看NetApp Disaster Recovery計畫的運作狀況</block>
   <block id="f236d43ec0e67c4b89d0afe52b6b6a75" category="paragraph">使用NetApp Disaster Recovery儀表板，您可以確定災難復原網站和複製計畫的健康狀況。您可以快速確定哪些站點和計劃是健康的、斷開的或降級的。</block>
-  <block id="ab5b32e2ccac1c245a804a25ba2d8a6c" category="paragraph">*所需的NetApp Console角色* 組織管理員、資料夾或專案管理員、災難復原管理員、災難復原應用程式管理員或災難復原檢視器角色。</block>
   <block id="f23e4fbac73cf601cee1add8b6e11922" category="list-text">從NetApp Disaster Recovery選單中，選擇 *儀表板*。</block>
   <block id="04edaa59dc99bd9193a5ad37083cc900" category="list-text">查看儀表板上的以下資訊：</block>
   <block id="b845a02ab309809100805f1256a064e8" category="list-text">*站點*：查看站點的健康狀況。站點可以具有以下狀態之一：</block>
@@ -1083,7 +1081,6 @@
   <block id="2ce874f5717134aa8a63e219f05d39f9" category="list-text">故障轉移、測試故障轉移和遷移的次數。例如，如果您建立了兩個計劃並遷移到目標，則遷移計數顯示為「2」。</block>
   <block id="d26cf1f0512a50b32d5a10b931f5fbe0" category="list-text">查看活動窗格中的所有操作。若要查看作業監視器上的所有操作，請選擇「查看所有作業」。</block>
   <block id="d15994bcf2411bb66762cdf4c58704b3" category="doc">在NetApp Disaster Recovery中建立複製計劃</block>
-  <block id="5d69fbf6172766c9a9f097615bf01170" category="paragraph">*所需的NetApp Console角色* 組織管理員、資料夾或專案管理員、災難復原管理員、災難復原故障轉移管理員或災難復原應用程式管理員角色。</block>
   <block id="78166ce4ccceeedfbf6aeb8682851072" category="paragraph">*關於此任務*</block>
   <block id="978c7c7ea4c54312c02456ee28acd332" category="paragraph">您可以建立複製計劃並編輯合規性和測試計劃。執行虛擬機器的測試故障轉移而不影響生產工作負載。</block>
   <block id="fba54b7da5e3ceabe7362e860f7df87d" category="paragraph">您可以保護多個資料儲存上的多個虛擬機器。  NetApp Disaster Recovery為託管受保護 VM 資料儲存的所有ONTAP磁碟區建立ONTAP一致性群組。</block>
@@ -1235,7 +1232,6 @@
   <block id="4ac501b2e3f3c1ccbafc24145adbb715" category="summary">NetApp Disaster Recovery是一種基於雲端的災難復原服務​​，可自動執行災難復原工作流程。</block>
   <block id="91489d092184bfc755448f244680bba7" category="doc">使用NetApp Disaster Recovery將應用程式故障還原到原始來源</block>
   <block id="f644f24f13324a7f89c132498723a6bc" category="paragraph">災難解決後，從災難復原站點故障回復到來源站點以恢復正常運作。您可以選擇要復原的快照。</block>
-  <block id="358dd4a1f198e0fd5a1f38641410f5bd" category="paragraph">*所需的NetApp Console角色* 組織管理員、資料夾或專案管理員、災難復原管理員或災難復原故障轉移管理員角色。</block>
   <block id="89c264ecf8c1aae2c7902f0d4ce033e4" category="list-text">對復原的站點執行合規性檢查。</block>
   <block id="d5d9cec5d4cc26badad6b1b4c595325e" category="list-text">刷新已確定位於復原站點中的每個 vCenter 叢集的 vCenter 資訊。</block>
   <block id="f064ccaae58d6fda11f3f5249381ffc3" category="list-text">在目標網站上，關閉並取消註冊虛擬機，然後卸載磁碟區。</block>
@@ -1327,7 +1323,6 @@
   <block id="e3a15d734e1eafd89e04f5eb526ec5cc" category="list-text">選擇複製計劃後，選擇“操作”選單，然後選擇“清理舊快照”以刪除目標上的舊快照以符合新的保留計數。</block>
   <block id="a6dcfee4cd10f2ad60c3d81bc2a3b8ad" category="section-title">查看資料儲存資訊</block>
   <block id="432624070ae1b8a0b19fd42c048a224c" category="paragraph">您可以查看有關來源和目標上存在多少資料儲存區的資訊。</block>
-  <block id="0b77fd469368590453b3279f2ddeae17" category="paragraph">*所需的NetApp Console角色* 組織管理員、資料夾或專案管理員、災難復原管理員、災難復原故障轉移管理員、災難復原應用程式管理員或災難復原檢視器角色。</block>
   <block id="7e551addf2432bb9127be36e3a23db1c" category="list-text">從選單中選擇*儀表板*。</block>
   <block id="5e141a758f792ce4ad7e1b2107b1f7a4" category="list-text">在站點行中選擇 vCenter。</block>
   <block id="39ee33e9296a158fe8a2360a75b5c352" category="list-text">查看資料儲存資訊。</block>
@@ -1399,7 +1394,6 @@
   <block id="c021ba8d319c1c5278738c67a531bc28" category="list-text">或者，透過將每個虛擬機器在清單中向上或向下拖曳來變更右側虛擬機器的順序。虛擬機器將根據您包含它們的順序啟動。</block>
   <block id="75f45a60b91a561ea7d1f64f9804e2c4" category="summary">在建立災難復原計畫之前，您需要在NetApp Disaster Recovery中新增主 vCenter 網站和目標 vCenter 災難復原網站。</block>
   <block id="47973fd1fc587dd92f28f71a84ba6850" category="paragraph">新增 vCenter 後， NetApp Disaster Recovery會對 vCenter 環境進行深度發現，包括 vCenter 叢集、ESXi 主機、資料儲存庫、儲存佔用空間、虛擬機器詳細資料、 SnapMirror副本和虛擬機器網路。</block>
-  <block id="00a142c7e85a846d34e5eb7913c5aaa0" category="paragraph">*所需的NetApp Console角色* 組織管理員、資料夾或專案管理員或災難復原管理員。</block>
   <block id="fc548d74f5fe5eda5c2ac1776a3251d8" category="paragraph">如果您在先前的版本中新增了 vCenter 並想要自訂發現計劃，則必須編輯 vCenter 伺服器網站並設定計劃。</block>
   <block id="b7d5167a5549f18425123ec0543e6e9d" category="paragraph">您應該先執行一些手動發現以獲取有關您的環境的最新資訊。之後，您可以設定計劃以自動運行。</block>
   <block id="685a4b04fc3b29a8c5cc08baa9fe18fd" category="paragraph">如果您有早期版本的 vCenter 並想要變更發現運行的時間，請編輯 vCenter 伺服器網站並設定計劃。</block>
@@ -1627,7 +1621,6 @@
   <block id="1a90436cad6b2c834a6f0bf4b63bb676" category="paragraph">詳細了解<block ref="185be9890bef04443cd0fba90b4aff11" category="inline-link-rx"></block>。</block>
   <block id="9ad4327ee2b15571b0ae33cd44518465" category="list-text">透過多個時間點復原操作簡化 vCenter 發現和應用程式復原的使用者體驗。</block>
   <block id="9c1f27493de915ea446fcd10980fb25b" category="paragraph">NetApp不會向您收取NetApp Disaster Recovery試用版的費用。</block>
-  <block id="f4f7d6aee50e35b48e1594126cdb4f78" category="paragraph"><block ref="31accac3325320cbdf81ca4694a5591c" category="inline-link-macro-rx"></block>。<block ref="900bb528e3d03c800725eef508ff790f" category="inline-link-rx"></block>。</block>
   <block id="395a0c83d18cd49c5468e19cda311fa7" category="paragraph">若要新增控制台代理，請參閱<block ref="552a7d66ccd9c93a9dbc55fd8ef74d52" category="inline-link-rx"></block>。</block>
   <block id="eb90be323cff385f058b6740db7ea9b1" category="paragraph">您可以在NetApp Console訂閱頁面查看訂閱詳細資訊。<block ref="cfbd6da620b5229d14162ae0313e9c37" category="inline-link-macro-rx"></block>。</block>
   <block id="8a6e25252289a1daedac4f0edba496da" category="paragraph"><block ref="d5b487b8647d589ee708465fa8f6ee1a" category="inline-link-rx"></block>。</block>
@@ -2360,4 +2353,13 @@
   <block id="c5e2dee9838723e4e75bbdc5c8ddc473" category="list-text"><block ref="1eb384da451aa1014bf5aa632cfa3987" category="inline-link-macro-rx"></block> 在不中斷資源的情況下</block>
   <block id="4904de7cc7c0f1a816fec7d3ebe0ebbe" category="inline-link-macro">其他先決條件和組態指南</block>
   <block id="01f7a8c5d879230e93f04122b4ac55bb" category="admonition">若要將災難復原與 Amazon Elastic VMware Service（EVS）結合使用，請參閱 <block ref="343db214761569ec52fb96e38ea0c2fa" category="inline-link-macro-rx"></block>。</block>
+  <block id="78a1d5987eca33284817a9dca555eece" category="paragraph">*所需 NetApp Console 角色* 執行此任務需要 Super admin、Disaster recovery admin 或 Disaster recovery failover admin 角色。<block ref="8100c1fe7b8d110e1492908ee1d65a0c" category="inline-link-macro-rx"></block>。<block ref="e5d24b6c28284fa38e3f4f0358d9e595" category="inline-link-macro-rx"></block>。</block>
+  <block id="6505512d1e3705256403aea56cc17f65" category="paragraph">*所需 NetApp Console 角色* 執行此任務需要超級管理員、災難復原管理員或災難復原應用程式管理員角色。<block ref="8100c1fe7b8d110e1492908ee1d65a0c" category="inline-link-macro-rx"></block>。<block ref="e5d24b6c28284fa38e3f4f0358d9e595" category="inline-link-macro-rx"></block>。</block>
+  <block id="16f190cf7635b199438ae35b0fe59f2c" category="paragraph">*所需 NetApp Console 角色* 執行此任務需要超級管理員、災難復原管理員、災難復原應用程式管理員或災難復原檢視者角色。<block ref="8100c1fe7b8d110e1492908ee1d65a0c" category="inline-link-macro-rx"></block>.<block ref="e5d24b6c28284fa38e3f4f0358d9e595" category="inline-link-macro-rx"></block>.</block>
+  <block id="471f9859d1f2a18f91bcac6a9a7a7cdf" category="paragraph">*必填 NetApp Console 角色* 超級管理員、災難復原管理員、災難復原容錯移轉管理員或災難復原應用程式管理員角色。</block>
+  <block id="1f78a1c33aa4c1ac6fb7d77efb19a5f4" category="paragraph">*必填 NetApp Console 角色* 執行此作業需要 Super admin、Disaster recovery admin 或 Disaster recovery application admin 角色。</block>
+  <block id="bf857d514ad33034eb60ee79c8a3aa99" category="paragraph">*所需 NetApp Console 角色* 執行此任務需要超級管理員、災難復原管理員、災難復原故障轉移管理員或災難復原應用程式管理員角色。</block>
+  <block id="be5c474e990158548482b3a953022881" category="paragraph">*必要的 NetApp Console 角色* 超級管理員、災難復原管理員、災難復原故障轉移管理員、災難復原應用程式管理員或災難復原檢視者角色。</block>
+  <block id="8e745eb6a2225b985f69a165c4ffe3a6" category="paragraph">*必需的 NetApp Console 角色* 超級管理員、災難復原管理員、災難復原應用程式管理員或災難復原檢視者角色。</block>
+  <block id="e509f2e4181583fe783409b5fef67c2d" category="paragraph">*所需 NetApp Console 角色* 需要 Super admin 或 Disaster recovery admin 才能執行此任務。<block ref="31accac3325320cbdf81ca4694a5591c" category="inline-link-macro-rx"></block>.<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block>.</block>
 </blocks>
