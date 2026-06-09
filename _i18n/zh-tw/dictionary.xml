@@ -1254,7 +1254,6 @@
   <block id="0e00f106592672a761fa0dcf1949901f" category="list-text">取消停頓虛擬機器中任何被標記為「應用程式一致」的受支援的資料庫應用程式。</block>
   <block id="89b3318439959d14598bf04d917486ea" category="list-text">如果來源 vCenter 和ONTAP叢集仍處於活動狀態，請建立反向SnapMirror關係，以將故障轉移狀態下的任何變更複製回原始來源網站。</block>
   <block id="262b346523c2b98a9b37923882f4fa94" category="list-text">在右側，選擇“操作”選項<block ref="771645334c0631c5881bfc9858be7f5b" category="inline-image-macro-rx" type="image"></block>並選擇*測試故障轉移*。</block>
-  <block id="b5a4a47da1665893dbfd001a41980991" category="list-text">在測試故障轉移頁面中，輸入「測試故障轉移」並選擇*測試故障轉移*。</block>
   <block id="625033464ccff58d2815930ae362a422" category="list-text">測試完成後，清理測試環境。</block>
   <block id="302bf3ef5d8e942b185e4b4d03884ff4" category="section-title">故障轉移測試後清理測試環境</block>
   <block id="b22e9cc3eebab01136ffe8d3f7e201ca" category="paragraph">故障轉移測試完成後，您應該清理測試環境。此程序將從測試位置、FlexClone 和暫存資料儲存區中刪除暫存虛擬機器。</block>
@@ -1280,7 +1279,6 @@
   <block id="41629e76e0d378b59baf8095f22e3e66" category="paragraph">任務需要不同的NetApp Console角色。有關詳細信息，請參閱每個任務中的“所需的NetApp Console角色”部分。</block>
   <block id="0acfc5a5ce6523c8fad77ea0b4d65862" category="section-title">管理 vCenter 站點</block>
   <block id="f6384b4b10f3ca7cfac8402cfb23ef7f" category="paragraph">您可以編輯 vCenter 網站名稱和網站類型（本機或 AWS）。</block>
-  <block id="ee96f26f36e356a1f6ec9037ad76ba51" category="paragraph">*所需的NetApp Console角色* 組織管理員、資料夾或專案管理員或災難復原管理員角色。</block>
   <block id="d11708747a513e148a12f02e4e603105" category="list-text">從選單中選擇*網站*。</block>
   <block id="b2209ab446f654c29ab1bfca5d8d2693" category="list-text">選擇“操作”選項<block ref="b571b46a13691830124ae7cdd5a7ca96" category="inline-image-macro-rx" type="image"></block>在 vCenter 名稱右側，選擇「*編輯*」。</block>
   <block id="c4b621211240f640df1e2cfcc6cc5bec" category="list-text">編輯 vCenter 網站名稱和位置。</block>
@@ -1342,7 +1340,6 @@
   <block id="a2628e207373ba02728e8a48a677eca6" category="list-text">若要查看特定作業的詳細信息，請選擇該行。</block>
   <block id="19a2cef623f0e702dd97e37e1bddd114" category="list-text">若要刷新訊息，請選擇*刷新*。</block>
   <block id="24391a0c4e58147fa07febdb32887a1a" category="section-title">取消作業</block>
-  <block id="eead8518396b0c1b849be084fbe4f31a" category="paragraph">如果某項工作正在進行中或處於排隊狀態，而您不想讓它繼續，則可以取消它。如果作業停留在相同狀態，您可能想要取消它，並且想要釋放佇列中的下一個操作。您可能想在作業逾時之前取消它。</block>
   <block id="860b70267867fe6caf0f4adfd247b3e2" category="list-text">從NetApp Console左側導覽列中，選擇 *保護* &gt; *災難復原*。</block>
   <block id="26abc41be60bda806b144bd6ecedad10" category="list-text">在「作業監視器」頁面中，記下要取消的作業的 ID。</block>
   <block id="49e474835558193a9bed54c7dadf777e" category="paragraph">該作業必須處於「進行中」或「排隊」狀態。</block>
@@ -1532,7 +1529,6 @@
   <block id="3c843649a94855e3901bd423ac9ca414" category="paragraph">如果刪除複製計劃，您也可以刪除該計劃建立的主快照和輔助快照。</block>
   <block id="75c34b3422e5baaae429a2d21a62a9d8" category="list-text">選擇要刪除主快照、輔助快照，還是僅刪除計畫建立的元資料。</block>
   <block id="8e15489db6e2853bdefe4e39cf285c3d" category="list-text">輸入“刪除”以確認刪除。</block>
-  <block id="c1ba23522836b9d395a79f30f4da96b4" category="paragraph">更改保留計數可以增加或減少已儲存的資料儲存數量。</block>
   <block id="506d82cb3cd3b9175af419eb19bc5740" category="list-text">選擇複製計劃，然後選擇「故障轉移對映」標籤。選擇“編輯”鉛筆圖示。</block>
   <block id="58777a5460ab56ac04a8fc9d5cb1b259" category="list-text">選擇“資料儲存”行中的向下箭頭將其展開。</block>
   <block id="2d3c0c55028659ea4dd39b2fd1ee9a30" category="list-text">更改所有資料存儲的**保留計數**值。</block>
@@ -2244,7 +2240,6 @@
   <block id="fe2070975262fdb1507084ad02d139e7" category="paragraph"><block ref="fe2070975262fdb1507084ad02d139e7" category="inline-image-macro-rx" type="image"></block></block>
   <block id="ec5c6f08ada454e9670285c835649f45" category="list-text">輸入 "Failback" 以確認操作，然後選取 *Failback*。</block>
   <block id="2d518d2a0701e8e4560cbcf883ee4f3a" category="list-text">在下拉式選單中，篩選 *Kubernetes* 複寫計畫。</block>
-  <block id="cf3a1b459cc4424970f17bd247150364" category="paragraph">在開始容錯移轉之前，您可以先測試流程。測試不會使 VM 離線。</block>
   <block id="1125e3b29e278ae1d41547291cfcb9fb" category="paragraph">在故障轉移測試期間，Disaster Recovery 會暫時建立 VM。Disaster Recovery 會將支援 FlexClone 磁碟區的暫存資料存放區對應到 ESXi 主機。</block>
   <block id="1d235eca89fa1ce9ae2c129b3459f24d" category="paragraph">測試完成後，您應該使用 *Clean up test* 選項重設 VM。雖然建議這樣做，但並非必須。</block>
   <block id="1ce56da10e5d8a1c98a950af6b3aa8f0" category="list-text">將目標虛擬機器在 vCenter 中註冊為新的資料存放區。</block>
@@ -2281,7 +2276,6 @@
   <block id="7abaaec8330e6093848e8ad2b5fc55ad" category="admonition">NetApp Disaster Recovery 每 24 小時執行一次資源發現。在設定站台後，您可以稍後編輯 vCenter 或 Kubernetes 叢集，以自訂符合您需求的資源發現排程。例如，如果您有大量 VM，可以將資源發現排程設定為每 23 小時 59 分鐘執行一次。如果您只有少量 VM，可以將資源發現排程設定為每 12 小時執行一次。最小間隔為 30 分鐘，最大間隔為 24 小時。</block>
   <block id="3df06dfecbba3cf48d3e0f796002cd30" category="paragraph">只有當複寫計畫處於以下狀態之一時，資源才能受到保護：</block>
   <block id="3feb9d576508e0f0d5b31b94130afff9" category="paragraph">您需要以下資訊才能將 vCenter 叢集新增至站台：</block>
-  <block id="95a40723328d7973d1b42377e4a9279b" category="list-text">在下拉式選單中，將篩選條件設定為 *Kubernetes*。</block>
   <block id="6ec607d90131ba368742b9a99a146722" category="list-text">選擇要新增 Kubernetes 叢集的網站。選擇該網站的操作選單，然後選擇 **Add cluster**。</block>
   <block id="7e592170164af97cef86b80a254c840b" category="list-text">在「網站」頁面中，選擇網站的操作選單，然後選擇 *Add vCenter*。</block>
   <block id="ff3b9c54386661390d0a394f4a1d50c4" category="list-text">請確保 *Site* 資訊正確。從下拉式選單中選擇 *Console agent*。</block>
@@ -2356,10 +2350,64 @@
   <block id="78a1d5987eca33284817a9dca555eece" category="paragraph">*所需 NetApp Console 角色* 執行此任務需要 Super admin、Disaster recovery admin 或 Disaster recovery failover admin 角色。<block ref="8100c1fe7b8d110e1492908ee1d65a0c" category="inline-link-macro-rx"></block>。<block ref="e5d24b6c28284fa38e3f4f0358d9e595" category="inline-link-macro-rx"></block>。</block>
   <block id="6505512d1e3705256403aea56cc17f65" category="paragraph">*所需 NetApp Console 角色* 執行此任務需要超級管理員、災難復原管理員或災難復原應用程式管理員角色。<block ref="8100c1fe7b8d110e1492908ee1d65a0c" category="inline-link-macro-rx"></block>。<block ref="e5d24b6c28284fa38e3f4f0358d9e595" category="inline-link-macro-rx"></block>。</block>
   <block id="16f190cf7635b199438ae35b0fe59f2c" category="paragraph">*所需 NetApp Console 角色* 執行此任務需要超級管理員、災難復原管理員、災難復原應用程式管理員或災難復原檢視者角色。<block ref="8100c1fe7b8d110e1492908ee1d65a0c" category="inline-link-macro-rx"></block>.<block ref="e5d24b6c28284fa38e3f4f0358d9e595" category="inline-link-macro-rx"></block>.</block>
-  <block id="471f9859d1f2a18f91bcac6a9a7a7cdf" category="paragraph">*必填 NetApp Console 角色* 超級管理員、災難復原管理員、災難復原容錯移轉管理員或災難復原應用程式管理員角色。</block>
-  <block id="1f78a1c33aa4c1ac6fb7d77efb19a5f4" category="paragraph">*必填 NetApp Console 角色* 執行此作業需要 Super admin、Disaster recovery admin 或 Disaster recovery application admin 角色。</block>
-  <block id="bf857d514ad33034eb60ee79c8a3aa99" category="paragraph">*所需 NetApp Console 角色* 執行此任務需要超級管理員、災難復原管理員、災難復原故障轉移管理員或災難復原應用程式管理員角色。</block>
-  <block id="be5c474e990158548482b3a953022881" category="paragraph">*必要的 NetApp Console 角色* 超級管理員、災難復原管理員、災難復原故障轉移管理員、災難復原應用程式管理員或災難復原檢視者角色。</block>
-  <block id="8e745eb6a2225b985f69a165c4ffe3a6" category="paragraph">*必需的 NetApp Console 角色* 超級管理員、災難復原管理員、災難復原應用程式管理員或災難復原檢視者角色。</block>
-  <block id="e509f2e4181583fe783409b5fef67c2d" category="paragraph">*所需 NetApp Console 角色* 需要 Super admin 或 Disaster recovery admin 才能執行此任務。<block ref="31accac3325320cbdf81ca4694a5591c" category="inline-link-macro-rx"></block>.<block ref="8d054a08e0e901ba9c326f172eb3627b" category="inline-link-rx"></block>.</block>
+  <block id="612649a00367a8c0d47c862b2609f91a" category="paragraph">*必要的 NetApp Console 角色* 執行此工作需要 Super admin 或 Disaster recovery admin 角色。<block ref="8100c1fe7b8d110e1492908ee1d65a0c" category="inline-link-macro-rx"></block>。<block ref="e5d24b6c28284fa38e3f4f0358d9e595" category="inline-link-macro-rx"></block>。</block>
+  <block id="84673f07cefbab42e915cbd959f8f20f" category="paragraph">*所需 NetApp Console 角色* 執行此任務需要超級管理員、災難復原管理員、災難復原故障轉移管理員或災難復原應用程式管理員角色。<block ref="8100c1fe7b8d110e1492908ee1d65a0c" category="inline-link-macro-rx"></block>.<block ref="e5d24b6c28284fa38e3f4f0358d9e595" category="inline-link-macro-rx"></block>.</block>
+  <block id="f30e78142cdfb38729492098fb4e8de0" category="paragraph">*所需 NetApp Console 角色* 執行此任務需要組織管理員、資料夾或專案管理員，或災難復原管理員角色。<block ref="8100c1fe7b8d110e1492908ee1d65a0c" category="inline-link-macro-rx"></block>。<block ref="e5d24b6c28284fa38e3f4f0358d9e595" category="inline-link-macro-rx"></block>。</block>
+  <block id="a986e84430ee60de89573d632903e271" category="paragraph">*必要的 NetApp Console 角色* 執行此工作需要超級管理員、災難恢復管理員、災難恢復容錯移轉管理員、災難恢復應用程式管理員或災難恢復檢視者角色。<block ref="8100c1fe7b8d110e1492908ee1d65a0c" category="inline-link-macro-rx"></block>。<block ref="e5d24b6c28284fa38e3f4f0358d9e595" category="inline-link-macro-rx"></block>。</block>
+  <block id="332fe49e1772f15dfec47321d1f86499" category="doc">Kubernetes 更新</block>
+  <block id="c0471f20c72304b23fb6eb762ed470b8" category="paragraph">災難恢復針對基於 Kubernetes 的工作負載引入了以下變更：</block>
+  <block id="b1f52bc1b1d4ff2b36103a44b4128f19" category="section-title">測試 Kubernetes 工作負載的容錯移轉支援</block>
+  <block id="7e284075cd571fe0081cd386d1d3493c" category="paragraph">災難復原功能現已支援對 Kubernetes 工作負載的故障轉移流程進行測試。透過測試故障轉移，您可以驗證災難復原計劃。測試完成後，您可以清理測試故障轉移，系統會自動清理測試資源，從而降低系統開銷並確保環境的一致性。</block>
+  <block id="6031837c36096c58788ef48c962f6ff8" category="paragraph">如需詳細資訊，請參閱<block ref="a8818044286b10a3ca635d0b39faff78" category="inline-link-macro-rx"></block>。</block>
+  <block id="9be7f1264301a801add3868ed7829904" category="section-title">排程測試容錯移轉</block>
+  <block id="2cb1fc25b0b81893e3832eea3384812d" category="paragraph">現在，您可以透過排程測試容錯移轉來自動化災難恢復測試。您可以設定定期測試容錯移轉的排程，以持續驗證恢復計畫而無需人工介入，有助於維持對恢復目標的信心並符合法規遵循要求。</block>
+  <block id="35bd874c9b191a5ec4ef2620bcba1d01" category="paragraph">如需詳細資訊，請參閱<block ref="5e1f430868dd2493a6125e8cf919005e" category="inline-link-macro-rx"></block>。</block>
+  <block id="61a19574e3bdebdbc07d7daaaf8f76e1" category="section-title">Kubernetes 工作負載的排程探索</block>
+  <block id="d45fce8600e6e092745f48fddf5cd172" category="paragraph">透過排程探索，您可以控制 Disaster Recovery 掃描新 Kubernetes 工作負載的頻率。您可以設定探索時間間隔，以符合您的作業節奏，減少不必要的系統負荷，同時確保及時偵測並保護新的工作負載。</block>
+  <block id="d5500e4522bde3536eb21086a6278cb6" category="inline-link-macro">自訂探索排程</block>
+  <block id="58b54ef9bb1184e1a76831a4c8532cdf" category="paragraph">如需詳細資訊，請參閱<block ref="00c64813bfb7d5f31a94dc7f7401aec7" category="inline-link-macro-rx"></block>。</block>
+  <block id="49bc059dcf19f0a0115deba3b42c6932" category="section-title">VMware 更新</block>
+  <block id="239000f59be4987b700a238e8ca4cbac" category="section-title">保護空資料存放區</block>
+  <block id="9a870179d2b3e04319fde1e2148bdde1" category="inline-link-macro">對應資訊</block>
+  <block id="386068b3c8ab30655c493a434548a956" category="paragraph">災難復原功能現在允許為不包含任何虛擬機器（VM）的資料儲存配置保護。之後新增到資料儲存中的任何 VM 都會被 Disaster Recovery 自動偵測，此時您需要提供<block ref="96f22499fac7fb5ec06f64e20472e919" category="inline-link-macro-rx"></block>。</block>
+  <block id="8ea79c5d84513219216b19fc3aa62033" category="inline-link-macro">容錯移轉至遠端站台</block>
+  <block id="fcf6f6ded14457afdca64680218d849c" category="paragraph">將空資料存放區新增至保護計畫時，您必須先從保護計畫中移除該資料存放區，然後再執行容錯移轉，或執行強制容錯移轉。如需詳細資訊、請參閱 <block ref="a16180f75826879573c72d14ccfccc18" category="inline-link-macro-rx"></block>。</block>
+  <block id="2d2e356e77ef22acf218ffb017d91233" category="section-title">將先前排除的資料存放區還原至保護計畫</block>
+  <block id="1453aa4dc117cbab5d75827143b273ea" category="paragraph">先前被排除在保護範圍之外的資料存放區現在可以重新納入保護範圍。這項增強功能在長期管理和更新災難恢復組態時提供了更大的靈活性。</block>
+  <block id="0f76cabceee2286086c65391269ec324" category="paragraph">如需詳細資訊，請參閱<block ref="37d0eb884ec50ead320898709eb6d605" category="inline-link-macro-rx"></block>。</block>
+  <block id="05c185480595feac79a02ae4a685fcc6" category="section-title">加快基於 VMFS 的資料存放區容錯移轉速度</block>
+  <block id="e63830ec714a620621135f51c7c84114" category="paragraph">災難復原功能提升了基於 VMFS 的資料存放區的容錯移轉效能。主機匯流排介面卡 (HBA) 重新掃描和資料存放區掛載作業現在可以並行執行，從而縮短整體容錯移轉時間，並最大限度地減少還原事件期間的停機時間。</block>
+  <block id="69aa1f50c340d05c0f749dc51b5d5737" category="inline-link-macro">透過災難復原進行容錯移轉</block>
+  <block id="bda5d94c4f296d65baa89f57187dafbd" category="paragraph">如需容錯移轉的詳細資訊，請參閱 <block ref="6f81e5aa1c9b02c34c5ec309d5755115" category="inline-link-macro-rx"></block>。</block>
+  <block id="c2ca16d048ec66e04bca283eab048ec2" category="cell">主機</block>
+  <block id="c558a0155ca880ce7651092b8d34bdda" category="cell">主機設定。AdvancedConfig</block>
+  <block id="fe4c6a5e7bd6793b37370e4e46daf998" category="cell">進階設定</block>
+  <block id="bfc4aca9e679b5e54fe1e06ec1a2fdae" category="cell">允許設定進階主機組態選項。</block>
+  <block id="b65acfdfa8b200521132554a2bf785c1" category="cell">主機.組態.儲存</block>
+  <block id="a327173237d5e04189c770059b93c5b8" category="cell">儲存分割區組態</block>
+  <block id="8d1a22575f27ac05ff7b4dbaa3e07dd0" category="cell">允許掃描新的儲存設備並管理 iSCSI。</block>
+  <block id="be8545ae7ab0276e15898aae7acfbd7a" category="cell">資源</block>
+  <block id="a7e4bee1172f5ae98efff7f374c7c442" category="cell">Resource.AssignVMToPool</block>
+  <block id="4a80639450ebfdba618d1bb0d7fd4bc9" category="cell">資源池</block>
+  <block id="467e9c87035095663a3dab61ee7fa11f" category="cell">允許將 VM 指派給資源池</block>
+  <block id="1c47c283c10eb040185d834c1d4f570f" category="cell">VirtualMachine.Config.AddExistingDisk</block>
+  <block id="c629a65bf0cad09db50b338d3b22ceaa" category="cell">新增現有磁碟</block>
+  <block id="c77e1221a533a8ee299fde02b09ab63e" category="cell">允許將現有虛擬磁碟新增至 VM。</block>
+  <block id="826a9b0bd0c5de4d98b547fcc69301ff" category="cell">VirtualMachine.Config.AddNewDisk</block>
+  <block id="290f3ac3e6b4bd78ff9a9070bb2c965a" category="cell">新增磁碟</block>
+  <block id="04195979ac94ef25dd5acd4ddb6f6d46" category="cell">允許建立新的虛擬磁碟以新增至 VM。</block>
+  <block id="87a51990ea0f64db3976bc03be144283" category="cell">VirtualMachine.Config.RemoveDisk</block>
+  <block id="175d3bc37a203b0e58c2d1bb572971de" category="cell">移除磁碟</block>
+  <block id="23f63c2f1d737c005d58d613f81f3d37" category="cell">允許移除虛擬磁碟裝置。</block>
+  <block id="3e323562bd488e4cbd90a025b9424181" category="section-title">2026 年 6 月 08 日</block>
+  <block id="0926e17414694f3b4201b416c6c4a6ca" category="paragraph">版本 4.3.4</block>
+  <block id="7aa7ac5ef00e37e99f8bb57b253d37ed" category="paragraph">在執行即時容錯移轉之前，您可以執行測試以檢查您的準備程度。工作負載在測試過程中仍保持線上狀態。</block>
+  <block id="f5fa15f6901bb980064f0a1e081fbfb7" category="list-text">在「測試容錯移轉」頁面中，選擇用於測試容錯移轉的快照：選取 **立即建立快照** 或 **選取** 以選擇現有快照。如果選擇 **選取**，請選擇現有快照。</block>
+  <block id="0a07084d59200e5f62afd96db98a68b5" category="paragraph">然後輸入「Test failover」，並選擇 *Test fail over*。</block>
+  <block id="962e92831673929912f04cd68819059b" category="admonition">如果複寫計畫包含空的資料存放區，您必須先從計畫中移除空的資料存放區，或使用 **Force failover** 選項，該選項會跳過空的資料存放區。</block>
+  <block id="919dfe02d5a57784fd83bb645e8f8b8e" category="paragraph">變更保留計數可讓您增加或減少儲存的快照數量。</block>
+  <block id="e363882b79ccd237ac1f4dd679c679c2" category="paragraph">如果作業卡住了，或者為了優先處理待處理的操作，您可以取消正在進行中或處於佇列狀態的作業。</block>
+  <block id="caf5841d5a0afa8a150bf6da9c22fc2f" category="list-text">在工作負載下拉式選單中，將篩選器設定為 *Kubernetes* 。</block>
+  <block id="86839797735bfc02dea42929601e887a" category="list-text">在「設定」視窗中，視需要編輯欄位。</block>
+  <block id="83cfc8bb47b46515d41842fa32fa608b" category="list-text">若要自訂探索排程，請勾選 *Enable scheduled discovery* 核取方塊。選擇探索開始日期以及探索間隔（以小時和分鐘為單位）。</block>
 </blocks>

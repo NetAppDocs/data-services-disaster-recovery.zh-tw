@@ -30,6 +30,15 @@ summary: vCenter 帳戶必須擁有一組最少的 vCenter 權限，才能讓 Ne
 | Datastore.Rename | 重新命名資料存放區 | 允許重新命名資料存放區。 
 
 
+.2+| 主機 | 主機設定。AdvancedConfig | 進階設定 | 允許設定進階主機組態選項。 
+
+
+| 主機.組態.儲存 | 儲存分割區組態 | 允許掃描新的儲存設備並管理 iSCSI。 
+
+
+| 資源 | Resource.AssignVMToPool | 資源池 | 允許將 VM 指派給資源池 
+
+
 .3+| 資料夾 | 建立資料夾 | 建立資料夾 | 允許建立新資料夾。 
 
 
@@ -45,7 +54,16 @@ summary: vCenter 帳戶必須擁有一組最少的 vCenter 權限，才能讓 Ne
 | Network.Config | 設定 | 允許配置網路。 
 
 
-.9+| 虛擬機器組態 | VirtualMachine.Config.AdvancedConfig | 進階組態 | 允許在 VM 的組態檔中新增或修改進階參數。 
+.12+| 虛擬機器組態 | VirtualMachine.Config.AdvancedConfig | 進階組態 | 允許在 VM 的組態檔中新增或修改進階參數。 
+
+
+| VirtualMachine.Config.AddExistingDisk | 新增現有磁碟 | 允許將現有虛擬磁碟新增至 VM。 
+
+
+| VirtualMachine.Config.AddNewDisk | 新增磁碟 | 允許建立新的虛擬磁碟以新增至 VM。 
+
+
+| VirtualMachine.Config.RemoveDisk | 移除磁碟 | 允許移除虛擬磁碟裝置。 
 
 
 | VirtualMachine.Config.Settings | 更改設定 | 允許變更一般 VM 設定。 

@@ -1,0 +1,61 @@
+= Kubernetes 更新
+:allow-uri-read: 
+
+
+
+
+=== Kubernetes 更新
+
+災難恢復針對基於 Kubernetes 的工作負載引入了以下變更：
+
+
+
+==== 測試 Kubernetes 工作負載的容錯移轉支援
+
+災難復原功能現已支援對 Kubernetes 工作負載的故障轉移流程進行測試。透過測試故障轉移，您可以驗證災難復原計劃。測試完成後，您可以清理測試故障轉移，系統會自動清理測試資源，從而降低系統開銷並確保環境的一致性。
+
+如需詳細資訊，請參閱link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/failover.html#test-the-failover-process["測試故障轉移過程"^]。
+
+
+
+==== 排程測試容錯移轉
+
+現在，您可以透過排程測試容錯移轉來自動化災難恢復測試。您可以設定定期測試容錯移轉的排程，以持續驗證恢復計畫而無需人工介入，有助於維持對恢復目標的信心並符合法規遵循要求。
+
+如需詳細資訊，請參閱link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/manage.html#manage-replication-plans["管理複製計劃"^]。
+
+
+
+==== Kubernetes 工作負載的排程探索
+
+透過排程探索，您可以控制 Disaster Recovery 掃描新 Kubernetes 工作負載的頻率。您可以設定探索時間間隔，以符合您的作業節奏，減少不必要的系統負荷，同時確保及時偵測並保護新的工作負載。
+
+如需詳細資訊，請參閱link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/sites-add.html#edit-the-site-and-customize-the-discovery-schedule["自訂探索排程"^]。
+
+
+
+=== VMware 更新
+
+
+
+==== 保護空資料存放區
+
+災難復原功能現在允許為不包含任何虛擬機器（VM）的資料儲存配置保護。之後新增到資料儲存中的任何 VM 都會被 Disaster Recovery 自動偵測，此時您需要提供link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/sites-add.html#add-subnet-mapping-for-a-vcenter-site["對應資訊"^]。
+
+將空資料存放區新增至保護計畫時，您必須先從保護計畫中移除該資料存放區，然後再執行容錯移轉，或執行強制容錯移轉。如需詳細資訊、請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/failover.html["容錯移轉至遠端站台"^]。
+
+
+
+==== 將先前排除的資料存放區還原至保護計畫
+
+先前被排除在保護範圍之外的資料存放區現在可以重新納入保護範圍。這項增強功能在長期管理和更新災難恢復組態時提供了更大的靈活性。
+
+如需詳細資訊，請參閱link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/manage.html["管理網站、資源群組和複製計劃"^]。
+
+
+
+==== 加快基於 VMFS 的資料存放區容錯移轉速度
+
+災難復原功能提升了基於 VMFS 的資料存放區的容錯移轉效能。主機匯流排介面卡 (HBA) 重新掃描和資料存放區掛載作業現在可以並行執行，從而縮短整體容錯移轉時間，並最大限度地減少還原事件期間的停機時間。
+
+如需容錯移轉的詳細資訊，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/failover.html["透過災難復原進行容錯移轉"^]。

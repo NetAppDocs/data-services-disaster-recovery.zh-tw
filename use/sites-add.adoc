@@ -17,7 +17,7 @@ summary: 在建立災難復原計畫之前，您需要在NetApp Disaster Recover
 
 TIP: 請確保來源端和目的端都使用相同的 NetApp Console agent。
 
-*所需 NetApp Console 角色* 需要 Super admin 或 Disaster recovery admin 才能執行此任務。link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["了解NetApp Disaster Recovery中的使用者角色和權限"]. https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服務的NetApp Console存取角色"^].
+*必要的 NetApp Console 角色* 執行此工作需要 Super admin 或 Disaster recovery admin 角色。link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["了解NetApp Disaster Recovery中的使用者角色和權限"^]。link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服務的NetApp Console存取角色"^]。
 
 
 
@@ -129,7 +129,7 @@ image:sites-list2.png["網站頁面截圖"]
 .Kubernetes
 --
 . 在 Disaster Recovery 中，選擇側邊欄中的**站點**。
-. 在下拉式選單中，將篩選條件設定為 *Kubernetes*。
+. 在工作負載下拉式選單中，將篩選器設定為 *Kubernetes* 。
 +
 image::site-type-toggle.png[網站類型切換的螢幕擷取畫面]
 
@@ -245,6 +245,8 @@ NOTE: 如果有兩個虛擬機器（例如，一個是 Linux，另一個是 Wind
 . 從NetApp Disaster Recovery選單中，選擇 *網站*。
 . 選擇您要編輯的網站。
 . 選擇操作image:icon-vertical-dots.png["操作圖示"]右側的圖示並選擇*編輯*。
+. 在「設定」視窗中，視需要編輯欄位。
+. 若要自訂探索排程，請勾選 *Enable scheduled discovery* 核取方塊。選擇探索開始日期以及探索間隔（以小時和分鐘為單位）。
 . 在編輯 vCenter 伺服器頁面中，根據需要編輯欄位。
 . 若要自訂發現計劃，請勾選「啟用計劃發現」方塊並選擇所需的日期和時間間隔。
 +

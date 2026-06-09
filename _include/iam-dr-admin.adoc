@@ -1,0 +1,5 @@
+= 
+:allow-uri-read: 
+
+
+*必要的 NetApp Console 角色* 執行此工作需要 Super admin 或 Disaster recovery admin 角色。link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["了解NetApp Disaster Recovery中的使用者角色和權限"^]。link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服務的NetApp Console存取角色"^]。
