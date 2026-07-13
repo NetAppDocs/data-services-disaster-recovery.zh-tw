@@ -1082,12 +1082,10 @@
   <block id="d26cf1f0512a50b32d5a10b931f5fbe0" category="list-text">查看活動窗格中的所有操作。若要查看作業監視器上的所有操作，請選擇「查看所有作業」。</block>
   <block id="d15994bcf2411bb66762cdf4c58704b3" category="doc">在NetApp Disaster Recovery中建立複製計劃</block>
   <block id="78166ce4ccceeedfbf6aeb8682851072" category="paragraph">*關於此任務*</block>
-  <block id="978c7c7ea4c54312c02456ee28acd332" category="paragraph">您可以建立複製計劃並編輯合規性和測試計劃。執行虛擬機器的測試故障轉移而不影響生產工作負載。</block>
   <block id="fba54b7da5e3ceabe7362e860f7df87d" category="paragraph">您可以保護多個資料儲存上的多個虛擬機器。  NetApp Disaster Recovery為託管受保護 VM 資料儲存的所有ONTAP磁碟區建立ONTAP一致性群組。</block>
   <block id="e7d31fc0602fb2ede144d18cdffd816b" category="list-text">準備好</block>
   <block id="eca4b06cc957b067c25916bf563bfcb1" category="list-text">故障回復已提交</block>
   <block id="55af57d923ed95c2495c25a0e4762077" category="list-text">測試故障轉移已提交</block>
-  <block id="2cd55dfb5ccc1ffae31967c7321620ec" category="paragraph">*複製計劃快照*</block>
   <block id="65dd859759570a8a07801053fcf54421" category="paragraph">災難復原在來源叢集和目標叢集上維護相同數量的快照。預設情況下，該服務每 24 小時執行一次快照協調過程，以確保來源叢集和目標叢集上的快照數量相同。</block>
   <block id="4e5a9a818385822100abb8be4a2ef9c3" category="paragraph">以下情況可能會導致來源集群和目標集群之間的快照數量不同：</block>
   <block id="44dfcfef8dbab15db411756f3ccc6b01" category="list-text">某些情況可能會導致災難復原以外的ONTAP操作在磁碟區中新增或刪除快照：</block>
@@ -1096,10 +1094,7 @@
   <block id="4a72656aa601ed9d31033e4be368a919" category="list-text">複製計劃的快照保留計數的減少可能導致服務刪除來源網站和目標網站上最舊的快照以滿足新減少的保留數量。</block>
   <block id="49ff95b6dcd137f59a6acecf04a4c3b1" category="inline-image-macro">水平點操作選單</block>
   <block id="7639ea3b77d367f127d70d668027673c" category="paragraph">在這些情況下，災難復原會在下一次一致性檢查時從來源和目標叢集中刪除較舊的快照。或者，管理員可以透過選擇「操作」立即執行快照清理<block ref="6b4b871445179eda383c81faf6cf5a92" category="inline-image-macro-rx" type="image"></block>複製計劃上的圖示並選擇*清理快照*。</block>
-  <block id="3f1d340403a26ed0ad46982a91385d32" category="paragraph">該服務每 24 小時執行一次快照對稱性檢查。</block>
-  <block id="17e2d63e3b45ecbfe13bcc32fec929d0" category="paragraph">*開始之前*</block>
   <block id="1059d7b16ffe2236c36ae0e8c15872ca" category="paragraph">在建立SnapMirror關係之前，請在災難復原之外設定叢集和 SVM 對等關係。</block>
-  <block id="89dd75b1f79276c7e30e794e1c739f04" category="section-title">創建計劃</block>
   <block id="4f27ef77939e5393adc6b44aec83a6b7" category="paragraph">精靈將引導您完成以下步驟：</block>
   <block id="3baff38a392d31950fc8d4d62ea2adc0" category="list-text">選擇 vCenter 伺服器。</block>
   <block id="d813bc25d25a7f816dde51c17f6c6ba0" category="list-text">映射資源如何從來源環境映射到目標。</block>
@@ -1319,7 +1314,6 @@
   <block id="ee9e0fb0a09a468f33fa6f2dabc4ff49" category="inline-image-macro">編輯故障轉移映射頁面</block>
   <block id="2aef38b97efb9369d3e496e8d062d8fd" category="paragraph"><block ref="2aef38b97efb9369d3e496e8d062d8fd" category="inline-image-macro-rx" type="image"></block></block>
   <block id="e3a15d734e1eafd89e04f5eb526ec5cc" category="list-text">選擇複製計劃後，選擇“操作”選單，然後選擇“清理舊快照”以刪除目標上的舊快照以符合新的保留計數。</block>
-  <block id="a6dcfee4cd10f2ad60c3d81bc2a3b8ad" category="section-title">查看資料儲存資訊</block>
   <block id="432624070ae1b8a0b19fd42c048a224c" category="paragraph">您可以查看有關來源和目標上存在多少資料儲存區的資訊。</block>
   <block id="7e551addf2432bb9127be36e3a23db1c" category="list-text">從選單中選擇*儀表板*。</block>
   <block id="5e141a758f792ce4ad7e1b2107b1f7a4" category="list-text">在站點行中選擇 vCenter。</block>
@@ -2319,7 +2313,6 @@
   <block id="fd41d6f681fcde1d5668de60a04c0563" category="paragraph"><block ref="fa5ae6d9db1798cb96b18ea5809b60d9" prefix="" category="inline-code"></block></block>
   <block id="83e1151ac17b113708a4a8f22a39063c" category="list-text"><block ref="83e1151ac17b113708a4a8f22a39063c" category="inline-link-macro-rx"></block></block>
   <block id="d1078d331fc762f6c1e11445777639f1" category="list-text">檢閱 <block ref="e169d85ddc666c008a7e023ca382e5b3" category="inline-link-macro-rx"></block> 。</block>
-  <block id="3e2600f2f1048cf9d96b25b85a3b12b5" category="paragraph">新增資源和網站後，即可建立_複寫計畫_。複寫計畫用於管理資料保護。建立複寫計畫包括指定來源網站和目標網站、選擇資源群組，以及選擇應用程式的還原和啟動方式。例如，您可以將與相同應用程式關聯的虛擬機器 (VM) 分組，也可以將具有相似層級的應用程式分組。</block>
   <block id="fd0863d0dc188b339645e359055610e4" category="admonition">在部署 NetApp Disaster Recovery 之前，請先組織好您的 VM 或 Kubernetes 叢集，以最大程度地減少資源蔓延。將需要保護的資源放置在部分資料儲存區上，將不需要保護的資源放置在另一部分資料儲存區上。若要在建立複寫計畫之前組織資源群組，請參閱 <block ref="2e9e1519a300bb9dc6a403652e82bcd7" category="inline-link-macro-rx"></block>。</block>
   <block id="65dea983a95654f072023e3fd251790f" category="list-text">對於 *Source*，請選擇 vCenter 或 Kubernetes 叢集以指定為來源。</block>
   <block id="56da8dc4cd41826eefa46f92a1310a8b" category="paragraph">下一步是將所需的 VM、資料存放區或 Kubernetes 叢集分組到功能資源群組。資源群組可讓您使用通用快照保護一組資源，例如 Kubernetes 叢集或 VM。</block>
@@ -2404,10 +2397,48 @@
   <block id="7aa7ac5ef00e37e99f8bb57b253d37ed" category="paragraph">在執行即時容錯移轉之前，您可以執行測試以檢查您的準備程度。工作負載在測試過程中仍保持線上狀態。</block>
   <block id="f5fa15f6901bb980064f0a1e081fbfb7" category="list-text">在「測試容錯移轉」頁面中，選擇用於測試容錯移轉的快照：選取 **立即建立快照** 或 **選取** 以選擇現有快照。如果選擇 **選取**，請選擇現有快照。</block>
   <block id="0a07084d59200e5f62afd96db98a68b5" category="paragraph">然後輸入「Test failover」，並選擇 *Test fail over*。</block>
-  <block id="962e92831673929912f04cd68819059b" category="admonition">如果複寫計畫包含空的資料存放區，您必須先從計畫中移除空的資料存放區，或使用 **Force failover** 選項，該選項會跳過空的資料存放區。</block>
   <block id="919dfe02d5a57784fd83bb645e8f8b8e" category="paragraph">變更保留計數可讓您增加或減少儲存的快照數量。</block>
   <block id="e363882b79ccd237ac1f4dd679c679c2" category="paragraph">如果作業卡住了，或者為了優先處理待處理的操作，您可以取消正在進行中或處於佇列狀態的作業。</block>
   <block id="caf5841d5a0afa8a150bf6da9c22fc2f" category="list-text">在工作負載下拉式選單中，將篩選器設定為 *Kubernetes* 。</block>
   <block id="86839797735bfc02dea42929601e887a" category="list-text">在「設定」視窗中，視需要編輯欄位。</block>
   <block id="83cfc8bb47b46515d41842fa32fa608b" category="list-text">若要自訂探索排程，請勾選 *Enable scheduled discovery* 核取方塊。選擇探索開始日期以及探索間隔（以小時和分鐘為單位）。</block>
+  <block id="a3385cf694f169469155cf608126cc13" category="section-title">從「網站」選單管理 Trident Protect</block>
+  <block id="d108f39d7ac8db7fc5eab434cd7df7fc" category="paragraph">現在，災難復原功能支援直接從災難復原使用者介面中的「網站」選單管理 Trident Protect。您可以升級 Trident Protect 或將其從災難復原功能中移除，從而簡化 Kubernetes 資源的管理。</block>
+  <block id="ceb6da856e73533ddb08cf15abe120b7" category="inline-link-macro">管理網站</block>
+  <block id="cee9739236651212176e7c87838bb2d3" category="paragraph">如需詳細資訊，請參閱 <block ref="b4c4c365d924dbf2ff79378d36f70a71" category="inline-link-macro-rx"></block>。</block>
+  <block id="cc6fa95b1e18a1fb7c53cf32734ead26" category="paragraph">災難復原功能針對基於 VMware 的工作負載引入了以下變更：</block>
+  <block id="7f2d139bc27153ad07daea80fab0a433" category="section-title">空資料存放區容錯移轉</block>
+  <block id="bfea9e3d533bac76e79429a83d38837c" category="paragraph">現在，即使複製計劃中包含空資料存放區，也可以成功進行容錯移轉，而無需將其從計劃中排除或強制執行容錯移轉。在容錯移轉期間，Disaster Recovery 會自動將空資料存放區掛載到災難復原站台，從而允許新增 VM 並對其進行保護，以進行容錯回復作業。</block>
+  <block id="d3835be5f3c2a797d5fc948f95289e0c" category="paragraph">如需詳細資訊，請參閱 <block ref="a16180f75826879573c72d14ccfccc18" category="inline-link-macro-rx"></block>。</block>
+  <block id="0fddd8fb8cd772934e1e5021d105b7fb" category="section-title">vCenter 網路自動映射</block>
+  <block id="07efa6bd1ca4b90d1c4eb002786f661b" category="paragraph">現在您可以在 vCenter 層級（即複製計畫對話方塊之外）設定網路對映關係。設定完成後，災難復原會在您新增或編輯複製計畫時自動套用這些網路對映，從而簡化複製計畫管理。</block>
+  <block id="1eee5c19633b811fc646be143dcd283f" category="paragraph">災難復原功能繼續支援按計劃進行覆蓋。複製計劃中定義的現有網路映射仍然可以按網路進行編輯；這些映射優先於 vCenter 層級定義。</block>
+  <block id="d315df6836105d6791cc83a6539ee7e9" category="section-title">災難復原檢視器角色限縮</block>
+  <block id="266377e44a916fdf2cc18bfbb23cf6bf" category="paragraph">「升級系統」標籤已從災難復原檢視者角色中移除。此變更旨在使該角色與唯讀使用者的體驗更加一致。<block ref="8100c1fe7b8d110e1492908ee1d65a0c" category="inline-link-macro-rx"></block>。</block>
+  <block id="3ddd9403dd985627a83f357af005a768" category="section-title">系統效能提升</block>
+  <block id="baa35064269b3904d8b57c0745ca18f8" category="paragraph">災難復原功能引進了多項變更，旨在降低系統資源消耗並提升各項作業的效能。</block>
+  <block id="de2e4685966d24481dfab35c95ad44dc" category="section-title">2026年7月13日</block>
+  <block id="17d61647c38ceaeec784c2ea23dd1f02" category="paragraph">版本 4.3.5</block>
+  <block id="460dfd853a44f41cd7e36e73abb3183d" category="paragraph">新增資源和網站後，請建立複寫計畫以管理資料保護。建立複寫計畫包括指定來源網站和目標網站、選擇資源群組以及選擇應用程式的復原和啟動方式。例如，您可以將與相同應用程式關聯的虛擬機器 （VM） 分組，也可以將具有相似層級的應用程式分組。</block>
+  <block id="64a6f997b6cbcf26c538dbf71179cfe3" category="paragraph">建立複寫計畫時，您也可以編輯合規性和測試排程，執行測試容錯移轉，而不會影響您的正式作業資料。</block>
+  <block id="aa0c550dfb503c90e6b173a0a07f63e0" category="section-title">關於複製計劃</block>
+  <block id="70e9daad0ce38ec31033633e81624571" category="section-title">複製計劃快照</block>
+  <block id="f4cbef5ca3f18eff6d1ab043a838c42d" category="paragraph">災難復原每 24 小時執行一次快照對稱性檢查。</block>
+  <block id="0199f8e45e93965175d2ac0013366462" category="list-text">如果在 vCenter 層級設定網路映射，災難復原系統會在建立複製計畫時識別這些映射。如果在建立複製計畫後於 vCenter 層級修改或新增網路映射，災難復原系統會在手動編輯複製計畫時識別這些映射。</block>
+  <block id="8545a0d7cdafff8da2dece1a851630dc" category="section-title">管理 Trident Protect</block>
+  <block id="3609f175bfca3663a769d710b6693940" category="paragraph">在災難復原使用者介面中，您可以升級或移除 Trident Protect。</block>
+  <block id="516ee22feede3bac94e552d7d7d47c7a" category="list-title">升級 Trident Protect</block>
+  <block id="852fd4e3ec5d4c29fa8a8cefa3c21471" category="list-text">在 Disaster Recovery 中，從側邊欄選擇 **Sites**。</block>
+  <block id="8cfefefc34bbe900b668594477ef4ad5" category="list-text">在下拉式選單中選擇**Kubernetes**。</block>
+  <block id="78804847b12a6563801a02b538c145df" category="list-text">在要修改的叢集的操作選單中，選擇 **Upgrade cluster**。</block>
+  <block id="d67cab9a5414e00a7ccf215f2d7dbd33" category="inline-link-macro">Trident 發行說明</block>
+  <block id="2a5efaa429a3a54de621dd8d0ad21ea4" category="list-text">在「選擇目標版本」下拉式選單中，選擇要升級至的 Trident Protect 版本。在升級之前，您應先閱讀 <block ref="135c4f4ed1782a7c491e834c1b93041f" category="inline-link-macro-rx"></block>，以了解不同版本之間的細微差異及其對叢集的影響。</block>
+  <block id="38f32ced896e30548fa0f6bcfbba01a5" category="list-text">選擇**升級**以開始升級。</block>
+  <block id="b402cd35b5fb9a57addd459fc4b1882a" category="list-title">移除 Trident Protect</block>
+  <block id="b97f5202b0568bf1ab06be0a84b05837" category="list-text">在要修改的網站的操作選單中，選擇**Remove cluster**。</block>
+  <block id="f4721b43df8877d17946e2b9dd373ced" category="list-text">查看對話方塊，然後在要移除 Trident Protect 的叢集上執行解除安裝命令：<block ref="e32e94385e578bc57593f18c76552bb7" prefix=" " category="inline-code"></block>。</block>
+  <block id="d7d19228040ec612e692641319a73229" category="list-text">若要完成 Trident Protect 的移除，請切換回災難復原使用者介面並選取**移除站台**。</block>
+  <block id="8527638a378e1869ef948cf228cb1967" category="list-title">從站台移除叢集</block>
+  <block id="2e6e87ad0d5bb097a11e43a094522ce3" category="list-text">查看對話方塊選單，然後選擇 **從網站移除**。請確保選擇正確的選項以繼續 Trident Protect 的運作。</block>
+  <block id="4c6f2ecfa631674b204ee705d90449fe" category="section-title">查看資料儲存資訊</block>
 </blocks>

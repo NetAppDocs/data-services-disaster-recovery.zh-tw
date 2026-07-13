@@ -27,6 +27,7 @@ link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-re
 
 
 
+[[manage-vcenter-sites]]
 == 管理 vCenter 站點
 
 您可以編輯 vCenter 網站名稱和網站類型（本機或 AWS）。
@@ -41,6 +42,7 @@ link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-re
 
 
 
+[[manage-resource-groups]]
 == 管理資源組
 
 您可以按虛擬機器或資料儲存建立資源組。它們可以在建立複製計劃時添加，也可以在建立複製計劃之後添加。
@@ -71,6 +73,7 @@ link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-re
 
 
 
+[[manage-replication-plans]]
 == 管理複製計劃
 
 您可以停用、啟用和刪除複製計劃。您可以更改時間表。
@@ -108,6 +111,7 @@ image:../use/dr-plan-list.png["複製計劃列表"]
 
 
 
+[[reconcile-snapshots-on-demand]]
 === 按需協調快照
 
 災難復原功能每 24 小時自動刪除來源上的快照。如果發現來源和目標之間的快照不同步，則需要解決快照之間的差異，以確保網站之間的一致性。
@@ -126,6 +130,7 @@ image:../use/dr-plan-list.png["複製計劃列表"]
 
 
 
+[[delete-a-replication-plan]]
 === 刪除複製計劃
 
 如果刪除複製計劃，您也可以刪除該計劃建立的主快照和輔助快照。
@@ -142,6 +147,7 @@ image:../use/dr-plan-list.png["複製計劃列表"]
 
 
 
+[[change-retention-count-for-failover-schedules]]
 === 更改故障轉移計劃的保留計數
 
 變更保留計數可讓您增加或減少儲存的快照數量。
@@ -161,6 +167,37 @@ image:../use/dr-plan-failover-edit.png["編輯故障轉移映射頁面"]
 
 
 
+[[manage-trident-protect]]
+== 管理 Trident Protect
+
+在災難復原使用者介面中，您可以升級或移除 Trident Protect。
+
+.升級 Trident Protect
+. 在 Disaster Recovery 中，從側邊欄選擇 **Sites**。
+. 在下拉式選單中選擇**Kubernetes**。
+. 在要修改的叢集的操作選單中，選擇 **Upgrade cluster**。
+. 在「選擇目標版本」下拉式選單中，選擇要升級至的 Trident Protect 版本。在升級之前，您應先閱讀 link:https://docs.netapp.com/us-en/trident/trident-rn.html["Trident 發行說明"^]，以了解不同版本之間的細微差異及其對叢集的影響。
+. 選擇**升級**以開始升級。
+
+
+.移除 Trident Protect
+. 在 Disaster Recovery 中，從側邊欄選擇 **Sites**。
+. 在下拉式選單中選擇**Kubernetes**。
+. 在要修改的網站的操作選單中，選擇**Remove cluster**。
+. 查看對話方塊，然後在要移除 Trident Protect 的叢集上執行解除安裝命令： `helm uninstall trident-protect -n trident-protect`。
+. 若要完成 Trident Protect 的移除，請切換回災難復原使用者介面並選取**移除站台**。
+
+
+.從站台移除叢集
+. 在 Disaster Recovery 中，從側邊欄選擇 **Sites**。
+. 在下拉式選單中選擇**Kubernetes**。
+. 在要修改的網站的操作選單中，選擇**Remove cluster**。
+. 查看對話方塊選單，然後選擇 **從網站移除**。請確保選擇正確的選項以繼續 Trident Protect 的運作。
+
+
+
+
+[[view-datastore-information]]
 == 查看資料儲存資訊
 
 您可以查看有關來源和目標上存在多少資料儲存區的資訊。
@@ -176,6 +213,7 @@ image:../use/dr-plan-failover-edit.png["編輯故障轉移映射頁面"]
 
 
 
+[[view-virtual-machines-information]]
 == 查看虛擬機器資訊
 
 您可以查看來源和目標上有多少虛擬機器以及 CPU、記憶體和可用容量的資訊。

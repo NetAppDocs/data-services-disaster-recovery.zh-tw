@@ -4,6 +4,7 @@
 
 
 
+[[support-for-on-premises-to-on-premises-vmware-vmfs-datastores]]
 === 支援本機到本機到本機 VMware VMFS 資料儲存區
 
 此版本支援安裝在 VMware vSphere 虛擬機檔案系統 (VMFS) 資料儲存上的虛擬機，用於受 iSCSI 和 FC 保護的本機儲存。先前，該服務提供了支援 iSCSI 和 FC 的 VMFS 資料儲存的_技術預覽_。

@@ -4,12 +4,14 @@
 
 
 
+[[bluexp-disaster-recovery-is-now-netapp-disaster-recovery]]
 === BlueXP disaster recovery現已更名為NetApp Disaster Recovery
 
 BlueXP disaster recovery已重新命名為NetApp Disaster Recovery。
 
 
 
+[[bluexp-is-now-netapp-console]]
 === BlueXP現在是NetApp Console
 
 NetApp Console建立在增強和重組的BlueXP基礎之上，可在企業級內部和雲端環境中集中管理NetApp儲存和NetApp Data Services，提供即時洞察、更快的工作流程和簡化的管理，並且高度安全且合規。
@@ -18,6 +20,7 @@ NetApp Console建立在增強和重組的BlueXP基礎之上，可在企業級內
 
 
 
+[[other-updates]]
 === 其他更新
 
 * Amazon Elastic VMware Service (EVS) 與Amazon FSx for NetApp ONTAP的支援已公開預覽。隨著此版本的發布，它現已普遍可用。有關詳細信息，請參閱link:../reference/evs-deploy-guide-introduction.html["使用 Amazon Elastic VMware Service 和Amazon FSx for NetApp ONTAP實作NetApp Disaster Recovery"]。

@@ -4,6 +4,7 @@
 
 
 
+[[kubernetes-updates]]
 === Kubernetes 更新
 
 災難恢復針對基於 Kubernetes 的工作負載引入了以下變更：
@@ -34,6 +35,7 @@
 
 
 
+[[vmware-updates]]
 === VMware 更新
 
 

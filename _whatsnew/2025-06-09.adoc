@@ -4,6 +4,7 @@
 
 
 
+[[windows-local-administrator-password-solution-laps-support]]
 === Windows 本機管理員密碼解決方案 (LAPS) 支持
 
 Windows 本機管理員密碼解決方案 (Windows LAPS) 是 Windows 的功能，可自動管理和備份 Active Directory 上本機管理員帳戶的密碼。

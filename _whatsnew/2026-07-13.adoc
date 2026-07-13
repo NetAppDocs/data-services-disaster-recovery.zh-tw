@@ -1,0 +1,55 @@
+= Kubernetes 更新
+:allow-uri-read: 
+
+
+
+
+[[kubernetes-updates]]
+=== Kubernetes 更新
+
+災難恢復針對基於 Kubernetes 的工作負載引入了以下變更：
+
+
+
+==== 從「網站」選單管理 Trident Protect
+
+現在，災難復原功能支援直接從災難復原使用者介面中的「網站」選單管理 Trident Protect。您可以升級 Trident Protect 或將其從災難復原功能中移除，從而簡化 Kubernetes 資源的管理。
+
+如需詳細資訊，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/manage.html["管理網站"^]。
+
+
+
+[[vmware-updates]]
+=== VMware 更新
+
+災難復原功能針對基於 VMware 的工作負載引入了以下變更：
+
+
+
+==== 空資料存放區容錯移轉
+
+現在，即使複製計劃中包含空資料存放區，也可以成功進行容錯移轉，而無需將其從計劃中排除或強制執行容錯移轉。在容錯移轉期間，Disaster Recovery 會自動將空資料存放區掛載到災難復原站台，從而允許新增 VM 並對其進行保護，以進行容錯回復作業。
+
+如需詳細資訊，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/failover.html["容錯移轉至遠端站台"^]。
+
+
+
+==== vCenter 網路自動映射
+
+現在您可以在 vCenter 層級（即複製計畫對話方塊之外）設定網路對映關係。設定完成後，災難復原會在您新增或編輯複製計畫時自動套用這些網路對映，從而簡化複製計畫管理。
+
+災難復原功能繼續支援按計劃進行覆蓋。複製計劃中定義的現有網路映射仍然可以按網路進行編輯；這些映射優先於 vCenter 層級定義。
+
+
+
+[[disaster-recovery-viewer-role-tightening]]
+=== 災難復原檢視器角色限縮
+
+「升級系統」標籤已從災難復原檢視者角色中移除。此變更旨在使該角色與唯讀使用者的體驗更加一致。link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["了解NetApp Disaster Recovery中的使用者角色和權限"^]。
+
+
+
+[[system-performance-enhancements]]
+=== 系統效能提升
+
+災難復原功能引進了多項變更，旨在降低系統資源消耗並提升各項作業的效能。

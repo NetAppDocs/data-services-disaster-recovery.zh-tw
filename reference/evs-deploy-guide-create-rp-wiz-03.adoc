@@ -36,6 +36,7 @@ image:evs-create-rp-wiz-c0.png["建立複製計劃，資源映射頁面"]
 
 
 
+[[compute-resource-mapping]]
 == 計算資源映射
 
 由於一個網站可以託管多個虛擬資料中心和多個 vCenter 集群，因此您需要確定在發生故障轉移時在哪個 vCenter 集群上復原虛擬機器。
@@ -58,6 +59,7 @@ image:evs-create-rp-wiz-c-compute-resources-1-4.png["建立複製計劃、計算
 
 
 
+[[map-virtual-network-resources]]
 == 映射虛擬網路資源
 
 每個虛擬機器可以有一個或多個虛擬網路卡連接到 vCenter 網路基礎架構內的虛擬網路。為了確保每個虛擬機器在 DR 站點重新啟動時都能正確連接到所需的網絡，請確定哪些 DR 站點虛擬網絡可連接這些虛擬機器。透過將本地站點中的每個虛擬網路對應到 DR 站點上的關聯網路來實現此目的。
@@ -72,6 +74,7 @@ image:evs-create-rp-wiz-c-network-resources-1-2.png["建立複製計劃、網路
 
 
 
+[[define-options-for-vm-reconfiguration-during-failover]]
 == 定義故障轉移期間虛擬機器重新配置的選項
 
 每個虛擬機器可能都需要修改才能在 DR vCenter 站點中正常運作。虛擬機器部分使您能夠提供必要的變更。
@@ -80,6 +83,7 @@ image:evs-create-rp-wiz-c-network-resources-1-2.png["建立複製計劃、網路
 
 
 
+[[network-reconfiguration]]
 === 網路重新配置
 
 支援的 IP 位址類型為靜態和 DHCP。對於靜態 IP 位址，您有下列目標 IP 設定：
@@ -103,6 +107,7 @@ image:evs-create-rp-wiz-c-vm-resources-network-1-2.png["建立複製計劃、網
 
 
 
+[[vm-compute-resource-reconfiguration]]
 === VM 運算資源重新配置
 
 重新配置虛擬機器運算資源有多種選擇。  NetApp Disaster Recovery支援更改虛擬 CPU 的數量、虛擬 DRAM 的數量和 VM 名稱。
@@ -117,6 +122,7 @@ image:evs-create-rp-wiz-c-vm-resources-cpu-mem-1-2.png["建立複製計劃、虛
 
 
 
+[[boot-order]]
 === 啟動順序
 
 NetApp Disaster Recovery支援根據啟動順序欄位有序重啟虛擬機器。啟動順序欄位指示每個資源組中的虛擬機器如何啟動。啟動順序欄位中具有相同值的虛擬機器將會並行啟動。
@@ -131,6 +137,7 @@ image:evs-create-rp-wiz-c-vm-resources-boot-delay-1-2.png["建立複製計畫、
 
 
 
+[[custom-guest-os-operations]]
 === 自訂客戶作業系統操作
 
 NetApp Disaster Recovery支援為每個虛擬機器執行一些客戶作業系統操作：
@@ -154,6 +161,7 @@ image:evs-create-rp-wiz-c-vm-resources-ac-scripts-creds-1-2.png["建立複製計
 
 
 
+[[map-datastores]]
 == 地圖資料存儲
 
 建立複製計畫的最後一步是確定ONTAP應如何保護資料儲存庫。這些設定定義了複製計畫復原點目標 (RPO)、應維護多少個備份以及在何處複製每個 vCenter 資料儲存區的託管ONTAP磁碟區。

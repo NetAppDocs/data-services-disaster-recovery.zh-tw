@@ -4,6 +4,7 @@
 
 
 
+[[google-cloud-vmware-engine-gcve-support-is-now-generally-available-ga]]
 === Google Cloud VMware Engine（GCVE）支援現已正式發布（GA）
 
 NetApp Disaster Recovery 對 GCVE 的支援現已正式發布（GA）。正式發布後，GCVE 的 Disaster Recovery 現在支援：
