@@ -12,7 +12,7 @@ summary: NetApp Disaster Recovery是一種基於雲端的災難復原服務​�
 
 
 [role="lead"]
-使用NetApp Disaster Recovery儀表板，您可以確定災難復原網站和複製計畫的健康狀況。您可以快速確定哪些站點和計劃是健康的、斷開的或降級的。
+使用 NetApp Disaster Recovery 儀表板，您可以確定災難恢復站台和複寫計畫的健全狀況。您可以輕鬆評估哪些站台和計畫運作正常、已中斷連線或已降級。您還可以審查最近的警告和失敗的作業，以了解哪些工作負載受到保護以及哪些工作負載未受到保護，並查看容量總覽。
 
 *所需 NetApp Console 角色* 執行此任務需要超級管理員、災難復原管理員、災難復原應用程式管理員或災難復原檢視者角色。link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["了解NetApp Disaster Recovery中的使用者角色和權限"^].link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服務的NetApp Console存取角色"^].
 
@@ -23,15 +23,15 @@ summary: NetApp Disaster Recovery是一種基於雲端的災難復原服務​�
 +
 image:dr-dashboard.png["NetApp Disaster Recovery儀表板"]
 
-. 查看儀表板上的以下資訊：
+. 審查儀表板中的健全狀況資訊：
 +
 ** *站點*：查看站點的健康狀況。站點可以具有以下狀態之一：
 +
-*** *正在運行*：vCenter 已連接、健康且正在運行。
-*** *關閉*：vCenter 無法存取或有連線問題。
-*** *問題*：vCenter 無法存取或有連線問題。
+*** *Running*：站台已連接、健全且正在運行。
+*** *Down*：站台無法存取或有連線問題。
+*** *問題*：站台連線出現問題。
 +
-若要查看網站詳細信息，請選擇「查看全部」檢視狀態或選擇「檢視網站」以查看全部。
+若要查看詳細資訊，請選取 **View all sites**。
 
 
 
@@ -39,19 +39,14 @@ image:dr-dashboard.png["NetApp Disaster Recovery儀表板"]
 +
 *** *準備好*
 *** *失敗的*
+*** *警告*
 +
-若要查看複製計劃的詳細信息，請選擇“查看全部”查看狀態或選擇“查看複製計劃”以查看全部。
+若要審查複寫計畫詳細資訊，請選擇 *View all replication plans*。
 
 
 
-** *資源群組*：查看資源群組的健康狀況。資源組可以具有以下狀態之一：
-** *受保護的虛擬機器*：虛擬機器是資源組的一部分。
-** *未受保護的虛擬機器*：虛擬機器不屬於資源組的一部分。
-+
-要查看詳細信息，請選擇每個下方的“查看”連結。
-
-** 故障轉移、測試故障轉移和遷移的次數。例如，如果您建立了兩個計劃並遷移到目標，則遷移計數顯示為「2」。
 
 
-. 查看活動窗格中的所有操作。若要查看作業監視器上的所有操作，請選擇「查看所有作業」。
+. 審查「最近的警告和作業」，以查看最近執行的作業和警告及其相關狀態。選擇「檢視所有作業」可查看所有作業。
+. 審查 *Discovery and protection status* ，以查看已探索的工作負載數量，以及按類型區分的受保護與未受保護工作負載的數量明細。您也可以審查所有工作負載及按類型劃分的工作負載的總探索容量。
 

@@ -16,6 +16,56 @@ summary: NetApp Disaster Recovery 是一項基於雲端的災難復原服務，�
 
 
 
+[[10-august-2026]]
+== 2026年8月10日
+
+版本 4.3.6
+
+
+
+[[improved-dashboard]]
+=== 改進後的儀表板
+
+災難恢復儀表板已更新，提供更佳的使用者體驗，讓您能夠一目了然地全面檢視整個災難恢復環境。新版儀表板包括：
+
+* *統一的工作負載可見度* — 透過單一窗口監控 VMware 和 Kubernetes 工作負載以及底層基礎架構的健全狀況。
+* *主動發現問題* — 儀表板現在會自動標示環境問題，從而加快診斷並縮短解決問題的時間。
+* *容量使用率* — 容量計量現在直接顯示在儀表板中，讓使用者更容易了解資源消耗情況。
+
+
+如需詳細資訊，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/dashboard-view.html["在儀表板上查看NetApp Disaster Recovery計畫的運作狀況"^]。
+
+
+
+[[improved-reports]]
+=== 改善的報告
+
+報告功能已擴充，可更深入了解您環境中的 Disaster Recovery 活動：
+
+* 產生針對 VMware 工作負載、Kubernetes 工作負載或兩者的報告，讓您能夠靈活地根據對象自訂報告。
+* 每份報告都會提供指定時間內的完整活動總結，確保您對 Disaster Recovery 環境中的事件有全面的可見度。
+
+
+如需詳細資訊，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/reports.html["建立NetApp Disaster Recovery報告"^]。
+
+
+
+[[user-job-logging]]
+=== 使用者作業記錄
+
+Disaster Recovery 透過使用者層級作業記錄，提高了作業的可追溯性和可稽核性。現在，每個執行的作業都會記錄發起該作業的使用者，為法規遵循和疑難排解提供清晰的稽核追蹤。由 Disaster Recovery 自動觸發的作業會被識別為「system」，因此可以輕鬆區分使用者發起的活動和服務發起的活動。
+
+如需詳細資訊，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/monitor-jobs.html["監控NetApp Disaster Recovery作業"^]。
+
+
+
+[[performance-and-resource-optimization]]
+=== 效能和資源優化
+
+為了降低整體系統資源消耗並提高災難恢復作業的效能，我們對系統底層進行了多項改進。
+
+
+
 [[13-july-2026]]
 == 2026年7月13日
 

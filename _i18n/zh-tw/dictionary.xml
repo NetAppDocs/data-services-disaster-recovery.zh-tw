@@ -1062,24 +1062,11 @@
   <block id="b14d512a3c64fb5df16f6721b0603c63" category="paragraph">使用此選項會提示您再次登入。請注意，這些帳戶的令牌將在 90 天後過期。我們將發布通知來提醒您此事。</block>
   <block id="c3533d0746cb1de0d34486c00ae36990" category="summary">NetApp Disaster Recovery是一種基於雲端的災難復原服務​​，可自動執行災難復原工作流程。</block>
   <block id="d1a664c22b47275444c9a34501c2aac2" category="doc">在儀表板上查看NetApp Disaster Recovery計畫的運作狀況</block>
-  <block id="f236d43ec0e67c4b89d0afe52b6b6a75" category="paragraph">使用NetApp Disaster Recovery儀表板，您可以確定災難復原網站和複製計畫的健康狀況。您可以快速確定哪些站點和計劃是健康的、斷開的或降級的。</block>
   <block id="f23e4fbac73cf601cee1add8b6e11922" category="list-text">從NetApp Disaster Recovery選單中，選擇 *儀表板*。</block>
-  <block id="04edaa59dc99bd9193a5ad37083cc900" category="list-text">查看儀表板上的以下資訊：</block>
   <block id="b845a02ab309809100805f1256a064e8" category="list-text">*站點*：查看站點的健康狀況。站點可以具有以下狀態之一：</block>
-  <block id="0e17ce70dd39a8a056cb5ca0081d4526" category="list-text">*正在運行*：vCenter 已連接、健康且正在運行。</block>
-  <block id="ed4bdaafb191f860f256d0b1e88eb50e" category="list-text">*關閉*：vCenter 無法存取或有連線問題。</block>
-  <block id="45fa526b7f7589c94a8a5911f187838f" category="list-text">*問題*：vCenter 無法存取或有連線問題。</block>
-  <block id="e2438a3d730fa8490b06524ee1d8b0ed" category="paragraph">若要查看網站詳細信息，請選擇「查看全部」檢視狀態或選擇「檢視網站」以查看全部。</block>
   <block id="18c8e34abace1973ab5a4468dba74870" category="list-text">*複製計劃*：查看計劃的健康狀況。計劃可以具有以下狀態之一：</block>
   <block id="ddc1e4c30a24a09d9ea40b7e332147a4" category="list-text">*準備好*</block>
   <block id="f44027b669999f97854e8ef8c8215f16" category="list-text">*失敗的*</block>
-  <block id="71fa181482da7d95240895b60c1654ee" category="paragraph">若要查看複製計劃的詳細信息，請選擇“查看全部”查看狀態或選擇“查看複製計劃”以查看全部。</block>
-  <block id="42ad006ef72ab8b86610109a75d3073b" category="list-text">*資源群組*：查看資源群組的健康狀況。資源組可以具有以下狀態之一：</block>
-  <block id="44cd3c457f12a5322db95c67eb00d629" category="list-text">*受保護的虛擬機器*：虛擬機器是資源組的一部分。</block>
-  <block id="8a5ac28d6ec264c5863fb5328c2943db" category="list-text">*未受保護的虛擬機器*：虛擬機器不屬於資源組的一部分。</block>
-  <block id="348a99edae23b1f4e21c5ce75d209a50" category="paragraph">要查看詳細信息，請選擇每個下方的“查看”連結。</block>
-  <block id="2ce874f5717134aa8a63e219f05d39f9" category="list-text">故障轉移、測試故障轉移和遷移的次數。例如，如果您建立了兩個計劃並遷移到目標，則遷移計數顯示為「2」。</block>
-  <block id="d26cf1f0512a50b32d5a10b931f5fbe0" category="list-text">查看活動窗格中的所有操作。若要查看作業監視器上的所有操作，請選擇「查看所有作業」。</block>
   <block id="d15994bcf2411bb66762cdf4c58704b3" category="doc">在NetApp Disaster Recovery中建立複製計劃</block>
   <block id="78166ce4ccceeedfbf6aeb8682851072" category="paragraph">*關於此任務*</block>
   <block id="fba54b7da5e3ceabe7362e860f7df87d" category="paragraph">您可以保護多個資料儲存上的多個虛擬機器。  NetApp Disaster Recovery為託管受保護 VM 資料儲存的所有ONTAP磁碟區建立ONTAP一致性群組。</block>
@@ -1331,13 +1318,11 @@
   <block id="d112f103569329954b57e42717e32021" category="paragraph">您可以監控所有NetApp Disaster Recovery作業並確定其進度。</block>
   <block id="b2885babde6f690716af50f947f38fa4" category="list-text">從選單中選擇*作業監控*。</block>
   <block id="a658e38fe05c1b71ade8529d73e083db" category="list-text">探索與操作相關的所有作業並查看其時間戳記和狀態。</block>
-  <block id="a2628e207373ba02728e8a48a677eca6" category="list-text">若要查看特定作業的詳細信息，請選擇該行。</block>
   <block id="19a2cef623f0e702dd97e37e1bddd114" category="list-text">若要刷新訊息，請選擇*刷新*。</block>
   <block id="24391a0c4e58147fa07febdb32887a1a" category="section-title">取消作業</block>
   <block id="860b70267867fe6caf0f4adfd247b3e2" category="list-text">從NetApp Console左側導覽列中，選擇 *保護* &gt; *災難復原*。</block>
   <block id="26abc41be60bda806b144bd6ecedad10" category="list-text">在「作業監視器」頁面中，記下要取消的作業的 ID。</block>
   <block id="49e474835558193a9bed54c7dadf777e" category="paragraph">該作業必須處於「進行中」或「排隊」狀態。</block>
-  <block id="fa463eaf10ea5f2243e402c5c574ce96" category="list-text">在「操作」列中，選擇「取消作業」。</block>
   <block id="73f285b2a2d2e36caf8a2b3dceba3bff" category="summary">使用NetApp Disaster Recovery，您可以使用SnapMirror複製將來源站點上的 VMware 應用程式複製到雲端中的災難復原遠端站點。</block>
   <block id="5542a31575b0db973ecf1e27638145e5" category="doc">使用NetApp Disaster Recovery將應用程式複製到另一個站點</block>
   <block id="f198c3ed2ffa46dda182aca950d079a7" category="admonition">在建立NetApp Disaster Recovery Disaster Recovery每 30 分鐘驗證一次複製是否確實按照計畫進行。您可以在作業監視器頁面中監視進度。</block>
@@ -1345,15 +1330,9 @@
   <block id="860a7c0767c6d5a81c5c68c072b88c23" category="list-text">在右側，選擇“操作”選項<block ref="771645334c0631c5881bfc9858be7f5b" category="inline-image-macro-rx" type="image"></block>並選擇*複製*。</block>
   <block id="4fcb591c27b70823ff71112c0db6af4f" category="summary">查看災難復原報告可以幫助您分析災難復原準備。預先設計的報告包括故障轉移和故障回應的摘要、所有站點的複製詳細資訊以及過去一年的作業詳細資訊。</block>
   <block id="a82244df08ebf8974422f7646e0239a4" category="doc">建立NetApp Disaster Recovery報告</block>
-  <block id="840e9ba54a3eb4b6ca1ba64036216f73" category="paragraph">查看NetApp Disaster Recovery報告可以協助您分析災難復原準備狀況。預先設計的報告包括過去七天帳戶內所有站點的測試故障轉移摘要、複製計劃詳細資訊和作業詳細資訊。</block>
   <block id="8c0063a0e5fb937e4b6c45cefbf9765b" category="paragraph">您可以下載 PDF、HTML 或 JSON 格式的報表。</block>
-  <block id="cd463f7ca5dbc8268a82ea8d8f5e4281" category="paragraph">下載連結有效期限為六小時。</block>
   <block id="d034750cd0fb1d447a3cf19d364332e1" category="list-text">從NetApp Console左側導覽列中，選擇 *複製計畫*。</block>
   <block id="3b0a91a5ea7b77db2fb83f740b7d1303" category="list-text">選擇*建立報告*。</block>
-  <block id="32e3f74f58555c69fe922de2e2c5a1fb" category="list-text">選擇文件格式類型和過去 7 天內的時間段。</block>
-  <block id="bf18811faac9b8e4fcaebab51afd1113" category="list-text">選擇“*創建*”。</block>
-  <block id="5da6bcdd6ceb1c5910fb17277177402d" category="admonition">該報告可能需要幾分鐘才能顯示。</block>
-  <block id="ab6b0c72784c216662673e59f1357cc1" category="list-text">若要下載報告，請選擇*下載報告*並在管理員的下載資料夾中選擇它。</block>
   <block id="c52bb35ab590385850c5a43aeeb51966" category="doc">在NetApp Disaster Recovery中建立資源群組以組織虛擬機</block>
   <block id="68924c47e2eb51445ff8e93c1ce1bbc2" category="paragraph">您可以將虛擬機器本身或資料儲存中的虛擬機器分組。</block>
   <block id="142aa3cf2c56c4cee9658fbb7fa95634" category="paragraph">您可以使用下列方法建立資源組：</block>
@@ -2441,4 +2420,45 @@
   <block id="8527638a378e1869ef948cf228cb1967" category="list-title">從站台移除叢集</block>
   <block id="2e6e87ad0d5bb097a11e43a094522ce3" category="list-text">查看對話方塊選單，然後選擇 **從網站移除**。請確保選擇正確的選項以繼續 Trident Protect 的運作。</block>
   <block id="4c6f2ecfa631674b204ee705d90449fe" category="section-title">查看資料儲存資訊</block>
+  <block id="63459ccd5f56d025aab8953dda2cac89" category="doc">改進後的儀表板</block>
+  <block id="f682318aec1bd156e47f27a6821a89a5" category="paragraph">災難恢復儀表板已更新，提供更佳的使用者體驗，讓您能夠一目了然地全面檢視整個災難恢復環境。新版儀表板包括：</block>
+  <block id="9823d8b117c3e7a42545ab50cbf51e42" category="list-text">*統一的工作負載可見度* — 透過單一窗口監控 VMware 和 Kubernetes 工作負載以及底層基礎架構的健全狀況。</block>
+  <block id="cb6d28fda9538aed2308a2a41da8fef6" category="list-text">*主動發現問題* — 儀表板現在會自動標示環境問題，從而加快診斷並縮短解決問題的時間。</block>
+  <block id="4682c01fd7e04d919efdbb898660b551" category="list-text">*容量使用率* — 容量計量現在直接顯示在儀表板中，讓使用者更容易了解資源消耗情況。</block>
+  <block id="83ffc188b91ae4a820fc973dcb4f2932" category="paragraph">如需詳細資訊，請參閱 <block ref="8f765f2bdeedf185243a86837c41ce64" category="inline-link-macro-rx"></block>。</block>
+  <block id="1b89eeafa349152b4736736033fd9afa" category="section-title">改善的報告</block>
+  <block id="0dc7dafa2af4e7002cfea0adec9f9574" category="paragraph">報告功能已擴充，可更深入了解您環境中的 Disaster Recovery 活動：</block>
+  <block id="7f09e48950606d1acab05c889751f513" category="list-text">產生針對 VMware 工作負載、Kubernetes 工作負載或兩者的報告，讓您能夠靈活地根據對象自訂報告。</block>
+  <block id="7a778b01d59bf3ae1ff3f2feb2d289b6" category="list-text">每份報告都會提供指定時間內的完整活動總結，確保您對 Disaster Recovery 環境中的事件有全面的可見度。</block>
+  <block id="fd5ba3d3711dc4d9c0e25f25fe06d680" category="paragraph">如需詳細資訊，請參閱 <block ref="39a309d4a05fe8ce442631f7b813f522" category="inline-link-macro-rx"></block>。</block>
+  <block id="2c06591fa7a638998ecf07caf020e711" category="section-title">使用者作業記錄</block>
+  <block id="c021095f262d283ec8653a39f95e447d" category="paragraph">Disaster Recovery 透過使用者層級作業記錄，提高了作業的可追溯性和可稽核性。現在，每個執行的作業都會記錄發起該作業的使用者，為法規遵循和疑難排解提供清晰的稽核追蹤。由 Disaster Recovery 自動觸發的作業會被識別為「system」，因此可以輕鬆區分使用者發起的活動和服務發起的活動。</block>
+  <block id="42ed5c1343751a7af21890f24cd3c64e" category="paragraph">如需詳細資訊，請參閱 <block ref="40b7771ffeffc9237f3cc63a2ebdb5c0" category="inline-link-macro-rx"></block>。</block>
+  <block id="00d2a24b32e6b20b963007b68cdb131f" category="section-title">效能和資源優化</block>
+  <block id="30f4219e3688914aa51c7df386e1780b" category="paragraph">為了降低整體系統資源消耗並提高災難恢復作業的效能，我們對系統底層進行了多項改進。</block>
+  <block id="6ffc226d668d783acc3c710ae22bd61d" category="section-title">2026年8月10日</block>
+  <block id="2c613e5d46b6a88da4ef71969949f8ed" category="paragraph">版本 4.3.6</block>
+  <block id="64d5f2a483005a7cc6303c4015d43a5c" category="paragraph">使用 NetApp Disaster Recovery 儀表板，您可以確定災難恢復站台和複寫計畫的健全狀況。您可以輕鬆評估哪些站台和計畫運作正常、已中斷連線或已降級。您還可以審查最近的警告和失敗的作業，以了解哪些工作負載受到保護以及哪些工作負載未受到保護，並查看容量總覽。</block>
+  <block id="bd068902af2ce39e706eebf1c24b4d76" category="list-text">審查儀表板中的健全狀況資訊：</block>
+  <block id="a42ca2864206a93e33039e6598055690" category="list-text">*Running*：站台已連接、健全且正在運行。</block>
+  <block id="36cd7041f6cbfd714bd608ae3d78d535" category="list-text">*Down*：站台無法存取或有連線問題。</block>
+  <block id="9b2a75730600af9907e95659422ba650" category="list-text">*問題*：站台連線出現問題。</block>
+  <block id="a34ac24ac668b7073f201165e855f7fa" category="paragraph">若要查看詳細資訊，請選取 **View all sites**。</block>
+  <block id="205be22566e424b4c8a81c6d8e8864e6" category="list-text">*警告*</block>
+  <block id="f45e2c030a4c208e00f685932255a3ca" category="paragraph">若要審查複寫計畫詳細資訊，請選擇 *View all replication plans*。</block>
+  <block id="c829e7823834805c5cfdbad004224956" category="list-text">審查「最近的警告和作業」，以查看最近執行的作業和警告及其相關狀態。選擇「檢視所有作業」可查看所有作業。</block>
+  <block id="cb616e9285bb30b93344966fddafd029" category="list-text">審查 *Discovery and protection status* ，以查看已探索的工作負載數量，以及按類型區分的受保護與未受保護工作負載的數量明細。您也可以審查所有工作負載及按類型劃分的工作負載的總探索容量。</block>
+  <block id="c1f56983411f9326a2cf92b7e410cdf2" category="list-text">要檢視特定工作的詳細資訊，請選擇該列。您可以透過選擇行動選單，然後選擇「下載工作詳細資料」，下載工作詳細資料以供離線審查。</block>
+  <block id="7e8d3582ff1a097fae78e430ac2242b4" category="admonition">在審查作業詳細資料時，Disaster Recovery 會報告啟動作業的使用者。如果責任方列為「system」，則表示作業是由 Disaster Recovery 啟動的。</block>
+  <block id="69ebf4461fc9429dbfcd7813c2832c6a" category="list-text">選擇行動選單，然後選擇**取消作業**。</block>
+  <block id="c6f5d2645082be603586c7fcecedd01e" category="doc">在 NetApp Disaster Recovery 中建立報告</block>
+  <block id="458bdb93da448c5d3e7bece387f1c4d2" category="paragraph">NetApp Disaster Recovery 報告可以幫助您分析災難恢復準備狀況。報告提供有關複寫計畫的深入資訊，包括計畫涵蓋的資源群組、虛擬機器或 Kubernetes 叢集以及資料存放區的數量。報告也會顯示法規遵循狀態、作業總結以及備份設定，例如恢復點目標 （RPO） 和保留計數。</block>
+  <block id="466b68043567b88303b6c00217b4aeb5" category="paragraph">報告下載連結在產生後六小時內有效。</block>
+  <block id="c5cbff21ca879b1c12f07a2c7ced7d25" category="list-text">登入 <block ref="3127a7e60ca42a30e72a85e6e4e87658" category="inline-link-macro-rx"></block>。</block>
+  <block id="86179d32bfddb5ed25033adf646f60d7" category="list-text">選擇要報告範圍的*工作負載*：Kubernetes、VMware 或全部。</block>
+  <block id="a4b18ba0532b0bf268eb0e3e25dcb79c" category="list-text">請選擇報告應涵蓋的*檔案類型*（PDF、HTML 或 JSON）和*時間段*（過去 1 天到 7 天之間）。</block>
+  <block id="a5a7078aa40bb08318bf73843094da19" category="image-alt">建立報告的螢幕截圖</block>
+  <block id="3d5401fc3d8a7a798c226379efd0e54a" category="list-text">選擇 *Create* 以產生報告。</block>
+  <block id="c7752461db4ae72d9cab16a4731fae88" category="admonition">產生報告可能需要幾分鐘。</block>
+  <block id="570cb7369470f1ec54ee8b421baca86e" category="list-text">在複寫計畫儀表板上，選擇 *Download report*。</block>
 </blocks>
