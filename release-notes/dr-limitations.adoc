@@ -4,7 +4,7 @@ permalink: release-notes/dr-limitations.html
 keywords: disaster recovery, bluexp 
 summary: 已知限制標識了此版本服務不支援或無法與其正確互通的平台、裝置或功能。 
 ---
-= NetApp Disaster Recovery的局限性
+= NetApp Disaster Recovery 中的已知限制
 :hardbreaks:
 :allow-uri-read: 
 :icons: font

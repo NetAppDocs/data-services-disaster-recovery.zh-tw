@@ -4,7 +4,7 @@ permalink: reference/evs-deploy-guide-config-add-arrays.html
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter,amazon elastic vmware service 
 summary: 在使用NetApp Disaster Recovery之前，您必須將內部部署和雲端託管儲存實例新增至NetApp Console系統。 
 ---
-= 使用NetApp Disaster Recovery功能將本機陣列新增至適用於 Amazon EVS 的NetApp Console系統
+= 將內部部署陣列新增至 NetApp Console for Amazon EVS，並搭配 NetApp Disaster Recovery
 :allow-uri-read: 
 
 

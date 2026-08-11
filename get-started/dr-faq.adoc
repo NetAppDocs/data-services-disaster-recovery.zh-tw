@@ -4,7 +4,7 @@ permalink: get-started/dr-faq.html
 keywords: disaster recovery faq, disaster recovery frequently asked questions 
 summary: 如果您只是想快速找到問題的答案，此常見問題解答可以為您提供協助。 
 ---
-= NetApp Disaster Recovery常見問題解答
+= NetApp Disaster Recovery 常見問題解答
 :hardbreaks:
 :allow-uri-read: 
 :icons: font

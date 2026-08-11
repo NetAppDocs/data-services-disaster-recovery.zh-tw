@@ -4,7 +4,7 @@ permalink: use/dashboard-view.html
 keywords: disaster recovery remediate, disaster recovery, failover, failback, replication, bluexp, netapp 
 summary: NetApp Disaster Recovery是一種基於雲端的災難復原服務​​，可自動執行災難復原工作流程。 
 ---
-= 在儀表板上查看NetApp Disaster Recovery計畫的運作狀況
+= 在 NetApp Disaster Recovery 中檢視災難恢復計畫的健全狀況
 :hardbreaks:
 :allow-uri-read: 
 :icons: font

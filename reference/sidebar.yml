@@ -18,8 +18,6 @@ entries:
     url: "/reference/evs-deploy-guide-install-connector.html"
   - title: 為 Amazon EVS 配置NetApp Disaster Recovery
     entries:
-    - title: 為 Amazon EVS 配置NetApp Disaster Recovery概述
-      url: "/reference/evs-deploy-guide-config-draas.html"
     - title: Amazon EVS 的先決條件
       url: "/reference/evs-deploy-guide-config-prereqs.html"
     - title: 為 Amazon EVS 新增ONTAP儲存陣列
@@ -30,18 +28,10 @@ entries:
       url: "/reference/evs-deploy-guide-add-sites.html"
     - title: 為 Amazon EVS 新增 vCenter 集群
       url: "/reference/evs-deploy-guide-add-vcenters.html"
-  - title: 為 Amazon EVS 建立複製計劃
+  - title: 設定 Amazon EVS 的複寫計畫
     entries:
-    - title: 建立 Amazon EVS 複製計劃概覽
+    - title: 為 Amazon EVS 建立複製計劃
       url: "/reference/evs-deploy-guide-creating-replication-plans.html"
-    - title: 為 Amazon EVS 建立複製計畫第 1 步
-      url: "/reference/evs-deploy-guide-create-rp-wiz-01.html"
-    - title: 為 Amazon EVS 建立複製計畫第 2 步
-      url: "/reference/evs-deploy-guide-create-rp-wiz-02.html"
-    - title: 為 Amazon EVS 建立複製計畫步驟 3
-      url: "/reference/evs-deploy-guide-create-rp-wiz-03.html"
-    - title: 為 Amazon EVS 建立複製計畫第 4 步
-      url: "/reference/evs-deploy-guide-create-rp-wiz-04.html"
     - title: 驗證 Amazon EVS 的複製計劃
       url: "/reference/evs-deploy-guide-verify-rp.html"
   - title: 執行複製計劃操作
