@@ -71,7 +71,7 @@ summary: NetApp Disaster Recovery是一種基於雲端的災難復原服務​�
 | *MirrorAll* | 建議 | 請勿使用 SnapMirror 傳輸快照進行容錯移轉或容錯回復操作。 
 
 
-| *MirrorVault* .2+| 替代建議 .2+| 請確保在故障轉移或故障復原期間選擇的快照同時存在於來源和目的地 Volume 上。否則，將出現以下錯誤：「Transition to 'snapmirrored' state failed.Reason: No common snapshot found.」 
+| *MirrorVault* .2+| 替代建議 .2+| 請確保在故障轉移或故障復原期間選擇的快照同時存在於來源和目的地 Volume 上。否則，將出現以下錯誤：「Transition to 'snapmirrored' state failed.Reason: No common snapshot found.」請勿使用 SnapMirror 傳輸快照進行容錯移轉或容錯回復操作。 
 
 
 | *非同步* 

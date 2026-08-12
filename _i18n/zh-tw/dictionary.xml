@@ -2418,7 +2418,6 @@
   <block id="f2489988adcc83c8328b64c01b5308d6" category="cell">請勿使用 SnapMirror 傳輸快照進行容錯移轉或容錯回復操作。</block>
   <block id="8635bfe3dfd0446a5bc45f3c73546984" category="cell">*MirrorVault*</block>
   <block id="40cfffad2f3d0e318535cd9e00394b01" category="cell">替代建議</block>
-  <block id="1c03e501e1cc5d812343e62be1c30caf" category="cell">請確保在故障轉移或故障復原期間選擇的快照同時存在於來源和目的地 Volume 上。否則，將出現以下錯誤：「Transition to 'snapmirrored' state failed.Reason: No common snapshot found.」</block>
   <block id="bca192e71c231d6ab9a907fd44cc17f3" category="cell">*非同步*</block>
   <block id="e03f6f41d6ba74d93a81feb52f770dea" category="cell">*MirrorLatest*</block>
   <block id="3ccbb106bb4a2ad8ae674a099a17e670" category="cell">_NOT_ 建議</block>
@@ -2431,4 +2430,5 @@
   <block id="05823e82f50bb96f9783ed51efa47a1c" category="list-text">*使用平台代管的備份和保留計畫*：如果您使用外部快照管理解決方案，請選取此核取方塊。災難恢復支援使用外部快照管理解決方案，例如原生 ONTAP SnapMirror 原則排程器或第三方整合。如果複寫計畫中的每個資料儲存區（Volume）都已有一個由其他位置管理的 SnapMirror 關係，您可以將這些快照用作 NetApp Disaster Recovery 中的恢復點。</block>
   <block id="18dcf9b091544785104de7fe70a61388" category="doc">使用 NetApp Disaster Recovery 管理站台、資源群組和複寫計劃</block>
   <block id="8f2bfb22b13c9aac8af0825753fd1e67" category="sidebar">設定 Amazon EVS 的複寫計畫</block>
+  <block id="139e8f63e4cf3154556b863a379b708f" category="cell">請確保在故障轉移或故障復原期間選擇的快照同時存在於來源和目的地 Volume 上。否則，將出現以下錯誤：「Transition to 'snapmirrored' state failed.Reason: No common snapshot found.」請勿使用 SnapMirror 傳輸快照進行容錯移轉或容錯回復操作。</block>
 </blocks>
