@@ -14,11 +14,11 @@ summary: 災難復原至雲端是一種彈性且具成本效益的方式，可�
 [role="lead"]
 雲端災難復原是一種彈性且經濟高效的方式，可保護工作負載免受站點中斷和資料損壞事件的影響。NetApp Disaster Recovery 是一項基於雲端的災難復原服務，可自動化災難復原工作流程。使用 NetApp Disaster Recovery，您可以保護您的本地 Kubernetes 叢集、基於 NFS 的工作負載，以及運行於 NetApp 儲存設備上的 VMware vSphere 虛擬機器檔案系統（VMFS）iSCSI 和 FC 資料存放區，將其保護到以下其中之一：
 
-* Amazon Elastic VMware Service (EVS) 和Amazon FSx for NetApp ONTAP有關詳細信息，請參閱link:../reference/evs-deploy-guide-introduction.html["使用 Amazon Elastic VMware Service 和Amazon FSx for NetApp ONTAP實作NetApp Disaster Recovery"]。
+* Amazon Elastic VMware Service (EVS) 與 Amazon FSx for NetApp ONTAP。如需詳細資訊，請參閱 link:../reference/evs-deploy-guide-introduction.html["使用 Amazon Elastic VMware Service 和 Amazon FSx for NetApp ONTAP 的 NetApp 災難恢復簡介"]。
 * AWS 上的 VMware Cloud (VMC) 以及適用Amazon FSx for NetApp ONTAP
-* 具有NetApp Cloud Volumes ONTAP (iSCSI) 的 Azure VMware 解決方案 (AVS)（私人預覽版）
+* Azure VMware Solution 與 NetApp Cloud Volumes ONTAP (iSCSI)（私有預覽版）
 * Google Cloud VMware Engine (GCVE) 與Google Cloud NetApp Volumes
-* 另一個具有ONTAP儲存的本機 NFS 和/或基於 VMFS (iSCSI/FC) 的 VMware 環境
+* 另一個採用本地 NFS 和/或 VMFS （iSCSI/FC） 的 VMware 環境，配備 ONTAP 儲存設備
 
 
 NetApp Disaster Recovery使用ONTAP SnapMirror技術與整合的本機 VMware 業務流程來保護 VMware VM 及其相關的磁碟作業系統映像，同時保留ONTAP的所有儲存效率優勢。災難復原使用這些技術作為到災難復原站點的複製傳輸。這使得主站點和輔助站點能夠實現業界最佳的儲存效率（壓縮和重複資料刪除）。
@@ -185,9 +185,9 @@ Disaster Recovery 使用以下元件：
 *支持的保護目標*
 
 * AWS 上的 VMware Cloud (VMC) 以及適用Amazon FSx for NetApp ONTAP
-* 另一個本地、基於 NFS 的 VMware 環境，具有ONTAP儲存或本地 FC/iSCSI VMSF
+* 另一個基於本機 NFS 的 VMware 環境，配備 ONTAP 儲存設備；或一個本機 FC/iSCSI VMFS 環境
 * Amazon Elastic VMware 服務
-* 具有NetApp Cloud Volumes ONTAP (iSCSI) 的 Azure VMware 解決方案 (AVS)（私人預覽版）
+* Azure VMware Solution 與 NetApp Cloud Volumes ONTAP (iSCSI)（私有預覽版）
 * Google Cloud VMware Engine (GCVE) 與Google Cloud NetApp Volumes
 
 

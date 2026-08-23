@@ -12,7 +12,7 @@ summary: NetApp Disaster Recovery是一種基於雲端的災難復原服務​�
 
 
 [role="lead"]
-您可以監控所有NetApp Disaster Recovery作業並確定其進度。
+監控 NetApp Disaster Recovery 作業，追蹤其狀態和進度。
 
 
 
@@ -25,11 +25,11 @@ summary: NetApp Disaster Recovery是一種基於雲端的災難復原服務​�
 . 登入 https://console.netapp.com/["NetApp Console"^]。
 . 從NetApp Console左側導覽中，選擇 *保護* > *災難復原*。
 . 從選單中選擇*作業監控*。
-. 探索與操作相關的所有作業並查看其時間戳記和狀態。
-. 要檢視特定工作的詳細資訊，請選擇該列。您可以透過選擇行動選單，然後選擇「下載工作詳細資料」，下載工作詳細資料以供離線審查。
+. 審查工作，包括其時間戳記和狀態。
+. 若要檢視工作詳細資料，請選取其所在列。若要下載工作詳細資料以供離線審查，請選取行動選單，然後選取 **Download job details**。
 +
 
-TIP: 在審查作業詳細資料時，Disaster Recovery 會報告啟動作業的使用者。如果責任方列為「system」，則表示作業是由 Disaster Recovery 啟動的。
+TIP: 審查作業詳細資料時，Disaster Recovery 會顯示啟動作業的使用者。如果責任方列為「system」，則表示作業是由 Disaster Recovery 啟動的。
 
 . 若要刷新訊息，請選擇*刷新*。
 
@@ -46,7 +46,7 @@ TIP: 在審查作業詳細資料時，Disaster Recovery 會報告啟動作業的
 .步驟
 . 從NetApp Console左側導覽列中，選擇 *保護* > *災難復原*。
 . 從選單中選擇*作業監控*。
-. 在「作業監視器」頁面中，記下要取消的作業的 ID。
+. 在「作業監控」頁面上，記下您要取消的作業 ID。
 +
 該作業必須處於「進行中」或「排隊」狀態。
 

@@ -12,7 +12,7 @@ summary: NetApp Disaster Recovery是一種基於雲端的災難復原服務​�
 
 
 [role="lead"]
-災難解決後，從災難復原站點故障回復到來源站點以恢復正常運作。您可以選擇要復原的快照。
+災難解決後，從災難恢復站台容錯回復到來源站台以恢復正常運作。您可以選擇用於恢復的快照。
 
 *所需 NetApp Console 角色* 執行此任務需要 Super admin、Disaster recovery admin 或 Disaster recovery failover admin 角色。link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["了解NetApp Disaster Recovery中的使用者角色和權限"^]。link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服務的NetApp Console存取角色"^]。
 
@@ -21,7 +21,7 @@ summary: NetApp Disaster Recovery是一種基於雲端的災難復原服務​�
 [[about-failback]]
 == 關於故障恢復
 
-在故障復原過程中， NetApp Disaster Recovery會將所有變更複製（重新同步）回原始來源虛擬機，然後再反轉複製方向。這個過程始於一段已經完成失敗轉移至目標的關係，並包含以下步驟：
+在容錯回復過程中，NetApp Disaster Recovery 會將所有變更複寫（重新同步）回原始來源虛擬機器，然後再反轉複寫方向。此程序在關係容錯移轉至目標後開始，並包含下列步驟：
 
 * 對復原的站點執行合規性檢查。
 * 刷新已確定位於復原站點中的每個 vCenter 叢集的 vCenter 資訊。
@@ -36,7 +36,7 @@ summary: NetApp Disaster Recovery是一種基於雲端的災難復原服務​�
 [[before-you-begin]]
 == 開始之前
 
-如果您使用的是基於資料儲存的保護，則已新增至資料儲存中的虛擬機器可能會在故障轉移過程中新增至資料儲存。如果發生這種情況，請確保在啟動故障復原之前提供這些虛擬機器的附加映射資訊。若要編輯資源映射，請參閱 link:manage.html#manage-replication-plans["管理複製計劃"]。
+如果您使用的是基於資料存放區的保護，則在容錯移轉期間虛擬機器可能會新增至資料存放區。如果發生這種情況，請確保在啟動容錯回復之前為這些虛擬機器提供額外的對應資訊。若要編輯資源對應，請參閱 link:manage.html#manage-replication-plans["管理複製計劃"]。
 
 
 
@@ -53,7 +53,7 @@ summary: NetApp Disaster Recovery是一種基於雲端的災難復原服務​�
 +
 image::site-type-toggle.png[網站類型切換的螢幕擷取畫面]
 
-. 識別您要進行容錯回復的複寫計畫。選取 *Actions* 選項 image:../use/icon-horizontal-dots.png["NetApp Disaster Recovery服務​​中的操作選單圖標"]，將游標暫留在 *Recover* 上，然後選取 *Failback* 。
+. 識別您要容錯回復的複寫計畫。選取 *Actions* 選項 image:../use/icon-horizontal-dots.png["NetApp Disaster Recovery服務​​中的操作選單圖標"]，將滑鼠游標移至 *Recover* 上方，然後選取 *Failback*。
 . 選擇要從中復原的資料存放區快照。選取 *立即建立快照* 以啟動新的快照，或選取 *選擇* 以從可用快照中選擇。
 +
 image:failback.png["故障回復對話方塊的螢幕擷取畫面"]
@@ -71,7 +71,7 @@ image:failback.png["故障回復對話方塊的螢幕擷取畫面"]
 +
 image::site-type-toggle.png[網站類型切換的螢幕擷取畫面]
 
-. 識別您要進行容錯回復的複寫計畫。選取 *Actions* 選項 image:../use/icon-horizontal-dots.png["NetApp Disaster Recovery服務​​中的操作選單圖標"]，將游標暫留在 *Recover* 上，然後選取 *Failback* 。
+. 識別您要容錯回復的複寫計畫。選取 *Actions* 選項 image:../use/icon-horizontal-dots.png["NetApp Disaster Recovery服務​​中的操作選單圖標"]，將滑鼠游標移至 *Recover* 上方，然後選取 *Failback*。
 . 選擇要從中復原的叢集快照。選取 *Take snapshot now* 以啟動新的快照，或選取 *Use latest snapshot* 以使用最近一次成功的快照。
 . 輸入 "Failback" 以確認操作，然後選取 *Failback*。
 

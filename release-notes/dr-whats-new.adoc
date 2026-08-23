@@ -230,7 +230,7 @@ NetApp Disaster Recovery 對 GCVE 的支援現已正式發布（GA）。正式�
 * *平台管理快照：*透過 ONTAP 或 Google Cloud Platform (GCP) 無縫管理備份和保留策略。
 * *每個複寫計畫包含多個資料存放區：* 將多個資料存放區整合至單一複寫策略，以簡化災難恢復計畫。
 * *強制容錯移轉以應對不可用的來源站台：* 如果來源不可用，則切換到災難復原站台。
-* *延遲 SnapMirror 重新同步並按需還原複寫：* 使用「跳過保護」選項延遲 SnapMirror 重新同步，以避免在尖峰作業期間影響正式作業工作負載，稍後使用重新保護選項按需還原複寫
+* *延遲 SnapMirror 重新同步並隨需還原複寫：* 使用「跳過保護」選項延遲 SnapMirror 重新同步，以避免在尖峰運作期間對正式作業工作負載造成影響，然後使用重新保護選項隨需還原複寫。
 
 
 如需 GCVE 支援的詳細資訊，請參閱link:https://docs.netapp.com/us-en/data-services-disaster-recovery/release-notes/dr-limitations.html["Disaster Recovery 支援的組態"^]。
@@ -247,7 +247,7 @@ NetApp Disaster Recovery 對 GCVE 的支援現已正式發布（GA）。正式�
 [[exclude-a-datastore-from-replication-plans]]
 === 將資料存放區從複寫計畫中排除
 
-在 Disaster 中建立複寫計劃時，現在可以將特定資料存放區排除在複寫範圍之外。對於配置為使用多個資料存放區的 VM，此功能可讓您限制要複寫的資料存放區。
+在 NetApp Disaster Recovery 中建立複寫計畫時，現在可以將特定資料存放區排除在複寫之外。對於設定為使用多個資料存放區的虛擬機器，此功能可讓您限制要複寫的資料存放區。
 
 有關詳細資訊，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"^]。
 
@@ -265,7 +265,7 @@ NetApp Disaster Recovery 對 GCVE 的支援現已正式發布（GA）。正式�
 [[new-replication-plan-submenu]]
 === 新的複寫計畫子選單
 
-災難復原功能現在新增了從複製計畫儀表板觸發 vCenter 刷新的選單選項。您可以從複製計畫儀表板的操作選單存取該子選單：選擇 **計畫健全狀況**，然後選擇 **刷新來源 vCenter / 刷新目標 vCenter**。
+災難恢復功能現在新增了從複寫計畫儀表板觸發 vCenter 重新整理的選單選項。您可以從複寫計畫儀表板的行動選單存取子選單：選取 **Plan Health**，然後選取 **Refresh Source vCenter / Refresh Target vCenter**。
 
 如需詳細資訊，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html#modify-a-replication-plan["修改複寫計畫"^]。
 
@@ -356,7 +356,7 @@ NetApp Disaster Recovery 對 GCVE 的支援現已正式發布（GA）。正式�
 [[retain-vm-folder-structure-added-as-default-in-replication-plans]]
 === 保留複製計劃中預設新增的 VM 資料夾結構
 
-建立複製時，新的預設設定是保留 VM 資料夾結構。如果復原目標沒有原始資料夾層次結構，災難復原程式會建立它。您可以取消選擇此選項以忽略原始資料夾層次結構。
+建立複寫計劃時，新的預設設定是保留虛擬機器資料夾結構。如果恢復目標不存在原始資料夾層次結構，Disaster Recovery 會自動建立。您可以取消選取此選項以忽略原始資料夾層次結構。
 
 有關詳細信息，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"^]。
 
@@ -461,7 +461,7 @@ BlueXP disaster recovery已重新命名為NetApp Disaster Recovery。
 [[bluexp-is-now-netapp-console]]
 === BlueXP現在是NetApp Console
 
-NetApp Console建立在增強和重組的BlueXP基礎之上，可在企業級內部和雲端環境中集中管理NetApp儲存和NetApp Data Services，提供即時洞察、更快的工作流程和簡化的管理，並且高度安全且合規。
+NetApp Console 建立在增強且重組的 BlueXP 基礎之上，以企業級標準提供跨內部部署和雲端環境的 NetApp 儲存設備與 NetApp Data Services 集中管理，提供即時洞察、更快速的工作流程及簡化的管理，且具備高度安全性與法規遵循能力。
 
 有關具體變更內容，請參閱… link:https://docs.netapp.com/us-en/console-relnotes/index.html["NetApp Console發行說明"]。
 
@@ -598,7 +598,7 @@ https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles
 [[windows-local-administrator-password-solution-laps-support]]
 === Windows 本機管理員密碼解決方案 (LAPS) 支持
 
-Windows 本機管理員密碼解決方案 (Windows LAPS) 是 Windows 的功能，可自動管理和備份 Active Directory 上本機管理員帳戶的密碼。
+Windows 本機管理員密碼解決方案 (Windows LAPS) 是 Windows 的功能，可自動管理和備份 Active Directory 上本機系統管理員帳戶的密碼。
 
 現在您可以透過提供網域控制器詳細資訊來選擇子網路對映選項並檢查 LAPS 選項。使用此選項，您不需要為每個虛擬機器提供密碼。
 
@@ -628,7 +628,7 @@ Windows 本機管理員密碼解決方案 (Windows LAPS) 是 Windows 的功能�
 
 VM1 有一個連接到 NetworkA 的 vNIC（10.1.1.50）。在複製計劃設定中，NetworkA 會對應到 NetworkB。
 
-故障轉移時， NetApp Disaster Recovery會取代原始 IP 位址 (10.1.1) 的網路部分，並保留原始 IP 位址 (10.1.1.50) 的主機位址 (.50)。對於 VM1， NetApp Disaster Recovery檢視 NetworkB 的 CIDR 設置，並使用 NetworkB 網路部分 192.168.1，同時保留主機部分 (.50) 來為 VM1 建立新的 IP 位址。新的IP變成192.168.1.50。
+容錯移轉時，NetApp Disaster Recovery 會取代原始 IP 位址 （10.1.1） 的網路部分，並保留原始 IP 位址 （10.1.1.50） 的主機位址 （.50）。對於 VM1，NetApp Disaster Recovery 會檢視 NetworkB 的 CIDR 設定，並使用 NetworkB 的網路部分 192.168.1，同時保留主機部分 （.50），為 VM1 建立新的 IP 位址。新 IP 位址為 192.168.1.50。
 
 總之，主機位址保持不變，而網路位址則被網站子網路對映中所配置的位址取代。這使您能夠更輕鬆地管理故障轉移時的 IP 位址重新分配，特別是當您需要管理數百個網路和數千個虛擬機器時。
 
@@ -647,7 +647,7 @@ VM1 有一個連接到 NetworkA 的 vNIC（10.1.1.50）。在複製計劃設定�
 
 原始來源網站恢復上線後，您可以從複製計畫操作選單中選擇*保護資源*來建立反向保護。這會嘗試為計劃中的每個磁碟區建立反向複製關係。您可以重複執行此作業，直到恢復保護。當保護恢復後，您可以按照通常的方式啟動故障恢復。
 
-有關跳過保護的詳細信息，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/failover.html["將應用程式故障轉移到遠端站點"]。
+有關跳過保護的詳細資訊，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/failover.html["將應用程式故障轉移到遠端站點"]。
 
 
 
@@ -754,7 +754,7 @@ NetApp Disaster Recovery代理實作需要使用 HTTPS 協定在控制台代理�
 [[asa-r2-support-for-vms-and-datastores-on-vmfs-storage]]
 === ASA r2 支援 VMFS 儲存體上的虛擬機器和資料存儲
 
-此版本的NetApp Disaster Recovery為 VMFS 儲存上的虛擬機器和資料儲存區提供ASA r2 支援。在ASA r2 系統上， ONTAP軟體支援基本的 SAN 功能，同時刪除 SAN 環境中不支援的功能。
+此版本的 NetApp Disaster Recovery 為 VMFS 儲存設備上的虛擬機器和資料存放區提供 ASA r2 支援。在 ASA r2 系統上，ONTAP 軟體支援基本的 SAN 功能，同時移除 SAN 環境中不支援的功能。
 
 此版本支援ASA r2 的以下功能：
 
@@ -845,7 +845,7 @@ NetApp Disaster Recovery中對ASA r2 的支援使用ONTAP 9.16.1。
 [[vm-name-aliasing]]
 === VM 名稱別名
 
-建立複製計劃時，您現在可以在災難復原網站上為虛擬機器名稱新增前綴和後綴。這使您能夠為計劃中的虛擬機器使用更具描述性的名稱。
+現在，在建立複寫計劃時，您可以為災難恢復站台上的虛擬機器名稱新增前綴和後綴。這可讓您為計劃中的虛擬機器使用更具描述性的名稱。
 
 有關詳細信息，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
 

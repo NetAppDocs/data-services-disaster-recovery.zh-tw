@@ -54,6 +54,6 @@
 [[retain-vm-folder-structure-added-as-default-in-replication-plans]]
 === 保留複製計劃中預設新增的 VM 資料夾結構
 
-建立複製時，新的預設設定是保留 VM 資料夾結構。如果復原目標沒有原始資料夾層次結構，災難復原程式會建立它。您可以取消選擇此選項以忽略原始資料夾層次結構。
+建立複寫計劃時，新的預設設定是保留虛擬機器資料夾結構。如果恢復目標不存在原始資料夾層次結構，Disaster Recovery 會自動建立。您可以取消選取此選項以忽略原始資料夾層次結構。
 
 有關詳細信息，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"^]。

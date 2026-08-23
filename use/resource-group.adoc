@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: use/resource-group.html 
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, replication plan, protection, disaster, recovery, virtual machines, vm 
-summary: 資源群組可讓您將一組相依資源組織成符合您需求的邏輯群組。 
+summary: 資源群組可讓您將相互依賴的資源組織成符合您要求的邏輯群組。 
 ---
-= 在NetApp Disaster Recovery中建立資源群組以組織虛擬機
+= 在 NetApp Disaster Recovery 中建立資源群組
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,7 +12,7 @@ summary: 資源群組可讓您將一組相依資源組織成符合您需求的�
 
 
 [role="lead"]
-將資源新增至網站後，您可以建立資源群組，將 VM、資料存放區或 Kubernetes 叢集組織成單一單元。資源群組可讓您將一組相依資源組織成符合您需求的邏輯群組。例如，您可以將與某個應用程式相關的 VM 分組，也可以將具有類似層級的應用程式分組。再舉一個例子，群組可以包含在還原時執行的延遲開機順序。
+將資源新增至站台後，建立資源群組可以將虛擬機器、資料儲存區或 Kubernetes 叢集組織成單一整體。資源群組可讓您將相依資源組織成符合您需求的邏輯群組。例如，您可以將相同應用程式的虛擬機器分組，或將共享相似層級的應用程式分組。資源群組還可以包含在恢復期間執行的延遲開機順序。
 
 *所需 NetApp Console 角色* 執行此任務需要超級管理員、災難復原管理員或災難復原應用程式管理員角色。link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["了解NetApp Disaster Recovery中的使用者角色和權限"^]。link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服務的NetApp Console存取角色"^]。
 
@@ -27,7 +27,7 @@ summary: 資源群組可讓您將一組相依資源組織成符合您需求的�
 
 
 
-TIP: 每個資源群組可以包含一個或多個 VM、資料存放區或 Kubernetes 叢集。VM 將根據您在複寫計畫中包含它們的順序開機。您可以在資源群組清單中上下拖曳 VM 或資料存放區來變更順序。
+TIP: 每個資源組可以包含一個或多個虛擬機器、資料儲存區或 Kubernetes 叢集。虛擬機器將按照您在複寫計劃中新增它們的順序啟動。您可以透過在資源組清單中上下拖曳虛擬機器或資料儲存區來變更順序。
 
 .關於資源組
 資源群組可讓您將 VM、資料存放區或 Kubernetes 應用程式組合成一個單元。
@@ -35,9 +35,9 @@ TIP: 每個資源群組可以包含一個或多個 VM、資料存放區或 Kuber
 例如，銷售點應用程式可能會使用多個虛擬機器來儲存資料庫、業務邏輯和店面。您可以使用一個資源群組來管理所有這些虛擬機器。設定資源群組以套用虛擬機器啟動順序、網路連線和應用程式所需的所有虛擬機器的復原的複製計畫規則。
 
 .它是如何運作的？
-NetApp Disaster Recovery透過複製資源群組中託管虛擬機器的底層ONTAP磁碟區和 LUN 來保護虛擬機器。為此，系統會向 vCenter 查詢資源組中託管虛擬機器的每個資料儲存的名稱。然後， NetApp Disaster Recovery會辨識託管該資料儲存的來源ONTAP磁碟區或 LUN。所有保護均使用SnapMirror複製在ONTAP磁碟區層級執行。
+NetApp Disaster Recovery 透過複寫資源群組中託管虛擬機器的底層 ONTAP Volume 和 LUN 來保護虛擬機器。為此，系統會查詢 vCenter 以取得資源群組中每個託管虛擬機器的資料儲存區名稱。NetApp Disaster Recovery 接著會識別託管該資料儲存區的來源 ONTAP Volume 或 LUN。所有保護均在 ONTAP Volume 層級使用 SnapMirror 複寫執行。
 
-如果資源組中的虛擬機器託管在不同的資料儲存體上， NetApp Disaster Recovery將使用下列方法之一來建立ONTAP磁碟區或 LUN 的資料一致快照。
+如果資源群組中的 VM 託管在不同的資料儲存區上，NetApp Disaster Recovery 將使用下列其中一種方法來建立 ONTAP Volume 或 LUN 的資料一致性快照。
 
 [cols="30,65a"]
 |===
@@ -113,7 +113,7 @@ image::site-type-toggle.png[網站類型切換的螢幕擷取畫面]
 . 選擇“*新增*”。
 . 輸入資源群組的**名稱**，然後從下拉式選單中選擇 Kubernetes **叢集**。
 . 選擇要新增至資源群組的 *Namespaces*。
-. 將 *Resource types* 分類。根據預設，選取項目為「包含全部」，表示多種資源類型
+. 將*資源類型*分類。預設情況下，選擇為「包含全部」，表示多種資源類型。
 . （選用）包含任何 *Label selectors*。
 +
 image:kubernetes-resource-group.png["新增 Kubernetes 資源群組的螢幕擷取畫面"]

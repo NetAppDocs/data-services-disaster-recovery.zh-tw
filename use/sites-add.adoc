@@ -12,7 +12,7 @@ summary: 在建立災難復原計畫之前，您需要在NetApp Disaster Recover
 
 
 [role="lead"]
-在建立災難復原計畫之前，您需要將站台新增至 Disaster Recovery。站台是 vCenter 伺服器或 Kubernetes 叢集（內部部署或雲端）的集合。您應該新增主要或正式作業站台以及災難復原站台。
+在建立災難恢復計畫之前，請先將要保護的站台新增至 NetApp Disaster Recovery。站台是指一組 vCenter 伺服器或 Kubernetes 叢集，無論位於內部部署還是雲端。請同時新增生產站台和災難恢復站台。
 
 
 TIP: 請確保來源端和目的端都使用相同的 NetApp Console agent。

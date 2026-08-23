@@ -12,7 +12,7 @@ summary: 查看災難復原報告可以幫助您分析災難復原準備。預�
 
 
 [role="lead"]
-NetApp Disaster Recovery 報告可以幫助您分析災難恢復準備狀況。報告提供有關複寫計畫的深入資訊，包括計畫涵蓋的資源群組、虛擬機器或 Kubernetes 叢集以及資料存放區的數量。報告也會顯示法規遵循狀態、作業總結以及備份設定，例如恢復點目標 （RPO） 和保留計數。
+使用 NetApp Disaster Recovery 報告評估災難恢復準備狀況。報告提供有關複寫計畫的詳細資訊，包括每個計畫涵蓋的資源群組、VM、Kubernetes 叢集和資料儲存區的數量。報告還顯示法規遵循狀態、作業摘要和備份設定，例如恢復點目標 （RPO） 和保留計數。
 
 您可以下載 PDF、HTML 或 JSON 格式的報表。
 
@@ -23,8 +23,8 @@ NetApp Disaster Recovery 報告可以幫助您分析災難恢復準備狀況。�
 . 從NetApp Console左側導覽中，選擇 *保護* > *災難復原*。
 . 從NetApp Console左側導覽列中，選擇 *複製計畫*。
 . 選擇*建立報告*。
-. 選擇要報告範圍的*工作負載*：Kubernetes、VMware 或全部。
-. 請選擇報告應涵蓋的*檔案類型*（PDF、HTML 或 JSON）和*時間段*（過去 1 天到 7 天之間）。
+. 選擇要將報告範圍限定在哪一個*工作負載*：Kubernetes、VMware 或全部。
+. 請選擇報告的*文件類型*（PDF、HTML 或 JSON）和*時間段*（過去 1 至 7 天）。
 +
 image::report.png[建立報告的螢幕截圖]
 

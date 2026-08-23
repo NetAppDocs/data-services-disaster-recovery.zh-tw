@@ -76,7 +76,7 @@
 [[vm-name-aliasing]]
 === VM 名稱別名
 
-建立複製計劃時，您現在可以在災難復原網站上為虛擬機器名稱新增前綴和後綴。這使您能夠為計劃中的虛擬機器使用更具描述性的名稱。
+現在，在建立複寫計劃時，您可以為災難恢復站台上的虛擬機器名稱新增前綴和後綴。這可讓您為計劃中的虛擬機器使用更具描述性的名稱。
 
 有關詳細信息，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
 

@@ -7,7 +7,7 @@
 [[exclude-a-datastore-from-replication-plans]]
 === 將資料存放區從複寫計畫中排除
 
-在 Disaster 中建立複寫計劃時，現在可以將特定資料存放區排除在複寫範圍之外。對於配置為使用多個資料存放區的 VM，此功能可讓您限制要複寫的資料存放區。
+在 NetApp Disaster Recovery 中建立複寫計畫時，現在可以將特定資料存放區排除在複寫之外。對於設定為使用多個資料存放區的虛擬機器，此功能可讓您限制要複寫的資料存放區。
 
 有關詳細資訊，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"^]。
 
@@ -25,7 +25,7 @@
 [[new-replication-plan-submenu]]
 === 新的複寫計畫子選單
 
-災難復原功能現在新增了從複製計畫儀表板觸發 vCenter 刷新的選單選項。您可以從複製計畫儀表板的操作選單存取該子選單：選擇 **計畫健全狀況**，然後選擇 **刷新來源 vCenter / 刷新目標 vCenter**。
+災難恢復功能現在新增了從複寫計畫儀表板觸發 vCenter 重新整理的選單選項。您可以從複寫計畫儀表板的行動選單存取子選單：選取 **Plan Health**，然後選取 **Refresh Source vCenter / Refresh Target vCenter**。
 
 如需詳細資訊，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html#modify-a-replication-plan["修改複寫計畫"^]。
 

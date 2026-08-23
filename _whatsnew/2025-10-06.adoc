@@ -14,7 +14,7 @@ BlueXP disaster recovery已重新命名為NetApp Disaster Recovery。
 [[bluexp-is-now-netapp-console]]
 === BlueXP現在是NetApp Console
 
-NetApp Console建立在增強和重組的BlueXP基礎之上，可在企業級內部和雲端環境中集中管理NetApp儲存和NetApp Data Services，提供即時洞察、更快的工作流程和簡化的管理，並且高度安全且合規。
+NetApp Console 建立在增強且重組的 BlueXP 基礎之上，以企業級標準提供跨內部部署和雲端環境的 NetApp 儲存設備與 NetApp Data Services 集中管理，提供即時洞察、更快速的工作流程及簡化的管理，且具備高度安全性與法規遵循能力。
 
 有關具體變更內容，請參閱… link:https://docs.netapp.com/us-en/console-relnotes/index.html["NetApp Console發行說明"]。
 

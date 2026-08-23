@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: use/migrate.html 
 keywords: disaster recovery, bluexp disaster recovery, migrate, vmware, vcenter 
-summary: 使用NetApp Disaster Recovery，您可以將來源站點上的 VMware 應用程式遷移到另一個站點。 
+summary: 使用 NetApp Disaster Recovery，您可以將 VMware 應用程式從來源站台移轉到另一個站台。 
 ---
 = 使用NetApp Disaster Recovery將應用程式遷移到另一個站點
 :hardbreaks:
@@ -15,13 +15,13 @@ summary: 使用NetApp Disaster Recovery，您可以將來源站點上的 VMware 
 使用NetApp Disaster Recovery，您可以將來源站點上的 VMware 應用程式遷移到另一個站點。
 
 
-TIP: 在建立複製計畫、在精靈中確定重複並啟動遷移後， NetApp Disaster Recovery每 30 分鐘會驗證一次遷移是否確實按照計畫進行。您可以在作業監視器頁面中監視進度。
+TIP: 建立複寫計畫、在精靈中設定重複週期並啟動移轉後，Disaster Recovery 會每 30 分鐘執行一次驗證，以確保移轉按計畫進行。您可以在「作業監控」頁面中監控進度。
 
 
 NOTE: 目前不支援 Kubernetes 型工作負載的移轉。
 
 .開始之前
-在啟動遷移之前，您應該建立複製計劃並選擇遷移應用程式。然後，「操作」選單中會出現「遷移」選項。
+在開始移轉之前，請建立複寫計劃並為其設定移轉。然後，*Migrate* 選項將出現在「動作」功能表中。
 
 .步驟
 . 登入 https://console.netapp.com/["NetApp Console"^]。

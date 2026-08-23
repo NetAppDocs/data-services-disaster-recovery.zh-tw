@@ -12,14 +12,14 @@ summary: 在使用 NetApp Disaster Recovery 之前，請確保您的 Kubernetes 
 
 
 [role="lead"]
-在為 Kubernetes 叢集設定 NetApp Disaster Recovery 之前，您必須先準備每個 Kubernetes 叢集。通常，保護會套用於來源叢集和獨立的目的地叢集，這表示這些程序需要在每對叢集的每個叢集上執行。
+在為 Kubernetes 設定 NetApp Disaster Recovery 之前，請先準備好每個 Kubernetes 叢集。保護通常適用於來源叢集和分隔的目的地叢集，因此請在叢集對中的每個叢集上完成這些程序。
 
 
 
 [[prerequisites]]
 == 先決條件
 
-在設定 Kubernetes 叢集需求之前、請確保您已設定好 Kubernetes 叢集和 ONTAP 叢集。
+在開始之前，請確保您的 Kubernetes 叢集和 ONTAP 叢集已完成設定。
 
 災難復原支援 link:https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-requirements.html["Trident Protect 目前支援的任何 Kubernetes 版本"^]。
 
@@ -31,7 +31,7 @@ summary: 在使用 NetApp Disaster Recovery 之前，請確保您的 Kubernetes 
 對於每個 Kubernetes 叢集，請確保：
 
 * 您擁有每個 Kubernetes 叢集的管理員 `kubectl`存取權。
-* Helm 3 可在執行安裝指令的地方使用
+* 您可以在執行安裝指令的地方使用 Helm 3。
 
 
 
@@ -41,10 +41,10 @@ summary: 在使用 NetApp Disaster Recovery 之前，請確保您的 Kubernetes 
 
 對於每個 ONTAP 叢集，請確保您已設定下列資源：
 
-* **管理 LIF** - Trident 使用此 LIF 進行管理 API 存取
-* **資料 (NFS) LIF** - 用於磁碟區的 NFS 流量
-* **SVM 名稱** - 託管磁碟區的儲存 VM
-* **憑證** - Trident 將使用的帳戶（通常為 `admin`或 SVM 範圍的帳戶）
+* **管理 LIF**：供 Trident 用於管理 API 存取。
+* **資料（NFS）LIF**：用於 Volume 的 NFS 流量。
+* **SVM 名稱**：託管 Volume 的儲存設備虛擬機器。
+* **憑證**：Trident 使用的帳戶，通常 `admin`或 SVM 範圍的帳戶。
 * 工作節點必須能夠存取 ONTAP 管理和資料 LIF。
 * 如果使用 `autoExportPolicy` 與 CIDR 限制，請包含您的節點子網路。
 
@@ -86,7 +86,7 @@ kubectl create secret generic trident-ontap-secret -n <namespace> \
 [[create-the-tridentbackendconfig]]
 === 建立 TridentBackendConfig
 
- 您可以
+套用指向您的 SVM 的連結：https://docs.netapp.com/us-en/trident/trident-use/backend-kubectl.html#step-2-create-the-tridentbackendconfig-cr[`TridentBackendConfig`。例如：
 
 [source, yaml]
 ----
@@ -147,7 +147,7 @@ Trident Protect 複製的應用程式 PVC 必須使用透過 Trident 提供的�
 [[configure-volume-group-snapshot-custom-resource-definitions-crd]]
 == 配置磁碟區群組快照自訂資源定義（CRD）
 
-link:https://docs.netapp.com/us-en/trident/trident-use/vol-group-snapshots.html#deploy-a-volume-snapshot-controller["安裝 Snapshot CRD 和 Snapshot Controller。"^].這些安裝是 Trident Protect 中建立磁碟區快照所必需的。
+安裝 link:https://docs.netapp.com/us-en/trident/trident-use/vol-group-snapshots.html#deploy-a-volume-snapshot-controller["快照 CRD 和快照控制器"^]。這些安裝是 Trident Protect 中 Volume 快照的必要條件。
 
 使用以下命令驗證自訂資源定義：
 
@@ -203,7 +203,7 @@ kubectl patch volumesnapshotclasses.snapshot.storage.k8s.io trident-snapshotclas
 
 . 使用用戶端 ID 和用戶端密碼建立 Kubernetes 密碼，以建立 OCCM 驗證認證。
 +
-`kubectl create secret generic occmauthcreds --namespace=trident-protect --from-literal=client_id=<clientID> --from-literal=<clientSecret>`
+`kubectl create secret generic occmauthcreds --namespace=trident-protect --from-literal=client_id=<clientID> --from-literal=client_secret=<clientSecret>`
 
 . 新增或更新 helm 儲存庫：
 +
