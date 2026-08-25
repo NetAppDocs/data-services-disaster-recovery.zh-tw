@@ -93,7 +93,7 @@ IMPORTANT: 一些版本包括技術預覽。 NetApp不會向您收取任何預�
 您可以使用以下許可證類型：
 
 * 註冊 30 天免費試用。
-* 透過 Amazon Web Services (AWS) Marketplace 或 Microsoft Azure Marketplace 購買即用即付 (PAYGO) 訂閱。此許可證使您能夠購買固定保護容量許可證，而無需任何長期承諾。
+* 您可以透過 Amazon Web Services （AWS） Marketplace、Azure Marketplace 或 Google Cloud Marketplace 購買隨用隨付 （PAYGO） 訂閱。此授權可讓您購買固定的受保護容量授權，無需任何長期承諾。
 * 自帶授權 (BYOL)，即您從NetApp銷售代表取得的NetApp授權文件 (NLF)。您可以使用許可證序號在NetApp Console中啟動 BYOL。
 
 
@@ -104,7 +104,7 @@ Disaster Recovery 是根據受保護 ONTAP 磁碟區上託管的資料量來授�
 受保護的磁碟區可以託管許多虛擬機器。有些可能不屬於NetApp Disaster Recovery資源群組。無論如何，該磁碟區或 LUN 上所有虛擬機器消耗的儲存都將用於滿足許可證最大容量要求。
 
 
-NOTE: 當至少有一個虛擬機器具有複製計畫時， NetApp Disaster Recovery費用是基於來源站點上資料儲存區的已使用容量。故障轉移資料儲存區的容量不包含在容量限額內。對於 BYOL，如果資料超出允許的容量，服務中的操作將受到限制，直到您獲得額外的容量授權或在NetApp Console中升級授權。
+NOTE: NetApp Disaster Recovery 費用是根據來源站台上資料存放區的已使用容量計算，前提是至少有一個虛擬機器或 Kubernetes 資源具有複寫計劃。已容錯移轉資料存放區的容量不包含在容量配額中。對於 BYOL，如果資料超過允許的容量，服務中的操作將受到限制，直到您取得額外的容量授權或在 NetApp Console 中升級授權。
 
 有關設定NetApp Disaster Recovery許可的詳細信息，請參閱link:../get-started/dr-licensing.html["設定NetApp Disaster Recovery許可"]。
 

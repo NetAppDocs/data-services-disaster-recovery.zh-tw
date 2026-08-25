@@ -1,23 +1,245 @@
 ---
 sidebar: sidebar 
 permalink: get-started/dr-faq.html 
-keywords: disaster recovery faq, disaster recovery frequently asked questions 
-summary: 如果您只是想快速找到問題的答案，此常見問題解答可以為您提供協助。 
+keywords: disaster recovery faq, disaster recovery frequently asked questions, faq, frequently asked questions about disaster recovery, vmware, vcenter, kubernetes, trident protect, snapmirror, failover, failback, migration, replication, ontap, fsxn, fsx for ontap, console agent, resource groups, replication plans, rpo, rto 
+summary: 關於 VMware 和 Kubernetes 工作負載的 NetApp 災難恢復常見問題。 
 ---
 = NetApp Disaster Recovery 常見問題解答
+:toc: macro
 :hardbreaks:
+:toclevels: 1
 :allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
 :icons: font
+:linkattrs: 
 :imagesdir: ../media/
+:toc-position: content
 
 
 [role="lead"]
-如果您只是想快速找到問題的答案，此常見問題解答可以為您提供協助。
+本常見問題集解答有關 NetApp Disaster Recovery 針對 VMware 和 Kubernetes 工作負載的常見問題。本文著重於在實作災難恢復設定及管理複寫、移轉、容錯移轉和容錯回復作業時有用的概念、術語、系統行為和限制。
 
-* NetApp Disaster RecoveryURL 是什麼？ *對於 URL，在瀏覽器中輸入： https://console.netapp.com/["https://console.netapp.com/"^]存取NetApp控制台。
 
-*您需要許可證才能使用NetApp Disaster Recovery嗎？ *需要NetApp Disaster Recovery許可證才能獲得完全存取權限。但是，您可以透過免費試用版進行嘗試。
+toc::[]
 
-有關設定NetApp Disaster Recovery許可的詳細信息，請參閱link:../get-started/dr-licensing.html["設定NetApp Disaster Recovery許可"]。
 
-*如何存取 NetApp Disaster Recovery？*NetApp Disaster Recovery 不需要任何啟用。Disaster Recovery 會自動顯示在 NetApp Console 左側導覽列中。
+[[getting-started]]
+== 入門
+
+.什麼是 NetApp Disaster Recovery？
+NetApp Disaster Recovery 是一種雲端型災難恢復服務，可透過 NetApp Console 進行存取，為 VMware 和 Kubernetes 環境自動化災難恢復工作流程。它會將執行 ONTAP 儲存設備的內部部署 VMware 工作負載，或執行 Trident 管理之 ONTAP 儲存設備的 Kubernetes 工作負載，複寫到另一個站台作為災難恢復目標。該服務使用 ONTAP SnapMirror 技術，搭配原生 VMware 協調或 Trident Protect 協調來保護工作負載，同時保留 ONTAP 儲存效率（例如壓縮和重複資料刪除）。
+
+.您如何存取 Disaster Recovery？
+NetApp Disaster Recovery 不需要任何單獨的能力開發。它會自動出現在 NetApp Console 左側導覽列的 *Protection* > *Disaster recovery* 下。若要存取 NetApp Console，請在瀏覽器中輸入： https://console.netapp.com/["https://console.netapp.com/"^]。
+
+.使用 NetApp Disaster Recovery 是否需要授權？
+若要獲得完整的後續存取權限，需要 Disaster Recovery 授權。您可以在購買授權或訂閱之前，先享有 30 天的免費試用期。如需詳細資訊，請參閱 link:dr-licensing.html["設定災難恢復授權"]。
+
+.災難恢復支援哪些保護目標？
+Disaster Recovery 支援下列保護目標：
+
+* Amazon Elastic VMware Service (EVS) 與 Amazon FSx for NetApp ONTAP
+* Azure VMware Solution (AVS) 與 NetApp Cloud Volumes ONTAP (iSCSI)（私人預覽版）
+* Google Cloud VMware Engine (GCVE) 與Google Cloud NetApp Volumes
+* 執行 Trident 管理的 ONTAP 儲存設備（使用 Trident Protect 保護）的 Kubernetes 叢集
+* 內部部署的 NFS 型 VMware 環境（使用 ONTAP 儲存設備），或內部部署的 FC/iSCSI VMFS 環境
+* AWS 上的 VMware Cloud (VMC) 以及適用Amazon FSx for NetApp ONTAP
+
+
+.Disaster Recovery 支援哪些資料存放區類型？
+針對 VMware 工作負載，NetApp Disaster Recovery 支援下列資料存放區類型：
+
+* 託管於 ONTAP 叢集上 ONTAP FlexVol® Volume 的 NFS 資料存放區
+* 使用 iSCSI 或 FC 協定的 VMware vSphere 虛擬機器檔案系統 (VMFS) 資料存儲
+
+
+對於 Kubernetes 工作負載，Disaster Recovery 可保護透過 NetApp Trident on ONTAP 儲存設備佈建的持續性 Volume。
+
+
+
+[[licensing-and-cost]]
+== 授權與成本
+
+.災難恢復有哪些授權選項？
+災難恢復提供以下授權選項：
+
+* 30 天免費試用（試用期間不設容量限制）
+* 透過 Amazon Web Services （AWS） Marketplace、Azure Marketplace 或 Google Cloud Marketplace 隨用隨付 （PAYGO） 訂閱
+* 自帶授權 (BYOL)，即 NetApp 授權文件 (NLF)，您可從 NetApp 銷售代表取得，並使用授權序號在 NetApp Console 中啟動
+
+
+災難恢復費用是根據來源站台上資料存放區的已使用容量計算，前提是至少有一個 VM 或 Kubernetes 資源具有複寫計劃。
+
+.如果超出容量會發生什麼事？
+對於 BYOL，如果資料超過允許的容量，服務中的作業將受到限制，直到您取得額外的容量授權或在 NetApp Console 中升級授權為止。
+
+.30 天免費試用期結束後會發生什麼事？
+免費試用期結束後，您仍然可以檢視和刪除工作負載和複寫計劃等資源，並執行試用期內建立的所有排程作業。若要繼續使用完整功能的服務，您需要從雲端供應商取得隨用隨付訂閱，或從 NetApp 購買 BYOL 授權。
+
+您可以隨時購買授權或訂閱，30 天試用期結束後才會收費。
+
+
+
+[[supported-environments-and-infrastructure]]
+== 支援的環境和基礎架構
+
+.災難恢復支援哪些基礎架構拓撲結構？
+Disaster Recovery 支援下列拓撲：
+
+* 混合雲端災難恢復方案，可將內部部署 VMware 加上 ONTAP 資料中心複寫至基於 VMware Cloud on AWS 或 Amazon Elastic VMware Service (EVS) 和 Amazon FSx for NetApp ONTAP 的 AWS 災難恢復基礎架構
+* 將內部部署 VMware 加上 ONTAP vCenter 複寫至另一個內部部署 VMware 加上 ONTAP vCenter 的私有雲災難恢復
+* 雲端災難恢復 （Cloud DR） 可將基於 VMware Cloud on AWS 或 EVS 的 AWS 災難恢復基礎架構複寫到另一個使用 FSx for NetApp ONTAP 的 AWS 災難恢復基礎架構。
+* 混合雲端災難恢復方案，將內部部署 VMware 加上 ONTAP 資料中心複寫至以 Google Cloud VMware Engine 和 Google Cloud NetApp Volumes 為基礎的 Google Cloud 災難恢復基礎架構
+* 使用 Trident 管理的 ONTAP 儲存設備在叢集間進行 Kubernetes 到 Kubernetes 災難恢復
+
+
+
+
+[[prerequisites-and-setup]]
+== 前提條件和設定
+
+.使用 NetApp Disaster Recovery 之前必須滿足哪些先決條件？
+* 源集群和目標集群必須具有對等關係。
+* 承載災難復原磁碟區的 SVM 必須存在於目標叢集上。
+* 源 SVM 和目標 SVM 必須具有對等關係。
+* 所有您希望 NetApp Disaster Recovery 管理的 VMware 叢集都必須使用 ONTAP Volume 來主機您想要保護的任何虛擬機器。
+* 要保護的虛擬機器必須執行 VMware Tools（或 Open VM Tools）。
+* 對於執行 Microsoft SQL Server 或 Oracle 資料庫的 Windows VM，必須啟用資料庫的 VSS Writers。
+* 對於執行在 Linux 上的 Oracle 資料庫，必須為 Oracle 資料庫 SYSDBA 角色啟用作業系統使用者身分驗證。
+* 對於 Kubernetes，請審查 link:task-kubernetes-requirements.html["Kubernetes 叢集的災難恢復需求"] 中的其他要求。
+
+
+完整清單請參閱link:dr-prerequisites.html["災難恢復先決條件"]。
+
+.什麼是 Console 代理程式？為什麼需要它？
+Console 代理程式是一個軟體元件，可讓 NetApp Console 與您的 ONTAP 儲存設備和 VMware vCenter 叢集通訊。災難恢復功能正常運作需要此元件。代理程式駐留在您的私有網路（內部部署資料中心或雲端 VPC）中，並與您的 ONTAP 儲存設備執行個體和 vCenter 叢集通訊。
+
+對於內部部署到內部部署的災難恢復，請在災難恢復站台安裝內部部署 Console 代理程式。對於內部部署到 AWS 的災難恢復，請在 AWS VPC 中安裝 AWS 的 Console 代理程式。來源和目的地 vCenter 叢集應使用相同的 Console 代理程式。災難恢復僅適用於標準模式代理程式部署。
+
+.Kubernetes 叢集在受到保護之前需要具備哪些條件？
+每個 Kubernetes 叢集都必須安裝 NetApp Trident、設定 ONTAP 後端和儲存設備類別，並安裝 Volume 快照 CRD 和控制器。應用程式必須使用透過 Trident 儲存設備類別佈建的持續性 Volume。將 Kubernetes 叢集新增為站台時，災難恢復功能會引導您在該叢集上安裝和註冊 Trident Protect。如需逐步命令和驗證檢查，請參閱 link:task-kubernetes-requirements.html["Kubernetes 叢集的災難恢復需求"]。
+
+
+
+[[core-concepts]]
+== 核心概念
+
+.災難恢復中的站台是什麼？
+站台是一個邏輯 Container，通常與實體資料中心或雲端位置關聯，用於託管一個或多個 vCenter 叢集或 Kubernetes 叢集。在建立複寫計劃之前，您需要新增來源（生產）站台和目的地（災難恢復）站台。
+
+.什麼是資源群組？它是如何使用的？
+資源群組是一個邏輯 Container，可讓您將多個虛擬機器、資料存放區或 Kubernetes 命名空間和資源作為單一單元進行管理，以便使用通用快照加以保護。一個虛擬機器一次只能屬於一個資源群組。您可以為每個要保護的應用程式或工作負載建立資源群組，虛擬機器將根據您在群組內設定的開機順序啟動。
+
+.災難恢復中的複寫計畫是什麼？
+複寫計畫是一組規則，用於規定備份的頻率以及如何處理容錯移轉事件。它選擇來源站台和目的地站台、指派資源群組、定義恢復對應，並設定開機行為。計畫透過資料複寫的頻率來定義恢復點目標 （RPO）。
+
+.RPO 和 RTO 有什麼差別？
+恢復點目標 (RPO) 是指災難事件時可接受的最大資料遺失量；它由複寫計畫的複寫頻率或排程決定。恢復時間目標 (RTO) 是指從災難中恢復可接受的最長時間；它取決於容錯移轉到災難恢復站台並重新啟動所有虛擬機器或應用程式所需的時間。
+
+
+
+[[sites-discovery-and-resource-groups]]
+== 站台、探索和資源群組
+
+.將 vCenter 新增至站台需要哪些資訊？
+* vCenter 管理 IP 位址或 FQDN
+* 具有所需權限的 vCenter 帳戶憑證（請參閱link:../reference/vcenter-privileges.html["所需的 vCenter 權限"]）
+* 對於雲端託管的 VMware 站點，所需的雲端存取金鑰
+* 用於存取您的 vCenter 的安全性憑證（支援自簽名憑證或 CA 所發出的憑證）
+
+
+具體步驟請參見link:../use/sites-add.html["在 NetApp Disaster Recovery 中新增站台"]。
+
+.災難恢復系統多久會探索一次 vCenter 或 Kubernetes 環境？
+預設情況下，探索每 24 小時執行一次；您可以根據環境自訂排程。最短間隔為 30 分鐘，最長間隔為 24 小時。NetApp 建議先手動執行幾次探索以取得最新資訊，然後再設定自動執行排程。新增或刪除的資源將在下次排程或手動探索時被識別。
+
+.受保護資源和非受保護資源可以託管在同一個資料存放區上嗎？
+不。在同一資料儲存上託管受保護和不受保護的虛擬機器可能會導致問題。具體來說，如果資料儲存發生容錯移轉，則容錯移轉後，其上的任何不受保護的虛擬機器在來源都將不復存在，NetApp Disaster Recovery 也不會在容錯移轉站台啟動它們。
+
+在部署 NetApp Disaster Recovery 之前，您應該組織資源，以便受保護和未受保護的工作負載使用分隔的資料存放區子集，並確保單一資料存放區不會受到多個複寫計畫的保護。
+
+
+
+[[replication-and-protection]]
+== 複寫與保護
+
+.我應該使用哪一個 SnapMirror 複寫原則？
+如果您計劃使用平台管理（ONTAP 管理）的備份，請使用 *MirrorAll* 原則。*MirrorVault* 和 *Asynchronous* 是可接受的替代方案，但您必須確保在容錯移轉或容錯回復期間選取的 Snapshot 同時存在於來源和目的地 Volume 上，否則作業會失敗並出現「找不到共同的 Snapshot」錯誤。不建議使用 *MirrorLatest*，因為它只會保留一個共同的 Snapshot 用於容錯移轉。對於由 NetApp Disaster Recovery 管理的 SnapMirror 關係，請勿在服務之外為其排程更新，因為 NetApp Disaster Recovery 會管理複寫時間。
+
+.我可以使用現有的 SnapMirror 關係搭配 NetApp Disaster Recovery 嗎？
+是的。如果受保護資料儲存的來源和目的地 Volume 之間已存在 SnapMirror 關係，則災難恢復會使用該關係進行所有複寫作業，而非建立新的關係。
+
+
+
+[[migration]]
+== 移轉
+
+.Disaster Recovery 除了支援災難恢復之外，是否也支援移轉？
+是的。您可以使用已設定移轉的複寫計劃，將 VMware 應用程式從來源站台移轉到另一個站台。啟動移轉後，該服務每 30 分鐘驗證一次移轉是否按計劃進行；您可以在「作業監控」中監控進度。目前不支援以 Kubernetes 為基礎的工作負載移轉。請參閱link:../use/migrate.html["將應用程式移轉至另一個站台"]。
+
+
+
+[[failover-and-testing]]
+== 容錯移轉和測試
+
+.我可以在不影響生產工作負載的情況下測試我的災難恢復計畫嗎？
+是的。在測試容錯移轉期間，災難恢復會從所選快照的新 FlexClone® Volume 建立暫時虛擬機器，並將暫時由 FlexClone® 支援的資料存放區對應至 ESXi 主機。這不會使用額外的實體容量、不會修改原始來源 Volume，也不會毀損 SnapMirror 關係或生產工作負載，生產工作負載將繼續正常複寫。測試結束後，請使用 *Clean up failover test* 行動清理測試環境。請參閱 link:../use/failover.html["將應用程式故障轉移到遠端站點"]。
+
+.容錯移轉作業期間會發生什麼情況？
+. 災難復原對目標叢集和SnapMirror關係執行預檢查。
+. 如果選擇了最新快照，則會執行 SnapMirror 更新以複寫最新變更。
+. 來源 VM 已關閉電源。
+. SnapMirror 關係已中斷,目標磁碟區已設為讀取 / 寫入。
+. 根據快照選擇，將作用中檔案系統還原到指定的快照。
+. 建立資料儲存並將其掛載到 VMware 或 VMC 叢集或主機（VMFS 資料儲存也會將 iGroup 對應到每個 LUN）。
+. 目標虛擬機器已在 vCenter 中註冊為新的資料存放區。
+. 目標虛擬機器會根據資源群組中的開機順序啟動。
+. 如果來源 vCenter 仍然作用中，則正在容錯移轉的來源端虛擬機器將會關閉電源。
+. 所有應用程式一致的虛擬機器都已解除靜默狀態。
+. 如果來源 vCenter 和 ONTAP 叢集仍然處於作用中，則會建立反向 SnapMirror 關係，將變更複寫回原始來源站台（除非選擇了 *跳過保護*）。
+
+
+.我可以在容錯移轉期間自訂虛擬機器的開機順序嗎？
+是的。預設情況下，所有虛擬機器會同時並行開機，但您可以為每個虛擬機器指派一個連續的編號（例如 1、2、3）來控制開機順序，或為多個虛擬機器指派相同的編號以同時開機。您也可以為每個虛擬機器設定開機延遲（0–10 分鐘）以錯開啟動時間，這有助於確保優先順序較高的虛擬機器在優先順序較低的虛擬機器啟動之前運作。
+
+
+
+[[failback]]
+== 故障恢復
+
+.什麼是容錯回復流程？何時應該使用它？
+容錯回復會在災難解決後將作業還原至原始來源站台。NetApp Disaster Recovery 從已容錯移轉至目標的 SnapMirror 關係開始，將所有變更重新同步回原始來源 VM 或 Kubernetes 叢集，然後再反轉複寫方向。具體過程如下：
+
+. 對復原的站台執行法規遵循檢查。
+. 刷新已恢復站台中每個 vCenter 叢集的 vCenter 資訊。
+. 在目標站台上，關閉 VM 電源並取消登錄 VM，並卸載磁碟區。
+. 中斷原始來源上的 SnapMirror 關係，使其變成讀寫。
+. 重新同步 SnapMirror 關係以逆轉複寫方向。
+. 啟動並註冊來源 VM，並將磁碟區掛載到來源上。
+
+
+請參閱 link:../use/failback.html["將應用程式故障恢復到原始來源"]。
+
+
+
+[[monitoring-reporting-and-management]]
+== 監控、報告與管理
+
+.如何檢查我的站台和複寫計劃的健全狀況？
+使用 Disaster Recovery *Dashboard* 查看站台和計畫是否健全、已中斷連線或已降級；審查最近的警告和失敗的作業；識別受保護和未受保護的工作負載；並快速檢視容量。請參閱link:../use/dashboard-view.html["檢視災難恢復計畫健全狀況"]。
+
+.如何監控或取消任務？
+使用 *Job monitoring* 功能可以審查作業時間戳記、狀態和啟動器（如果是 Disaster Recovery 系統啟動的，則為「系統」）。您可以從「操作」功能表取消「進行中」或「已排隊」的作業，這在作業卡住或需要優先執行其他操作時非常有用。請參閱 link:../use/monitor-jobs.html["監控災難恢復工作"]。
+
+.有哪些報告可供查閱？報告格式有哪些？
+您可以產生針對 VMware、Kubernetes 或所有工作負載的報告，涵蓋複寫計畫詳情、法規遵循狀態和作業摘要。報告可以下載為 PDF、HTML 或 JSON 檔案。涵蓋 1 到 7 天的時間段。如需更多資訊，請參閱 link:../use/reports.html["在 NetApp Disaster Recovery 中建立報告"]。
+
+
+
+[[kubernetes-specific-questions]]
+== Kubernetes 相關問題
+
+.什麼是 AppVault？
+AppVault 是 Trident Protect 保存 Kubernetes 保護資料的雲端儲存目標。您在設定 Kubernetes 複寫計劃時建立 AppVault。
