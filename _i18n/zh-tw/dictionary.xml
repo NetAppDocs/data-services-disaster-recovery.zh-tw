@@ -1108,13 +1108,10 @@
   <block id="302bf3ef5d8e942b185e4b4d03884ff4" category="section-title">故障轉移測試後清理測試環境</block>
   <block id="b22e9cc3eebab01136ffe8d3f7e201ca" category="paragraph">故障轉移測試完成後，您應該清理測試環境。此程序將從測試位置、FlexClone 和暫存資料儲存區中刪除暫存虛擬機器。</block>
   <block id="ce68649418f9a08c1ca788541d81a5fc" category="section-title">將來源站點故障轉移到災難復原站點</block>
-  <block id="f5a93054f0d69f6d7904ca9d2efa38f0" category="paragraph">故障轉移過程涉及以下操作：</block>
   <block id="6682a4ae7387f7df7c334b36315edd16" category="list-text">災難復原對目標叢集和SnapMirror關係執行預檢查。</block>
   <block id="2b56dea239dc4c074a14290431d91d6a" category="list-text">如果您選擇了最新的快照，則會執行SnapMirror更新以複製最新的變更。</block>
   <block id="e935faae451901d06e1096c19cac8457" category="list-text">根據快照的選擇，活動檔案系統將恢復到指定的快照（最新或選定）。</block>
   <block id="85899d140b2c490b9793c31912367209" category="list-text">根據複製計畫中擷取的資訊建立資料儲存並將其安裝到 VMware 或 VMC 叢集或主機。如果任何資料儲存都是 VMFS，則建立一個 iGroup 並將其對應到每個 LUN。</block>
-  <block id="8082ac657e40ca576105ceaf88cbda23" category="list-text">如果來源 vCenter 仍處於活動狀態，請關閉所有正在進行故障轉移的來源端虛擬機器。</block>
-  <block id="addf2cf8485a908b734a233a37ce94ab" category="list-text">如果來源 vCenter 和ONTAP叢集仍處於活動狀態，請建立反向SnapMirror關係，以便在故障轉移狀態下將任何變更複製回原始來源網站。  SnapMirror關係從目標虛擬機器到來源虛擬機器是相反的。</block>
   <block id="711c35de4b0430b043159f5d91f6752f" category="inline-image-macro">故障轉移頁面</block>
   <block id="746c84b1b109b4fcfeb29ff36be21f14" category="paragraph"><block ref="746c84b1b109b4fcfeb29ff36be21f14" category="inline-image-macro-rx" type="image"></block></block>
   <block id="c446892b6c8669077c04a02123055cec" category="admonition">您可以從複製計劃操作選單中選擇*保護資源*來建立反向保護。這會嘗試為計劃中的每個磁碟區建立反向複製關係。您可以重複執行此作業，直到恢復保護。當保護恢復後，您可以按照通常的方式啟動故障恢復。</block>
@@ -1565,7 +1562,6 @@
   <block id="1e42cd2ab50cb43033ac96845f0cbcbf" category="list-text">在右側，選擇“操作”選項 <block ref="771645334c0631c5881bfc9858be7f5b" category="inline-image-macro-rx" type="image"></block> 然後*清理故障轉移測試*。</block>
   <block id="a6701b6b4f098b920e9ad613536f4135" category="list-text">在“測試故障轉移”頁面中，輸入“清理故障轉移”，然後選擇“清理故障轉移測試”。</block>
   <block id="e27d8a06ee52d6dc3adabdbe1c4e94a7" category="admonition">對於基於資料儲存的複製計劃，如果您已新增並發現了任何虛擬機，但未提供映射詳細信息，則這些虛擬機將包含在故障轉移中。故障轉移失敗後，作業中會發出通知。您必須提供映射詳細資訊才能成功完成故障轉移。</block>
-  <block id="3bb0ada53df5172b3b5e85e4ac853ba0" category="list-text">在故障轉移頁面中，您可以立即建立新的快照，或選擇現有的快照作為資料儲存的復原基礎。預設值為最新版本。</block>
   <block id="38fc1b337c0ea26463916fc2913205c1" category="paragraph"><block ref="38fc1b337c0ea26463916fc2913205c1" category="inline-image-macro-rx" type="image"></block></block>
   <block id="7019a39846e9a2c7f7a80eaba91e4a41" category="paragraph"><block ref="7019a39846e9a2c7f7a80eaba91e4a41" category="inline-image-macro-rx" type="image"></block></block>
   <block id="1d593c3f7480ada9580d93cd753c3f93" category="paragraph">這是系統產生的映射到您的電子郵件的 ID。在*NSS 管理*頁面上，您可以顯示來自<block ref="5444f6f0c3983523c8933a1864b2b390" category="inline-image-macro-rx" type="image"></block>菜單。</block>
@@ -2028,7 +2024,6 @@
   <block id="bbb1b16486e8f54306a7a02c2ea6a39c" category="admonition">故障轉移開始後，您可以在災難復原站台的 vCenter 中看到已復原的 VM（VM、網路和資料存放區）。根據預設，VM 會復原至 Workload 資料夾。</block>
   <block id="cd3ff8e65cebdd7f0aa846632bbebcb2" category="list-text">在下拉式選單中，篩選出 *vCenter* 複寫計畫。</block>
   <block id="895a527b215871aa5fc33ec6c9b01c15" category="list-text">如果您希望服務在複寫計畫容錯移轉後不自動建立反向 SnapMirror 保護關係，請選取 *Skip protection*。如果您希望在將還原站台於 NetApp Disaster Recovery 重新上線前，先執行其他操作，這個選項會很有用。</block>
-  <block id="baf0b4e105ebbfa84dd088a11896c49a" category="list-text">選擇要用於容錯移轉的快照複本。您可以 *立即建立快照* 建立一個全新的快照並將其複製到目的地叢集，或 *使用最新快照* 使用目的地叢集上可用的最新快照。</block>
   <block id="02531ddbf670fbb347701db90d4791ea" category="list-text">輸入「Failover」以確認操作，然後選擇 *Failover*。</block>
   <block id="98bf814ae7ba9991db0d5988d6e83219" category="paragraph">您可以在 *Job monitoring* 或 *Replication plans* 中監控作業狀態。</block>
   <block id="85c3e85b3061b8da1b16538c49af072b" category="paragraph">資源群組可讓您將 VM、資料存放區或 Kubernetes 應用程式組合成一個單元。</block>
@@ -2398,7 +2393,6 @@
   <block id="992afcf904b48182f53abedd4c345eb3" category="paragraph">在執行即時容錯移轉之前，您可以進行測試以驗證整備狀態。測試過程中，工作負載將保持線上。</block>
   <block id="62726f7629b70dfdba92a199bf2d6188" category="paragraph">然後輸入「Test failover」，並選擇 *Test failover*。</block>
   <block id="812a25f47897c42088ce8109b2dc17ab" category="paragraph">若發生災難，可將您的主要本機 VMware 站台隨需容錯移轉至另一個本機 VMware 站台或 VMware Cloud on AWS with FSx for NetApp ONTAP。</block>
-  <block id="76ac605ebc55c0714aa7e8ca249cc175" category="paragraph">在發生容錯移轉之前，系統將對目前來源建立快照，並將其複寫至目前目的地。</block>
   <block id="82692f8686eaa3ddcdc1df8544f4fa9a" category="list-text">如果您希望即使服務偵測到通常會封鎖容錯移轉的錯誤，容錯移轉也能繼續進行，請選擇 *Force failover*。</block>
   <block id="8fe77e1d324dab0e88ae83c79f1987ee" category="paragraph">您可以編輯 vCenter 站台名稱和類型（本機部署或 AWS）。</block>
   <block id="bfe95c617e00c3590496c016d8d8b2bf" category="paragraph">您可以按虛擬機器或資料存放區建立資源群組。您可以在建立複寫計劃時新增它們，也可以稍後新增。</block>
@@ -2554,4 +2548,23 @@
   <block id="3d6bb738851a3bfae62f8c75b1ffb531" category="paragraph">AppVault 是 Trident Protect 保存 Kubernetes 保護資料的雲端儲存目標。您在設定 Kubernetes 複寫計劃時建立 AppVault。</block>
   <block id="2f5122e05c45ffd052c98ecc0e6d46cf" category="list-text">您可以透過 Amazon Web Services （AWS） Marketplace、Azure Marketplace 或 Google Cloud Marketplace 購買隨用隨付 （PAYGO） 訂閱。此授權可讓您購買固定的受保護容量授權，無需任何長期承諾。</block>
   <block id="3339edb028f501d54393ca849ca0f55b" category="admonition">NetApp Disaster Recovery 費用是根據來源站台上資料存放區的已使用容量計算，前提是至少有一個虛擬機器或 Kubernetes 資源具有複寫計劃。已容錯移轉資料存放區的容量不包含在容量配額中。對於 BYOL，如果資料超過允許的容量，服務中的操作將受到限制，直到您取得額外的容量授權或在 NetApp Console 中升級授權。</block>
+  <block id="c9dcf9057588b19f1d398446f68f093d" category="admonition">選擇特定快照基準時，SnapMirror 傳輸快照預設為隱藏狀態，因為它們可能在容錯移轉過程中被刪除。此刪除操作會導致容錯移轉後因「找不到通用快照」錯誤而無法重新保護工作負載。您仍然可以使用 SnapMirror 傳輸快照，但需要完成額外的確認提示以確認此風險。</block>
+  <block id="e10cb273323f88df11fadb5507d738a0" category="doc">改進的 SnapMirror 快照管理</block>
+  <block id="f0503ae9f824deb7b1d7d923eccde6cf" category="paragraph">您現在可以使用最新的快照觸發容錯移轉，這是在不建立新快照時的首選方法。</block>
+  <block id="904ad73a93f80a63956690821d3e7583" category="paragraph">選擇特定快照基準時，SnapMirror 傳輸快照預設會隱藏。這是因為傳輸快照可能會在容錯移轉過程中被刪除，導致容錯移轉後因出現「找不到共同快照」錯誤而無法重新保護工作負載。您仍然可以使用這些快照，但需要完成額外的確認提示以確認此風險。</block>
+  <block id="b55121c9a6dfee22377b715103e30d54" category="paragraph">如需詳細資訊，請參閱 <block ref="0659d04a54310aa1f4f7b2818a7e8b7d" category="inline-link-macro-rx"></block>。</block>
+  <block id="e2725f83c9b13c105b305f08c1ae5aa3" category="section-title">其他改進</block>
+  <block id="c228cd16d1f14f9ba8606b879f59e931" category="list-text">已進行小幅改進，以提高測試容錯移轉工作流程的恢復能力。</block>
+  <block id="afb89ab075bef1d8e9fa1a1124a73a26" category="list-text">新增指令碼時出現的驗證錯誤已修復。</block>
+  <block id="91b0db938f6511dad8ea423304795a3a" category="section-title">2026年8月31日</block>
+  <block id="3806c88477c309bbf8c03bd54373594d" category="paragraph">版本 4.3.6P1</block>
+  <block id="c417772661f0dcc86af9bfb25253e775" category="paragraph">容錯移轉程序包含下列作業：</block>
+  <block id="2ad49ff1f5df8038d87e4e5f7cb8741e" category="list-text">如果來源 vCenter 仍然作用中，請關閉所有正在進行容錯移轉的來源端虛擬機器。</block>
+  <block id="389083a3b9743d34a289e43d3a45d618" category="list-text">如果來源 vCenter 和 ONTAP 叢集仍處於作用中狀態，請建立反向 SnapMirror 關係，以便在容錯移轉狀態下將任何變更複寫回原始來源站台。此 SnapMirror 關係從目標虛擬機器反轉至來源虛擬機器。</block>
+  <block id="a15a061412d42593895d687f77b6e2a4" category="list-text">選擇要用於容錯移轉的快照複本：</block>
+  <block id="6fb3534aed2b1434680c24a124973105" category="list-text">選擇 *Take snapshot now* 以建立全新的快照，該快照將在容錯移轉之前複寫到目的地叢集。</block>
+  <block id="c28ac9182cd2d7fd6ffc8d3320efa414" category="list-text">選擇 *Use latest snapshot* 以使用目的地叢集上可用的最新快照。</block>
+  <block id="3402d8d43abf71995137392eb9b660bc" category="list-text">選擇 *Select* 以審查依時間排序的快照清單。</block>
+  <block id="2c9e00774620c5f83c48800d39a8e3a1" category="list-text">選擇 *Take snapshot now* 以建立一個全新的快照，該快照將複寫到目的地叢集。</block>
+  <block id="15816348d7ed6eb8ac7c5354e5a1aa49" category="list-text">如果您希望 Disaster Recovery 在複寫計畫容錯移轉後不自動建立反向 SnapMirror 保護關係，請選擇*跳過保護*。如果您想在將還原的站台重新上線至 NetApp Disaster Recovery 之前對其執行其他操作，此功能非常有用。</block>
 </blocks>

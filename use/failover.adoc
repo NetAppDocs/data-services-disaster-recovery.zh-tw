@@ -91,7 +91,7 @@ summary: NetApp Disaster Recovery是一種基於雲端的災難復原服務​�
 
 若發生災難，可將您的主要本機 VMware 站台隨需容錯移轉至另一個本機 VMware 站台或 VMware Cloud on AWS with FSx for NetApp ONTAP。
 
-故障轉移過程涉及以下操作：
+容錯移轉程序包含下列作業：
 
 * 災難復原對目標叢集和SnapMirror關係執行預檢查。
 * 如果您選擇了最新的快照，則會執行SnapMirror更新以複製最新的變更。
@@ -101,9 +101,9 @@ summary: NetApp Disaster Recovery是一種基於雲端的災難復原服務​�
 * 根據複製計畫中擷取的資訊建立資料儲存並將其安裝到 VMware 或 VMC 叢集或主機。如果任何資料儲存都是 VMFS，則建立一個 iGroup 並將其對應到每個 LUN。
 * 目標虛擬機器已在 vCenter 中註冊為新的資料存放區。
 * 目標 VM 會根據資源群組頁面中擷取的開機順序啟動。
-* 如果來源 vCenter 仍處於活動狀態，請關閉所有正在進行故障轉移的來源端虛擬機器。
+* 如果來源 vCenter 仍然作用中，請關閉所有正在進行容錯移轉的來源端虛擬機器。
 * 取消停頓虛擬機器中任何被標記為「應用程式一致」的受支援的資料庫應用程式。
-* 如果來源 vCenter 和ONTAP叢集仍處於活動狀態，請建立反向SnapMirror關係，以便在故障轉移狀態下將任何變更複製回原始來源網站。  SnapMirror關係從目標虛擬機器到來源虛擬機器是相反的。
+* 如果來源 vCenter 和 ONTAP 叢集仍處於作用中狀態，請建立反向 SnapMirror 關係，以便在容錯移轉狀態下將任何變更複寫回原始來源站台。此 SnapMirror 關係從目標虛擬機器反轉至來源虛擬機器。
 
 
 
@@ -126,9 +126,16 @@ image::site-type-toggle.png[網站類型切換的螢幕擷取畫面]
 +
 image:dr-plan-failover3.png["故障轉移頁面"]
 
-. 在故障轉移頁面中，您可以立即建立新的快照，或選擇現有的快照作為資料儲存的復原基礎。預設值為最新版本。
+. 選擇要用於容錯移轉的快照複本：
 +
-在發生容錯移轉之前，系統將對目前來源建立快照，並將其複寫至目前目的地。
+** 選擇 *Take snapshot now* 以建立全新的快照，該快照將在容錯移轉之前複寫到目的地叢集。
+** 選擇 *Use latest snapshot* 以使用目的地叢集上可用的最新快照。
+** 選擇 *Select* 以審查依時間排序的快照清單。
++
+
+NOTE: 選擇特定快照基準時，SnapMirror 傳輸快照預設為隱藏狀態，因為它們可能在容錯移轉過程中被刪除。此刪除操作會導致容錯移轉後因「找不到通用快照」錯誤而無法重新保護工作負載。您仍然可以使用 SnapMirror 傳輸快照，但需要完成額外的確認提示以確認此風險。
+
+
 
 . 如果您希望即使服務偵測到通常會封鎖容錯移轉的錯誤，容錯移轉也能繼續進行，請選擇 *Force failover*。
 . 如果您希望服務在複寫計畫容錯移轉後不自動建立反向 SnapMirror 保護關係，請選取 *Skip protection*。如果您希望在將還原站台於 NetApp Disaster Recovery 重新上線前，先執行其他操作，這個選項會很有用。
@@ -151,8 +158,18 @@ image::site-type-toggle.png[網站類型切換的螢幕擷取畫面]
 
 . 選擇複製計劃。
 . 在右側、選取 *Actions* 選項 image:../use/icon-horizontal-dots.png["NetApp Disaster Recovery服務​​中的操作選單圖標"]、將游標暫留在 *Recover* 上、然後選取 *Fail over* 。
-. 選擇要用於容錯移轉的快照複本。您可以 *立即建立快照* 建立一個全新的快照並將其複製到目的地叢集，或 *使用最新快照* 使用目的地叢集上可用的最新快照。
-. 如果您希望服務在複寫計畫容錯移轉後不自動建立反向 SnapMirror 保護關係，請選取 *Skip protection*。如果您希望在將還原站台於 NetApp Disaster Recovery 重新上線前，先執行其他操作，這個選項會很有用。
+. 選擇要用於容錯移轉的快照複本：
++
+** 選擇 *Take snapshot now* 以建立一個全新的快照，該快照將複寫到目的地叢集。
+** 選擇 *Use latest snapshot* 以使用目的地叢集上可用的最新快照。
+** 選擇 *Select* 以審查依時間排序的快照清單。
++
+
+NOTE: 選擇特定快照基準時，SnapMirror 傳輸快照預設為隱藏狀態，因為它們可能在容錯移轉過程中被刪除。此刪除操作會導致容錯移轉後因「找不到通用快照」錯誤而無法重新保護工作負載。您仍然可以使用 SnapMirror 傳輸快照，但需要完成額外的確認提示以確認此風險。
+
+
+
+. 如果您希望 Disaster Recovery 在複寫計畫容錯移轉後不自動建立反向 SnapMirror 保護關係，請選擇*跳過保護*。如果您想在將還原的站台重新上線至 NetApp Disaster Recovery 之前對其執行其他操作，此功能非常有用。
 . 輸入「Failover」以確認操作，然後選擇 *Failover*。
 
 
