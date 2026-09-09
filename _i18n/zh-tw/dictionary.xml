@@ -2406,7 +2406,6 @@
   <block id="57428a711cfa3bd5fc08ccca3ebd74d1" category="admonition">建立複寫計畫、在精靈中設定重複週期並啟動移轉後，Disaster Recovery 會每 30 分鐘執行一次驗證，以確保移轉按計畫進行。您可以在「作業監控」頁面中監控進度。</block>
   <block id="0e00059b7ae89bb2943107122795d39b" category="paragraph">在開始移轉之前，請建立複寫計劃並為其設定移轉。然後，*Migrate* 選項將出現在「動作」功能表中。</block>
   <block id="c3ddf9c129ec78b8669259e50ef2b80b" category="list-text">在文字方塊中輸入「Migrate」以確認操作，然後選取 *Migrate*。</block>
-  <block id="f1f2884d80fd0cf77d91665857fb19fd" category="paragraph">監控 NetApp Disaster Recovery 作業，追蹤其狀態和進度。</block>
   <block id="119ecc97f4025cf7e813b10479d31164" category="list-text">審查工作，包括其時間戳記和狀態。</block>
   <block id="3fe84e5e3b6ca68b66ef1e1ff0d7b114" category="list-text">若要檢視工作詳細資料，請選取其所在列。若要下載工作詳細資料以供離線審查，請選取行動選單，然後選取 **Download job details**。</block>
   <block id="f917d3f114d10bd11fbc835ef9241353" category="admonition">審查作業詳細資料時，Disaster Recovery 會顯示啟動作業的使用者。如果責任方列為「system」，則表示作業是由 Disaster Recovery 啟動的。</block>
@@ -2567,4 +2566,5 @@
   <block id="3402d8d43abf71995137392eb9b660bc" category="list-text">選擇 *Select* 以審查依時間排序的快照清單。</block>
   <block id="2c9e00774620c5f83c48800d39a8e3a1" category="list-text">選擇 *Take snapshot now* 以建立一個全新的快照，該快照將複寫到目的地叢集。</block>
   <block id="15816348d7ed6eb8ac7c5354e5a1aa49" category="list-text">如果您希望 Disaster Recovery 在複寫計畫容錯移轉後不自動建立反向 SnapMirror 保護關係，請選擇*跳過保護*。如果您想在將還原的站台重新上線至 NetApp Disaster Recovery 之前對其執行其他操作，此功能非常有用。</block>
+  <block id="d4fd90d5c03a49a34d58a0210e1f6a1b" category="paragraph">監控 NetApp Disaster Recovery 作業以檢視其歷史記錄、狀態和詳細資訊。追蹤作業狀態和進度可讓您在失敗或停滯的操作影響恢復準備之前發現這些操作。</block>
 </blocks>

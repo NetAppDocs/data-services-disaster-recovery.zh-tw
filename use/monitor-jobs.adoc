@@ -12,7 +12,7 @@ summary: NetApp Disaster Recovery是一種基於雲端的災難復原服務​�
 
 
 [role="lead"]
-監控 NetApp Disaster Recovery 作業，追蹤其狀態和進度。
+監控 NetApp Disaster Recovery 作業以檢視其歷史記錄、狀態和詳細資訊。追蹤作業狀態和進度可讓您在失敗或停滯的操作影響恢復準備之前發現這些操作。
 
 
 
