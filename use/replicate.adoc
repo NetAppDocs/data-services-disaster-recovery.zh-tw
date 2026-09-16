@@ -12,7 +12,7 @@ summary: 使用 NetApp Disaster Recovery，您可以透過 SnapMirror 複寫，�
 
 
 [role="lead"]
-使用 NetApp Disaster Recovery，您可以透過 SnapMirror 複寫，將 VMware 應用程式從來源站台複寫到雲端中的遠端災難恢復站台。
+使用 NetApp Disaster Recovery，您可以透過使用 SnapMirror 複寫，將 VMware 應用程式從來源站台複寫到雲端中的遠端災難恢復站台。保持遠端站台上的恢復資料為最新狀態，可確保能夠從最近的 SnapMirror 快照恢復受保護的應用程式。
 
 
 TIP: 在建立NetApp Disaster Recovery Disaster Recovery每 30 分鐘驗證一次複製是否確實按照計畫進行。您可以在作業監視器頁面中監視進度。

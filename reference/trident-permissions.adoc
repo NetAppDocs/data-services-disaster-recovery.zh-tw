@@ -1,0 +1,82 @@
+---
+sidebar: sidebar 
+permalink: reference/trident-permissions.html 
+keywords: disaster recovery, IAM, permissions, Trident Protect, S3, StorageGrid, AppVault, cluster registration, cluster discover 
+summary: 使用 NetApp Disaster Recovery 時，請確保您已設定正確的 Trident Protect 組態，以探索並註冊您的 Kubernetes 叢集。 
+---
+= 設定 Trident Protect 權限以進行 NetApp Disaster Recovery
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+使用 NetApp Disaster Recovery 時，請確保您已設定正確的 Trident Protect 組態，以探索並註冊您的 Kubernetes 叢集。
+
+
+
+[[trident-protect-cluster-permissions]]
+== Trident Protect 叢集權限
+
+災難恢復需要以下叢集權限：
+
+[cols="3,1"]
+|===
+| 權限 | 功能 
+
+
+| dr:trident_cluster-view | 查看災難恢復使用的已註冊 Kubernetes 叢集和叢集清單 
+
+
+| dr:trident_cluster-create | 註冊 Kubernetes 叢集並產生設定命令。 
+
+
+| dr:trident_cluster-update | 修改已註冊的 Kubernetes 叢集。 
+
+
+| dr:trident_cluster-delete | 刪除已註冊的 Kubernetes 叢集。 
+
+
+| dr:trident_cluster-refresh | 執行 Trident 叢集探索。 
+|===
+
+
+[[trident-protect-appvault-permissions]]
+== Trident Protect AppVault 權限
+
+災難恢復需要以下 AppVault 權限：
+
+[cols="3,1"]
+|===
+| 權限 | 功能 
+
+
+| dr:trident_appvault-view | 查看 Trident AppVaults 以及 AppVault 設定所需的雲端/物件儲存探索資料。 
+
+
+| dr:trident_appvault-create | 透過災難恢復建立 Trident AppVault 自訂資源。 
+|===
+
+
+[[trident-protect-credential-permissions]]
+== Trident Protect 認證資料權限
+
+災難恢復需要以下認證資料權限：
+
+[cols="3,1"]
+|===
+| 權限 | 功能 
+
+
+| dr:credential-view | 查看認證資料中繼資料並列出 ONTAP S3/StorageGRID 儲存區以進行 AppVault 設定。 
+
+
+| dr:credential-create | 註冊認證資料，包括 ONTAP S3 和 StorageGRID。 
+
+
+| dr:credential-update | 更新認證資料，包括 ONTAP S3 和 StorageGRID。 
+
+
+| dr:credential-delete | 刪除包括 ONTAP S3 和 StorageGRID 在內的認證資料。 
+|===

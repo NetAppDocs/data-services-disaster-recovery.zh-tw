@@ -12,7 +12,9 @@ summary: NetApp Disaster Recovery是一種基於雲端的災難復原服務​�
 
 
 [role="lead"]
-如果發生災難，請將主要內部部署 VMware 站台容錯移轉到另一個內部部署 VMware 站台或 VMware Cloud on AWS。您也可以提前測試容錯移轉流程，以確認恢復功能符合預期。
+當災難或其他類似事件發生時，使用 NetApp Disaster Recovery 來恢復關鍵工作負載，以便應用程式能夠按照計畫的映射在災難恢復站台恢復運作。
+
+災難恢復還支援故障轉移測試。執行測試有助於您熟悉流程，並確認恢復如預期運作。
 
 *所需 NetApp Console 角色* 執行此任務需要 Super admin、Disaster recovery admin 或 Disaster recovery failover admin 角色。link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["了解NetApp Disaster Recovery中的使用者角色和權限"^]。link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服務的NetApp Console存取角色"^]。
 

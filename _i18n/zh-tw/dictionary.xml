@@ -1145,7 +1145,6 @@
   <block id="b5e92408332ec8fe388fc403b03249bf" category="section-title">查看虛擬機器資訊</block>
   <block id="3849da8702f93c4c73b8b2d18d7d3b4d" category="list-text">選擇“虛擬機器”。</block>
   <block id="2e91c6382e139b4d3b0307917725df9c" category="list-text">查看虛擬機器資訊。</block>
-  <block id="74b7e5a581d3f8be472f23c9f533948e" category="summary">使用NetApp Disaster Recovery，您可以將來源站點上的 VMware 應用程式遷移到另一個站點。</block>
   <block id="e149f52ef3987c9798fc0b5e92f0d94c" category="doc">使用NetApp Disaster Recovery將應用程式遷移到另一個站點</block>
   <block id="c1845ff7083c49cb3022e9cb477f265b" category="summary">NetApp Disaster Recovery是一種基於雲端的災難復原服務​​，可自動執行災難復原工作流程。您可以監控所有災難復原工作並確定其進度。</block>
   <block id="45b443b335251cfe162de8423d5b2021" category="doc">監控NetApp Disaster Recovery作業</block>
@@ -1880,7 +1879,6 @@
   <block id="265b5db3aaacf91c1fc792d5022d95b7" category="paragraph">如果您使用的是 VMware Cloud SDDC，則還需符合以下附加先決條件：</block>
   <block id="9aa66a327a3181a340b88cc81b7ac070" category="summary">在使用 NetApp Disaster Recovery 之前，請確保您的 Kubernetes 叢集符合要求。</block>
   <block id="90e2c61883b995611cf3a865b7eefbbd" category="doc">Kubernetes 叢集對 NetApp Disaster Recovery 的需求</block>
-  <block id="189edd980c131edf9d5711ed1e7b1d73" category="paragraph">災難復原支援 <block ref="ee3b2775270ba891227fbdcc3618242b" category="inline-link-macro-rx"></block>。</block>
   <block id="85eb427901278daf26f132cb3e076914" category="section-title">Kubernetes 叢集</block>
   <block id="3db879f685c32ec1d391ee151f8cbbb3" category="paragraph">對於每個 Kubernetes 叢集，請確保：</block>
   <block id="b6a170e7cec78934ee3380877053401e" category="list-text">您擁有每個 Kubernetes 叢集的管理員<block ref="0f12ee5c9f1dd90158580f1c292b0d37" prefix=" " category="inline-code"></block>存取權。</block>
@@ -1892,7 +1890,6 @@
   <block id="92601eac5d4e753f0d60f0e5ba9a27f1" category="inline-link-macro">在每個叢集上安裝 Trident 操作符。</block>
   <block id="bd2bdca3f6b8a3f02b562505d50b41e2" category="paragraph"><block ref="bd2bdca3f6b8a3f02b562505d50b41e2" category="inline-link-macro-rx"></block></block>
   <block id="ed5e6801d7e087345895d132f7e9d2dc" category="paragraph">如果您已經安裝了 Trident，請使用指令驗證安裝<block ref="8dd3e3fab389d3d56b4dbea697d52e91" prefix=" " category="inline-code"></block>。如果安裝成功，您會在幾分鐘後看到 Trident 控制器、節點 Pod（DaemonSet），而 operator 的狀態為<block ref="5bda814c4aedb126839228f1a3d92f09" prefix=" " category="inline-code"></block>狀態。</block>
-  <block id="33c1ffdebe58ba196b293c23e0e2f697" category="section-title">配置 ONTAP 後端和 Trident StorageClass</block>
   <block id="ed6eabebedff09350cdabab556887c62" category="section-title">建立 Kubernetes Secret</block>
   <block id="019a873bad5bd15622bc515c6deabc69" category="paragraph">在命名空間中建立 Kubernetes Secret：</block>
   <block id="26b17225b626fb9238849fd60eabdf60" category="paragraph">+</block>
@@ -2312,7 +2309,6 @@
   <block id="7bb121cdcae2c2832838e2f290a86bf5" category="list-text">NetApp Disaster Recovery 管理的所有 VMware 叢集都必須使用 ONTAP Volume 來託管您要保護的虛擬機器。</block>
   <block id="dfb6f3404d01c2320e91dc82c3743342" category="list-text">將 VMware Cloud SDDC 與 Amazon FSx for NetApp ONTAP 執行個體連結。請參閱<block ref="703588ab376df01744e79984f081d5fd" category="inline-link-rx"></block>。</block>
   <block id="652475d7336cd836411ec7d566842d60" category="paragraph">在為 Kubernetes 設定 NetApp Disaster Recovery 之前，請先準備好每個 Kubernetes 叢集。保護通常適用於來源叢集和分隔的目的地叢集，因此請在叢集對中的每個叢集上完成這些程序。</block>
-  <block id="9ac66e8e2bbbe7b9901c0c80b4c7ed2e" category="paragraph">在開始之前，請確保您的 Kubernetes 叢集和 ONTAP 叢集已完成設定。</block>
   <block id="0a4e25753cea4f154af0469ab230e9ba" category="list-text">您可以在執行安裝指令的地方使用 Helm 3。</block>
   <block id="538e8cc604d9acb8c54b11be5d28123e" category="list-text">**管理 LIF**：供 Trident 用於管理 API 存取。</block>
   <block id="e8fe43ecd8f37d6c3b374d6267a0e1bc" category="list-text">**資料（NFS）LIF**：用於 Volume 的 NFS 流量。</block>
@@ -2348,7 +2344,6 @@
   <block id="5d6353688a496fa47de65c195b8ac3bc" category="paragraph">在容錯回復過程中，NetApp Disaster Recovery 會將所有變更複寫（重新同步）回原始來源虛擬機器，然後再反轉複寫方向。此程序在關係容錯移轉至目標後開始，並包含下列步驟：</block>
   <block id="44d4c6d5260eb624900ebb869b4a4939" category="paragraph">如果您使用的是基於資料存放區的保護，則在容錯移轉期間虛擬機器可能會新增至資料存放區。如果發生這種情況，請確保在啟動容錯回復之前為這些虛擬機器提供額外的對應資訊。若要編輯資源對應，請參閱 <block ref="aae3ec9b67319c36c78ebcd18b670ec7" category="inline-link-macro-rx"></block>。</block>
   <block id="a1502915916db4624a57959d103aa608" category="list-text">識別您要容錯回復的複寫計畫。選取 *Actions* 選項 <block ref="771645334c0631c5881bfc9858be7f5b" category="inline-image-macro-rx" type="image"></block>，將滑鼠游標移至 *Recover* 上方，然後選取 *Failback*。</block>
-  <block id="dfd07f1f5209a167efdb80c6f3885d11" category="paragraph">如果發生災難，請將主要內部部署 VMware 站台容錯移轉到另一個內部部署 VMware 站台或 VMware Cloud on AWS。您也可以提前測試容錯移轉流程，以確認恢復功能符合預期。</block>
   <block id="bbe48fb854ea022537208eeeff822f91" category="section-title">關於此任務</block>
   <block id="634ed35083de0dc9fd6ca402130b2364" category="paragraph">在容錯移轉期間，NetApp Disaster Recovery 預設使用最新的 SnapMirror 快照複本，但您也可以從時間點快照中選取特定快照（根據 SnapMirror 的保留政策）。如果最新的複本遭到破壞（例如在勒索軟體攻擊期間），請使用時間點選項。</block>
   <block id="992afcf904b48182f53abedd4c345eb3" category="paragraph">在執行即時容錯移轉之前，您可以進行測試以驗證整備狀態。測試過程中，工作負載將保持線上。</block>
@@ -2379,12 +2374,10 @@
   <block id="260df5358fdc3f07758e38ffb3a77c19" category="list-text">請選擇報告的*文件類型*（PDF、HTML 或 JSON）和*時間段*（過去 1 至 7 天）。</block>
   <block id="ba11bffa8084f9c85a1963af8d050a3f" category="summary">資源群組可讓您將相互依賴的資源組織成符合您要求的邏輯群組。</block>
   <block id="6e21e837facbd5d06523d904bcd2334d" category="doc">在 NetApp Disaster Recovery 中建立資源群組</block>
-  <block id="1679edd6924beab7d71a5390cf59b854" category="paragraph">將資源新增至站台後，建立資源群組可以將虛擬機器、資料儲存區或 Kubernetes 叢集組織成單一整體。資源群組可讓您將相依資源組織成符合您需求的邏輯群組。例如，您可以將相同應用程式的虛擬機器分組，或將共享相似層級的應用程式分組。資源群組還可以包含在恢復期間執行的延遲開機順序。</block>
   <block id="868ae8e25cad278cb95070092e1b5058" category="admonition">每個資源組可以包含一個或多個虛擬機器、資料儲存區或 Kubernetes 叢集。虛擬機器將按照您在複寫計劃中新增它們的順序啟動。您可以透過在資源組清單中上下拖曳虛擬機器或資料儲存區來變更順序。</block>
   <block id="7ef9d7f4e6bf5f38edfd03606bf493da" category="paragraph">NetApp Disaster Recovery 透過複寫資源群組中託管虛擬機器的底層 ONTAP Volume 和 LUN 來保護虛擬機器。為此，系統會查詢 vCenter 以取得資源群組中每個託管虛擬機器的資料儲存區名稱。NetApp Disaster Recovery 接著會識別託管該資料儲存區的來源 ONTAP Volume 或 LUN。所有保護均在 ONTAP Volume 層級使用 SnapMirror 複寫執行。</block>
   <block id="03c66aa95215fd945ab9f6521baef55e" category="paragraph">如果資源群組中的 VM 託管在不同的資料儲存區上，NetApp Disaster Recovery 將使用下列其中一種方法來建立 ONTAP Volume 或 LUN 的資料一致性快照。</block>
   <block id="183b61458af19e5b813be061374378cf" category="list-text">將*資源類型*分類。預設情況下，選擇為「包含全部」，表示多種資源類型。</block>
-  <block id="372899929926faabc33dabdd64a2ecc2" category="paragraph">在建立災難恢復計畫之前，請先將要保護的站台新增至 NetApp Disaster Recovery。站台是指一組 vCenter 伺服器或 Kubernetes 叢集，無論位於內部部署還是雲端。請同時新增生產站台和災難恢復站台。</block>
   <block id="11a59530affce2463e250e21bdbcc29c" category="summary">關於 VMware 和 Kubernetes 工作負載的 NetApp 災難恢復常見問題。</block>
   <block id="6782fe55d65b471e3f7ea9c8c6c97abb" category="paragraph">本常見問題集解答有關 NetApp Disaster Recovery 針對 VMware 和 Kubernetes 工作負載的常見問題。本文著重於在實作災難恢復設定及管理複寫、移轉、容錯移轉和容錯回復作業時有用的概念、術語、系統行為和限制。</block>
   <block id="cb59b87e00d11222bfd9159d0d23836f" category="section-title">入門</block>
@@ -2682,4 +2675,53 @@
   <block id="808c9323236f2ed48bff12970a5f1c49" category="list-text"><block ref="808c9323236f2ed48bff12970a5f1c49" category="inline-link-macro-rx"></block></block>
   <block id="005c3fd782ef9a703a22a6405758e8d0" category="sidebar">檢視計劃健全狀況和保護狀態</block>
   <block id="8b2d90137c20f81f88555e65f6c0467a" category="sidebar">管理資源轉換範本</block>
+  <block id="870caf8c63b38657c754a6ae2bfdccfa" category="list-text">在設定 Kubernetes 叢集需求之前、請確保您已設定好 Kubernetes 叢集和 ONTAP 叢集。</block>
+  <block id="6fc27d93b674dc2181e0f20fed00ba74" category="list-text">請確保您使用的是支援的 Kubernetes 版本。災難恢復支援 <block ref="ee3b2775270ba891227fbdcc3618242b" category="inline-link-macro-rx"></block>。</block>
+  <block id="ef591b016875b0c367446c1b32d0cb33" category="inline-link-macro">Trident Protect 的權限</block>
+  <block id="6a8721c6d84b89d600d6f9f71aee3cd0" category="list-text">設定適當的 <block ref="2e82bab41ca83cccc3d3234ff27d0186" category="inline-link-macro-rx"></block>。</block>
+  <block id="da4a61950000370345af09d5653606e5" category="section-title">NetApp Console 角色</block>
+  <block id="000b23326681f264355080f1b40f0c3a" category="inline-link-macro">確保您擁有正確的災難恢復 Console 角色，以便執行探索、容錯移轉和其他任務。</block>
+  <block id="633d8dca168073e743492024f682a468" category="paragraph">完成 Trident Protect 和 Kubernetes 設定後，<block ref="75e0472282f0516ba7697bd410d51691" category="inline-link-macro-rx"></block></block>
+  <block id="95318750d34cc904bb16702f9a790ce8" category="summary">使用 NetApp Disaster Recovery 時，請確保您已設定正確的 Trident Protect 組態，以探索並註冊您的 Kubernetes 叢集。</block>
+  <block id="4fb98e5696b973e4f7e26f71b1dc5572" category="doc">設定 Trident Protect 權限以進行 NetApp Disaster Recovery</block>
+  <block id="510f7e6ce9bfcf6223b479b6d2b5bf57" category="section-title">Trident Protect 叢集權限</block>
+  <block id="e63fae19e777b24af95d46b917748920" category="paragraph">災難恢復需要以下叢集權限：</block>
+  <block id="ed5dea09095f671b801bee34ea28a319" category="cell">權限</block>
+  <block id="86408593c34af77fdd90df932f8b5261" category="cell">功能</block>
+  <block id="075beeeea7e84e77a2ecc9b64b6c9276" category="cell">dr:trident_cluster-view</block>
+  <block id="fccae372786983126b9675ff75dfdbc7" category="cell">查看災難恢復使用的已註冊 Kubernetes 叢集和叢集清單</block>
+  <block id="33c1f6a282a123d4cb586cdfc39796ba" category="cell">dr:trident_cluster-create</block>
+  <block id="2ef43485b730a57e6d07cff8f3000fb5" category="cell">註冊 Kubernetes 叢集並產生設定命令。</block>
+  <block id="cfb270fe2ed558fee43873a56ed2de55" category="cell">dr:trident_cluster-update</block>
+  <block id="a22b7cbab8eae9790586bc03c12fbe0c" category="cell">修改已註冊的 Kubernetes 叢集。</block>
+  <block id="d5f936a20f2376f49e243e2b6ea3fcea" category="cell">dr:trident_cluster-delete</block>
+  <block id="1d8144283609007a3d4c341c419c349a" category="cell">刪除已註冊的 Kubernetes 叢集。</block>
+  <block id="33ecd3ae9b8df84f4271d342f6cdd95c" category="cell">dr:trident_cluster-refresh</block>
+  <block id="8acf065073d123ab8eeb78e96905246f" category="cell">執行 Trident 叢集探索。</block>
+  <block id="9cd9d05d35ebe6942d491e995eb85059" category="section-title">Trident Protect AppVault 權限</block>
+  <block id="8c7283f469c713d4e5f2e9d03fffb21f" category="paragraph">災難恢復需要以下 AppVault 權限：</block>
+  <block id="29b70ab80a4f3aecbd88e1aa39334b52" category="cell">dr:trident_appvault-view</block>
+  <block id="4e6887c24ac5bb7b528699f806376f21" category="cell">查看 Trident AppVaults 以及 AppVault 設定所需的雲端/物件儲存探索資料。</block>
+  <block id="e525b1d33e3251e3b61c77ec8aa4b345" category="cell">dr:trident_appvault-create</block>
+  <block id="3faa34364f354654f4330d1023ab4196" category="cell">透過災難恢復建立 Trident AppVault 自訂資源。</block>
+  <block id="c473474f3a32f5ce35cebb7bac6ea99a" category="section-title">Trident Protect 認證資料權限</block>
+  <block id="01bac8a90b2b6c564c7d063b834773a7" category="paragraph">災難恢復需要以下認證資料權限：</block>
+  <block id="57dea2516cdc11e5173ac0e824c65ed2" category="cell">dr:credential-view</block>
+  <block id="d53f4c1b208e8e382831c9ae73eee559" category="cell">查看認證資料中繼資料並列出 ONTAP S3/StorageGRID 儲存區以進行 AppVault 設定。</block>
+  <block id="c0e93404607f0eea5f02a73c75225bbf" category="cell">dr:credential-create</block>
+  <block id="8c5965f17b42f7518125742451c79924" category="cell">註冊認證資料，包括 ONTAP S3 和 StorageGRID。</block>
+  <block id="c237c22374e72d1ba1788c15ddb6fe60" category="cell">dr:credential-update</block>
+  <block id="d8d15ad255eb96a9222a8f0f61c9f3a2" category="cell">更新認證資料，包括 ONTAP S3 和 StorageGRID。</block>
+  <block id="48b722a9b0d9600d166bf0f2b2a64f8b" category="cell">dr:credential-delete</block>
+  <block id="c84e57eedd140baa3e64f5ac5e7f1871" category="cell">刪除包括 ONTAP S3 和 StorageGRID 在內的認證資料。</block>
+  <block id="ca2825c2ddf78928b38c75787c2ca73d" category="paragraph">當災難或其他類似事件發生時，使用 NetApp Disaster Recovery 來恢復關鍵工作負載，以便應用程式能夠按照計畫的映射在災難恢復站台恢復運作。</block>
+  <block id="77cb0faa6eb8788ec91dedae1de2f3f9" category="paragraph">災難恢復還支援故障轉移測試。執行測試有助於您熟悉流程，並確認恢復如預期運作。</block>
+  <block id="fbddadf2edd321dc064fe81274b6ff1e" category="paragraph">NetApp Disaster Recovery 支援將 VMware 應用程式從來源移轉到次要站台。例如，如果您有基礎架構變更，使目標環境能夠承擔生產營運，您就可以使用移轉功能。</block>
+  <block id="4e3e73573935056375c83edc2d6f5bfe" category="paragraph">使用 NetApp Disaster Recovery，您可以透過使用 SnapMirror 複寫，將 VMware 應用程式從來源站台複寫到雲端中的遠端災難恢復站台。保持遠端站台上的恢復資料為最新狀態，可確保能夠從最近的 SnapMirror 快照恢復受保護的應用程式。</block>
+  <block id="6187f0da8e0aee4b4df945d5f7c68b0f" category="paragraph">在發生事件之前，利用報告評估複寫法規遵循和恢復歷史記錄，以便發現保護漏洞。</block>
+  <block id="8240e502c7ce5e9805091f5f8c4a3085" category="inline-link-macro">您可以在儀表板中以高層級審查保護狀態，或在「工作負載」頁面中依工作負載審查保護狀態。</block>
+  <block id="18d6539292478681d68b9282daa86220" category="admonition"><block ref="18d6539292478681d68b9282daa86220" category="inline-link-macro-rx"></block></block>
+  <block id="efcf3aea6733a7f1535a22c63a31816e" category="section-title">關於災難恢復報告</block>
+  <block id="08e23a6b35ef4e66680d353da268fa9d" category="paragraph">將資源新增至站台後，您可以建立資源群組，將虛擬機器、資料儲存區或 Kubernetes 叢集組織成單一單位。資源群組可讓您將相依資源組織成符合您需求的邏輯群組。例如，您可以將單一應用程式的虛擬機器分組，或將共享相似層級的應用程式分組。資源群組還可以包含在恢復期間執行的延遲開機順序，以確保資源以正確的順序啟動。</block>
+  <block id="0b3812b60ebe3c1059cea904557f00cb" category="paragraph">在建立災難恢復計畫之前，請先將要保護的站台新增至 NetApp Disaster Recovery。站台是指一組 vCenter 伺服器或 Kubernetes 叢集，無論是位於內部部署或雲端。請同時新增生產站台和災難恢復站台，以便 Disaster Recovery 能夠協調用於恢復的資源。</block>
 </blocks>

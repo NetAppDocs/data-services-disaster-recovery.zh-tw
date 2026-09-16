@@ -19,9 +19,10 @@ summary: 在使用 NetApp Disaster Recovery 之前，請確保您的 Kubernetes 
 [[prerequisites]]
 == 先決條件
 
-在開始之前，請確保您的 Kubernetes 叢集和 ONTAP 叢集已完成設定。
+* 在設定 Kubernetes 叢集需求之前、請確保您已設定好 Kubernetes 叢集和 ONTAP 叢集。
+* 請確保您使用的是支援的 Kubernetes 版本。災難恢復支援 link:https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-requirements.html["Trident Protect 目前支援的任何 Kubernetes 版本"^]。
+* 設定適當的 link:../reference/trident-permissions.html["Trident Protect 的權限"]。
 
-災難復原支援 link:https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-requirements.html["Trident Protect 目前支援的任何 Kubernetes 版本"^]。
 
 
 
@@ -61,13 +62,8 @@ link:https://docs.netapp.com/us-en/trident/trident-install/kubernetes-deploy-hel
 
 
 
-[[configure-ontap-backend-and-trident-storageclass]]
-== 配置 ONTAP 後端和 Trident StorageClass
-
-
-
 [[create-a-kubernetes-secret]]
-=== 建立 Kubernetes Secret
+== 建立 Kubernetes Secret
 
 在命名空間中建立 Kubernetes Secret：
 
@@ -113,7 +109,7 @@ spec:
 
 
 [[configure-the-storage-class]]
-=== 設定儲存類別
+== 設定儲存類別
 
 link:https://docs.netapp.com/us-en/trident/trident-use/create-stor-class.html["建立儲存類別物件"^]。使用配置器 `csi.trident.netapp.io`。例如：
 
@@ -215,6 +211,13 @@ kubectl patch volumesnapshotclasses.snapshot.storage.k8s.io trident-snapshotclas
 
 
 ====
+
+
+[[netapp-console-roles]]
+== NetApp Console 角色
+
+完成 Trident Protect 和 Kubernetes 設定後，link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["確保您擁有正確的災難恢復 Console 角色，以便執行探索、容錯移轉和其他任務。"^]
+
 
 
 [[more-information]]

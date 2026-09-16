@@ -12,7 +12,7 @@ summary: 資源群組可讓您將相互依賴的資源組織成符合您要求�
 
 
 [role="lead"]
-將資源新增至站台後，建立資源群組可以將虛擬機器、資料儲存區或 Kubernetes 叢集組織成單一整體。資源群組可讓您將相依資源組織成符合您需求的邏輯群組。例如，您可以將相同應用程式的虛擬機器分組，或將共享相似層級的應用程式分組。資源群組還可以包含在恢復期間執行的延遲開機順序。
+將資源新增至站台後，您可以建立資源群組，將虛擬機器、資料儲存區或 Kubernetes 叢集組織成單一單位。資源群組可讓您將相依資源組織成符合您需求的邏輯群組。例如，您可以將單一應用程式的虛擬機器分組，或將共享相似層級的應用程式分組。資源群組還可以包含在恢復期間執行的延遲開機順序，以確保資源以正確的順序啟動。
 
 *所需 NetApp Console 角色* 執行此任務需要超級管理員、災難復原管理員或災難復原應用程式管理員角色。link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["了解NetApp Disaster Recovery中的使用者角色和權限"^]。link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服務的NetApp Console存取角色"^]。
 

@@ -12,7 +12,7 @@ summary: 使用 NetApp Disaster Recovery，您可以將 VMware 應用程式從�
 
 
 [role="lead"]
-使用NetApp Disaster Recovery，您可以將來源站點上的 VMware 應用程式遷移到另一個站點。
+NetApp Disaster Recovery 支援將 VMware 應用程式從來源移轉到次要站台。例如，如果您有基礎架構變更，使目標環境能夠承擔生產營運，您就可以使用移轉功能。
 
 
 TIP: 建立複寫計畫、在精靈中設定重複週期並啟動移轉後，Disaster Recovery 會每 30 分鐘執行一次驗證，以確保移轉按計畫進行。您可以在「作業監控」頁面中監控進度。
