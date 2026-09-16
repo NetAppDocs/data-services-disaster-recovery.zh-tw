@@ -1,0 +1,88 @@
+---
+sidebar: sidebar 
+permalink: use/task-resource-transformation.html 
+keywords: disaster recovery, resource transformation, kubernetes, templates 
+summary: 資源轉換可讓您在容錯移轉期間修改工作負載的任何層面。此功能提供靈活度，使工作負載在災難恢復事件期間能適應不同的環境和組態。 
+---
+= 管理 NetApp Disaster Recovery 中的資源轉換
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+對於 NetApp Disaster Recovery 中的 Kubernetes 工作負載，您可以建立資源轉換。資源轉換可讓您在容錯移轉期間修改工作負載的任何層面。資源轉換提供靈活度，使工作負載能在災難恢復事件期間適應不同的環境與組態。
+
+在為 Kubernetes 建立複寫計劃時，會新增資源轉換。
+
+*所需 NetApp Console 角色* 執行此任務需要超級管理員、災難復原管理員或災難復原應用程式管理員角色。link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["了解NetApp Disaster Recovery中的使用者角色和權限"^]。link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服務的NetApp Console存取角色"^]。
+
+
+
+[[create-a-resource-transformation-template]]
+== 建立資源轉換範本
+
+.步驟
+. 在災難恢復中，從側邊欄選擇 *設定*。
+. 在資源轉換卡中，選擇 *+ 新增範本*。
+. 請輸入資源轉換的*名稱*。
+. 選擇*操作*：新增、複本、移動、移除、替換或測試。
+. 請輸入 *JSON 路徑* 和 *變數名稱*。您也可以選擇新增 *預設值*。
++
+image::resource-transformation-template.png[資源轉換範本截圖]
+
+. 若要為範本新增更多操作，請選擇 *+ 新增操作*。重複前兩個步驟，然後依照執行順序對操作進行排序。
+. 選取 *新增* 以建立範本。
+
+
+
+
+[[edit-a-resource-transformation]]
+== 編輯資源轉換
+
+. 在災難恢復中，從側邊欄選擇 *設定*。
+. 在「資源轉換」卡中，選取 *管理資源轉換*。
+. 尋找您要編輯的資源轉換。從該列結尾的行動選單中，選取 *編輯*。
+. 您可以編輯範本的任何欄位。編輯 *名稱*、*操作*（新增、複本、移動、移除、取代或測試）及其相關值：*JSON 路徑* 和 *變數名稱*，或 *預設值*。您也可以新增操作或編輯操作執行的順序。
+. 選擇*儲存*。
+
+
+
+
+[[clone-a-resource-transformation]]
+== Clone 資源轉換
+
+您可以 Clone 資源轉換，以做為新資源轉換範本的基礎。Clone 的範本會使用來源範本的名稱，並附加 "-v1"。例如，如果您 Clone 了範本 "垂直擴充部署"，則該 Clone 的名稱為 "垂直擴充部署-v1"。
+
+.步驟
+. 在災難恢復中，從側邊欄選擇 *設定*。
+. 在「資源轉換」卡中，選取 *管理資源轉換*。
+. 找到您要 Clone 的資源轉換。從該列末尾的行動選單中，選擇 *Clone*。
+. 操作成功後，災難恢復會在 UI 中顯示確認對話方塊。
++
+您可以在資源轉換清單中檢視 Clone 的範本。
+
+
+
+
+
+[[delete-a-resource-transformation]]
+== 刪除資源轉換
+
+如果您不再需要資源轉換，可以將其刪除。
+
+.步驟
+. 在災難恢復中，從側邊欄選擇 *設定*。
+. 在「資源轉換」卡中，選取 *管理資源轉換*。
+. 找到您要刪除的資源轉換。從該列末尾的行動選單中，選取 *刪除*。
+. 在對話方塊中，選取 *刪除* 以確認作業。
+
+
+
+
+[[next-steps]]
+== 後續步驟
+
+* link:drplan-create.html["建立複製計劃"]
+

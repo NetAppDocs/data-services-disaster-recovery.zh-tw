@@ -12,14 +12,14 @@ summary: 使用 NetApp Disaster Recovery 時，請確保您已在 ONTAP 中正�
 
 
 [role="lead"]
-使用 NetApp Disaster Recovery 時，請確保您已在 ONTAP 中正確設定權限，以確保正常運作。
+設定所需的 ONTAP 權限，以便 NetApp Disaster Recovery 能夠正常運作。
 
 
 
 [[minimum-ontap-permissions]]
 == 最低 ONTAP 權限
 
-以下 ONTAP 權限是 NetApp Disaster Recovery 所必需的：
+災難恢復需要以下 ONTAP 權限：
 
 [cols="3,1"]
 |===
@@ -111,7 +111,7 @@ summary: 使用 NetApp Disaster Recovery 時，請確保您已在 ONTAP 中正�
 [[add-permissions-in-ontap]]
 == 在 ONTAP 中新增權限
 
-在 ONTAP 中新增權限需要建立具有所需權限的角色，並將該角色指派給使用者。您可以使用 System Manager 或 ONTAP CLI 在 ONTAP 中執行此任務。
+若要在 ONTAP 中新增權限，請建立一個具有所需權限的角色並將其指派給使用者。您可以使用 System Manager 或 ONTAP CLI 在 ONTAP 中完成此工作。
 
 [role="tabbed-block"]
 ====

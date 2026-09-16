@@ -9,14 +9,12 @@ summary: 使用 Amazon EVS 和Amazon FSx for NetApp ONTAP介紹NetApp Disaster R
 
 
 [role="lead"]
-使用NetApp Disaster Recovery與 Amazon EVS 和Amazon FSx for NetApp ONTAP執行以下操作：故障轉移、測試故障轉移、刷新資源、遷移、立即拍攝快照、停用/啟用複製計畫、清理舊快照、協調快照、刪除複製計畫和編輯計畫。
+在 NetApp Disaster Recovery 中設定複寫計畫後，您可以執行容錯移轉、測試容錯移轉、重新整理資源、移轉，以及管理快照和複寫計畫。除了維護之外，要執行的首要行動是在發生故障時進行容錯移轉。
 
 
 
 [[fail-over]]
 == 故障轉移
-
-您可能需要執行的主要操作是您希望永遠不會發生的操作：在生產本地站點發生災難性故障時故障轉移到 DR（目標）資料中心。
 
 故障轉移是一個手動啟動的過程。
 
@@ -63,8 +61,7 @@ image:evs-rp-failover-dialog.png["故障轉移對話框"]
 +
 image:evs-rp-menu-test-failover.png["測試故障轉移選單選項"]
 
-. 決定是否要取得生產環境的最新狀態（立即拍攝快照）或使用先前建立的複製計畫備份（選擇）
-. 如果您選擇了先前建立的備份，則選擇要用於復原的備份。
+. 選擇要使用的快照。若要建立正式作業環境的最新複本，請選擇 *立即建立快照*。若要使用先前擷取的快照，請選擇 *選擇*，然後挑選現有的快照。
 . 輸入“測試故障轉移”一詞來驗證您是否要繼續。
 . 選擇*測試故障轉移*。
 +
@@ -93,7 +90,7 @@ image:evs-rp-menu-compliance-check.png["運行合規性檢查選單選項"]
 [[refresh-resources]]
 == 刷新資源
 
-每次對虛擬基礎架構進行變更（例如新增或刪除虛擬機器、新增或刪除資料儲存區或在資料儲存區之間移動虛擬機器）時，都需要在NetApp Disaster Recovery服務​​中對受影響的 vCenter 叢集執行刷新。該服務預設每 24 小時自動執行一次此操作，但手動刷新可確保最新的虛擬基礎設施資訊可用並考慮到 DR 保護。
+每次對虛擬化基礎架構進行變更時（例如新增或刪除虛擬機器、新增或刪除資料存放區，或在資料存放區之間移動虛擬機器），都需要在災難恢復中重新整理受影響的 vCenter 叢集。預設情況下，災難恢復每 24 小時自動重新整理一次，但手冊重新整理可確保最新的虛擬化基礎架構資訊可用，並將其納入災難恢復保護的帳戶中。
 
 有兩種情況需要刷新：
 
@@ -108,7 +105,7 @@ image::evs-rp-menu-refresh-resources.png[刷新資源選單選項]
 [[migrate]]
 == 遷移
 
-雖然NetApp Disaster Recovery主要用於災難復原用例，但它也可以將一組虛擬機器從來源站點一次性移至目標網站。這可能是為了協調遷移到雲端項目，也可能是為了避免災難——例如惡劣天氣、政治衝突或其他潛在的暫時災難性事件。
+除了使用 NetApp Disaster Recovery 來管理災難發生時的複寫和故障轉移之外，它還可以支援從來源站台到目的地站台的一次性 VM 移轉。您可以在移轉到雲端時執行一次性移轉，或在應對極端天氣或政治動盪等災難性事件時執行災難規避程序。
 
 . 選擇“操作”選項image:../use/icon-horizontal-dots.png["NetApp Disaster Recovery服務​​中的操作選單圖標"]複製計劃旁。
 . 若要將複製計畫中的虛擬機器移至目標 Amazon EVS 集群，請從複製計畫的操作選單中選擇「遷移」：
@@ -168,7 +165,7 @@ image::evs-rp-menu-cleanup-old-snapshots.png[清理舊快照選單選項]
 [[reconcile-snapshots]]
 == 協調快照
 
-由於本服務協調ONTAP磁碟區快照，因此ONTAP儲存管理員可以在服務不知情的情況下使用ONTAP系統管理員、 ONTAP CLI 或ONTAP REST API 直接刪除快照。該服務每 24 小時自動刪除來源上不在目標叢集上的任何快照。但是，您可以根據需要執行此操作。此功能可讓您確保快照在所有網站上都是一致的。
+由於災難恢復協調 ONTAP Volume 快照， ONTAP 儲存管理員可以直接使用 ONTAP System Manager 、 ONTAP CLI 或 ONTAP REST API 刪除快照，而無需服務的參與。災難恢復每 24 小時自動刪除來源上所有不在目的地叢集上的快照。您可以根據需要手動刪除快照。此功能可確保所有站台上的快照一致。
 
 . 選擇“操作”選項image:../use/icon-horizontal-dots.png["NetApp Disaster Recovery服務​​中的操作選單圖標"]複製計劃旁。
 . 若要從來源叢集中刪除目標叢集上不存在的快照，請從複製計畫的操作選單中選擇*協調快照*。

@@ -16,6 +16,65 @@ summary: NetApp Disaster Recovery 是一項基於雲端的災難復原服務，�
 
 
 
+[[16-september-2026]]
+== 2026 年 9 月 16 日
+
+版本 4.3.7
+
+
+
+[[kubernetes-support-in-netapp-disaster-recovery-is-now-generally-available-ga]]
+=== NetApp Disaster Recovery 中的 Kubernetes 支援現已正式發布（GA）
+
+NetApp Disaster Recovery 對基於 Kubernetes 的工作負載的支援現已正式推出（GA）。透過支援基於 Kubernetes 的工作負載，您可以保護在 Kubernetes 叢集（包括 OpenShift 虛擬化環境）上執行的應用程式。災難恢復支援 Trident Protect 目前支援的任何 Kubernetes 版本，確保容器化應用程式的無縫整合與強大的災難恢復功能。
+
+若要開始保護基於 Kubernetes 的工作負載，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/task-kubernetes-requirements.html["NetApp Disaster Recovery 的 Kubernetes 需求"^]。
+
+
+
+[[resource-transformations]]
+=== 資源轉換
+
+災難恢復現已支援資源轉換，讓您在容錯移轉期間修改工作負載的任何層面。此功能提供靈活度，以便在災難恢復事件期間將工作負載調整至不同的環境與組態。
+
+建立複寫計畫時會套用資源轉換。您可以在新的「設定」頁面中建立、編輯和刪除資源轉換。如需詳細資訊，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-resource-transformation.html["管理資源轉換"^]。
+
+
+
+[[script-execution]]
+=== 指令碼執行
+
+現在，您可以將自訂指令碼插入容錯移轉工作流程中，以協調應用程式的靜止與恢復。此功能有助於確保應用程式在快照複寫與適當還原之前已妥善準備，以便在容錯移轉後無縫地恢復運作。
+
+若要了解如何注入自訂指令碼，請參閱link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"^]。
+
+
+
+[[new-workloads-page]]
+=== 新增工作負載頁面
+
+災難恢復在 UI 中新增了「工作負載」頁面，提供所有已發現工作負載及其保護狀態的全面檢視。「工作負載」頁面可協助您更有效地監控和管理工作負載。
+
+如需詳細資訊，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/dashboard-view.html["審查災難恢復中的健全狀況與保護狀態"^]。
+
+
+
+[[settings-page]]
+=== 設定頁面
+
+災難恢復現在提供「設定」頁面，以集中管理資源轉換範本與 AppVaults。此頁面提供單一介面，以設定和管理災難恢復計畫的這些關鍵元件。若要深入瞭解「設定」頁面中的選項，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-resource-transformation.html["管理資源轉換"^] 和 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-appvault.html["管理 AppVaults"^]。
+
+
+
+[[general-improvements]]
+=== 一般改善
+
+災難恢復在複寫計畫建立頁面中引入了增強的驗證機制，以確保更流暢、無錯誤的使用者體驗。
+
+災難恢復也提高了服務的彈性，使其能夠容忍間歇性的請求逾時，從而增強了 UI 的整體效能和可靠性。
+
+
+
 [[31-august-2026]]
 == 2026年8月31日
 

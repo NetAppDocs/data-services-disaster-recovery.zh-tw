@@ -259,13 +259,20 @@ TIP: 在命名空間上執行 CLI 命令 `kubectl get pvc -n <namespace>`以查�
 選擇 *Snapshots and retention start time*（日曆日期和時間）、*Snapshot and retention frequency*（快照的啟動頻率）以及 *Snapshot retention count*（保存的快照數量）。
 
 +
-設定 snapshot 頻率時，最小允許間隔為五分鐘。
+設定快照頻率時，必須選擇至少每五分鐘一次的頻率。
 
 . 選擇 *Add AppVault* 以建立 AppVault,保護資料將儲存在此處。
 +
 .. 輸入 *Name*，然後選擇 AppVault 應連接的 *Console agent*。
 .. 選擇用於託管 *AppVault* 的雲端 *Provider*。
-.. 根據所選供應商，NetApp Disaster Recovery 會填入已配置的雲端訂閱。請為雲端提供者選擇 *Subscription*、*Resource group* 和 *Storage account*。
+.. 根據所選供應商，NetApp Disaster Recovery 會填入已配置的雲端訂閱。
++
+對於 Azure，請選擇雲端供應商的*訂閱*、*資源群組*和*儲存帳戶*。
+
++
+對於 AWS、ONTAP S3 和 StorageGRID，請選擇*帳戶*、*認證資料*和*儲存桶*。
+
+.. 如果您選擇了 ONTAP S3 或 StorageGRID ，您可以選擇新增認證資料。選擇 *Add credentials* 擴充選項，然後新增 *Credential name* 、 *Gateway node FQDN* 、 *Port* 號碼、 *Access key* 和 *Secret key* 。
 .. 選取 **Add**。
 +
 image:kubernetes-mapping.png["Kubernetes 儲存類別對應的螢幕擷取畫面"]
@@ -282,7 +289,29 @@ image:kubernetes-mapping.png["Kubernetes 儲存類別對應的螢幕擷取畫面
 --
 ====
 
-NOTE: 對於 Kubernetes 來說，這是建立複寫的最後一步。對於 vCenters，請繼續執行<<運算資源區段>>。
+
+==== 資源轉換和指令碼執行
+
+對於 Kubernetes 複寫計劃，您可以套用資源轉換和指令碼執行。這些步驟是選用的。
+
+.新增資源轉換
+新增資源轉換功能後，您可以在故障轉移期間修改工作負載的任何方面。資源轉換功能可讓您靈活度在災難恢復事件期間將工作負載調整到不同的環境和組態。link:task-resource-transformation.html["了解如何建立資源轉換。"^]
+
+資源轉換將按照您列出的順序套用。
+
+. 從下拉式選單中選擇要新增的資源轉換。
+. 選擇要套用轉換的資源，然後新增所需的值
+. 審查轉換順序，確保操作以正確的順序執行。
+
+
+.新增指令碼執行
+災難恢復可以在建立快照之前或之後執行指令碼，以管理應用程式的靜默和恢復。執行此行動可確保應用程式在快照複寫和還原之前做好適當準備，並在容錯移轉後無縫地恢復運作。
+
+. 選擇 *+ 新增指令碼*。
+. 選擇 *上傳* 以選擇指令碼檔案。
+. 選擇 *執行階段*：*快照前* 以在建立快照之前執行，或 *快照後* 以在之後執行。
+. 選擇*儲存*。
+
 
 
 

@@ -242,4 +242,4 @@ Console 代理程式是一個軟體元件，可讓 NetApp Console 與您的 ONTA
 == Kubernetes 相關問題
 
 .什麼是 AppVault？
-AppVault 是 Trident Protect 保存 Kubernetes 保護資料的雲端儲存目標。您在設定 Kubernetes 複寫計劃時建立 AppVault。
+AppVault 是 Trident Protect 儲存 Kubernetes 保護資料的雲端儲存目標。您可以在設定 Kubernetes 複寫計畫時建立 AppVault。您也可以在「設定」頁面中管理 AppVaults。

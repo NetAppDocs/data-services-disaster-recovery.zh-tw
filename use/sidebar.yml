@@ -2,7 +2,7 @@
 section: use
 title: 使用NetApp Disaster Recovery
 entries:
-- title: 在儀表板上查看災難復原計畫的運作狀況
+- title: 檢視計劃健全狀況和保護狀態
   url: "/use/dashboard-view.html"
 - title: 將資源新增至站台
   url: "/use/sites-add.html"
@@ -18,6 +18,10 @@ entries:
   url: "/use/failover.html"
 - title: 將應用程式故障還原到原始來源站點
   url: "/use/failback.html"
+- title: 管理 AppVaults
+  url: "/use/task-appvault.html"
+- title: 管理資源轉換範本
+  url: "/use/task-resource-transformation.html"
 - title: 管理站點、計劃、資料儲存和虛擬機器信息
   url: "/use/manage.html"
 - title: 監控災難復原作業

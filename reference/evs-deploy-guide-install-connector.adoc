@@ -11,7 +11,7 @@ summary: NetApp Console 代理負責協調 NetApp Console 與雲端或本地端�
 [role="lead"]
 NetApp Console 代理程式可讓您將 NetApp Console 部署連接到基礎架構，從而安全地協調跨 AWS、Azure、Google Cloud 或內部部署環境的解決方案。Console 代理程式會執行 NetApp Console 管理資料基礎架構所需的操作。Console 代理程式會持續輪詢 NetApp Disaster Recovery 軟體即服務層，以取得所需的任何操作。
 
-對於 NetApp Disaster Recovery，執行的操作會利用各自服務的原生 API 來協調 VMware vCenter 叢集和 ONTAP 儲存實例，從而為在內部部署位置執行的正式作業 VM 提供保護。雖然 Console 代理程式可以安裝在任何網路位置，但建議您將 Console 代理程式安裝在 NetApp Disaster Recovery 的災難復原站台。安裝在 DR 站台可確保在主站台發生故障時，NetApp Console UI 仍能保持與 Console 代理程式的連線，並能協調該 DR 站台內的復原程序。
+對於災難恢復，這些行動會使用各服務的原生 API 來協調 VMware vCenter 叢集與 ONTAP 儲存設備執行個體，為在內部部署位置執行的正式作業 VM 提供保護。雖然 Console 代理程式可以安裝在您的任何網路位置，但我們建議將 Console 代理程式安裝在災難恢復站台以進行災難恢復。安裝在災難恢復站台可確保在主要站台發生故障時，NetApp 主控台 UI 能維持其與 Console 代理程式的連線，並能協調該災難恢復站台內的恢復程序。
 
 
 

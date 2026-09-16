@@ -4,7 +4,7 @@ permalink: use/dashboard-view.html
 keywords: disaster recovery remediate, disaster recovery, failover, failback, replication, bluexp, netapp 
 summary: NetApp Disaster Recovery是一種基於雲端的災難復原服務​​，可自動執行災難復原工作流程。 
 ---
-= 在 NetApp Disaster Recovery 中檢視災難恢復計畫的健全狀況
+= 在 NetApp Disaster Recovery 中檢視計畫健全狀況與工作負載保護狀態
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,13 +12,20 @@ summary: NetApp Disaster Recovery是一種基於雲端的災難復原服務​�
 
 
 [role="lead"]
-使用 NetApp Disaster Recovery 儀表板檢查災難恢復站台和複寫計畫的健全狀況。您可以查看站台和計畫是否運作正常、已中斷連線或已降級，審查最近的警告和失敗的作業，識別受保護和未受保護的工作負載，並一目了然地檢視容量。
+NetApp Disaster Recovery 提供多種方法來深入了解由災難恢復發現的工作負載，以及您的站台和複寫計畫的健全狀況。
+
+*儀表板* 提供有關站台和計畫健全狀況的資訊，顯示正常、中斷連線或降級的狀態。它還會顯示最近的警告和失敗的作業。此外，它還提供容量和保護狀態的總覽。使用儀表板來審查健全狀況，並查看工作負載的總覽。
+
+*工作負載* 頁面提供災難恢復發現的每個 VMware 和 Kubernetes 工作負載的詳細清單。它提供與工作負載及其保護狀態相關的資訊。使用「工作負載」頁面來審查工作負載的詳細資訊和審查保護狀態。
 
 *所需 NetApp Console 角色* 執行此任務需要超級管理員、災難復原管理員、災難復原應用程式管理員或災難復原檢視者角色。link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["了解NetApp Disaster Recovery中的使用者角色和權限"^].link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服務的NetApp Console存取角色"^].
 
+
+
+[[view-health-and-protection-status-in-the-dashboard]]
+== 在儀表板中檢視健全狀況與保護狀態
+
 .步驟
-. 登入 https://console.netapp.com/["NetApp Console"^]。
-. 從NetApp Console左側導覽中，選擇 *保護* > *災難復原*。
 . 從NetApp Disaster Recovery選單中，選擇 *儀表板*。
 +
 image:dr-dashboard.png["NetApp Disaster Recovery儀表板"]
@@ -49,4 +56,46 @@ image:dr-dashboard.png["NetApp Disaster Recovery儀表板"]
 
 . 審查「最近的警告和作業」，以查看最近執行的作業和警告及其相關狀態。選擇「檢視所有作業」可查看所有作業。
 . 審查 *Discovery and protection status* ，以查看已探索的工作負載數量，以及按類型區分的受保護與未受保護工作負載的數量明細。您也可以審查所有工作負載及按類型劃分的工作負載的總探索容量。
+
+
+
+
+[[review-workloads-protection-status]]
+== 審查工作負載的保護狀態
+
+使用「工作負載」頁面來審查災難恢復所發現之個別工作負載的保護狀態。除了保護狀態之外，災難恢復還會顯示有關每種工作負載類型的下列資訊：
+
+|===
+| Kubernetes 工作負載 | vCenter 工作負載 
+
+
+ a| 
+* 叢集
+* Name
+* 受保護的命名空間
+* 複寫計畫（如果已分配）
+* 地點
+* 保護狀態
+
+ a| 
+* CPU
+* 資料中心名稱
+* 資料儲存名稱
+* 記憶體
+* 保護狀態
+* 複寫計畫（如果已分配）
+* 資源群組（如果存在）
+* vCenter IP 位址
+* 工作負載名稱
+
+
+|===
+.步驟
+. 從 NetApp Disaster Recovery 選單中，選擇 *工作負載*。
+. 在下拉式選單中，選擇篩選器以檢視 *vCenter* 或 *Kubernetes* 工作負載。
++
+image::site-type-toggle.png[網站類型切換的螢幕擷取畫面]
+
+. 您可以選擇搜尋特定工作負載，或依保護狀態篩選工作負載：受保護或未受保護。
+. 請審查工作負載與保護狀態的相關資訊。受保護的工作負載會以綠色勾號標記。未受保護的工作負載會以灰色短橫線標示。
 
