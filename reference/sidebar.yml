@@ -6,6 +6,8 @@ entries:
   url: "/reference/ontap-permissions.html"
 - title: 所需 vCenter 權限
   url: "/reference/vcenter-privileges.html"
+- title: 所需的 Trident 權限
+  url: "/reference/trident-permissions.html"
 - title: 切換控制台代理
   url: "/reference/switch-console-agent.html"
 - title: 將NetApp Disaster Recovery與 Amazon EVS 結合使用
