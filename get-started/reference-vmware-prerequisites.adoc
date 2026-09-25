@@ -12,7 +12,7 @@ summary: 在使用 NetApp Disaster Recovery 之前，請確保您的環境符合
 
 
 [role="lead"]
-在使用 NetApp Disaster Recovery 之前，請確保您的環境符合 VMware vCenter 叢集需求。
+在使用 NetApp Disaster Recovery 之前，請確保您的環境符合 VMware vCenter 叢集要求，以便複寫和恢復能夠順利運行，不會出現相容性問題。
 
 
 

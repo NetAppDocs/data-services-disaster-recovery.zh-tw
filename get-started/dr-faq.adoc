@@ -22,8 +22,6 @@ summary: 關於 VMware 和 Kubernetes 工作負載的 NetApp 災難恢復常見�
 本常見問題集解答有關 NetApp Disaster Recovery 針對 VMware 和 Kubernetes 工作負載的常見問題。本文著重於在實作災難恢復設定及管理複寫、移轉、容錯移轉和容錯回復作業時有用的概念、術語、系統行為和限制。
 
 
-toc::[]
-
 
 [[getting-started]]
 == 入門

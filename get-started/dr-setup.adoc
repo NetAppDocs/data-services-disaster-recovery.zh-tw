@@ -12,7 +12,7 @@ summary: 若要使用NetApp Disaster Recovery，請執行幾個步驟進行設�
 
 
 [role="lead"]
-若要使用 NetApp Disaster Recovery，請在 NetApp Console 和您支援的災難恢復環境中完成一些設定步驟。
+若要使用 NetApp Disaster Recovery，請先在中斷發生前準備好您的恢復環境，以便能以最少的延遲設定並測試複寫與容錯移轉。
 
 
 TIP: 審查link:../get-started/dr-prerequisites.html["先決條件"]以確保您的系統已準備就緒。
@@ -24,10 +24,10 @@ TIP: 審查link:../get-started/dr-prerequisites.html["先決條件"]以確保您
 
 您可以在以下基礎架構中使用NetApp Disaster Recovery：
 
-* 混合雲災難復原方案，將內部部署 VMware 加上 ONTAP 資料中心複寫到基於 VMware Cloud on AWS 或 Elastic VMware Service （ EVS ）和 Amazon FSx for NetApp ONTAP 的 AWS 災難復原基礎架構。
-* 私有雲 DR 將本機 VMware 和ONTAP vCenter 複製到另一個本機 VMware 和ONTAP vCenter。
-* 雲端災難復原（Cloud DR）可將基於 VMware Cloud on AWS 或 EVS 的 AWS 災難復原基礎架構複製到另一個基於 AWS 的災難復原基礎架構，使用 FSx for NetApp ONTAP。
-* 混合雲災難復原方案，將內部部署 VMware 加上 ONTAP 資料中心複寫到基於 Google Cloud VMware Engine 和 Google Cloud NetApp Volumes 的 Google DR 基礎架構。
+* 混合雲端災難恢復，將內部部署 VMware 和 ONTAP 資料中心複寫至基於 VMware Cloud on AWS 或 Elastic VMware Service （EVS） 和 Amazon FSx for NetApp ONTAP 的 AWS 災難恢復基礎架構。
+* 將內部部署 VMware 加上 ONTAP vCenter 複寫到另一個內部部署 VMware 加上 ONTAP vCenter 的私有雲端災難恢復。
+* 雲端災難恢復，將基於 VMware Cloud on AWS 或 EVS 的 AWS 災難恢復基礎架構複寫到另一個基於 AWS 的災難恢復基礎架構，使用 FSx for NetApp ONTAP。
+* 混合雲端災難恢復，將內部部署 VMware 與 ONTAP 資料中心複製到以 Google Cloud VMware Engine 和 Google Cloud NetApp Volumes 為基礎的 Google 災難恢復基礎架構。
 
 
 
@@ -35,9 +35,9 @@ TIP: 審查link:../get-started/dr-prerequisites.html["先決條件"]以確保您
 [[hybrid-cloud-with-vmware-cloud-and-amazon-fsx-for-netapp-ontap]]
 == 採用 VMware Cloud 和Amazon FSx for NetApp ONTAP 的混合雲
 
-此方法包括使用 NFS 協定託管在ONTAP FlexVol磁碟區上的資料儲存區的本機生產 vCenter 基礎架構。  DR 站點由一個或多個 VMware Cloud SDDC 執行個體組成，這些執行個體使用由一個或多個 FSx for ONTAP執行個體透過 NFS 協定提供的FlexVol磁碟區上託管的資料儲存。
+此方法包含一個內部部署生產 vCenter 基礎架構，該基礎架構使用託管在 ONTAP FlexVol 磁碟區上的資料存放區，並採用 NFS 協定。災難恢復站台包含一個或多個 VMware Cloud SDDC 執行個體，這些執行個體使用託管在 FlexVol 磁碟區上的資料存放區，這些磁碟區由一個或多個採用 NFS 協定的 FSx for ONTAP 執行個體所提供。
 
-正式作業站台和 DR 站台透過與 AWS 相容的安全連線進行連線。常見的連線類型包括安全 VPN （私人 VPN 或 AWS 提供的 VPN）、AWS Direct Connect 或其他經批准的互連方式。
+生產站台和災難恢復站台透過與 AWS 相容的安全的連線進行連線。常見的連線類型包括安全的 VPN（私人或 AWS 提供）、AWS Direct Connect 或其他經核准的互連方法。
 
 對於涉及 AWS 雲端基礎架構的災難復原，您必須使用 AWS 的控制台代理。此代理程式應安裝在與 FSx for ONTAP實例相同的 VPC 中。如果在其他 VPC 中部署了額外的 FSx for ONTAP實例，則託管代理程式的 VPC 必須能夠存取其他 VPC。
 
@@ -63,10 +63,10 @@ AWS 提供了以下方法將私有資料中心連接到 AWS 雲端。每種解�
 
 * *AWS Direct Connect*：這是一種與您的私人資料中心位於同一地理區域、由 AWS 合作夥伴提供的 AWS 雲端互連服務。此解決方案可在您的本地資料中心和 AWS 雲端之間建立安全、私密的連線，無需公共網際網路連線。這是 AWS 提供的最直接、最有效率的連線方式。
 * *AWS 網際網路閘道*：這提供了 AWS 雲端資源和外部運算資源之間的公用連線。這種類型的連線通常用於向外部客戶提供服務，例如不需要安全性的 HTTP/HTTPS 服務。沒有服務品質控制、安全性或連接性保證。因此，不建議使用此連接方法將生產資料中心連接到雲端。
-* *AWS Site-to-Site VPN*：此虛擬私人網路連線可透過公共網際網路服務供應商提供安全的連線。VPN 會對所有進出 AWS 雲端的資料進行加密和解密。VPN 可以是軟體型或硬體型。對於企業應用程式，公共網際網路服務供應商 （ISP） 應提供服務品質保證，以確保為 DR 複寫提供足夠的頻寬和延遲。
+* *AWS Site-to-Site VPN*：此虛擬私人網路連線可透過公共網際網路服務供應商提供安全的連線。VPN 會對所有進出 AWS 雲端的資料進行加密和解密。VPN 可以是基於軟體或硬體的。對於企業應用程式，公共網際網路服務供應商（ISP）應提供服務品質保證，以確保為災難恢復複寫提供足夠的頻寬和延遲。
 
 
-*最佳實務*：對於 AWS DR 網站配置， NetApp建議使用 AWS Direct Connect。該解決方案為企業應用程式提供最高的效能和安全性。如果不可用，則應使用高效能公共 ISP 連線以及 VPN。確保 ISP 提供商業 QoS 服務等級以確保足夠的網路效能。
+*最佳實務*：對於 AWS 災難恢復站台組態，NetApp 建議使用 AWS Direct Connect。此解決方案可為企業應用程式提供最高的效能和安全性。如果無法使用，則應使用高效能公用 ISP 連線並搭配 VPN。確保 ISP 提供商業 QoS 服務等級，以確保足夠的網路效能。
 
 
 
@@ -127,7 +127,7 @@ https://www.vmware.com/products/vmc-on-aws.html["AWS 上的 VMware Cloud"^]為 A
 
 對於本機到本機的情況，請在其中一個實體網站安裝控制台代理程式。
 
-災難復原支援使用乙太網路和 TCP/IP 進行站點到站點的複製。確保有足夠的頻寬來支援生產站點虛擬機器上的資料變化率，以便所有變更都可以在復原點目標 (RPO) 時間範圍內複製到 DR 站點。
+災難恢復支援使用乙太網路和 TCP/IP 進行站台間複寫。確保有足夠的頻寬來支援生產站台虛擬機器的資料變更速率，以便所有變更都能在恢復點目標（RPO）的時間範圍內複寫到災難恢復站台。
 
 
 

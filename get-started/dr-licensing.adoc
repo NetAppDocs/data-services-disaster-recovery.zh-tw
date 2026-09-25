@@ -12,7 +12,7 @@ summary: 使用NetApp Disaster Recovery，您可以使用不同的授權計劃�
 
 
 [role="lead"]
-NetApp Disaster Recovery 提供多種授權選項，包括免費試用、隨用隨付訂閱和自帶授權 （BYOL）。
+NetApp Disaster Recovery 提供多種授權選項，包括免費試用、隨用隨付訂閱和自帶授權（BYOL）。在設定災難恢復之前，請確認您的授權模式，以確保服務符合您組織的需求。
 
 *所需 NetApp Console 角色* 執行此任務需要超級管理員、災難復原管理員或災難復原應用程式管理員角色。link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["了解NetApp Disaster Recovery中的使用者角色和權限"^]。link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服務的NetApp Console存取角色"^]。
 

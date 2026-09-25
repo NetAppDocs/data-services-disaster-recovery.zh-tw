@@ -12,7 +12,7 @@ summary: 在使用 NetApp Disaster Recovery 之前，請確保您的 Kubernetes 
 
 
 [role="lead"]
-在為 Kubernetes 設定 NetApp Disaster Recovery 之前，請先準備好每個 Kubernetes 叢集。保護通常適用於來源叢集和分隔的目的地叢集，因此請在叢集對中的每個叢集上完成這些程序。
+在設定適用於 Kubernetes 的 NetApp Disaster Recovery 之前，請準備每個 Kubernetes 叢集，以確保其已準備好進行複寫和容錯移轉。保護通常適用於來源叢集和分隔的目的地叢集；請在該對中的每個叢集上完成這些程序。
 
 
 
