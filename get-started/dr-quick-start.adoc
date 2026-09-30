@@ -58,7 +58,7 @@ summary: 只需幾個步驟即可開始使用NetApp Disaster Recovery服務​�
 [role="quick-margin-para"]
 這些任務需要_災難恢復管理員_或_災難恢復故障轉移管理員角色_。
 
-[role="quick-margin-para"]
+[role="quick-margin-list"]
 * link:../use/failover.html["將應用程式故障轉移到遠端站點"]
 * link:../use/failback.html["將應用程式故障還原到原始來源站點"]
 
