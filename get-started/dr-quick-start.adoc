@@ -12,29 +12,53 @@ summary: 只需幾個步驟即可開始使用NetApp Disaster Recovery服務​�
 
 
 [role="lead"]
-了解如何快速開始使用 NetApp 災難恢復，確保您的系統符合需求，探索工作負載，並設定複寫計畫以準備容錯移轉。
+了解如何設定 NetApp Disaster Recovery，確保您的系統符合成功發現工作負載和設定複寫計劃的要求，以便為故障轉移做好準備。
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["一"]審查先決條件
 [role="quick-margin-para"]
-link:../get-started/dr-prerequisites.html["確保您的系統符合這些要求"] 。
+需要擁有_超級管理員_或_組織管理員_角色才能部署 Console 代理程式並指派權限。
+
+[role="quick-margin-list"]
+* link:https://docs.netapp.com/us-en/console-setup-admin/concept-agent-install-options.html["部署 Console 代理程式"^]
+* link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["審查災難恢復使用者角色，並為需要的使用者指派權限"^]
+* link:../get-started/dr-prerequisites.html["確保您的系統符合這些要求"]
+* 請確保您符合工作負載類型的適當要求：
++
+** link:../get-started/reference-vmware-prerequisites.html["VMware 先決條件"]
+** link:../get-started/task-kubernetes-requirements.html["Kubernetes 先決條件"]
+
+
+
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["二"]設定NetApp Disaster Recovery
-[role="quick-margin-list"]
-* link:../get-started/dr-setup.html["設定服務的基礎結構"] 。
-* link:../get-started/dr-licensing.html["設定許可"] 。
-
-
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三"]下一步是什麼？
 [role="quick-margin-para"]
-服務設定完成後，您可以完成以下後續步驟。
+這些任務需要_超級管理員_或_災難恢復管理員_角色。
 
 [role="quick-margin-list"]
-* link:../use/sites-add.html["將您的 vCenter 網站新增至NetApp Disaster Recovery"] 。
-* link:../use/manage.html#manage-resource-groups["建立第一個資源組"] 。
-* link:../use/drplan-create.html["建立您的第一個複製計劃"] 。
-* link:../use/replicate.html["將應用程式複製到另一個站點"] 。
-* link:../use/failover.html["將應用程式故障轉移到遠端站點"] 。
-* link:../use/failback.html["將應用程式故障還原到原始來源站點"] 。
-* link:../use/manage.html["管理網站、資源群組和複製計劃"] 。
-* link:../use/monitor-jobs.html["監控災難復原操作"] 。
+* link:../get-started/dr-setup.html["設定服務的基礎結構"]
+* link:../get-started/dr-licensing.html["設定許可"]
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三"] 設定災難恢復計畫
+[role="quick-margin-para"]
+這些任務需要 _災難恢復管理員_ 角色。
+
+[role="quick-margin-list"]
+* link:../use/sites-add.html["將您的站點新增至災難恢復"]
+* link:../use/manage.html#manage-resource-groups["建立資源群組"]
+* link:../use/task-appvault.html["對於 Kubernetes 工作負載，新增一個 AppVault"]
+* link:../use/drplan-create.html["建立複製計劃"]
+* link:../use/replicate.html["將應用程式複製到另一個站點"]
+* link:../use/task-resource-transformation.html["管理 Kubernetes 工作負載的資源轉換"]
+* link:../use/manage.html["管理網站、資源群組和複製計劃"]
+* link:../use/monitor-jobs.html["監控災難復原操作"]
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["四"] 從災難中恢復
+[role="quick-margin-para"]
+這些任務需要_災難恢復管理員_或_災難恢復故障轉移管理員角色_。
+
+[role="quick-margin-para"]
+* link:../use/failover.html["將應用程式故障轉移到遠端站點"]
+* link:../use/failback.html["將應用程式故障還原到原始來源站點"]
 
