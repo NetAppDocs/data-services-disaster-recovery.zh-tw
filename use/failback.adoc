@@ -56,6 +56,10 @@ image::site-type-toggle.png[網站類型切換的螢幕擷取畫面]
 . 識別您要容錯回復的複寫計畫。選取 *Actions* 選項 image:../use/icon-horizontal-dots.png["NetApp Disaster Recovery服務​​中的操作選單圖標"]，將滑鼠游標移至 *Recover* 上方，然後選取 *Failback*。
 . 選擇要從中復原的資料存放區快照。選取 *立即建立快照* 以啟動新的快照，或選取 *選擇* 以從可用快照中選擇。
 +
+
+NOTE: 如果您使用防篡改 SnapLock 快照，則必須使用 *立即拍攝快照* 選項。否則作業將會失敗。
+
++
 image:failback.png["故障回復對話方塊的螢幕擷取畫面"]
 
 . 輸入 "Failback" 以確認操作，然後選取 *Failback*。

@@ -2280,7 +2280,6 @@
   <block id="bc5f6fc21f6a94d180764bb6c6a4cd7d" category="paragraph">安裝 <block ref="eec6190e0599877ad03e04b40eef0c58" category="inline-link-macro-rx"></block>。這些安裝是 Trident Protect 中 Volume 快照的必要條件。</block>
   <block id="918fa72b18f488b31c1a63283c4f2148" category="paragraph"><block ref="4569567eb3ca20d8c53676753a511f69" prefix="" category="inline-code"></block></block>
   <block id="d601ac6a8739700584fe1f4c446d9754" category="list-text">*Down*：站台無法存取或有連線問題。</block>
-  <block id="6026e48cd116a5cbacecfc8da06638ea" category="paragraph">新增資源和站台後，請建立_複寫計畫_以保護您的資料。該計畫定義了應用程式的來源站台和目的地站台、資源群組、恢復映射及開機行為。您也可以設定法規遵循和測試排程，並在不影響正式作業資料的情況下執行測試容錯移轉。</block>
   <block id="1c4de46c0cd1d0a73f4e3432ea708002" category="paragraph">您可以保護多個資料儲存上的多個虛擬機器。NetApp Disaster Recovery 會為託管受保護虛擬機器資料儲存的所有 ONTAP Volume 建立 ONTAP 一致性群組。</block>
   <block id="46224a4824d70ef03f0888359b806a9e" category="list-text">如果目的地站台上缺少快照，則根據 SnapMirror 關係的預設原則，服務可能會在下次排程的快照協調過程中刪除來源站台上的對應快照。</block>
   <block id="7e0f1183c0ae5c291e2245966bd03d67" category="paragraph">精靈將引導您完成以下步驟：</block>
@@ -2568,7 +2567,6 @@
   <block id="8d57596f9b796b61e90df9540d12cc03" category="paragraph">對於 Azure，請選擇雲端供應商的*訂閱*、*資源群組*和*儲存帳戶*。</block>
   <block id="d575618a014f5e9564ca37f19e47ce57" category="paragraph">對於 AWS、ONTAP S3 和 StorageGRID，請選擇*帳戶*、*認證資料*和*儲存桶*。</block>
   <block id="5a5927bde0ac7465b00ff420f8ccdb8c" category="list-text">如果您選擇了 ONTAP S3 或 StorageGRID ，您可以選擇新增認證資料。選擇 *Add credentials* 擴充選項，然後新增 *Credential name* 、 *Gateway node FQDN* 、 *Port* 號碼、 *Access key* 和 *Secret key* 。</block>
-  <block id="796c589626154baa50e1f1b1c6b6ff97" category="section-title">資源轉換和指令碼執行</block>
   <block id="bb9e542c041adb6fce43a5550a447aee" category="paragraph">對於 Kubernetes 複寫計劃，您可以套用資源轉換和指令碼執行。這些步驟是選用的。</block>
   <block id="89fd45000e9691421f0cd2d2422f2098" category="paragraph-title">新增資源轉換</block>
   <block id="daac935d0f9259f469bdeb6216a7bedd" category="inline-link-macro">了解如何建立資源轉換。</block>
@@ -2749,4 +2747,28 @@
   <block id="524f5a32773e3e832b74877ecf58916f" category="list-text"><block ref="524f5a32773e3e832b74877ecf58916f" category="inline-link-macro-rx"></block></block>
   <block id="6fbeff9687fcc9f06bd89057c3ed5a34" category="list-text"><block ref="6fbeff9687fcc9f06bd89057c3ed5a34" category="inline-link-macro-rx"></block></block>
   <block id="57574b91a736e91f1b6149f9abdf3330" category="sidebar">管理站點、計畫、資料儲存和 VM 資訊</block>
+  <block id="02062d06535ce7696876b02309ed3f5e" category="admonition">如果您使用防篡改 SnapLock 快照，則必須使用 *立即拍攝快照* 選項。否則作業將會失敗。</block>
+  <block id="1c335a9c5603264a97d8d84cb6c6faf0" category="doc">Kubernetes 資源群組的選用開機順序</block>
+  <block id="84af32d37767e36e149339ec37e513b1" category="paragraph">NetApp Disaster Recovery 現在支援在 Kubernetes 複寫計畫中為資源群組設定選用的開機順序，方法是為資源指定優先順序和選用的延遲時間。此選項可讓您在必要時同時將資源開機，並延遲將依賴其他資源的資源開機，以支援您的應用程式以健全的狀態恢復線上。</block>
+  <block id="f2497ae428eba83b3f39732433d3cb44" category="inline-link-macro">建立複寫計畫</block>
+  <block id="9e29609c3bbaf3dd61657f73add99007" category="paragraph">如需詳細資訊，請參閱 <block ref="b368f0a73ce8108f9547ecd0643b331f" category="inline-link-macro-rx"></block>。</block>
+  <block id="05316212411905c51cdd49deaf78a58e" category="section-title">SnapLock Volume 支援</block>
+  <block id="a547512ac8a0a093f138ab19fb5f9c67" category="paragraph">災難恢復現在支援 SnapLock Volume，讓您能夠容錯移轉防篡改的快照。使用 SnapLock Volume 執行容錯回復時，您必須使用 *Take snapshot now* 選項，以確保容錯回復成功完成。</block>
+  <block id="3ad6e9988864aeae2ef386345946dc6d" category="inline-link-macro">故障轉移</block>
+  <block id="a571d3783c8d552371d5e8b486416b18" category="inline-link-macro">容錯回復</block>
+  <block id="374fdd2efa0670899dec57115b7ed99b" category="paragraph">如需詳細資訊，請參閱 <block ref="8fc81de61ce6b6f345351934ad55bc91" category="inline-link-macro-rx"></block> 和 <block ref="54d34f2cfe03dcbe402071f8f9beccd0" category="inline-link-macro-rx"></block> 的說明。</block>
+  <block id="eec8280b12e61e71ed9a9f31e25a4cb6" category="section-title">簡化重新整理與法規遵循執行</block>
+  <block id="196ba426ef1a0d15830e58f8ea71c405" category="inline-link-macro">監控作業</block>
+  <block id="844a671e46adc508ee852b03a616e916" category="paragraph">針對 vCenter 、複寫計畫與法規遵循的重新整理執行已簡化為單一作業，以加快執行速度。若要查看此變更，請了解如何<block ref="c4c673075f72fe052d440b509fb5db2d" category="inline-link-macro-rx"></block>。</block>
+  <block id="838e15ad2606430b761fae47ebb38dee" category="section-title">Kubernetes 法規遵循檢查</block>
+  <block id="07de08b6dc69bbb77fbf2faa073882f2" category="paragraph">Disaster Recovery 新增了法規遵循檢查，用於識別 Kubernetes 工作負載遺失的工作環境。這些法規遵循檢查有助於確保工作負載的健全狀況，以維持您複寫計畫的完整性。</block>
+  <block id="e019cb225a4644922cdd06575b099710" category="section-title">2026年10月12日</block>
+  <block id="644654fd24758e69ba70d0af50f707b2" category="paragraph">版本 4.3.8</block>
+  <block id="86ad5929405f6e7a459f3adf67f298e6" category="paragraph">新增資源和站台後，請建立_複寫計畫_，以使用 NetApp Disaster Recovery 保護您的資料。該計畫定義了來源和目的地站台、資源群組、恢復對應，以及應用程式的開機行為。您也可以設定法規遵循與測試排程，並在不影響正式作業資料的情況下執行測試容錯移轉。</block>
+  <block id="e65bfba01c1dd06a7952b0d1a116ad70" category="section-title">資源轉換、指令碼執行與開機順序</block>
+  <block id="5753c0f11c80b803bc47552e63a898cb" category="paragraph-title">設定開機順序</block>
+  <block id="b5c34ed8fbc17ece1ce6b8ca13f9d672" category="paragraph">對於包含多個資源群組的複寫計畫，您可以選擇設定開機順序，以確保需要同時進入線上狀態的資源能夠同時進入，而依賴其他資源群組的任何資源群組，在其相依資源進入線上狀態之前都不會進入線上狀態。</block>
+  <block id="b2784505a08cc196fdf2c01fb8722bbc" category="list-text">選擇 *開機順序與延遲* 區段。</block>
+  <block id="7b49064e2ebb0dab724dfae418ebec8e" category="list-text">為複寫計畫中的每個資源指定一個開機 *Order* 值，從 1 開始。任何需要同時開機的資源都應分配相同的編號。</block>
+  <block id="9aae48d2077953d7be448b6a399f3b3c" category="list-text">設定 *延遲* 時間（以分鐘為單位）。如果需要延遲任何資源，請設定延遲時間（以分鐘為單位）。</block>
 </blocks>

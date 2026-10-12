@@ -12,7 +12,7 @@ summary: NetApp Disaster Recovery是一種基於雲端的災難復原服務​�
 
 
 [role="lead"]
-新增資源和站台後，請建立_複寫計畫_以保護您的資料。該計畫定義了應用程式的來源站台和目的地站台、資源群組、恢復映射及開機行為。您也可以設定法規遵循和測試排程，並在不影響正式作業資料的情況下執行測試容錯移轉。
+新增資源和站台後，請建立_複寫計畫_，以使用 NetApp Disaster Recovery 保護您的資料。該計畫定義了來源和目的地站台、資源群組、恢復對應，以及應用程式的開機行為。您也可以設定法規遵循與測試排程，並在不影響正式作業資料的情況下執行測試容錯移轉。
 
 *所需 NetApp Console 角色* 執行此任務需要超級管理員、災難復原管理員、災難復原故障轉移管理員或災難復原應用程式管理員角色。link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["了解NetApp Disaster Recovery中的使用者角色和權限"^].link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服務的NetApp Console存取角色"^].
 
@@ -290,7 +290,7 @@ image:kubernetes-mapping.png["Kubernetes 儲存類別對應的螢幕擷取畫面
 ====
 
 
-==== 資源轉換和指令碼執行
+==== 資源轉換、指令碼執行與開機順序
 
 對於 Kubernetes 複寫計劃，您可以套用資源轉換和指令碼執行。這些步驟是選用的。
 
@@ -311,6 +311,14 @@ image:kubernetes-mapping.png["Kubernetes 儲存類別對應的螢幕擷取畫面
 . 選擇 *上傳* 以選擇指令碼檔案。
 . 選擇 *執行階段*：*快照前* 以在建立快照之前執行，或 *快照後* 以在之後執行。
 . 選擇*儲存*。
+
+
+.設定開機順序
+對於包含多個資源群組的複寫計畫，您可以選擇設定開機順序，以確保需要同時進入線上狀態的資源能夠同時進入，而依賴其他資源群組的任何資源群組，在其相依資源進入線上狀態之前都不會進入線上狀態。
+
+. 選擇 *開機順序與延遲* 區段。
+. 為複寫計畫中的每個資源指定一個開機 *Order* 值，從 1 開始。任何需要同時開機的資源都應分配相同的編號。
+. 設定 *延遲* 時間（以分鐘為單位）。如果需要延遲任何資源，請設定延遲時間（以分鐘為單位）。
 
 
 

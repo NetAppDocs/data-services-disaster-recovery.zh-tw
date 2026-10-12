@@ -1,0 +1,35 @@
+= Kubernetes 資源群組的選用開機順序
+:allow-uri-read: 
+
+
+
+
+[[optional-boot-order-for-kubernetes-resource-groups]]
+=== Kubernetes 資源群組的選用開機順序
+
+NetApp Disaster Recovery 現在支援在 Kubernetes 複寫計畫中為資源群組設定選用的開機順序，方法是為資源指定優先順序和選用的延遲時間。此選項可讓您在必要時同時將資源開機，並延遲將依賴其他資源的資源開機，以支援您的應用程式以健全的狀態恢復線上。
+
+如需詳細資訊，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複寫計畫"^]。
+
+
+
+[[snaplock-volume-support]]
+=== SnapLock Volume 支援
+
+災難恢復現在支援 SnapLock Volume，讓您能夠容錯移轉防篡改的快照。使用 SnapLock Volume 執行容錯回復時，您必須使用 *Take snapshot now* 選項，以確保容錯回復成功完成。
+
+如需詳細資訊，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/failover.html["故障轉移"^] 和 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/failback.html["容錯回復"^] 的說明。
+
+
+
+[[simplified-refresh-and-compliance-runs]]
+=== 簡化重新整理與法規遵循執行
+
+針對 vCenter 、複寫計畫與法規遵循的重新整理執行已簡化為單一作業，以加快執行速度。若要查看此變更，請了解如何link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/monitor-jobs.html["監控作業"^]。
+
+
+
+[[kubernetes-compliance-checks]]
+=== Kubernetes 法規遵循檢查
+
+Disaster Recovery 新增了法規遵循檢查，用於識別 Kubernetes 工作負載遺失的工作環境。這些法規遵循檢查有助於確保工作負載的健全狀況，以維持您複寫計畫的完整性。
