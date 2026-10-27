@@ -53,4 +53,4 @@ NetApp Disaster Recovery現在支援使用外部快照管理解決方案，例�
 
 配置完成後，服務不會定期拍攝任何快照，而是依賴外部實體來拍攝和更新這些快照。
 
-有關在複製計劃中使用外部快照解決方案的詳細信息，請參閱： https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"] 。
+如需在複寫計畫中使用外部 Snapshot 快照技術解決方案的詳細資料，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["建立複製計劃"]。

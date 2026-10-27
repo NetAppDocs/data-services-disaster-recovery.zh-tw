@@ -193,7 +193,6 @@
   <block id="e35bd921add213a5e8c74f071a01e41a" category="list-text">如果沒有預先存在的SnapMirror關係，請建立任何新的目標卷，並在每個未受保護的來源磁碟區之間建立新的SnapMirror關係。</block>
   <block id="0d0d5037145fe9a3c1e121ebe903ba7c" category="list-text">如果存在預先存在的SnapMirror關係，請使用該關係執行所有複製操作。</block>
   <block id="170a8935d468fd304f92d38fa8bb5aad" category="paragraph">災難復原建立並初始化所有關係後，在每次排程備份時，該服務都會執行下列資料保護步驟：</block>
-  <block id="a618102d0e0fcd336615a9110b5e56f4" category="list-text">對於每個標記為「應用程式一致」的虛擬機，使用 VMtools 將支援的應用程式置於備份狀態。</block>
   <block id="be9ec5498e099cc9656fb993b4981ac8" category="list-text">為託管受保護的 VMware 資料儲存的所有ONTAP磁碟區建立新快照。</block>
   <block id="7527d3760436928df54cab6078a97eea" category="list-text">執行SnapMirror更新操作以將這些快照複製到目標ONTAP叢集。</block>
   <block id="75450439618e5b9095e46f8888273b52" category="list-text">確定保留的快照數量是否超過了複製計劃中定義的最大快照保留量，並從來源磁碟區和目標磁碟區中刪除任何多餘的快照。</block>
@@ -289,7 +288,6 @@
   <block id="6264bc70be3baed8dcf906aafe1dfe41" category="list-text">VMware vSphere 版本 7.0 Update 3 (7.0v3) 或更高版本</block>
   <block id="7fc6ed2196514db323edb5f8ee464448" category="inline-link">將 VMware Cloud Foundations 與 AWS FSx for NetApp ONTAP文件結合使用</block>
   <block id="f2fc5fa158eeee58eae505a362a866b3" category="list-text">在 VMware Cloud Console 中，使用管理員和 NSX Cloud 管理員的服務角色。也可以使用組織所有者作為組織角色。參考<block ref="87df9e87408172a2291d5738f3ae5f4f" category="inline-link-rx"></block>。</block>
-  <block id="4e1ddb83fcf4e704fe454a7d694377b4" category="inline-link">VMware Cloud on AWS 與Amazon FSx for NetApp ONTAP整合部署訊息</block>
   <block id="ddf3847f7872b5880bf48b3bc2295516" category="section-title">NetApp Console前提條件</block>
   <block id="831ceac8c52f9043ae3044fe65d3762a" category="section-title">開始使用NetApp Console</block>
   <block id="2111321b91f7f03ee0c9d795126e728d" category="section-title">收集ONTAP和 VMware 的憑證</block>
@@ -470,7 +468,6 @@
   <block id="6345fa92d7a42c074c54b52f4c7ab432" category="summary">在繼續使用NetApp Disaster Recovery配置 Amazon EVS 之前，您應該確保滿足幾個先決條件。</block>
   <block id="c054f75f836c29b129413caadf92e76a" category="list-text">建立 vCenter 使用者帳戶，該帳戶具有NetApp Disaster Recovery所需的特定 VMware 權限，以執行必要的操作。</block>
   <block id="3d5a9945f1a8ed1fc9f6c0e5c4eee4f6" category="list-text">為複製計劃輸入一個唯一的名稱。</block>
-  <block id="31e93095cb1f78296c5a4bfdd4647cd5" category="paragraph">複製計劃名稱僅允許使用字母數字字元和底線 (_)。</block>
   <block id="431ee8ca0b3802786f62aed1da9220ed" category="list-text">選擇來源 vCenter 叢集。</block>
   <block id="eb1e43df314e70cda644140a164ce3c9" category="list-text">選擇目標 vCenter 叢集。</block>
   <block id="e6cd86d61f4639c8a27006c6c29b3e9f" category="list-text">選擇“下一步”。</block>
@@ -756,7 +753,6 @@
   <block id="f8640dd898f95d34767690049d6f8e0d" category="paragraph">這是NetApp Disaster Recovery的通用版本，其中包括以下更新。</block>
   <block id="4f5e9dc667fbe953a0afd3cae9f276c2" category="paragraph">使用NetApp Disaster Recovery，您可以註冊 90 天免費試用或自帶授權 (BYOL)，也就是您從NetApp銷售代表取得的NetApp授權文件 (NLF)。您可以使用許可證序號在NetApp Console訂閱中啟動 BYOL。  NetApp Disaster Recovery費用是基於資料儲存區的配置容量。</block>
   <block id="181fd78fab840533bb083eb8db997093" category="inline-link">管理所有NetApp Console資料服務的許可證</block>
-  <block id="382435e4c4253ed5f6764c8ef821291f" category="paragraph">在此版本中，您現在可以設定計劃來測試合規性和故障轉移測試，以確保它們在您需要時能夠正常運作。</block>
   <block id="4b2bfa262e877a668b7102f58d207f63" category="inline-link">建立複製計劃</block>
   <block id="4e1f7d458412b18adef0e5ff0db2eee8" category="section-title">2024年2月1日</block>
   <block id="e211fea12586855383b68b15d395bc8e" category="paragraph">此NetApp Disaster Recovery預覽版包括以下更新：</block>
@@ -922,26 +918,13 @@
   <block id="49ff95b6dcd137f59a6acecf04a4c3b1" category="inline-image-macro">水平點操作選單</block>
   <block id="7639ea3b77d367f127d70d668027673c" category="paragraph">在這些情況下，災難復原會在下一次一致性檢查時從來源和目標叢集中刪除較舊的快照。或者，管理員可以透過選擇「操作」立即執行快照清理<block ref="6b4b871445179eda383c81faf6cf5a92" category="inline-image-macro-rx" type="image"></block>複製計劃上的圖示並選擇*清理快照*。</block>
   <block id="1059d7b16ffe2236c36ae0e8c15872ca" category="paragraph">在建立SnapMirror關係之前，請在災難復原之外設定叢集和 SVM 對等關係。</block>
-  <block id="3baff38a392d31950fc8d4d62ea2adc0" category="list-text">選擇 vCenter 伺服器。</block>
-  <block id="d813bc25d25a7f816dde51c17f6c6ba0" category="list-text">映射資源如何從來源環境映射到目標。</block>
-  <block id="5971ed413328372ff42391caae30a427" category="list-text">設定排程運行的頻率、執行客戶託管腳本、設定啟動順序並選擇恢復點目標。</block>
-  <block id="1c10305a999dce53cb52dd4f6b8d89ff" category="list-text">審查計劃。</block>
   <block id="8705d6076cb452e919a6e22862427440" category="section-title">選擇 vCenter 伺服器</block>
-  <block id="c456b58190fd5c21d84750f126197baf" category="paragraph">首先，選擇來源 vCenter，然後選擇目標 vCenter。</block>
-  <block id="5e90d93870eb5779de0b40ced0f92445" category="paragraph">建立資源組時，請考慮以下問題：</block>
   <block id="9fa2d89f680762c7614753f04e0aad6b" category="list-text">單一資料儲存區不應託管受多個複製計畫保護的虛擬機器。</block>
-  <block id="dfbb0d3c710884104551edbd929afe76" category="list-text">請勿在同一資料儲存體上託管受保護和不受保護的虛擬機器。如果受保護的虛擬機器和不受保護的虛擬機器託管在同一資料儲存上，則可能會出現以下問題：</block>
-  <block id="84c62302deac0be1dd475a0a0a91a4fa" category="list-text">由於NetApp Disaster Recovery使用SnapMirror並且系統複製整個ONTAP卷，因此該磁碟區的已使用容量用於許可考慮。在這種情況下，受保護和不受保護的虛擬機器所消耗的磁碟區空間都將包含在此計算中。</block>
-  <block id="4e7a12dab0e91d1fb0221d782eacf1e5" category="list-text">如果資源組及其關聯的資料儲存庫需要故障轉移到災難復原站點，則任何未受保護的虛擬機器（不屬於資源組但託管在ONTAP磁碟區上的虛擬機器）將在故障轉移過程中不再存在於來源站點上，從而導致來源站點上未受保護的虛擬機器發生故障。此外， NetApp Disaster Recovery不會在故障轉移 vCenter 站點啟動那些未受保護的虛擬機器。</block>
-  <block id="8a63c65b056310ba2a8c9f7b25cb1011" category="list-text">若要保護虛擬機，必須將其包含在資源組中。</block>
   <block id="4039eb9aa82f9a49f8096e652825e9c9" category="inline-image-macro">螢幕截圖顯示了「新增複製計畫」&gt;「要複製的應用程式」頁面</block>
   <block id="0f71807fe3313792a56d8deaefc042cd" category="paragraph"><block ref="fe2b15a06d13ce51dd26ce76b278185c" category="inline-image-macro-rx" type="image"></block></block>
   <block id="07445ca0ae375259d669e5ff34c73c99" category="paragraph"><block ref="0900e5e3c0a693c1efb9cc1c9f020053" category="inline-image-macro-rx" type="image"></block></block>
   <block id="94884044f731a17cf6d266f3acc71d30" category="section-title">將來源資源映射到目標</block>
-  <block id="b09b7f24f5b2d0187b19263b47fb2cdf" category="paragraph">在資源對應步驟中，指定來源環境中的資源應如何對應到目標。建立複製計劃時，您可以為計劃中的每個虛擬機器設定啟動延遲和順序。這使您可以設定虛擬機器的啟動順序。</block>
-  <block id="8347a9e8f0404960a1eb7ad71a74e635" category="paragraph">如果您打算將測試故障轉移作為 DR 計劃的一部分執行，則應提供一組測試故障轉移映射，以確保故障轉移測試期間啟動的虛擬機器不會幹擾生產虛擬機器。您可以透過為測試虛擬機器提供不同的 IP 位址，或將測試虛擬機器的虛擬 NIC 對應到與生產隔離但具有相同 IP 配置的不同網路（稱為_氣泡_或_測試網路_）來實現此目的。</block>
   <block id="135b308ed83c53f1516b7c754566d1c4" category="paragraph-title">開始之前</block>
-  <block id="009689baead8ab26037799440fbb68e2" category="paragraph">如果要在此服務中建立SnapMirror關係，則叢集及其 SVM 對等關係應該已在NetApp Disaster Recovery之外設定。</block>
   <block id="8020af4fa709c3156161baa6bf00e88a" category="inline-image-macro">複製計劃，資源映射選項卡</block>
   <block id="7906e2e007c3bad108fcd7ed7311a131" category="paragraph"><block ref="7906e2e007c3bad108fcd7ed7311a131" category="inline-image-macro-rx" type="image"></block></block>
   <block id="671f7938870f01967b2e491f4c0ea912" category="list-text">在故障轉移映射標籤中，選擇每個資源右側的向下箭頭並映射每個部分中的資源：</block>
@@ -951,9 +934,7 @@
   <block id="da06c5c1d28e308403236438dda209dc" category="list-text">*來源資料中心與目標資料中心*</block>
   <block id="7067fdfe055fabd950bd45a1a17e1642" category="list-text">*目標集群*</block>
   <block id="2c0a2cae30cf923c64bbed704e923521" category="list-text">*目標主機*（選用）：選擇叢集後，您可以設定此資訊。</block>
-  <block id="4cf53d6d28e4261f2397f16ccd7a5a18" category="admonition">如果 vCenter 配置了分散式資源調度程序 (DRS) 來管理叢集中的多個主機，則您無需選擇主機。如果您選擇主機， NetApp Disaster Recovery會將所有虛擬機器放置在選定的主機上。  * *目標 VM 資料夾*（可選）：建立一個新的根資料夾來儲存選定的 VM。</block>
   <block id="d757ba122f1f3d62b9a13da2a3e1b64c" category="admonition">您可以將多個來源虛擬網路指派給同一個目標虛擬網路。但這可能會造成 IP 網路配置衝突。您可以將多個來源網路對應到單一目標網絡，以確保所有來源網路具有相同的配置。</block>
-  <block id="02453bc953d0b6e10f85235da7a8cca7" category="paragraph">選擇對應到適當虛擬 LAN 的網路。虛擬 LAN 應該已經配置好了，因此請選擇適當的虛擬 LAN 來對應 VM。</block>
   <block id="3cbcb190466412c589fc07714ba6d7fe" category="paragraph">您可以透過設定下列任一選項來設定受複製計畫保護的資源群組中的每個虛擬機，以適應目標 vCenter 虛擬環境：</block>
   <block id="c3c89c355c8b33e18be16af1cb387f5a" category="list-text">虛擬 CPU 的數量</block>
   <block id="2d875765c22020c9ffe5b3d219578aa0" category="list-text">虛擬 DRAM 的數量</block>
@@ -968,7 +949,6 @@
   <block id="0a8bc9b2bb8f581fa27738fc437d64b3" category="paragraph">根據您的選擇，此部分可能會顯示不同的欄位。</block>
   <block id="e7842ce79601ae65b57df11e56fbb985" category="paragraph">您可以增加或減少分配給每個故障轉移 VM 的虛擬 CPU 數量。但是，每個虛擬機器至少需要一個虛擬 CPU。您可以變更分配給每個虛擬機器的虛擬 CPU 和虛擬 DRAM 的數量。您可能想要更改預設虛擬 CPU 和虛擬 DRAM 設定的最常見原因是目標 vCenter 叢集節點沒有來源 vCenter 叢集那麼多的可用資源。</block>
   <block id="73f9d91494b10080b1f35c89ff3733ab" category="paragraph">在最基本（和預設）級別，設定只是對目標站點上的每個 VM 使用與來源站點上相同的 TCP/IP 網路設定。這要求您在來源和目標虛擬網路上配置相同的 TCP/IP 設定。</block>
-  <block id="9edbe0a36a129d4bb2718378f0600984" category="paragraph">此服務支援虛擬機器的靜態或動態主機配置協定 (DHCP) IP 配置的網路設定。  DHCP 提供了一種基於標準的方法來動態設定主機網路連接埠的 TCP/IP 設定。  DHCP 必須至少提供一個 TCP/IP 位址，還可以提供一個預設閘道位址（用於路由到外部網際網路連線）、一個子網路遮罩和一個 DNS 伺服器位址。  DHCP 通常用於最終用戶計算設備，例如員工桌上型電腦、筆記型電腦和行動電話連接，同時也可用於任何網路運算設備，例如伺服器。</block>
   <block id="9aaef1f7ac47e50dd9b9324dcc96eb17" category="list-text">*使用相同的子網路遮罩、DNS 和網關設定*選項：由於這些設定對於連接到相同虛擬網路的所有虛擬機器通常都是相同的，因此您可能會發現配置一次這些設定並讓災難復原使用複製計劃保護的資源群組中所有虛擬機器的設定會更容易。如果某些虛擬機器使用不同的設置，則需要取消選取此方塊並為每個虛擬機器提供這些設定。</block>
   <block id="8914a354aeff1b07a47e178ccae21e27" category="list-text">*DHCP*：如果您希望虛擬機器從 DHCP 伺服器取得網路設定訊息，請選擇此設定。如果您選擇此選項，則只需提供 VM 的憑證。</block>
   <block id="666631afadc4073ef682cc54bda0a691" category="list-text">*靜態 IP*：如果您想手動指定 IP 配置訊息，請選擇此設定。您可以選擇以下之一：與來源相同、與來源不同或子網路對應。如果您選擇與來源相同，則無需輸入憑證。另一方面，如果您選擇使用來自來源的不同訊息，則可以提供憑證、VM 的 IP 位址、子網路遮罩、DNS 和網關資訊。  VM 客戶作業系統憑證應提供給全域層級或每個 VM 層級。</block>
@@ -979,10 +959,8 @@
   <block id="3bec001de0817436d65092198756c8eb" category="list-text">必須提供適當的使用者憑證以及足夠的來賓作業系統權限才能執行該腳本。</block>
   <block id="39c096538930d0577bfaf3516cd274dc" category="list-text">（可選）包括腳本的超時值（以秒為單位）。</block>
   <block id="642ce7c45318092be76df71ca359c694" category="paragraph">*執行 Linux 的虛擬機器*：可以執行虛擬機器使用的 Linux 版本支援的任何 shell 腳本 (.sh)。 Linux 腳本可以使用命令列參數。在以分號分隔的值清單中提供參數。不支援命名參數。將每個參數新增到<block ref="cc0acde0fc5708ea40075a08730fb2e7" prefix=" " category="inline-code"></block>參數列表並使用指標引用每個值<block ref="cc0acde0fc5708ea40075a08730fb2e7" prefix=" " category="inline-code"></block>數組，例如，<block ref="08af2426c7af475c1f6703fed4ed1dd0" prefix=" " category="inline-code"></block> 。</block>
-  <block id="6cc5c6ac8b3db105ac7cb142b8d8b7b2" category="list-text">*目標 VM 前綴和後綴*：在虛擬機器詳細資料下，您可以選擇為每個故障轉移的 VM 名稱加上前綴和後綴。這有助於區分故障轉移的虛擬機器和在同一 vCenter 叢集上執行的生產虛擬機器。例如，您可以為虛擬機器名稱新增前綴「DR-」和後綴「-failover」。有些人會新增第二個生產 vCenter，以便在發生災難時臨時在不同網站託管虛擬機器。添加前綴或後綴可以幫助您快速識別故障轉移的虛擬機器。您也可以在自訂腳本中使用前綴或後綴。</block>
   <block id="fc8e3522d10b0e18c7fc7763ef0789a1" category="paragraph">您可以使用在計算資源部分設定目標 VM 資料夾的替代方法。</block>
   <block id="cd9b7d7dfe576f566d279960505b56d9" category="admonition">您可以以千兆位元組 (GiB) 或兆位元組 (MiB) 為單位配置 DRAM。雖然每個虛擬機器至少需要 1MiB 的 RAM，但實際數量必須確保虛擬機器來賓作業系統和任何正在運行的應用程式能夠有效運作。</block>
-  <block id="983a4203041e2ae3715f09be44011da8" category="list-text">*啟動順序*：您可以修改所有在資源群組的所有選定虛擬機器的故障轉移後的啟動順序。預設情況下，所有虛擬機器同時並行啟動；但是，您可以在此階段進行變更。這有助於確保在啟動後續優先級虛擬機器之前，所有優先順序為第一的虛擬機器都在運作。</block>
   <block id="917743345c16934d4f46d0d5f7c82682" category="list-text">同時啟動：為任何虛擬機器指派相同的編號，以便同時啟動它們，例如 1,1,1,1,2,2,3,4,4。</block>
   <block id="8a1eaa44f33649f4a55add8e5df848ec" category="list-text">*啟動延遲*：調整啟動操作的延遲時間（分鐘），表示虛擬機器在啟動程序之前等待的時間。輸入 0 到 10 分鐘之間的數值。</block>
   <block id="085a5b8a90c0ae4c360aae1b0abff664" category="section-title">建立應用程式一致的副本</block>
@@ -1002,7 +980,6 @@
   <block id="17118d5c40a4db7a930eaa6bd6772347" category="list-text">對於 Linux VM，該服務使用一組腳本將 Oracle 伺服器置於備份模式。</block>
   <block id="b023c75e908be8b918df8d4029c40bbb" category="paragraph">若要啟用虛擬機器及其託管資料儲存的應用程式一致性副本，請選取每個虛擬機器的「建立應用程式一致性副本」*旁邊的框，並提供具有適當權限的來賓登入憑證。</block>
   <block id="848817103272774cc04857999310abc9" category="paragraph">VMware 資料儲存庫託管在ONTAP FlexVol磁碟區或使用 VMware VMFS 的ONTAP iSCSI 或 FC LUN 上。使用資料儲存部分定義目標ONTAP叢集、儲存虛擬機器 (SVM) 以及磁碟區或 LUN，以將磁碟上的資料複製到目標。</block>
-  <block id="923805befcdde4aa8fa4752b9e9a277f" category="paragraph">選擇“*資料儲存*”旁邊的向下箭頭。根據虛擬機器的選擇，自動選擇資料儲存映射。</block>
   <block id="210dfd955522333f74e13d0843ab02ff" category="paragraph">根據您的選擇，此部分可能會啟用或停用。</block>
   <block id="c4c09b507b4da4a281d7ce6c068b6a88" category="inline-image-macro">螢幕截圖顯示了“新增複製計劃”&gt;“資源映射”&gt;“資料儲存區”</block>
   <block id="7b6735057ec599457ce14b0629d098bf" category="paragraph"><block ref="383fd741f178abe8be4920d498113a6c" category="inline-image-macro-rx" type="image"></block></block>
@@ -1013,16 +990,13 @@
   <block id="49511806f0e60c638845968f2dbb17f7" category="section-title">新增測試故障轉移映射</block>
   <block id="a8c55ad0456d667323e1ede0b2d4845d" category="list-text">若要為測試環境設定不同的映射，請取消選取該方塊並選擇「*測試映射*」標籤。</block>
   <block id="3d2d89948829d5041f9ae015297d638b" category="list-text">像以前一樣瀏覽每個選項卡，但這次針對測試環境。</block>
-  <block id="30cb4638cdd1e514eba27473e745afb4" category="paragraph">在測試映射標籤上，虛擬機器和資料儲存映射被停用。</block>
   <block id="0516742190fe9dfeaffe988ba6abe786" category="admonition">您可以稍後測試整個計劃。現在，您正在為測試環境設定映射。</block>
   <block id="2a4ddf396205dca12c00a6eb7e16285a" category="section-title">審查複製計劃</block>
-  <block id="f7056dbdafc88dd1c68fb0eec6b47aac" category="paragraph">最後，花幾分鐘時間檢查複製計劃。</block>
   <block id="26ff2655fb5643a3e76370d9248a31df" category="admonition">您可以稍後停用或刪除複製計劃。</block>
   <block id="6662bb47d30d156ce5604e1d8adf7ae1" category="list-text">查看每個標籤中的資訊：計劃詳細資訊、故障轉移映射和虛擬機器。</block>
   <block id="47324a4e5509aeccc192aa7b07cbcac7" category="list-text">選擇*新增計劃*。</block>
   <block id="a9980df200522b9bbaa257521bc396fe" category="paragraph">該計劃已新增至計劃清單。</block>
   <block id="0c9133d8bb2cba28a02319fd78380fa9" category="list-text">*合規時間影響*：建立複製計畫時，服務預設會建立合規計畫。預設合規時間為 30 分鐘。若要變更此時間，您可以編輯複製計畫中的時間表。</block>
-  <block id="f1b5b1b3eb29f73ad308b990489fa377" category="list-text">*測試故障轉移影響*：您可以根據需要或依計畫測試故障轉移流程。這使您可以測試虛擬機器到複製計劃中指定的目標的故障轉移。</block>
   <block id="ab2752a523dd44fcb8640d76a0e117d3" category="paragraph">測試故障轉移會建立FlexClone磁碟區、掛載資料儲存庫並在該資料儲存庫上移動工作負載。測試故障轉移作業不會影響生產工作負載、測試站點上使用的SnapMirror關係以及必須繼續正常運作的受保護工作負載。</block>
   <block id="74af4bc99691d529b32e88a3fd49a4f9" category="paragraph">根據計劃，故障轉移測試運行並確保工作負載移動到複製計劃指定的目標。</block>
   <block id="3637e54ce6a2873442d292031c4510ac" category="inline-image-macro">顯示複製計劃清單的螢幕截圖</block>
@@ -1034,9 +1008,7 @@
   <block id="294642716409ca930af5721f2db940c1" category="list-text">輸入您希望測試開始的日期（yyyy-mm-dd 格式）。</block>
   <block id="e3afddca17ec740a7556918c2bbdc013" category="inline-image-macro">螢幕截圖顯示了您可以在哪裡編輯時間表</block>
   <block id="bb9d0bc96dc8ebc0c65b92fdd57252dc" category="paragraph"><block ref="bb9d0bc96dc8ebc0c65b92fdd57252dc" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="02e6e8fc80c61f6b451734eea7a7f500" category="list-text">*使用按需快照進行排程測試故障轉移*：若要在啟動自動測試故障轉移之前拍攝新快照，請選取此方塊。</block>
   <block id="e2b5a46119afa4b27f999635653125bc" category="list-text">若要在故障轉移測試完成後清理測試環境，請勾選*測試故障轉移後自動清理*並輸入在清理開始前等待的分鐘數。</block>
-  <block id="20ace5d6661ce95df08950b97c500ddc" category="admonition">此程序將從測試位置取消註冊暫存虛擬機器、刪除已建立的FlexClone磁碟區並卸載暫存資料儲存區。</block>
   <block id="4ac501b2e3f3c1ccbafc24145adbb715" category="summary">NetApp Disaster Recovery是一種基於雲端的災難復原服務​​，可自動執行災難復原工作流程。</block>
   <block id="91489d092184bfc755448f244680bba7" category="doc">使用NetApp Disaster Recovery將應用程式故障還原到原始來源</block>
   <block id="89c264ecf8c1aae2c7902f0d4ce033e4" category="list-text">對復原的站點執行合規性檢查。</block>
@@ -1143,7 +1115,6 @@
   <block id="0df79d4419dfe51ffbc8e1bd534fa737" category="list-text">從資源組選項</block>
   <block id="ae21aa75d137aec3ba200318a51f9166" category="paragraph-title">關於資源組</block>
   <block id="97903d5c0795f3bdf5f969416a7fd5c5" category="paragraph">例如，銷售點應用程式可能會使用多個虛擬機器來儲存資料庫、業務邏輯和店面。您可以使用一個資源群組來管理所有這些虛擬機器。設定資源群組以套用虛擬機器啟動順序、網路連線和應用程式所需的所有虛擬機器的復原的複製計畫規則。</block>
-  <block id="359f9e79e746fa9f684e5cda9e60ca2e" category="paragraph-title">它是如何運作的？</block>
   <block id="4c97b19bdb39e81e1e7c0c1a8b6222c5" category="cell">FlexVol卷的相對位置</block>
   <block id="ddbeb84a2d597ac93e26f8e4ccfed259" category="cell">快照副本流程</block>
   <block id="6d01f51b0e5a556d95395c7f71ed087e" category="cell">多個資料儲存 - 同一 SVM 中的FlexVol卷</block>
@@ -1152,8 +1123,6 @@
   <block id="b73116544f9b4e58ae13b79847ef2c41" category="list-text">執行磁碟區範圍的SnapMirror複製</block>
   <block id="afb49150087c45237455b2d82f867be8" category="cell">多個資料儲存 - *多個 SVM* 中的FlexVol卷</block>
   <block id="87f2c3aeec6e1ba638ce1869ba610ea4" category="list-text">ONTAP API：<block ref="393c6bdee070ba1b7e80e63101108f36" prefix=" " category="inline-code"></block> 。恢復所有磁碟區上的 I/O，並在拍攝快照後啟用磁碟區範圍的SnapMirror複製。</block>
-  <block id="8786917b8c914193e9e88a5138c2963b" category="list-text">在將資料儲存區新增至資源組之前，請先啟動虛擬機器的手動發現或計畫發現。這可確保虛擬機器被發現並列在資源組中。如果您不啟動手動發現，虛擬機器可能不會列在資源組中。</block>
-  <block id="af5ea68f4150abdf1a83540d9448ab23" category="list-text">確保資料儲存區中至少有一個虛擬機器。如果資料儲存區中沒有虛擬機，災難復原將無法發現該資料儲存區。</block>
   <block id="3793f4712c0bbac2acd15ae0cc3f6c0c" category="list-text">從NetApp Disaster Recovery選單中，選擇 *資源群組*。</block>
   <block id="fa4d1c967d467deb12174bc6b1b3355b" category="list-text">輸入資源組的名稱。</block>
   <block id="23a0cad5b0151418367a15f201a54ad3" category="list-text">選擇虛擬機器所在的來源 vCenter 叢集。</block>
@@ -1230,7 +1199,6 @@
   <block id="18e2ce6101a73dea18d6093a4137fc98" category="paragraph">您可以隨時手動刷新發現。如果您新增或刪除了虛擬機器並想要更新NetApp Disaster Recovery中的信息，這將非常有用。</block>
   <block id="5196afaaa8fb34fc7153a30daf14514e" category="list-text">選擇您想要刷新的網站。</block>
   <block id="c87fc74cb4f8f9196e191287a96f80dd" category="list-text">選擇操作<block ref="145ad72607e9a3c177918d31007a191e" category="inline-image-macro-rx" type="image"></block>圖示並選擇*刷新*。</block>
-  <block id="9a0ab11cd9364c5c2dae1c85f73f88bc" category="inline-link-macro">制定災難復原計劃</block>
   <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">開始</block>
   <block id="06ad314b340900d226b1196e1fe289e9" category="sidebar">快速啟動</block>
   <block id="ee68e5b99222bbc29a480fcb0d1d6ee2" category="sidebar">先決條件</block>
@@ -1304,7 +1272,6 @@
   <block id="bb05f5a972177b632dbf8088c480f305" category="paragraph">現在您可以將自訂腳本注入到故障轉移工作流程中，以便在建立備份之前執行。備份前腳本可讓您在複製快照之前控制虛擬機器的狀態，並為虛擬機器的轉換做好準備。例如，您可以注入腳本來卸載 NFS 掛載點，然後在故障轉移後使用另一個腳本重新掛載該掛載點。</block>
   <block id="77750efa6f5ff153acdc42067058017f" category="section-title">2025年11月10日</block>
   <block id="67d901d806b31ec45748075cf6b4b785" category="list-text">*降級虛擬機器硬體版本並註冊*：如果目標 ESX 主機版本早於來源版本，請選擇此項，以便在註冊期間進行配對。</block>
-  <block id="11decf8e913c8fbeb5d947338d43e3b0" category="paragraph">有關詳細信息，請參閱 <block ref="bf6dbdf786c7323ca961bfd2e12103c6" category="inline-link-macro-rx"></block>。</block>
   <block id="2feeca48692986e9cc471ec61f847fca" category="paragraph">NetApp以多種方式為NetApp Console及其雲端服務提供支援。全天候提供廣泛的免費自助支援選項，例如知識庫 (KB) 文章和社群論壇。您的支援註冊包含透過網路工單取得的遠端技術支援。</block>
   <block id="317cbd2c4fdbfd06a6c66bcd3f57d7ad" category="paragraph">有關雲端提供者文件服務、其基礎設施或使用該服務的任何解決方案的技術支持，請參閱該產品的文檔。</block>
   <block id="359d8b16e442ffaa72e03c95fcd60448" category="list-text"><block ref="359d8b16e442ffaa72e03c95fcd60448" category="inline-link-macro-rx"></block></block>
@@ -1355,7 +1322,6 @@
   <block id="7ca099323edf71b926fc9164cd6dcb98" category="paragraph">參考<block ref="0a2897e75205749364bfed93d3636453" category="inline-link-rx"></block>。</block>
   <block id="b71720246684e5a9cba49f80952de19b" category="paragraph">參考<block ref="19734f32800b77f80c48c6717b016804" category="inline-link-rx"></block>。</block>
   <block id="fc00d1eb9f65781e23eb29e05e16f837" category="paragraph">參考<block ref="fc64bd880d64e61d0dbe79a637246086" category="inline-link-rx"></block>。</block>
-  <block id="3748c3bb5f6a3e18e8791cfe63ac90ed" category="paragraph">有關詳細信息，請參閱<block ref="0f45a25cd76aba04e0b1a3268dc19f1d" category="inline-link-rx"></block>。</block>
   <block id="f919fb3669b4f95fd99d2925ae7cf012" category="paragraph">參考<block ref="c2e2735f5609b13c3e77b7f1dd3c4dad" category="inline-link-rx"></block>。</block>
   <block id="c140aa662ebc9f67c4fdea4bd57be0e2" category="paragraph">有關詳細信息，請參閱<block ref="cfcdee33513d18f6855d2d753dc01df1" category="inline-link-rx"></block>。</block>
   <block id="e64b87421bcdfea630f17affd0f556c0" category="paragraph">有關詳細信息，請參閱<block ref="3e814dc0810571f12f20160040a8a04b" category="inline-link-rx"></block>。</block>
@@ -1364,7 +1330,6 @@
   <block id="6fb6ea5db25971f01c5b56b2d1293a99" category="paragraph">看<block ref="5a3087a2b114066de4e4955d8182a972" category="inline-link-rx"></block>。</block>
   <block id="ebb3e9d9870ecf428a0b48a6447c51af" category="paragraph">有關詳細信息，請參閱<block ref="3699cc08be4a1997a50967db5ff8a709" category="inline-link-rx"></block>。</block>
   <block id="3964efa0939093eca0bac611eeb1782b" category="paragraph">有關如何在站點中包含子網映射的詳細信息，請參閱<block ref="3699cc08be4a1997a50967db5ff8a709" category="inline-link-rx"></block>。</block>
-  <block id="73186230192d25a414390478c44bd34f" category="paragraph">有關在複製計劃中使用外部快照解決方案的詳細信息，請參閱：<block ref="0f45a25cd76aba04e0b1a3268dc19f1d" category="inline-link-rx"></block> 。</block>
   <block id="d95f27e12b72826e0000aff7eb4934ca" category="paragraph">有關詳細信息，請參閱<block ref="5b36581a8c5714c490f4a04bda49832a" category="inline-link-macro-rx"></block>。</block>
   <block id="05e04f0a4cee848be9555214d6a9a0eb" category="paragraph"><block ref="900bb528e3d03c800725eef508ff790f" category="inline-link-rx"></block>。</block>
   <block id="19c500c3c2adf84e8ebbabf4b17c0a08" category="paragraph">詳情請見<block ref="2d6eef6191819db2b4455acbd8ebc7a8" category="inline-link-rx"></block>和<block ref="28b3e4280c0ca3a3af1ee0d05785e9b6" category="inline-link-rx"></block>。</block>
@@ -1425,22 +1390,17 @@
   <block id="0b3bf876c8f0155fffe01bfe66919ae7" category="list-text">執行故障轉移測試後，至少需要等待 52 小時才能刪除複製磁碟區。您必須手動刪除該磁碟區。  52 小時後，您可以再次測試故障轉移。</block>
   <block id="7b968ed584e6ac7fc895a20d4c4e19e6" category="list-text">如果掛載操作的任何部分失敗，故障轉移將不會成功，作業將逾時。  Google 最多需要三天時間來調查該問題，在此期間，vCenter 上所有與資料儲存相關的操作都會被阻止。</block>
   <block id="b0cddd5e1e4185232bf6d1fb2418ed79" category="section-title">2025年12月1日</block>
-  <block id="a59dc75ba3acb75a76892cc518033bf2" category="paragraph">您可以透過在「應用程式」頁面上按資料儲存器過濾虛擬機器以及在「資源映射」頁面上選擇更多目標詳細資訊來更輕鬆地新增複製計劃。參考<block ref="0f45a25cd76aba04e0b1a3268dc19f1d" category="inline-link-rx"></block>。</block>
   <block id="dec8bee8343c6d117f63ae394850253f" category="paragraph">參考<block ref="b19db5f70a49f12a345f60ed67ac796b" category="inline-link-rx"></block>。</block>
   <block id="f846876bddc172040b4b43e5a785c530" category="paragraph">參考<block ref="890d7063dc9de57ba2bcf88f9266693d" category="inline-link-rx"></block>。</block>
   <block id="b2d5f1c59a3bea052f379bdc27494bcc" category="paragraph">參考<block ref="af17dd838b93f65aaed7f355089a6a52" category="inline-link-rx"></block>。</block>
   <block id="845eaf23d1b45041c6f0657e886d391e" category="paragraph"><block ref="b60b5c6bd90c6adf0ff4939b80ae6f1f" category="inline-link-rx"></block>。</block>
   <block id="2c8bcb491668d28b6eba5cce3541ef3e" category="paragraph">有關設定NetApp Disaster Recovery許可的詳細信息，請參閱<block ref="fc64bd880d64e61d0dbe79a637246086" category="inline-link-rx"></block>。</block>
   <block id="b0bbeee8e580e57328dc54758ad05415" category="paragraph">有關管理*所有* NetApp Console資料服務的許可證的詳細信息，請參閱：<block ref="260681515c15b3ca1586b5059c0196d2" category="inline-link-rx"></block> 。</block>
-  <block id="0adaadb84969a574419502132b942f31" category="paragraph">有關詳細信息，請參閱<block ref="1eedc685a089def20e2f9a421813a733" category="inline-link-rx"></block>。</block>
   <block id="fc20a50b039b8d99c2b0cd66e0d23ce2" category="paragraph">有關詳細信息，請參閱<block ref="b23e600e479112761333de8c4f7b2fd9" category="inline-link-rx"></block>。</block>
   <block id="ba8fe6f6789e5f7199519941aefafefb" category="paragraph"><block ref="6d1992c3ae7ff61967726232cb57483c" category="inline-link-rx"></block>。</block>
   <block id="248f029169ae1dc7e09893ffc08dc712" category="paragraph">參考<block ref="0807a737bd78695b4a254e4d38c54d1a" category="inline-link-rx"></block>。</block>
-  <block id="4b3c6cbf4a48d0bd709bc99a41eaf5c4" category="paragraph">參考<block ref="0f45a25cd76aba04e0b1a3268dc19f1d" category="inline-link-rx"></block>。</block>
   <block id="5231740592cdd924e6fd895d6bf9f92a" category="paragraph">參考<block ref="fdfc4e9bafc2bb55b4145b1390d051cc" category="inline-link-rx"></block>。</block>
-  <block id="db4b2a2fab0c7502080a219b908784ae" category="paragraph">建立災難復原或複製計畫時，您可以將虛擬機器新增至功能資源群組。資源組可讓您將一組依賴的虛擬機器放入符合您要求的邏輯群組中。例如，群組可以包含復原時可以執行的啟動順序。在此版本中，每個資源組可以包含一個或多個虛擬機器。虛擬機器將根據您在計劃中包含的順序啟動。參考<block ref="ee1fea06d7478ebea6a6c5ae2d2b4dd8" category="inline-link-rx"></block>。</block>
   <block id="647d9243c873ee85a5b5ef91c0cde1be" category="paragraph">建立災難復原或複製計畫後，在精靈中確定重複，並啟動到NetApp Disaster Recovery Disaster Recovery每 30 分鐘驗證一次複製是否確實按照計畫進行。您可以在作業監視器頁面中監視進度。參考<block ref="467be6b72bdf445e572b40cb9aef5aef" category="inline-link-rx"></block>。</block>
-  <block id="db57896cfd5fc20498a884f5493db9e2" category="paragraph">建立災難復原或複製計畫時，您需要選擇虛擬機器。在此版本中，您現在可以查看與資料儲存區或虛擬機器關聯的每個磁碟區關聯的SnapMirror 。您也可以查看與SnapMirror計畫相關的 RPO 傳輸計畫。RPO 可協助您確定備份計畫是否足以在災難後復原。參考<block ref="0f45a25cd76aba04e0b1a3268dc19f1d" category="inline-link-rx"></block>。</block>
   <block id="727d2884239e62cf5ec5d59f2ae538a1" category="paragraph">作業監視器頁面現在包含刷新選項，以便您可以獲得最新的操作狀態。參考<block ref="45f7b5a446086d3a895fd4d6d899ff32" category="inline-link-rx"></block>。</block>
   <block id="e6a35b0cc097a073b142d2f77dd698c4" category="paragraph"><block ref="5b01ddd771a87fa6b71f782d09b9b7b3" category="inline-link-macro-rx"></block>。</block>
   <block id="bae7a0a97273516d5296fb983700a411" category="paragraph"><block ref="31accac3325320cbdf81ca4694a5591c" category="inline-link-macro-rx"></block>。<block ref="e704c98551e5f8acdbf19af28a86dcf3" category="inline-link-rx"></block>。</block>
@@ -1453,7 +1413,6 @@
   <block id="d6155caa68c59478855dfa8342f87d18" category="inline-link-macro">切換控制台代理</block>
   <block id="5fbf922c777310b5aadba9b1dab4f7b0" category="summary">了解在NetApp Disaster Recovery中使用多個控制台代理程式的要求。</block>
   <block id="ac340102b6e26791143e3212d85bb1dd" category="doc">使用NetApp Disaster Recovery時切換控制台代理</block>
-  <block id="5784bc747a9795446f48f40111e7bf58" category="paragraph">NetApp Console支援在單一工作環境中使用多個控制台代理程式。使用多個控制台代理有助於在對另一個控制台代理進行維護或控制台代理發生故障時保持對資源的存取。由於每個控制台代理程式都有一個唯一的標識符，因此不正確地切換控制台代理程式可能會影響工作環境中資源的可用性。</block>
   <block id="720fb781851276f1358a93dbc817200d" category="inline-xref-macro">為您的工作環境添加了至少兩個控制台代理</block>
   <block id="6d613207623cb9199ad352b842c97bcd" category="list-text">你必須有<block ref="bc735134c90837f767229ea1b8bbf2c3" category="inline-xref-macro-rx"></block>。</block>
   <block id="6ebe2ade347022cced0a6fb1bf51ffb4" category="list-text">兩個控制台代理必須包含相同的ONTAP叢集。</block>
@@ -1475,9 +1434,7 @@
   <block id="59986822ba53de21bd3edbd9b45712cc" category="paragraph">版本 4.2.8</block>
   <block id="4706c904f2e5382dbbf1ff2e2aa98487" category="paragraph">版本 4.2.7</block>
   <block id="3f66961d19507ff05406ca74e41b4060" category="paragraph">版本 4.2.6</block>
-  <block id="c608ea51d7dfe4fc155f5ac91d002818" category="summary">NetApp Disaster Recovery是一種基於雲端的災難復原服務​​，可自動執行災難復原工作流程。新增 vCenter 網站後，就可以建立災難復原或複製計畫了。</block>
   <block id="c0655d6a3a66f2180cdf2e00c1930e7c" category="list-text">使用 Google Cloud，您只能在複製計畫中新增一個磁碟區或資料儲存。</block>
-  <block id="ad4891bd95428a3a61372e6cb7c1e8db" category="paragraph">有關詳細信息，請參閱 <block ref="46afb87ea9ab52c50c55f4a3ee88e9ae" category="inline-link-macro-rx"></block>。</block>
   <block id="8b398f79cbc8bafdd3d60b15c90e7f01" category="paragraph">有關詳細信息，請參閱 <block ref="9816d86fb07a6c2043bc508d566ad539" category="inline-link-macro-rx"></block>。</block>
   <block id="6da53899225555a506524070f96e33df" category="doc">支援本地環境中的多個控制台代理</block>
   <block id="8a702621d5f54ca1c7d25a86b7e3f774" category="paragraph">如果您在本機使用災難恢復，現在可以為每個 vCenter 執行個體部署控制台代理，從而提高復原能力。</block>
@@ -1498,7 +1455,6 @@
   <block id="df6f21ef230478b0b817e1303ba53264" category="section-title">改進的使用者介面</block>
   <block id="ce620672d96c9599e9bfaa409968c7a6" category="paragraph">災難復原功能現在提供更完善的警告和錯誤解決方法。此版本修正了導致已取消的作業無法在使用者介面中顯示的錯誤。已取消的職位現在可以查看了。當同一個目標網路映射到多個不同的來源網路時，也會發出新的警告。</block>
   <block id="edd2f7fa340d3324747878ea3a531288" category="section-title">保留複製計劃中預設新增的 VM 資料夾結構</block>
-  <block id="2ab0f27f92b633596464651c85366a28" category="paragraph">有關詳細信息，請參閱 <block ref="5e71e4e6b8c5e7bff47e3e8fc9f8f4a2" category="inline-link-macro-rx"></block>。</block>
   <block id="2aa03a2f6536e9af2f778eef56fdc3e3" category="paragraph">災難復原還支援使用多個本地配置的控制台代理。在這種情況下，控制台代理程式會將操作定向到 vCenter 和ONTAP陣列集群，來源和目標各自擁有自己的控制台代理程式。建議使用多個控制台代理，以減少延遲並縮短控制台代理或站點發生故障時的恢復時間。</block>
   <block id="667dffcf5676fe0bd645082d2a512fef" category="section-title">2026年1月12日</block>
   <block id="2a5d29dc0e8c9fb1d01f9e388b1b0b74" category="paragraph">版本 4.2.9</block>
@@ -1707,30 +1663,20 @@
   <block id="32530c1a1edb0706f8c34b61bf263957" category="paragraph">如需詳細資訊，請參閱 <block ref="0d43ad8ffb310486762e1912aeac4ebc" category="inline-link-macro-rx"></block>。</block>
   <block id="d7861bc1dada29d20aea81705aca4684" category="section-title">新的複寫計畫子選單</block>
   <block id="8bad83affac335130776761407726ea6" category="inline-link-macro">修改複寫計畫</block>
-  <block id="95036acb74478cad3d04125e4993251b" category="paragraph">如需詳細資訊，請參閱 <block ref="ef769a112a3ec5265cbcfd525103b93a" category="inline-link-macro-rx"></block>。</block>
   <block id="4c66a9dab829d794eb059ed24f6c0e5b" category="section-title">改善的網路探索</block>
   <block id="b5cc90986d9652570eab368db96768d2" category="paragraph">災難復原功能現在包含改進的網路探索功能，以支援更廣泛的網路組態。</block>
   <block id="df4bdd45174b09881add6730bdfaf045" category="section-title">2026 年 3 月 09 日</block>
   <block id="3799161db3e63e5d2a3b42b85fddf7f9" category="paragraph">版本 4.3.1</block>
-  <block id="f45c394885f028f16865fb03ca11a2b7" category="paragraph">VM 使用連接到虛擬網路的虛擬 NIC。在容錯移轉程序中，服務會將這些虛擬 NIC 連接到目標 VMware 環境中定義的虛擬網路。對於資源群組中 VM 所使用的每個來源虛擬網路，服務都需要指派一個目標虛擬網路。</block>
-  <block id="5b4a982186aa83fb25cd3688e47b1e51" category="paragraph">您可以修改複寫計劃排程以測試法規遵循，並確保容錯移轉測試成功完成。</block>
   <block id="9e1ac550ab4447ef223077131183a9f2" category="list-text">若要對計劃執行操作，請從複製計劃清單中選擇計劃右側的 *Actions* （操作）選項 <block ref="771645334c0631c5881bfc9858be7f5b" category="inline-image-macro-rx" type="image"></block>，然後選擇一個操作：*Edit schedules* （編輯排程）、*Test failover* （測試容錯移轉）、*Fail over* （容錯移轉）、*Fail back* （容錯回復）、*Migrate* （移轉）、*Take snapshot now* （立即擷取快照）、*Clean up old snapshots* （清理舊快照）、*Disable* （停用）、*Enable* （啟用）或 *Delete* （刪除）。</block>
-  <block id="855f6640322147511d2bad1c3ef67a01" category="paragraph">有關詳細資訊，請參閱 <block ref="5e71e4e6b8c5e7bff47e3e8fc9f8f4a2" category="inline-link-macro-rx"></block>。</block>
   <block id="a7f0ae2d9bf264f3b8a764e25f427249" category="paragraph">制定計畫時、請遵循以下準則：</block>
   <block id="a29968d7a7e40c3abadb4a3a66650aa2" category="list-text">輸入複寫計畫的名稱。</block>
   <block id="8e1ca61f41962bbab3b0edc4e77ec792" category="inline-image-macro">顯示 vCenter 伺服器頁面的螢幕擷取畫面</block>
   <block id="37fc88b8b1530f40d0ce4e2d7ca691dc" category="paragraph"><block ref="37fc88b8b1530f40d0ce4e2d7ca691dc" category="inline-image-macro-rx" type="image"></block></block>
   <block id="0995033be79b231587fd5dd53a2a94c9" category="list-text">如果您已有資源群組，請選擇**資源群組**，選擇資源群組，然後按一下**下一步**。</block>
-  <block id="ed4f95c7ecb7ed1087c4e69b67bc15c0" category="paragraph">如果沒有現有的資源群組，或需要為資源群組新增資源，請選擇 *Virtual machines* 或 *Datastores* 。</block>
-  <block id="9e789b98de8f3895acb993bdec773003" category="list-text">從自動產生的清單中選擇要新增至複寫計畫的虛擬機器或資料存放區。對於虛擬機器，您可以依資料存放區進行篩選。當您選擇資料存放區或 VM 時，它會自動新增至資源群組。</block>
   <block id="11fce3579cd1b24abe9062137cfd5016" category="list-text">在頁面右側、檢閱選取的 VM 或資料存放區。</block>
-  <block id="7ddea6f727802bf5d58c1c6fc1200d0b" category="section-title">運算資源區段</block>
   <block id="55290e3407e3be9abd668def1fc094f0" category="list-text">*資料夾* （選用）</block>
   <block id="5bb5f5ed113c90d31da88b6596b25520" category="list-text">*應用程式一致*：指示是否建立應用程式一致的快照複本。此服務會先靜止應用程式、再擷取快照、以取得應用程式的一致狀態。此功能支援在 Windows 和 Linux 上執行的 Oracle 、以及在 Windows 上執行的 SQL Server 。請參閱下一節以取得更多詳細資料。</block>
   <block id="4207cdc216537468251be88bbe3d2194" category="paragraph">您必須切換此選項的 *Advance settings* 開關。如果啟用應用程式一致性，則必須提供使用者名稱和密碼形式的認證資料。</block>
-  <block id="6ffba2842dbe195b31043c058ec4a8b1" category="inline-image-macro">顯示資源對應之虛擬機器區段的螢幕擷取畫面</block>
-  <block id="19c52774fb01f872c0f95a233173a1de" category="paragraph"><block ref="19c52774fb01f872c0f95a233173a1de" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="7f78326f10957ba33aba302d329ac33e" category="section-title">資料存放區區段</block>
   <block id="141ae0745aa19a71f0ba80e5ba754682" category="list-text">*備份和保留開始時間*：輸入您希望備份和保留開始執行的日期和時間。</block>
   <block id="92cd787be79720ebbf8f89f517b891c9" category="list-text">*備份和保留頻率*：請輸入以小時和分鐘為單位的時間間隔。例如、如果您輸入 1 小時、則服務將每小時建立一次快照。</block>
   <block id="81b2d5bd2343a78b10f138613228f4b2" category="list-text">*所有資料存放區的保留計數*：輸入要保留的快照數量。</block>
@@ -1912,41 +1858,20 @@
   <block id="56b24cdd5dc24570f7e1dd2ee03d39ca" category="paragraph">如需完整瞭解 NetApp Disaster Recovery 解決方案，請參閱<block ref="ccfb532d2846c6e621e9709f67d9a040" category="inline-link-macro-rx"></block>。</block>
   <block id="264f41f7fda3caccf98196e21418201c" category="summary">NetApp Disaster Recovery 是一項基於雲端的災難復原服務，可自動化災難復原工作流程。使用 NetApp Disaster Recovery，您可以將執行於 ONTAP 儲存設備上的本地 VMware 工作負載，複寫到公有雲中的 VMware 軟體定義資料中心，作為災難復原站點，並使用 NetApp 雲端儲存。</block>
   <block id="12af18005a606ba97f9e606aa2b596b8" category="paragraph">版本 4.3.3</block>
-  <block id="e6301bcb4d20444817b4b66020da65f2" category="paragraph">只有當複寫計畫處於以下狀態之一時，才能啟用保護：</block>
-  <block id="c01931b5f1f8380283abe6d3df92ca6f" category="list-text">選擇要複製的資源（VM、資料存放區、命名空間），並指派資源群組。</block>
-  <block id="bf90755c2ea047da087c4a63f1fc78c9" category="list-text">針對計劃中的所有 VM 或 Kubernetes 叢集使用相同的認證資料。</block>
-  <block id="380f93c4dd8d090d3c832d5c203c0d5d" category="list-text">對計劃中的所有 VM 或 Kubernetes 叢集使用相同的指令碼。</block>
-  <block id="4338202b43230633ce5048f0f9976358" category="list-text">在計劃中的所有 VM 或 Kubernetes 叢集使用相同的子網路、DNS 和閘道。</block>
-  <block id="093d6f91400a370bac9aa1c83e740f81" category="list-text">在下拉式選單中，選擇要為其建立複寫計畫的資源類型：*Kubernetes* 或 *vCenter*。</block>
   <block id="311b2fa5921a6c9a2aa01033767480ec" category="image-alt">網站類型切換的螢幕擷取畫面</block>
-  <block id="43a7950b62333edbe551379f15eab5c0" category="list-text">在「來源 vCenter」下，從下拉式選單中選擇資料所在的 vCenter。在「目標」下，選擇要用作災難復原目標的 vCenter 或 Kubernetes 叢集。</block>
-  <block id="5e703952c9af079ef1142f66865c7500" category="list-text">在將資源新增至資源群組之前，請先執行手動探索或排程探索。這樣可以確保資源被探索並列入資源群組。</block>
-  <block id="772ed2d2e8d27e26ed13d7acb3d6f02e" category="list-text">請確保資料儲存中至少有一台 VM。如果資料儲存中沒有 VM，則無法發現該資料儲存。</block>
-  <block id="6038f71182410bd3064b8601a7226ffe" category="list-text">該磁碟區的已使用容量會影響授權計算，因為 Disaster Recovery 使用 SnapMirror，這意味著系統會複寫整個 ONTAP 磁碟區。在這種情況下，受保護和未受保護資源所佔用的磁碟區空間都會納入此計算中。</block>
-  <block id="34891a55ff1532cfba6d7df6f11c7b55" category="admonition">為故障轉移測試建立一組單獨的專用映射，以防止資源使用相同的 IP 位址連線到正式作業網路。</block>
   <block id="e10ca1adb349a5228f7573a244805247" category="open-title">vCenter</block>
   <block id="30136395f01879792198317c11831ea4" category="open-title">Kubernetes</block>
-  <block id="028987cfad4c5202b071c406f366bf2c" category="paragraph">為 Kubernetes 叢集建立複寫計畫時，資源群組中的 Kubernetes 命名空間必須屬於同一個 ONTAP 叢集。</block>
   <block id="bcedbf6bc6f85b4f42469dbe9a695df3" category="inline-link-macro">將命名空間新增至資源群組</block>
   <block id="6a6747a74fd027a47c06e1db3ff36fe2" category="paragraph">如果您沒有現有的資源群組，或需要在資源群組中新增資源，請選擇 *+ Create new resource group*。按照說明進行 <block ref="80758a5c9c6eff8c745b280c61df1488" category="inline-link-macro-rx"></block>。</block>
   <block id="64fa2a13ae0cf6617ff8c1571c132795" category="paragraph">命名資源群組時，僅支援小寫字母和數字。</block>
   <block id="7c8360c623f72c87d137fe47ca588b37" category="list-text">在另一列中，檢視選取的資源群組。</block>
-  <block id="c716b644cde6bcf010e93cdafcb078a0" category="list-text">選取 **Next**。</block>
   <block id="bad89bf47ba4744f9ff7e353a9ef6c29" category="list-text">為每個資源群組中的每個命名空間選擇命名空間對應。根據預設，NetApp Disaster Recovery 會選擇與來源相同的目標。您可以在目的地叢集中選擇不同的命名空間。</block>
   <block id="c1b3f13568e3ebabe7652fbf9be2a874" category="list-text">為每個資源群組指定儲存類別對應。儲存類別必須連結至與來源環境對等的 ONTAP 儲存 VM。如果您未指定儲存類別、則會使用叢集上的預設儲存類別。</block>
-  <block id="ecc5c96e34177e9acd36b6d5a19b4316" category="admonition">在命名空間上執行 CLI 命令<block ref="958b58c53e75bae5abeaed4b1e734f52" prefix=" " category="inline-code"></block>以查看儲存類別。</block>
-  <block id="cecdc246749a954a3b820b31bc008db6" category="list-text">設定 Snapshot 排程：</block>
-  <block id="67b20a828985dfc5812f5168da4250b9" category="paragraph">選擇 *Snapshots and retention start time*（日曆日期和時間）、*Snapshot and retention frequency*（快照的啟動頻率）以及 *Snapshot retention count*（保存的快照數量）。</block>
-  <block id="f60addf61c3485b1599b66a8eada52ab" category="list-text">選擇 *Add AppVault* 以建立 AppVault,保護資料將儲存在此處。</block>
   <block id="f57e34b9733857c90f118e2860fdc560" category="list-text">輸入 *Name*，然後選擇 AppVault 應連接的 *Console agent*。</block>
   <block id="aefecf255872cb18999d61ebae9d0cdc" category="list-text">選擇用於託管 *AppVault* 的雲端 *Provider*。</block>
   <block id="7174ea6988f438d85266f06a4d178a79" category="list-text">選取 **Add**。</block>
-  <block id="f7f4a1655d3cbed36a9f4a3ac84a092d" category="list-text">檢閱容錯移轉對應，然後選取 **新增** 以建立複寫計畫。</block>
-  <block id="c96445b8b9cefea59b8c554a58c1449a" category="paragraph">選擇「新增」後，您可以在 **Job monitoring** 中監控不同的作業。</block>
-  <block id="b24fddbb2c061e7def99de8fb873e946" category="admonition">本部分僅適用於 vCenters。您不需要為 Kubernetes 填寫。</block>
   <block id="38024e76a2b64efa68a6d51d33e31f6e" category="paragraph">*網路設定* NetApp Disaster Recovery 支援豐富的 VM 網路設定選項。如果目標站點上的虛擬網路所使用的 TCP/IP 設定與來源站點上的正式作業虛擬網路不同，則可能需要變更這些設定。</block>
   <block id="b60fe3207297f056bd4af1c6f6939a13" category="paragraph">若要啟用虛擬機器客體作業系統的指令碼執行，必須符合下列條件：</block>
-  <block id="57106a45b6af39302ee18dd4ea2a5d43" category="list-text">*CPU* 和 *記憶體 (GB)*：在虛擬機器詳細資料下，您可以選擇調整 VM CPU 和記憶體大小。</block>
   <block id="b9ae80d2354a2fdb8c5eab224a3c2793" category="list-text">選擇要從中復原的資料存放區快照。選取 *立即建立快照* 以啟動新的快照，或選取 *選擇* 以從可用快照中選擇。</block>
   <block id="7d72c133b3a80822e8d04e8e866579c1" category="inline-image-macro">故障回復對話方塊的螢幕擷取畫面</block>
   <block id="fe2070975262fdb1507084ad02d139e7" category="paragraph"><block ref="fe2070975262fdb1507084ad02d139e7" category="inline-image-macro-rx" type="image"></block></block>
@@ -2014,9 +1939,6 @@
   <block id="a826d76dfc673a7582fc47b877c0294c" category="list-text">建立 Trident 保護命名空間：</block>
   <block id="83e1151ac17b113708a4a8f22a39063c" category="list-text"><block ref="83e1151ac17b113708a4a8f22a39063c" category="inline-link-macro-rx"></block></block>
   <block id="d1078d331fc762f6c1e11445777639f1" category="list-text">檢閱 <block ref="e169d85ddc666c008a7e023ca382e5b3" category="inline-link-macro-rx"></block> 。</block>
-  <block id="fd0863d0dc188b339645e359055610e4" category="admonition">在部署 NetApp Disaster Recovery 之前，請先組織好您的 VM 或 Kubernetes 叢集，以最大程度地減少資源蔓延。將需要保護的資源放置在部分資料儲存區上，將不需要保護的資源放置在另一部分資料儲存區上。若要在建立複寫計畫之前組織資源群組，請參閱 <block ref="2e9e1519a300bb9dc6a403652e82bcd7" category="inline-link-macro-rx"></block>。</block>
-  <block id="65dea983a95654f072023e3fd251790f" category="list-text">對於 *Source*，請選擇 vCenter 或 Kubernetes 叢集以指定為來源。</block>
-  <block id="56da8dc4cd41826eefa46f92a1310a8b" category="paragraph">下一步是將所需的 VM、資料存放區或 Kubernetes 叢集分組到功能資源群組。資源群組可讓您使用通用快照保護一組資源，例如 Kubernetes 叢集或 VM。</block>
   <block id="cff026a3d3441091dbeb69e012c6d135" category="list-text">如果您已有資源群組，請從清單中選擇這些群組。</block>
   <block id="3fcd520a36c25a041d54e0345e5120b7" category="inline-image-macro">Kubernetes 儲存類別對應的螢幕擷取畫面</block>
   <block id="09eabfe208687918794424252212771f" category="paragraph"><block ref="09eabfe208687918794424252212771f" category="inline-image-macro-rx" type="image"></block></block>
@@ -2025,7 +1947,6 @@
   <block id="476e6adf9c7b2d36849db7f40220a91b" category="admonition">目前不支援 Kubernetes 型工作負載的移轉。</block>
   <block id="09ab8e5a1a2c8097b6247f02e034df79" category="list-text">在右側、選取 *Actions* 選項 <block ref="771645334c0631c5881bfc9858be7f5b" category="inline-image-macro-rx" type="image"></block>、將滑鼠游標暫留在 *Recover* 上、然後選取 *Migrate* 。</block>
   <block id="63b59bd3005c3190b412de0de60c524e" category="list-text">在對話方塊中，選擇 *立即建立快照* 以建立新的遷移快照，或 *選擇* 以選擇現有的遷移快照。</block>
-  <block id="9789de497fc858b2322a60bdd76e1464" category="list-text">在建立災難復原或複製計畫時。如果來源 vCenter 叢集託管了大量 VM、那麼在建立複製計畫的同時建立資源群組可能會更方便。有關在建立複製計畫時建立資源群組的說明、請參閱 <block ref="808c9323236f2ed48bff12970a5f1c49" category="inline-link-macro-rx"></block>。</block>
   <block id="0be7e7dbe0652c5800b5e340ea30596b" category="list-text">在下拉式選單中，依 *VMware* 篩選。</block>
   <block id="3d997e375337e35b4a4477c4b8a2d1bb" category="list-text">在下拉式選單中，依 *Kubernetes* 篩選。</block>
   <block id="ac5bc7127ecda6b1ac8785f4ee0f6c12" category="inline-image-macro">新增 Kubernetes 資源群組的螢幕擷取畫面</block>
@@ -2112,7 +2033,6 @@
   <block id="de2e4685966d24481dfab35c95ad44dc" category="section-title">2026年7月13日</block>
   <block id="17d61647c38ceaeec784c2ea23dd1f02" category="paragraph">版本 4.3.5</block>
   <block id="aa0c550dfb503c90e6b173a0a07f63e0" category="section-title">關於複製計劃</block>
-  <block id="70e9daad0ce38ec31033633e81624571" category="section-title">複製計劃快照</block>
   <block id="f4cbef5ca3f18eff6d1ab043a838c42d" category="paragraph">災難復原每 24 小時執行一次快照對稱性檢查。</block>
   <block id="0199f8e45e93965175d2ac0013366462" category="list-text">如果在 vCenter 層級設定網路映射，災難復原系統會在建立複製計畫時識別這些映射。如果在建立複製計畫後於 vCenter 層級修改或新增網路映射，災難復原系統會在手動編輯複製計畫時識別這些映射。</block>
   <block id="8545a0d7cdafff8da2dece1a851630dc" category="section-title">管理 Trident Protect</block>
@@ -2212,7 +2132,6 @@
   <block id="8cf422e39411f64922f6e7b56df0988d" category="doc">NetApp Disaster Recovery 中的已知限制</block>
   <block id="4006aef0e12f6e6a8f76fac2493b1aa0" category="doc">取得 NetApp Disaster Recovery 的協助</block>
   <block id="4ef6e0e4253cddc748bf185525f9336c" category="doc">註冊以獲得 NetApp 災難恢復支援</block>
-  <block id="3170dc6a174d938f4c289f1e858b170d" category="section-title">平台管理備份的注意事項</block>
   <block id="c280b50217ed2e6036a0f0c326ef823a" category="paragraph">如果您打算使用平台管理的備份（即 ONTAP 管理的快照），建議您使用 *MirrorAll* 複寫原則。請查看下表，以了解不同 SnapMirror 複寫原則的影響，以及為何 MirrorAll 是建議的選項。</block>
   <block id="51359e8b51c63b87d50cb1bab73380e2" category="cell">原則</block>
   <block id="c76e3867213cff8946148c6510af0736" category="cell">建議</block>
@@ -2225,12 +2144,9 @@
   <block id="e03f6f41d6ba74d93a81feb52f770dea" category="cell">*MirrorLatest*</block>
   <block id="3ccbb106bb4a2ad8ae674a099a17e670" category="cell">_NOT_ 建議</block>
   <block id="db6db2f154930f790d293973e2882ba0" category="cell">此原則導致目的地實際上只有一個用於容錯移轉的通用快照，這對於災難恢復情境來說是不理想的。</block>
-  <block id="83f0283696eff1f9eab860f1a82fda46" category="section-title">災難恢復管理備份的注意事項</block>
   <block id="9f9eadcdc7cac034dbeb3338c94761fb" category="paragraph">使用災難恢復代管備份時，以下指引適用於在 NetApp Disaster Recovery 之外建立的 SnapMirror 關係：</block>
   <block id="82400eeb8e951b5cfdd2520a1366d9d8" category="list-text">SnapMirror 關係可以支援 MirrorAll、MirrorVault、MirrorLatest 和非同步複寫原則。</block>
   <block id="41ddd30e134cb56e18d994f5a3e0693b" category="list-text">*請勿*為這些關係排程更新，因為它們將由 NetApp Disaster Recovery 服務管理。</block>
-  <block id="2cbacdb7dc034331114df119f87af006" category="admonition">在做出這些選擇之前，請先查看 <block ref="57d30211ed7c7c68fbef46e6feb64d22" category="inline-xref-macro-rx"></block>。</block>
-  <block id="05823e82f50bb96f9783ed51efa47a1c" category="list-text">*使用平台代管的備份和保留計畫*：如果您使用外部快照管理解決方案，請選取此核取方塊。災難恢復支援使用外部快照管理解決方案，例如原生 ONTAP SnapMirror 原則排程器或第三方整合。如果複寫計畫中的每個資料儲存區（Volume）都已有一個由其他位置管理的 SnapMirror 關係，您可以將這些快照用作 NetApp Disaster Recovery 中的恢復點。</block>
   <block id="18dcf9b091544785104de7fe70a61388" category="doc">使用 NetApp Disaster Recovery 管理站台、資源群組和複寫計劃</block>
   <block id="8f2bfb22b13c9aac8af0825753fd1e67" category="sidebar">設定 Amazon EVS 的複寫計畫</block>
   <block id="139e8f63e4cf3154556b863a379b708f" category="cell">請確保在故障轉移或故障復原期間選擇的快照同時存在於來源和目的地 Volume 上。否則，將出現以下錯誤：「Transition to 'snapmirrored' state failed.Reason: No common snapshot found.」請勿使用 SnapMirror 傳輸快照進行容錯移轉或容錯回復操作。</block>
@@ -2269,7 +2185,6 @@
   <block id="3f27908dd0e654aebc5eaac2860f3026" category="list-text">在 AWS FSx for ONTAP 執行個體中建立或驗證目的地 ONTAP SVM。</block>
   <block id="16570eb72e5d1c2fd4ae8860b2e48aad" category="paragraph">NetApp Disaster Recovery Proxy 實作需要控制台代理程式與所有 vCenter 伺服器和 ONTAP 陣列之間使用 HTTPS 協定透過 443 連接埠進行通訊。控制台代理程式內的 NetApp Disaster Recovery 代理程式在執行行動時，會直接與 VMware vSphere、vCenter 伺服器或 ONTAP 通訊。</block>
   <block id="7bb121cdcae2c2832838e2f290a86bf5" category="list-text">NetApp Disaster Recovery 管理的所有 VMware 叢集都必須使用 ONTAP Volume 來託管您要保護的虛擬機器。</block>
-  <block id="dfb6f3404d01c2320e91dc82c3743342" category="list-text">將 VMware Cloud SDDC 與 Amazon FSx for NetApp ONTAP 執行個體連結。請參閱<block ref="703588ab376df01744e79984f081d5fd" category="inline-link-rx"></block>。</block>
   <block id="0a4e25753cea4f154af0469ab230e9ba" category="list-text">您可以在執行安裝指令的地方使用 Helm 3。</block>
   <block id="538e8cc604d9acb8c54b11be5d28123e" category="list-text">**管理 LIF**：供 Trident 用於管理 API 存取。</block>
   <block id="e8fe43ecd8f37d6c3b374d6267a0e1bc" category="list-text">**資料（NFS）LIF**：用於 Volume 的 NFS 流量。</block>
@@ -2280,24 +2195,15 @@
   <block id="bc5f6fc21f6a94d180764bb6c6a4cd7d" category="paragraph">安裝 <block ref="eec6190e0599877ad03e04b40eef0c58" category="inline-link-macro-rx"></block>。這些安裝是 Trident Protect 中 Volume 快照的必要條件。</block>
   <block id="918fa72b18f488b31c1a63283c4f2148" category="paragraph"><block ref="4569567eb3ca20d8c53676753a511f69" prefix="" category="inline-code"></block></block>
   <block id="d601ac6a8739700584fe1f4c446d9754" category="list-text">*Down*：站台無法存取或有連線問題。</block>
-  <block id="1c4de46c0cd1d0a73f4e3432ea708002" category="paragraph">您可以保護多個資料儲存上的多個虛擬機器。NetApp Disaster Recovery 會為託管受保護虛擬機器資料儲存的所有 ONTAP Volume 建立 ONTAP 一致性群組。</block>
   <block id="46224a4824d70ef03f0888359b806a9e" category="list-text">如果目的地站台上缺少快照，則根據 SnapMirror 關係的預設原則，服務可能會在下次排程的快照協調過程中刪除來源站台上的對應快照。</block>
-  <block id="7e0f1183c0ae5c291e2245966bd03d67" category="paragraph">精靈將引導您完成以下步驟：</block>
-  <block id="e9f2c50cbccceaa7af034d62aeae884b" category="list-text">請勿將受保護資源和非受保護資源託管在同一個資料存放區中。如果將受保護資源和非受保護資源託管在同一個資料存放區中，可能會遇到以下問題：</block>
-  <block id="c7e57570012406e7b079ea3a70733538" category="list-text">如果需要將資源組及其關聯資源容錯移轉到災難恢復站台，則容錯移轉過程中來源站台上所有未受保護的資源都將不復存在，導致來源站台上這些未受保護的資源發生故障。此外，NetApp Disaster Recovery 也不會在容錯移轉站台上啟動這些未受保護的資源。</block>
   <block id="c0b0dc5db99d630d143c50bbb7ec12d6" category="list-text">若要移除虛擬機器或資料存放區，請將滑鼠懸停在資源名稱上，然後選擇 *X*。</block>
   <block id="4030fafebd5ba743d1cd8aaa792ac4b3" category="list-text">若要將資源整理到多個資源群組中，請選擇 *Click to add another resource group*。新增資源群組後，您可以在群組之間拖放資源。選擇鉛筆圖示可編輯資源群組的名稱。</block>
   <block id="23ebb76613af2d80817de741bb7b64ce" category="paragraph">「計算資源」區段定義了容錯移轉後虛擬機器的還原位置。將來源 vCenter 資料中心和叢集對應到目標資料中心和叢集。</block>
   <block id="3e0a00592eccdce85efc3e3a33e58ee5" category="paragraph">虛擬機器可以選擇在特定的 vCenter ESXi 主機上重新啟動。如果啟用了 VMware DRS，則可以根據需要自動將虛擬機器遷移到備用主機，以符合已設定的 DR 原則。</block>
-  <block id="3f35f350977c47db707837ca505393d0" category="paragraph">您也可以選擇將此複寫計畫中的所有虛擬機器放入 vCenter 清單中的唯一資料夾中。這樣可以方便快速地在 vCenter 中組織已容錯移轉的虛擬機器。</block>
-  <block id="115614978795606558e64857c93853f8" category="paragraph">在「容錯移轉對映」標籤中，選擇 *Virtual networks* 旁的向下箭頭。選擇來源虛擬網路和目標虛擬網路。</block>
-  <block id="6ff9d50a073e2c6b35be53229ce64c9f" category="admonition">啟用*進階設定*以設定*腳本*和*應用程式一致性*。</block>
-  <block id="574ddfd3c8e8c46b85b42ff1998098a0" category="list-text">*IP 位址類型*：重新設定虛擬機器組態以符合目標虛擬網路要求。NetApp Disaster Recovery 提供兩種選項：DHCP 或靜態 IP。對於靜態 IP，請設定子網路遮罩、閘道和 DNS 伺服器。此外，還需要輸入虛擬機器的憑證。</block>
   <block id="73fb511fa4cd5f57aeb098a7df480569" category="paragraph">*執行 Microsoft Windows 的虛擬機器*：可以執行 Windows 批次腳本 (.bat) 或 PowerShell (ps1) 腳本。Windows 腳本可以使用命令列參數。以<block ref="c8eabd5b57877ac30e643f90af813dc4" prefix=" " category="inline-code"></block>格式設定每個參數，其中<block ref="b34fe950850d345156fa313fba35e5cf" prefix=" " category="inline-code"></block>是參數名稱，<block ref="7d0596c36891967f3bb9d994b4a97c19" prefix=" " category="inline-code"></block>是參數值，每個<block ref="1114da46cb9a9e499f38790342e98e1c" prefix=" " category="inline-code"></block>配對之間以分號分隔。</block>
   <block id="476947a0f9bd568c1e68f8a5b98065da" category="list-text">循序開機：為每個虛擬機器指派唯一的編號，以便依指派的順序開機，例如 1、2、3、4、5。</block>
   <block id="d75de89ddbb02298e1a708a8d8a88559" category="paragraph">資料庫伺服器管理的資料可能與託管該資料庫伺服器的虛擬機器位於相同的資料儲存區，也可能位於不同的資料儲存區。下表顯示 NetApp Disaster Recovery 中應用程式一致性快照的支援組態：</block>
   <block id="e8562347da5fa74deff657600051c823" category="list-text">對於 Windows 虛擬機器，此服務使用 Microsoft Volume Shadow Copy Service （VSS） 與兩種資料庫伺服器類型進行協調。</block>
-  <block id="030cd6e5722a7037a6dbdb1431dc9db7" category="paragraph">選擇此選項後，NetApp Disaster Recovery 不會設定備份排程。但是，您仍然需要設定保留排程，因為可能仍會針對測試、容錯移轉和容錯回復作業建立快照。</block>
   <block id="f592d06112dec9065bd6d747587db889" category="list-text">*來源資料儲存與目標資料儲存*：如果存在多個（連出）SnapMirror 關係，您可以選擇要使用的目的地。如果 Volume 已建立 SnapMirror 關係，則會顯示對應的來源資料儲存和目標資料儲存。如果 Volume 沒有 SnapMirror 關係，您可以立即建立關係：選擇目標叢集、選擇目標 SVM 並提供 Volume 名稱。服務將建立 Volume 和 SnapMirror 關係。</block>
   <block id="5ecb1383bc0fe1769fc786fbc9046fc8" category="list-text">容錯移轉期間，您可以選擇任何快照。如果您選擇最新快照，服務將建立隨需備份，更新目的地，並使用該快照進行容錯移轉。</block>
   <block id="1d0f07dec73954183b38ca381ec85a0f" category="paragraph">災難解決後，從災難恢復站台容錯回復到來源站台以恢復正常運作。您可以選擇用於恢復的快照。</block>
@@ -2335,8 +2241,6 @@
   <block id="ba11bffa8084f9c85a1963af8d050a3f" category="summary">資源群組可讓您將相互依賴的資源組織成符合您要求的邏輯群組。</block>
   <block id="6e21e837facbd5d06523d904bcd2334d" category="doc">在 NetApp Disaster Recovery 中建立資源群組</block>
   <block id="868ae8e25cad278cb95070092e1b5058" category="admonition">每個資源組可以包含一個或多個虛擬機器、資料儲存區或 Kubernetes 叢集。虛擬機器將按照您在複寫計劃中新增它們的順序啟動。您可以透過在資源組清單中上下拖曳虛擬機器或資料儲存區來變更順序。</block>
-  <block id="7ef9d7f4e6bf5f38edfd03606bf493da" category="paragraph">NetApp Disaster Recovery 透過複寫資源群組中託管虛擬機器的底層 ONTAP Volume 和 LUN 來保護虛擬機器。為此，系統會查詢 vCenter 以取得資源群組中每個託管虛擬機器的資料儲存區名稱。NetApp Disaster Recovery 接著會識別託管該資料儲存區的來源 ONTAP Volume 或 LUN。所有保護均在 ONTAP Volume 層級使用 SnapMirror 複寫執行。</block>
-  <block id="03c66aa95215fd945ab9f6521baef55e" category="paragraph">如果資源群組中的 VM 託管在不同的資料儲存區上，NetApp Disaster Recovery 將使用下列其中一種方法來建立 ONTAP Volume 或 LUN 的資料一致性快照。</block>
   <block id="183b61458af19e5b813be061374378cf" category="list-text">將*資源類型*分類。預設情況下，選擇為「包含全部」，表示多種資源類型。</block>
   <block id="11a59530affce2463e250e21bdbcc29c" category="summary">關於 VMware 和 Kubernetes 工作負載的 NetApp 災難恢復常見問題。</block>
   <block id="6782fe55d65b471e3f7ea9c8c6c97abb" category="paragraph">本常見問題集解答有關 NetApp Disaster Recovery 針對 VMware 和 Kubernetes 工作負載的常見問題。本文著重於在實作災難恢復設定及管理複寫、移轉、容錯移轉和容錯回復作業時有用的概念、術語、系統行為和限制。</block>
@@ -2489,7 +2393,6 @@
   <block id="5dc97329134aa1a46a95297e199ee57a" category="paragraph">建立複寫計畫時會套用資源轉換。您可以在新的「設定」頁面中建立、編輯和刪除資源轉換。如需詳細資訊，請參閱 <block ref="1e2c857c3180265548c388e582cc81c4" category="inline-link-macro-rx"></block>。</block>
   <block id="0005eb91a417f10c94b24edc1e676ea5" category="section-title">指令碼執行</block>
   <block id="ad16d4c0c6b04f812d8564ab531bda48" category="paragraph">現在，您可以將自訂指令碼插入容錯移轉工作流程中，以協調應用程式的靜止與恢復。此功能有助於確保應用程式在快照複寫與適當還原之前已妥善準備，以便在容錯移轉後無縫地恢復運作。</block>
-  <block id="d95a404e2a85810893af45ecfb3ef7b0" category="paragraph">若要了解如何注入自訂指令碼，請參閱<block ref="5e71e4e6b8c5e7bff47e3e8fc9f8f4a2" category="inline-link-macro-rx"></block>。</block>
   <block id="0ac0cf25fb19b7466972d2b8ef97537e" category="section-title">新增工作負載頁面</block>
   <block id="babaac79e8e47c52ae80323ebd24d838" category="paragraph">災難恢復在 UI 中新增了「工作負載」頁面，提供所有已發現工作負載及其保護狀態的全面檢視。「工作負載」頁面可協助您更有效地監控和管理工作負載。</block>
   <block id="7c969269e165a2fc615e6e844ac581c4" category="inline-link-macro">審查災難恢復中的健全狀況與保護狀態</block>
@@ -2506,7 +2409,6 @@
   <block id="43b6a263490ee7c0adb8f876febdcfe0" category="list-text">如果您的組織使用外部憑證授權單位（CA）或 vCenter 端點憑證儲存區，請取消勾選 *使用自簽名憑證*。否則，請保持勾選該方塊。</block>
   <block id="28bf7ee75691ea41515be2651c52c5e0" category="paragraph">在您識別要保護的內部部署 vCenters 並設定使用 Amazon FSx for NetApp ONTAP 作為災難恢復目的地的 Amazon EVS 站台之後，請建立複寫計畫，以保護內部部署 vCenter 叢集上的虛擬機器。</block>
   <block id="29a56c2c629acc000f2164ff994661b5" category="paragraph">選擇要保護的虛擬機器有多種方法。下列步驟顯示如何保護整個 vCenter 資料存放區，但您應該選擇最適合您需求的方法。</block>
-  <block id="ca6598a0ea316873c844e035cdc44ae1" category="list-text">*選取先前建立的資源群組*：您可以預先使用「災難恢復」功能表中的「資源群組」選項來建立自訂資源群組。這是選用選項，因為您可以在建立複寫計畫期間使用其他兩種方法來建立資源群組。如需詳細資訊，請參閱 <block ref="8aa3c94c171b2c9d7252afb28ee019a7" category="inline-link-macro-rx"></block>。</block>
   <block id="5b27aebb5387bd7d609757afa62eb232" category="list-text">*選擇整個 vCenter 資料儲存*：使用此選項，資料儲存上的所有虛擬機器都將作為 Volume 的一部分進行複寫。如果您有多個虛擬機器需要使用複寫計畫進行保護，請使用此選項以避免逐一選擇虛擬機器。在大多數情況下，您應該讓災難恢復保護並重新啟動位於該資料儲存上的任何虛擬機器。使用此選項可指示服務將託管在所選資料儲存上的任何虛擬機器新增至受保護的虛擬機器清單中。</block>
   <block id="26e9d8bde290501b42e417f1e11fe9b1" category="list-text">標有勾選圖示（<block ref="b6227c7fd70a2d5c9ad9bd2ab002dc96" category="inline-image-macro-rx" type="image"></block>）的部分使用預設對應或已完成對應。審查對應以確保目前的組態符合您的需求。</block>
   <block id="d3da15a7bd61a03f762442414ec5e267" category="paragraph">由於一個站台可以託管多個虛擬資料中心和多個 vCenter 叢集，因此您需要確定在發生故障轉移時，要將虛擬機器恢復到哪個 vCenter 叢集。</block>
@@ -2565,15 +2467,10 @@
   <block id="c027507b89ae4164d30ec50fb735c759" category="paragraph">設定快照頻率時，必須選擇至少每五分鐘一次的頻率。</block>
   <block id="6f5d85e29b59aa4625f3ad14a37077cd" category="list-text">根據所選供應商，NetApp Disaster Recovery 會填入已配置的雲端訂閱。</block>
   <block id="8d57596f9b796b61e90df9540d12cc03" category="paragraph">對於 Azure，請選擇雲端供應商的*訂閱*、*資源群組*和*儲存帳戶*。</block>
-  <block id="d575618a014f5e9564ca37f19e47ce57" category="paragraph">對於 AWS、ONTAP S3 和 StorageGRID，請選擇*帳戶*、*認證資料*和*儲存桶*。</block>
   <block id="5a5927bde0ac7465b00ff420f8ccdb8c" category="list-text">如果您選擇了 ONTAP S3 或 StorageGRID ，您可以選擇新增認證資料。選擇 *Add credentials* 擴充選項，然後新增 *Credential name* 、 *Gateway node FQDN* 、 *Port* 號碼、 *Access key* 和 *Secret key* 。</block>
-  <block id="bb9e542c041adb6fce43a5550a447aee" category="paragraph">對於 Kubernetes 複寫計劃，您可以套用資源轉換和指令碼執行。這些步驟是選用的。</block>
   <block id="89fd45000e9691421f0cd2d2422f2098" category="paragraph-title">新增資源轉換</block>
-  <block id="daac935d0f9259f469bdeb6216a7bedd" category="inline-link-macro">了解如何建立資源轉換。</block>
-  <block id="0c4a14974502f9daa46b26f0f2ad91af" category="paragraph">新增資源轉換功能後，您可以在故障轉移期間修改工作負載的任何方面。資源轉換功能可讓您靈活度在災難恢復事件期間將工作負載調整到不同的環境和組態。<block ref="3dabf3282929fee49f60b75761c255a7" category="inline-link-macro-rx"></block></block>
   <block id="e205d695b91bf2e7c538d79e949032cf" category="paragraph">資源轉換將按照您列出的順序套用。</block>
   <block id="3c1b80402134e1bcf4d562332133349d" category="list-text">從下拉式選單中選擇要新增的資源轉換。</block>
-  <block id="fcb3c8f6cc48c49276cecf84a984d4e3" category="list-text">選擇要套用轉換的資源，然後新增所需的值</block>
   <block id="cbec0809085850277568c1bd54c193fd" category="list-text">審查轉換順序，確保操作以正確的順序執行。</block>
   <block id="8cb4231adcba0ade99c6e505e976ffe5" category="paragraph-title">新增指令碼執行</block>
   <block id="5c46d471bbbf250802741c4dba10129f" category="paragraph">災難恢復可以在建立快照之前或之後執行指令碼，以管理應用程式的靜默和恢復。執行此行動可確保應用程式在快照複寫和還原之前做好適當準備，並在容錯移轉後無縫地恢復運作。</block>
@@ -2584,7 +2481,6 @@
   <block id="653c6c62d27e4a4915da09b6cc9380ae" category="doc">管理 NetApp Disaster Recovery 中的 AppVaults</block>
   <block id="4f3b0db26a003addfb4485b781fe2cba" category="paragraph">搭配 Kubernetes 的 NetApp Disaster Recovery 工作負載會使用 AppVault，這是一個雲端儲存目標，Trident Protect 會將 Kubernetes 保護資料儲存於此。管理 AppVaults 可讓您審查 AppVaults 的連線狀態，以及 AppVaults 的認證資料與端點，以確保複寫計畫的健全狀況。</block>
   <block id="6bd42ee2a8b45f038ad8af98f78d98c6" category="section-title">新增一個 AppVault</block>
-  <block id="94140e82a3c7e458b3dd52cdb64e0030" category="paragraph">您可以在為 Kubernetes 建立複寫計畫時新增 AppVault，或從「設定」頁面建立一個。</block>
   <block id="4f54930c26983a7ccc9a16101ad36d80" category="list-text">在災難恢復中，從側邊欄選擇 *設定*。</block>
   <block id="439d69f6e41a85669ad615afcbc08fb1" category="list-text">在 AppVault 卡片中，選擇 *+ 新增 AppVault*。</block>
   <block id="68219dbc6c8ebc8883ba623a6a84265a" category="paragraph">對於 Azure，請選擇*訂閱*、*資源群組*和*儲存帳戶*。</block>
@@ -2631,7 +2527,6 @@
   <block id="e5d18dce024af8414f8d5bd8098764a1" category="list-text">找到您要刪除的資源轉換。從該列末尾的行動選單中，選取 *刪除*。</block>
   <block id="76ab4b23be9ab76ef362392d04eff80f" category="list-text">在對話方塊中，選取 *刪除* 以確認作業。</block>
   <block id="cce78dc6ebbec7385a01f2146d6d01c8" category="section-title">後續步驟</block>
-  <block id="808c9323236f2ed48bff12970a5f1c49" category="list-text"><block ref="808c9323236f2ed48bff12970a5f1c49" category="inline-link-macro-rx"></block></block>
   <block id="005c3fd782ef9a703a22a6405758e8d0" category="sidebar">檢視計劃健全狀況和保護狀態</block>
   <block id="8b2d90137c20f81f88555e65f6c0467a" category="sidebar">管理資源轉換範本</block>
   <block id="870caf8c63b38657c754a6ae2bfdccfa" category="list-text">在設定 Kubernetes 叢集需求之前、請確保您已設定好 Kubernetes 叢集和 ONTAP 叢集。</block>
@@ -2735,7 +2630,6 @@
   <block id="e630b26a169cbcad33bbea4d618a6289" category="list-text"><block ref="e630b26a169cbcad33bbea4d618a6289" category="inline-link-macro-rx"></block></block>
   <block id="c12123744a3c90fe5495b387b449f97a" category="inline-link-macro">對於 Kubernetes 工作負載，新增一個 AppVault</block>
   <block id="8619027af6daf10544bdaf5851bcbefd" category="list-text"><block ref="8619027af6daf10544bdaf5851bcbefd" category="inline-link-macro-rx"></block></block>
-  <block id="8aa3c94c171b2c9d7252afb28ee019a7" category="list-text"><block ref="8aa3c94c171b2c9d7252afb28ee019a7" category="inline-link-macro-rx"></block></block>
   <block id="ed1db02de11c4d365ac64a594dde8a8e" category="list-text"><block ref="ed1db02de11c4d365ac64a594dde8a8e" category="inline-link-macro-rx"></block></block>
   <block id="a1ecc3af70d301516033783eb7d75412" category="inline-link-macro">管理 Kubernetes 工作負載的資源轉換</block>
   <block id="fe6c4b92fc7a6c7bf7f3429ce0ccd951" category="list-text"><block ref="fe6c4b92fc7a6c7bf7f3429ce0ccd951" category="inline-link-macro-rx"></block></block>
@@ -2749,9 +2643,7 @@
   <block id="57574b91a736e91f1b6149f9abdf3330" category="sidebar">管理站點、計畫、資料儲存和 VM 資訊</block>
   <block id="02062d06535ce7696876b02309ed3f5e" category="admonition">如果您使用防篡改 SnapLock 快照，則必須使用 *立即拍攝快照* 選項。否則作業將會失敗。</block>
   <block id="1c335a9c5603264a97d8d84cb6c6faf0" category="doc">Kubernetes 資源群組的選用開機順序</block>
-  <block id="84af32d37767e36e149339ec37e513b1" category="paragraph">NetApp Disaster Recovery 現在支援在 Kubernetes 複寫計畫中為資源群組設定選用的開機順序，方法是為資源指定優先順序和選用的延遲時間。此選項可讓您在必要時同時將資源開機，並延遲將依賴其他資源的資源開機，以支援您的應用程式以健全的狀態恢復線上。</block>
   <block id="f2497ae428eba83b3f39732433d3cb44" category="inline-link-macro">建立複寫計畫</block>
-  <block id="9e29609c3bbaf3dd61657f73add99007" category="paragraph">如需詳細資訊，請參閱 <block ref="b368f0a73ce8108f9547ecd0643b331f" category="inline-link-macro-rx"></block>。</block>
   <block id="05316212411905c51cdd49deaf78a58e" category="section-title">SnapLock Volume 支援</block>
   <block id="a547512ac8a0a093f138ab19fb5f9c67" category="paragraph">災難恢復現在支援 SnapLock Volume，讓您能夠容錯移轉防篡改的快照。使用 SnapLock Volume 執行容錯回復時，您必須使用 *Take snapshot now* 選項，以確保容錯回復成功完成。</block>
   <block id="3ad6e9988864aeae2ef386345946dc6d" category="inline-link-macro">故障轉移</block>
@@ -2764,11 +2656,158 @@
   <block id="07de08b6dc69bbb77fbf2faa073882f2" category="paragraph">Disaster Recovery 新增了法規遵循檢查，用於識別 Kubernetes 工作負載遺失的工作環境。這些法規遵循檢查有助於確保工作負載的健全狀況，以維持您複寫計畫的完整性。</block>
   <block id="e019cb225a4644922cdd06575b099710" category="section-title">2026年10月12日</block>
   <block id="644654fd24758e69ba70d0af50f707b2" category="paragraph">版本 4.3.8</block>
-  <block id="86ad5929405f6e7a459f3adf67f298e6" category="paragraph">新增資源和站台後，請建立_複寫計畫_，以使用 NetApp Disaster Recovery 保護您的資料。該計畫定義了來源和目的地站台、資源群組、恢復對應，以及應用程式的開機行為。您也可以設定法規遵循與測試排程，並在不影響正式作業資料的情況下執行測試容錯移轉。</block>
-  <block id="e65bfba01c1dd06a7952b0d1a116ad70" category="section-title">資源轉換、指令碼執行與開機順序</block>
   <block id="5753c0f11c80b803bc47552e63a898cb" category="paragraph-title">設定開機順序</block>
-  <block id="b5c34ed8fbc17ece1ce6b8ca13f9d672" category="paragraph">對於包含多個資源群組的複寫計畫，您可以選擇設定開機順序，以確保需要同時進入線上狀態的資源能夠同時進入，而依賴其他資源群組的任何資源群組，在其相依資源進入線上狀態之前都不會進入線上狀態。</block>
-  <block id="b2784505a08cc196fdf2c01fb8722bbc" category="list-text">選擇 *開機順序與延遲* 區段。</block>
-  <block id="7b49064e2ebb0dab724dfae418ebec8e" category="list-text">為複寫計畫中的每個資源指定一個開機 *Order* 值，從 1 開始。任何需要同時開機的資源都應分配相同的編號。</block>
-  <block id="9aae48d2077953d7be448b6a399f3b3c" category="list-text">設定 *延遲* 時間（以分鐘為單位）。如果需要延遲任何資源，請設定延遲時間（以分鐘為單位）。</block>
+  <block id="dda051db454a2be4d7c2a3b3f4ef3e45" category="paragraph">建立資源群組時，請考慮下列情境：</block>
+  <block id="d5cb9937112217e1c9bdc2cd54fac064" category="list-text">在將資料儲存區或命名空間新增至資源群組之前，請先啟動手冊探索或等待已排程的探索執行。這樣可確保探索到 VMs 並將其列入資源群組中。如果您不啟動手冊探索，資源可能不會列在資源群組中。</block>
+  <block id="6f388544b5e71e4115b22ed8dfcfdb11" category="list-text">請確保資料儲存區中至少有一個資源（VM 或命名空間）。如果資料儲存區中沒有資源，災難恢復將不會探索到該資料儲存區。</block>
+  <block id="e89d0249084ca3ce17198f0ace889062" category="list-text">請勿將受保護與未受保護的資源託管在同一個資料儲存區上。如果將受保護與未受保護的資源託管在同一個資料儲存區上，可能會出現下列問題：</block>
+  <block id="bc1413c7d87e596d22d499344220bd44" category="list-text">由於災難恢復使用 SnapMirror 且系統會複寫整個 ONTAP Volume，因此該 Volume 的已使用容量將用於授權考量。在這種情況下，受保護和未受保護的虛擬機器所佔用的 Volume 空間都將計入此計算。</block>
+  <block id="dee063ceec8b2d568f0892686f4f1884" category="list-text">如果需要將資源群組及其關聯實體容錯移轉至災難恢復站台，任何未受保護的資源（不屬於資源群組，但託管在 ONTAP Volume 上的虛擬機器或命名空間）將因容錯移轉程序而不再存在於來源站台，導致來源站台上未受保護的虛擬機器發生故障。此外，災難恢復也不會在容錯移轉站台啟動這些未受保護的資源。</block>
+  <block id="72ed52042636539edcc4229d3e79910d" category="list-text">若要保護資源，必須將其納入資源群組。</block>
+  <block id="afc2919b604108e92c2ef96b07a3d20d" category="paragraph">如果您打算在複寫計畫中執行測試容錯移轉，則應提供一組測試容錯移轉對應，以確保在容錯移轉測試期間啟動的虛擬機器不會干擾正式作業虛擬機器。您可以透過為測試虛擬機器提供不同的 IP 位址，或將測試虛擬機器的虛擬 NIC 對應到與正式作業隔離的但具有相同 IP 組態的不同網路（稱為 _bubble_ 或測試網路）來實現這一點。</block>
+  <block id="64cefdcfa57ab975fd07198bac70ff89" category="paragraph">如需詳細資訊，請參閱<block ref="6072b2141289fb5d7cf0f86131364093" category="inline-link-rx"></block>。</block>
+  <block id="98e833709322b31171fe94bb850e428f" category="paragraph">如需在複寫計畫中使用外部 Snapshot 快照技術解決方案的詳細資料，請參閱<block ref="6072b2141289fb5d7cf0f86131364093" category="inline-link-rx"></block>。</block>
+  <block id="e890a8bbb6bcf7da3bfd06320ece1fe9" category="paragraph">如需詳細資訊，請參閱 <block ref="8a0cf2d008253011400aa3da8df81c37" category="inline-link-macro-rx"></block>。</block>
+  <block id="27a8f4b2159ead77e70da2f34d065c17" category="paragraph">如需詳細資訊，請參閱 <block ref="cac1910df09262f930ffa9f5514ca437" category="inline-link-macro-rx"></block>。</block>
+  <block id="90e65117642c52e61aeedd0ead4856b7" category="paragraph">如需詳細資訊，請參閱 <block ref="ca2cfee0fe95f7bbf68c3955db48fef8" category="inline-link-macro-rx"></block>。</block>
+  <block id="602bf1354c5114e641aa137f86cdfdaa" category="paragraph">詳情請參閱 <block ref="ca2cfee0fe95f7bbf68c3955db48fef8" category="inline-link-macro-rx"></block>。</block>
+  <block id="a09c6b0a2c9b97229acb210f3d963530" category="paragraph">如需詳細資訊，請參閱 <block ref="37dd2a74f73b2032b4d57c3a984b5fe2" category="inline-link-macro-rx"></block>。</block>
+  <block id="023fdd7fd8d06e7c7bf6c55e574d6ead" category="paragraph">若要了解如何注入自訂指令碼，請參閱<block ref="e8c512e3d76c04e8346d8db62cbfb8bc" category="inline-link-macro-rx"></block>。</block>
+  <block id="8ce9f3d5447e1846da5c0990cfe26bd8" category="paragraph">NetApp Disaster Recovery 現在支援在 Kubernetes 複寫計畫中為資源群組設定選用的開機順序，方法是為資源指定優先順序和選用的延遲時間。此選項可讓您在必要時同時開機資源，並延遲開機依賴其他資源的資源，從而支援您的應用程式以健康的方式恢復線上。</block>
+  <block id="a197b951f3d08e836bbbc0aed22564af" category="paragraph">如需詳細資訊，請參閱 <block ref="87eee90f7be690f06924cc5233d6e914" category="inline-link-macro-rx"></block>。</block>
+  <block id="0cfef975554993197387f1f3e38bdcc3" category="list-text">對於每個標記為「應用程式一致的」的 VM，使用 VMware Tools 將受支援的應用程式置於備份狀態。</block>
+  <block id="3c5c18faa7dfdf8e534a1172e55e6559" category="inline-link-macro">建立 VMware 複寫計畫</block>
+  <block id="64c40f4137f7c38076dc956e4edddda1" category="list-text"><block ref="64c40f4137f7c38076dc956e4edddda1" category="inline-link-macro-rx"></block></block>
+  <block id="45696291dca49cc7fe51e07e2c6ab9e1" category="inline-link-macro">建立 Kubernetes 複寫計劃</block>
+  <block id="dc6556b4c24de4f3bec2ba7643ca678c" category="list-text"><block ref="dc6556b4c24de4f3bec2ba7643ca678c" category="inline-link-macro-rx"></block></block>
+  <block id="07413029412abf4b07d59a7418a48d98" category="inline-link">將您的 FSx for ONTAP 檔案系統連接到 VMware Cloud on AWS</block>
+  <block id="4c803478c6efa7b6fec71e45125750ee" category="list-text">將 VMware Cloud SDDC 與 Amazon FSx for NetApp ONTAP 執行個體連結。請參閱<block ref="c85f06c0b884dee217188d0fb32a2a33" category="inline-link-rx"></block>。</block>
+  <block id="707e81ca2c0e3f4cdddbad61b7404a06" category="paragraph">複寫計劃名稱只允許使用字母數字字元和底線（_）。</block>
+  <block id="70d37ba8aef62f1cd046e6516643bbb8" category="list-text">*選取先前建立的資源群組*：您可以預先使用「災難恢復」功能表中的「資源群組」選項來建立自訂資源群組。這是選用選項，因為您可以在建立複寫計畫期間使用其他兩種方法來建立資源群組。詳情請參閱 <block ref="89fd5117226feefadd6b0ebacda1413d" category="inline-link-macro-rx"></block>。</block>
+  <block id="b9471ded93d3cf28f952a22fa9cfe87a" category="paragraph">NetApp Console 支援在單一工作環境中使用多個 Console 代理程式。使用多個 Console 代理程式有助於在對另一個 Console 代理程式進行維護或 Console 代理程式發生故障時，保持對資源的存取。由於每個 Console 代理程式都有一個唯一的識別碼，因此不當切換 Console 代理程式可能會影響工作環境中資源的可用度。</block>
+  <block id="69ca2e97cf6b1e833ef67e73fbe990ae" category="paragraph">您可以透過在「應用程式」頁面上依資料儲存區篩選 VM，並在「資源對應」頁面上選取更多目標詳細資料，來更輕鬆地新增複寫計畫。請參閱<block ref="6072b2141289fb5d7cf0f86131364093" category="inline-link-rx"></block>。</block>
+  <block id="cf4eb5fcae156700d33190974abafe35" category="paragraph">透過此版本，您現在可以設定排程來測試法規遵循和容錯移轉測試，以確保它們能正常運作。</block>
+  <block id="88180c2c45383f9807ad2e072c6b4108" category="paragraph">如需詳細資訊，請參閱<block ref="b1ea4d9ffdc8711f30ca58a253b9b771" category="inline-link-rx"></block>。</block>
+  <block id="fe18ad5df3473a1a1149b78b3ea0ac1c" category="paragraph">請參閱<block ref="6072b2141289fb5d7cf0f86131364093" category="inline-link-rx"></block>。</block>
+  <block id="9e28f2811e5d72b4a05244920bbbf21a" category="paragraph">建立災難恢復或複寫計畫時，您可以將虛擬機器新增至功能資源群組。資源群組可讓您將一組相互依賴的虛擬機器放入符合您需求的邏輯群組中。例如，群組可以包含在恢復時可執行的開機順序。在此版本中，每個資源群組可以包含一個或多個虛擬機器。虛擬機器將根據您在計畫中新增它們的順序開機。請參閱<block ref="7da34101c803d403838cece340a48bed" category="inline-link-rx"></block>。</block>
+  <block id="cba4999d90250e4c1c5abe22e7e71a07" category="paragraph">建立災難恢復或複寫計畫時，您會選擇 VM 。在此版本中，您現在可以檢視與資料儲存區或 VM 關聯的每個 Volume 相關聯的 SnapMirror 。您也可以查看與 SnapMirror 排程相關聯的 RPO 傳輸排程。RPO 可協助您判斷備份排程是否足以在災難發生後進行恢復。請參閱<block ref="6072b2141289fb5d7cf0f86131364093" category="inline-link-rx"></block>。</block>
+  <block id="dec52cb96f6dd2dde404bad64813d61a" category="summary">在 NetApp Disaster Recovery 中部署複寫之前，請了解最佳實務，以確保災難恢復策略的有效性。</block>
+  <block id="dd59cc44215474c60b2c999090dfcd8a" category="doc">最佳化 NetApp Disaster Recovery 中的複寫計畫</block>
+  <block id="05c4ced9de5a77bf1de3b873d142748b" category="paragraph">複寫計畫是災難恢復策略的重要組成部分，它定義了快照頻率、開機順序、網路映射以及故障轉移和故障復原的其他關鍵細節。在 NetApp Disaster Recovery 中建立複寫計畫之前，請確保您了解複寫計畫的運作方式與最佳實務。</block>
+  <block id="52801234a17603b5b721a0b533aa0051" category="paragraph">您可以使用單一複寫計畫保護多個虛擬機器、資料儲存區或命名空間。災難恢復會為代管受保護資料資源的所有 ONTAP Volume 建立 ONTAP 一致性群組。</block>
+  <block id="c82577e8db1393d665cec4d0e21c7673" category="section-title">資源規劃</block>
+  <block id="21f31d4f5c4733cfddbc3819df4d6068" category="paragraph">在將資源指派給複寫計畫之前，請先組織您的虛擬機器或命名空間，以盡量減少過度擴張。將需要保護的資源放置在資料儲存區的子集上，並將不需保護的資源放置在不同的資料儲存區子集上。若要在建立複寫計畫之前組織資源群組，請參閱 <block ref="2e9e1519a300bb9dc6a403652e82bcd7" category="inline-link-macro-rx"></block>。</block>
+  <block id="c906e4a1119683d76128307e661b412a" category="paragraph">建立複寫計畫時，您可以選擇設定獨特的測試容錯移轉對應。</block>
+  <block id="9147e5e61a7b9260dec09f3a6eb3e5be" category="section-title">快照</block>
+  <block id="f27cc243c4e7f078c2d05e9463d0855a" category="section-title">平台管理的備份</block>
+  <block id="8d318ffaa97fb1a6a3982c942e4dc435" category="section-title">災難恢復管理的備份</block>
+  <block id="657f199a6704e7d5064ad2f92c0a27d9" category="section-title">應用程式一致的副本</block>
+  <block id="699fba4741209db0f945e9f458453d2d" category="list-text">在建立災難復原或複製計畫時。如果來源 vCenter 叢集託管了大量 VM、那麼在建立複製計畫的同時建立資源群組可能會更方便。有關在建立複製計畫時建立資源群組的說明、請參閱 <block ref="3bfea0f404a871fae419480b388c8373" category="inline-link-macro-rx"></block>。</block>
+  <block id="e64a2b0e8aa5602a135ab77538df3f32" category="section-title">資源群組如何運作</block>
+  <block id="d6ccf8905b567b75e50ef7954393dd8a" category="paragraph">災難恢復透過複寫資源群組中託管虛擬機器的底層 ONTAP Volume 和 LUN 來保護虛擬機器。為此，系統會向 vCenter 查詢資源群組中每個託管虛擬機器的資料儲存區名稱。然後，災難恢復會識別託管該資料儲存區的來源 ONTAP Volume 或 LUN。所有保護均在 ONTAP Volume 層級使用 SnapMirror 複寫執行。</block>
+  <block id="f56215c827795000b9f5c458f2fe3543" category="paragraph">如果資源群組中的虛擬機器託管在不同的資料儲存區上，災難恢復將使用下列方法之一來建立 ONTAP Volume 或 LUN 的資料一致快照。</block>
+  <block id="88ef50d3581514643bad9f0955057467" category="section-title">資源群組的最佳實務</block>
+  <block id="6665404bccca068e63abc15e77c13470" category="inline-link-macro">為 Kubernetes 建立複寫計劃</block>
+  <block id="fd78d195dc3ddbe5b888a36c587bbf16" category="paragraph">您可以在 <block ref="c60e32825fa32633d7f8c71574a43be5" category="inline-link-macro-rx"></block> 時新增 AppVault，或從「設定」頁面建立一個。</block>
+  <block id="494dfce21eaff39972b67fab90855415" category="summary">NetApp Disaster Recovery 是一種雲端型的災難恢復服務，可自動執行災難恢復工作流程。新增 Kubernetes 叢集後，您即可建立複寫計畫來保護您的 Kubernetes 工作負載。</block>
+  <block id="5f09e3f377263c2e1b2019abf36f1edf" category="doc">在 NetApp Disaster Recovery 中為 Kubernetes 工作負載建立複寫計畫</block>
+  <block id="b9d204364b7b98d0c7ba253c93fa744e" category="paragraph">新增 Kubernetes 資源和站台後，請建立_複寫計畫_，以使用 NetApp Disaster Recovery 保護您的 Kubernetes 工作負載。該計畫定義了來源和目的地叢集、資源群組、命名空間和儲存設備類別對應、Snapshot 快照技術排程，以及應用程式的選用資源轉換和指令碼。</block>
+  <block id="55c034e5ef86cfecb3f479f30d2a1a6b" category="admonition">若要為 VMware 工作負載建立複寫計劃，請參閱 <block ref="a85397f615ff34d4e112e45a7985c51c" category="inline-link-macro-rx"></block>。</block>
+  <block id="f5edd6b5b377580eb0e8121e22e70f02" category="list-text">在建立 SnapMirror 關係之前，請在災難恢復之外設定叢集和儲存設備 VM （SVM） 對等關係。</block>
+  <block id="3515d629c4719d5af61819c8e04c83fb" category="list-text">在將命名空間新增至資源群組之前，請先執行手冊探索。這可確保探索到命名空間並將其列於資源群組中。</block>
+  <block id="6e6a2be33f63675cdb773cb65cc9a6c1" category="list-text">建立一個 AppVault，供 Trident Protect 儲存保護資料。您可以在建立複寫計畫時建立 AppVault，也可以事先建立。如需詳細資訊，請參閱 <block ref="504615eb12349af9e9934857a4d0ecc7" category="inline-link-macro-rx"></block>。</block>
+  <block id="4fdbbe48144a9a996a6e50da3963f8f0" category="admonition">在部署 NetApp Disaster Recovery 之前，請先整理 Kubernetes 叢集和命名空間，以盡量減少過度擴張。若要在建立複寫計畫之前組織資源群組，請參閱 <block ref="2e9e1519a300bb9dc6a403652e82bcd7" category="inline-link-macro-rx"></block>。</block>
+  <block id="05c4217f9813f63b77cc781e91e634ba" category="list-text">為計畫中的所有 Kubernetes 叢集使用相同的憑證。</block>
+  <block id="40f8f4293767112a6a6bd7c8aface29a" category="list-text">計劃中的所有 Kubernetes 叢集都使用同一個指令碼。</block>
+  <block id="02702b38a670bbb4a67922ba4a1e5bde" category="list-text">只有當複寫計畫處於以下狀態之一時，才能啟用保護：就緒、故障復原已提交或測試故障轉移已提交。</block>
+  <block id="5d956fc7034b1111d385c91d832bdad0" category="section-title">選擇 Kubernetes 叢集</block>
+  <block id="4efb3487e9a51b4523e53588ded0a11b" category="paragraph">首先，選擇複寫計畫的來源和目的地叢集。</block>
+  <block id="a09fa407d320efd753d87a235bda62f4" category="list-text">在下拉式選單中，選擇 *Kubernetes*。</block>
+  <block id="c5769370c41c3c98a3dcfe358ebada0b" category="list-text">對於 *來源*，選擇要指定為來源的 Kubernetes 叢集。</block>
+  <block id="54d24b8a37c0a31798fe84cc2a585974" category="list-text">對於 *目標*，選擇要用作災難恢復目的地的 Kubernetes 叢集。</block>
+  <block id="321f80481849dcdb71d7822530b31ca5" category="section-title">選擇資源群組</block>
+  <block id="ecbb18ff1c19a539a9cf2f5b53c81e44" category="paragraph">接下來，選擇包含您要保護的 Kubernetes 命名空間的資源群組。資源群組可讓您使用通用快照保護一組命名空間。</block>
+  <block id="952d76b860150c018084e78be0c5c85e" category="paragraph">選擇資源群組時，請考慮下列事項：</block>
+  <block id="4301c8304d97ee4f2360b4545e1660eb" category="list-text">在將命名空間新增至資源群組之前，請執行手冊探索。這可確保資源被探索並列在資源群組中。</block>
+  <block id="434267f63b5a32c740de71da512fd8bd" category="list-text">資源群組中的 Kubernetes 命名空間必須屬於同一個 ONTAP 叢集。</block>
+  <block id="70ab51a6b5928d88dc7e53e8ae3605bd" category="paragraph">在資源對應步驟中，指定來源叢集的資源如何對應至目標叢集。此外，設定快照排程以及將儲存資料的 AppVault。</block>
+  <block id="1c3015c390bec31bde49f97f053186dd" category="paragraph">如果要建立 SnapMirror 關係，請在 ONTAP 中設定對等關係。</block>
+  <block id="fa0604d78151df7e58680a705f2dc613" category="admonition">若要檢視儲存設備類別，請在命名空間上執行 CLI 命令<block ref="958b58c53e75bae5abeaed4b1e734f52" prefix=" " category="inline-code"></block>。</block>
+  <block id="f38461269098ceb9029657bedd28e18c" category="list-text">設定快照排程。選擇 *Snapshot 快照技術和保留開始時間* （日曆日期和時間）、 *Snapshot 快照技術和保留頻率* （快照的啟動頻率），以及 *Snapshot 快照技術保留計數* （儲存的快照數量）。</block>
+  <block id="ada5092bb8a0f363926cbe58ef2becb1" category="inline-link-macro">管理 AppVaults</block>
+  <block id="0af46bf18383a3fa444f68bc8ae7121e" category="list-text">選擇 *新增 AppVault* 以建立將儲存保護資料的 AppVault。您也可以從「設定」頁面<block ref="5b5f9b7b30535c53f0f03881b48127b6" category="inline-link-macro-rx"></block>。</block>
+  <block id="943558b3ab71db0ff47cdf813439ddf4" category="list-text">選擇雲端*提供者*來託管 AppVault。</block>
+  <block id="f4c14fa3380288d09d704b686c786c9f" category="paragraph">對於 AWS、ONTAP S3 和 StorageGRID，請選擇*帳戶*、*憑證*和*儲存桶*。</block>
+  <block id="42581b9a14042f94d04fed5bda5920c2" category="section-title">新增資源轉換、指令碼執行和開機順序</block>
+  <block id="25d5da85170ddd9063e039d10b9a5783" category="paragraph">對於 Kubernetes 複寫計畫，您可以套用資源轉換和指令碼執行，並設定開機順序。這些步驟是選用的。</block>
+  <block id="f8eaf289ffb7ff4c8e9b34e37d44dd38" category="inline-link-macro">學習如何建立資源轉換。</block>
+  <block id="0d716d0eda4137b351c2402449dfeeac" category="paragraph">新增資源轉換可讓您在容錯移轉期間修改工作負載的任何層面。資源轉換提供靈活度，使工作負載能夠在災難恢復事件期間適應不同的環境和組態。 <block ref="705b37bf25aae1357a6e2e4d78ee9e12" category="inline-link-macro-rx"></block></block>
+  <block id="de9ef16a6d96ba76c852627889fd90bb" category="list-text">選擇要套用轉換的資源，然後新增所需的值。</block>
+  <block id="a82706ac7ea48d283a1cdf3abef59a4a" category="paragraph">對於包含多個資源群組的複寫計畫，您可以選擇設定開機順序。開機順序可確保需要同時上線的資源同步上線，並且任何依賴其他資源群組的資源群組，只有在它們所依賴的群組上線後才會上線。</block>
+  <block id="512d1f7da7cf99a4f8543512b599dd43" category="list-text">選擇 *開機順序和延遲* 區段。</block>
+  <block id="a1e5b8c2d03bcded77f9d1d1a4ca04ad" category="list-text">為複寫計畫中的每個資源指定一個開機 *Order* 值，從 1 開始。為應該同時開機的任何資源指派相同的數字。</block>
+  <block id="ea14b7e0964084c0328e280e16687340" category="list-text">設定 *延遲* 時間（以分鐘為單位）。如果需要延遲任何資源，請設定延遲時間。</block>
+  <block id="5703c383c67c1c95afd4131d98b6f6ef" category="section-title">審查並建立複寫計畫</block>
+  <block id="91b4e2b9cfc6931432b11134fbc4e098" category="paragraph">最後，審查並確認複寫計劃的設定。</block>
+  <block id="605e5bec3489ec7dcc7c190981f7db9b" category="list-text">審查容錯移轉對應。</block>
+  <block id="a172b13a28c6e58c03d9b9d18ca3f969" category="list-text">選擇 *新增* 以建立複寫計畫。</block>
+  <block id="92ce1de752bf702501d9182d9860ebe9" category="paragraph">選擇 *新增* 後，您可以在 *作業監控* 中監控不同的作業。</block>
+  <block id="2e9e1519a300bb9dc6a403652e82bcd7" category="list-text"><block ref="2e9e1519a300bb9dc6a403652e82bcd7" category="inline-link-macro-rx"></block></block>
+  <block id="504615eb12349af9e9934857a4d0ecc7" category="list-text"><block ref="504615eb12349af9e9934857a4d0ecc7" category="inline-link-macro-rx"></block></block>
+  <block id="cce87ce55d62239a7cd36aa8e7199016" category="list-text"><block ref="cce87ce55d62239a7cd36aa8e7199016" category="inline-link-macro-rx"></block></block>
+  <block id="d647a06feb3262100c93855b7a436e7e" category="summary">修改複寫計劃以調整法規遵循時間或容錯移轉設定。</block>
+  <block id="60cc502c2b37907f4e58427827fd95a8" category="doc">修改 NetApp Disaster Recovery 中的複寫計畫</block>
+  <block id="b2acd1b90442197d2183317ddd5b0f7a" category="paragraph">在 NetApp Disaster Recovery 中，您可以修改複寫計畫的法規遵循時間影響，以確保容錯移轉測試成功完成。</block>
+  <block id="9b97b0eec8294fba1fcbf8bae6be6462" category="paragraph">您可以修改法規遵循時間並測試容錯移轉的影響。若要編輯計畫重複週期、容錯移轉對應或 VM，請刪除複寫計畫並建立新的計畫。</block>
+  <block id="7da2ae13087d77d32dfb759592aa589f" category="section-title">可修改欄位</block>
+  <block id="6eec463a772b2f18684946006fb54dee" category="list-text">*測試容錯移轉影響*：您可以隨需或依排程測試容錯移轉程序。這可讓您測試將 VM 容錯移轉至複寫計畫中指定的目的地。</block>
+  <block id="afb5f02c11a0ce1d55e24c2f53760dae" category="list-text">*使用隨需快照進行排程測試容錯移轉*：若要在啟動自動測試容錯移轉之前建立新的快照，請勾選此方塊。</block>
+  <block id="25bcf7e70c86084afc8c1015ea12c34a" category="admonition">此程序會從測試位置取消註冊暫存的虛擬機器，刪除已建立的 FlexClone Volume，並卸載暫存的資料儲存區。</block>
+  <block id="90001401ac367829c6f71ff55ed8f116" category="summary">NetApp Disaster Recovery 是一項雲端型的災難恢復服務，可自動執行災難恢復工作流程。新增 vCenter 站台後，即可為 VMware 工作負載建立災難恢復或複寫計畫。</block>
+  <block id="a046d8bf39c5bf611dad2bbbe4e92270" category="doc">在 NetApp Disaster Recovery 中為 VMware 工作負載建立複寫計畫</block>
+  <block id="528d9180a69a0496150fdce0e2aef4d6" category="paragraph">新增 vCenter 站台和資源後，請建立 _複寫計畫_ ，以使用 NetApp Disaster Recovery 保護您的 VMware 工作負載。該計畫定義了 VM 的來源和目的地 vCenters 、資源群組、恢復對應以及開機行為。您也可以設定法規遵循與測試排程，並在不影響正式作業資料的情況下執行測試容錯移轉。</block>
+  <block id="133e845240b3e8499335422ec4ecea49" category="admonition">若要保護 Kubernetes 工作負載，請參閱 <block ref="4fece5db01c2cc01f18bbc2d1b0919a8" category="inline-link-macro-rx"></block>。</block>
+  <block id="05bbe166de3c0c72c8dde33285c35767" category="list-text">為計劃中的所有虛擬機器使用相同的憑證。</block>
+  <block id="98ce844145386e78d8c9d936d1b8591b" category="list-text">對計畫中的所有 VMs 使用相同的指令碼。</block>
+  <block id="970b99aab999d5cc3afca09ebfb3ae92" category="list-text">為計畫中的所有虛擬機器使用相同的子網路、DNS 和閘道。</block>
+  <block id="04ffdd8c7c801cc11b799bf41bf2a5cb" category="paragraph">首先，選擇來源 vCenter 和目的地 vCenter。</block>
+  <block id="2706bf352e5c124679482a70dc9992ab" category="list-text">從災難恢復選單中，選擇 *複寫計畫*。</block>
+  <block id="e5ae6ac62d3fe460805e7b8cc31b860e" category="list-text">在下拉式選單中，選擇 *vCenter*。</block>
+  <block id="ac5ca200dfb8ffc3078639dfe47a6fb8" category="paragraph">名稱只能包含字母、數字和底線。不支援空格、連字符和其他特殊字元。</block>
+  <block id="f5635b5668d8775434be6baf2d0aecdc" category="list-text">在 *來源 vCenter* 下，從下拉式選單中選擇資料所在的 vCenter。在 *目標* 下，選擇要用作災難恢復目的地的 vCenter。</block>
+  <block id="3623667cfa1135b255af8834a31e6625" category="inline-link-macro">資源群組的最佳實務</block>
+  <block id="666e23b1c0bdb8622cf7d3086c7bd797" category="paragraph">將所需的虛擬機器或資料存放區分組為功能性資源群組。資源群組可讓您使用共同快照來保護一組虛擬機器。您可以在複寫計畫工作流程之外，將虛擬機器指派給資源群組。如需規劃的相關建議，請參閱 <block ref="78eebbb3cad79f809a4947dca170d20b" category="inline-link-macro-rx"></block>。</block>
+  <block id="d4b905a8325b2a8c3100e977c459f60a" category="paragraph">如果您沒有現有的資源群組或需要為資源群組新增資源，請選擇 *虛擬機器*（VM）或 *資料儲存*。</block>
+  <block id="e65502e7e3868d7865f4e5f76888bee9" category="list-text">從自動產生的清單中選擇要新增至複寫計畫的 VMs 或資料儲存。對於 VM，您可以按資料儲存進行篩選。選擇資料儲存或 VM 後，它會自動新增到資源群組。</block>
+  <block id="a2416b1dfdb6b0a1363ac953ea5b5bf0" category="paragraph">在資源對應中，指定來源環境中的資源應如何對應到目標。建立複寫計畫時，您可以為計畫中的每個 VM 設定開機延遲和順序。這可讓您設定 VM 的啟動順序。</block>
+  <block id="c74d24efbf751ee7baa807c30fda52cf" category="paragraph">如果您想在此服務中建立 SnapMirror 關係，則叢集及其 SVM 對等關係應該已經在災難恢復之外設定完畢。</block>
+  <block id="b48b9e615218632af0b52d918f6b1934" category="paragraph">您也可以選擇將此複寫計畫中的所有虛擬機器放入 vCenter 清單中的唯一資料夾中。這提供了一種簡單的方法，可在 vCenter 內快速整理容錯移轉的虛擬機器。</block>
+  <block id="13c1455885d16af64f1bb96c4e48680a" category="list-text">請提供以下資訊：</block>
+  <block id="195d5635b8111eb50e7e2e496f76a58a" category="admonition">如果 vCenter 設定了分散式資源排程器（DRS）來管理叢集中的多個主機，則無需選擇主機。如果選擇主機，災難恢復會將所有虛擬機器放置在所選主機上。* *目標虛擬機器資料夾*（選用）：建立新的根目錄資料夾來儲存所選的虛擬機器。</block>
+  <block id="087aff7e8a4c218d75e7634e2ced777f" category="paragraph">虛擬機器使用連接到虛擬網路的虛擬網路卡。在故障轉移過程中，服務會將這些虛擬網路卡連接到目的地 VMware 環境中定義的虛擬網路。對於資源群組中虛擬機器所使用的每個來源虛擬網路，災難恢復都需要指派一個目的地虛擬網路。</block>
+  <block id="7504be830765ac7adf911f74182f2dea" category="list-text">在「容錯移轉對映」標籤中，選擇 *Virtual networks* 旁的向下箭頭。</block>
+  <block id="cfa80dbf717154065e68c5d2adabd4a2" category="list-text">災難恢復會自動填入來源虛擬網路。對於每個來源網路，請從下拉式選單中選擇適當的目的地網路。</block>
+  <block id="dba11f845b1599e47d1678dda4a7738d" category="admonition">切換 *進階設定* 選項，以新增指令碼並設定應用程式一致性。</block>
+  <block id="876a698345037bc1bb79312b5a0f5720" category="paragraph">災難恢復支援虛擬機器的靜態或動態主機組態協定（DHCP）IP 組態。DHCP 提供了一種基於標準的動態設定主機網路連接埠 TCP/IP 設定的方法。DHCP 必須至少提供一個 TCP/IP 位址，還可以提供預設閘道位址（用於路由到外部網際網路連線）、子網路遮罩和 DNS 伺服器位址。DHCP 通常用於終端使用者運算設備，例如員工的桌面、筆記型電腦和行動電話連接，同時也可用於任何連網運算設備，例如伺服器。</block>
+  <block id="d34d99a5aa1146211a85d6e8e836d639" category="list-text">*IP 位址類型*：重新設定 VM 組態以符合目標虛擬網路要求。災難恢復提供兩種選項：DHCP 或靜態 IP。對於靜態 IP，設定子網路遮罩、閘道和 DNS 伺服器。此外，輸入 VM 的憑證。</block>
+  <block id="fc4462c8ac165359650edc8f87d41cb2" category="list-text">*目標虛擬機器前綴和後綴*：在虛擬機器詳細資料中，您可以選擇為每個故障轉移虛擬機器名稱新增前綴和後綴。這有助於區分故障轉移虛擬機器和在同一 vCenter 叢集上執行的生產虛擬機器。例如，您可以為虛擬機器名稱新增前綴 "DR-" 和後綴 "-failover" 。有些人會新增第二個生產 vCenter ，以便在災難事件中將虛擬機器暫時主機在不同的站台。新增前綴或後綴可以幫助您快速識別故障轉移虛擬機器。您也可以在自訂指令碼中使用前綴或後綴。</block>
+  <block id="c667dbb5f76649b1694b438e459dc248" category="list-text">*CPU* 和 *記憶體容量（GB）*：在虛擬機器詳細資料下，您可以選擇調整虛擬機器的 CPU 和記憶體容量。</block>
+  <block id="00aa0786433838c61edd158cd5f0ef63" category="list-text">*開機順序*：您可以在容錯移轉後，修改跨資源群組中所有選取 VM 的開機順序。預設情況下，所有 VM 會平行一起開機；不過，您可以在此階段進行變更。這有助於確保所有優先順序一的 VM 都在後續優先順序的 VM 啟動之前執行。</block>
+  <block id="4d546e60a6a1cc8bb384106bb7ed1b74" category="inline-image-macro">顯示資源映射中 VM 部分的螢幕截圖</block>
+  <block id="adfc4e1fd4789ac121146d666f0c8ab7" category="paragraph"><block ref="adfc4e1fd4789ac121146d666f0c8ab7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d0a4216dd2e40b0cc3296585b0af4c9b" category="inline-link-macro">了解應用程式一致性副本</block>
+  <block id="c47c13ba61565ebf95f2439232612053" category="paragraph">若要進一步瞭解應用程式一致性複本的運作方式，請參閱 <block ref="5ae00125c616ba528d9055cc7fc4ab49" category="inline-link-macro-rx"></block>。</block>
+  <block id="b9742e1a7597f2639e63376698442205" category="paragraph">選擇 *資料儲存* 旁的向下箭頭。系統將根據所選虛擬機器自動選擇資料儲存對應。</block>
+  <block id="d54c7879b19774aaa947ce09c4e9ecf2" category="inline-link-macro">關於平台代管備份（即 ONTAP 代管的快照）的資訊</block>
+  <block id="755478261538701b4375e333b1c0b65b" category="admonition">在做出這些選擇之前，請先查看 <block ref="e00fb0f13ab889c0c1ed34d351cc77ed" category="inline-link-macro-rx"></block>。</block>
+  <block id="5aec6afa10a5cb9b461710d7c2b8e639" category="list-text">*使用平台代管的備份和保留排程*：如果您使用外部快照管理解決方案，請選取此核取方塊。災難恢復支援使用外部快照管理解決方案，例如原生 ONTAP SnapMirror 原則排程器或第三方整合。如果複寫計畫中的每個資料存放區（Volume）都已經有在其他位置代管的 SnapMirror 關係，則可以將這些快照用作災難恢復中的恢復點。</block>
+  <block id="3f1b34afd8b8d127d4f9d362bb9eda2a" category="paragraph">選取此選項時，災難恢復不會設定備份排程。但是，您仍然需要設定保留排程，因為可能仍會為了測試、容錯移轉和容錯回復作業而建立快照。</block>
+  <block id="e5c8fb894362266d6e9af57500583979" category="paragraph">在「測試對應」標籤中，VM 和 Datastores 對應已停用。</block>
+  <block id="5659aec0794f366f72bb27d56db0e2e0" category="inline-link-macro">修改複寫計畫的特定欄位</block>
+  <block id="f9e1e7ba9816622256f9fde34a701750" category="paragraph">檢閱複寫計畫以確保您的選擇正確。您可以 <block ref="6e8eb602efdc0198f9f966ccac603b10" category="inline-link-macro-rx"></block>。您稍後也可以將其停用或刪除。</block>
+  <block id="800dc73bc1cb45e574ef4e2cc74facd2" category="inline-link-macro">為 Kubernetes 工作負載建立複寫計劃</block>
+  <block id="7940cf457d54ffe8a38ba0bcab64c527" category="list-text"><block ref="7940cf457d54ffe8a38ba0bcab64c527" category="inline-link-macro-rx"></block></block>
+  <block id="e7ca4a4e050a2428f924bb43a6e1645c" category="sidebar">建立 VMware 災難恢復計劃</block>
+  <block id="1ceaac56ebb9035eb42b2391869c925f" category="sidebar">制定 Kubernetes 災難恢復計劃</block>
+  <block id="932434fb1de8addc054d2beae18b1888" category="sidebar">了解複寫計劃</block>
 </blocks>

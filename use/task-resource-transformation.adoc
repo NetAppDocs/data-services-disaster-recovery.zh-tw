@@ -84,5 +84,5 @@ image::resource-transformation-template.png[資源轉換範本截圖]
 [[next-steps]]
 == 後續步驟
 
-* link:drplan-create.html["建立複製計劃"]
+* link:task-replication-plan-kubernetes.html["為 Kubernetes 工作負載建立複寫計劃"]
 

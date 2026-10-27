@@ -26,7 +26,7 @@ NetApp Disaster Recovery每 24 小時執行一次發現。透過此版本，您�
 * 當您建立複製計劃並在計劃內建立資源組時，您可以在資料儲存區中看到虛擬機器。
 
 
-有關詳細信息，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
+如需詳細資訊，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["建立複製計劃"]。
 
 
 

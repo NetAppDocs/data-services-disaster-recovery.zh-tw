@@ -1,0 +1,192 @@
+---
+sidebar: sidebar 
+permalink: use/task-replication-plan-kubernetes.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, kubernetes, trident protect, namespace, replication plan, appvault, resource transformation, storage class, protection, disaster, recovery 
+summary: NetApp Disaster Recovery 是一種雲端型的災難恢復服務，可自動執行災難恢復工作流程。新增 Kubernetes 叢集後，您即可建立複寫計畫來保護您的 Kubernetes 工作負載。 
+---
+= 在 NetApp Disaster Recovery 中為 Kubernetes 工作負載建立複寫計畫
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+新增 Kubernetes 資源和站台後，請建立_複寫計畫_，以使用 NetApp Disaster Recovery 保護您的 Kubernetes 工作負載。該計畫定義了來源和目的地叢集、資源群組、命名空間和儲存設備類別對應、Snapshot 快照技術排程，以及應用程式的選用資源轉換和指令碼。
+
+*所需 NetApp Console 角色* 執行此任務需要超級管理員、災難復原管理員、災難復原故障轉移管理員或災難復原應用程式管理員角色。link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["了解NetApp Disaster Recovery中的使用者角色和權限"^].link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服務的NetApp Console存取角色"^].
+
+
+NOTE: 若要為 VMware 工作負載建立複寫計劃，請參閱 link:task-replication-plan-vmware.html["建立 VMware 複寫計畫"]。
+
+
+
+[[before-you-begin]]
+== 開始之前
+
+* 在建立 SnapMirror 關係之前，請在災難恢復之外設定叢集和儲存設備 VM （SVM） 對等關係。
+* 在將命名空間新增至資源群組之前，請先執行手冊探索。這可確保探索到命名空間並將其列於資源群組中。
+* 建立一個 AppVault，供 Trident Protect 儲存保護資料。您可以在建立複寫計畫時建立 AppVault，也可以事先建立。如需詳細資訊，請參閱 link:task-appvault.html["管理 AppVaults"]。
+
+
+
+TIP: 在部署 NetApp Disaster Recovery 之前，請先整理 Kubernetes 叢集和命名空間，以盡量減少過度擴張。若要在建立複寫計畫之前組織資源群組，請參閱 link:resource-group.html["建立資源組"]。
+
+
+
+[[create-the-replication-plan]]
+== 建立複製計劃
+
+制定計畫時、請遵循以下準則：
+
+* 為計畫中的所有 Kubernetes 叢集使用相同的憑證。
+* 計劃中的所有 Kubernetes 叢集都使用同一個指令碼。
+* 只有當複寫計畫處於以下狀態之一時，才能啟用保護：就緒、故障復原已提交或測試故障轉移已提交。
+
+
+
+
+[[select-kubernetes-clusters]]
+=== 選擇 Kubernetes 叢集
+
+首先，選擇複寫計畫的來源和目的地叢集。
+
+.步驟
+. 從NetApp Disaster Recovery選單中，選擇 *複製計畫*。
+. 在下拉式選單中，選擇 *Kubernetes*。
++
+image::site-type-toggle.png[網站類型切換的螢幕擷取畫面]
+
+. 選擇“*新增*”。
+. 輸入複寫計畫的名稱。
+. 對於 *來源*，選擇要指定為來源的 Kubernetes 叢集。
+. 對於 *目標*，選擇要用作災難恢復目的地的 Kubernetes 叢集。
+. 選擇“下一步”。
+
+
+
+
+[[select-resource-groups]]
+=== 選擇資源群組
+
+接下來，選擇包含您要保護的 Kubernetes 命名空間的資源群組。資源群組可讓您使用通用快照保護一組命名空間。
+
+選擇資源群組時，請考慮下列事項：
+
+* 在將命名空間新增至資源群組之前，請執行手冊探索。這可確保資源被探索並列在資源群組中。
+* 資源群組中的 Kubernetes 命名空間必須屬於同一個 ONTAP 叢集。
+* 命名資源群組時，僅支援小寫字母和數字。
+
+
+.步驟
+. 如果您已有資源群組，請從清單中選擇這些群組。
++
+如果您沒有現有的資源群組，或需要在資源群組中新增資源，請選擇 *+ Create new resource group*。按照說明進行 link:resource-group.html["將命名空間新增至資源群組"]。
+
+. 在另一列中，檢視選取的資源群組。
+. 選擇“下一步”。
+
+
+
+
+[[map-source-resources-to-the-target]]
+=== 將來源資源映射到目標
+
+在資源對應步驟中，指定來源叢集的資源如何對應至目標叢集。此外，設定快照排程以及將儲存資料的 AppVault。
+
+.開始之前
+如果要建立 SnapMirror 關係，請在 ONTAP 中設定對等關係。
+
+.步驟
+. 為每個資源群組中的每個命名空間選擇命名空間對應。根據預設，NetApp Disaster Recovery 會選擇與來源相同的目標。您可以在目的地叢集中選擇不同的命名空間。
+. 為每個資源群組指定儲存類別對應。儲存類別必須連結至與來源環境對等的 ONTAP 儲存 VM。如果您未指定儲存類別、則會使用叢集上的預設儲存類別。
++
+
+TIP: 若要檢視儲存設備類別，請在命名空間上執行 CLI 命令 `kubectl get pvc -n <namespace>`。
+
+. 設定快照排程。選擇 *Snapshot 快照技術和保留開始時間* （日曆日期和時間）、 *Snapshot 快照技術和保留頻率* （快照的啟動頻率），以及 *Snapshot 快照技術保留計數* （儲存的快照數量）。
++
+設定快照頻率時，必須選擇至少每五分鐘一次的頻率。
+
+. 選擇 *新增 AppVault* 以建立將儲存保護資料的 AppVault。您也可以從「設定」頁面link:task-appvault.html["管理 AppVaults"]。
++
+.. 輸入 *Name*，然後選擇 AppVault 應連接的 *Console agent*。
+.. 選擇雲端*提供者*來託管 AppVault。
+.. 根據所選供應商，NetApp Disaster Recovery 會填入已配置的雲端訂閱。
++
+對於 Azure，請選擇雲端供應商的*訂閱*、*資源群組*和*儲存帳戶*。
+
++
+對於 AWS、ONTAP S3 和 StorageGRID，請選擇*帳戶*、*憑證*和*儲存桶*。
+
+.. 如果您選擇了 ONTAP S3 或 StorageGRID ，您可以選擇新增認證資料。選擇 *Add credentials* 擴充選項，然後新增 *Credential name* 、 *Gateway node FQDN* 、 *Port* 號碼、 *Access key* 和 *Secret key* 。
+.. 選擇“*新增*”。
++
+image:kubernetes-mapping.png["Kubernetes 儲存類別對應的螢幕擷取畫面"]
+
+
+
+. 選擇“下一步”。
+
+
+
+
+[[add-resource-transformations-script-executions-and-boot-order]]
+=== 新增資源轉換、指令碼執行和開機順序
+
+對於 Kubernetes 複寫計畫，您可以套用資源轉換和指令碼執行，並設定開機順序。這些步驟是選用的。
+
+.新增資源轉換
+新增資源轉換可讓您在容錯移轉期間修改工作負載的任何層面。資源轉換提供靈活度，使工作負載能夠在災難恢復事件期間適應不同的環境和組態。 link:task-resource-transformation.html["學習如何建立資源轉換。"^]
+
+資源轉換將按照您列出的順序套用。
+
+. 從下拉式選單中選擇要新增的資源轉換。
+. 選擇要套用轉換的資源，然後新增所需的值。
+. 審查轉換順序，確保操作以正確的順序執行。
+
+
+.新增指令碼執行
+災難恢復可以在建立快照之前或之後執行指令碼，以管理應用程式的靜默和恢復。執行此行動可確保應用程式在快照複寫和還原之前做好適當準備，並在容錯移轉後無縫地恢復運作。
+
+. 選擇 *+ 新增指令碼*。
+. 選擇 *上傳* 以選擇指令碼檔案。
+. 選擇 *執行階段*：*快照前* 以在建立快照之前執行，或 *快照後* 以在之後執行。
+. 選擇*儲存*。
+
+
+.設定開機順序
+對於包含多個資源群組的複寫計畫，您可以選擇設定開機順序。開機順序可確保需要同時上線的資源同步上線，並且任何依賴其他資源群組的資源群組，只有在它們所依賴的群組上線後才會上線。
+
+. 選擇 *開機順序和延遲* 區段。
+. 為複寫計畫中的每個資源指定一個開機 *Order* 值，從 1 開始。為應該同時開機的任何資源指派相同的數字。
+. 設定 *延遲* 時間（以分鐘為單位）。如果需要延遲任何資源，請設定延遲時間。
+
+
+
+
+[[review-and-create-the-replication-plan]]
+=== 審查並建立複寫計畫
+
+最後，審查並確認複寫計劃的設定。
+
+
+TIP: 您可以稍後停用或刪除複製計劃。
+
+.步驟
+. 審查容錯移轉對應。
+. 選擇 *新增* 以建立複寫計畫。
++
+選擇 *新增* 後，您可以在 *作業監控* 中監控不同的作業。
+
+
+
+
+
+[[more-information]]
+== 更多資訊
+
+* link:resource-group.html["建立資源組"]
+* link:task-appvault.html["管理 AppVaults"]
+* link:task-resource-transformation.html["管理資源轉換範本"]
+

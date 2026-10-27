@@ -25,8 +25,10 @@ indexpage:
     links:
     - title: 將 vCenter 新增至站點
       url: "/use/sites-add.html"
-    - title: 制定災難復原計劃
-      url: "/use/drplan-create.html"
+    - title: 建立 VMware 災難恢復計劃
+      url: "/use/task-replication-plan-vmware.html"
+    - title: 制定 Kubernetes 災難恢復計劃
+      url: "/use/task-replication-plan-kubernetes.html"
     - title: 將應用程式複製到另一個站點
       url: "/use/replicate.html"
     - title: 將應用程式遷移到另一個站點

@@ -26,9 +26,9 @@ summary: NetApp Disaster Recovery 是一項基於雲端的災難復原服務，�
 [[optional-boot-order-for-kubernetes-resource-groups]]
 === Kubernetes 資源群組的選用開機順序
 
-NetApp Disaster Recovery 現在支援在 Kubernetes 複寫計畫中為資源群組設定選用的開機順序，方法是為資源指定優先順序和選用的延遲時間。此選項可讓您在必要時同時將資源開機，並延遲將依賴其他資源的資源開機，以支援您的應用程式以健全的狀態恢復線上。
+NetApp Disaster Recovery 現在支援在 Kubernetes 複寫計畫中為資源群組設定選用的開機順序，方法是為資源指定優先順序和選用的延遲時間。此選項可讓您在必要時同時開機資源，並延遲開機依賴其他資源的資源，從而支援您的應用程式以健康的方式恢復線上。
 
-如需詳細資訊，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複寫計畫"^]。
+如需詳細資訊，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-kubernetes.html["建立複寫計畫"^]。
 
 
 
@@ -85,7 +85,7 @@ NetApp Disaster Recovery 對基於 Kubernetes 的工作負載的支援現已正�
 
 現在，您可以將自訂指令碼插入容錯移轉工作流程中，以協調應用程式的靜止與恢復。此功能有助於確保應用程式在快照複寫與適當還原之前已妥善準備，以便在容錯移轉後無縫地恢復運作。
 
-若要了解如何注入自訂指令碼，請參閱link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"^]。
+若要了解如何注入自訂指令碼，請參閱link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-kubernetes.html["建立複製計劃"^]。
 
 
 
@@ -374,7 +374,7 @@ NetApp Disaster Recovery 對 GCVE 的支援現已正式發布（GA）。正式�
 
 在 NetApp Disaster Recovery 中建立複寫計畫時，現在可以將特定資料存放區排除在複寫之外。對於設定為使用多個資料存放區的虛擬機器，此功能可讓您限制要複寫的資料存放區。
 
-有關詳細資訊，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"^]。
+詳情請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["建立複製計劃"^]。
 
 
 
@@ -392,7 +392,7 @@ NetApp Disaster Recovery 對 GCVE 的支援現已正式發布（GA）。正式�
 
 災難恢復功能現在新增了從複寫計畫儀表板觸發 vCenter 重新整理的選單選項。您可以從複寫計畫儀表板的行動選單存取子選單：選取 **Plan Health**，然後選取 **Refresh Source vCenter / Refresh Target vCenter**。
 
-如需詳細資訊，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html#modify-a-replication-plan["修改複寫計畫"^]。
+如需詳細資訊，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-modify.html["修改複寫計畫"^]。
 
 
 
@@ -483,7 +483,7 @@ NetApp Disaster Recovery 對 GCVE 的支援現已正式發布（GA）。正式�
 
 建立複寫計劃時，新的預設設定是保留虛擬機器資料夾結構。如果恢復目標不存在原始資料夾層次結構，Disaster Recovery 會自動建立。您可以取消選取此選項以忽略原始資料夾層次結構。
 
-有關詳細信息，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"^]。
+如需詳細資訊，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["建立複製計劃"^]。
 
 
 
@@ -501,7 +501,7 @@ NetApp Disaster Recovery 對 GCVE 的支援現已正式發布（GA）。正式�
 
 現在您可以透過指定新的父 VM 資料夾或取消選取「保留原始資料夾層次結構」選項來覆寫此設定。
 
-有關詳細信息，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
+如需詳細資訊，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["建立複製計劃"]。
 
 
 
@@ -549,7 +549,7 @@ NetApp Disaster Recovery現在支援使用Google Cloud NetApp Volumes的 Google 
 
 災難復原功能現在支援在註冊過程中將 VMware 硬體降級到早期版本的 vSphere。當來源 ESX 主機運行的版本比災難復原網站的版本更新時，這非常有用。
 
-有關詳細信息，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html#select-vcenter-servers["在NetApp Disaster Recovery中建立複製計劃"]。
+如需詳細資訊，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html#select-vcenter-servers["在NetApp Disaster Recovery中建立複製計劃"]。
 
 
 
@@ -565,7 +565,7 @@ NetApp Disaster Recovery現在支援使用Google Cloud NetApp Volumes的 Google 
 
 現在您可以將自訂腳本注入到故障轉移工作流程中，以便在建立備份之前執行。備份前腳本可讓您在複製快照之前控制虛擬機器的狀態，並為虛擬機器的轉換做好準備。例如，您可以注入腳本來卸載 NFS 掛載點，然後在故障轉移後使用另一個腳本重新掛載該掛載點。
 
-有關詳細信息，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html#select-vcenter-servers["在NetApp Disaster Recovery中建立複製計劃"]。
+如需詳細資訊，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html#select-vcenter-servers["在NetApp Disaster Recovery中建立複製計劃"]。
 
 
 
@@ -727,7 +727,7 @@ Windows 本機管理員密碼解決方案 (Windows LAPS) 是 Windows 的功能�
 
 現在您可以透過提供網域控制器詳細資訊來選擇子網路對映選項並檢查 LAPS 選項。使用此選項，您不需要為每個虛擬機器提供密碼。
 
-有關詳細信息，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
+如需詳細資訊，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["建立複製計劃"]。
 
 
 
@@ -787,7 +787,7 @@ NetApp Disaster Recovery現在支援使用外部快照管理解決方案，例�
 
 配置完成後，服務不會定期拍攝任何快照，而是依賴外部實體來拍攝和更新這些快照。
 
-有關在複製計劃中使用外部快照解決方案的詳細信息，請參閱： https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"] 。
+如需在複寫計畫中使用外部 Snapshot 快照技術解決方案的詳細資料，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["建立複製計劃"]。
 
 
 
@@ -820,7 +820,7 @@ NetApp Disaster Recovery每 24 小時執行一次發現。透過此版本，您�
 * 當您建立複製計劃並在計劃內建立資源組時，您可以在資料儲存區中看到虛擬機器。
 
 
-有關詳細信息，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
+如需詳細資訊，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["建立複製計劃"]。
 
 
 
@@ -936,7 +936,7 @@ NetApp Disaster Recovery中對ASA r2 的支援使用ONTAP 9.16.1。
 
 當您建立複製計劃並對應計算資源時，現在可以對應資料夾，以便在您為資料中心、叢集和主機指定的資料夾中復原虛擬機器。
 
-有關詳細信息，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
+如需詳細資訊，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["建立複製計劃"]。
 
 
 
@@ -954,7 +954,7 @@ NetApp Disaster Recovery中對ASA r2 的支援使用ONTAP 9.16.1。
 
 建立複製計劃時，您現在可以為計劃中的每個 VM 設定啟動延遲。這使您可以設定虛擬機器的啟動順序，以確保所有優先順序為一的虛擬機器都在後續優先級虛擬機器啟動之前運行。
 
-有關詳細信息，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
+如需詳細資訊，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["建立複製計劃"]。
 
 
 
@@ -963,7 +963,7 @@ NetApp Disaster Recovery中對ASA r2 的支援使用ONTAP 9.16.1。
 
 建立複製計劃時，您現在可以看到計劃中每個虛擬機器的作業系統。這有助於決定如何將虛擬機器分組到資源組。
 
-有關詳細信息，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
+如需詳細資訊，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["建立複製計劃"]。
 
 
 
@@ -972,7 +972,7 @@ NetApp Disaster Recovery中對ASA r2 的支援使用ONTAP 9.16.1。
 
 現在，在建立複寫計劃時，您可以為災難恢復站台上的虛擬機器名稱新增前綴和後綴。這可讓您為計劃中的虛擬機器使用更具描述性的名稱。
 
-有關詳細信息，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
+如需詳細資訊，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["建立複製計劃"]。
 
 
 
@@ -1103,7 +1103,7 @@ NOTE: NetApp不會向您收取任何預覽的工作負載容量的費用。
 [[replication-plan-updates]]
 === 複製計劃更新
 
-您可以透過在「應用程式」頁面上按資料儲存器過濾虛擬機器以及在「資源映射」頁面上選擇更多目標詳細資訊來更輕鬆地新增複製計劃。參考 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
+您可以透過在「應用程式」頁面上依資料儲存區篩選 VM，並在「資源對應」頁面上選取更多目標詳細資料，來更輕鬆地新增複寫計畫。請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["建立複製計劃"]。
 
 
 
@@ -1198,9 +1198,9 @@ https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-int
 [[edit-schedules]]
 === 編輯時間表
 
-在此版本中，您現在可以設定計劃來測試合規性和故障轉移測試，以確保它們在您需要時能夠正常運作。
+透過此版本，您現在可以設定排程來測試法規遵循和容錯移轉測試，以確保它們能正常運作。
 
-有關詳細信息，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
+如需詳細資訊，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-modify.html["修改複寫計畫"]。
 
 
 
@@ -1220,7 +1220,7 @@ https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-int
 * 靜態IP：您可以選擇與來源VM相同或不同的資訊。如果您選擇與來源相同，則無需輸入憑證。另一方面，如果您選擇使用來自來源的不同訊息，您可以提供憑證、IP 位址、子網路遮罩、DNS 和網關資訊。
 
 
-有關詳細信息，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
+如需詳細資訊，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["建立複製計劃"]。
 
 
 
@@ -1238,7 +1238,7 @@ https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-int
 
 現在您可以在製定複製計劃時創建SnapMirror關係。以前，您必須在NetApp Disaster Recovery之外建立關係。
 
-有關詳細信息，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
+如需詳細資訊，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["建立複製計劃"]。
 
 
 
@@ -1247,7 +1247,7 @@ https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-int
 
 建立複製計劃時，您可以包含來自不同磁碟區和不同 SVM 的 VM。  NetApp Disaster Recovery透過包含所有磁碟區來建立一致性群組快照並更新所有輔助位置。
 
-有關詳細信息，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
+如需詳細資訊，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["建立複製計劃"]。
 
 
 
@@ -1256,7 +1256,7 @@ https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-int
 
 建立複製計劃時，您可以將虛擬機器新增至資源組。使用資源組，您可以在每個虛擬機器上設定延遲，以便它們按照延遲的順序啟動。
 
-有關詳細信息，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
+如需詳細資訊，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["建立複製計劃"]。
 
 
 
@@ -1265,7 +1265,7 @@ https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-int
 
 您可以指定建立應用程式一致的 Snapshot 副本。該服務將使應用程式靜止，然後拍攝快照以獲得應用程式的一致狀態。
 
-有關詳細信息，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
+如需詳細資訊，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["建立複製計劃"]。
 
 
 
@@ -1325,11 +1325,11 @@ NetApp Disaster Recovery的預覽版本包括以下更新：
 
 * *RPO*：您現在可以在複製計畫的資料儲存部分輸入復原點目標 (RPO) 和保留計數。這表示必須存在且不早於設定時間的資料量。例如，如果將其設定為 5 分鐘，則在發生災難時系統可能會遺失最多 5 分鐘的數據，而不會影響關鍵業務需求。
 +
-參考 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
+請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["建立複製計劃"]。
 
 * *網路增強功能*：當您在複製計畫的虛擬機器部分中對應來源位置和目標位置之間的網路時， NetApp Disaster Recovery現在提供兩個選項：DHCP 或靜態 IP。以前，僅支援 DHCP。對於靜態 IP，您可以設定子網路、網關和 DNS 伺服器。此外，您現在可以輸入虛擬機器的憑證。
 +
-參考 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
+請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["建立複製計劃"]。
 
 * *編輯時間表*：您現在可以更新複製計劃時間表。
 +
@@ -1342,7 +1342,7 @@ NetApp Disaster Recovery的預覽版本包括以下更新：
 ** 多對一作為一致性組
 ** 多對多
 +
-參考 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
+請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["建立複製計劃"]。
 
 
 
@@ -1372,7 +1372,7 @@ https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-int
 [[resource-groups-update-for-boot-order]]
 === 資源組更新啟動順序
 
-建立災難復原或複製計畫時，您可以將虛擬機器新增至功能資源群組。資源組可讓您將一組依賴的虛擬機器放入符合您要求的邏輯群組中。例如，群組可以包含復原時可以執行的啟動順序。在此版本中，每個資源組可以包含一個或多個虛擬機器。虛擬機器將根據您在計劃中包含的順序啟動。參考 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html#select-applications-to-replicate-and-assign-resource-groups["選擇要複製的應用程式並分配資源組"]。
+建立災難恢復或複寫計畫時，您可以將虛擬機器新增至功能資源群組。資源群組可讓您將一組相互依賴的虛擬機器放入符合您需求的邏輯群組中。例如，群組可以包含在恢復時可執行的開機順序。在此版本中，每個資源群組可以包含一個或多個虛擬機器。虛擬機器將根據您在計畫中新增它們的順序開機。請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["選擇要複製的應用程式並分配資源組"]。
 
 
 
@@ -1386,7 +1386,7 @@ https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-int
 [[replication-plan-shows-recovery-point-objective-rpo-transfer-schedules]]
 === 複製計劃顯示恢復點目標（RPO）傳輸時間表
 
-建立災難復原或複製計畫時，您需要選擇虛擬機器。在此版本中，您現在可以查看與資料儲存區或虛擬機器關聯的每個磁碟區關聯的SnapMirror 。您也可以查看與SnapMirror計畫相關的 RPO 傳輸計畫。RPO 可協助您確定備份計畫是否足以在災難後復原。參考 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
+建立災難恢復或複寫計畫時，您會選擇 VM 。在此版本中，您現在可以檢視與資料儲存區或 VM 關聯的每個 Volume 相關聯的 SnapMirror 。您也可以查看與 SnapMirror 排程相關聯的 RPO 傳輸排程。RPO 可協助您判斷備份排程是否足以在災難發生後進行恢復。請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["建立複製計劃"]。
 
 
 

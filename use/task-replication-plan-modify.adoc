@@ -1,0 +1,60 @@
+---
+sidebar: sidebar 
+permalink: use/task-replication-plan-modify.html 
+keywords: disaster recovery, bluexp disaster recovery, failover, replication plan, modify, compliance time, test failover 
+summary: 修改複寫計劃以調整法規遵循時間或容錯移轉設定。 
+---
+= 修改 NetApp Disaster Recovery 中的複寫計畫
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+在 NetApp Disaster Recovery 中，您可以修改複寫計畫的法規遵循時間影響，以確保容錯移轉測試成功完成。
+
+您可以修改法規遵循時間並測試容錯移轉的影響。若要編輯計畫重複週期、容錯移轉對應或 VM，請刪除複寫計畫並建立新的計畫。
+
+
+
+[[modifiable-fields]]
+== 可修改欄位
+
+* *合規時間影響*：建立複製計畫時，服務預設會建立合規計畫。預設合規時間為 30 分鐘。若要變更此時間，您可以編輯複製計畫中的時間表。
+* *測試容錯移轉影響*：您可以隨需或依排程測試容錯移轉程序。這可讓您測試將 VM 容錯移轉至複寫計畫中指定的目的地。
++
+測試故障轉移會建立FlexClone磁碟區、掛載資料儲存庫並在該資料儲存庫上移動工作負載。測試故障轉移作業不會影響生產工作負載、測試站點上使用的SnapMirror關係以及必須繼續正常運作的受保護工作負載。
+
+
+
+根據計劃，故障轉移測試運行並確保工作負載移動到複製計劃指定的目標。
+
+
+
+[[modify-a-replication-plan]]
+== 修改複寫計畫
+
+. 從NetApp Disaster Recovery選單中，選擇 *複製計畫*。
++
+image:dr-plan-list.png["顯示複製計劃清單的螢幕截圖"]
+
+. 選擇*操作*image:icon-horizontal-dots.png["水平點操作選單"]圖示並選擇*編輯時間表*。
+. 輸入您希望NetApp Disaster Recovery檢查測試合規性的頻率（分鐘）。
+. 若要檢查您的故障轉移測試是否正常，請檢查*按月計劃執行故障轉移*。
++
+.. 選擇您希望執行這些測試的日期和時間。
+.. 輸入您希望測試開始的日期（yyyy-mm-dd 格式）。
++
+image:dr-plan-schedule-edit2.png["螢幕截圖顯示了您可以在哪裡編輯時間表"]
+
+
+
+. *使用隨需快照進行排程測試容錯移轉*：若要在啟動自動測試容錯移轉之前建立新的快照，請勾選此方塊。
+. 若要在故障轉移測試完成後清理測試環境，請勾選*測試故障轉移後自動清理*並輸入在清理開始前等待的分鐘數。
++
+
+NOTE: 此程序會從測試位置取消註冊暫存的虛擬機器，刪除已建立的 FlexClone Volume，並卸載暫存的資料儲存區。
+
+. 選擇*儲存*。
+

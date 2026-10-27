@@ -27,7 +27,7 @@ NetApp Disaster Recovery 對基於 Kubernetes 的工作負載的支援現已正�
 
 現在，您可以將自訂指令碼插入容錯移轉工作流程中，以協調應用程式的靜止與恢復。此功能有助於確保應用程式在快照複寫與適當還原之前已妥善準備，以便在容錯移轉後無縫地恢復運作。
 
-若要了解如何注入自訂指令碼，請參閱link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"^]。
+若要了解如何注入自訂指令碼，請參閱link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-kubernetes.html["建立複製計劃"^]。
 
 
 

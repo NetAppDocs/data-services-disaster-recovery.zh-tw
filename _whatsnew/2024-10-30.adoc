@@ -42,7 +42,7 @@
 
 當您建立複製計劃並對應計算資源時，現在可以對應資料夾，以便在您為資料中心、叢集和主機指定的資料夾中復原虛擬機器。
 
-有關詳細信息，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
+如需詳細資訊，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["建立複製計劃"]。
 
 
 
@@ -60,7 +60,7 @@
 
 建立複製計劃時，您現在可以為計劃中的每個 VM 設定啟動延遲。這使您可以設定虛擬機器的啟動順序，以確保所有優先順序為一的虛擬機器都在後續優先級虛擬機器啟動之前運行。
 
-有關詳細信息，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
+如需詳細資訊，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["建立複製計劃"]。
 
 
 
@@ -69,7 +69,7 @@
 
 建立複製計劃時，您現在可以看到計劃中每個虛擬機器的作業系統。這有助於決定如何將虛擬機器分組到資源組。
 
-有關詳細信息，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
+如需詳細資訊，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["建立複製計劃"]。
 
 
 
@@ -78,7 +78,7 @@
 
 現在，在建立複寫計劃時，您可以為災難恢復站台上的虛擬機器名稱新增前綴和後綴。這可讓您為計劃中的虛擬機器使用更具描述性的名稱。
 
-有關詳細信息，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
+如需詳細資訊，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["建立複製計劃"]。
 
 
 

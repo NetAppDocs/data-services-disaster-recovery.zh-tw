@@ -21,7 +21,7 @@ summary: 在災難恢復中管理 AppVaults 可讓您審查您的 AppVaults 的�
 [[add-an-appvault]]
 == 新增一個 AppVault
 
-您可以在為 Kubernetes 建立複寫計畫時新增 AppVault，或從「設定」頁面建立一個。
+您可以在 link:task-replication-plan-kubernetes.html["為 Kubernetes 建立複寫計劃"] 時新增 AppVault，或從「設定」頁面建立一個。
 
 .步驟
 . 在災難恢復中，從側邊欄選擇 *設定*。

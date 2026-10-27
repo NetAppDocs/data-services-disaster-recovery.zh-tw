@@ -11,7 +11,7 @@
 
 現在您可以透過指定新的父 VM 資料夾或取消選取「保留原始資料夾層次結構」選項來覆寫此設定。
 
-有關詳細信息，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"]。
+如需詳細資訊，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["建立複製計劃"]。
 
 
 

@@ -56,4 +56,4 @@
 
 建立複寫計劃時，新的預設設定是保留虛擬機器資料夾結構。如果恢復目標不存在原始資料夾層次結構，Disaster Recovery 會自動建立。您可以取消選取此選項以忽略原始資料夾層次結構。
 
-有關詳細信息，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複製計劃"^]。
+如需詳細資訊，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["建立複製計劃"^]。

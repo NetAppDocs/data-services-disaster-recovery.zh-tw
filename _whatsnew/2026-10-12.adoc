@@ -7,9 +7,9 @@
 [[optional-boot-order-for-kubernetes-resource-groups]]
 === Kubernetes 資源群組的選用開機順序
 
-NetApp Disaster Recovery 現在支援在 Kubernetes 複寫計畫中為資源群組設定選用的開機順序，方法是為資源指定優先順序和選用的延遲時間。此選項可讓您在必要時同時將資源開機，並延遲將依賴其他資源的資源開機，以支援您的應用程式以健全的狀態恢復線上。
+NetApp Disaster Recovery 現在支援在 Kubernetes 複寫計畫中為資源群組設定選用的開機順序，方法是為資源指定優先順序和選用的延遲時間。此選項可讓您在必要時同時開機資源，並延遲開機依賴其他資源的資源，從而支援您的應用程式以健康的方式恢復線上。
 
-如需詳細資訊，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/drplan-create.html["建立複寫計畫"^]。
+如需詳細資訊，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-kubernetes.html["建立複寫計畫"^]。
 
 
 
