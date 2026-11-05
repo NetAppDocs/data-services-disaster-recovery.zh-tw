@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: get-started/dr-intro.html 
-keywords: how netapp disaster recovery works, what is disaster recovery, bluexp, vmware, vcenter, draas, replicate, failover, failback, fail over, fail back, vmware cloud, netapp intelligent services 
-summary: 災難復原至雲端是一種彈性且具成本效益的方式，可保護工作負載免受站台中斷和資料毀損事件的影響。透過 NetApp Disaster Recovery，您可以將執行 ONTAP 儲存設備的內部部署 VMware 工作負載複寫到公有雲中的 VMware 軟體定義資料中心（使用 NetApp 雲端儲存設備），或複寫到另一個使用 ONTAP 儲存設備的內部部署 VMware 環境作為災難復原站台。 
+keywords: how netapp disaster recovery works, what is disaster recovery, bluexp, vmware, vcenter, draas, replicate, failover, failback, fail over, fail back, vmware cloud, netapp intelligent services, kubernetes, trident protect, openshift 
+summary: 雲端災難恢復是一種具有恢復能力且具成本效益的方式，可保護工作負載免受站台中斷和資料毀損事件的影響。透過 NetApp Disaster Recovery，您可以將執行 ONTAP 儲存設備的內部部署 VMware 和 Kubernetes 工作負載複寫到災難恢復站台。VMware 工作負載可以使用 NetApp 雲端儲存複寫到公有雲中的 VMware 軟體定義資料中心，或複寫到另一個具有 ONTAP 儲存設備的內部部署 VMware 環境。 
 ---
 = 了解NetApp Disaster Recovery
 :hardbreaks:
@@ -12,25 +12,30 @@ summary: 災難復原至雲端是一種彈性且具成本效益的方式，可�
 
 
 [role="lead"]
-雲端災難復原是一種彈性且經濟高效的方式，可保護工作負載免受站點中斷和資料損壞事件的影響。NetApp Disaster Recovery 是一項基於雲端的災難復原服務，可自動化災難復原工作流程。使用 NetApp Disaster Recovery，您可以保護您的本地 Kubernetes 叢集、基於 NFS 的工作負載，以及運行於 NetApp 儲存設備上的 VMware vSphere 虛擬機器檔案系統（VMFS）iSCSI 和 FC 資料存放區，將其保護到以下其中之一：
+雲端災難恢復是一種具有恢復能力的且具成本效益的方式，可保護工作負載免受站台中斷和資料毀損事件的影響。NetApp Disaster Recovery 是一項雲端型的災難恢復服務，可為執行 NetApp 儲存設備的 VMware 和 Kubernetes 工作負載自動執行災難恢復工作流程。透過災難恢復，您可以保護下列工作負載：
 
-* Amazon Elastic VMware Service (EVS) 與 Amazon FSx for NetApp ONTAP。如需詳細資訊，請參閱 link:../reference/evs-deploy-guide-introduction.html["使用 Amazon Elastic VMware Service 和 Amazon FSx for NetApp ONTAP 的 NetApp 災難恢復簡介"]。
-* AWS 上的 VMware Cloud (VMC) 以及適用Amazon FSx for NetApp ONTAP
-* Azure VMware Solution 與 NetApp Cloud Volumes ONTAP (iSCSI)（私有預覽版）
-* Google Cloud VMware Engine (GCVE) 與Google Cloud NetApp Volumes
-* 另一個採用本地 NFS 和/或 VMFS （iSCSI/FC） 的 VMware 環境，配備 ONTAP 儲存設備
+* *VMware 工作負載*：基於 NFS 的工作負載，以及適用於 iSCSI 和 FC 的 VMware vSphere 虛擬機器檔案系統（VMFS）資料儲存。您可以將其複寫到下列其中一項：
++
+** Amazon Elastic VMware Service (EVS) 與 Amazon FSx for NetApp ONTAP。如需詳細資訊，請參閱 link:../reference/evs-deploy-guide-introduction.html["使用 Amazon Elastic VMware Service 和 Amazon FSx for NetApp ONTAP 進行災難恢復簡介"]。
+** AWS 上的 VMware Cloud (VMC) 以及適用Amazon FSx for NetApp ONTAP
+** Azure VMware Solution 與 NetApp Cloud Volumes ONTAP (iSCSI)（私有預覽版）
+** Google Cloud VMware Engine (GCVE) 與Google Cloud NetApp Volumes
+** 另一個採用本地 NFS 和/或 VMFS （iSCSI/FC） 的 VMware 環境，配備 ONTAP 儲存設備
 
 
-NetApp Disaster Recovery使用ONTAP SnapMirror技術與整合的本機 VMware 業務流程來保護 VMware VM 及其相關的磁碟作業系統映像，同時保留ONTAP的所有儲存效率優勢。災難復原使用這些技術作為到災難復原站點的複製傳輸。這使得主站點和輔助站點能夠實現業界最佳的儲存效率（壓縮和重複資料刪除）。
+* *Kubernetes 工作負載*：在您的內部部署 Kubernetes 叢集（包括 OpenShift 虛擬化環境）上執行，且使用 Trident 管理的 ONTAP 儲存設備的應用程式。您可以使用 Trident Protect 保護它們，並將其複寫到另一個 Kubernetes 叢集。
 
-image:../use/evs-console-architecture.png["顯示 NetApp Disaster Recovery 元件的圖表"]
+
+災難恢復採用 ONTAP SnapMirror 技術，並整合原生 VMware 協調或 Trident Protect 協調，以保護 VMware 虛擬機器及其關聯的磁碟作業系統 "映像" 和 Kubernetes 應用程式，同時保留 ONTAP 的所有儲存效率優勢。災難恢復使用這些技術作為到災難恢復站台的複寫傳輸方式。這使得主要和次要站台都能實現業界最佳的儲存效率（壓縮和重複資料刪除）。
+
+image:../use/evs-console-architecture.png["災難恢復組件示意圖"]
 
 
 
 [[netapp-console]]
 == NetApp Console
 
-可透過NetApp Console存取NetApp Disaster Recovery。
+可透過 NetApp Console 存取災難恢復。
 
 NetApp Console提供企業級跨本機和雲端環境的NetApp儲存和資料服務的集中管理。需要控制台才能存取和使用NetApp資料服務。作為管理介面，它使您能夠從一個介面管理許多儲存資源。控制台管理員可以控制企業內所有系統的儲存和服務的存取。
 
@@ -40,50 +45,53 @@ NetApp Console提供企業級跨本機和雲端環境的NetApp儲存和資料服
 
 
 
-[[benefits-of-using-netapp-disaster-recovery]]
-== 使用 NetApp Disaster Recovery 的好處
+[[benefits-of-using-disaster-recovery]]
+== 使用災難恢復的效益
 
-NetApp Disaster Recovery有以下優勢：
+災難恢復提供以下優勢：
 
-* 透過多個時間點復原操作簡化 vCenter 發現和應用程式復原的使用者體驗。
+* 簡化 vCenter 和 Kubernetes 叢集探索與應用程式恢復的使用者體驗，並支援多個時間點恢復操作。
 * 透過降低營運成本來降低整體擁有成本，並能夠以最少的資源創建和調整災難復原計劃。
 * 透過虛擬故障轉移測試持續做好災難復原準備，不會中斷營運。您可以定期測試 DR 故障轉移計劃，而不會影響生產工作負載。
 * 透過 IT 環境的動態變化和在災難復原計劃中解決該問題的能力來更快地實現價值。
 * 能夠透過ONTAP和 VMware 的後端編排同時管理儲存層和虛擬層，而無需部署和維護虛擬伺服器設備 (VSA)。
+* 使用相同的 ONTAP SnapMirror 技術與 Trident Protect 協調，為 Kubernetes 工作負載提供以應用程式為中心的保護。資源轉換可讓您在容錯移轉期間，將工作負載調整至恢復環境。
 * VMware 的 DR 解決方案可能會佔用大量資源。許多 DR 解決方案使用 VSA 在 VMware 虛擬層複製虛擬機，這會消耗更多的運算資源並損失ONTAP寶貴的儲存效率。由於災難復原使用ONTAP SnapMirror技術，它可以使用我們的永久增量複製模型將資料從生產資料儲存複製到 DR 站點，並具有ONTAP的所有本機資料壓縮和重複資料刪除效率。
 
 
 
 
-[[capabilities-of-netapp-disaster-recovery]]
-== NetApp Disaster Recovery 的功能
+[[capabilities-of-disaster-recovery]]
+== 災難恢復能力
 
-NetApp Disaster Recovery讓您充分利用多種NetApp技術來實現以下目標：
+災難恢復使您能夠充分利用多種 NetApp 技術來實現以下目標：
 
 * 使用SnapMirror複製將本地生產站點上的 VMware 應用程式複製到雲端或本地端的災難復原遠端站點。
-* 將 VMware 工作負載從原始站點遷移到另一個站點。
-* 執行故障轉移測試。執行此操作時，服務會建立臨時虛擬機器。Disaster Recovery 會根據選定的快照建立一個新的 FlexClone 磁碟區，並將由該 FlexClone 磁碟區支援的暫存資料儲存區對應到 ESXi 主機。此程序不會佔用內部部署 ONTAP 儲存設備或 AWS 中 FSx for NetApp ONTAP 儲存設備的額外實體容量。原始來源磁碟區不會被修改，即使在災難復原期間，複本工作也可以繼續運作。
-* 如果發生災難，請根據需要將主站點故障轉移到災難復原站點，該站點可以是具有Amazon FSx for NetApp ONTAP 的AWS 上的 VMware Cloud，也可以是具有ONTAP的本地 VMware 環境。
+* 使用 SnapMirror 複寫和 Trident Protect 將 Kubernetes 應用程式複寫到目的地 Kubernetes 叢集。
+* 將 VMware 工作負載從原始站台遷移到另一個站台。目前不支援 Kubernetes 工作負載的遷移。
+* 執行容錯移轉測試。對於 VMware 工作負載，此服務會建立暫時的虛擬機器。災難恢復會從選定的快照建立新的 FlexClone Volume，並將由 FlexClone Volume 支援的暫存資料存放區對應至 ESXi 主機。此程序不會使用內部部署 ONTAP 儲存設備或 AWS 中 FSx for NetApp ONTAP 儲存設備的額外實體容量。原始來源 Volume 不會被修改，即使在災難恢復期間，複本作業也可以繼續進行。您也可以測試 Kubernetes 工作負載的容錯移轉，並在之後清理測試資源。
+* 發生災難時，可隨需將主站台容錯移轉至災難恢復站台。對於 VMware 工作負載，災難恢復站台可以是搭配 Amazon FSx for NetApp ONTAP 的 VMware Cloud on AWS，或是搭配 ONTAP 的內部部署 VMware 環境。對於 Kubernetes 工作負載，您可以容錯移轉至複寫計畫中的目的地叢集。
 * 災難解決後，根據需要從災難復原站點故障回復到主站點。
-* 將虛擬機器或資料儲存分組到邏輯資源組中，以實現高效管理。
+* 將虛擬機器、資料儲存或 Kubernetes 資源分組到邏輯資源群組中，以便進行高效管理。
+* 對於 Kubernetes 工作負載，使用資源轉換使應用程式在容錯移轉期間適應恢復環境，並使用快照前或快照後指令碼來管理應用程式的靜止與恢復。
 
 
-image:../use/evs-use-cases.png["顯示 NetApp Disaster Recovery 使用案例的圖表"]
+image:../use/evs-use-cases.png["顯示災難恢復使用案例的圖表"]
 
 
-NOTE: 您必須在 vSphere Server 中、於 NetApp Disaster Recovery 之外設定 vSphere 伺服器。
+NOTE: 對於 VMware 工作負載，您必須在 vSphere 伺服器中的災難恢復之外設定 vSphere 伺服器。
 
 
 
 [[cost]]
 == 成本
 
-NetApp不會向您收取NetApp Disaster Recovery試用版的費用。
+NetApp 不會向您收取使用災難恢復試用版的費用。
 
-NetApp Disaster Recovery可以透過NetApp授權或透過 Amazon Web Services 的年度訂閱計畫使用。
+災難恢復可搭配 NetApp 授權，或透過 Amazon Web Services 的年度訂閱方案來使用。
 
 
-IMPORTANT: 一些版本包括技術預覽。 NetApp不會向您收取任何預覽的工作負載容量的費用。看link:../release-notes/dr-whats-new.html["NetApp Disaster Recovery的新功能"]了解有關最新技術預覽的資訊。
+IMPORTANT: 部分版本包含技術預覽。NetApp 不會對任何預覽的工作負載容量向您收取費用。如需最新技術預覽的相關資訊，請參閱 link:../release-notes/dr-whats-new.html["災難恢復的新功能"]。
 
 
 
@@ -99,21 +107,21 @@ IMPORTANT: 一些版本包括技術預覽。 NetApp不會向您收取任何預�
 
 所有NetApp資料服務的授權均透過NetApp Console中的訂閱進行管理。設定 BYOL 後，您可以在控制台中看到該服務的有效授權。
 
-Disaster Recovery 是根據受保護 ONTAP 磁碟區上託管的資料量來授權。此服務透過將受保護的 VM 對應到其 vCenter 資料存放區，來決定哪些磁碟區應納入授權範圍。每個資料存放區都託管在 ONTAP 磁碟區或 LUN 上。ONTAP 針對該磁碟區或 LUN 所報告的已用容量會用於授權判定。
+災難恢復的授權是根據受保護的 ONTAP Volume 上託管的資料量來計算。此服務透過將受保護的虛擬機器對應至其 vCenter 資料存放區，來決定哪些 Volume 應納入授權考量。每個資料存放區都託管在 ONTAP Volume 或 LUN 上。ONTAP 針對該 Volume 或 LUN 報告的已使用容量將用於決定授權。Kubernetes 工作負載的授權計算方式相同。
 
-受保護的磁碟區可以託管許多虛擬機器。有些可能不屬於NetApp Disaster Recovery資源群組。無論如何，該磁碟區或 LUN 上所有虛擬機器消耗的儲存都將用於滿足許可證最大容量要求。
+受保護的 Volume 可以主機多個虛擬機器。其中一些可能不屬於災難恢復資源群組。無論如何，該 Volume 或 LUN 上所有虛擬機器所使用的儲存設備都會計入授權的最大容量。
 
 
-NOTE: NetApp Disaster Recovery 費用是根據來源站台上資料存放區的已使用容量計算，前提是至少有一個虛擬機器或 Kubernetes 資源具有複寫計劃。已容錯移轉資料存放區的容量不包含在容量配額中。對於 BYOL，如果資料超過允許的容量，服務中的操作將受到限制，直到您取得額外的容量授權或在 NetApp Console 中升級授權。
+NOTE: 災難恢復費用是基於來源站台上資料儲存的已使用容量，前提是至少有一個虛擬機器或 Kubernetes 資源具有複寫計畫。容錯移轉資料儲存的容量不包含在容量配額中。對於 BYOL ，如果資料超過允許的容量，則服務中的操作將受到限制，直到您獲得額外的容量授權或在 NetApp Console 中升級授權。
 
-有關設定NetApp Disaster Recovery許可的詳細信息，請參閱link:../get-started/dr-licensing.html["設定NetApp Disaster Recovery許可"]。
+如需設定災難恢復授權的詳細資訊，請參閱link:../get-started/dr-licensing.html["設定災難恢復授權"]。
 
 
 
 [[30-day-free-trial]]
 == 30天免費試用
 
-您可以免費試用 NetApp Disaster Recovery 30 天。
+您可以免費試用災難恢復 30 天。
 
 若要在 30 天試用期後繼續使用，您需要向雲端供應商取得隨用隨付（PAYGO）訂閱，或向 NetApp 購買 BYOL 授權。
 
@@ -121,30 +129,35 @@ NOTE: NetApp Disaster Recovery 費用是根據來源站台上資料存放區的�
 
 
 
-[[how-netapp-disaster-recovery-works]]
-== NetApp Disaster Recovery的工作原理
+[[how-disaster-recovery-works]]
+== 災難恢復的工作原理
 
-NetApp Disaster Recovery是託管在NetApp Console軟體即服務 (SaaS) 環境中的服務。災難復原可以將從本機站點複製到Amazon FSx for ONTAP或其他本機站點的工作負載復原。此服務可自動執行從SnapMirror層級的恢復，包括將虛擬機器註冊到 VMware Cloud on AWS，以及直接在 VMware 網路虛擬化和安全平台 NSX-T 上進行網路對應。所有虛擬機器雲端環境均包含此功能。
+災難恢復是可從 NetApp Console 軟體以服務形式（SaaS）環境取得的服務。災難恢復可恢復從內部部署站台複寫到 Amazon FSx for ONTAP 或另一個內部部署站台的工作負載。對於 VMware 工作負載，此服務可自動執行從 SnapMirror 層級、透過虛擬機器註冊到 VMware Cloud on AWS，一直到直接在 VMware 網路虛擬化與安全性平台 NSX-T 上進行網路對應的恢復程序。所有虛擬機器雲端環境均包含此功能。
 
-NetApp Disaster Recovery使用ONTAP SnapMirror技術，該技術可提供高效的複製並保留ONTAP永久增量快照的效率。  SnapMirror複製可確保應用程式一致的快照副本始終保持同步，且資料在故障轉移後可立即使用。
+災難恢復採用 ONTAP SnapMirror 技術，該技術提供高效的複寫，並保留了 ONTAP 永久增量快照的優勢。SnapMirror 複寫可確保應用程式一致性快照副本始終保持同步，並且在容錯移轉後資料可以立即使用。
 
-image:dr-architecture-diagram-70-2.png["顯示 NetApp Disaster Recovery 服務基礎架構架構的圖表"]
+image:dr-architecture-diagram-70-2.png["災難恢復服務基礎架構的架構圖"]
 
-當災難發生時，此服務可協助您透過中斷SnapMirror關係並使目標網站處於活動狀態來復原其他本機 VMware 環境或 VMC 中的虛擬機器。
+當發生災難時，此服務可透過中斷 SnapMirror 關係並使目的地站台成為作用中，協助您在另一個內部部署 VMware 環境或 VMC 中恢復 VMware 虛擬機器。
 
 * 該服務還允許您將虛擬機器故障還原到原始來源位置。
 * 您可以在不中斷原始虛擬機器的情況下測試災難復原故障轉移流程。此測試透過建立磁碟區的FlexClone將虛擬機器還原到隔離網路。
 * 對於故障轉移或測試故障轉移過程，您可以選擇最新（預設）或選定的快照來還原虛擬機器。
 
 
+*Kubernetes 工作負載*
+
+對於 Kubernetes 工作負載，災難恢復使用 Trident Protect 來保護執行在 Kubernetes 叢集（包括 OpenShift 虛擬化環境）上的應用程式。該服務使用 SnapMirror 來複寫 NetApp Trident 在 ONTAP 儲存設備上配置的持續性 Volume。Trident Protect 將 Kubernetes 保護資料儲存在 AppVault 中，這是一個雲端儲存目標。發生災難時，您可以容錯移轉到目的地叢集，並在災難解決後容錯回復到原始來源叢集。Kubernetes 工作負載的容錯移轉、容錯回復和容錯移轉測試遵循與 VMware 工作負載相同的順序。
+
 *災難復原的組成部分*
 
 Disaster Recovery 使用以下元件：
 
 * * NetApp Console*：用於管理災難復原計畫的使用者介面。您可以使用NetApp Console在本機和雲端環境中建立和管理複製計畫、資源群組和故障轉移作業。
-* *控制台代理*：在您的雲端託管網路或本機 VMware 環境中執行的輕量級軟體元件。它與NetApp Console通訊並管理本地環境和災難復原站點之間的資料複製。控制台代理程式安裝在 VMware 環境中的虛擬機器上。
-* * ONTAP儲存叢集*： ONTAP儲存叢集是託管 VMware 工作負載的主要儲存系統。 ONTAP儲存叢集為您的災難復原計畫提供底層儲存基礎架構。災難復原使用ONTAP儲存 API 來管理ONTAP儲存叢集（例如本機陣列）和基於雲端的解決方案（例如Amazon FSx for NetApp ONTAP）。
+* *Console 代理程式*：在您的雲端託管網路或內部部署 VMware 環境中執行的輕量級軟體元件。它會與 NetApp Console 通訊，並管理內部部署環境與災難恢復站台之間的資料複寫。Console 代理程式安裝在您 VMware 環境中的虛擬機器上。對於 Kubernetes 工作負載，Console 代理程式會以相同的方式與您的 Kubernetes 叢集通訊。
+* *ONTAP 儲存設備叢集*：ONTAP 儲存設備叢集是託管 VMware 和 Kubernetes 工作負載的主儲存設備系統。ONTAP 儲存設備叢集為您的災難恢復計畫提供基礎儲存設備基礎架構。災難恢復使用 ONTAP 儲存設備 API 來管理 ONTAP 儲存設備叢集，例如內部部署陣列，以及雲端型解決方案，例如 Amazon FSx for NetApp ONTAP。
 * *vCenter 伺服器*：VMware vCenter 是您的 VMware 環境的管理伺服器。它管理 ESXi 主機及其相關的資料儲存。控制台代理程式與 VMware vCenter 通信，以管理本機環境和災難復原站點之間的資料複製。這包括將ONTAP LUN 和磁碟區註冊為資料儲存、重新配置虛擬機器以及啟動和停止虛擬機器。
+* *Kubernetes 叢集和 Trident Protect*：對於 Kubernetes 工作負載，Trident Protect 會安裝並註冊在災難恢復所保護的每個 Kubernetes 叢集上。當您將 Kubernetes 叢集新增為站台時，災難恢復會引導您在該叢集上安裝並註冊 Trident Protect。
 
 
 *災難復原保障工作流程*
@@ -176,11 +189,13 @@ Disaster Recovery 使用以下元件：
 [[supported-protection-targets-and-datastore-types]]
 == 支援的保護目標和資料儲存類型
 
-*支援的資料儲存類型* NetApp Disaster Recovery支援以下資料儲存類型：
+*支援的資料儲存類型* 災難恢復支援以下資料儲存類型：
 
 * 託管在ONTAP叢集上的ONTAP FlexVol磁碟區上的 NFS 資料儲存庫。
 * 使用 iSCSI 或 FC 協定的 VMware vSphere 虛擬機器檔案系統 (VMFS) 資料存儲
 
+
+對於 Kubernetes 工作負載，Disaster Recovery 可保護透過 NetApp Trident on ONTAP 儲存設備佈建的持續性 Volume。
 
 *支持的保護目標*
 
@@ -189,19 +204,22 @@ Disaster Recovery 使用以下元件：
 * Amazon Elastic VMware 服務
 * Azure VMware Solution 與 NetApp Cloud Volumes ONTAP (iSCSI)（私有預覽版）
 * Google Cloud VMware Engine (GCVE) 與Google Cloud NetApp Volumes
+* 執行 Trident 管理的 ONTAP 儲存設備（使用 Trident Protect 保護）的 Kubernetes 叢集
 
 
 
 
-[[terms-that-might-help-you-with-netapp-disaster-recovery]]
-== 可能對您有幫助的NetApp Disaster Recovery術語
+[[terms-that-might-help-you-with-disaster-recovery]]
+== 可能對您災難恢復有幫助的術語
 
 了解一些與災難復原相關的術語可能會對您有所幫助。
 
 * *資料儲存*：VMware vCenter 資料容器，它使用檔案系統來保存 VMDK 檔案。典型的資料儲存類型是 NFS、VMFS、vSAN 或 vVol。災難復原支援 NFS 和 VMFS 資料儲存。每個 VMware 資料儲存庫都託管在單一ONTAP磁碟區或 LUN 上。災難復原支援位於ONTAP叢集上的FlexVol磁碟區上託管的 NFS 和 VMFS 資料儲存庫。
 * *複製計畫*：一組關於備份頻率以及如何處理故障轉移事件的規則。計劃被指派給一個或多個資源組。
 * *復原點目標 (RPO)*：發生災難時可接受的最大資料遺失量。  RPO 在複製計劃的資料複製頻率或複製計劃中定義。
-* *復原時間目標 (RTO)*：從災難中復原可接受的最長時間。  RTO 在複製計畫中定義，是故障轉移到 DR 站點並重新啟動所有虛擬機器所需的時間。
-* *資源群組*：一個邏輯容器，使您能夠將多個虛擬機器作為一個單元進行管理。一個虛擬機器一次只能屬於一個資源群組。您可以為想要保護的每個應用程式或工作負載建立一個資源組。
-* *站點*：通常與託管一個或多個 vCenter 叢集和ONTAP儲存的實體資料中心或雲端位置相關聯的邏輯容器。
+* *恢復時間目標（RTO）*：可接受從災難中恢復的最長時間。RTO 定義於複寫計畫中，是指容錯移轉至災難恢復站台並重新啟動所有虛擬機器或應用程式所需的時間。
+* *資源群組*：一種邏輯 Container，可讓您將多個虛擬機器、資料儲存或 Kubernetes 資源作為單一單位進行管理。一個虛擬機器一次只能屬於一個資源群組。您可以為每個想要保護的應用程式或工作負載建立一個資源群組。
+* *站台*：通常與實體資料中心或雲端位置關聯的邏輯 Container，託管一個或多個 vCenter 叢集或 Kubernetes 叢集以及 ONTAP 儲存設備。
+* *AppVault*：對於 Kubernetes 工作負載，這是 Trident Protect 儲存 Kubernetes 保護資料的雲端儲存目標。
+* *Trident Protect*：災難恢復用來保護 Kubernetes 應用程式的 NetApp 軟體。
 

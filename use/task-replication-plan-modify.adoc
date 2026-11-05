@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: use/task-replication-plan-modify.html 
-keywords: disaster recovery, bluexp disaster recovery, failover, replication plan, modify, compliance time, test failover 
+keywords: disaster recovery, bluexp disaster recovery, failover, replication plan, modify, compliance time, test failover, vmware, kubernetes 
 summary: 修改複寫計劃以調整法規遵循時間或容錯移轉設定。 
 ---
 = 修改 NetApp Disaster Recovery 中的複寫計畫
@@ -14,7 +14,7 @@ summary: 修改複寫計劃以調整法規遵循時間或容錯移轉設定。
 [role="lead"]
 在 NetApp Disaster Recovery 中，您可以修改複寫計畫的法規遵循時間影響，以確保容錯移轉測試成功完成。
 
-您可以修改法規遵循時間並測試容錯移轉的影響。若要編輯計畫重複週期、容錯移轉對應或 VM，請刪除複寫計畫並建立新的計畫。
+您可以修改法規遵循時間並測試故障轉移影響。若要編輯計劃重複週期、故障轉移對應或相關資源，請刪除複寫計劃並建立新計劃。
 
 
 
@@ -22,9 +22,9 @@ summary: 修改複寫計劃以調整法規遵循時間或容錯移轉設定。
 == 可修改欄位
 
 * *合規時間影響*：建立複製計畫時，服務預設會建立合規計畫。預設合規時間為 30 分鐘。若要變更此時間，您可以編輯複製計畫中的時間表。
-* *測試容錯移轉影響*：您可以隨需或依排程測試容錯移轉程序。這可讓您測試將 VM 容錯移轉至複寫計畫中指定的目的地。
+* *測試故障轉移影響*：您可以隨需或依排程測試故障轉移程序。這可讓您測試將虛擬機器或 Kubernetes 應用程式故障轉移至複寫計畫中指定的目的地。
 +
-測試故障轉移會建立FlexClone磁碟區、掛載資料儲存庫並在該資料儲存庫上移動工作負載。測試故障轉移作業不會影響生產工作負載、測試站點上使用的SnapMirror關係以及必須繼續正常運作的受保護工作負載。
+測試故障轉移會建立一個 FlexClone® Volume，對於 VMware 工作負載，會掛載資料儲存並移動該資料儲存上的工作負載。測試故障轉移操作不會影響生產工作負載、測試站台上使用的 SnapMirror 關係，以及必須繼續正常運作的受保護工作負載。
 
 
 
@@ -35,12 +35,12 @@ summary: 修改複寫計劃以調整法規遵循時間或容錯移轉設定。
 [[modify-a-replication-plan]]
 == 修改複寫計畫
 
-. 從NetApp Disaster Recovery選單中，選擇 *複製計畫*。
+. 從災難恢復選單中，選擇 *複寫計畫*。
 +
 image:dr-plan-list.png["顯示複製計劃清單的螢幕截圖"]
 
-. 選擇*操作*image:icon-horizontal-dots.png["水平點操作選單"]圖示並選擇*編輯時間表*。
-. 輸入您希望NetApp Disaster Recovery檢查測試合規性的頻率（分鐘）。
+. 選取 *動作* image:icon-horizontal-dots.png["水平點操作選單"] 選單，然後選取 *編輯排程*。
+. 請輸入災難恢復檢查測試法規遵循的頻率（以分鐘為單位）。
 . 若要檢查您的故障轉移測試是否正常，請檢查*按月計劃執行故障轉移*。
 +
 .. 選擇您希望執行這些測試的日期和時間。
@@ -54,7 +54,29 @@ image:dr-plan-schedule-edit2.png["螢幕截圖顯示了您可以在哪裡編輯�
 . 若要在故障轉移測試完成後清理測試環境，請勾選*測試故障轉移後自動清理*並輸入在清理開始前等待的分鐘數。
 +
 
-NOTE: 此程序會從測試位置取消註冊暫存的虛擬機器，刪除已建立的 FlexClone Volume，並卸載暫存的資料儲存區。
+NOTE: 此程序會刪除已建立的 FlexClone Volume，並從測試位置移除臨時測試資源。對於 VMware 工作負載，它還會取消註冊臨時虛擬機器並卸載臨時資料存放區。
 
 . 選擇*儲存*。
+
+
+
+
+[[delete-or-disable-a-replication-plan]]
+== 刪除或停用複寫計劃
+
+例如，如果您需要套用更新或執行維護，而這些更新或維護會影響複寫計劃及其相關操作的完整性，則可以暫時停用複寫計劃。
+
+如果您不再需要複寫計畫，或者需要對其進行超出修改範圍的重大變更，您也可以刪除複寫計畫。
+
+.步驟
+. 從災難恢復選單中，選擇 *複寫計畫*。
++
+image:dr-plan-list.png["顯示複製計劃清單的螢幕截圖"]
+
+. 選擇您要停用或刪除之複寫計畫的 *Actions* image:icon-horizontal-dots.png["水平點操作選單"] 功能表。
+. 選擇 *刪除* 或 *停用*。
+. 請查看彈出視窗中的說明。若要停用，請選擇 *停用*。
++
+如果您選擇 *刪除*，請選擇要與複寫計畫一併刪除的相關快照或中繼資料：*刪除主要快照*、*刪除次要快照* 或 *刪除快照中繼資料*。在文字方塊中輸入「delete」以確認作業，然後選擇 *刪除*。
+
 

@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: use/manage.html 
-keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, replication plans, resource groups 
-summary: 您可以快速瀏覽所有NetApp Disaster Recovery資源並管理 vCenter 網站、資源群組和複製計畫。 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, kubernetes, trident protect, replication plans, resource groups 
+summary: 您可以快速查看所有 NetApp Disaster Recovery 資源，並管理 VMware 和 Kubernetes 工作負載的站台、資源群組和複寫計畫。 
 ---
 = 使用 NetApp Disaster Recovery 管理站台、資源群組和複寫計劃
 :hardbreaks:
@@ -14,29 +14,30 @@ summary: 您可以快速瀏覽所有NetApp Disaster Recovery資源並管理 vCen
 [role="lead"]
 NetApp Disaster Recovery提供所有資源的概覽和更詳細的觀點：
 
-* 站點
+* 站台（vCenter 和 Kubernetes）
 * 資源組
 * 複製計劃
-* 資料儲存
-* 虛擬機
+* 資料儲存（VMware）
+* 虛擬機器（VMware）
+* Kubernetes 叢集和 Trident Protect
 
 
 任務需要不同的NetApp Console角色。有關詳細信息，請參閱每個任務中的“所需的NetApp Console角色”部分。
 
-link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["了解NetApp Disaster Recovery中的使用者角色和權限"]。https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服務的NetApp Console存取角色"^]。
+link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["了解災難恢復中的使用者角色和權限"]。https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服務的NetApp Console存取角色"^]。
 
 
 
 [[manage-vcenter-sites]]
 == 管理 vCenter 站點
 
-您可以編輯 vCenter 站台名稱和類型（本機部署或 AWS）。
+您可以編輯 vCenter 站台名稱和類型（內部部署或 AWS）。若要管理 Kubernetes 叢集和站台，請參閱 link:manage.html#manage-trident-protect["管理 Trident Protect"]。
 
 *所需 NetApp Console 角色* 執行此任務需要組織管理員、資料夾或專案管理員，或災難復原管理員角色。link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["了解NetApp Disaster Recovery中的使用者角色和權限"^]。link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服務的NetApp Console存取角色"^]。
 
 .步驟
 . 從選單中選擇*網站*。
-. 選擇“操作”選項image:../use/icon-vertical-dots.png["NetApp Disaster Recovery服務​​中的操作選單圖標"]在 vCenter 名稱右側，選擇「*編輯*」。
+. 選取 vCenter 名稱右側的 *動作* 選項 image:../use/icon-vertical-dots.png["災難恢復服務中的動作選單圖示"]，然後選取 *編輯*。
 . 編輯 vCenter 網站名稱和位置。
 
 
@@ -45,7 +46,7 @@ link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-re
 [[manage-resource-groups]]
 == 管理資源組
 
-您可以按虛擬機器或資料存放區建立資源群組。您可以在建立複寫計劃時新增它們，也可以稍後新增。
+您可以依虛擬機器、資料存放區或 Kubernetes 資源來建立資源群組。您可以在建立複寫計畫時新增它們，也可以稍後新增。
 
 *所需 NetApp Console 角色* 執行此任務需要超級管理員、災難復原管理員或災難復原應用程式管理員角色。link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["了解NetApp Disaster Recovery中的使用者角色和權限"^]。link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服務的NetApp Console存取角色"^]。
 
@@ -68,7 +69,7 @@ link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-re
 .步驟
 . 從選單中選擇*資源組*。
 . 若要新增資源組，請選擇「新增組」。
-. 您可以選擇“操作”選項來修改或刪除資源組。image:../use/icon-horizontal-dots.png["NetApp Disaster Recovery服務​​中的操作選單圖標"] 。
+. 您可以選取 *動作* 選項 image:../use/icon-horizontal-dots.png["災難恢復服務中的動作選單圖示"] 來修改或刪除資源群組。
 
 
 
@@ -89,7 +90,7 @@ link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-re
 +
 image:../use/dr-plan-list.png["複製計劃列表"]
 
-. 若要查看計劃詳情，請選擇「操作」選項image:../use/icon-horizontal-dots.png["NetApp Disaster Recovery服務​​中的操作選單圖標"]並選擇*查看計劃詳情*。
+. 若要檢視計劃詳情，請選擇 *操作* 選項 image:../use/icon-horizontal-dots.png["災難恢復服務中的動作選單圖示"]，然後選擇 *檢視計劃詳情*。
 . 執行下列操作之一：
 +
 ** 若要編輯計劃詳情（更改重複），請選擇“計劃詳情”選項卡，然後選擇右側的“編輯”圖示。
@@ -98,8 +99,8 @@ image:../use/dr-plan-list.png["複製計劃列表"]
 
 
 . 透過選擇左側麵包屑中的「複製計畫」來返回計畫清單。
-. 若要對計劃執行操作，請從複製計劃清單中選擇計劃右側的 *Actions* （操作）選項 image:../use/icon-horizontal-dots.png["NetApp Disaster Recovery服務​​中的操作選單圖標"]，然後選擇一個操作：*Edit schedules* （編輯排程）、*Test failover* （測試容錯移轉）、*Fail over* （容錯移轉）、*Fail back* （容錯回復）、*Migrate* （移轉）、*Take snapshot now* （立即擷取快照）、*Clean up old snapshots* （清理舊快照）、*Disable* （停用）、*Enable* （啟用）或 *Delete* （刪除）。
-. 若要設定或變更測試故障轉移計畫或設定合規性頻率檢查，請選擇「*操作*」選項image:../use/icon-horizontal-dots.png["NetApp Disaster Recovery服務​​中的操作選單圖標"]在計畫右側，選擇「編輯時間表」。
+. 若要對計劃執行操作，請從複製計劃清單中選擇計劃右側的 *Actions* （操作）選項 image:../use/icon-horizontal-dots.png["災難恢復服務中的動作選單圖示"]，然後選擇一個操作：*Edit schedules* （編輯排程）、*Test failover* （測試容錯移轉）、*Fail over* （容錯移轉）、*Fail back* （容錯回復）、*Migrate* （移轉）、*Take snapshot now* （立即擷取快照）、*Clean up old snapshots* （清理舊快照）、*Disable* （停用）、*Enable* （啟用）或 *Delete* （刪除）。
+. 若要設定或變更測試容錯移轉排程或設定法規遵循頻率檢查，請選取計畫右側的 *Actions* 選項 image:../use/icon-horizontal-dots.png["災難恢復服務中的動作選單圖示"]，然後選取 *Edit schedules*。
 +
 .. 在「編輯計畫」頁面中，輸入您希望故障轉移合規性檢查發生的頻率（分鐘）。
 .. 檢查*依計畫執行測試故障轉移*。
@@ -123,7 +124,7 @@ image:../use/dr-plan-list.png["複製計劃列表"]
 +
 image:../use/dr-plan-list.png["複製計劃列表"]
 
-. 從複製計劃清單中，選擇“操作”選項image:../use/icon-horizontal-dots.png["NetApp Disaster Recovery服務​​中的操作選單圖標"]然後*協調快照*。
+. 從複寫計劃清單中，選擇 *操作* 選項 image:../use/icon-horizontal-dots.png["災難恢復服務中的動作選單圖示"] 然後選擇 *協調快照*。
 . 審查對帳資訊。
 . 選擇*協調*。
 
@@ -139,7 +140,7 @@ image:../use/dr-plan-list.png["複製計劃列表"]
 
 .步驟
 . 從選單中選擇*複製計劃*。
-. 選擇“操作”選項image:../use/icon-horizontal-dots.png["NetApp Disaster Recovery服務​​中的操作選單圖標"]在計劃右側，選擇“*刪除*”。
+. 選擇計畫右側的 *操作* 選項 image:../use/icon-horizontal-dots.png["災難恢復服務中的動作選單圖示"]，然後選擇 *刪除*。
 . 選擇要刪除主快照、輔助快照，還是僅刪除計畫建立的元資料。
 . 輸入“刪除”以確認刪除。
 . 選擇*刪除*。
@@ -200,7 +201,7 @@ image:../use/dr-plan-failover-edit.png["編輯故障轉移映射頁面"]
 [[view-datastore-information]]
 == 查看資料儲存資訊
 
-您可以檢視來源和目標站台上存在多少資料存放區。
+對於 VMware 工作負載，您可以檢視來源和目標站台上存在的資料儲存數量。
 
 *必要的 NetApp Console 角色* 執行此工作需要超級管理員、災難恢復管理員、災難恢復容錯移轉管理員、災難恢復應用程式管理員或災難恢復檢視者角色。link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["了解NetApp Disaster Recovery中的使用者角色和權限"^]。link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服務的NetApp Console存取角色"^]。
 
@@ -216,7 +217,7 @@ image:../use/dr-plan-failover-edit.png["編輯故障轉移映射頁面"]
 [[view-virtual-machines-information]]
 == 查看虛擬機器資訊
 
-您可以檢視來源和目標站台上存在的虛擬機器數量，以及 CPU、記憶體容量和可用容量。
+對於 VMware 工作負載，您可以檢視來源和目標站台上存在的虛擬機器數量，以及 CPU、記憶體容量和可用容量。
 
 *必要的 NetApp Console 角色* 執行此工作需要超級管理員、災難恢復管理員、災難恢復容錯移轉管理員、災難恢復應用程式管理員或災難恢復檢視者角色。link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["了解NetApp Disaster Recovery中的使用者角色和權限"^]。link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服務的NetApp Console存取角色"^]。
 

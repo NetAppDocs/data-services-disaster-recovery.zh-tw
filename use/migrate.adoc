@@ -28,7 +28,7 @@ NOTE: 目前不支援 Kubernetes 型工作負載的移轉。
 . 從NetApp Console左側導覽中，選擇 *保護* > *災難復原*。
 . 從選單中選擇*複製計劃*。
 . 選擇複製計劃。
-. 在右側、選取 *Actions* 選項 image:../use/icon-horizontal-dots.png["NetApp Disaster Recovery服務​​中的操作選單圖標"]、將滑鼠游標暫留在 *Recover* 上、然後選取 *Migrate* 。
+. 在右側、選取 *Actions* 選項 image:../use/icon-horizontal-dots.png["災難恢復服務中的動作選單圖示"]、將滑鼠游標暫留在 *Recover* 上、然後選取 *Migrate* 。
 . 在對話方塊中，選擇 *立即建立快照* 以建立新的遷移快照，或 *選擇* 以選擇現有的遷移快照。
 . 在文字方塊中輸入「Migrate」以確認操作，然後選取 *Migrate*。
 

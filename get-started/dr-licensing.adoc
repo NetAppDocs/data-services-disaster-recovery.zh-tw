@@ -29,7 +29,7 @@ NetApp Disaster Recovery 提供多種授權選項，包括免費試用、隨用�
 
 
 
-NOTE: 當至少有一個虛擬機器具有複製計畫時， NetApp Disaster Recovery費用是基於來源站點上資料儲存區的已使用容量。故障轉移資料儲存區的容量不包含在容量限額內。對於 BYOL，如果資料超出允許的容量，服務中的操作將受到限制，直到您獲得額外的容量授權或在NetApp Console中升級授權。
+NOTE: 災難恢復費用是根據來源站台的已用容量計算，前提是至少有一個虛擬機器或 Kubernetes 資源具有複寫計畫。容錯移轉資料存放區的容量不包含在容量配額中。對於 BYOL，如果資料超過允許的容量，服務中的作業將受到限制，直到您取得額外的容量授權或在 NetApp Console 中升級授權為止。
 
 link:https://docs.netapp.com/us-en/console-licenses-subscriptions/concept-licenses-subscriptions.html["了解有關訂閱的更多信息"^]。
 
@@ -45,7 +45,7 @@ link:https://docs.netapp.com/us-en/console-licenses-subscriptions/concept-licens
 [[try-it-out-using-a-30-day-free-trial]]
 == 使用 30 天免費試用版嘗試
 
-您可以透過 30 天免費試用版來試用NetApp Disaster Recovery 。
+您可以免費試用災難恢復 30 天。
 
 
 NOTE: 試用期間不實施任何容量限制。
@@ -61,13 +61,13 @@ NOTE: 試用期間不實施任何容量限制。
 如果這是您第一次登入此服務，則會出現登入頁面。
 
 +
-image:draas-landing6-free-trial.png["NetApp Disaster Recovery的登入頁面螢幕截圖"]
+image:draas-landing6-free-trial.png["災難恢復登陸頁面快照"]
 
 . 如果您尚未為其他服務新增控制台代理，請新增一個。
 +
 若要新增控制台代理，請參閱 https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html["了解控制台代理"^]。
 
-. 設定代理程式後，在NetApp Disaster Recovery登入頁面中，新增代理程式的按鈕將變更為開始免費試用的按鈕。選擇*開始免費試用*。
+. 設定代理程式後，在災難恢復活動網頁上，新增代理程式的按鈕會變成開始免費試用的按鈕。選擇 *開始免費試用*。
 . 首先新增主站台和災難復原站台。
 +
 如需詳細資訊，請參閱link:../use/sites-add.html["新增站台"]。
@@ -82,16 +82,16 @@ image:draas-landing6-free-trial.png["NetApp Disaster Recovery的登入頁面螢�
 免費試用結束後，您可以從NetApp購買許可證，也可以透過 AWS Marketplace 或 Microsoft Azure Marketplace 訂閱。此過程提供瞭如何在其中一個市場中直接訂閱的高級概述。
 
 .步驟
-. 在NetApp Disaster Recovery中，您會看到一則訊息，提示免費試用即將到期。在訊息中，選擇*訂閱或購買許可證*。
+. 在災難恢復中，您會看到一則訊息，提示免費試用即將到期。在該訊息中，選取 *訂閱或購買授權*。
 +
 或者，從 NetApp Disaster Recovery 選單中選取 *View payment methods*。
 
 +
-image:dr-licensing-payment-methods.png["NetApp Disaster Recovery付款方式頁面"]
+image:dr-licensing-payment-methods.png["災難恢復付款方式頁面"]
 
 . 選擇*在 AWS Marketplace 中訂閱*或*在 Azure Marketplace 中訂閱*。
-. 使用 AWS Marketplace 或 Microsoft Azure Marketplace 訂閱 *NetApp Disaster Recovery*。
-. 當您返回NetApp Disaster Recovery時，會出現一則訊息表示您已訂閱。
+. 使用 AWS Marketplace 或 Microsoft Azure Marketplace 訂閱 *災難恢復*。
+. 返回災難恢復時，會顯示一則訊息，表示您已訂閱。
 +
 您可以在NetApp Console訂閱頁面查看訂閱詳細資訊。link:https://docs.netapp.com/us-en/console-licenses-subscriptions/task-homepage.html["詳細了解如何使用NetApp Console管理訂閱"^]。
 
@@ -111,7 +111,7 @@ image:dr-licensing-payment-methods.png["NetApp Disaster Recovery付款方式頁�
 [[add-the-license-to-the-netapp-console]]
 === 將授權新增至 NetApp Console
 
-從 NetApp 銷售代表購買 NetApp Disaster Recovery 授權後，您可以在 Console 中管理該授權。
+向 NetApp 銷售代表購買災難恢復授權後，您可以在主控台中管理該授權。
 
 https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-services-licenses.html["了解如何使用NetApp Console新增許可證"^]。
 
@@ -120,7 +120,7 @@ https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-se
 [[update-your-license-when-it-expires]]
 == 許可證到期時更新
 
-如果您的授權期限即將到期，或者您的授權容量即將達到上限，您將在 NetApp Disaster Recovery 使用者介面中收到通知。您可以在 NetApp Disaster Recovery 授權到期前更新授權，以確保服務使用不中斷。
+如果您的授權期限即將到期，或者您的授權容量即將達到上限，您將在災難恢復使用者介面中收到通知。您可以在災難恢復授權到期前進行更新，以確保服務使用不中斷。
 
 
 TIP: 此訊息也會出現在NetApp Console和 https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html#monitoring-operations-status-using-the-notification-center["通知"]。
@@ -135,7 +135,7 @@ https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-se
 您可以隨時停止免費試用，也可以等到試用期結束。
 
 .步驟
-. 在NetApp Disaster Recovery中，選擇 *免費試用 - 查看詳細資訊*。
+. 在災難恢復中，選擇 *免費試用 - 檢視詳細資料*。
 . 在下拉詳細資料中，選擇*結束免費試用*。
 +
 image:draas-trial-end3.png["結束免費試用頁面"]
@@ -146,7 +146,7 @@ image:draas-trial-end3.png["結束免費試用頁面"]
 
 +
 
-NOTE: 如果您結束免費試用，未要求刪除數據，且未購買許可證或訂閱，則NetApp Disaster Recovery在免費試用結束後 60 天刪除您的所有資料。
+NOTE: 如果您結束免費試用，未要求刪除資料，且未購買授權或訂閱，則災難恢復將在免費試用結束後 60 天刪除您的所有資料。
 
 . 在文字方塊中輸入「結束試用」。
 . 選擇*結束*。

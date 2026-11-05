@@ -4,7 +4,7 @@ permalink: reference/evs-deploy-guide-verify-rp.html
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter,amazon elastic vmware service 
 summary: 使用 Amazon EVS 和Amazon FSx for NetApp ONTAP介紹NetApp Disaster Recovery。 
 ---
-= 驗證NetApp Disaster Recovery中一切正常
+= 在適用於 Amazon EVS 的 NetApp Disaster Recovery 中驗證複寫計畫的健全狀況
 :allow-uri-read: 
 
 
@@ -13,7 +13,7 @@ summary: 使用 Amazon EVS 和Amazon FSx for NetApp ONTAP介紹NetApp Disaster R
 
 圖：複製計劃頁面image:evs-replication-plan-post-create.png["複製計劃頁面"]
 
-NetApp Disaster Recovery 會執行一系列測試，以驗證所有元件（包括 ONTAP 叢集、vCenter 叢集和 VM）是否可存取並已準備好進行保護。這稱為法規遵循檢查，並且會定期執行。
+災難恢復會執行一系列測試，以驗證所有元件（包括 ONTAP 叢集、vCenter 叢集和虛擬機器）是否可存取並已準備好進行保護。這稱為法規遵循檢查，會定期執行。
 
 複寫計畫頁面顯示以下資訊：
 

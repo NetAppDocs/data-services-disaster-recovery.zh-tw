@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: release-notes/dr-whats-new.html 
 keywords: disaster recovery, bluexp, disaster recovery, vmware, vcenter, draas, disaster 
-summary: NetApp Disaster Recovery 是一項基於雲端的災難復原服務，可自動化災難復原工作流程。使用 NetApp Disaster Recovery，您可以將執行於 ONTAP 儲存設備上的本地 VMware 工作負載，複寫到公有雲中的 VMware 軟體定義資料中心，作為災難復原站點，並使用 NetApp 雲端儲存。 
+summary: NetApp Disaster Recovery 是一項雲端型的災難恢復服務，可自動執行災難恢復工作流程。使用 NetApp Disaster Recovery，您可以將執行 ONTAP 儲存設備的內部部署 VMware 和 Kubernetes 工作負載複寫到災難恢復站台。 
 ---
 = NetApp Disaster Recovery的新功能
 :hardbreaks:
@@ -1079,7 +1079,7 @@ NOTE: NetApp不會向您收取任何預覽的工作負載容量的費用。
 [[05-july-2024]]
 == 2024年7月5日
 
-此NetApp Disaster Recovery版本包括以下更新：
+此災難恢復版本包含以下更新：
 
 
 
@@ -1146,16 +1146,16 @@ NOTE: NetApp不會向您收取任何預覽的工作負載容量的費用。
 [[updates-to-prerequisite-information]]
 === 先決條件資訊的更新
 
-NetApp Disaster Recovery前提條件資訊已更新。
+災難恢復先決條件資訊已更新。
 
-參考 https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-prerequisites.html["NetApp Disaster Recovery前提條件"]。
+請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-prerequisites.html["災難恢復先決條件"]。
 
 
 
 [[15-may-2024]]
 == 2024年5月15日
 
-此NetApp Disaster Recovery版本包括以下更新：
+此災難恢復版本包含以下更新：
 
 
 
@@ -1169,27 +1169,27 @@ NetApp Disaster Recovery前提條件資訊已更新。
 [[licensing-updates]]
 === 許可更新
 
-透過NetApp Disaster Recovery，您可以註冊 90 天免費試用版、透過 Amazon Marketplace 購買即用即付 (PAYGO) 訂閱或自帶授權 (BYOL)，後者是您從NetApp銷售代表或NetApp支援網站 (NSS) 取得的NetApp授權檔案 (NLF)。
+使用災難恢復，您可以註冊 90 天免費試用，透過 Amazon Marketplace 購買隨用隨付 (PAYGO) 訂閱，或自帶授權 (BYOL)，即您可以從您的 NetApp 銷售代表或從 NetApp 支援網站 (NSS) 取得的 NetApp 授權檔案 (NLF)。
 
-有關設定NetApp Disaster Recovery許可的詳細信息，請參閱link:../get-started/dr-licensing.html["設定許可"]。
+如需設定災難恢復授權的詳細資訊，請參閱link:../get-started/dr-licensing.html["設定許可"]。
 
-https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-intro.html["了解有關NetApp Disaster Recovery的更多信息"]。
+https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-intro.html["深入瞭解災難恢復"]。
 
 
 
 [[05-march-2024]]
 == 2024年3月5日
 
-這是NetApp Disaster Recovery的通用版本，其中包括以下更新。
+這是災難恢復的正式版本，其中包括以下更新。
 
 
 
 [[licensing-updates]]
 === 許可更新
 
-使用NetApp Disaster Recovery，您可以註冊 90 天免費試用或自帶授權 (BYOL)，也就是您從NetApp銷售代表取得的NetApp授權文件 (NLF)。您可以使用許可證序號在NetApp Console訂閱中啟動 BYOL。  NetApp Disaster Recovery費用是基於資料儲存區的配置容量。
+透過災難恢復，您可以註冊 90 天的免費試用，或使用自帶授權 （BYOL），這是一個您可以從 NetApp 業務代表處取得的 NetApp 授權檔案 （NLF）。您可以使用授權序號在 NetApp Console 訂閱中啟用 BYOL。災難恢復費用是根據資料存放區的資源配置容量來計算。
 
-有關設定NetApp Disaster Recovery許可的詳細信息，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-licensing.html["設定許可"]。
+如需設定災難恢復授權的詳細資訊，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-licensing.html["設定許可"]。
 
 有關管理*所有* NetApp Console資料服務的許可證的詳細信息，請參閱： https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-data-services-licenses.html["管理所有NetApp Console資料服務的許可證"^] 。
 
@@ -1207,7 +1207,7 @@ https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-int
 [[01-february-2024]]
 == 2024年2月1日
 
-此NetApp Disaster Recovery預覽版包括以下更新：
+此災難恢復預覽版本包含以下更新：
 
 
 
@@ -1227,7 +1227,7 @@ https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-int
 [[custom-scripts]]
 === 自訂腳本
 
-現在可以將其作為故障轉移後流程納入。使用自訂腳本，您可以讓NetApp Disaster Recovery在故障轉移程序後執行您的腳本。例如，您可以使用自訂腳本在故障轉移完成後還原所有資料庫事務。
+現在可以包含為容錯移轉後的程序。透過自訂指令碼，您可以讓災難恢復在容錯移轉程序之後執行您的指令碼。例如，您可以使用自訂指令碼在容錯移轉完成後恢復所有資料庫交易。
 
 有關詳細信息，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/failover.html["故障轉移到遠端站點"]。
 
@@ -1236,7 +1236,7 @@ https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-int
 [[snapmirror-relationship]]
 === SnapMirror關係
 
-現在您可以在製定複製計劃時創建SnapMirror關係。以前，您必須在NetApp Disaster Recovery之外建立關係。
+現在，您可以在制定複寫計畫時建立 SnapMirror 關係。以前，您必須在災難恢復之外建立關係。
 
 如需詳細資訊，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["建立複製計劃"]。
 
@@ -1245,7 +1245,7 @@ https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-int
 [[consistency-groups]]
 === 一致性組
 
-建立複製計劃時，您可以包含來自不同磁碟區和不同 SVM 的 VM。  NetApp Disaster Recovery透過包含所有磁碟區來建立一致性群組快照並更新所有輔助位置。
+建立複寫計劃時，您可以包含來自不同 Volume 和不同 SVM 的虛擬機器。災難恢復會透過包含所有 Volume 來建立一致性群組 Snapshot 快照技術，並更新所有次要位置。
 
 如需詳細資訊，請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["建立複製計劃"]。
 
@@ -1272,7 +1272,7 @@ https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-int
 [[11-january-2024]]
 == 2024年1月11日
 
-NetApp Disaster Recovery的預覽版本包括以下更新：
+本次災難恢復預覽版本包含以下更新：
 
 
 
@@ -1281,33 +1281,33 @@ NetApp Disaster Recovery的預覽版本包括以下更新：
 
 透過此版本，您可以更快地從儀表板存取其他頁面上的信息。
 
-https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-intro.html["了解NetApp Disaster Recovery"]。
+https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-intro.html["了解災難恢復"]。
 
 
 
 [[20-october-2023]]
 == 2023年10月20日
 
-NetApp Disaster Recovery的預覽版本包括以下更新。
+本次災難恢復預覽版本包含以下更新。
 
 
 
 [[protect-on-premises-nfs-based-vmware-workloads]]
 === 保護本地基於 NFS 的 VMware 工作負載
 
-現在，借助NetApp Disaster Recovery，您可以保護本地基於 NFS 的 VMware 工作負載，使其免受公有雲之外的另一個本地基於 NFS 的 VMware 環境的災難影響。  NetApp Disaster Recovery負責協調災難復原計畫的完成。
+現在透過災難恢復，除了公有雲之外，您還可以將內部部署、以 NFS 為基礎的 VMware 工作負載保護至另一個內部部署、以 NFS 為基礎的 VMware 環境，以防範災難。災難恢復會協調完成災難恢復計畫。
 
 
 NOTE: 對於此預覽版產品， NetApp保留在正式發布之前修改產品詳細資訊、內容和時間表的權利。
 
-https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-intro.html["了解有關NetApp Disaster Recovery的更多信息"]。
+https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-intro.html["深入瞭解災難恢復"]。
 
 
 
 [[27-september-2023]]
 == 2023年9月27日
 
-NetApp Disaster Recovery的預覽版本包括以下更新：
+本次災難恢復預覽版本包含以下更新：
 
 
 
@@ -1327,7 +1327,7 @@ NetApp Disaster Recovery的預覽版本包括以下更新：
 +
 請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["建立複製計劃"]。
 
-* *網路增強功能*：當您在複製計畫的虛擬機器部分中對應來源位置和目標位置之間的網路時， NetApp Disaster Recovery現在提供兩個選項：DHCP 或靜態 IP。以前，僅支援 DHCP。對於靜態 IP，您可以設定子網路、網關和 DNS 伺服器。此外，您現在可以輸入虛擬機器的憑證。
+* *網路增強功能*：在複寫計畫的虛擬機器區段中對應來源與目標位置之間的連網時，災難恢復現在提供兩個選項：DHCP 或靜態 IP。先前僅支援 DHCP。對於靜態 IP，您可設定子網路、閘道和 DNS 伺服器。此外，您現在還可以輸入虛擬機器的認證。
 +
 請參閱 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/task-replication-plan-vmware.html["建立複製計劃"]。
 
@@ -1355,15 +1355,15 @@ NetApp Disaster Recovery的預覽版本包括以下更新：
 
 
 
-[[netapp-disaster-recovery-preview]]
-=== NetApp Disaster Recovery預覽
+[[disaster-recovery-preview]]
+=== 災難恢復預覽
 
-NetApp Disaster Recovery預覽版是一種基於雲端的災難復原服務​​，可自動執行災難復原工作流程。最初，透過NetApp Disaster Recovery預覽版，您可以使用Amazon FSx for ONTAP將執行NetApp儲存的本機基於 NFS 的 VMware 工作負載保護到 AWS 上的 VMware Cloud (VMC)。
+災難恢復預覽版是一項雲端型的災難恢復服務，可自動執行災難恢復工作流程。最初，透過災難恢復預覽版，您可以使用 Amazon FSx for ONTAP，將執行 NetApp 儲存設備的內部部署、NFS 型 VMware 工作負載保護至 AWS 上的 VMware Cloud （VMC）。
 
 
 NOTE: 對於此預覽版產品， NetApp保留在正式發布之前修改產品詳細資訊、內容和時間表的權利。
 
-https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-intro.html["了解有關NetApp Disaster Recovery的更多信息"]。
+https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-intro.html["深入瞭解災難恢復"]。
 
 此版本包括以下更新：
 
@@ -1379,7 +1379,7 @@ https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-int
 [[replication-verification]]
 === 複製驗證
 
-建立災難復原或複製計畫後，在精靈中確定重複，並啟動到NetApp Disaster Recovery Disaster Recovery每 30 分鐘驗證一次複製是否確實按照計畫進行。您可以在作業監視器頁面中監視進度。參考 https://docs.netapp.com/us-en/data-services-disaster-recovery/use/replicate.html["將應用程式複製到另一個站點"]。
+建立災難恢復或複寫計畫、在精靈中識別重複執行頻率，並啟動至災難恢復站台的複寫之後，災難恢復每 30 分鐘會驗證一次複寫是否確實依照計畫進行。您可以在「作業監控」頁面中監控進度。請參閱  https://docs.netapp.com/us-en/data-services-disaster-recovery/use/replicate.html["將應用程式複製到另一個站點"]。
 
 
 
@@ -1400,13 +1400,13 @@ https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-int
 [[18-may-2023]]
 == 2023年5月18日
 
-這是NetApp Disaster Recovery的初始版本。
+這是災難恢復的初始版本。
 
 
 
 [[cloud-based-disaster-recovery-service]]
 === 基於雲端的災難復原服務
 
-NetApp Disaster Recovery是一種基於雲端的災難復原服務​​，可自動執行災難復原工作流程。最初，透過NetApp Disaster Recovery預覽版，您可以使用Amazon FSx for ONTAP將執行NetApp儲存的本機基於 NFS 的 VMware 工作負載保護到 AWS 上的 VMware Cloud (VMC)。
+災難恢復是一項雲端型災難恢復服務，可自動執行災難恢復工作流程。最初，透過災難恢復預覽版，您可以將執行於 NetApp 儲存設備的內部部署、NFS 型 VMware 工作負載保護至 AWS 上的 VMware Cloud (VMC)（使用 Amazon FSx for ONTAP）。
 
-link:https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-intro.html["了解有關NetApp Disaster Recovery的更多信息"]。
+link:https://docs.netapp.com/us-en/data-services-disaster-recovery/get-started/dr-intro.html["深入瞭解災難恢復"]。

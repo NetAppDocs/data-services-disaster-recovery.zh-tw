@@ -21,9 +21,9 @@ summary: 在使用 NetApp Disaster Recovery 之前，請確保您的環境符合
 
 這些先決條件適用於本機 vCenter 叢集和 VMware Cloud for AWS 軟體定義資料中心 (SDDC)。
 
-* 審查link:../reference/vcenter-privileges.html["vCenter 權限"]NetApp Disaster Recovery所需的。
-* NetApp Disaster Recovery 管理的所有 VMware 叢集都必須使用 ONTAP Volume 來託管您要保護的虛擬機器。
-* NetApp Disaster Recovery要管理的所有 VMware 資料儲存庫都必須使用下列協定之一：
+* 檢閱災難恢復所需的 link:../reference/vcenter-privileges.html["vCenter 權限"]。
+* 災難恢復管理的所有 VMware 叢集都必須使用 ONTAP Volume 來託管您要保護的虛擬機器。
+* 所有要由災難恢復代管的 VMware 資料儲存必須使用下列協定之一：
 +
 ** NFS
 ** 使用 iSCSI 或 FC 協定的 VMFS

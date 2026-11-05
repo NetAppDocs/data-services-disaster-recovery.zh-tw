@@ -15,7 +15,7 @@ summary: 使用 NetApp Disaster Recovery，您可以透過 SnapMirror 複寫，�
 使用 NetApp Disaster Recovery，您可以透過使用 SnapMirror 複寫，將 VMware 應用程式從來源站台複寫到雲端中的遠端災難恢復站台。保持遠端站台上的恢復資料為最新狀態，可確保能夠從最近的 SnapMirror 快照恢復受保護的應用程式。
 
 
-TIP: 在建立NetApp Disaster Recovery Disaster Recovery每 30 分鐘驗證一次複製是否確實按照計畫進行。您可以在作業監視器頁面中監視進度。
+TIP: 建立災難恢復計畫、在精靈中識別週期，並啟動至災難恢復站台的複寫後，災難恢復每 30 分鐘會驗證一次複寫是否確實依照計畫進行。您可以在 Job Monitor 頁面中監控進度。
 
 *所需 NetApp Console 角色* 執行此任務需要 Super admin、Disaster recovery admin 或 Disaster recovery failover admin 角色。link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["了解NetApp Disaster Recovery中的使用者角色和權限"^]。link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服務的NetApp Console存取角色"^]。
 
@@ -27,5 +27,5 @@ TIP: 在建立NetApp Disaster Recovery Disaster Recovery每 30 分鐘驗證一�
 . 從NetApp Console左側導覽中，選擇 *保護* > *災難復原*。
 . 從選單中選擇*複製計劃*。
 . 選擇複製計劃。
-. 在右側，選取 *Actions* 功能表 image:../use/icon-horizontal-dots.png["NetApp Disaster Recovery服務​​中的操作選單圖標"]，然後選取 *Replicate*。
+. 在右側，選取 *Actions* 功能表 image:../use/icon-horizontal-dots.png["災難恢復服務中的動作選單圖示"]，然後選取 *Replicate*。
 

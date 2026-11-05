@@ -254,7 +254,7 @@ image:evs-create-rp-wiz-c-datastore-mapping.png["建立複製計劃、資料儲�
 [[verify-settings]]
 == 驗證設定
 
-在 NetApp Disaster Recovery 中新增複寫計畫資訊後，請驗證您輸入的資訊是否正確。這是最後一步。
+在災難恢復中新增複寫計畫資訊後，請驗證您輸入的資訊是否正確。這是最後一步。
 
 .步驟
 . 在啟動複製計劃之前，選擇“*儲存*”來檢查您的設定。

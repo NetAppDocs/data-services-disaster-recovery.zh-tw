@@ -30,7 +30,7 @@ summary: 只需幾個步驟即可開始使用NetApp Disaster Recovery服務​�
 
 
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["二"]設定NetApp Disaster Recovery
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["二"] 設定災難恢復
 [role="quick-margin-para"]
 這些任務需要_超級管理員_或_災難恢復管理員_角色。
 

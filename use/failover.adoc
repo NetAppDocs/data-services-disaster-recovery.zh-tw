@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: use/failover.html 
-keywords: disaster recovery, bluexp disaster recovery, failover, replicate, fail over, vmware, vcenter 
+keywords: disaster recovery, bluexp disaster recovery, failover, replicate, fail over, vmware, vcenter, kubernetes, trident protect, openshift 
 summary: NetApp Disaster Recovery是一種基於雲端的災難復原服務​​，可自動執行災難復原工作流程。 
 ---
 = 使用NetApp Disaster Recovery將應用程式故障轉移到遠端站點
@@ -23,15 +23,15 @@ summary: NetApp Disaster Recovery是一種基於雲端的災難復原服務​�
 [[about-this-task]]
 == 關於此任務
 
-在容錯移轉期間，NetApp Disaster Recovery 預設使用最新的 SnapMirror 快照複本，但您也可以從時間點快照中選取特定快照（根據 SnapMirror 的保留政策）。如果最新的複本遭到破壞（例如在勒索軟體攻擊期間），請使用時間點選項。
+在容錯移轉期間，災難恢復預設會使用最新的 SnapMirror 快照複本，不過您可以從時間點快照中選擇特定的快照（根據 SnapMirror 的保留政策）。如果最新的複本遭到破壞（例如在勒索軟體攻擊期間），請使用時間點選項。
 
 此過程會有所不同，具體取決於生產站點是否健康以及您是否由於關鍵基礎設施故障以外的原因執行到災難復原站點的故障轉移：
 
-* 發生嚴重生產站點故障，導致無法存取來源 vCenter 或ONTAP叢集： NetApp Disaster Recovery可讓您選擇任何可用的快照進行復原。
+* 當關鍵生產站台故障，且來源 vCenter、Kubernetes 叢集或 ONTAP 叢集無法存取時：災難恢復可讓您選擇任何可用的快照來進行還原。
 * 生產環境健康：您可以「立即拍攝快照」或選擇先前建立的快照。
 
 
-此程序會中斷複製關係，將 vCenter 來源虛擬機置於離線狀態，將磁碟區註冊為災難復原 vCenter 中的資料儲存區，使用計畫中的故障轉移規則重新啟動受保護的虛擬機，並在目標網站上啟用讀取/寫入功能。
+此程序會中斷複寫關係，使來源工作負載離線，使複寫的 Volume 在災難恢復站台可用，使用計畫中的容錯移轉規則重新啟動受保護的工作負載，並在目標站台上啟用讀寫。對於 VMware 工作負載，該服務會將 vCenter 來源 VM 離線，將 Volume 註冊為災難恢復 vCenter 中的資料存放區，並重新啟動受保護的 VM。Kubernetes 工作負載對其應用程式和持續性 Volume 遵循相同的順序。
 
 
 
@@ -40,15 +40,15 @@ summary: NetApp Disaster Recovery是一種基於雲端的災難復原服務​�
 
 在執行即時容錯移轉之前，您可以進行測試以驗證整備狀態。測試過程中，工作負載將保持線上。
 
-在故障轉移測試期間，Disaster Recovery 會暫時建立 VM。Disaster Recovery 會將支援 FlexClone 磁碟區的暫存資料存放區對應到 ESXi 主機。
+在 VMware 工作負載的容錯移轉測試期間，災難恢復會暫時建立虛擬機器。災難恢復會將支援 FlexClone Volume 的暫存資料存放區對應至 ESXi 主機。Kubernetes 工作負載的容錯移轉測試，會對目的地叢集上受保護的應用程式和持續性 Volume 遵循相同的順序。
 
 此程序不會佔用本地ONTAP儲存或 AWS 中NetApp ONTAP儲存的 FSx 的額外實體容量。原始來源磁碟區不會被修改，即使在災難復原期間，副本作業也可以繼續進行。
 
-測試完成後，您應該使用 *Clean up test* 選項重設 VM。雖然建議這樣做，但並非必須。
+測試完成後，建議您使用 *清理測試* 選項重設測試環境。
 
 測試故障轉移作業不會影響生產工作負載、測試站點上使用的SnapMirror關係以及必須繼續正常運作的受保護工作負載。
 
-對於測試故障轉移，災難復原執行以下操作：
+對於測試容錯移轉，災難恢復會執行下列操作。
 
 * 對目標叢集和SnapMirror關係執行預檢查。
 * 從選定的快照為目標站點ONTAP叢集上的每個受保護的ONTAP磁碟區建立一個新的FlexClone區。
@@ -62,9 +62,9 @@ summary: NetApp Disaster Recovery是一種基於雲端的災難復原服務​�
 .步驟
 . 登入 https://console.netapp.com/["NetApp Console"^]。
 . 從NetApp Console左側導覽中，選擇 *保護* > *災難復原*。
-. 從NetApp Disaster Recovery選單中，選擇 *複製計畫*。
+. 從災難恢復選單中，選擇 *複寫計畫*。
 . 選擇複製計劃。
-. 在右側，選擇“操作”選項image:../use/icon-horizontal-dots.png["NetApp Disaster Recovery服務​​中的操作選單圖標"]並選擇*測試故障轉移*。
+. 在右側，選取 *動作* 選項 image:../use/icon-horizontal-dots.png["災難恢復服務中的動作選單圖示"]，然後選取 *測試容錯移轉*。
 . 在「測試容錯移轉」頁面中，選擇用於測試容錯移轉的快照：選取 **立即建立快照** 或 **選取** 以選擇現有快照。如果選擇 **選取**，請選擇現有快照。
 +
 然後輸入「Test failover」，並選擇 *Test failover*。
@@ -77,12 +77,12 @@ summary: NetApp Disaster Recovery是一種基於雲端的災難復原服務​�
 [[clean-up-the-test-environment-after-a-failover-test]]
 == 故障轉移測試後清理測試環境
 
-故障轉移測試完成後，您應該清理測試環境。此程序將從測試位置、FlexClone 和暫存資料儲存區中刪除暫存虛擬機器。
+容錯移轉測試完成後，您應該清理測試環境。此程序會從測試位置移除暫時的測試資源和 FlexClones。對於 VMware 工作負載，這包括暫時的虛擬機器和暫時的資料存放區。
 
 .步驟
-. 從NetApp Disaster Recovery選單中，選擇 *複製計畫*。
+. 從災難恢復選單中，選擇 *複寫計畫*。
 . 選擇複製計劃。
-. 在右側，選擇“操作”選項 image:../use/icon-horizontal-dots.png["NetApp Disaster Recovery服務​​中的操作選單圖標"] 然後*清理故障轉移測試*。
+. 在右側，選取 *動作* 選項 image:../use/icon-horizontal-dots.png["災難恢復服務中的動作選單圖示"]，然後選取 *清理容錯移轉測試*。
 . 在“測試故障轉移”頁面中，輸入“清理故障轉移”，然後選擇“清理故障轉移測試”。
 
 
@@ -91,9 +91,9 @@ summary: NetApp Disaster Recovery是一種基於雲端的災難復原服務​�
 [[fail-over-the-source-site-to-a-disaster-recovery-site]]
 == 將來源站點故障轉移到災難復原站點
 
-若發生災難，可將您的主要本機 VMware 站台隨需容錯移轉至另一個本機 VMware 站台或 VMware Cloud on AWS with FSx for NetApp ONTAP。
+如果發生災難，您可以將主站台隨需容錯移轉至災難恢復站台。對於 VMware 工作負載，您可以將主要的內部部署 VMware 站台容錯移轉至另一個內部部署 VMware 站台，或是搭配 FSx for NetApp ONTAP 的 VMware Cloud on AWS。對於 Kubernetes 工作負載，您可以容錯移轉至複寫計畫中的目的地叢集。
 
-容錯移轉程序包含下列作業：
+容錯移轉程序涉及下列作業。提及 vCenter、虛擬機器或資料存放區的作業適用於 VMware 工作負載；Kubernetes 工作負載則針對其應用程式和持續性 Volume 遵循同等作業：
 
 * 災難復原對目標叢集和SnapMirror關係執行預檢查。
 * 如果您選擇了最新的快照，則會執行SnapMirror更新以複製最新的變更。
@@ -109,7 +109,7 @@ summary: NetApp Disaster Recovery是一種基於雲端的災難復原服務​�
 
 
 
-TIP: 故障轉移開始後，您可以在災難復原站台的 vCenter 中看到已復原的 VM（VM、網路和資料存放區）。根據預設，VM 會復原至 Workload 資料夾。
+TIP: 對於 VMware 工作負載，在容錯移轉啟動後，您可以在災難恢復站台的 vCenter 中看到已恢復的虛擬機器（虛擬機器、網路和資料存放區）。預設情況下，虛擬機器會恢復至 Workload 資料夾。
 
 [role="tabbed-block"]
 ====
@@ -118,13 +118,13 @@ TIP: 故障轉移開始後，您可以在災難復原站台的 vCenter 中看到
 對於基於資料儲存的複製計劃，如果您已新增並發現了任何虛擬機，但未提供映射詳細信息，則這些虛擬機將包含在故障轉移中。故障轉移失敗後，作業中會發出通知。您必須提供映射詳細資訊才能成功完成故障轉移。
 
 .步驟
-. 從NetApp Disaster Recovery選單中，選擇 *複製計畫*。
+. 從災難恢復選單中，選擇 *複寫計畫*。
 . 在下拉式選單中，篩選出 *vCenter* 複寫計畫。
 +
 image::site-type-toggle.png[網站類型切換的螢幕擷取畫面]
 
 . 選擇複製計劃。
-. 在右側、選取 *Actions* 選項 image:../use/icon-horizontal-dots.png["NetApp Disaster Recovery服務​​中的操作選單圖標"]、將游標暫留在 *Recover* 上、然後選取 *Fail over* 。
+. 在右側、選取 *Actions* 選項 image:../use/icon-horizontal-dots.png["災難恢復服務中的動作選單圖示"]、將游標暫留在 *Recover* 上、然後選取 *Fail over* 。
 +
 image:dr-plan-failover3.png["故障轉移頁面"]
 
@@ -140,7 +140,7 @@ NOTE: 選擇特定快照基準時，SnapMirror 傳輸快照預設為隱藏狀態
 
 
 . 如果您希望即使服務偵測到通常會封鎖容錯移轉的錯誤，容錯移轉也能繼續進行，請選擇 *Force failover*。
-. 如果您希望服務在複寫計畫容錯移轉後不自動建立反向 SnapMirror 保護關係，請選取 *Skip protection*。如果您希望在將還原站台於 NetApp Disaster Recovery 重新上線前，先執行其他操作，這個選項會很有用。
+. 如果您希望服務在複寫計畫容錯移轉後不自動建立反向 SnapMirror 保護關係，請選取 *略過保護*。如果您希望在災難恢復中將還原的站台重新恢復線上之前，對其執行其他作業，這將非常有用。
 +
 
 TIP: 您可以從複製計劃操作選單中選擇*保護資源*來建立反向保護。這會嘗試為計劃中的每個磁碟區建立反向複製關係。您可以重複執行此作業，直到恢復保護。當保護恢復後，您可以按照通常的方式啟動故障恢復。
@@ -153,13 +153,13 @@ TIP: 您可以從複製計劃操作選單中選擇*保護資源*來建立反向�
 --
 .Kubernetes
 --
-. 從NetApp Disaster Recovery選單中，選擇 *複製計畫*。
+. 從災難恢復選單中，選擇 *複寫計畫*。
 . 在下拉式選單中，篩選 *Kubernetes* 複寫計畫。
 +
 image::site-type-toggle.png[網站類型切換的螢幕擷取畫面]
 
 . 選擇複製計劃。
-. 在右側、選取 *Actions* 選項 image:../use/icon-horizontal-dots.png["NetApp Disaster Recovery服務​​中的操作選單圖標"]、將游標暫留在 *Recover* 上、然後選取 *Fail over* 。
+. 在右側、選取 *Actions* 選項 image:../use/icon-horizontal-dots.png["災難恢復服務中的動作選單圖示"]、將游標暫留在 *Recover* 上、然後選取 *Fail over* 。
 . 選擇要用於容錯移轉的快照複本：
 +
 ** 選擇 *Take snapshot now* 以建立一個全新的快照，該快照將複寫到目的地叢集。
@@ -171,7 +171,7 @@ NOTE: 選擇特定快照基準時，SnapMirror 傳輸快照預設為隱藏狀態
 
 
 
-. 如果您希望 Disaster Recovery 在複寫計畫容錯移轉後不自動建立反向 SnapMirror 保護關係，請選擇*跳過保護*。如果您想在將還原的站台重新上線至 NetApp Disaster Recovery 之前對其執行其他操作，此功能非常有用。
+. 如果您希望 NetApp Disaster Recovery 在複寫計畫容錯移轉後不自動建立反向 SnapMirror 保護關係，請選取 *Skip protection*。如果您希望在災難恢復中將還原的站台重新上線之前，對其執行其他操作，這將非常有用。
 . 輸入「Failover」以確認操作，然後選擇 *Failover*。
 
 

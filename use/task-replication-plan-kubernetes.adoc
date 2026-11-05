@@ -30,7 +30,7 @@ NOTE: 若要為 VMware 工作負載建立複寫計劃，請參閱 link:task-repl
 
 
 
-TIP: 在部署 NetApp Disaster Recovery 之前，請先整理 Kubernetes 叢集和命名空間，以盡量減少過度擴張。若要在建立複寫計畫之前組織資源群組，請參閱 link:resource-group.html["建立資源組"]。
+TIP: 在部署災難恢復之前，請先整理 Kubernetes 叢集和命名空間，以盡量減少過度擴張。若要在建立複寫計畫之前組織資源群組，請參閱 link:resource-group.html["建立資源組"]。
 
 
 
@@ -52,7 +52,7 @@ TIP: 在部署 NetApp Disaster Recovery 之前，請先整理 Kubernetes 叢集�
 首先，選擇複寫計畫的來源和目的地叢集。
 
 .步驟
-. 從NetApp Disaster Recovery選單中，選擇 *複製計畫*。
+. 從災難恢復選單中，選擇 *複寫計畫*。
 . 在下拉式選單中，選擇 *Kubernetes*。
 +
 image::site-type-toggle.png[網站類型切換的螢幕擷取畫面]

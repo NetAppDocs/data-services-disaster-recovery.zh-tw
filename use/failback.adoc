@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: use/failback.html 
-keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter 
+keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, kubernetes, trident protect, openshift 
 summary: NetApp Disaster Recovery是一種基於雲端的災難復原服務​​，可自動執行災難復原工作流程。 
 ---
-= 使用NetApp Disaster Recovery將應用程式故障還原到原始來源
+= 使用 NetApp Disaster Recovery 容錯回復至來源站台
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -21,14 +21,14 @@ summary: NetApp Disaster Recovery是一種基於雲端的災難復原服務​�
 [[about-failback]]
 == 關於故障恢復
 
-在容錯回復過程中，NetApp Disaster Recovery 會將所有變更複寫（重新同步）回原始來源虛擬機器，然後再反轉複寫方向。此程序在關係容錯移轉至目標後開始，並包含下列步驟：
+在容錯回復中，NetApp Disaster Recovery 會將所有變更複寫（重新同步）回原始來源工作負載，然後再反轉複寫方向。此程序在關係容錯移轉到目標之後啟動，並包含下列步驟。Kubernetes 工作負載遵循與 VMware 工作負載相同的順序；VMware 特有的細節在括號中註明。
 
 * 對復原的站點執行合規性檢查。
-* 刷新已確定位於復原站點中的每個 vCenter 叢集的 vCenter 資訊。
-* 在目標網站上，關閉並取消註冊虛擬機，然後卸載磁碟區。
+* 重新整理識別為位於已恢復站台的每個 vCenter 叢集或 Kubernetes 叢集的探索資訊。
+* 在目標站台上，停止受保護的工作負載（對於 VMware，關閉虛擬機器電源並取消註冊），並取下 Volume。
 * 打破原始來源上的SnapMirror關係以使其可讀/寫入。
 * 重新同步SnapMirror關係以逆轉複製。
-* 啟動並註冊來源虛擬機，並在來源上掛載磁碟區。
+* 在來源啟動受保護的工作負載（對於 VMware，啟動並註冊來源虛擬機器），並在來源裝載 Volume。
 
 
 
@@ -36,7 +36,7 @@ summary: NetApp Disaster Recovery是一種基於雲端的災難復原服務​�
 [[before-you-begin]]
 == 開始之前
 
-如果您使用的是基於資料存放區的保護，則在容錯移轉期間虛擬機器可能會新增至資料存放區。如果發生這種情況，請確保在啟動容錯回復之前為這些虛擬機器提供額外的對應資訊。若要編輯資源對應，請參閱 link:manage.html#manage-replication-plans["管理複製計劃"]。
+對於 VMware 工作負載，如果您使用以資料存放區為基礎的保護，則在容錯移轉期間，虛擬機器可能會新增至資料存放區。如果發生這種情況，請確保在啟動容錯回復之前，為這些虛擬機器提供額外的對應資訊。若要編輯資源對應，請參閱 link:manage.html#manage-replication-plans["管理複製計劃"]。
 
 
 
@@ -48,12 +48,12 @@ summary: NetApp Disaster Recovery是一種基於雲端的災難復原服務​�
 .vCenter
 --
 .步驟
-. 從NetApp Disaster Recovery選單中，選擇 *複製計畫*。
+. 從災難恢復選單中，選擇 *複寫計畫*。
 . 在下拉式選單中，將篩選條件設定為 *VMware* 。
 +
 image::site-type-toggle.png[網站類型切換的螢幕擷取畫面]
 
-. 識別您要容錯回復的複寫計畫。選取 *Actions* 選項 image:../use/icon-horizontal-dots.png["NetApp Disaster Recovery服務​​中的操作選單圖標"]，將滑鼠游標移至 *Recover* 上方，然後選取 *Failback*。
+. 識別您要容錯回復的複寫計畫。選取 *Actions* 選項 image:../use/icon-horizontal-dots.png["災難恢復服務中的動作選單圖示"]，將滑鼠游標移至 *Recover* 上方，然後選取 *Failback*。
 . 選擇要從中復原的資料存放區快照。選取 *立即建立快照* 以啟動新的快照，或選取 *選擇* 以從可用快照中選擇。
 +
 
@@ -70,12 +70,12 @@ image:failback.png["故障回復對話方塊的螢幕擷取畫面"]
 --
 .Kubernetes
 --
-. 從NetApp Disaster Recovery選單中，選擇 *複製計畫*。
+. 從災難恢復選單中，選擇 *複寫計畫*。
 . 在下拉式選單中，篩選 *Kubernetes* 複寫計畫。
 +
 image::site-type-toggle.png[網站類型切換的螢幕擷取畫面]
 
-. 識別您要容錯回復的複寫計畫。選取 *Actions* 選項 image:../use/icon-horizontal-dots.png["NetApp Disaster Recovery服務​​中的操作選單圖標"]，將滑鼠游標移至 *Recover* 上方，然後選取 *Failback*。
+. 識別您要容錯回復的複寫計畫。選取 *Actions* 選項 image:../use/icon-horizontal-dots.png["災難恢復服務中的動作選單圖示"]，將滑鼠游標移至 *Recover* 上方，然後選取 *Failback*。
 . 選擇要從中復原的叢集快照。選取 *Take snapshot now* 以啟動新的快照，或選取 *Use latest snapshot* 以使用最近一次成功的快照。
 . 輸入 "Failback" 以確認操作，然後選取 *Failback*。
 

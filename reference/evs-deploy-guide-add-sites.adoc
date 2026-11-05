@@ -9,7 +9,7 @@ summary: 在您保護虛擬機器基礎架構之前， NetApp Disaster Recovery�
 
 
 [role="lead"]
-在保護虛擬機器基礎架構之前，請先確定哪些 VMware vCenter 叢集託管著要保護的虛擬機器以及這些 vCenter 位於何處。第一步是建立一個網站來代表來源資料中心和目標資料中心。站點是故障域或恢復域。
+在利用 NetApp Disaster Recovery 保護您的 VM 基礎架構之前，請先確定哪些 VMware vCenter 叢集託管要保護的 VM，以及這些 vCenters 的位置。第一步是建立站台來代表來源和目的地資料中心。站台是故障網域或恢復網域。
 
 您需要建立以下內容：
 
@@ -26,7 +26,7 @@ summary: 在您保護虛擬機器基礎架構之前， NetApp Disaster Recovery�
 
 .步驟
 . 從NetApp Console左側導覽列中，選擇 *保護* > *災難復原*。
-. 從NetApp Disaster Recovery中的任何頁面中，選擇「*網站*」選項。
+. 在災難恢復的任何頁面上，選取 *站台* 選項。
 +
 image:evs-create-site-op-1.png["網站選項"]
 
@@ -51,7 +51,7 @@ image:evs-create-site-op-3-5.png["建立網站對話框"]
 
 使用Amazon FSx for NetApp ONTAP儲存為 Amazon EVS 建立 DR 站點。
 
-. 從NetApp Disaster Recovery中的任何頁面中，選擇「*網站*」選項。
+. 在災難恢復的任何頁面上，選取 *站台* 選項。
 +
 image:evs-create-site-op-1.png["網站選項"]
 

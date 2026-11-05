@@ -13,10 +13,10 @@ summary: 在繼續使用NetApp Disaster Recovery配置 Amazon EVS 之前，您�
 
 .先決條件
 * 檢閱 link:../get-started/dr-prerequisites.html["Disaster Recovery 的一般前提條件"] 。
-* 建立 vCenter 使用者帳戶，該帳戶具有NetApp Disaster Recovery所需的特定 VMware 權限，以執行必要的操作。
+* 建立具有災難恢復執行必要操作所需特定 VMware 權限的 vCenter 使用者帳戶。
 +
 
-NOTE: 建議您**不要**使用預設的「\administrator@vsphere.com」管理員帳戶。相反地，您應該在所有將參與災難復原程序的 vCenter 叢集上建立一個 NetApp Disaster Recovery 專用的使用者帳戶。如需所需特定權限清單，請參閱link:vcenter-privileges.html["NetApp Disaster Recovery所需的 vCenter 權限"]。
+NOTE: 建議您**不要**使用預設的 "\administrator@vsphere.com" 系統管理員帳戶。相反地，您應該在所有將參與災難恢復程序的 vCenter 叢集上，建立一個災難恢復專用的使用者帳戶。如需所需特定權限的清單，請參閱 link:vcenter-privileges.html["災難恢復所需的 vCenter 權限"]。
 
 * 確保所有將託管受 Disaster Recovery 保護的 VM 的 vCenter 資料存放區都位於 NetApp ONTAP 儲存資源上。
 +

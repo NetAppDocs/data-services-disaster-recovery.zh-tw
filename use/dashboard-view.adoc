@@ -4,7 +4,7 @@ permalink: use/dashboard-view.html
 keywords: disaster recovery remediate, disaster recovery, failover, failback, replication, bluexp, netapp 
 summary: NetApp Disaster Recovery是一種基於雲端的災難復原服務​​，可自動執行災難復原工作流程。 
 ---
-= 在 NetApp Disaster Recovery 中檢視計畫健全狀況與工作負載保護狀態
+= 在 NetApp Disaster Recovery 中檢視計畫健全狀況與保護狀態
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -26,9 +26,9 @@ NetApp Disaster Recovery 提供多種方法來深入了解由災難恢復發現�
 == 在儀表板中檢視健全狀況與保護狀態
 
 .步驟
-. 從NetApp Disaster Recovery選單中，選擇 *儀表板*。
+. 從災難恢復選單中，選擇 *儀表板*。
 +
-image:dr-dashboard.png["NetApp Disaster Recovery儀表板"]
+image:dr-dashboard.png["災難恢復儀表板"]
 
 . 審查儀表板中的健全狀況資訊：
 +
@@ -91,7 +91,7 @@ image:dr-dashboard.png["NetApp Disaster Recovery儀表板"]
 
 |===
 .步驟
-. 從 NetApp Disaster Recovery 選單中，選擇 *工作負載*。
+. 從災難恢復選單中，選擇 *工作負載*。
 . 在下拉式選單中，選擇篩選器以檢視 *vCenter* 或 *Kubernetes* 工作負載。
 +
 image::site-type-toggle.png[網站類型切換的螢幕擷取畫面]
