@@ -16,6 +16,22 @@ summary: NetApp Disaster Recovery 是一項雲端型的災難恢復服務，可�
 
 
 
+[[09-november-2026]]
+== 2026年11月9日
+
+版本 4.3.9
+
+
+
+[[job-monitoring-enhancement-when-rerunning-jobs]]
+=== 重新執行作業時的作業監控增強功能
+
+如果您重新執行某些失敗、取消或逾時的操作，NetApp Disaster Recovery 現在會將這些操作註冊為新作業，並識別發起此行動的使用者。先前，Disaster Recovery 會將新作業列在初始作業之下。只要要求未被遮蔽，此增強功能就能為 Disaster Recovery 中的作業建立更清晰的稽核追蹤。它僅適用於探索、重新同步、法規遵循、保護、複寫計畫和備份保留作業。重新執行回復、容錯移轉和移轉操作不會被列為新作業。只有重新執行鏈中的最新作業才符合條件，並且最多只能有一個重新執行作業排在正在執行的作業之後。
+
+如需詳細資訊，請參閱 link:https://docs.netapp.com/us-en/data-services-disaster-recovery/use/monitor-jobs.html["監控災難復原中的工作"^]。
+
+
+
 [[12-october-2026]]
 == 2026年10月12日
 

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: use/monitor-jobs.html 
 keywords: disaster recovery, bluexp disaster recovery, failover, failback, replicate, fail over, fail back, vmware, vcenter, monitor, bluexp 
-summary: NetApp Disaster Recovery是一種基於雲端的災難復原服務​​，可自動執行災難復原工作流程。您可以監控所有災難復原工作並確定其進度。 
+summary: 監控 NetApp Disaster Recovery 中的作業，以檢視其歷史記錄、稽核使用者操作，並追蹤可能有問題或逾時的操作。 
 ---
 = 監控NetApp Disaster Recovery作業
 :hardbreaks:
@@ -13,6 +13,13 @@ summary: NetApp Disaster Recovery是一種基於雲端的災難復原服務​�
 
 [role="lead"]
 監控 NetApp Disaster Recovery 作業以檢視其歷史記錄、狀態和詳細資訊。追蹤作業狀態和進度可讓您在失敗或停滯的操作影響恢復準備之前發現這些操作。
+
+
+
+[[about-job-monitoring]]
+== 關於工作監控
+
+如果您重新執行失敗、取消或逾時的探索、重新同步、法規遵循、保護、複寫計畫或備份保留作業，Disaster Recovery 會將重新執行註冊為新作業，並記錄啟動作業的使用者，以便您可以查看每個行動的執行者。容錯回復、容錯移轉和移轉作業的重新執行會列在原始作業下，且不會列出啟動重新執行的使用者。
 
 
 
@@ -39,12 +46,12 @@ TIP: 審查作業詳細資料時，Disaster Recovery 會顯示啟動作業的使
 [[cancel-a-job]]
 == 取消作業
 
-如果作業卡住了，或者為了優先處理待處理的操作，您可以取消正在進行中或處於佇列狀態的作業。
+如果正在進行或已排隊的作業卡住，或者您需要優先處理待處理的操作，您可以取消該作業。
 
 *所需 NetApp Console 角色* 執行此任務需要超級管理員、災難復原管理員、災難復原故障轉移管理員或災難復原應用程式管理員角色。link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-disaster-rec-roles.html["了解NetApp Disaster Recovery中的使用者角色和權限"^].link:https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["了解所有服務的NetApp Console存取角色"^].
 
 .步驟
-. 從NetApp Console左側導覽列中，選擇 *保護* > *災難復原*。
+. 從NetApp Console左側導覽中，選擇 *保護* > *災難復原*。
 . 從選單中選擇*作業監控*。
 . 在「作業監控」頁面上，記下您要取消的作業 ID。
 +

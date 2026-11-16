@@ -981,12 +981,10 @@
   <block id="3849da8702f93c4c73b8b2d18d7d3b4d" category="list-text">選擇“虛擬機器”。</block>
   <block id="2e91c6382e139b4d3b0307917725df9c" category="list-text">查看虛擬機器資訊。</block>
   <block id="e149f52ef3987c9798fc0b5e92f0d94c" category="doc">使用NetApp Disaster Recovery將應用程式遷移到另一個站點</block>
-  <block id="c1845ff7083c49cb3022e9cb477f265b" category="summary">NetApp Disaster Recovery是一種基於雲端的災難復原服務​​，可自動執行災難復原工作流程。您可以監控所有災難復原工作並確定其進度。</block>
   <block id="45b443b335251cfe162de8423d5b2021" category="doc">監控NetApp Disaster Recovery作業</block>
   <block id="b2885babde6f690716af50f947f38fa4" category="list-text">從選單中選擇*作業監控*。</block>
   <block id="19a2cef623f0e702dd97e37e1bddd114" category="list-text">若要刷新訊息，請選擇*刷新*。</block>
   <block id="24391a0c4e58147fa07febdb32887a1a" category="section-title">取消作業</block>
-  <block id="860b70267867fe6caf0f4adfd247b3e2" category="list-text">從NetApp Console左側導覽列中，選擇 *保護* &gt; *災難復原*。</block>
   <block id="49e474835558193a9bed54c7dadf777e" category="paragraph">該作業必須處於「進行中」或「排隊」狀態。</block>
   <block id="5542a31575b0db973ecf1e27638145e5" category="doc">使用NetApp Disaster Recovery將應用程式複製到另一個站點</block>
   <block id="4fcb591c27b70823ff71112c0db6af4f" category="summary">查看災難復原報告可以幫助您分析災難復原準備。預先設計的報告包括故障轉移和故障回應的摘要、所有站點的複製詳細資訊以及過去一年的作業詳細資訊。</block>
@@ -1841,7 +1839,6 @@
   <block id="3e323562bd488e4cbd90a025b9424181" category="section-title">2026 年 6 月 08 日</block>
   <block id="0926e17414694f3b4201b416c6c4a6ca" category="paragraph">版本 4.3.4</block>
   <block id="f5fa15f6901bb980064f0a1e081fbfb7" category="list-text">在「測試容錯移轉」頁面中，選擇用於測試容錯移轉的快照：選取 **立即建立快照** 或 **選取** 以選擇現有快照。如果選擇 **選取**，請選擇現有快照。</block>
-  <block id="e363882b79ccd237ac1f4dd679c679c2" category="paragraph">如果作業卡住了，或者為了優先處理待處理的操作，您可以取消正在進行中或處於佇列狀態的作業。</block>
   <block id="caf5841d5a0afa8a150bf6da9c22fc2f" category="list-text">在工作負載下拉式選單中，將篩選器設定為 *Kubernetes* 。</block>
   <block id="86839797735bfc02dea42929601e887a" category="list-text">在「設定」視窗中，視需要編輯欄位。</block>
   <block id="83cfc8bb47b46515d41842fa32fa608b" category="list-text">若要自訂探索排程，請勾選 *Enable scheduled discovery* 核取方塊。選擇探索開始日期以及探索間隔（以小時和分鐘為單位）。</block>
@@ -1906,7 +1903,6 @@
   <block id="f45e2c030a4c208e00f685932255a3ca" category="paragraph">若要審查複寫計畫詳細資訊，請選擇 *View all replication plans*。</block>
   <block id="c829e7823834805c5cfdbad004224956" category="list-text">審查「最近的警告和作業」，以查看最近執行的作業和警告及其相關狀態。選擇「檢視所有作業」可查看所有作業。</block>
   <block id="cb616e9285bb30b93344966fddafd029" category="list-text">審查 *Discovery and protection status* ，以查看已探索的工作負載數量，以及按類型區分的受保護與未受保護工作負載的數量明細。您也可以審查所有工作負載及按類型劃分的工作負載的總探索容量。</block>
-  <block id="69ebf4461fc9429dbfcd7813c2832c6a" category="list-text">選擇行動選單，然後選擇**取消作業**。</block>
   <block id="c6f5d2645082be603586c7fcecedd01e" category="doc">在 NetApp Disaster Recovery 中建立報告</block>
   <block id="466b68043567b88303b6c00217b4aeb5" category="paragraph">報告下載連結在產生後六小時內有效。</block>
   <block id="c5cbff21ca879b1c12f07a2c7ced7d25" category="list-text">登入 <block ref="3127a7e60ca42a30e72a85e6e4e87658" category="inline-link-macro-rx"></block>。</block>
@@ -2834,4 +2830,15 @@
   <block id="67582bf168c69167e5196885e4690704" category="paragraph">如果您選擇 *刪除*，請選擇要與複寫計畫一併刪除的相關快照或中繼資料：*刪除主要快照*、*刪除次要快照* 或 *刪除快照中繼資料*。在文字方塊中輸入「delete」以確認作業，然後選擇 *刪除*。</block>
   <block id="8f16177ab00235f59e48b3f88600dc4e" category="sidebar">雲端災難恢復是一種具有恢復能力且具成本效益的方式，可保護工作負載免受站台中斷和資料毀損事件（例如勒索軟體）的影響。透過 NetApp Disaster Recovery，您可以將執行 ONTAP 儲存設備的內部部署 VMware 和 Kubernetes 工作負載複寫到災難恢復站台（例如另一個內部部署站台，或針對 VMware 工作負載，複寫到公有雲中的 VMware 軟體定義資料中心），藉此保護這些工作負載。</block>
   <block id="ca3da73b82227265cf5cad362eba88f9" category="sidebar">透過 NetApp Disaster Recovery，您可以將執行 ONTAP 儲存設備的內部部署 VMware 和 Kubernetes 工作負載複寫到災難恢復站台。</block>
+  <block id="a022cebca1f841a4a75654f3e54a623b" category="doc">重新執行作業時的作業監控增強功能</block>
+  <block id="c5473f86ef99f2b81306aec2f780c239" category="paragraph">如果您重新執行某些失敗、取消或逾時的操作，NetApp Disaster Recovery 現在會將這些操作註冊為新作業，並識別發起此行動的使用者。先前，Disaster Recovery 會將新作業列在初始作業之下。只要要求未被遮蔽，此增強功能就能為 Disaster Recovery 中的作業建立更清晰的稽核追蹤。它僅適用於探索、重新同步、法規遵循、保護、複寫計畫和備份保留作業。重新執行回復、容錯移轉和移轉操作不會被列為新作業。只有重新執行鏈中的最新作業才符合條件，並且最多只能有一個重新執行作業排在正在執行的作業之後。</block>
+  <block id="85aac6cb5b462503919fc861b656a1fa" category="inline-link-macro">監控災難復原中的工作</block>
+  <block id="762e29bb52300aa24d22073f79b3d226" category="paragraph">如需詳細資訊，請參閱 <block ref="23d16b59790b4ad5fc943f7449cf33c5" category="inline-link-macro-rx"></block>。</block>
+  <block id="e370f8f4d5db9e4f93257ac02adddec3" category="section-title">2026年11月9日</block>
+  <block id="6c6def1e063357d2dbcb737904433f45" category="paragraph">版本 4.3.9</block>
+  <block id="6c0cf6e0bcdd11f211b4e682480a409b" category="summary">監控 NetApp Disaster Recovery 中的作業，以檢視其歷史記錄、稽核使用者操作，並追蹤可能有問題或逾時的操作。</block>
+  <block id="a0b10368604904a36461ecb27e11a658" category="section-title">關於工作監控</block>
+  <block id="8dec9ccdd6e1ed3c94d0a2f1aa6d21a8" category="paragraph">如果您重新執行失敗、取消或逾時的探索、重新同步、法規遵循、保護、複寫計畫或備份保留作業，Disaster Recovery 會將重新執行註冊為新作業，並記錄啟動作業的使用者，以便您可以查看每個行動的執行者。容錯回復、容錯移轉和移轉作業的重新執行會列在原始作業下，且不會列出啟動重新執行的使用者。</block>
+  <block id="f93bdc0664253a11e5d06cbc704f8d85" category="paragraph">如果正在進行或已排隊的作業卡住，或者您需要優先處理待處理的操作，您可以取消該作業。</block>
+  <block id="d89601481d21a5b4c57d9d0c59bcbce3" category="list-text">選擇行動選單，然後選擇**取消作業**。</block>
 </blocks>
